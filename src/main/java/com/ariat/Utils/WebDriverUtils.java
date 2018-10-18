@@ -105,6 +105,7 @@ public class WebDriverUtils {
 		try {
 			new Select(findElement(driver, locator)).selectByVisibleText(option);
 		} catch (WebDriverException e) {
+			logger.debug("Element was not found in select element", option);
 			
 			driver.quit();
 			throw new WebDriverException(e);
@@ -117,6 +118,11 @@ public class WebDriverUtils {
 	
 	public static void maximizeWindow(WebDriver driver) {
 		driver.manage().window().maximize();
+	}
+	
+	public static void load(WebDriver driver, String url) {
+		logger.debug("Loads url {}", url);
+		driver.get(url);
 	}
 	
 	public static void quit(WebDriver driver) {
