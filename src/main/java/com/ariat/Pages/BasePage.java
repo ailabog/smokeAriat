@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 /**
  * Base class which contains common properties and methods which can be reused 
  * in all other pages by extending this one
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */

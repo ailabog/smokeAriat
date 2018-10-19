@@ -1,5 +1,33 @@
 package com.ariat.Pages;
 
-public class LogoutPage {
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.ariat.Utils.WebDriverUtils;
+
+/**
+ * This page is designed to logged the user from the account, store locator and logout method
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+public class LogoutPage extends BasePage {
+
+	private static final Logger logger = LoggerFactory.getLogger(LogoutPage.class);
+
+	private By logout = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
+
+	protected LogoutPage(WebDriver driver) {
+		super(driver);
+	}
+
+	public void logout() {
+		logger.info("Now I am logging out from ariat.com");
+		WebDriverUtils.clickOnElementWithWait(driver, logout);
+		logger.info("I am succesfully logged out");
+	}
 
 }
