@@ -7,7 +7,9 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.HomePage;
+import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -24,31 +26,96 @@ public class CreateAcountTest extends BaseTest {
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private SignInPage signInPage;
+	private MyAccountPage myAccountPage;
+
+	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
+	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
+	public static final String BIRTH_MONTH = "March";
+	public static final String BIRTH_DAY = "02";
+
+	public static final String EMAIL = GenerateRandomDataUtils.generateEmail(12);
+	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
+
+	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomNumber(8);
+	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
+
+	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records.  "
+			+ "Check your records and try again.";
 
 	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test
-	public void createAccount() {
+	@Test(priority = 0)
+	public void createAccountTest() {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.setSubscription();
-		homePage.UKlocation();
+		homePage.closeSubscription();
 		signInPage = homePage.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
-		createAccountPage.createAccount();
+		createAccountPage.firstName(FIRST_NAME);
+		createAccountPage.lastNameInfo(LAST_NAME);
+		createAccountPage.selectBirthMonth(BIRTH_MONTH);
+		createAccountPage.selectBirthDay(BIRTH_DAY);
 		createAccountPage.GenderFemale();
-		createAccountPage.productsEnglishCheck();
-		createAccountPage.createAccountClick();
+		createAccountPage.enterEmail(EMAIL);
+		createAccountPage.confirmEmail(EMAIL);
+		createAccountPage.enterPassword(PASSWORD);
+		createAccountPage.confirmPassword(PASSWORD);
+		createAccountPage.addMeToAriatEmail();
+		myAccountPage = createAccountPage.returnMyAccountPage();
+		myAccountPage.logout();
+		logger.info("Finishing create new account test...");
 	}
+
+	@Test(priority = 1)
+	public void returningCustomerTest() {
+		logger.info("Starting returning customer test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.closeSubscription();
+		signInPage = homePage.returnSignInPage();
+		signInPage.returningCustomer(EMAIL);
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		myAccountPage.logout();
+		logger.info("Finishing returning customer test...");
+	}
+
+	@Test(priority = 2)
+	public void checkOrderTest() {
+		logger.info("Starting checking order test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.closeSubscription();
+		signInPage = homePage.returnSignInPage();
+		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
+		signInPage.assertMsg(ERROR_MESSAGE, ERROR_MESSAGE );
+		logger.info("Finishing checking order test...");
+	}
+	
+	@Test(priority = 3)
+	public void forgotPasswordTest() {
+		logger.info("Starting forgot password test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.closeSubscription();
+		signInPage = homePage.returnSignInPage();
+		signInPage.forgotPasswordClick();
+		signInPage.forgotPasswordEmail(EMAIL);
+		signInPage.ForgotPasswordSend();
+		signInPage.closeForgotPassword();
+		logger.info("Finishing forgot password test...");
+	}
+	
 
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
 		createAccountPage.quit();
+		myAccountPage.quit();
 	}
 }

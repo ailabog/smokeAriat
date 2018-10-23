@@ -125,11 +125,11 @@ public class WebDriverUtils {
 		logger.debug("Scrolling to element {}", locator.toString());
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", findElement(driver, locator));
 	}
-	
-public static void scrollElementToPosition(WebDriver driver, By locator) {
-	JavascriptExecutor jsExec = (JavascriptExecutor) driver;
-	jsExec.executeScript("javascript:window.scrollBy(250,350)");
-}
+
+	public static void scrollElementToPosition(WebDriver driver, By locator) {
+		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+		jsExec.executeScript("javascript:window.scrollBy(250,350)");
+	}
 
 	public static void moveToElement(WebDriver driver, By locator) {
 		logger.debug("Moves to element {}", locator);
@@ -143,6 +143,17 @@ public static void scrollElementToPosition(WebDriver driver, By locator) {
 	public static void load(WebDriver driver, String url) {
 		logger.debug("Loads url {}", url);
 		driver.get(url);
+	}
+	
+	public static void findText(WebDriver driver, String text) {
+		logger.debug("Finding the text {}", text);
+		driver.getPageSource().contains("text");
+	}
+	
+	public static void clearElement(WebDriver driver, By locator) {
+		logger.debug("Clear the text from this text area:");
+		WebElement element = findElement(driver, locator);
+		element.clear();
 	}
 
 	public static void disableCookie() {

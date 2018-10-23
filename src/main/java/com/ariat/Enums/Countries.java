@@ -9,7 +9,7 @@ public enum Countries {
 	
 	RO("Romania",              "RON",              "Romanian New leu"),
 	USA("United States",       "USD",              "US dollar"),
-	UK("United Kingdom",       "GBP",              "British pound"),
+	UK("English (United Kingdom)",       "GBP",              "British pound"),
 	BE("Belgium",              "EUR",              "EURO"),
 	BG("Bulgaria",             "BGN",              "Bulgarian leva"),
 	CA("Canada",               "CAD",              "Canadian dollar"),

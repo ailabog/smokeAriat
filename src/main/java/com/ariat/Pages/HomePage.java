@@ -5,11 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.ariat.Utils.WebDriverUtils;
 
 /**
- * This contains the Login page with all locators and methods associated
+ * This contains the Login page with all locators and methods associated and links to SignIn page and Logout page
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -24,13 +23,18 @@ public class HomePage extends BasePage {
 	private By closeLocationx = By.xpath("//*[@id=\"ext-gen44\"]/body/div[6]/div[1]/a/span");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
-	private By emailAddressTextBox = By.id("dwfrm_login_username_d0okqmfasagn");
+	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
+	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
+	private By newcustomerText = By.xpath("//*text()='New Customer']");
 	private By closeSubscription = By.xpath("//*[@id=\"ext-gen44\"]/body");
 	private By emailSubscriptionTextBox =By.id("subscriptionEmail");
 	private By firstNameSubscriptionTextBox = By.id("subscriptionName");
 	private By lastNameSubscriptionTextBox = By.id("subscriptionLastName");
 	private By SubscriptionSignUpButton = By.id("subscriptionSubmit");
-	private By account = By.id("");
+	private By saveAndContinueLocationButton = By.id("btnSaveContext");
+	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
+	
+	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -40,12 +44,22 @@ public class HomePage extends BasePage {
 		logger.info("Ariat Logo is being displayed");
 		WebDriverUtils.getElementText(driver, ariatLogo);
 	}
-
+	
+	public void chooseLocation() {
+		WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
+	}
+	
 	public HomePage UKlocation() {
 		logger.info("I choose UK as a location");
 		WebDriverUtils.clickOnElementWithWait(driver, ukLocation);
 		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
 		return new HomePage(driver);
+	}
+	
+	public void saveAndContinueLocation() {
+		logger.info("Saving location...");
+		WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+		
 	}
 
 	public HomePage USlocation() {
@@ -84,12 +98,11 @@ public class HomePage extends BasePage {
 	public SignInPage returnSignInPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, signIn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(emailAddressTextBox));
+				ExpectedConditions.invisibilityOfElementLocated(returningCustomerText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(checkOrderText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(newcustomerText));
 		return new SignInPage(driver);
-	}
-
-	public LogoutPage returnLogoutPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, account);
-		return new LogoutPage(driver);
 	}
 }

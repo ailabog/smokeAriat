@@ -11,12 +11,14 @@ import com.ariat.Pages.HomePage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test Home Page instantiates the browser and access the ariat environment and verifies ariat logo
+ * Test Home Page instantiates the browser and access the ariat environment and
+ * verifies ariat logo
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class HomeTest extends BaseTest{
+public class HomeTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
@@ -26,56 +28,39 @@ public class HomeTest extends BaseTest{
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	
 	@Test
-	public void setSubscription() {
+	public void UKlocationTest() {
+		logger.info("Starting the test for UK location:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.setSubscription();
-		//homePage.closeSubscription();
-		homePage.signUpSubscription();
-		//homePage.USlocation();
-		//homePage.closeLocation();
-		homePage.verifyLogo();
-	}
-	
-	@Test
-	public void UKlocation() {
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.setSubscription();
-		//homePage.closeSubscription();
 		homePage.signUpSubscription();
 		homePage.UKlocation();
-		//homePage.closeLocation();
+		homePage.saveAndContinueLocation();
 		homePage.verifyLogo();
+		logger.info("Finishing the test for UK location:");
 	}
-	
+
 	@Test
-	public void USlocation() {
+	public void closeSubscriptionTest() {
+		logger.info("Starting the testr for closing the subscription:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		//homePage.setSubscription();
-		//homePage.closeSubscription();
-		//homePage.signUpSubscription();
-		homePage.USlocation();
-		//homePage.closeLocation();
-		homePage.verifyLogo();
-	}
-	
-	@Test
-	public void homeTest() {
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		//homePage.setSubscription();
 		homePage.closeSubscription();
-		//homePage.signUpSubscription();
-		//homePage.USlocation();
-		//homePage.closeLocation();
-		//homePage.verifyLogo();
-	} 
-	
-	
+		logger.info("The subscription was close successfully!");
+	}
+
+	@Test
+	public void setSubscriptionTest() {
+		logger.info("Starting the signup subscription");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.setSubscription();
+		homePage.signUpSubscription();
+		homePage.verifyLogo();
+		logger.info("Subscription signup successfully!");
+	}
+
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();

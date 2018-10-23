@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ariat.Tests.CreateAcountTest">
+      <class name="com.ariat.Tests.MyAccountTest">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="createAccount"/>
+          <include name="myAccountTest"/>
         </methods>
-      </class> <!-- com.ariat.Tests.CreateAcountTest -->
+      </class> <!-- com.ariat.Tests.MyAccountTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

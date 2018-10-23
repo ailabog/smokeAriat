@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
- * This page is designed to logged the user from the account, store locator and logout method
+ * This page is designed to logged the user from the account
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -18,8 +18,8 @@ public class LogoutPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(LogoutPage.class);
 
-	private By logout = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
-
+	private By logout = By.xpath("//a[text()='Log out']");
+	
 	protected LogoutPage(WebDriver driver) {
 		super(driver);
 	}
@@ -29,5 +29,4 @@ public class LogoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, logout);
 		logger.info("I am succesfully logged out");
 	}
-
 }

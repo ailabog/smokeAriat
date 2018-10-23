@@ -8,7 +8,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  */
 
-public class GenerateRandomData {
+public class GenerateRandomDataUtils {
 
 	public static String generateRandomString(int length) {
 		return org.apache.commons.lang3.RandomStringUtils.randomAlphabetic(length);

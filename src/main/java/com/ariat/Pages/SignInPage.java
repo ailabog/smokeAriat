@@ -1,5 +1,7 @@
 package com.ariat.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 
 /**
@@ -18,11 +20,11 @@ import org.slf4j.LoggerFactory;
 import com.ariat.Utils.WebDriverUtils;
 
 public class SignInPage extends BasePage {
-	
-	private static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
 
+	public static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
+
+	private By addressEmailTextBox = By.xpath("//input[@placeholder='Email address']");
 	private By passwordTextBox = By.id("dwfrm_login_password");
-	private By addressEmailTextBox = By.id("dwfrm_login_username_d0okqmfasagn");
 	private By checkRememberMe = By.id("dwfrm_login_rememberme");
 	private By loginButton = By.name("dwfrm_login_login");
 	private By forgotPassword = By.id("password-reset");
@@ -35,84 +37,107 @@ public class SignInPage extends BasePage {
 	private By checkStatusButton = By.id("dwfrm_ordertrack_findorder");
 	private By createAccountButton = By.name("dwfrm_login_register");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
-
-	private static final String EMAIL = "aila.bogasieru@yahoo.com";
-	private static final String PASSWORD = "Parola12345";
-	private static final String ORDER_NO = "1234";
-	private static final String BILLING_CHECK = "026423";
+	private By myAccountText = By.className("account-overview__title ms-font--proxima_nova_semibold");
+	private By errorMessageText = By.xpath("//div[contains(@class,'error-form')]");
+	private By closeButton = By.className("close-button");
 
 	public SignInPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public void returningCustomer() {
-		logger.info("Entering information for an existing customer");
-		WebDriverUtils.enterTextBox(driver, addressEmailTextBox, EMAIL);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
-		WebDriverUtils.enterTextBox(driver, passwordTextBox, PASSWORD);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
+	public void returningCustomer(String email) {
+		logger.info("Entering information for an existing customer: email address", email);
+		WebDriverUtils.enterTextBox(driver, addressEmailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	}
+
+	public void returningPassword(String password) {
+		logger.info("Entering information for an existing customer: password", password);
+		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void loginClick() {
 		logger.info("Logging into your account...");
 		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void returningCustomerRememberMe() {
 		logger.info("Remeber me");
 		WebDriverUtils.clickOnElement(driver, checkRememberMe);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
-
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void forgotPasswordClick() {
 		logger.info("Forgot password");
 		WebDriverUtils.clickOnElementWithWait(driver, forgotPassword);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
-	public void forgotPasswordEmail() {
-		logger.info("This is my email:");
-		WebDriverUtils.enterTextBox(driver, emailAddressForgot, EMAIL);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
+	public void forgotPasswordEmail(String email) {
+		logger.info("This is my email for which I forgot my passowrd:", email);
+		WebDriverUtils.enterTextBox(driver, emailAddressForgot, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void ForgotPasswordSend() {
 		logger.info("Sending my email so the password is reset");
 		WebDriverUtils.clickOnElementWithWait(driver, sendForgotButton);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	}
+	
+	public void closeForgotPassword() {
+		logger.info("Closing the forgot password dialog");
+		WebDriverUtils.clickOnElementWithWait(driver, closeButton);
 	}
 
 	public void closeForgot() {
 		logger.info("Closing the forgot password modal");
 		WebDriverUtils.clickOnElementWithWait(driver, closeForgotButton);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
-	public void checkOrder() {
-		logger.info("Start entering information to check order");
-		WebDriverUtils.enterTextBox(driver, checkOrderTextBox, ORDER_NO);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, emailAddressCheckOrderTextBox, EMAIL);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, billingCheckOrderTextBoxTextBox, BILLING_CHECK);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS);
+	public void checkOrder(String orderNo, String email, String billing) {
+		logger.info("Start entering information to check order", email, billing);
+		WebDriverUtils.enterTextBox(driver, checkOrderTextBox, orderNo);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, emailAddressCheckOrderTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, billingCheckOrderTextBoxTextBox, billing);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void checkStatusClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
 		logger.info("Checking the order status");
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	}
+	
+	public void assertErrorMessage(String messageExpectedLabel) {
+		String message = WebDriverUtils.getElementText(driver, errorMessageText);
+		assertEquals(message, messageExpectedLabel, "Error! Error message displayed is not correct");
+	}
+	
+	public void assertMsg(String actualText, String messageExpected) {
+		WebDriverUtils.findText(driver, actualText);
+		assertEquals(actualText, messageExpected, "Message displayed is correct");
+		
 	}
 
 	public CreateAccountPage returnCreateAccountPage() {
-		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
-		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-			ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
+				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
 		return new CreateAccountPage(driver);
 	}
 
+	public MyAccountPage returnMyAccountPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
+		return new MyAccountPage(driver);
+	}
 }
