@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+ <suite name="personalInformationTest">
+  
+     <test name="personalInformationTest>
+             <classes>
+                 <class name="com.ariat.Tests.PersonalInformationTest/>
+                </classes>
+      </test>
+   </suite>

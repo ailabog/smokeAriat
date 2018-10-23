@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+ <suite name="createAccountTest">
+  
+     <test name="createAccountTest>
+             <classes>
+                 <class name="com.ariat.Tests.CreateAccountTest/>
+                </classes>
+      </test>
+   </suite>

@@ -1,6 +1,7 @@
 package com.ariat.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -12,12 +13,12 @@ import com.ariat.Pages.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 public class LogoutTest extends BaseTest {
-	
+
 	private Environments environment;
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	
+
 	private static final String EMAIL = "aila.bogasieru@gmail.com";
 	private static final String PASSWORD = "Parola12345!";
 
@@ -38,5 +39,13 @@ public class LogoutTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logout();
 		logger.info("I was succesfully logged out from the application!");
-			}
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		homePage.quit();
+		signInPage.quit();
+		myAccountPage.quit();
+	}
+
 }
