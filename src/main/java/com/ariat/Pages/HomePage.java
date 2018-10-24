@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.ariat.Enums.Countries;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -33,8 +35,8 @@ public class HomePage extends BasePage {
 	private By SubscriptionSignUpButton = By.id("subscriptionSubmit");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
-	
-	
+	private By listCountries = By.className("chooserDropdown country");		
+	private Countries country;
 
 	public HomePage(WebDriver driver) {
 		super(driver);

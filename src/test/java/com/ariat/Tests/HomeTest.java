@@ -35,6 +35,7 @@ public class HomeTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.setSubscription();
 		homePage.signUpSubscription();
+		homePage.chooseLocation();
 		homePage.UKlocation();
 		homePage.saveAndContinueLocation();
 		homePage.verifyLogo();
@@ -43,7 +44,7 @@ public class HomeTest extends BaseTest {
 
 	@Test
 	public void closeSubscriptionTest() {
-		logger.info("Starting the testr for closing the subscription:");
+		logger.info("Starting the test for closing the subscription:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
