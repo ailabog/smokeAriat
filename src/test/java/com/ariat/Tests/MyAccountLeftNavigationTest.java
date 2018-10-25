@@ -12,7 +12,14 @@ import com.ariat.Pages.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-public class MyAccountTest extends BaseTest {
+/**
+ * Include tests for My account left navigation
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+public class MyAccountLeftNavigationTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
@@ -27,6 +34,7 @@ public class MyAccountTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
+
 	@Test(priority = 0)
 	public void myAccountAccessPersonalInfoTest() {
 		logger.info("Starting personal info test...");
@@ -38,11 +46,8 @@ public class MyAccountTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnPersonalInfoPage();
+		myAccountPage.returnEditProfilePageLeftNav();
 		// do something - if I want
-		myAccountPage.myAccountClick();
-		myAccountPage.returnPersonalInfoPageChangePass();
-		// do something - If I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing personal info test...");
@@ -59,7 +64,7 @@ public class MyAccountTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnEmailPreferencePageEdit();
+		myAccountPage.returnEmailPreferencePageLeftNav();
 		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
@@ -77,12 +82,8 @@ public class MyAccountTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnAddressesPageEdit();
+		myAccountPage.returnAddressesPageLeftNav();
 		// TO DO implementation for AddressesPage
-		myAccountPage.myAccountClick();
-		myAccountPage.returnAddAddressesPage();
-		// TO DO implementation for AddAddressPage
-		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing addresses test...");
@@ -99,10 +100,10 @@ public class MyAccountTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnPaymentInformationPageEdit();
+		myAccountPage.returnPaymentInformationPageLeftNav();
 		// TO DO implementation for PaymentInformationPage
 		myAccountPage.myAccountClick();
-		myAccountPage.returnAddACreditCard();
+		myAccountPage.returnAddACreditCardMiddleNav();
 		// TO DO implementation for AddACreditCardPage
 		// do something - if I want
 		myAccountPage.myAccountClick();
@@ -121,7 +122,7 @@ public class MyAccountTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyOrdersPageViewAll();
+		myAccountPage.returnMyOrdersPageLeftNav();
 		// TO DO implementation for MyOrdersPage
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
@@ -139,12 +140,12 @@ public class MyAccountTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyWishListPageViewAll();
+		myAccountPage.returnMyWishListPageLeftNav();
 		// TO DO implementation for WishListPage
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing wish list test...");
-	}
+	} 
 
 	@AfterMethod
 	public void tearDown() {

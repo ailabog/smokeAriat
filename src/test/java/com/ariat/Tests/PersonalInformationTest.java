@@ -42,7 +42,7 @@ public class PersonalInformationTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		personalInformationPage = myAccountPage.returnEditProfilePage();
+		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();
 		personalInformationPage.clearEmail();
 		personalInformationPage.enterEmail(NEW_EMAIL);
 		personalInformationPage.confirmEmail(NEW_EMAIL);
@@ -63,7 +63,7 @@ public class PersonalInformationTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		personalInformationPage = myAccountPage.returnEditProfilePage();
+		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();
 		personalInformationPage.unsubscribeClick();
 		logger.info("Unsubscribing from Ariat email list ended...");
 	}
