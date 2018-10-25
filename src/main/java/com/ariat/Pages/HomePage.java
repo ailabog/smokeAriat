@@ -21,14 +21,14 @@ public class HomePage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(HomePage.class);
 	
    	private By ukLocation = By.xpath("//img[contains(@src, 'GB.gif')]");
-	private By usaLocation = By.xpath("//img[contains(@src, 'US.gif')]");
+	private By usLocation = By.xpath("//img[contains(@src, 'US.gif')]");
 	private By closeLocationx = By.xpath("//*[@id=\"ext-gen44\"]/body/div[6]/div[1]/a/span");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
 	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
-	private By closeSubscription = By.xpath("//*[@id=\"ext-gen44\"]/body");
+	private By closeSubscription = By.xpath("//*[@id=\"subscriptionPopup\"]/div[1]/div[2]/a/span");
 	private By emailSubscriptionTextBox =By.id("subscriptionEmail");
 	private By firstNameSubscriptionTextBox = By.id("subscriptionName");
 	private By lastNameSubscriptionTextBox = By.id("subscriptionLastName");
@@ -47,10 +47,6 @@ public class HomePage extends BasePage {
 		WebDriverUtils.getElementText(driver, ariatLogo);
 	}
 	
-	public void chooseLocation() {
-		WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
-	}
-	
 	public HomePage UKlocation() {
 		logger.info("I choose UK as a location");
 		WebDriverUtils.clickOnElementWithWait(driver, ukLocation);
@@ -66,7 +62,7 @@ public class HomePage extends BasePage {
 
 	public HomePage USlocation() {
 		logger.info("I choose US as a location");
-		WebDriverUtils.clickOnElementWithWait(driver, usaLocation);
+		WebDriverUtils.clickOnElementWithWait(driver, usLocation);
 		WebDriverUtils.explicitWait(driver,  WebDriverUtils.WAIT_2000_SECONDS );
 		return new HomePage(driver);
 	}
@@ -80,6 +76,12 @@ public class HomePage extends BasePage {
 	public void closeSubscription() {
 		logger.info("Closing the subscription..");
 		WebDriverUtils.clickOnElementWithWait(driver, closeSubscription);
+	}
+	
+	public void chooseLocation() {
+		
+		
+		
 	}
 	
 	public void setSubscription() {

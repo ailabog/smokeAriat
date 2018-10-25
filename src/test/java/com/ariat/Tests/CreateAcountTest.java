@@ -53,6 +53,7 @@ public class CreateAcountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -76,6 +77,7 @@ public class CreateAcountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -90,6 +92,7 @@ public class CreateAcountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		signInPage.assertMsg(ERROR_MESSAGE, ERROR_MESSAGE );
@@ -102,6 +105,7 @@ public class CreateAcountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.forgotPasswordClick();
 		signInPage.forgotPasswordEmail(EMAIL);

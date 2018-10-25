@@ -35,7 +35,6 @@ public class HomeTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.setSubscription();
 		homePage.signUpSubscription();
-		homePage.chooseLocation();
 		homePage.UKlocation();
 		homePage.saveAndContinueLocation();
 		homePage.verifyLogo();
@@ -60,7 +59,7 @@ public class HomeTest extends BaseTest {
 		homePage.signUpSubscription();
 		homePage.verifyLogo();
 		logger.info("Subscription signup successfully!");
-	}
+	} 
 
 	@AfterMethod
 	public void tearDown() {

@@ -37,6 +37,7 @@ public class PersonalInformationTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -57,6 +58,7 @@ public class PersonalInformationTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -73,5 +75,4 @@ public class PersonalInformationTest extends BaseTest {
 		myAccountPage.quit();
 		personalInformationPage.quit();
 	}
-
 }

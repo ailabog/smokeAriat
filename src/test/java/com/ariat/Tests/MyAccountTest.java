@@ -33,6 +33,7 @@ public class MyAccountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -53,6 +54,7 @@ public class MyAccountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -70,6 +72,7 @@ public class MyAccountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -91,6 +94,7 @@ public class MyAccountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -112,6 +116,7 @@ public class MyAccountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -129,6 +134,7 @@ public class MyAccountTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
