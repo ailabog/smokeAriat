@@ -39,6 +39,10 @@ public class MyAccountPage extends BasePage {
 	private By myOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[6]/a");
 	private By noOrdersText = By.className("//*contains[text(), We have no order records for this account.']");
 	private By yesOrdersText = By.xpath("//*contains[text(),'My orders']");
+	
+	private By orderStatusLink = By.xpath("//a[text()='Order status']");
+	private By orderDetailsLink = By.xpath("//a[text()='Order details']");
+	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
@@ -140,6 +144,21 @@ public class MyAccountPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS, 
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
+	}
+		
+		public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
+			WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+					ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS, 
+					ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
+			return new MyOrdersPage(driver);
+	}
+		public OrderDetailsPage returnOrderDetailsPagesMiddleNav() {
+			WebDriverUtils.clickOnElementWithWait(driver, orderDetailsLink);
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+					ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
+		return new OrderDetailsPage(driver);
 	}
 
 	public MyWishListPage returnMyWishListPageViewAllMiddleNav() {
