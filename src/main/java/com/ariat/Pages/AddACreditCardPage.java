@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.ariat.Enums.CardMethod;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -22,7 +20,7 @@ public class AddACreditCardPage extends BasePage {
 
 	private By cardNickNameTextBox = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_nickname");
 	private By nameOnTheCardTextBox = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_owner");
-	private By typeCardSelect = By.name("Card Type");
+	private By typeCardSelect = By.xpath("//*[@id=\"c-ct\"]");
 	private By cardNoTextBox = By.id("c-cardnumber");
 	private By expirationMonthSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_month");
 	private By expirationYearSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_year");
@@ -43,14 +41,14 @@ public class AddACreditCardPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, nameOnTheCardTextBox, cardOwner);
 	}
 
-	public void selectTypeCard(CardMethod typeCard) {
+	public void selectTypeCard(String type) {
 		logger.info("Selecting the type of the card...");
-		WebDriverUtils.selectDropDown(driver, typeCardSelect, typeCard.getName());
+		WebDriverUtils.selectDropDown(driver, typeCardSelect, type);
 	}
 
-	public void enterCardNo(CardMethod typeCard) {
+	public void enterCardNo(String number) {
 		logger.info("Selecting the type of the card...");
-		WebDriverUtils.enterTextBox(driver, cardNoTextBox, typeCard.getNumber());
+		WebDriverUtils.enterTextBox(driver, cardNoTextBox, number);
 	}
 
 	public void selectExpirationMonthCard(String month) {

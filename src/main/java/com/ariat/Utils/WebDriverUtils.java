@@ -39,6 +39,7 @@ public class WebDriverUtils {
 	public final static long WAIT_10_SECONDS = 10;
 	public final static long WAIT_5_SECONDS = 5;
 	public final static long WAIT_2000_SECONDS = 2000;
+	public final static long WAIT_4000_SECONDS = 4000;
 
 	public static void enterTextBox(WebDriver driver, By locator, String text) throws TimeoutException {
 		String s = "";

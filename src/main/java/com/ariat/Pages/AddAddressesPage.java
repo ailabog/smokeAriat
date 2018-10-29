@@ -28,9 +28,10 @@ public class AddAddressesPage extends BasePage {
 	private By postCodeTextBox = By.id("dwfrm_profile_address_zip");
 	private By phoneTextBox = By.id("dwfrm_profile_address_phone");
 	private By addressIdTextBox = By.id("dwfrm_profile_address_addressid");
-	private By saveAddressButton = By.xpath("//button[text(),'Save address']");
+	private By saveAddressButton = By.name("dwfrm_profile_address_create");
 	private By cancelAddressButton = By.name("dwfrm_profile_address_cancel");
-	private By deleteAddressButton = By.xpath("//button[text()='Delete']");
+	private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
+	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 
@@ -63,7 +64,7 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, cityTextBox, city);
 	}
 
-	public void enterCountry(String country) {
+	public void selectCountry(String country) {
 		logger.info("Entering country: ");
 		WebDriverUtils.selectDropDown(driver, countryTextBox, country);
 	}
@@ -82,10 +83,20 @@ public class AddAddressesPage extends BasePage {
 		logger.info("Entering poste code: ");
 		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
 	}
-
+	
+	public void clearAddressId() {
+		logger.info("Clearing text box Address Id:");
+		WebDriverUtils.clearElement(driver, addressIdTextBox);
+	}
+	
 	public void saveAddress() {
 		logger.info("Saving this address: ");
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
+	}
+	
+	public void editAddress() {
+		logger.info("Editing this address: ");
+		WebDriverUtils.clickOnElementWithWait(driver, editAddressButton);
 	}
 
 	public void cancelAddress() {
@@ -97,6 +108,8 @@ public class AddAddressesPage extends BasePage {
 		logger.info("Deleteing this address ");
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 	}
+	
+	
 
 	public AddressesPage returnAddressesPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
