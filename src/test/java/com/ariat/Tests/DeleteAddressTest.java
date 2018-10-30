@@ -94,5 +94,4 @@ public class DeleteAddressTest extends BaseTest {
 		addAddressPage.quit();
 		logoutPage.quit();
 	}
-/*asdjsahdfsakdhkasdkasd*/
 }
