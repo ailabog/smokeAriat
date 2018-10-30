@@ -1,7 +1,7 @@
 package com.ariat.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
@@ -95,6 +95,7 @@ public class CreateAcountTest extends BaseTest {
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
+		signInPage.checkStatusClick();
 		signInPage.assertMsg(ERROR_MESSAGE, ERROR_MESSAGE );
 		logger.info("Finishing checking order test...");
 	}
@@ -115,7 +116,7 @@ public class CreateAcountTest extends BaseTest {
 	}
 	
 
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
