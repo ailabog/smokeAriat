@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="editAddressTest" verbose="1">
+
+	<test name="editAddressTest" >
+       <classes>
+                <class name="com.ariat.Tests.EditAddressTest" />
+               
+       </classes>
+     </test>
+</suite>
