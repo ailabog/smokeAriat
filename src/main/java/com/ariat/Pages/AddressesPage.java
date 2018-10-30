@@ -34,6 +34,7 @@ public class AddressesPage extends BasePage {
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
     private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
     WebElement addressesTable = driver.findElement(By.id("addresses"));
+     
 
 	private boolean checkAddress;
 
@@ -83,66 +84,9 @@ public class AddressesPage extends BasePage {
 			return checkAddress;
 	}
 	
-	public void editAddressCreated(String addressValue) {
-		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
-		    for (WebElement row : rows) {
-		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
-		        for (WebElement cell : cells) {
-				while (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, editLink) != null){
-						WebDriverUtils.clickOnElementWithWait(driver, editLink);
-						logger.info("Edit the {}" + addressValue + "was done with success");
 		
-					} else {
-						
-						logger.info("The editing action was not possible");
-					}
-				}
-		    }
-		}
-	}
-	
-	
-	public void deleteAddressCreated(String addressValue) {
-		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
-		    for (WebElement row : rows) {
-		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
-		        for (WebElement cell : cells) {
-				while (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
-						logger.info("Deleting of the {}" + addressValue + "was made with success");
-						
-
-					} else {
-						logger.info("The address was not deleted");
-					}
-				}
-		    }
-		}
-	}
-	
-	public void makeDefaultAddressCreated(String addressValue) {
-		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
-		    for (WebElement row : rows) {
-		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
-		        for (WebElement cell : cells) {
-				while (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
-						logger.info("Make default of {}" + addressValue + "is done");
-						
-
-					} else {
-						logger.info("The address was not made as default");
-					}
-				}
-		    }
-		}
-	}
-	
 	public void addAddress() {
-		logger.info("Addingnew address...");
+		logger.info("Adding new address...");
 		WebDriverUtils.scrolltoElement(driver, AddAddressButton);
 		WebDriverUtils.clickOnElementWithWait(driver, AddAddressButton);
 
