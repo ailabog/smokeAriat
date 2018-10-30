@@ -1,10 +1,7 @@
 package com.ariat.Pages;
 
-
-
 import java.util.ArrayList;
 import org.openqa.selenium.By;
-
 
 /**
  * Contains Addresses page utility with locators, methods and links with pages: Add Address page
@@ -32,9 +29,9 @@ public class AddressesPage extends BasePage {
 	private By deleteButton = By.name("dwfrm_profile_address_remove");
 	private By cancelButtonDialog = By.xpath("//span[text()='Cancel']");
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
-    private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
-    WebElement addressesTable = driver.findElement(By.id("addresses"));
-     
+	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
+	WebElement addressesTable = driver.findElement(By.id("addresses"));
+	private By loadMoreButton = By.xpath("//*[@id=\"addresses\"]/div[67]/button");
 
 	private boolean checkAddress;
 
@@ -47,12 +44,13 @@ public class AddressesPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, deleteButton);
 
 	}
-	
+
 	public void clickDeleteYes() {
 		logger.info("Deleting the address...");
 		WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
 
 	}
+
 	public void clickDeleteNo() {
 		logger.info("Canceling delete the address...");
 		WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialog);
@@ -64,10 +62,10 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
-		    for (WebElement row : rows) {
-		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
-		        for (WebElement cell : cells) {
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
+			for (WebElement cell : cells) {
 				while (cell.getText() == addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null
 							&& WebDriverUtils.findElement(driver, deleteLink) != null) {
@@ -79,12 +77,21 @@ public class AddressesPage extends BasePage {
 						logger.info("Something went wrong");
 					}
 				}
-		    }
+			}
 		}
-			return checkAddress;
+		return checkAddress;
 	}
-	
-		
+
+	public void loadMoreAddesses() {
+		do {
+			logger.info("Loading more addresses...");
+			WebDriverUtils.scrollDown(driver, loadMoreButton);
+			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} while (WebDriverUtils.findElement(driver, loadMoreButton) != null);
+		WebDriverUtils.scrollUp(driver, addressesText);
+	}
+
 	public void addAddress() {
 		logger.info("Adding new address...");
 		WebDriverUtils.scrolltoElement(driver, AddAddressButton);
