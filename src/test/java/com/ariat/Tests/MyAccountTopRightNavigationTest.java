@@ -1,8 +1,8 @@
 package com.ariat.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.ariat.Enums.Environments;
@@ -29,7 +29,7 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 	public static final String EMAIL = "aila.bogasieru@gmail.com";
 	public static final String PASSWORD = "Parola12345!";
 
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
 	}
@@ -46,7 +46,6 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInformationPageTopNav();
-		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing personal info test...");
@@ -64,7 +63,6 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageTopNav();
-		// TO DO implementation for MyOrdersPage
 		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing orders test...");
@@ -82,13 +80,12 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnWishListPageTopNav();
-		// TO DO implementation for WishListPage
 		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing wish list test...");
 	}
 
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();

@@ -1,8 +1,8 @@
 package com.ariat.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.ariat.Enums.Environments;
@@ -29,7 +29,7 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 	public static final String EMAIL = "aila.bogasieru@gmail.com";
 	public static final String PASSWORD = "Parola12345!";
 
-	@BeforeMethod
+	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
 	}
@@ -47,10 +47,8 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInfoPageMiddleNav();
-		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.returnPersonalInfoPageChangePassMiddleNav();
-		// do something - If I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing personal info test...");
@@ -68,7 +66,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEmailPreferencePageMiddleNav();
-		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing email preferences test...");
@@ -86,11 +83,8 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageMiddleNav();
-		// TO DO implementation for AddressesPage
 		myAccountPage.myAccountClick();
 		myAccountPage.returnAddAddressesPageMiddleNav();
-		// TO DO implementation for AddAddressPage
-		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing addresses test...");
@@ -108,11 +102,8 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageMiddleNav();
-		// TO DO implementation for PaymentInformationPage
 		myAccountPage.myAccountClick();
 		myAccountPage.returnAddACreditCardMiddleNav();
-		// TO DO implementation for AddACreditCardPage
-		// do something - if I want
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing payment info test...");
@@ -130,7 +121,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageViewAllMiddleNav();
-		// TO DO implementation for MyOrdersPage
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing orders test...");
@@ -148,13 +138,12 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyWishListPageViewAllMiddleNav();
-		// TO DO implementation for WishListPage
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
 		logger.info("Finishing wish list test...");
 	}
 
-	@AfterMethod
+	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();

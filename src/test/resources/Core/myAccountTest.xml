@@ -6,7 +6,7 @@
        <classes>
                  <class name="com.ariat.Tests.MyAccountLeftNavigationTest" />
                  <class name="com.ariat.Tests.MyAccountMiddleNavigationTest" />
-                 <class name="com.ariat.Tests.MyAccountRightNavigationTest" />
+                 <class name="com.ariat.Tests.MyAccountTopRightNavigationTest" />
        </classes>
      </test>
 </suite>
