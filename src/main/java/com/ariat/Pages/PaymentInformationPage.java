@@ -14,8 +14,8 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class PaymentInformationPage extends BasePage{
 	
-	private By addACreditCardButton = By.xpath("//a[text()='Add a credit card']");
-	private By addAcReditCardText = By.xpath("//*contains[text(), 'Add a credit card']");
+	private By addACreditCardButton = By.xpath("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/a");
+	private By addACreditCardText = By.xpath("//*contains[text(), 'Add a credit card']");
 
 	protected PaymentInformationPage(WebDriver driver) {
 		super(driver);
@@ -26,7 +26,7 @@ public class PaymentInformationPage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addAcReditCardText));
+				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
 }

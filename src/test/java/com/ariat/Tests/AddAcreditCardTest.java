@@ -10,6 +10,7 @@ import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
+import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -22,6 +23,7 @@ public class AddAcreditCardTest extends BaseTest{
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
 	private LogoutPage logoutPage;
+	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private ListOfCreditCards typeCard;
 	
@@ -60,6 +62,32 @@ public class AddAcreditCardTest extends BaseTest{
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing add a credit card test");
+  } 
+	
+	@Test(priority = 1)
+	public void addCreditCardFromPaymentInfoTest() {
+		logger.info("Starting add credit card from Payment Info test");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.closeSubscription();
+		homePage.UKlocation();
+		signInPage = homePage.returnSignInPage();
+		signInPage.returningCustomer(EMAIL);
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
+		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
+		addACreditCardPage.enterCardId(CARD_ID);
+		addACreditCardPage.enterCardOwner(CARD_OWNER);
+		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		addACreditCardPage.selectExpirationYearCard(YEAR);
+		addACreditCardPage.selectExpirationMonthCard(MONTH);
+		addACreditCardPage.applyCardCreation();
+		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		logoutPage.logout();
+		logger.info("Finishing add credit card from Payment info test");
 		
   }
 	@AfterTest
@@ -68,7 +96,7 @@ public class AddAcreditCardTest extends BaseTest{
 		signInPage.quit();
 		myAccountPage.quit();
 		addACreditCardPage.quit();
+		paymentInfoPage.quit();
 		logoutPage.quit();
 	}
-	
 }
