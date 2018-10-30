@@ -34,7 +34,7 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
-	private By makeDefaultAddressLink = By.xpath("//*[@id=\"addresses\"]/div[3]/div[2]/div[2]/div/a/u");
+	
 
 	private boolean checkAddress;
 
@@ -85,19 +85,42 @@ public class AddressesPage extends BasePage {
 		return checkAddress;
 	}
 
-	public void makeDefaultAddressCreated(String addressValue) {
+	public void deleteAddressCreated(String addressValue) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
 			for (WebElement cell : cells) {
 				if (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, makeDefaultAddressLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultAddressLink);
-						logger.info("Make default {}" + addressValue + "was done with success");
+					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
+						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
+						logger.info("Delete {}" + addressValue + "was done with success");
 
 					} else {
 
-						logger.info("Make default {}" + addressValue + "was not possible");
+						logger.info("Delete {}" + addressValue + "was not possible");
+					}
+				} else {
+					logger.info("Address {}"+ addressValue + "was not found");
+				}
+			}
+		}
+	}
+	
+	public void deleteAddressCreatedNo(String addressValue) {
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
+			for (WebElement cell : cells) {
+				if (cell.getText() == addressValue) {
+					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
+						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialog);
+						logger.info("Delete {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Delete {}" + addressValue + "was not possible");
 					}
 				} else {
 					logger.info("Address {}"+ addressValue + "was not found");

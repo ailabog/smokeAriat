@@ -130,4 +130,12 @@ public class AddAddressesPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddressesPage(driver);
 	}
+	
+	public AddressesPage returnAddressesFromEditDeletePage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
+	}
 }
