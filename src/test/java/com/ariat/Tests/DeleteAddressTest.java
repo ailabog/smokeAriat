@@ -79,7 +79,7 @@ public class DeleteAddressTest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.deleteAddress();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		addressesPage.checkAddress("7M4I6");
+		addressesPage.checkAddress("C0RTX");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing deleting address test");
