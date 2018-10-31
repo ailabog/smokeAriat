@@ -50,8 +50,8 @@ public class MakeDefaultAddressTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("7EICW");
-		addressesPage.assertMakeDefault("DEFAULT | 7EICW");
+		addressesPage.makeDefaultAddressCreated("BO4CF");
+		addressesPage.assertMakeDefault("DEFAULT | BO4CF");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing make default address test");
