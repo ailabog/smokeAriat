@@ -76,9 +76,14 @@ public class MyAccountPage extends BasePage {
 		super(driver);
 	}
 
-	public void logout() {
+	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
 		WebDriverUtils.clickOnElementWithWait(driver, logout);
+	}
+	
+	public void logoutTop() {
+		logger.info("Logging out from the application:");
+		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
 	}
 	
 	public void myAccountClick() {

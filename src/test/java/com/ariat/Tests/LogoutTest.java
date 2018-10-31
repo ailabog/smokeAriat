@@ -28,16 +28,32 @@ public class LogoutTest extends BaseTest {
 	}
 
 	@Test
-	public void logoutTest() {
+	public void logoutFromMyAccountMiddleTest() {
 		logger.info("Starting the logout test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.closeSubscription();
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logout();
+		myAccountPage.logoutMiddle();
+		logger.info("I was succesfully logged out from the application!");
+	}
+	
+	@Test
+	public void logoutFromMyAccountTopTest() {
+		logger.info("Starting the logout test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.closeSubscription();
+		homePage.UKlocation();
+		signInPage = homePage.returnSignInPage();
+		signInPage.returningCustomer(EMAIL);
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("I was succesfully logged out from the application!");
 	}
 
