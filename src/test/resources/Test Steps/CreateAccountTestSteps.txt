@@ -1,3 +1,5 @@
+*************************** Create account test ******************************************
+
 Create account test1: create Account
 1. Access environment ariat development
 2. Close subscription (x)
