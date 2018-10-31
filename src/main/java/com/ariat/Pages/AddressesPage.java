@@ -31,7 +31,7 @@ public class AddressesPage extends BasePage {
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
-	private By loadMoreButton = By.xpath("//*[@id=\"addresses\"]/div[67]/button");
+	private By loadMoreButton = By.xpath("//button[text()='Load More']");
 
 	private boolean checkAddress;
 
