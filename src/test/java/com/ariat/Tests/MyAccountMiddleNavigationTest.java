@@ -33,7 +33,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
 	}
-//Tests for My account core
 
 	@Test(priority = 0)
 	public void myAccountAccessPersonalInfoTest() {
