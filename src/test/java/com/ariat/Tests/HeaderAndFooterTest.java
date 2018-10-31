@@ -20,7 +20,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class HomeTest extends BaseTest {
+public class HeaderAndFooterTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
