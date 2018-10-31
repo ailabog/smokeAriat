@@ -50,13 +50,13 @@ public class EditAddressTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.editAddressCreated("7EICW");
+		addressesPage.editAddressCreated("B1TGL");
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
-		addAddressPage.enterAddressId("7EICW1");
+		addAddressPage.enterAddressId("B1TGL1");
 		addAddressPage.saveAddressEdit();
 		addressesPage = addAddressPage.returnAddressesFromEditPage();
-		addressesPage.checkAddress("7EICW1");
+		addressesPage.checkAddress("B1TGL1");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing edit address test");
