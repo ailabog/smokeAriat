@@ -8,7 +8,8 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
-import com.ariat.Pages.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -21,12 +22,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class HeaderAndFooterUSTest extends BaseTest {
+public class HeaderAndFooterUSTest extends BaseTest{
 
 	private Environments environment;
+	private HomePageUS homePageUS;
 	private HomePage homePage;
 	private GlobalCountries country;
-	private EUCountries euCountry;
+
 
 	@BeforeTest
 	public void setUp() {
@@ -38,23 +40,23 @@ public class HeaderAndFooterUSTest extends BaseTest {
 		logger.info("Starting the check for Header elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		//homePage.closeSubscription();
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
-		homePage.checkElementsHeader();
+		homePage.closeLocation();
+		homePageUS = homePage.returnHomePageUS(country.USA);
+		homePageUS.checkElementsHeader();
 		logger.info("Finishing the check for Header elements:");
 	}
 	
-/*	@Test(priority=1)
+	@Test(priority=1)
 	public void USFooter() {
-		logger.info("Starting the check for Footer elements:");
+		logger.info("Starting the check for Header elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
-		homePage.checkElementsFooter();
+		homePage.closeLocation();
+		homePageUS = homePage.returnHomePageUS(country.USA);
+		homePageUS.checkElementsFooter();
 		logger.info("Finishing the check for Footer elements:");
 	}
-*/
+
 
 	@AfterTest
 	public void tearDown() {
