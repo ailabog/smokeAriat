@@ -43,7 +43,6 @@ public class LoadMoreAddressTest extends BaseTest {
 		logger.info("Starting load more addresses test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -56,12 +55,11 @@ public class LoadMoreAddressTest extends BaseTest {
 		logger.info("Finishing load more addresses test");
 	}
 	
-	@Test(priority = 0)
+	@Test(priority = 1)
 	public void loadMoreAddressesLeftNavigationTest() {
 		logger.info("Starting load more addresses left navigation test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
