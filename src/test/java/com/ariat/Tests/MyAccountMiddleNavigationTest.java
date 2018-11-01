@@ -39,8 +39,7 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		logger.info("Starting personal info test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
-		homePage.UKlocation();
+    	homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -58,7 +57,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		logger.info("Starting email preferences test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -75,7 +73,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		logger.info("Starting addresses test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -94,7 +91,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		logger.info("Starting payment info test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -113,7 +109,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		logger.info("Starting orders test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -130,7 +125,6 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		logger.info("Starting wish list test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
