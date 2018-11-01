@@ -20,7 +20,6 @@ public class MakeDefaultAddressTest extends BaseTest {
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private LogoutPage logoutPage;
 	private Environments environment;
@@ -38,12 +37,11 @@ public class MakeDefaultAddressTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	@Test
 	public void editAddressTest() {
 		logger.info("Starting make default address test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
