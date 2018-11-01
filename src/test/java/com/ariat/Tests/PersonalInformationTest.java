@@ -22,7 +22,7 @@ public class PersonalInformationTest extends BaseTest {
 	private PersonalnformationPage personalInformationPage;
 	
 
-	private static final String EMAIL = "aila.bogasieru@gmail.com";
+	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
 	private static final String NEW_EMAIL = "aila.bogasieru@yahoo.com";
 
@@ -36,7 +36,6 @@ public class PersonalInformationTest extends BaseTest {
 		logger.info("Starting update personal information test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -52,22 +51,6 @@ public class PersonalInformationTest extends BaseTest {
 		logger.info("Update personal information test ended...");
 	}
 	
-	@Test
-	public void unsubscribePersonalInformationTest() {
-		logger.info("Starting unsubscribe from Ariat email list...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();
-		personalInformationPage.unsubscribeClick();
-		logger.info("Unsubscribing from Ariat email list ended...");
-	}
-
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
