@@ -44,7 +44,6 @@ public class AddAcreditCardTest extends BaseTest{
 		logger.info("Starting add a credit card test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
@@ -69,7 +68,6 @@ public class AddAcreditCardTest extends BaseTest{
 		logger.info("Starting add credit card from Payment Info test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
