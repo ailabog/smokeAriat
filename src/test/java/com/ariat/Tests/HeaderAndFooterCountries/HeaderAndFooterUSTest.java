@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.HeaderAndFooterCountries;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -20,7 +21,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class HeaderAndFooterTest extends BaseTest {
+public class HeaderAndFooterUSTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
@@ -37,13 +38,13 @@ public class HeaderAndFooterTest extends BaseTest {
 		logger.info("Starting the check for Header elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
+		//homePage.closeSubscription();
 		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
 		homePage.checkElementsHeader();
 		logger.info("Finishing the check for Header elements:");
 	}
 	
-	@Test(priority=1)
+/*	@Test(priority=1)
 	public void USFooter() {
 		logger.info("Starting the check for Footer elements:");
 		homePage = new HomePage(new ChromeDriver());
@@ -53,7 +54,7 @@ public class HeaderAndFooterTest extends BaseTest {
 		homePage.checkElementsFooter();
 		logger.info("Finishing the check for Footer elements:");
 	}
-
+*/
 
 	@AfterTest
 	public void tearDown() {
