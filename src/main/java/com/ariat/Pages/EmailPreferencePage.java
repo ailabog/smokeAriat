@@ -23,9 +23,7 @@ public class EmailPreferencePage extends BasePage {
 	private By savePreferencesButton = By.name("ctl00$cphContent$submitButton");
 	private By unsubscribeTextBox = By.id("ctl00_cphContent_txtUnsubEmail");
 	private By unsubscribeMeButton = By.id("ctl00_cphContent_unsubscribeButton");
-	private By goBackButton = By.xpath("//*[@id=\"container\"]/div[2]/div/a[1]");
-	private By goShoppingButton = By.xpath("//*[@id=\"container\"]/div[2]/div/a[2]");
-
+	
 	private By femaleCheck = By.id("female");
 	private By maleCheck = By.name("Male");
 	private By westernCheck = By.name("Western");
@@ -35,6 +33,7 @@ public class EmailPreferencePage extends BasePage {
 	private By apparelCheck = By.name("Apparel");
 	private By accessoriesCheck = By.name("Accessories");
 	private By saveEditsButton = By.xpath("//a[text()='Save edits']");
+	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 
 	protected EmailPreferencePage(WebDriver driver) {
 		super(driver);
@@ -89,14 +88,13 @@ public class EmailPreferencePage extends BasePage {
 	public void unsubscribeClick() {
 		WebDriverUtils.clickOnElement(driver, unsubscribeMeButton);
 	}
-
-	public EmailPreferencesInfoPage returnEmailPreferencesInfoPage() {
+	public MyAccountPage returnMyAccountPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(goBackButton));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(goShoppingButton));
-		return new EmailPreferencesInfoPage(driver);
-
+				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
+		return new MyAccountPage(driver);
 	}
 
+	
 }
