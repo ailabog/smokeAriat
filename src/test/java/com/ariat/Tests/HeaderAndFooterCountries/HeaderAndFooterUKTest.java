@@ -15,13 +15,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and
- * verifies all elements on Home Page US
+ * verifies all elements on Home Page UK
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class HeaderAndFooterUSTest extends BaseTest{
+public class HeaderAndFooterUKTest extends BaseTest{
 
 	private Environments environment;
 	private HomePageUS homePageUS;
@@ -35,25 +35,25 @@ public class HeaderAndFooterUSTest extends BaseTest{
 	}
 
 	@Test(priority=0)
-	public void USHeader() {
-		logger.info("Starting the check for Header US elements:");
+	public void UKHeader() {
+		logger.info("Starting the check for Header UK elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
         homePageUS = new HomePageUS(new ChromeDriver());
 		homePageUS.checkElementsHeader();
-		logger.info("Finishing the check for Header US elements:");
+		logger.info("Finishing the check for Header UK elements:");
 	}
 	
 	@Test(priority=1)
-	public void USFooter() {
-		logger.info("Starting the check for Footer US elements:");
+	public void UKFooter() {
+		logger.info("Starting the check for Footer UK elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
         homePageUS = new HomePageUS(new ChromeDriver());
 		homePageUS.checkElementsFooter();
-		logger.info("Finishing the check for Footer US elements:");
+		logger.info("Finishing the check for Footer UK elements:");
 	}
 
 	@AfterTest

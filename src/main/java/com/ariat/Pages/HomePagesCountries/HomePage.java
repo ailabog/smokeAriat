@@ -43,7 +43,6 @@ public class HomePage extends BasePage {
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
 
-
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -97,7 +96,7 @@ public class HomePage extends BasePage {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
-				return  new HomePage(driver);
+				return new HomePage(driver);
 
 			case "United Kingdom":
 				logger.info("I choose United Kingdom as location");
@@ -192,7 +191,7 @@ public class HomePage extends BasePage {
 			default:
 				throw new RuntimeException("Country" + country + "not supported");
 			}
-			
+
 		}
 		return new HomePage(driver);
 
@@ -398,38 +397,6 @@ public class HomePage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(newcustomerText));
 		return new SignInPage(driver);
-	}
-
-	public HomePageUS returnHomePageUS(GlobalCountries country) {
-		logger.info("Selecting global Ariat store country...");
-		
-		WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
-		if (WebDriverUtils.isElementDisplayed(driver, countrySelectorWindow)) {
-			logger.info("I choose US as a location");
-			WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-			WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
-			logger.info("Saving location...");
-			WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-			WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
-		}
-		return new HomePageUS(driver);
-	}
-
-	public HomePageUK returnHomePageUK(GlobalCountries country) {
-		logger.info("Selecting global Ariat store country...");
-		WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
-		if (WebDriverUtils.isElementDisplayed(driver, countrySelectorWindow)) {
-			logger.info("I choose US as a location");
-			WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-			WebDriverUtils.clickOnElementWithWait(driver, country.UK.getLocator());
-			logger.info("Saving location...");
-			WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-			WebDriverUtils.clickOnElementWithWait(driver, country.UK.getLocator());
-		}
-		return new HomePageUK(driver);
-
 	}
 
 }
