@@ -2,6 +2,7 @@ package com.ariat.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.ariat.Utils.WebDriverUtils;
@@ -27,6 +28,7 @@ public class AddACreditCardPage extends BasePage {
 	private By securityCodeText = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_cvn");
 	private By applyButton = By.id("applyBtn");
 	private By cancelButton = By.xpath("//button[text()='Cancel]");
+	private By creditCardInfoText = By.xpath("//*contains[text(), 'Credit card information']");
 
 	protected AddACreditCardPage(WebDriver driver) {
 		super(driver);
@@ -81,6 +83,14 @@ public class AddACreditCardPage extends BasePage {
 	public void cancelCardCreation() {
 		logger.info("Canceling the card creation");
 		WebDriverUtils.clickOnElementWithWait(driver, cancelButton);
+	}
+	
+     public PaymentInformationPage returnPaymentInformationPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, applyButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(creditCardInfoText));
+		return new PaymentInformationPage(driver);
 	}
 
 }

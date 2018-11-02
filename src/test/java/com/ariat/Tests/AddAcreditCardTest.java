@@ -15,6 +15,12 @@ import com.ariat.Pages.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Tests for Add Credit card
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 
 public class AddAcreditCardTest extends BaseTest{
 	
@@ -41,6 +47,7 @@ public class AddAcreditCardTest extends BaseTest{
 
 	@Test(priority = 0)
 	public void addCreditCardTest() {
+		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -57,7 +64,8 @@ public class AddAcreditCardTest extends BaseTest{
 		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
-		addACreditCardPage.applyCardCreation();
+		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
+		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing add a credit card test");
@@ -92,9 +100,9 @@ public class AddAcreditCardTest extends BaseTest{
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
-		myAccountPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
+		myAccountPage.quit();
 		logoutPage.quit();
 	}
 }
