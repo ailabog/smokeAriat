@@ -1,11 +1,11 @@
 package com.ariat.Tests.HeaderAndFooterCountries;
 
+import java.util.List;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -40,23 +40,22 @@ public class HeaderAndFooterUSTest extends BaseTest{
 		logger.info("Starting the check for Header elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeLocation();
-		homePageUS = homePage.returnHomePageUS(country.USA);
+		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+        homePageUS = new HomePageUS(new ChromeDriver());
 		homePageUS.checkElementsHeader();
 		logger.info("Finishing the check for Header elements:");
 	}
 	
 	@Test(priority=1)
 	public void USFooter() {
-		logger.info("Starting the check for Header elements:");
+		logger.info("Starting the check for Footer elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeLocation();
-		homePageUS = homePage.returnHomePageUS(country.USA);
+		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+        homePageUS = new HomePageUS(new ChromeDriver());
 		homePageUS.checkElementsFooter();
 		logger.info("Finishing the check for Footer elements:");
 	}
-
 
 	@AfterTest
 	public void tearDown() {

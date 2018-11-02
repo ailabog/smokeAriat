@@ -3,9 +3,9 @@
 Header test
 1. Go to development.ariat.com
 2. Close subscription
-3. Choose US from country selector (click on country selector, check the countries window is displayed, choose US)
+3. Choose US from country selector (click on country selector, check the countries window is displayed, choose UK)
 4. Press "Save and continue"
-5. Click on US flag
+5. Click on UK flag
 6. Check that elements exist: 
                             Logo, Search, Sign in, Find a retailer, About Us, 
                             Cart, Categories: Women, Men, Kids, Gift Guide, Clearance, Ariat Life, Explore
@@ -16,9 +16,9 @@ Header test
 Footer   test
 1. Go to development.ariat.com
 2. Close subscription
-3. Choose US from country selector (click on country selector, check the countries window is displayed, choose US)
+3. Choose US from country selector (click on country selector, check the countries window is displayed, choose UK)
 4. Press "Save and continue"
-5. Click on US flag
+5. Click on UK flag
 6. Check that elements exist: 
                            email Subscription, Subscribe, Facebook Icon, twitter Icon, Instagram Icon,
                            Order Status, Returns, Track Your Order, Warranty, Delivery, FAQs,

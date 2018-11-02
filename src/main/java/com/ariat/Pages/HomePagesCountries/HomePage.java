@@ -42,7 +42,7 @@ public class HomePage extends BasePage {
 
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
-	WebDriver driver = null;
+
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -97,7 +97,7 @@ public class HomePage extends BasePage {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
-				return new HomePage(driver);
+				return  new HomePage(driver);
 
 			case "United Kingdom":
 				logger.info("I choose United Kingdom as location");
@@ -191,8 +191,8 @@ public class HomePage extends BasePage {
 			// TO DO ADD THE REST OF THE COUNTRIES FROM THE ENUM
 			default:
 				throw new RuntimeException("Country" + country + "not supported");
-
 			}
+			
 		}
 		return new HomePage(driver);
 
