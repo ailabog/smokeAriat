@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="menCategoriesAndSubcategoriesTest" verbose="1" >
+
+	<test name="menCategoriesAndSubcategoriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.MenCategoriesAndSubcategoriesTest" />
+       </classes>
+     </test>
+</suite>
