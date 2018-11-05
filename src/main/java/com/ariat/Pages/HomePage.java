@@ -10,6 +10,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.BasePage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Utils.WebDriverUtils;
 
@@ -45,6 +46,7 @@ public class HomePage extends BasePage {
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	
 	private By menCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/a");
+	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By kidsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[3]/a");
 	private By clearanceCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[4]/a");
 	private By giftGuideMenu = By.xpath("//img[contains(@src, 'gift-guide-category-image.png')]");
@@ -413,6 +415,13 @@ public class HomePage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenText));
 		return new WomenCategoryPage(driver);
+	}
+	
+	public MenCategoryPage returnMenCategoryPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, menCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(menText));
+		return new MenCategoryPage(driver);
 	}
 
 }

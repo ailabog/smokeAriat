@@ -43,25 +43,28 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 	private Environments environment;
 	private HomePage homePage;
 	private WomenCategoryPage womenCategoryPage;
+	
 	private WomenFootwearPage womenFootwearPage;
-	private WomenFootwearWesternPage womenFootwearWesterenPage;
-	private WomenClothingPage womenClothingPage;
-	private WomenAccessoriesPage womenAccessoriesPage;
-	private WomenFeaturedPage womenFeaturedPage;
 	private WomenFootwearRidingPage womenFootwearRidingPage;
 	private WomenFootwearWesternPage womenFootwearWesternPage;
 	private WomenFootwearCountryPage womenFootwearCountryPage;
 	private WomenFootwearCasualShoesPage womenFootwearCasualShoesPage;
+	
+	private WomenClothingPage womenClothingPage;
 	private WomenClothingOuterwearPage womenClothingOuterwearPage;
 	private WomenClothingBreechesAndTightsPage womenClothingBreechesAndTightsPage;
 	private WomenClothingShowPage womenClothingShowPage;
 	private WomenClothingSweatTshirtAndWoodiesPage womenClothingSweatTshirtAndWoodiesPage;
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
+	
+	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private WomenAccessoriesHeadwearPage womenAccessoriesHeadwearPage;
 	private WomenAccessoriesScarfAndPonchosPage womenAccessoriesScarfAndPonchosPage;
 	private WomenAccessoriesSocksPage womenAccessoriesSocksPage;
+	
+	private WomenFeaturedPage womenFeaturedPage;
 	private WomenFeaturedHeritageCollectionPage womenFeaturedHeritageCollectionPage;
 	private WomenFeaturedWarmWeatherRidingPage womenFeaturedWarmWeatherRidingPage;
 	private WomenFeaturedTriFactorBreechPage womenFeaturedTriFactorBreechPage;
@@ -79,7 +82,7 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 		homePage.UKlocation();
 		womenCategoryPage = homePage.returnWomenCategoryPage();
 		womenCategoryPage.womenCategory();
-		womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenCategoryPage.womenCategory();
 		womenFootwearRidingPage = womenFootwearPage.returnWomenFootwearRidingCategoryPage();
 		womenCategoryPage.womenCategory();
@@ -158,26 +161,30 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 		homePage.quit();
 		womenCategoryPage.quit();
 		womenFootwearPage.quit();
-		womenFootwearWesterenPage.quit();
-		womenClothingPage.quit();
+				
 		womenFootwearRidingPage.quit();
 		womenFootwearWesternPage.quit();
 		womenFootwearCountryPage.quit();
 		womenFootwearCasualShoesPage.quit();
+		
+		womenClothingPage.quit();
 		womenClothingOuterwearPage.quit();
 		womenClothingBreechesAndTightsPage.quit();
 		womenClothingShowPage.quit();
 		womenClothingSweatTshirtAndWoodiesPage.quit();
 		womenClothingTopsAndTshirtsPage.quit();
+		
 		womenAccessoriesPage.quit();
 		womenAccessoriesBagsPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		womenAccessoriesHeadwearPage.quit();
 		womenAccessoriesScarfAndPonchosPage.quit();
 		womenAccessoriesSocksPage.quit();
+		
+		womenFeaturedPage.quit();
 		womenFeaturedHeritageCollectionPage.quit();
 		womenFeaturedWarmWeatherRidingPage.quit();
 		womenFeaturedTriFactorBreechPage.quit();
-		womenFeaturedPage.quit();
+		
 	}
 }

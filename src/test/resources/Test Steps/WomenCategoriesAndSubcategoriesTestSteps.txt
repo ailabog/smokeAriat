@@ -21,7 +21,7 @@ Women Category Clothing Sub-categories test2
 7. Move to Women & click on Clothing Breeches And Tights (check that you are redirected to this category)
 8. Move to Women & click on Clothing Show (check that you are redirected to this category)
 9. Move to Women & click on Clothing Sweat T-shirt And Woodies (check that you are redirected to this category)
-10. Move to Women & click on Clothing Sweat Tshirt And Woodies(check that you are redirected to this category)
+10. Move to Women & click on Clothing Tops & T-shirts (check that you are redirected to this category)
 
 
 
@@ -30,6 +30,7 @@ Women Category Accessories Sub-categories test3
 2. Go to UK
 3. Click Women category (check that women category text is displayed)
 4. Move to Women & click on Accessories (check that you are redirected to this category)
+5. Move to Women & click on Accessories Bags (check that you are redirected to this category)
 6. Move to Women & click on Accessories Gloves (check that you are redirected to this category)
 7. Move to Women & click on Accessories Headwear (check that you are redirected to this category)
 8. Move to Women & click on Accessories ScarfAndPonchos (check that you are redirected to this category)
@@ -38,7 +39,7 @@ Women Category Accessories Sub-categories test3
 
 
 
-Women Category Accessories Sub-categories test3
+Women Category Featured Sub-categories test3
 1. Go to development.ariat.com
 2. Go to UK
 3. Click Women category (check that women category text is displayed)

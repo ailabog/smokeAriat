@@ -42,6 +42,7 @@ public class WomenCategoryPage extends BasePage{
     private By leftnavFashion = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[7]/a");
     private By leftnavFeatured = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[8]/a");
     private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
+    private By womenText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     
 	public WomenCategoryPage(WebDriver driver) {
 		super(driver);
@@ -53,9 +54,9 @@ public class WomenCategoryPage extends BasePage{
 
 	
 	public WomenCategoryPage returnWomenCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
+				ExpectedConditions.invisibilityOfElementLocated(womenText));
 		return new WomenCategoryPage(driver);
 	}
 	
