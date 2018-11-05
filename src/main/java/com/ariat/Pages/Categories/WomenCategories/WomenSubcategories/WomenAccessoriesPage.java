@@ -30,45 +30,42 @@ public class WomenAccessoriesPage extends BasePage{
 	private By womenAccessoriesScarfAndPonchosText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesSocksCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[3]/li/ul/li[5]/a");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	 private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
+	
 
 	public WomenAccessoriesPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	public void womenCategory() {
-		WebDriverUtils.moveToElement(driver, womenCategory);
-	}
-	
-	public WomenAccessoriesHeadwearPage returnWomenAccessoriesHeadwearPage() {
+		
+	public WomenAccessoriesHeadwearPage returnWomenAccessoriesHeadwearCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesHeadwearCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesHeadwearText));
 		return new WomenAccessoriesHeadwearPage(driver);
 	}
 	
-	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesPage() {
+	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
 		return new WomenAccessoriesGlovesPage(driver);
 	}
 	
-	public WomenAccessoriesBagsPage returnWomenAccessoriesBagsPage() {
+	public WomenAccessoriesBagsPage returnWomenAccessoriesBagsCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesBagsCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesBagsText));
 		return new WomenAccessoriesBagsPage(driver);
 	}
 	
-	public WomenAccessoriesScarfAndPonchosPage returnWomenAccessoriesScarfAndPonchosPage() {
+	public WomenAccessoriesScarfAndPonchosPage returnWomenAccessoriesScarfAndPonchosCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesScarfAndPonchosCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesScarfAndPonchosText));
 		return new WomenAccessoriesScarfAndPonchosPage(driver);
 	}
 	
-	public WomenAccessoriesSocksPage returnWomenAccessoriesSocksPage() {
+	public WomenAccessoriesSocksPage returnWomenAccessoriesSocksCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesSocksCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesSocksText));

@@ -66,7 +66,7 @@ public class WomenCategoryPage extends BasePage{
 		return new WomenFootwearPage(driver);
 	}
 	
-	public WomenClothingPage returnWomenClothingCategory() {
+	public WomenClothingPage returnWomenClothingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
@@ -86,4 +86,5 @@ public class WomenCategoryPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedText));
 		return new WomenFeaturedPage(driver);
 	}
+
 }

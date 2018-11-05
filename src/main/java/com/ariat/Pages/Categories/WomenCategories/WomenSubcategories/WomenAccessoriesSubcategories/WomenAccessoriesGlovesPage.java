@@ -1,8 +1,9 @@
 package com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories;
 
-import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.BasePage;
+
 
 /**
  * Implements Women Accessories Gloves Page
@@ -11,8 +12,9 @@ import com.ariat.Pages.BasePage;
  */
 
 public class WomenAccessoriesGlovesPage extends BasePage{
+	
 
 	public WomenAccessoriesGlovesPage(WebDriver driver) {
 		super(driver);
 		}
-}
+	}

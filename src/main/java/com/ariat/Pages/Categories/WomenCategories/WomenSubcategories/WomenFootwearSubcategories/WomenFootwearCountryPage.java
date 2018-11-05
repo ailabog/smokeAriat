@@ -11,8 +11,10 @@ import com.ariat.Pages.BasePage;
  */
 
 public class WomenFootwearCountryPage extends BasePage{
-
+	
+	
 	public WomenFootwearCountryPage(WebDriver driver) {
 		super(driver);
 			}
+		
 }

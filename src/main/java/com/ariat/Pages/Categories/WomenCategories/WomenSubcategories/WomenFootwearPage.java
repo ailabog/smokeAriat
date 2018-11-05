@@ -37,6 +37,7 @@ public class WomenFootwearPage extends BasePage{
 	public WomenFootwearPage(WebDriver driver) {
 		super(driver);
 	}
+	
 	public void womenCategory() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 	}
@@ -49,21 +50,21 @@ public class WomenFootwearPage extends BasePage{
 		return new WomenFootwearRidingPage(driver);
 	}
 	
-	public WomenFootwearCountryPage returnWomenFootwearCountryPage() {
+	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCountryText));
 		return new WomenFootwearCountryPage(driver);
 	}
 	
-	public WomenFootwearWesternPage returnWomenFootwearWesternPage() {
+	public WomenFootwearWesternPage returnWomenFootwearWesternCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearWesternCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearWesternText));
 		return new WomenFootwearWesternPage(driver);
 	}
 	
-	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesPage() {
+	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));

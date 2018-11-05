@@ -1,8 +1,9 @@
 package com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories;
 
-import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.BasePage;
+
 
 /**
  * Implements Women Accessories Scarf And Ponchos Page
@@ -12,8 +13,9 @@ import com.ariat.Pages.BasePage;
 
 
 public class WomenAccessoriesScarfAndPonchosPage extends BasePage{
+	
 
 	public WomenAccessoriesScarfAndPonchosPage(WebDriver driver) {
 		super(driver);
 			}
-}
+	}

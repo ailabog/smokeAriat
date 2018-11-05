@@ -1,7 +1,7 @@
 package com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories;
 
-import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.BasePage;
 
 
@@ -12,6 +12,7 @@ import com.ariat.Pages.BasePage;
  */
 
 public class WomenClothingSweatTshirtAndWoodiesPage extends BasePage{
+	
 
 	public WomenClothingSweatTshirtAndWoodiesPage(WebDriver driver) {
 		super(driver);

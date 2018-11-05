@@ -24,32 +24,27 @@ public class WomenFeaturedPage extends BasePage{
 	private By womenFeaturedHeritageCollectionText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenWarmWeatherRidingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/ul/li[3]/a");
 	private By womenWarmWeatherRidingCategoryText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
-	 
-		
-	public void womenCategory() {
-		WebDriverUtils.moveToElement(driver, womenCategory);
-	}
-
+		 
+			
 	public WomenFeaturedPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	public WomenFeaturedTriFactorBreechPage returWomenFeaturedTriFactorBreechPage() {
+	public WomenFeaturedTriFactorBreechPage returWomenFeaturedTriFactorBreechCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFeaturedTriFactorBreechCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedTriFactorBreechText));
 		return new WomenFeaturedTriFactorBreechPage(driver);
 	}
 	
-	public WomenFeaturedHeritageCollectionPage returnWomenFeaturedHeritageCollectionPage() {
+	public WomenFeaturedHeritageCollectionPage returnWomenFeaturedHeritageCollectionCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFeaturedHeritageCollectionCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedHeritageCollectionText));
 		return new WomenFeaturedHeritageCollectionPage(driver);
 	}
 	
-	public WomenFeaturedWarmWeatherRidingPage returnWomenFeaturedWarmWeatherRidingPage() {
+	public WomenFeaturedWarmWeatherRidingPage returnWomenFeaturedWarmWeatherRidingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenWarmWeatherRidingCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenWarmWeatherRidingCategoryText));

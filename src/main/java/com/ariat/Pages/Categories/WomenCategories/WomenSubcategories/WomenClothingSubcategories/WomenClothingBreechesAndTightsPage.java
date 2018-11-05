@@ -1,8 +1,9 @@
 package com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories;
 
-import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.BasePage;
+
 
 /**
  * Implements Women Clothing Breeches And Tights Page
@@ -11,10 +12,11 @@ import com.ariat.Pages.BasePage;
  */
 
 public class WomenClothingBreechesAndTightsPage extends BasePage{
-
+	
+	
 	public WomenClothingBreechesAndTightsPage(WebDriver driver) {
 		super(driver);
 		
 	}
-
+	
 }

@@ -1,8 +1,8 @@
 package com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories;
 
 import org.openqa.selenium.WebDriver;
-
 import com.ariat.Pages.BasePage;
+
 
 /**
  * Implements Women Footwear Western Category Page
@@ -11,7 +11,8 @@ import com.ariat.Pages.BasePage;
  */
 
 public class WomenFootwearWesternPage extends BasePage{
-
+	
+	
 	public WomenFootwearWesternPage(WebDriver driver) {
 		super(driver);
 		

@@ -11,10 +11,12 @@ import com.ariat.Pages.BasePage;
  */
 
 public class WomenFootwearCasualShoesPage extends BasePage{
+		
 
 	public WomenFootwearCasualShoesPage(WebDriver driver) {
 		super(driver);
 		
 	}
+	
 
 }
