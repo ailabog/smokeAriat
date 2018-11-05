@@ -11,6 +11,19 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories.WomenAccessoriesHeadwearPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories.WomenAccessoriesScarfAndPonchosPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesSubcategories.WomenAccessoriesSocksPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingBreechesAndTightsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingOuterwearPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingShowPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingSweatTshirtAndWoodiesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedSubcategories.WomenFeaturedHeritageCollectionPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedSubcategories.WomenFeaturedTriFactorBreechPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedSubcategories.WomenFeaturedWarmWeatherRidingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearCountryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearRidingPage;
@@ -38,6 +51,19 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 	private WomenClothingPage  womenClothingPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenFeaturedPage womenFeaturedPage;
+	private WomenClothingOuterwearPage womenClothingOuterwearPage;
+	private WomenClothingBreechesAndTightsPage womenClothingBreechesAndTightsPage;
+	private WomenClothingShowPage womenClothingShowPage;
+	private WomenClothingSweatTshirtAndWoodiesPage womenClothingSweatTshirtAndWoodiesPage;
+	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
+	private WomenFeaturedHeritageCollectionPage womenFeaturedHeritageCollectionPage;
+	private WomenFeaturedWarmWeatherRidingPage womenFeturedWarmWeatherRidingPage;
+	private WomenFeaturedTriFactorBreechPage womenFeaturedTriFactorBreechPage;
+	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
+	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
+	private WomenAccessoriesHeadwearPage womenAccessoriesHeadwearPage;
+	private WomenAccessoriesScarfAndPonchosPage womenAccessoriesScarfAndPonchosPage;
+	private WomenAccessoriesSocksPage womenAccessoriesSocksPage;
 
 	@BeforeTest
 	public void setUp() {
@@ -54,17 +80,17 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 		womenCategoryPage.womenCategory();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearPage.womenCategory();
-		womenFootwearPage.returnWomenFootwearRidingCategoryPage();
+		womenFootwearRidingPage = womenFootwearPage.returnWomenFootwearRidingCategoryPage();
 		womenFootwearPage.womenCategory();
-		womenFootwearPage.returnWomenFootwearWesternPage();
+		womenFootwearWesterenPage = womenFootwearPage.returnWomenFootwearWesternPage();
 		womenFootwearPage.womenCategory();
-		womenFootwearPage.returnWomenFootwearCountryPage();
+		womenFootwearCountryPage = womenFootwearPage.returnWomenFootwearCountryPage();
 		womenFootwearPage.womenCategory();
-		womenFootwearPage.returnWomenFootwearCasualShoesPage();
+		womenFootwearCasualShoesPage = womenFootwearPage.returnWomenFootwearCasualShoesPage();
 		logger.info("Finishing navigate Women Footwear sub-categories test.");
 	}
 	
-	@Test(priority = 1)
+		@Test(priority = 1)
 	public void navigateWomenClothingCategoriesTest() {
 		logger.info("Starting navigate Women Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -74,39 +100,39 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 		womenCategoryPage.womenCategory();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategory();
 		womenClothingPage.womenCategory();
-		womenClothingPage.returnWomenClothingOuterwearPage();
+		womenClothingOuterwearPage = womenClothingPage.returnWomenClothingOuterwearPage();
 		womenClothingPage.womenCategory();
-		womenClothingPage.returnWomenClothingBreechesAndTightsPage();
+		womenClothingBreechesAndTightsPage = womenClothingPage.returnWomenClothingBreechesAndTightsPage();
 		womenClothingPage.womenCategory();
-		womenClothingPage.returnWomenClothingShowPage();
+		womenClothingShowPage = womenClothingPage.returnWomenClothingShowPage();
 		womenClothingPage.womenCategory();
-		womenClothingPage.returnWomenClothingSweatTshirtAndWoodiesPage();
+		womenClothingSweatTshirtAndWoodiesPage = womenClothingPage.returnWomenClothingSweatTshirtAndWoodiesPage();
 		womenClothingPage.womenCategory();
-		womenClothingPage.returnWomenClothingTopsAndTshirtsPage();
+		womenClothingTopsAndTshirtsPage = womenClothingPage.returnWomenClothingTopsAndTshirtsPage();
 		logger.info("Finishing navigate Women Clothing sub-categories test.");
-	}
+	} 
 	
-	@Test(priority = 2)
+	 @Test(priority = 2)
 	public void navigateWomenAccessoriesCategoriesTest() {
 		logger.info("Starting navigate Women Accessories sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		womenCategoryPage = homePage.returnWomenCategoryPage();
-		womenAccessoriesPage.womenCategory();
+		womenCategoryPage.womenCategory();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryPage();
 		womenAccessoriesPage.womenCategory();
-		womenAccessoriesPage.returnWomenAccessoriesBagsPage();
+		womenAccessoriesBagsPage = womenAccessoriesPage.returnWomenAccessoriesBagsPage();
 		womenAccessoriesPage.womenCategory();
-		womenAccessoriesPage.returnWomenAccessoriesGlovesCategory();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesPage();
 		womenAccessoriesPage.womenCategory();
-		womenAccessoriesPage.returnWomenAccessoriesHeadwearPage();
+		womenAccessoriesHeadwearPage = womenAccessoriesPage.returnWomenAccessoriesHeadwearPage();
 		womenAccessoriesPage.womenCategory();
-		womenAccessoriesPage.returnWomenAccessoriesScarfAndPonchosPage();
+		womenAccessoriesScarfAndPonchosPage =womenAccessoriesPage.returnWomenAccessoriesScarfAndPonchosPage();
 		womenAccessoriesPage.womenCategory();
-		womenAccessoriesPage.returnWomenAccessoriesSocksPage();
+		womenAccessoriesSocksPage = womenAccessoriesPage.returnWomenAccessoriesSocksPage();
 		logger.info("Finishing navigate Women Accessories sub-categories test.");
-	}
+	} 
 	
 	@Test(priority = 3)
 	public void navigateWomenFeaturedCategoriesTest() {
@@ -115,20 +141,37 @@ public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		womenCategoryPage = homePage.returnWomenCategoryPage();
-		womenFeaturedPage.womenCategory();
+		womenCategoryPage.womenCategory();
 		womenFeaturedPage = womenCategoryPage.returnWomenFeaturedCategoryPage();
 		womenFeaturedPage.womenCategory();
-		womenFeaturedPage.returnWomenFeaturedHeritageCollectionPage();
+		womenFeaturedHeritageCollectionPage = womenFeaturedPage.returnWomenFeaturedHeritageCollectionPage();
 		womenFeaturedPage.womenCategory();
-		womenFeaturedPage.returnWomenWarmWeatherRidingPage();
+		womenFeturedWarmWeatherRidingPage = womenFeaturedPage.returnWomenFeaturedWarmWeatherRidingPage();
 		womenFeaturedPage.womenCategory();
-		womenFeaturedPage.returWomenFeaturedTriFactorBreechPage();
+		womenFeaturedTriFactorBreechPage = womenFeaturedPage.returWomenFeaturedTriFactorBreechPage();
 		logger.info("Finishing navigate Women Featured sub-categories test.");
-	}
+	} 
 
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-
+		womenCategoryPage.quit();
+		womenFootwearPage.quit();
+		womenFootwearRidingPage.quit();
+		womenFootwearWesterenPage.quit();
+		womenFootwearCasualShoesPage.quit();
+		womenClothingOuterwearPage.quit();
+		womenClothingBreechesAndTightsPage.quit();
+		womenClothingShowPage.quit();
+		womenClothingSweatTshirtAndWoodiesPage.quit();
+		womenClothingTopsAndTshirtsPage.quit();
+		womenAccessoriesBagsPage.quit();
+		womenAccessoriesGlovesPage.quit();
+		womenAccessoriesHeadwearPage.quit();
+		womenAccessoriesScarfAndPonchosPage.quit();
+		womenAccessoriesSocksPage.quit();
+		womenFeaturedHeritageCollectionPage.quit();
+		womenFeturedWarmWeatherRidingPage.quit();
+		womenFeaturedTriFactorBreechPage.quit();
 	}
 }

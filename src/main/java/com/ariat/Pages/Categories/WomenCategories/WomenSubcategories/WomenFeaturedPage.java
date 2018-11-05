@@ -49,7 +49,7 @@ public class WomenFeaturedPage extends BasePage{
 		return new WomenFeaturedHeritageCollectionPage(driver);
 	}
 	
-	public WomenFeaturedWarmWeatherRidingPage returnWomenWarmWeatherRidingPage() {
+	public WomenFeaturedWarmWeatherRidingPage returnWomenFeaturedWarmWeatherRidingPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenWarmWeatherRidingCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenWarmWeatherRidingCategoryText));

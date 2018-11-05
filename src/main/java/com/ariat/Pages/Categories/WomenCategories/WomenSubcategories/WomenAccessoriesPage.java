@@ -47,7 +47,7 @@ public class WomenAccessoriesPage extends BasePage{
 		return new WomenAccessoriesHeadwearPage(driver);
 	}
 	
-	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategory() {
+	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
