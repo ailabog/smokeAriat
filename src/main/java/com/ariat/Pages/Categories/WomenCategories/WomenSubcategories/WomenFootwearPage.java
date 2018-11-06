@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.BasePage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearCountryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearRidingPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearSubcategories.WomenFootwearWesternPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCountryPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearRidingPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearWesternPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**

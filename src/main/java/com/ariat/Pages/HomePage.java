@@ -10,7 +10,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.BasePage;
 import com.ariat.Pages.SignInPage;
-import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenCategoryPage;
+import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Utils.WebDriverUtils;
 

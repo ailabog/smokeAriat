@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.BasePage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingBreechesAndTightsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingOuterwearPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingShowPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingSweatTshirtAndWoodiesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingBreechesAndTightsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingOuterwearPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingShowPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingSweatTshirtAndWoodiesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
