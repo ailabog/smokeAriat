@@ -1,7 +1,10 @@
 package com.ariat.Pages.Categories.WomenCategories;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.ariat.Pages.BasePage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
@@ -49,15 +52,19 @@ public class WomenCategoryPage extends BasePage {
 	private By prevPaginationButtonUp = By
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
 	private By backToTopButton = By.xpath("//*[@id=\"main\"]/div/div[1]/div[1]/a");
-	private By sortDropWomenDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
+	private By sortDropWomenCategoryDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
 	private By show36ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[1]/a");
 	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[2]/a");
-	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[3]/a");
-	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[1]/a/span");
+    private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[3]/a");
+	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
 	private By prevPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
 	private By heritageProductLink = By.xpath("//*[@id=\"026613ca2d03c726cde6054af3\"]/div[1]/a/picture/img");
-	private By heritaheProductText = By.xpath("//*contains[text(),'Heritage II Ellipse Tall Riding Boot']");	
-
+	private By heritaheProductText = By.xpath("//*contains[text(),'Heritage II Ellipse Tall Riding Boot']");
+	private By recommendedLink = By.linkText("Recommended");
+	private By priceHighToLowLink = By.linkText("Price (High to Low)");
+	private By priceLowToHighLink = By.linkText("Price (Low to High)");
+	private By bestSellersLink = By.linkText("Best Sellers");
+	
 	public WomenCategoryPage(WebDriver driver) {
 		super(driver);
 	}
@@ -65,12 +72,37 @@ public class WomenCategoryPage extends BasePage {
 	public void womenCategory() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 	}
-
-	public void sortProductWomenCategoryUp(String value) {
+	
+	public void clickSortUp() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectVisibleText(driver, sortDropWomenCategoryUp, value);
+		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryUp);
+	}
+	
+	public void clickSortDown() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryDown);
 	}
 
+	public void sortProductWomenCategoryRecommended() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, recommendedLink);
+	}
+	
+	public void sortProductWomenCategoryPriceHighToLow() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, priceHighToLowLink);
+	}
+	
+	public void sortProductWomenCategoryPriceLowToHigh() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, priceLowToHighLink);
+	}
+	
+	public void sortProductWomenCategoryBestSellers() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLink);
+	}
+	
 	public void show36ItemsUp() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLinkUp);
@@ -102,12 +134,6 @@ public class WomenCategoryPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, backToTopButton);
 	}
 
-	public void sortCategoryDown(String value) {
-		WebDriverUtils.scrolltoElement(driver, sortDropWomenDown);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectVisibleText(driver, sortDropWomenDown, value);
-	}
-
 	public void show36ItemsDown() {
 		WebDriverUtils.scrolltoElement(driver, show36ItemLinkDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -127,17 +153,17 @@ public class WomenCategoryPage extends BasePage {
 	}
 	
 	public void nextPaginationDown() {
-		WebDriverUtils.scrolltoElement(driver, nextPaginationButtonDown);
+		WebDriverUtils.scrollElementToPosition(driver, nextPaginationButtonDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonDown);
 	}
 
 	public void prevPaginationButtonDown() {
-		WebDriverUtils.scrolltoElement(driver, prevPaginationButtonDown);
+		WebDriverUtils.scrollElementToPosition(driver, prevPaginationButtonDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, prevPaginationButtonDown);
 	}
-	
+
 
 	public WomenCategoryPage returnWomenCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);

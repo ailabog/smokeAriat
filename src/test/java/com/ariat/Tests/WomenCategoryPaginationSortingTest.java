@@ -28,16 +28,22 @@ public class WomenCategoryPaginationSortingTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	@Test
 	public void navigateWomenFootwearCategories() {
 		logger.info("Starting sort and navigate pagination test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		womenCategoryPage = homePage.returnWomenCategoryPage();
-		womenCategoryPage.sortProductWomenCategoryUp("Recommended");
+		womenCategoryPage.clickSortUp();
+		womenCategoryPage.sortProductWomenCategoryRecommended();
+		womenCategoryPage.clickSortUp();
+		womenCategoryPage.sortProductWomenCategoryBestSellers();
+		womenCategoryPage.clickSortUp();
+		womenCategoryPage.sortProductWomenCategoryPriceHighToLow();
 		womenCategoryPage.show72ItemsUp();
 		womenCategoryPage.show108ItemLinkUp();
+		womenCategoryPage.show36ItemsUp();
 		womenCategoryPage.nextPaginationUp();
 		womenCategoryPage.prevPaginationButtonUp();
 		womenCategoryPage.show72ItemsDown();
