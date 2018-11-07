@@ -1,6 +1,5 @@
 package com.ariat.Pages;
 
-import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
 
@@ -24,12 +23,12 @@ public class PaymentInformationPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(PaymentInformationPage.class);
 
-	private By addACreditCardButton = By.linkText("Add a credit card");
+	private By addACreditCardButton = By.xpath("//*[@title='Add a credit card']");
 	private By addACreditCardText = By.xpath("//*contains[text(), 'Add a credit card']");
     WebElement cardTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]"));
 	private By deleteCardLink = By.xpath("//a[text()='Delete card']");
 	private By makeDefaultLink = By.xpath("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/div[1]/div[3]/div/a");
-	
+
 
 	protected PaymentInformationPage(WebDriver driver) {
 		super(driver);
