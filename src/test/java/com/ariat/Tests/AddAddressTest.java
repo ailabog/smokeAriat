@@ -15,6 +15,13 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Adds a new address and checks the address was created
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class AddAddressTest extends BaseTest {
 
 	private HomePage homePage;

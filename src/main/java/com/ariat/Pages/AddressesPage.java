@@ -64,9 +64,9 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
+		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
 		    for (WebElement row : rows) {
-		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
+		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 		        for (WebElement cell : cells) {
 				while (cell.getText() == addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null
