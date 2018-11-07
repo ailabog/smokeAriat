@@ -39,7 +39,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class WomenCategoriesAndSubcategoriesTest extends BaseTest {
+public class TopNavWomenCategoriesAndSubcategoriesTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;

@@ -38,7 +38,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class MenFootwearSubcategoriesLeftNavigationTest extends BaseTest {
+public class LeftNavMenFootwearSubcategoriesTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
