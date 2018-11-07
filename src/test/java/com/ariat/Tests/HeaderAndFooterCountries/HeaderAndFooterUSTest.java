@@ -59,5 +59,6 @@ public class HeaderAndFooterUSTest extends BaseTest{
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUS.quit();
 	}
 }
