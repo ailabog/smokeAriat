@@ -31,7 +31,8 @@ public class AddressesPage extends BasePage {
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
-	private By loadMoreButton = By.xpath("//button[text()='Load More']");
+	private By loadMoreButton = By.xpath("//button[@title='Load More']");
+	private By myAccount = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/span/a[1]");
 
 	private boolean checkAddress;
 
@@ -62,9 +63,9 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("tr"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
 		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
 				while (cell.getText() == addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null
@@ -88,9 +89,12 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.scrollDown(driver, loadMoreButton);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		} while (WebDriverUtils.findElement(driver, loadMoreButton) != null);
+		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
+		for(int i=1; i<=3; i++) {
 		WebDriverUtils.scrollUp(driver, addressesText);
+		}
 	}
+
 
 	public void addAddress() {
 		logger.info("Adding new address...");
@@ -110,8 +114,7 @@ public class AddressesPage extends BasePage {
 	public AddAddressesPage returnAddressesEdit() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		 
 		return new AddAddressesPage(driver);
 	}
 }

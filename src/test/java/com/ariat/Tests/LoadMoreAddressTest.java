@@ -20,7 +20,6 @@ public class LoadMoreAddressTest extends BaseTest {
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private LogoutPage logoutPage;
 	private Environments environment;
@@ -51,7 +50,6 @@ public class LoadMoreAddressTest extends BaseTest {
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.loadMoreAddesses();
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing load more addresses test");
 	}
 	
@@ -68,7 +66,6 @@ public class LoadMoreAddressTest extends BaseTest {
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
 		addressesPage.loadMoreAddesses();
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing load more addresses lef navigation test");
 	}
 	
@@ -77,7 +74,6 @@ public class LoadMoreAddressTest extends BaseTest {
 		homePage.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		addAddressPage.quit();
 		addressesPage.quit();
 		logoutPage.quit();
 	}
