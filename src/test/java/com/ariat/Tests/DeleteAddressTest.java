@@ -55,9 +55,9 @@ public class DeleteAddressTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("7M4I6");
-		addressesPage.deleteAddressCreated("7M4I6");
-		addressesPage.checkAddress("7M4I6");
+		addressesPage.deleteAddressCreatedNo("nnn");
+		addressesPage.deleteAddressCreated("nn");
+		addressesPage.checkAddress("nnn");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing deleting address test");
@@ -65,9 +65,10 @@ public class DeleteAddressTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void deleteAddressFromEditTest() {
-		logger.info("Starting deleting address test");
+		logger.info("Starting deleting address from Edit address test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -76,10 +77,10 @@ public class DeleteAddressTest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.deleteAddress();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		addressesPage.checkAddress("C0RTX");
+		addressesPage.checkAddress("ccc");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
-		logger.info("Finishing deleting address test");
+		logger.info("Finishing deleting address from Edit address test");
 	}
 
 	@AfterTest

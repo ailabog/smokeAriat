@@ -31,9 +31,8 @@ public class AddAddressesPage extends BasePage {
 	private By saveAddressButton = By.name("dwfrm_profile_address_create");
 	private By saveAddressEditButton = By.name("dwfrm_profile_address_edit");
 	private By cancelAddressButton = By.name("dwfrm_profile_address_cancel");
-	private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
+	private By deleteAddressButton = By.xpath("//button[@name='dwfrm_profile_address_remove']");
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
-
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 
 	protected AddAddressesPage(WebDriver driver) {
