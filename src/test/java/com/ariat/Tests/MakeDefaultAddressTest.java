@@ -5,7 +5,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.LogoutPage;
@@ -48,8 +47,8 @@ public class MakeDefaultAddressTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("BO4CF");
-		addressesPage.assertMakeDefault("DEFAULT | BO4CF");
+		addressesPage.makeDefaultAddressCreated("B1TGL");
+		addressesPage.assertMakeDefault("DEFAULT | B1TGL");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing make default address test");
