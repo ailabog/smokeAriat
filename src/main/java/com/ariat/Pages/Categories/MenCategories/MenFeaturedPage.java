@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.ariat.Pages.BasePage;
 import com.ariat.Pages.Categories.MenCategories.MenFeaturedSubcategories.MenFeaturedTeamCollectionPage;
 import com.ariat.Pages.Categories.MenCategories.MenFeaturedSubcategories.MenFeaturedVentTekPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFeatured.WomenFeaturedSubcategories.WomenFeaturedHeritageCollectionPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFeatured.WomenFeaturedSubcategories.WomenFeaturedTriFactorBreechPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**

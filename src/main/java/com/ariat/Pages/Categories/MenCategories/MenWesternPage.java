@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.BasePage;
-import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenWesternCategories.MenWesternFashionPage;
-import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenWesternCategories.MenWesternPerformancePage;
+import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearWesternCategories.MenFootwearWesternFashionPage;
+import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearWesternCategories.MenFootwearWesternPerformancePage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class MenWesternPage extends BasePage{
@@ -26,17 +26,17 @@ public class MenWesternPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, footwearSwitcher);
 	}
 	
-	public MenWesternFashionPage returnMenWesternFashionCategoryPageLeftNav() {
+	public MenFootwearWesternFashionPage returnMenWesternFashionCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, westernFashionCategoryLeftNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(westernFashionCategoryCategoryText));
-		return new MenWesternFashionPage(driver);
+		return new MenFootwearWesternFashionPage(driver);
 	}
 	
-	public MenWesternPerformancePage returnMenWesternPerformanceCategoryPageLeftNav() {
+	public MenFootwearWesternPerformancePage returnMenWesternPerformanceCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, performanceWesternCategoryLeftNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(performanceWesternCategoryText));
-		return new MenWesternPerformancePage(driver);
+		return new MenFootwearWesternPerformancePage(driver);
 	}
 }

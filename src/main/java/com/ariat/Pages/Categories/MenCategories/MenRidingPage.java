@@ -29,12 +29,12 @@ public class MenRidingPage extends BasePage {
 	private By footwearSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
 	private By clothingSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[2]/a/span[2]");
 	private By accessoriesSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
-	private By tallBootsFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/ul/li[1]/a");
-	private By paddockFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/ul/li[2]/a");
-	private By halfChapsFoowearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/ul/li[3]/a");
-	private By allWeatherRidingFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/ul/li[4]/a");
-	private By enduranceFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/ul/li[5]/a");
-	private By barnyardFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/ul/li[6]/a");
+	private By tallBootsFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
+	private By paddockFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
+	private By halfChapsFoowearLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
+	private By allWeatherRidingFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[4]/a");
+	private By enduranceFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[5]/a");
+	private By barnyardFootwearLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[6]/a");
 	private By outwearClothingLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[2]/ul/li[1]/a");
 	private By sweatshirtsAndWoodiesClothingLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[2]/ul/li[2]/a");
 	private By topsAndTshirtsClothingCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[2]/ul/li[3]/a");

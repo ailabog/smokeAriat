@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.BasePage;
-import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenWorkCategories.MenWorkLaceUpPage;
-import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenWorkCategories.MenWorkPullOnPage;
+import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenFootwearWorkCategories.MenFootwearWorkLaceUpPage;
+import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenFootwearWorkCategories.MenFootwearWorkPullOnPage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class MenWorkPage extends BasePage{
@@ -26,17 +26,17 @@ public class MenWorkPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, footwearSwitcher);
 	}
 
-	public MenWorkLaceUpPage returnMenWorkLaceUpPageLeftNav() {
+	public MenFootwearWorkLaceUpPage returnMenWorkLaceUpPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, laceUpLeftNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(laceUpCategoryText));
-		return new MenWorkLaceUpPage(driver);
+		return new MenFootwearWorkLaceUpPage(driver);
 	}
 	
-	public MenWorkPullOnPage returnMenWorkPullOnPageLeftNav() {
+	public MenFootwearWorkPullOnPage returnMenWorkPullOnPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, pullOnLeftNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(pullOnCategoryText));
-		return new MenWorkPullOnPage(driver);
+		return new MenFootwearWorkPullOnPage(driver);
 	}
 }

@@ -39,7 +39,7 @@ Women Category Accessories Sub-categories test3
 
 
 
-Women Category Featured Sub-categories test3
+Women Category Featured Sub-categories test4
 1. Go to development.ariat.com
 2. Go to UK
 3. Click Women category (check that women category text is displayed)
