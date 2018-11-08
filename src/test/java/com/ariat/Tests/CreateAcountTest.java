@@ -111,8 +111,6 @@ public class CreateAcountTest extends BaseTest {
 		logger.info("Finishing checking valid order test...");
 	}
 	
-	//35435 - zip code
-	//10002432 - order no
 	
 	@Test(priority = 4)
 	public void forgotPasswordTest() {

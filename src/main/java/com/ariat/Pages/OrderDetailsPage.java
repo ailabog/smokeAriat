@@ -18,6 +18,7 @@ public class OrderDetailsPage extends BasePage {
 	private By returnToMyOrdersLink = By.xpath("//a[text()='Return to My Orders']");
 	private By myOrdersText = By.xpath("//*contains[text(),'My orders']");
 
+
 	protected OrderDetailsPage(WebDriver driver) {
 		super(driver);
 	}
