@@ -34,12 +34,13 @@ public class SignInPage extends BasePage {
 	private By checkOrderTextBox = By.id("dwfrm_ordertrack_orderNumber");
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
-	private By checkStatusButton = By.id("dwfrm_ordertrack_findorder");
+	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
 	private By createAccountButton = By.name("dwfrm_login_register");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 	private By errorMessageText = By.className("error-form");
 	private By closeButton = By.className("close-button");
+	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 
 	public SignInPage(WebDriver driver) {
 		super(driver);
@@ -119,12 +120,6 @@ public class SignInPage extends BasePage {
 		assertEquals(message, messageExpectedLabel, "Error! Error message displayed is not correct");
 	}
 	
-	public void assertMsg(String actualText, String messageExpected) {
-		WebDriverUtils.findText(driver, actualText);
-		assertEquals(actualText, messageExpected, "Message displayed is correct");
-		
-	}
-
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
@@ -140,4 +135,13 @@ public class SignInPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}
+	
+	public OrderDetailsPage returnOrderDetailsPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
+		return new OrderDetailsPage(driver);
+	}
+	
 }

@@ -18,7 +18,7 @@ public class MyOrdersPage extends BasePage {
 	private By orderDetailsLink = By.xpath("//*[@id=\"order-items\"]/div[1]/div[3]/a");
 	private By returnPolicyLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/a");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
-	private By returnsText = By.xpath("//*contains[text(),'Returns']");
+	private By returnsPolicyText = By.xpath("//*contains[text(),'Returns']");
 
 	protected MyOrdersPage(WebDriver driver) {
 		super(driver);
@@ -36,7 +36,7 @@ public class MyOrdersPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, returnPolicyLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(returnsText));
+				ExpectedConditions.invisibilityOfElementLocated(returnsPolicyText));
 		return new ReturnPolicyPage(driver);
 	}
 

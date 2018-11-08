@@ -17,6 +17,7 @@ public class OrderDetailsPage extends BasePage {
 
 	private By returnToMyOrdersLink = By.xpath("//a[text()='Return to My Orders']");
 	private By myOrdersText = By.xpath("//*contains[text(),'My orders']");
+	private By createReturnButton = By.xpath("//*[@id=\"newreturn\"]/button");
 
 	protected OrderDetailsPage(WebDriver driver) {
 		super(driver);
@@ -28,6 +29,14 @@ public class OrderDetailsPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
 		return new MyOrdersPage(driver);
+	}
+	
+	public ReturnItemsPage returnReturnItemsPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, createReturnButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
+		return new ReturnItemsPage(driver);
 	}
 
 }
