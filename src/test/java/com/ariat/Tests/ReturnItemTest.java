@@ -16,8 +16,8 @@ import com.ariat.Pages.VerifyReturnItemsPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test create account by instantiating the browser, go to Home page, and calls
- * all the methods such as: create account, login, check order status
+ * Test return item for an logged customer and for a returning customer using different navigation
+ * top nav for returning customer
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -49,7 +49,7 @@ public class ReturnItemTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-/*	@Test(priority = 0)
+	@Test(priority = 0)
 	public void returnItemWithoutBeingLoggedTest() {
 		logger.info("Starting  return item for a customer not being logged test");
 		homePage = new HomePage(new ChromeDriver());
@@ -72,8 +72,8 @@ public class ReturnItemTest extends BaseTest {
 		salesReturnConfirmationPage = verifyReturnItemsPage.returnSalesReturnConfirmationPage();
 		salesReturnConfirmationPage.returnOrderDetailsPage();
 		logger.info("Finishing return item for a customer not being logged test...");
-	}*/
-	
+	}
+
 	@Test(priority = 1)
 	public void returnItemReturningCustomerTest() {
 		logger.info("Starting  return item as returning customer test");
@@ -85,7 +85,6 @@ public class ReturnItemTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
-	   // myOrdersPage.searchOrderNo(ORDER_NO);
 		orderDetailsPage = myOrdersPage.returnOrderDetailsPage();
 		returnItemsPage = orderDetailsPage.returnReturnItemsPage();
 		returnItemsPage.checkItemClick();
@@ -95,18 +94,18 @@ public class ReturnItemTest extends BaseTest {
 		verifyReturnItemsPage = returnItemsPage.returnVerifyReturnItemsPage();
 		verifyReturnItemsPage.editReturn();
 		returnItemsPage.selectQuantity("2");
-		//returnItemsPage.continueClick();
 		verifyReturnItemsPage = returnItemsPage.returnVerifyReturnItemsPage();
 		salesReturnConfirmationPage = verifyReturnItemsPage.returnSalesReturnConfirmationPage();
 		salesReturnConfirmationPage.returnOrderDetailsPage();
 		logger.info("Finishing return item as returning customer test...");
 	}
-	
+
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
-		//orderDetailsPage.quit();
+		myAccountPage.quit();
+		orderDetailsPage.quit();
 		returnItemsPage.quit();
 		verifyReturnItemsPage.quit();
 		salesReturnConfirmationPage.quit();
