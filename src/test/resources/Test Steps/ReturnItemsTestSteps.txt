@@ -25,6 +25,7 @@ Return order test steps test2
 3. Go to Sign in
 4. Enter username and password
 5. Press login
+6. Go to My account & Orders (you are redirected to My orders)
 6. Search for order 10002429 & press order details
 7. Press "Create return" button
 8. Check item, select as reason: Shipping error, describe the reason

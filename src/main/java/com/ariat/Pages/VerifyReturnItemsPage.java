@@ -22,6 +22,10 @@ public class VerifyReturnItemsPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, confirmContinueButton);
 	}
 	
+	public void editReturn() {
+		WebDriverUtils.clickOnElementWithWait(driver, editReturnButton);
+	}
+	
 		
 	public ReturnItemsPage returnReturnItemsPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);

@@ -19,7 +19,7 @@ public class OrderDetailsPage extends BasePage {
 	private By myOrdersText = By.xpath("//*contains[text(),'My orders']");
 	private By createReturnButton = By.xpath("//*[@id=\"newreturn\"]/button");
 
-	protected OrderDetailsPage(WebDriver driver) {
+	public OrderDetailsPage(WebDriver driver) {
 		super(driver);
 	}
 	

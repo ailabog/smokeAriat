@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
+import com.ariat.Pages.MyAccountPage;
+import com.ariat.Pages.MyOrdersPage;
 import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.ReturnItemsPage;
 import com.ariat.Pages.SalesReturnConfirmationPage;
@@ -30,11 +32,15 @@ public class ReturnItemTest extends BaseTest {
 	private ReturnItemsPage returnItemsPage;
 	private VerifyReturnItemsPage verifyReturnItemsPage;
 	private SalesReturnConfirmationPage salesReturnConfirmationPage;
+	private MyAccountPage myAccountPage;
+	private MyOrdersPage myOrdersPage;
 
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
+	public static final String PASSWORD = "Parola12345!";
 	public static final String ORDER_NO = "10002429";
 	public static final String BILLING_ZIP_CODE = "35435";
 	private static final String RETURN_REASON = "Uncomfortable";
+	private static final String RETURN_REASON1 = "Shipping error";
 	private static final String EXPECTED_MESSAGE = "Please select at least one item you wish to return";
 	private static final String REASON_DESCRIPTION = "The article is not comfortable as expected";
 
@@ -43,9 +49,9 @@ public class ReturnItemTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
-	public void returnItemTest() {
-		logger.info("Starting  return item test");
+/*	@Test(priority = 0)
+	public void returnItemWithoutBeingLoggedTest() {
+		logger.info("Starting  return item for a customer not being logged test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -65,14 +71,42 @@ public class ReturnItemTest extends BaseTest {
 		verifyReturnItemsPage = returnItemsPage.returnVerifyReturnItemsPage();
 		salesReturnConfirmationPage = verifyReturnItemsPage.returnSalesReturnConfirmationPage();
 		salesReturnConfirmationPage.returnOrderDetailsPage();
-		logger.info("Finishing return item test...");
+		logger.info("Finishing return item for a customer not being logged test...");
+	}*/
+	
+	@Test(priority = 1)
+	public void returnItemReturningCustomerTest() {
+		logger.info("Starting  return item as returning customer test");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.UKlocation();
+		signInPage = homePage.returnSignInPage();
+		signInPage.returningCustomer(EMAIL);
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
+	   // myOrdersPage.searchOrderNo(ORDER_NO);
+		orderDetailsPage = myOrdersPage.returnOrderDetailsPage();
+		returnItemsPage = orderDetailsPage.returnReturnItemsPage();
+		returnItemsPage.checkItemClick();
+		returnItemsPage.selectReturnReason(RETURN_REASON1);
+		returnItemsPage.describeReason(REASON_DESCRIPTION);
+		returnItemsPage.selectQuantity("1");
+		verifyReturnItemsPage = returnItemsPage.returnVerifyReturnItemsPage();
+		verifyReturnItemsPage.editReturn();
+		returnItemsPage.selectQuantity("2");
+		//returnItemsPage.continueClick();
+		verifyReturnItemsPage = returnItemsPage.returnVerifyReturnItemsPage();
+		salesReturnConfirmationPage = verifyReturnItemsPage.returnSalesReturnConfirmationPage();
+		salesReturnConfirmationPage.returnOrderDetailsPage();
+		logger.info("Finishing return item as returning customer test...");
 	}
-
+	
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
-		orderDetailsPage.quit();
+		//orderDetailsPage.quit();
 		returnItemsPage.quit();
 		verifyReturnItemsPage.quit();
 		salesReturnConfirmationPage.quit();
