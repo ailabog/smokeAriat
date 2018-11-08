@@ -8,6 +8,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
+import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -27,6 +28,7 @@ public class CreateAcountTest extends BaseTest {
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
+	private OrderDetailsPage orderDetailsPage;
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -39,9 +41,9 @@ public class CreateAcountTest extends BaseTest {
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomNumber(8);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
-	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records.  "
-			+ "Check your records and try again.";
-
+	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
+	
+			
 	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
@@ -85,19 +87,34 @@ public class CreateAcountTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void checkOrderTest() {
-		logger.info("Starting checking order test...");
+	public void checkInvalidOrderTest() {
+		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		signInPage.checkStatusClick();
-		signInPage.assertMsg(ERROR_MESSAGE, ERROR_MESSAGE );
-		logger.info("Finishing checking order test...");
+		signInPage.assertErrorMessage(ERROR_MESSAGE);
+		logger.info("Finishing checking invalid order test...");
 	}
 	
 	@Test(priority = 3)
+	public void checkValidOrderTest() {
+		logger.info("Starting checking valid order test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.UKlocation();
+		signInPage = homePage.returnSignInPage();
+		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
+		orderDetailsPage = signInPage.returnOrderDetailsPage();
+		logger.info("Finishing checking valid order test...");
+	}
+	
+	//35435 - zip code
+	//10002432 - order no
+	
+	@Test(priority = 4)
 	public void forgotPasswordTest() {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -118,5 +135,6 @@ public class CreateAcountTest extends BaseTest {
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();
+		orderDetailsPage.quit();
 	}
 }

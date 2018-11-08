@@ -28,7 +28,16 @@ Create account test4: check Order (an inexistent Order)
 6. Check that error message is being displayed
 
 
-Create account test5: forgot password
+Create account test5: check Order (an existent Order)
+1. Access environment ariat development
+2. Close subscription (x)
+3. Go to Sign In page
+4. Enter order no, email, billing zip code (valid) in Check order status section
+5. Press Check status button
+6. Check that you are redirected to Order details page successfully
+
+
+Create account test6: forgot password
 1. Access environment ariat development
 2. Close subscription (x)
 3. Go to Sign In page

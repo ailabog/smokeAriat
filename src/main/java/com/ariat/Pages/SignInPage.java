@@ -40,6 +40,7 @@ public class SignInPage extends BasePage {
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 	private By errorMessageText = By.className("error-form");
 	private By closeButton = By.className("close-button");
+	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 
 	public SignInPage(WebDriver driver) {
 		super(driver);
@@ -116,21 +117,23 @@ public class SignInPage extends BasePage {
 	
 	public void assertErrorMessage(String messageExpectedLabel) {
 		String message = WebDriverUtils.getElementText(driver, errorMessageText);
-		assertEquals(message, messageExpectedLabel, "Error! Error message displayed is not correct");
+		assertEquals(message, messageExpectedLabel, "Message displayed is ok");
 	}
 	
-	public void assertMsg(String actualText, String messageExpected) {
-		WebDriverUtils.findText(driver, actualText);
-		assertEquals(actualText, messageExpected, "Message displayed is correct");
-		
-	}
-
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
 		return new CreateAccountPage(driver);
+	}
+	
+	public OrderDetailsPage returnOrderDetailsPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
+		return new OrderDetailsPage(driver);
 	}
 
 	public MyAccountPage returnMyAccountPage() {
