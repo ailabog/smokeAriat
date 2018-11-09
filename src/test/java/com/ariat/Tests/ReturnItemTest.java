@@ -49,7 +49,7 @@ public class ReturnItemTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	@Test
 	public void returnItemWithoutBeingLoggedTest() {
 		logger.info("Starting  return item for a customer not being logged test");
 		homePage = new HomePage(new ChromeDriver());
@@ -74,7 +74,7 @@ public class ReturnItemTest extends BaseTest {
 		logger.info("Finishing return item for a customer not being logged test...");
 	}
 
-	@Test(priority = 1)
+	@Test
 	public void returnItemReturningCustomerTest() {
 		logger.info("Starting  return item as returning customer test");
 		homePage = new HomePage(new ChromeDriver());
