@@ -41,6 +41,8 @@ public class SignInPage extends BasePage {
 	private By errorMessageText = By.className("error-form");
 	private By closeButton = By.className("close-button");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
+	
+	private By errPassMsg = By.xpath("//*[@id=\"dwfrm_login\"]/div[1]");
 
 	public SignInPage(WebDriver driver) {
 		super(driver);
@@ -115,10 +117,22 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 	
-	public void assertErrorMessage(String messageExpectedLabel) {
+	public void assertErrorMessageInexistingOrderNo(String messageExpectedLabel) {
 		String message = WebDriverUtils.getElementText(driver, errorMessageText);
 		assertEquals(message, messageExpectedLabel, "Message displayed is ok");
 	}
+	
+	
+	public void assertWrongEmailMessage(String emailExpectedMsg) {
+		String emailMsg = WebDriverUtils.getElementText(driver, errPassMsg);
+		assertEquals(emailMsg, emailExpectedMsg, "Message displayed is ok");
+	}
+	
+	public void assertWrongPasswordMessage(String passwordExpectedMsg) {
+		String passwordMsg = WebDriverUtils.getElementText(driver, errPassMsg);
+		assertEquals(passwordMsg, passwordExpectedMsg, "Message displayed is ok");
+	}
+	
 	
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);

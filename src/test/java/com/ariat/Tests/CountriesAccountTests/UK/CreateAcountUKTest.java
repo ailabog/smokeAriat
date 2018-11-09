@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesAccountTests.UK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -10,6 +10,7 @@ import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -21,7 +22,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CreateAcountTest extends BaseTest {
+public class CreateAcountUKTest extends BaseTest {
 
 	private Environments environment;
 	private CreateAccountPage createAccountPage;
@@ -95,7 +96,7 @@ public class CreateAcountTest extends BaseTest {
 		signInPage = homePage.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		signInPage.checkStatusClick();
-		signInPage.assertErrorMessage(ERROR_MESSAGE);
+		signInPage.assertErrorMessageInexistingOrderNo(ERROR_MESSAGE);
 		logger.info("Finishing checking invalid order test...");
 	}
 	
