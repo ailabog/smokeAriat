@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.MyOrdersPage;
-import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -24,7 +23,6 @@ public class OrderStatusTest extends BaseTest {
 	private Environments environment;
 	private HomePage homePage;
 	private SignInPage signInPage;
-	private OrderDetailsPage orderDetailsPage;
 	private MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
 
@@ -44,17 +42,19 @@ public class OrderStatusTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
-		orderDetailsPage = signInPage.returnOrderDetailsPage();
+		signInPage.returningCustomer(EMAIL);
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
 		logger.info("Finishing order status test...");
 	}
 
-	
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		orderDetailsPage.quit();
+		myOrdersPage.quit();
 	
 	}
 }

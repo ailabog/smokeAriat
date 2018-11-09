@@ -40,10 +40,11 @@ public class MyAccountPage extends BasePage {
 	private By noOrdersText = By.className("//*contains[text(), We have no order records for this account.']");
 	private By yesOrdersText = By.xpath("//*contains[text(),'My orders']");
 	
-	private By orderStatusLink = By.xpath("//a[text()='Order status']");
-	//private By orderDetailsLink = By.xpath("//a[text()='Order details']");
-	private By orderDetailsLink = By.xpath("//*[@id=\"order-items\"]/div[1]/div[3]/a");
+	private By orderStatusLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div[1]/div[4]/a[1]");
+	private By orderDetailsMyOrderLink = By.xpath("//*[@id=\"order-items\"]/div[1]/div[3]/a");
+	private By orderDetailsMyAccountLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div[1]/div[4]/a[2]");
 	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
+	
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
@@ -59,7 +60,7 @@ public class MyAccountPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
-	private By viewAllOrdersLink = By.linkText("View all");
+	private By viewAllOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[5]/div[1]/a");
 	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
 
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
@@ -155,8 +156,15 @@ public class MyAccountPage extends BasePage {
 					ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 			return new MyOrdersPage(driver);
 	}
-		public OrderDetailsPage returnOrderDetailsPagesMiddleNav() {
-			WebDriverUtils.clickOnElementWithWait(driver, orderDetailsLink);
+		public OrderDetailsPage returnOrderDetailsMyOrdersPageMiddleNav() {
+			WebDriverUtils.clickOnElementWithWait(driver, orderDetailsMyOrderLink);
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+					ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
+		return new OrderDetailsPage(driver);
+		}
+		
+		public OrderDetailsPage returnOrderDetailsMyAccountPageMiddleNav() {
+			WebDriverUtils.clickOnElementWithWait(driver, orderDetailsMyAccountLink);
 			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 					ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
