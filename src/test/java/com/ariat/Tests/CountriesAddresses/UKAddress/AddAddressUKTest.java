@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesAddresses.UKAddress;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -11,18 +11,19 @@ import com.ariat.Pages.HomePage;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Adds a new address and checks the address was created
+ * Adds a new address and checks the address was created for UK
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class AddAddressTest extends BaseTest {
+public class AddAddressUKTest extends BaseTest {
 
 	private HomePage homePage;
 	private SignInPage signInPage;
