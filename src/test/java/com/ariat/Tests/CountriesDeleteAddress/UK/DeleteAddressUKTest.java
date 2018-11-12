@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesDeleteAddress.UK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePage;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.CountriesDeleteAddress.US.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -21,7 +22,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class DeleteAddressTest extends BaseTest {
+public class DeleteAddressUKTest extends BaseTest {
 
 	private HomePage homePage;
 	private SignInPage signInPage;
@@ -45,8 +46,8 @@ public class DeleteAddressTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressTest() {
-		logger.info("Starting deleting address test");
+	public void deleteAddressUKTest() {
+		logger.info("Starting deleting address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -60,12 +61,12 @@ public class DeleteAddressTest extends BaseTest {
 		addressesPage.checkAddress("nnn");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
-		logger.info("Finishing deleting address test");
+		logger.info("Finishing deleting address UK test");
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressFromEditTest() {
-		logger.info("Starting deleting address from Edit address test");
+	public void deleteAddressFromEditUKTest() {
+		logger.info("Starting deleting address from Edit address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -80,7 +81,7 @@ public class DeleteAddressTest extends BaseTest {
 		addressesPage.checkAddress("ccc");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
-		logger.info("Finishing deleting address from Edit address test");
+		logger.info("Finishing deleting address from Edit address UK test");
 	}
 
 	@AfterTest

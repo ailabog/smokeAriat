@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesDeleteAddress.US;
 
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
