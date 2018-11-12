@@ -14,8 +14,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test Home Page instantiates the browser and access the ariat environment and
- * verifies all elements on Home Page UK
+ * Choose home page UK from the list of pages & checks header & footer elements for UK page
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -39,9 +38,8 @@ public class HeaderAndFooterUKTest extends BaseTest{
 		logger.info("Starting the check for Header UK elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
-        homePageUK = new HomePageUK(new ChromeDriver());
-		homePageUK.checkElementsHeader();
+		homePageUK = (HomePageUK) homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
+	    homePageUK.checkElementsHeader();
 		logger.info("Finishing the check for Header UK elements:");
 	}
 	
@@ -50,9 +48,8 @@ public class HeaderAndFooterUKTest extends BaseTest{
 		logger.info("Starting the check for Footer UK elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
-        homePageUK = new HomePageUK(new ChromeDriver());
-		homePageUK.checkElementsFooter();
+		homePageUK = (HomePageUK) homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
+     	homePageUK.checkElementsFooter();
 		logger.info("Finishing the check for Footer UK elements:");
 	}
 

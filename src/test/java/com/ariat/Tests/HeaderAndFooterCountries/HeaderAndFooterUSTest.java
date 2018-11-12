@@ -14,8 +14,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test Home Page instantiates the browser and access the ariat environment and
- * verifies all elements on Home Page US
+ * Choose home page US from the list of pages & checks header & footer elements for US page
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -39,9 +38,8 @@ public class HeaderAndFooterUSTest extends BaseTest{
 		logger.info("Starting the check for Header US elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
-        homePageUS = new HomePageUS(new ChromeDriver());
-		homePageUS.checkElementsHeader();
+		homePageUS = (HomePageUS) homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+   		homePageUS.checkElementsHeader();
 		logger.info("Finishing the check for Header US elements:");
 	}
 	
@@ -50,8 +48,7 @@ public class HeaderAndFooterUSTest extends BaseTest{
 		logger.info("Starting the check for Footer US elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
-        homePageUS = new HomePageUS(new ChromeDriver());
+		homePageUS = (HomePageUS) homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
 		homePageUS.checkElementsFooter();
 		logger.info("Finishing the check for Footer US elements:");
 	}
