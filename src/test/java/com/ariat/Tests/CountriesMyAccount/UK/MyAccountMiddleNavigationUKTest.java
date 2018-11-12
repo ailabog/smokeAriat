@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesMyAccount.UK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -9,6 +9,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -19,7 +20,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class MyAccountMiddleNavigationTest extends BaseTest {
+public class MyAccountMiddleNavigationUKTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
@@ -35,8 +36,8 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void myAccountAccessPersonalInfoTest() {
-		logger.info("Starting personal info test...");
+	public void myAccountAccessPersonalInfoUKTest() {
+		logger.info("Starting personal info UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
     	homePage.UKlocation();
@@ -49,12 +50,12 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		myAccountPage.returnPersonalInfoPageChangePassMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing personal info test...");
+		logger.info("Finishing personal info UK test...");
 	}
 
 	@Test(priority = 1)
-	public void myAccountAccessEmailPrefTest() {
-		logger.info("Starting email preferences test...");
+	public void myAccountAccessEmailPrefUKTest() {
+		logger.info("Starting email preferences UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -65,12 +66,12 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		myAccountPage.returnEmailPreferencePageMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing email preferences test...");
+		logger.info("Finishing email preferences UK test...");
 	}
 
 	@Test(priority = 2)
-	public void myAccountAccessAddressesTest() {
-		logger.info("Starting addresses test...");
+	public void myAccountAccessAddressesUKTest() {
+		logger.info("Starting addresses UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -83,12 +84,12 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		myAccountPage.returnAddAddressesPageMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing addresses test...");
+		logger.info("Finishing addresses UK test...");
 	}
 
 	@Test(priority = 3)
-	public void myAccountAccessPaymentInfoTest() {
-		logger.info("Starting payment info test...");
+	public void myAccountAccessPaymentInfoUKTest() {
+		logger.info("Starting payment info UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -101,12 +102,12 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		myAccountPage.returnAddACreditCardMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing payment info test...");
+		logger.info("Finishing payment info UK test...");
 	}
 
 	@Test(priority = 4)
-	public void myAccountAccessOrdersTest() {
-		logger.info("Starting orders test...");
+	public void myAccountAccessOrdersUKTest() {
+		logger.info("Starting orders UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -117,12 +118,12 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		myAccountPage.returnMyOrdersPageViewAllMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing orders test...");
+		logger.info("Finishing orders UK test...");
 	}
 
 	@Test(priority = 5)
-	public void myAccountAccessWishListTest() {
-		logger.info("Starting wish list test...");
+	public void myAccountAccessWishListUKTest() {
+		logger.info("Starting wish list UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -133,7 +134,7 @@ public class MyAccountMiddleNavigationTest extends BaseTest {
 		myAccountPage.returnMyWishListPageViewAllMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing wish list test...");
+		logger.info("Finishing wish list UK test...");
 	}
 
 	@AfterTest

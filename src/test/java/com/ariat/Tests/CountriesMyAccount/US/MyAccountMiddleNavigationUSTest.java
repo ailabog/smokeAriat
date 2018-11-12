@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesMyAccount.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -9,24 +9,25 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Include tests for My account left navigation
+ * Include tests for My account middle navigation US
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class MyAccountLeftNavigationTest extends BaseTest {
+public class MyAccountMiddleNavigationUSTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest
@@ -34,93 +35,95 @@ public class MyAccountLeftNavigationTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-
 	@Test(priority = 0)
-	public void myAccountAccessPersonalInfoTest() {
-		logger.info("Starting personal info test...");
+	public void myAccountAccessPersonalInfoUSTest() {
+		logger.info("Starting personal info US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+    	homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnEditProfilePageLeftNav();
+		myAccountPage.returnPersonalInfoPageMiddleNav();
+		myAccountPage.myAccountClick();
+		myAccountPage.returnPersonalInfoPageChangePassMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing personal info test...");
+		logger.info("Finishing personal info US test...");
 	}
 
 	@Test(priority = 1)
-	public void myAccountAccessEmailPrefTest() {
+	public void myAccountAccessEmailPrefUSTest() {
 		logger.info("Starting email preferences test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnEmailPreferencePageLeftNav();
+		myAccountPage.returnEmailPreferencePageMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing email preferences test...");
+		logger.info("Finishing email preferences US test...");
 	}
 
 	@Test(priority = 2)
-	public void myAccountAccessAddressesTest() {
-		logger.info("Starting addresses test...");
+	public void myAccountAccessAddressesUSTest() {
+		logger.info("Starting addresses US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnAddressesPageLeftNav();
+		myAccountPage.returnAddressesPageMiddleNav();
+		myAccountPage.myAccountClick();
+		myAccountPage.returnAddAddressesPageMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing addresses test...");
+		logger.info("Finishing addresses US test...");
 	}
 
 	@Test(priority = 3)
 	public void myAccountAccessPaymentInfoTest() {
-		logger.info("Starting payment info test...");
+		logger.info("Starting payment info US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnPaymentInformationPageLeftNav();
+		myAccountPage.returnPaymentInformationPageMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.returnAddACreditCardMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing payment info test...");
+		logger.info("Finishing payment info US test...");
 	}
 
 	@Test(priority = 4)
-	public void myAccountAccessOrdersTest() {
+	public void myAccountAccessOrdersUSTest() {
 		logger.info("Starting orders test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyOrdersPageLeftNav();
+		myAccountPage.returnMyOrdersPageViewAllMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing orders test...");
+		logger.info("Finishing orders US test...");
 	}
 
 	@Test(priority = 5)
-	public void myAccountAccessWishListTest() {
-		logger.info("Starting wish list test...");
+	public void myAccountAccessWishListUSTest() {
+		logger.info("Starting wish list US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -128,11 +131,11 @@ public class MyAccountLeftNavigationTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyWishListPageLeftNav();
+		myAccountPage.returnMyWishListPageViewAllMiddleNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logout();
-		logger.info("Finishing wish list test...");
-	} 
+		logger.info("Finishing wish list US test...");
+	}
 
 	@AfterTest
 	public void tearDown() {

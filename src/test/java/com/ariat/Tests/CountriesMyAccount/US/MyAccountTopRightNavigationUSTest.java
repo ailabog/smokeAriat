@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesMyAccount.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -9,24 +9,25 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Include tests for My account left navigation
+ * Include tests for My account left navigation US
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class MyAccountTopRightNavigationTest extends BaseTest {
+public class MyAccountTopRightNavigationUSTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest
@@ -35,11 +36,11 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void myAccountAccessPersonalInfoTest() {
-		logger.info("Starting personal info test...");
+	public void myAccountAccessPersonalInfoUSTest() {
+		logger.info("Starting personal info US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -47,12 +48,12 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 		myAccountPage.returnPersonalInformationPageTopNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logger.info("Finishing personal info test...");
+		logger.info("Finishing personal info US test...");
 	}
 
 	@Test(priority = 1)
-	public void myAccountAccessOrdersTest() {
-		logger.info("Starting orders test...");
+	public void myAccountAccessOrdersUSTest() {
+		logger.info("Starting orders US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -63,12 +64,12 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 		myAccountPage.returnMyOrdersPageTopNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logger.info("Finishing orders test...");
+		logger.info("Finishing orders US test...");
 	}
 
 	@Test(priority = 2)
-	public void myAccountAccessWishListTest() {
-		logger.info("Starting wish list test...");
+	public void myAccountAccessWishListUSTest() {
+		logger.info("Starting wish list US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -79,7 +80,7 @@ public class MyAccountTopRightNavigationTest extends BaseTest {
 		myAccountPage.returnWishListPageTopNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logger.info("Finishing wish list test...");
+		logger.info("Finishing wish list US test...");
 	}
 
 	@AfterTest
