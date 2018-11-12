@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesLogout.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -9,17 +9,18 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-public class LogoutTest extends BaseTest {
+public class LogoutUSTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	private static final String EMAIL = "aila.bogasieru@gmail.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest
@@ -28,8 +29,8 @@ public class LogoutTest extends BaseTest {
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleTest() {
-		logger.info("Starting the logout test...");
+	public void logoutFromMyAccountMiddleUSTest() {
+		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -42,8 +43,8 @@ public class LogoutTest extends BaseTest {
 	}
 	
 	@Test
-	public void logoutFromMyAccountTopTest() {
-		logger.info("Starting the logout test...");
+	public void logoutFromMyAccountTopUSTest() {
+		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
