@@ -56,8 +56,7 @@ public class CreateAcountUSTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.USlocation();
-		homePage.saveAndContinueLocation();
-		signInPage = homePage.returnSignInPage();
+        signInPage = homePage.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -74,7 +73,7 @@ public class CreateAcountUSTest extends BaseTest {
 		logger.info("Finishing create new account test...");
 	}
 
-	@Test(priority = 1)
+@Test(priority = 1)
 	public void returningCustomerTest() {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -122,7 +121,7 @@ public class CreateAcountUSTest extends BaseTest {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		homePage.saveAndContinueLocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.forgotPasswordClick();
@@ -136,7 +135,7 @@ public class CreateAcountUSTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		signInPage.quit();
+    	signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();
 		orderDetailsPage.quit();
