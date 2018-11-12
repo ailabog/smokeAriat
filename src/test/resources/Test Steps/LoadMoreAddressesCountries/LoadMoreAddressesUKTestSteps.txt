@@ -1,4 +1,4 @@
-**********************Load more addresses test steps***********************************************************************
+**********************Load more addresses UK test steps***********************************************************************
 
 Load more addresses test1
 1. Go to development.ariat.com
