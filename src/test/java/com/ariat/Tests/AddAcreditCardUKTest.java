@@ -22,7 +22,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  */
 
 
-public class AddAcreditCardTest extends BaseTest{
+public class AddAcreditCardUKTest extends BaseTest{
 	
 	private HomePage homePage;
 	private SignInPage signInPage;
@@ -46,9 +46,9 @@ public class AddAcreditCardTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardTest() {
+	public void addCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add a credit card test");
+		logger.info("Starting add a credit card UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -68,12 +68,12 @@ public class AddAcreditCardTest extends BaseTest{
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
-		logger.info("Finishing add a credit card test");
+		logger.info("Finishing add a credit card UK test");
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoTest() {
-		logger.info("Starting add credit card from Payment Info test");
+	public void addCreditCardFromPaymentInfoUKTest() {
+		logger.info("Starting add credit card from Payment Info UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -93,7 +93,7 @@ public class AddAcreditCardTest extends BaseTest{
 		addACreditCardPage.applyCardCreation();
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
-		logger.info("Finishing add credit card from Payment info test");
+		logger.info("Finishing add credit card from Payment info UK test");
 		
   }
 	@AfterTest
