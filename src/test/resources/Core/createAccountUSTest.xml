@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="createAccountUKTest" verbose="1">
+<suite name="createAccountUSTest" verbose="1">
 
-	<test name="createAccountUKTest" >
+	<test name="createAccountUSTest" >
        <classes>
-                 <class name="com.ariat.Tests.CreateAcountUKTest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.US.CreateAcountUSTest" />
                
        </classes>
      </test>

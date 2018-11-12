@@ -1,4 +1,4 @@
-*************************** Create account UK test ******************************************
+*************************** Create account US test ******************************************
 
 Create account test1: create Account
 1. Access environment ariat development
