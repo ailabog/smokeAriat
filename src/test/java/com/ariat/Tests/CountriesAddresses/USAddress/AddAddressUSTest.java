@@ -47,8 +47,8 @@ public class AddAddressUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void addAddressTest() {
-		logger.info("Starting add address test");
+	public void addAddressUSTest() {
+		logger.info("Starting add address US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
         homePage.USlocation();
@@ -69,7 +69,7 @@ public class AddAddressUSTest extends BaseTest {
 		addressesPage.checkAddress(ADDRESS_ID);
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
-		logger.info("Finishing add address test");
+		logger.info("Finishing add address US test");
 	}
 	
 	@AfterTest
