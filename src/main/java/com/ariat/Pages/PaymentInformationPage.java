@@ -1,5 +1,7 @@
 package com.ariat.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
@@ -29,6 +31,7 @@ public class PaymentInformationPage extends BasePage {
 	private By makeDefaultCardLink = By.xpath("a[text()='Make Default Card']");
 	private By deleteButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[2]");
 	private By cancelButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[1]/span");
+	private By creditNickname = By.xpath("//span[text()='MASTER_ID123']");
 
 	protected PaymentInformationPage(WebDriver driver) {
 		super(driver);
@@ -128,5 +131,11 @@ public class PaymentInformationPage extends BasePage {
 		}
 	}
 	
+	public void assertMakeDefaultCreditCard(String expectedCreditCard) {
+		String creditLabel = WebDriverUtils.getElementText(driver, creditNickname);
+		String substring = "DEFAULT | ";
+		String makeDefault = substring + creditLabel;
+		assertEquals(makeDefault , expectedCreditCard, "Credit card made as default is being displayed");
+	}
 	
 }
