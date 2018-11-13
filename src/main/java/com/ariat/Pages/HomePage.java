@@ -63,12 +63,11 @@ public class HomePage extends BasePage {
 
 	}
 
-	public HomePage USlocation() {
+	public void USlocation() {
 		logger.info("I choose US as a location");
 		WebDriverUtils.clickOnElementWithWait(driver, usLocation);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		return new HomePage(driver);
-	}
+	  }
 
 	public HomePage closeLocation() {
 		logger.info("Closing the location..");

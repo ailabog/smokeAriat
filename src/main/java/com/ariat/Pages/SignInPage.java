@@ -50,7 +50,7 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, addressEmailTextBox, email);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
-
+	
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);

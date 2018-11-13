@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesAddCreditCard.US;
+package com.ariat.Tests.CountriesCreditCard.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -52,7 +52,8 @@ public class AddAcreditCardUSTest extends BaseTest{
 		logger.info("Starting add a credit card US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
+		homePage.saveAndContinueLocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -77,7 +78,8 @@ public class AddAcreditCardUSTest extends BaseTest{
 		logger.info("Starting add credit card from Payment Info US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
+		homePage.saveAndContinueLocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);

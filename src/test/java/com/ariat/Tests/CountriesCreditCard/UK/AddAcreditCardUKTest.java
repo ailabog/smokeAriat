@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesCreditCard.UK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -12,11 +12,12 @@ import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card
+ * Tests for Add Credit card UK
  * @author aila.bogasieru@ariat.com
  *
  */
