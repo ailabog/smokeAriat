@@ -12,6 +12,9 @@ import com.ariat.Pages.BasePage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -53,6 +56,10 @@ public class HomePage extends BasePage {
 
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
+	
+	 private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
+     private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+     private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -398,7 +405,15 @@ public class HomePage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, SubscriptionSignUpButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
-
+	
+	
+	public CasualShoeProductPage returnCasualShoeProductPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCasualShoesCategory));
+		return new CasualShoeProductPage(driver);
+	}
+	
 	public SignInPage returnSignInPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, signIn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
@@ -422,6 +437,14 @@ public class HomePage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menText));
 		return new MenCategoryPage(driver);
+	}
+	
+	public WomenAccessoriesPage returnAccessoriesCategoryPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElement(driver, accessoriesCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
+		return new WomenAccessoriesPage(driver);
 	}
 
 }

@@ -24,6 +24,7 @@ public class WomenCategoryPage extends BasePage {
 	private By womenFootwearCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/a");
 	private By womenFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/a");
+
 	private By womenClothingText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccesoriesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[3]/li/a");
@@ -204,6 +205,14 @@ public class WomenCategoryPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(heritaheProductText));
 		return new HeritageProductPage(driver);
 		
+	}
+	
+	
+	public WomenClothingPage returnWomenClothingCategoryLeftNavPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, leftnavClothing);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
+		return new WomenClothingPage(driver);
 	}
 
 }

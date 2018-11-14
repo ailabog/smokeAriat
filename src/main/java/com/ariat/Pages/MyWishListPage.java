@@ -35,6 +35,7 @@ public class MyWishListPage extends BasePage {
 	private By removeItemWishList = By.name("dwfrm_wishlist_items_i0_deleteItem");
 	private By editItemWishList = By.name("701e2dd5bba4a3b17470d0c755");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
+	private By shareIcon = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div/div[5]/form/div[2]/a/span");
 
 	public MyWishListPage(WebDriver driver) {
 		super(driver);
@@ -99,6 +100,10 @@ public class MyWishListPage extends BasePage {
 	public void addToCartItemWishList() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToCartWishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+	}
+	
+	public void shareToAFriend() {
+		WebDriverUtils.clickOnElementWithWait(driver, shareIcon);
 	}
 
 }

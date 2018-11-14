@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -71,9 +72,23 @@ public class MyAccountPage extends BasePage {
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
 	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[3]/div/div[5]/ul/li[5]/a");
 	
+	
+	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
+	private By womenFootwearCasualShoesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");
+	private By footwearCasualShowsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]"); 
 
 	protected MyAccountPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	public CasualShoeProductPage returnCasualShoeProductPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCasualShoesCategory));
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(footwearCasualShowsText));
+		return new CasualShoeProductPage(driver);
 	}
 
 	public void logout() {

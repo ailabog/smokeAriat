@@ -39,6 +39,10 @@ public class CreateAccountPage extends BasePage {
 	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
 	private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
+	
+	private By wishList = By.linkText("Add to WishList");
+	private By myAccountText = By.xpath("//*contains[text()='My account']");
+	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
@@ -184,5 +188,16 @@ public class CreateAccountPage extends BasePage {
 		return new MyAccountPage(driver);
 
 	}
+	
+	public MyAccountWishListPage returnMyAccountWishListPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, wishList);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(myWishlistText));
+		return new MyAccountWishListPage(driver);
+	}
 
-}
+	}
+
