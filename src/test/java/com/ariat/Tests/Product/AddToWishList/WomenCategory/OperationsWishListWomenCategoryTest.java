@@ -62,7 +62,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
 	}
 
-	/*@Test(priority=1)
+	@Test(priority=1)
 	public void productPageWomenCategoryAddToWishListDifferentActionsTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & different actions test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -123,7 +123,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 				+ myWishListPage.noItemWishList());
-	} */
+	} 
 
 	@AfterTest
 	public void tearDown() {
