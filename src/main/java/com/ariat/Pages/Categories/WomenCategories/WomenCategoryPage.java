@@ -210,7 +210,7 @@ public class WomenCategoryPage extends BasePage {
 	
 	public WomenClothingPage returnWomenClothingCategoryLeftNavPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, leftnavClothing);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
 		return new WomenClothingPage(driver);
 	}

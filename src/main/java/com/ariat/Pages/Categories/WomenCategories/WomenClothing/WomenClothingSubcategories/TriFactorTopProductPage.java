@@ -1,4 +1,4 @@
-package com.ariat.Pages.Categories.WomenCategories;
+package com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +10,8 @@ import com.ariat.Pages.MyBagPage;
 import com.ariat.Pages.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
-public class HeritageProductPage extends BasePage{
-
+public class TriFactorTopProductPage extends BasePage{
+	
 	private By addToBasket = By.xpath("//button[text()='Add to basket']");
 
 	private By productBonusDialog = By.id("bonus-product-dialog");
@@ -22,8 +22,6 @@ public class HeritageProductPage extends BasePage{
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	
 	private By selectSize = By.id("va-size");
-	private By selectCalf = By.id("va-calf");
-	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
@@ -50,22 +48,15 @@ public class HeritageProductPage extends BasePage{
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	private By postReviewButton = By.xpath("//span[text()='Post Review']");
 
-	public HeritageProductPage(WebDriver driver) {
+	private By updateButton = By.xpath("//button[@title='Update']");
+	
+	public TriFactorTopProductPage(WebDriver driver) {
 		super(driver);
+		
 	}
-
+	
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void selectAttributeCalf(String calf) {
-		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void selectAttributeHeight(String height) {
-		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -160,6 +151,10 @@ public class HeritageProductPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
+	
+	public void update() {
+		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
+	}
 
 	public MyBagPage returnMyBagPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
@@ -186,4 +181,5 @@ public class HeritageProductPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
+
 }

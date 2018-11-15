@@ -14,7 +14,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Product page - > Women Catgeory test
+ * Product page - > Women Category test write review on Glove product
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -36,7 +36,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 
 	@Test
 	public void productPageWomenCategoryAddToCartTest() {
-		logger.info("Starting product page -> Women Category Add to cart test...");
+		logger.info("Starting product page -> Women Category write review for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -44,7 +44,12 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		gloveProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		gloveProductPage.writeReviewClick();
-		logger.info("Finishing product page -> Women Category Add to cart  test.");
+		gloveProductPage.writeReviewContent("This is my review", "Absolutely gorgeous");
+		gloveProductPage.writeReviewStar("Excellent");
+		gloveProductPage.recommendProductYes();
+		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
+		gloveProductPage.postReview();
+		logger.info("Finishing product page -> Women Category write review for Glove product test.");
 	}
 	
 	

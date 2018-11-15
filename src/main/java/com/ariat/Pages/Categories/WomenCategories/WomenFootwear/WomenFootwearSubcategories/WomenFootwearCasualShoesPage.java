@@ -29,8 +29,5 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(fuseText));
 		return new CasualShoeProductPage(driver);
 	}
-	
-	
-	
 
 }

@@ -22,13 +22,13 @@ public class GlovesProductPage extends BasePage{
 	private By selectSize = By.id("va-size");
     private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
-	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
+	private By writeReview = By.xpath("//button[text()=' Write a review   ']");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
-	private By starReviewExcellent = By.xpath("//span[text()='Excellent']");
-	private By starReviewGood = By.xpath("//span[text()='Good']");
-	private By starReviewAverage = By.xpath("//span[text()='Average']");
-	private By starReviewFair = By.xpath("//span[text()='Fair']");
-	private By starReviewPoor = By.xpath("//span[text()='Poor']");
+	private By starReviewExcellent = By.xpath("//*[@id=\"bv-radio-rating-5\"]/span[1]");
+	private By starReviewGood = By.xpath("//*[@id=\"bv-radio-rating-4\"]/span[1]");
+	private By starReviewAverage = By.xpath("//*[@id=\"bv-radio-rating-3\"]/span[1]");
+	private By starReviewFair = By.xpath("//*[@id=\"bv-radio-rating-2\"]/span[1]");
+	private By starReviewPoor = By.xpath("//*[@id=\"bv-radio-rating-1\"]/span[1]");
 
 	private By titleReview = By.id("bv-text-field-title");
 	private By textReview = By.id("bv-textarea-field-reviewtext");

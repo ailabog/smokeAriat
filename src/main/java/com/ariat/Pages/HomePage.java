@@ -12,9 +12,9 @@ import com.ariat.Pages.BasePage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -60,6 +60,13 @@ public class HomePage extends BasePage {
 	 private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
      private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
      private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
+     
+     private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
+     private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+   
+    private By minicartDialog = By.id("mini-cart-products-ariat");
+    
+	private boolean showMinicart;
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -391,22 +398,6 @@ public class HomePage extends BasePage {
 
 	}
 
-	public void setSubscription() {
-		logger.info("Start collecting information for the subscription..");
-		WebDriverUtils.enterTextBox(driver, emailSubscriptionTextBox, "aila.bogasieru@yahoo.com");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, firstNameSubscriptionTextBox, "Aila");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, lastNameSubscriptionTextBox, "Bogasieru");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-	}
-
-	public void signUpSubscription() {
-		WebDriverUtils.clickOnElementWithWait(driver, SubscriptionSignUpButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-	}
-	
-	
 	public CasualShoeProductPage returnCasualShoeProductPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
@@ -442,9 +433,24 @@ public class HomePage extends BasePage {
 	public WomenAccessoriesPage returnAccessoriesCategoryPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.clickOnElement(driver, accessoriesCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
 		return new WomenAccessoriesPage(driver);
 	}
-
+	
+	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElement(driver, topsAndTshirtsCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
+		return new WomenClothingTopsAndTshirtsPage(driver);
+	}
+	
+	public boolean minicartShow() {
+			if(WebDriverUtils.findElement(driver, minicartDialog) !=null) {
+				showMinicart = true;
+			logger.info("Product was added in cart from WishList" + showMinicart);
+		}
+		return showMinicart;
+	}
 }

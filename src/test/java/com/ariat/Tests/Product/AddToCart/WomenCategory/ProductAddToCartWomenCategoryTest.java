@@ -13,7 +13,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Product page - > Women Catgeory test
+ * Product page - > Women Category -> Add to cart test
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -26,9 +26,7 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 	private WomenCategoryPage womenCategoryPage;
 	private HeritageProductPage productPage;
 
-	
-	
-	
+		
 	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
@@ -42,8 +40,8 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		homePage.UKlocation();
 		womenCategoryPage = homePage.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		productPage.selectAttributeSize("7");
-		productPage.selectAttributeCalf("Regular");
+		productPage.selectAttributeSize("5");
+		productPage.selectAttributeCalf("Slim");
 		productPage.selectAttributeHeight("Medium");
 		//productPage.setQtyIncrease(2);
 		//productPage.setQtyDecrease(1);

@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -81,14 +82,12 @@ public class MyAccountPage extends BasePage {
 		super(driver);
 	}
 	
-	public CasualShoeProductPage returnCasualShoeProductPage() {
+	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCasualShoesCategory));
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(footwearCasualShowsText));
-		return new CasualShoeProductPage(driver);
+		return new WomenFootwearCasualShoesPage(driver);
 	}
 
 	public void logout() {

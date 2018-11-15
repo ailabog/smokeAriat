@@ -36,8 +36,13 @@ public class MyWishListPage extends BasePage {
 	private By editItemWishList = By.name("701e2dd5bba4a3b17470d0c755");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By shareIcon = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div/div[5]/form/div[2]/a/span");
-
-	public MyWishListPage(WebDriver driver) {
+    private By goBackToWishListEdit = By.xpath("//*[@id=\"ext-gen44\"]/body/div[11]/div[1]/a/span");
+    
+    private By noIteminWishListText = By.xpath("//*contains[text(), 'You have no items on your wishlist.']");
+	 
+    private boolean noItemWishList;
+    
+    public MyWishListPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -96,6 +101,10 @@ public class MyWishListPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, editItemWishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
+	
+	public void goBackFromEditToWishlist() {
+		WebDriverUtils.clickOnElementWithWait(driver, goBackToWishListEdit);
+	}
 
 	public void addToCartItemWishList() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToCartWishList);
@@ -104,6 +113,14 @@ public class MyWishListPage extends BasePage {
 	
 	public void shareToAFriend() {
 		WebDriverUtils.clickOnElementWithWait(driver, shareIcon);
+	}
+	
+	public boolean noItemWishList() {
+		if(WebDriverUtils.findElement(driver, noIteminWishListText) != null) {
+			noItemWishList = true;
+			logger.info("Product was added in cart from WishList" + noItemWishList);
+		}
+		return noItemWishList;
 	}
 
 }

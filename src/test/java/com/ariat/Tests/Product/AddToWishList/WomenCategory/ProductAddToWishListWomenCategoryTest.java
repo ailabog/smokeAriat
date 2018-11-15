@@ -14,6 +14,7 @@ import com.ariat.Pages.MyWishListPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.BreechProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
 import com.ariat.Tests.BaseTest;
@@ -22,7 +23,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Product page - > Women Catgeory test
+ * Product page - > Women Category -> Add to Wishlist test
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -35,6 +36,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
     private CasualShoeProductPage womenCasualShoe;
+    private WomenFootwearCasualShoesPage womenFootwareCasualShoePage;
 	private MyWishListPage myWishListPage;
 	private WomenCategoryPage womenCategoryPage;
 	private WomenClothingPage womenClothingPage;
@@ -63,7 +65,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-/*	@Test
+	@Test
 	public void productPageWomenCategoryAddToWishListLoggedTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -73,13 +75,14 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenCasualShoe = myAccountPage.returnCasualShoeProductPage();
+		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
+		womenCasualShoe = womenFootwareCasualShoePage.returnCasualShoeProductPage();
 		womenCasualShoe.selectAttributeSize("6");
 		myWishListPage = womenCasualShoe.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
-	} */
+	} 
 	
-	@Test
+   @Test
 	public void productPageWomenCategoryAddToWishListNotLoggedTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
