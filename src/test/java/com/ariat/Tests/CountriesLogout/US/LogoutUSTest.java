@@ -5,7 +5,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
@@ -19,6 +21,7 @@ public class LogoutUSTest extends BaseTest {
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
+	private GlobalCountries country;
 
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
@@ -33,7 +36,7 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.USlocation();
+		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -47,7 +50,7 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.USlocation();
+		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
