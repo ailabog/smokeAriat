@@ -65,7 +65,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test
+	@Test(priority=0)
 	public void productPageWomenCategoryAddToWishListLoggedTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -82,7 +82,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
 	
-   @Test
+   @Test(priority=1)
 	public void productPageWomenCategoryAddToWishListNotLoggedTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -100,7 +100,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");
 	}
 	
-	@Test
+/*	@Test(priority=2)
 	public void productPageWomenCategoryAddToWishListCreateAccountTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist create account test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -126,7 +126,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList create account test.");
 	}
 	
-	@Test
+	@Test(priority=3)
 	public void productPageWomenCategoryFindSomeoneWishListTest() {
 		logger.info("Starting product page -> Women Category find someone's WishList test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -143,7 +143,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
 		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
 		logger.info("Finishing product page -> Women Category find someone's WishList test.");
-	}
+	}*/
 		
 	@AfterTest
 	public void tearDown() {

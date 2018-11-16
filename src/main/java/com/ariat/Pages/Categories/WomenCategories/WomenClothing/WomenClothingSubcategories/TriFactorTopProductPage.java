@@ -15,7 +15,7 @@ public class TriFactorTopProductPage extends BasePage{
 	private By addToBasket = By.xpath("//button[text()='Add to basket']");
 
 	private By productBonusDialog = By.id("bonus-product-dialog");
-	private By wishList = By.linkText("Add to WishList");
+	private By wishList = By.xpath("//button[text()='Add to WishList']");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountText = By.xpath("//*contains[text()='My account']");

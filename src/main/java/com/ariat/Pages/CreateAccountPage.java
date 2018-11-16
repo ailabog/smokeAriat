@@ -40,7 +40,8 @@ public class CreateAccountPage extends BasePage {
 	private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
 	
-	private By wishList = By.linkText("Add to WishList");
+	//private By wishList = By.xpath("//button[text()='Add to WishList']");
+	private By wishList = By.className("in-stock-element wl-action product__button product__button--pdp");
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 
