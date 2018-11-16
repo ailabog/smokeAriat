@@ -1,0 +1,19 @@
+****************************** Home EU Countries *******************************************************
+
+Home tests
+Choose from list of countries each country with its corresponding currency
+"English", "(United Kingdom)",      "GBP",      "British pound",       
+"English", "(Belgium)",             "EUR",      "EURO",               
+"English", "(Australia)",           "AUD",      "Canadian dollar",     
+"English", "(Ireland)",             "EUR",      "EURO",                
+"English", "(Denmark)",             "EURO",     "EURO",                
+"Francais","(France)",              "EUR",      "EURO",                
+"Deutsch", "(Deutschland)",         "EUR",      "EURO",                
+"English", "(Norway)",              "EUR",      "EURO",                
+"English", "(Finland)",             "EUR",      "EURO",                
+"Deutsch", "(Schweiz)",             "EUR",      "EURO",               
+"English", "(Netherlands)",         "EUR",      "EURO",                
+"English", "(Luxembourg)",          "EUR",      "EURO",                
+"English", "(Italy)",               "EUR",      "EURO",                
+"English", "(Sweden)",              "EUR",      "EURO",                
+"English", "(New Zealand)",         "NZD",      "New Zealand dollar",  
