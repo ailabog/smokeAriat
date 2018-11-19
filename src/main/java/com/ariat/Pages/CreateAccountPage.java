@@ -1,5 +1,7 @@
 package com.ariat.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,6 +41,11 @@ public class CreateAccountPage extends BasePage {
 	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
 	private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
+	private By emailMsg = By.xpath("//span[text()='The email address is invalid.']");
+	private By invalidConfirmEmailMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[7]/div/span");
+	private By invalidPassMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[8]/div/span");
+	private By invalidConfirmMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[9]/div/span");
+	
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
@@ -93,6 +100,24 @@ public class CreateAccountPage extends BasePage {
 		logger.info("Start collecting information to create a new account: confirm email");
 		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	}
+	
+	public void assertWrongEmailCreateAccount(String emailMsgExpected) {
+		String emailMessage = WebDriverUtils.getElementText(driver, emailMsg);
+		assertEquals(emailMessage, emailMsgExpected, "Invalid email message is displayed");
+	}
+		
+		public void assertWrongConfirmEmailCreateAccount(String confirmationEmailMsgExpected) {
+		String confirmationMessage = WebDriverUtils.getElementText(driver, invalidConfirmEmailMessage);
+		assertEquals(confirmationMessage, confirmationEmailMsgExpected, "Message displayed is ok");
+	}	
+	
+	public void assertWrongPassCreateAccount(String passMsgExpected, String confirmationPasslMsgExpected) {
+		String passwordMsg = WebDriverUtils.getElementText(driver, invalidPassMessage);
+		assertEquals(passwordMsg, passMsgExpected, "(8 - 255 characters) message is displayed");
+		
+		String confirmPassword = WebDriverUtils.getElementText(driver, invalidConfirmMessage);
+		assertEquals(confirmPassword, confirmationPasslMsgExpected, "(8 - 255 characters) message is displayed");
 	}
 
 	public void enterPassword(String password) {
@@ -184,5 +209,4 @@ public class CreateAccountPage extends BasePage {
 		return new MyAccountPage(driver);
 
 	}
-
 }
