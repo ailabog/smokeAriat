@@ -31,10 +31,6 @@ public class HomePage extends BasePage {
 	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
 	private By closeSubscription = By.xpath("//*[@id=\"subscriptionPopup\"]/div[1]/div[2]/a/span");
-	private By emailSubscriptionTextBox = By.id("subscriptionEmail");
-	private By firstNameSubscriptionTextBox = By.id("subscriptionName");
-	private By lastNameSubscriptionTextBox = By.id("subscriptionLastName");
-	private By SubscriptionSignUpButton = By.id("subscriptionSubmit");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 
@@ -94,6 +90,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 				
 				case "Aruba":
@@ -103,7 +100,6 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, country.AW.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				//WebDriverUtils.clickOnElementWithWait(driver, country.AW.getLocator());
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				return new HomePage(driver);
@@ -117,8 +113,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+			
 			case "Belgium":
 				logger.info("I choose Belgium as a location");
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
@@ -127,8 +124,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+			
 			case "Canada":
 				logger.info("I choose Canada as a location");
 				WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
@@ -139,8 +137,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+			
 			case "France":
 				logger.info("I choose France as a location");
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
@@ -149,9 +148,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
-
+			
 			case "Ireland":
 				logger.info("I choose Ireland as a location");
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
@@ -160,8 +159,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+			
 
 			case "Denmark":
 				logger.info("I choose Denmark as a location");
@@ -171,9 +171,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				// WebDriverUtils.clickOnElementWithWait(driver, country.DK.getLocator());
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+		
 
 			case "Australia":
 				logger.info("I choose Australia as a location");
@@ -183,9 +183,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				// WebDriverUtils.clickOnElementWithWait(driver, country.AU.getLocator());
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+			
 
 			case "Romania":
 				logger.info("I choose Romania as a location");
@@ -195,9 +195,9 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
-			// break;
+			
 				
 				//TO DO ADD THE REST OF THE COUNTRIES FROM THE ENUM
 			default:
@@ -257,7 +257,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "Francais(France)":
@@ -269,7 +269,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-			
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "Deutsch (Deutschland)":
@@ -280,7 +280,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (Norway)":
@@ -291,7 +291,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-			
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (Finland)":
@@ -302,7 +302,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "Deutsch (Schweiz)":
@@ -314,7 +314,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (Netherlands)":
@@ -326,7 +326,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (Luxembourg)":
@@ -338,7 +338,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (Italy)":
@@ -350,7 +350,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (Sweden)":
@@ -362,7 +362,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 
 			case "English (New Zealand)":
@@ -374,7 +374,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				return new HomePage(driver);
 			default:
 				throw new RuntimeException("Country" + euCountry + "not supported");
@@ -382,21 +382,6 @@ public class HomePage extends BasePage {
 		}
 		return new HomePage(driver);
 
-	}
-
-	public void setSubscription() {
-		logger.info("Start collecting information for the subscription..");
-		WebDriverUtils.enterTextBox(driver, emailSubscriptionTextBox, "aila.bogasieru@yahoo.com");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, firstNameSubscriptionTextBox, "Aila");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, lastNameSubscriptionTextBox, "Bogasieru");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-	}
-
-	public void signUpSubscription() {
-		WebDriverUtils.clickOnElementWithWait(driver, SubscriptionSignUpButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public SignInPage returnSignInPage() {
