@@ -60,7 +60,7 @@ public class ErrorMessagesAccountUSTest extends BaseTest {
 		logger.info("Starting error message in creating new account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -84,7 +84,7 @@ public class ErrorMessagesAccountUSTest extends BaseTest {
 		logger.info("Starting returning customer wrong password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(OK_EMAIL);
 		signInPage.returningPassword(WRONG_PASSWORD);
@@ -98,7 +98,7 @@ public class ErrorMessagesAccountUSTest extends BaseTest {
 		logger.info("Starting returning customer wrong email test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(WRONG_EMAIL);
 		signInPage.returningPassword(OK_PASSWORD);
@@ -112,7 +112,7 @@ public class ErrorMessagesAccountUSTest extends BaseTest {
 		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
+		homePage.USlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, OK_EMAIL, BILLING_ZIP_CODE);
 		signInPage.checkStatusClick();

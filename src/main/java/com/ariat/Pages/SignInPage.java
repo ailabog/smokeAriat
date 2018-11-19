@@ -35,10 +35,11 @@ public class SignInPage extends BasePage {
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
 	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
-	private By createAccountButton = By.name("dwfrm_login_register");
+	//private By createAccountButton = By.name("dwfrm_login_register");
+	private By createAccountButton = By.xpath("//*[@id=\"dwfrm_login_register\"]/div");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
-	private By errorMessageText = By.className("error-form");
+	private By errorMessageText = By.xpath("//*[@id=\"main\"]/div/div/div[3]/div/div[2]/div/div/div");
 	private By closeButton = By.className("close-button");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 	
@@ -136,6 +137,7 @@ public class SignInPage extends BasePage {
 	
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
