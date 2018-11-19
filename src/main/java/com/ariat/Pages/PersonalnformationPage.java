@@ -91,11 +91,6 @@ public class PersonalnformationPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
 	}
 	
-	public void unsubscribeClick() {
-		logger.info("Unsubscribing from Ariat email list...");
-		WebDriverUtils.clickOnElementWithWait(driver, unsubscribe);
-	}
-
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,

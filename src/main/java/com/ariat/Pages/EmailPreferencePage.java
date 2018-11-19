@@ -21,55 +21,72 @@ public class EmailPreferencePage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(EmailPreferencePage.class);
 
 	private By savePreferencesButton = By.name("ctl00$cphContent$submitButton");
-	private By unsubscribeTextBox = By.id("ctl00_cphContent_txtUnsubEmail");
-	private By unsubscribeMeButton = By.id("ctl00_cphContent_unsubscribeButton");
+	private By femaleCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[5]/div/div/div[2]/span");
+	private By maleCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[5]/div/div/div[1]/span");
+	private By countryCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[1]/div[2]/span");
+	private By workCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[2]/div[2]/span");
+	private By westernCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[2]/div[1]/span");
+	private By englishCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[1]/div[1]/span");
+	private By fashionCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[2]/div[3]/span");
+	private By otherCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[5]/div/div/div[3]/span");
 	
-	private By femaleCheck = By.id("female");
-	private By maleCheck = By.name("Male");
-	private By westernCheck = By.name("Western");
-	private By englishCheck = By.name("English");
-	private By neitherCheck = By.name("Neither");
-	private By footWearCheck = By.name("Footwear");
-	private By apparelCheck = By.name("Apparel");
-	private By accessoriesCheck = By.name("Accessories");
+	private By apparelCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[1]/div[3]/span");
 	private By saveEditsButton = By.xpath("//a[text()='Save edits']");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 
 	protected EmailPreferencePage(WebDriver driver) {
 		super(driver);
 	}
-
-	public void checkFemale() {
-		WebDriverUtils.clickOnElementWithWait(driver, femaleCheck);
+	
+	public void checkGender(String option) {
+		switch(option) {
+		case "Male":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, maleCheck);
+		break;
+		case "Female":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, femaleCheck);
+		break;
+		case "Other":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, otherCheck);
+		default:
+			logger.info("No option found");
+		}		
+	}
+	
+	public void ariatProductsCheck(String option) {
+		
+		switch(option) {
+		
+		case "English":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, englishCheck);
+		break;	
+		case "Country":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, countryCheck);
+		break;	
+		case "Apparel":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, apparelCheck);
+		break;	
+		case "Western":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, westernCheck);
+		case "Work":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, workCheck);
+			
+		case "Fashion":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, fashionCheck);
+		default:
+			logger.info("No option found");
+		}			
 	}
 
-	public void checkMale() {
-		WebDriverUtils.clickOnElementWithWait(driver, maleCheck);
-	}
-
-	public void checkWestern() {
-		WebDriverUtils.clickOnElementWithWait(driver, westernCheck);
-	}
-
-	public void checkEnglish() {
-		WebDriverUtils.clickOnElementWithWait(driver, englishCheck);
-	}
-
-	public void checkNeither() {
-		WebDriverUtils.clickOnElementWithWait(driver, neitherCheck);
-	}
-
-	public void checkFootWear() {
-		WebDriverUtils.clickOnElementWithWait(driver, footWearCheck);
-	}
-
-	public void checkApparel() {
-		WebDriverUtils.clickOnElementWithWait(driver, apparelCheck);
-	}
-
-	public void checkAccessoriesCheck() {
-		WebDriverUtils.clickOnElementWithWait(driver, accessoriesCheck);
-	}
 
 	public void saveEditsClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
@@ -80,14 +97,6 @@ public class EmailPreferencePage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, savePreferencesButton);
 	}
 
-	public void unsubscribe(String email) {
-		logger.info("I am unsubscribing from Ariat email list:");
-		WebDriverUtils.enterTextBox(driver, unsubscribeTextBox, email);
-	}
-
-	public void unsubscribeClick() {
-		WebDriverUtils.clickOnElement(driver, unsubscribeMeButton);
-	}
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
