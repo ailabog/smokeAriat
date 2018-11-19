@@ -4,7 +4,7 @@
 
 	<test name="logoutUSTest" >
        <classes>
-                 <class name="com.ariat.Tests.CountriesLogout.UK.LogoutUSTest" />
+                 <class name="com.ariat.Tests.CountriesLogout.US.LogoutUSTest" />
        </classes>
      </test>
 </suite>
