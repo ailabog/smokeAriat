@@ -69,16 +69,21 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[3]/div/div[5]/ul/li[5]/a");
+	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
 	
 
 	protected MyAccountPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public void logout() {
+	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
 		WebDriverUtils.clickOnElementWithWait(driver, logout);
+	}
+	
+	public void logoutTop() {
+		logger.info("Logging out from the application:");
+		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
 	}
 	
 	public void myAccountClick() {
@@ -251,9 +256,9 @@ public class MyAccountPage extends BasePage {
 	
 	public LogoutPage returnLogoutFromMyAccountPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(logoutTopNav));
+		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(signIn));
 		return new LogoutPage(driver);
 	}
-	
 }
