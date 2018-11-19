@@ -1,5 +1,7 @@
 package com.ariat.Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.ArrayList;
 import org.openqa.selenium.By;
 
@@ -31,6 +33,8 @@ public class AddressesPage extends BasePage {
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
+	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
+	private By makeDefaultAddressLink = By.xpath("//*[@id=\"addresses\"]/div[3]/div[2]/div[2]/div/a/u");
 
 	private boolean checkAddress;
 
@@ -61,7 +65,6 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-
 		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
 		    for (WebElement row : rows) {
 		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
@@ -82,6 +85,27 @@ public class AddressesPage extends BasePage {
 		return checkAddress;
 	}
 
+	public void makeDefaultAddressCreated(String addressValue) {
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
+			for (WebElement cell : cells) {
+				if (cell.getText() == addressValue) {
+					if (WebDriverUtils.findElement(driver, makeDefaultAddressLink) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultAddressLink);
+						logger.info("Make default {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Make default {}" + addressValue + "was not possible");
+					}
+				} else {
+					logger.info("Address {}" + addressValue + "was not found");
+				}
+			}
+		}
+	}
+	
 	public void editAddressCreated(String addressValue) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
 		for (WebElement row : rows) {
@@ -90,17 +114,25 @@ public class AddressesPage extends BasePage {
 				if (cell.getText() == addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, editLink);
-						logger.info("Edit the {}" + addressValue + "was done with success");
+						logger.info("Edit address {}" + addressValue + "was done with success");
 
 					} else {
 
-						logger.info("The editing action was not possible");
+						logger.info("Edit address {}" + addressValue + "was not possible");
 					}
 				} else {
 					logger.info("Address {}" + addressValue + "was not found");
 				}
 			}
 		}
+	}
+	
+	
+	public void assertMakeDefault(String expectedAddress) {
+		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
+		String substring = "DEFAULT | ";
+		String makeDefault = substring + addressLabel;
+		assertEquals(makeDefault , expectedAddress, "Address made as default is being displayed");
 	}
 
 	public void addAddress() {
