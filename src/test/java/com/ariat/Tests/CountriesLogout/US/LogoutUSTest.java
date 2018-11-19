@@ -22,7 +22,9 @@ public class LogoutUSTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private GlobalCountries country;
 
-	private static final String EMAIL = "aila.bogasieru@yahoo.com";
+
+
+	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest
@@ -36,6 +38,7 @@ public class LogoutUSTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
@@ -44,6 +47,7 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("I was succesfully logged out from the application!");
 	}
 	
+
 	@Test
 	public void logoutFromMyAccountTopUSTest() {
 		logger.info("Starting the logout US test...");
@@ -58,11 +62,11 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("I was succesfully logged out from the application!");
 	}
 
+
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 	}
-
 }
