@@ -55,8 +55,8 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("B1TGL");
-		addressesPage.assertMakeDefault("DEFAULT | B1TGL");
+		addressesPage.makeDefaultAddressCreated("GGGGG");
+		addressesPage.assertMakeDefault("DEFAULT | GGGGG");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing make default address UK test");
