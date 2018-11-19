@@ -57,7 +57,6 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		logger.info("Starting email preferences UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.closeSubscription();
 		homePage.UKlocation();
 		signInPage = homePage.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
