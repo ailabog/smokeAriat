@@ -56,13 +56,14 @@ public class HomePage extends BasePage {
 	public void saveAndContinueLocation() {
 		logger.info("Saving location...");
 		WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 
 	}
 
 	public HomePage USlocation() {
 		logger.info("I choose US as a location");
 		WebDriverUtils.clickOnElementWithWait(driver, usLocation);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		return new HomePage(driver);
 	}
 
