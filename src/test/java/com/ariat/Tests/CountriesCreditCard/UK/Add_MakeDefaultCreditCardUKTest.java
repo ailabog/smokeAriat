@@ -36,7 +36,7 @@ public class Add_MakeDefaultCreditCardUKTest extends BaseTest{
 	
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
-	private static final String CARD_ID = "MASTER_ID123";
+	private static final String CARD_ID = "XX";
 	private static final String defaultCredit = "DEFAULT | ";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
@@ -67,11 +67,9 @@ public class Add_MakeDefaultCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		//paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add credit card & make it default UK test");
   } 
 	

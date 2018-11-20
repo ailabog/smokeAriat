@@ -55,7 +55,6 @@ public class DeleteCreditCardUKTest extends BaseTest{
 	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
 	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing delete credit card from Payment info UK test");
 		
   }

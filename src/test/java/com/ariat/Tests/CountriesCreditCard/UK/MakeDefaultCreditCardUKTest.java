@@ -54,8 +54,7 @@ public class MakeDefaultCreditCardUKTest extends BaseTest{
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(), "05/2016");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
-		logger.info("Finishing make default credit card from Payment info UK test");
+    	logger.info("Finishing make default credit card from Payment info UK test");
 		
   }
 	@AfterTest

@@ -24,23 +24,23 @@ public class PaymentInformationPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(PaymentInformationPage.class);
 
-	private By addACreditCardButton = By.xpath("//*[@title='Add a credit card']");
+	private By addACreditCardButton = By.xpath("//a[@title='Add a credit card']");
 	private By addACreditCardText = By.xpath("//*contains[text(), 'Add a credit card']");
 	WebElement cardTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]"));
 	private By deleteCardLink = By.xpath("//a[text()='Delete card']");
 	private By makeDefaultCardLink = By.xpath("a[text()='Make Default Card']");
 	private By deleteButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[2]");
 	private By cancelButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[1]/span");
-	private By creditNickname = By.xpath("//span[text()='MASTER_ID123']");
+	private By creditNickname = By.xpath("//span[text()='XX']");
 
 	protected PaymentInformationPage(WebDriver driver) {
 		super(driver);
 	}
 
 	public AddACreditCardPage returnAddACreditCardPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
