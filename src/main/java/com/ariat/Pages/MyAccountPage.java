@@ -150,9 +150,9 @@ public class MyAccountPage extends BasePage {
 		
 		public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
 			WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
-			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 					ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
-			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS, 
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS, 
 					ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 			return new MyOrdersPage(driver);
 	}
@@ -164,6 +164,7 @@ public class MyAccountPage extends BasePage {
 		}
 		
 		public OrderDetailsPage returnOrderDetailsMyAccountPageMiddleNav() {
+			WebDriverUtils.scrolltoElement(driver, orderDetailsMyAccountLink);
 			WebDriverUtils.clickOnElementWithWait(driver, orderDetailsMyAccountLink);
 			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 					ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));

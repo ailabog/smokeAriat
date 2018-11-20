@@ -49,7 +49,6 @@ public class OrderStatusTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing order status test...");
 	}
 

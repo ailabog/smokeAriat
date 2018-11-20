@@ -1,7 +1,6 @@
 package com.ariat.Tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
@@ -59,9 +58,8 @@ public class OrderDetailsTest extends BaseTest {
 		orderDetailsPage.assertInfoOrderDetails(ORDER_NO, DATE, STATUS, TOTAL);
 		orderDetailsPage.returnMyOrdersBackFromOrderDetailsPage();
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing order details checks - View all orders test...");
-	}
+	} 
 
 	@Test
 	public void orderChecksMyAccountMiddleNavTest() {
@@ -77,7 +75,6 @@ public class OrderDetailsTest extends BaseTest {
 		orderDetailsPage.assertInfoOrderDetails(ORDER_NO, DATE, STATUS, TOTAL);
 		orderDetailsPage.returnMyOrdersBackFromOrderDetailsPage();
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing order details checks - My account view test...");
 	}
 
@@ -94,7 +91,6 @@ public class OrderDetailsTest extends BaseTest {
 		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
 		myOrdersPage.assertInfoOrderMyOrder(DATE, STATUS, TOTAL);
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing orders count orders test.");
 	}
 }
