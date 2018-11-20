@@ -34,7 +34,6 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
-	private By makeDefaultAddressLink = By.xpath("//*[@id=\"addresses\"]/div[3]/div[2]/div[2]/div/a/u");
 
 	private boolean checkAddress;
 
@@ -65,10 +64,10 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-		 ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
-		    for (WebElement row : rows) {
-		        ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-		        for (WebElement cell : cells) {
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
+			for (WebElement cell : cells) {
 				while (cell.getText() == addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null
 							&& WebDriverUtils.findElement(driver, deleteLink) != null) {
@@ -91,8 +90,8 @@ public class AddressesPage extends BasePage {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
 				if (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, makeDefaultAddressLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultAddressLink);
+					if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
 						logger.info("Make default {}" + addressValue + "was done with success");
 
 					} else {
@@ -105,7 +104,51 @@ public class AddressesPage extends BasePage {
 			}
 		}
 	}
+
+	public void deleteAddressCreatedNo(String addressValue) {
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
+			for (WebElement cell : cells) {
+				if (cell.getText() == addressValue) {
+					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
+						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialog);
+						logger.info("Cancel deleting {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Cancel deleting {}" + addressValue + "was not possible");
+					}
+				} else {
+					logger.info("Address {}" + addressValue + "was not found");
+				}
+			}
+		}
+	}
 	
+	public void deleteAddressCreatedYes(String addressValue) {
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		for (WebElement row : rows) {
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
+			for (WebElement cell : cells) {
+				if (cell.getText() == addressValue) {
+					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
+						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
+						logger.info("Delete {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Delete {}" + addressValue + "was not possible");
+					}
+				} else {
+					logger.info("Address {}" + addressValue + "was not found");
+				}
+			}
+		}
+	}
+
 	public void editAddressCreated(String addressValue) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
 		for (WebElement row : rows) {
@@ -126,13 +169,12 @@ public class AddressesPage extends BasePage {
 			}
 		}
 	}
-	
-	
+
 	public void assertMakeDefault(String expectedAddress) {
 		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
 		String substring = "DEFAULT | ";
 		String makeDefault = substring + addressLabel;
-		assertEquals(makeDefault , expectedAddress, "Address made as default is being displayed");
+		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
 	}
 
 	public void addAddress() {
