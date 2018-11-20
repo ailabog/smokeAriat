@@ -49,7 +49,6 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing load more addresses UK test");
 	}
 	
@@ -65,7 +64,6 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
 		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing load more addresses lef navigation UK test");
 	}
 	
