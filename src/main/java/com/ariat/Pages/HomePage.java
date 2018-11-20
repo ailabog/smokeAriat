@@ -67,6 +67,8 @@ public class HomePage extends BasePage {
 		return new HomePage(driver);
 	}
 
+
+
 	public HomePage closeLocation() {
 		logger.info("Closing the location..");
 		WebDriverUtils.clickOnElementWithWait(driver, closeLocationx);

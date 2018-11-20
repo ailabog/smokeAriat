@@ -64,6 +64,7 @@ public class MyAccountPage extends BasePage {
 
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
+	private By addDeleteCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	
 	private By myEmailPrefText = By.xpath("//*[contains(text(),'Email preferences']");
 	
@@ -140,6 +141,13 @@ public class MyAccountPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
 		return new AddACreditCardPage(driver);
+	}
+	
+	public PaymentInformationPage returnPaymentInformationPageAddDeleteCardMiddleNav() {
+		WebDriverUtils.clickOnElementWithWait(driver, addDeleteCardLink);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(paymentInformationText));
+		return new PaymentInformationPage(driver);
 	}
 
 	public MyOrdersPage returnMyOrdersPageViewAllMiddleNav() {

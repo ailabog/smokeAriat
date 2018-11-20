@@ -24,7 +24,8 @@ public enum ListOfCreditCards {
 	VISA2("Visa", "4222222222222", "432"),
 	DANKORT_PBS("Dankort", "76009244561", "432"),
 	DANKORT_PBS1("Dankort", "5019717010103742", "432"),
-	SWITCH_SOLO("Switch/Solo (Paymentech)", "6331101999990016", "432");
+	SWITCH_SOLO("Switch/Solo (Paymentech)", "6331101999990016", "432"),
+	INVALID_CARD("Visa", "WIIUIRYIEHFKWEHEW", "ADHGA");
 
 	private String name;
 	private String number;

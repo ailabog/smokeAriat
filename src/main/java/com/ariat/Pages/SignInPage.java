@@ -3,6 +3,12 @@ package com.ariat.Pages;
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.ariat.Utils.WebDriverUtils;
 
 /**
  * Page that contains all the elements for Sign In page and its methods: 
@@ -11,13 +17,6 @@ import org.openqa.selenium.By;
  * @author aila.bogasieru@ariat.com
  * 
  */
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.ariat.Utils.WebDriverUtils;
 
 public class SignInPage extends BasePage {
 
@@ -34,15 +33,13 @@ public class SignInPage extends BasePage {
 	private By checkOrderTextBox = By.id("dwfrm_ordertrack_orderNumber");
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
-	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
-	//private By createAccountButton = By.name("dwfrm_login_register");
-	private By createAccountButton = By.xpath("//*[@id=\"dwfrm_login_register\"]/div");
+	private By checkStatusButton = By.id("dwfrm_ordertrack_findorder");
+	private By createAccountButton = By.name("dwfrm_login_register");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
-	private By errorMessageText = By.xpath("//*[@id=\"main\"]/div/div/div[3]/div/div[2]/div/div/div");
+	private By errorMessageText = By.className("error-form");
 	private By closeButton = By.className("close-button");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
-	
 	private By errPassMsg = By.xpath("//*[@id=\"dwfrm_login\"]/div[1]");
 
 	public SignInPage(WebDriver driver) {
@@ -54,7 +51,7 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, addressEmailTextBox, email);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
-
+	
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
@@ -118,15 +115,20 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 	
+	public void assertErrorMessage(String messageExpectedLabel) {
+		String message = WebDriverUtils.getElementText(driver, errorMessageText);
+		assertEquals(message, messageExpectedLabel, "Error! Error message displayed is not correct");
+	}
+	
+	public void assertMsg(String actualText, String messageExpected) {
+		WebDriverUtils.findText(driver, actualText);
+		assertEquals(actualText, messageExpected, "Message displayed is correct");
+		
+	}
+	
 	public void assertErrorMessageInexistingOrderNo(String messageExpectedLabel) {
 		String message = WebDriverUtils.getElementText(driver, errorMessageText);
 		assertEquals(message, messageExpectedLabel, "Message displayed is ok");
-	}
-	
-	
-	public void assertWrongEmailMessage(String emailExpectedMsg) {
-		String emailMsg = WebDriverUtils.getElementText(driver, errPassMsg);
-		assertEquals(emailMsg, emailExpectedMsg, "Message displayed is ok");
 	}
 	
 	public void assertWrongPasswordMessage(String passwordExpectedMsg) {
@@ -134,15 +136,11 @@ public class SignInPage extends BasePage {
 		assertEquals(passwordMsg, passwordExpectedMsg, "Message displayed is ok");
 	}
 	
-	
-	public CreateAccountPage returnCreateAccountPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
-		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
-		return new CreateAccountPage(driver);
+	public void assertWrongEmailMessage(String emailExpectedMsg) {
+		String emailMsg = WebDriverUtils.getElementText(driver, errPassMsg);
+		assertEquals(emailMsg, emailExpectedMsg, "Message displayed is ok");
 	}
+	
 	
 	public OrderDetailsPage returnOrderDetailsPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
@@ -150,6 +148,14 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
+	}
+
+	public CreateAccountPage returnCreateAccountPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
+		return new CreateAccountPage(driver);
 	}
 
 	public MyAccountPage returnMyAccountPage() {
@@ -160,3 +166,4 @@ public class SignInPage extends BasePage {
 		return new MyAccountPage(driver);
 	}
 }
+
