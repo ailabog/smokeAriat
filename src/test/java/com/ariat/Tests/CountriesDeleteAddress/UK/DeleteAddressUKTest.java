@@ -45,7 +45,7 @@ public class DeleteAddressUKTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void deleteAddressUKTest() {
 		logger.info("Starting deleting address UK test");
 		homePage = new HomePage(new ChromeDriver());
@@ -62,7 +62,7 @@ public class DeleteAddressUKTest extends BaseTest {
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logoutPage.logout();
 		logger.info("Finishing deleting address UK test");
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void deleteAddressFromEditUKTest() {
@@ -76,7 +76,7 @@ public class DeleteAddressUKTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addAddressPage = addressesPage.returnAddressesEdit();
-		addAddressPage.deleteAddress();
+		//addAddressPage.deleteAddress();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
 		addressesPage.checkAddress("ccc");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
