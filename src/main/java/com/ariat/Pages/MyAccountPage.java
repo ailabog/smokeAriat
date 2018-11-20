@@ -71,7 +71,6 @@ public class MyAccountPage extends BasePage {
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
 	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
-	
 
 	protected MyAccountPage(WebDriver driver) {
 		super(driver);

@@ -1,7 +1,6 @@
 package com.ariat.Pages;
 
 import static org.testng.Assert.assertEquals;
-
 import java.util.ArrayList;
 import org.openqa.selenium.By;
 
@@ -34,6 +33,7 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
+	private By loadMoreButton = By.xpath("//button[text()='Load More']");
 
 	private boolean checkAddress;
 
@@ -80,6 +80,7 @@ public class AddressesPage extends BasePage {
 					}
 				}
 			}
+
 		}
 		return checkAddress;
 	}
@@ -126,7 +127,7 @@ public class AddressesPage extends BasePage {
 			}
 		}
 	}
-	
+
 	public void deleteAddressCreatedYes(String addressValue) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
 		for (WebElement row : rows) {
@@ -177,6 +178,18 @@ public class AddressesPage extends BasePage {
 		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
 	}
 
+	public void loadMoreAddesses() {
+		do {
+			logger.info("Loading more addresses...");
+			WebDriverUtils.scrollDown(driver, loadMoreButton);
+			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
+		for (int i = 1; i <= 3; i++) {
+			WebDriverUtils.scrollUp(driver, addressesText);
+		}
+	}
+
 	public void addAddress() {
 		logger.info("Adding new address...");
 		WebDriverUtils.scrolltoElement(driver, AddAddressButton);
@@ -194,10 +207,8 @@ public class AddressesPage extends BasePage {
 	public AddAddressesPage returnAddressesEdit() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+
 		return new AddAddressesPage(driver);
 
 	}
-
 }

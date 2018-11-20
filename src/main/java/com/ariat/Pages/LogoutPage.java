@@ -18,7 +18,7 @@ public class LogoutPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(LogoutPage.class);
 
-	private By logout = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
+	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
 	
 	protected LogoutPage(WebDriver driver) {
 		super(driver);
@@ -26,7 +26,7 @@ public class LogoutPage extends BasePage {
 
 	public void logout() {
 		logger.info("Now I am logging out from ariat.com");
-		WebDriverUtils.clickOnElementWithWait(driver, logout);
+		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
 		logger.info("I am succesfully logged out");
 	}
 }
