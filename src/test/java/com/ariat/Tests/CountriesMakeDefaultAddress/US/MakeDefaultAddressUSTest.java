@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddressesPage;
-import com.ariat.Pages.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;

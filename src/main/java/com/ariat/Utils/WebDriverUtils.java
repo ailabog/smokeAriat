@@ -1,5 +1,6 @@
 package com.ariat.Utils;
 
+import java.util.List;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
@@ -165,7 +166,36 @@ public class WebDriverUtils {
 		WebElement element = findElement(driver, locator);
 		element.clear();
 	}
+	
+	public static List<WebElement> findElements(WebDriver driver, By locator) {
+		try {
+			logger.debug("Finding element {}", locator);
+			return driver.findElements(locator);
+		} catch (org.openqa.selenium.WebDriverException e) {
+			logger.error("WebDriverException thrown: {}", e.getMessage());
+			driver.quit();
+			throw new WebDriverException(e);
+		}
+	}
+	
+	public static boolean isElementPresent(WebDriver driver, By locator) {
+		logger.debug("Checking if element {} is present", locator);
+		return findElements(driver, locator)
+				.stream()
+				.findFirst()
+				.isPresent();
+	}
+	
+	public static boolean isElementDisplayed(WebDriver driver, By locator) {
+		logger.debug("Checking if element {} is displayed", locator);
+		return findElements(driver, locator)
+				.stream()
+				.filter(WebElement::isDisplayed)
+				.findFirst()
+				.isPresent();
+	}
 
+	
 	public static void disableCookie() {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		ChromeOptions options = new ChromeOptions();
