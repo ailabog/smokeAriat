@@ -42,19 +42,17 @@ public class WomenCategoryPage extends BasePage {
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By sortDropWomenCategoryUp = By
-			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/h3/p[1]/span");
-	private By show36ItemLinkUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/ul/li[1]/a");
-	private By show72ItemLinkUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/ul/li[2]/a");
-	private By show108ItemLinkUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/ul/li[3]/a");
-	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[5]/ul/li[5]");
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[2]/h3/p[1]/span");
+	private By show36ItemLink = By.xpath("//a[text()='36 Items']");
+	private By show72ItemLink = By.xpath("//a[text()='72 Items']");
+	private By show108ItemLink = By.xpath("//a[text()='108 Items']");
+	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
+	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[5]/a");
 	private By prevPaginationButtonUp = By
-			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
 	private By backToTopButton = By.xpath("//*[@id=\"main\"]/div/div[1]/div[1]/a");
 	private By sortDropWomenCategoryDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
-	private By show36ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[1]/a");
-	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[2]/a");
-    private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[3]/a");
-	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
+	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[4]/ul/li[4]/a");
 	private By prevPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
 	private By heritageProductLink = By.xpath("//*[@id=\"026613ca2d03c726cde6054af3\"]/div[1]/a/picture/img");
 	private By heritaheProductText = By.xpath("//*contains[text(),'Heritage II Ellipse Tall Riding Boot']");
@@ -103,17 +101,17 @@ public class WomenCategoryPage extends BasePage {
 	
 	public void show36ItemsUp() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLinkUp);
+		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 	}
 
 	public void show72ItemsUp() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLinkUp);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 	}
 
 	public void show108ItemLinkUp() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkUp);
+		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLink);
 	}
 
 	public void nextPaginationUp() {
@@ -133,19 +131,19 @@ public class WomenCategoryPage extends BasePage {
 	}
 
 	public void show36ItemsDown() {
-		WebDriverUtils.scrolltoElement(driver, show36ItemLinkDown);
+		WebDriverUtils.scrolltoElement(driver, show36ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLinkDown);
+		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 	}
 
 	public void show72ItemsDown() {
-		WebDriverUtils.scrolltoElement(driver, show72ItemLinkDown);
+		WebDriverUtils.scrolltoElement(driver, show72ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLinkDown);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 	}
 
 	public void show108ItemLinkDown() {
-		WebDriverUtils.scrolltoElement(driver, show108ItemLinkDown);
+		WebDriverUtils.scrolltoElement(driver, show108ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkDown);
 	}
@@ -205,5 +203,4 @@ public class WomenCategoryPage extends BasePage {
 		return new HeritageProductPage(driver);
 		
 	}
-
 }

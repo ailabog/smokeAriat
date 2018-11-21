@@ -21,7 +21,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenCategoryPage extends BasePage{
 	
-	private By menFootwearCategory = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
+	private By menFootwearCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/a");
 
 	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By menClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[2]/li/a");
@@ -48,7 +48,24 @@ public class MenCategoryPage extends BasePage{
     private By westernTextLeftNav = By.xpath("//*[contains(text(),'Western']");
     private By fashionTextLeftNav = By.xpath("//*[contains(text(),'Fashion']");
     private By workTextLeftNav = By.xpath("//*[contains(text(),'Work']");
-   
+    
+    private By sortDropWomenCategoryUp = By
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[2]/h3/p[1]/span");
+	private By show36ItemLink = By.xpath("//a[text()='36 Items']");
+	private By show72ItemLink = By.xpath("//a[text()='72 Items']");
+	private By show108ItemLink = By.xpath("//a[text()='108 Items']");
+	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
+	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[5]/a");
+	private By prevPaginationButtonUp = By
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
+	private By backToTopButton = By.xpath("//*[@id=\"main\"]/div/div[1]/div[1]/a");
+	private By sortDropWomenCategoryDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
+	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
+	private By prevPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
+	private By recommendedLink = By.linkText("Recommended");
+	private By priceHighToLowLink = By.linkText("Price (High to Low)");
+	private By priceLowToHighLink = By.linkText("Price (Low to High)");
+	private By bestSellersLink = By.linkText("Best Sellers");
     
 	public MenCategoryPage(WebDriver driver) {
 		super(driver);
@@ -59,6 +76,97 @@ public class MenCategoryPage extends BasePage{
 		WebDriverUtils.moveToElement(driver, menCategory);
 	}
 	
+	
+	public void clickSortUp() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryUp);
+	}
+	
+	public void clickSortDown() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryDown);
+	}
+
+	public void sortProductWomenCategoryRecommended() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, recommendedLink);
+	}
+	
+	public void sortProductWomenCategoryPriceHighToLow() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, priceHighToLowLink);
+	}
+	
+	public void sortProductWomenCategoryPriceLowToHigh() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, priceLowToHighLink);
+	}
+	
+	public void sortProductWomenCategoryBestSellers() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLink);
+	}
+	
+	public void show36ItemsUp() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
+	}
+
+	public void show72ItemsUp() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
+	}
+
+	public void show108ItemLinkUp() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLink);
+	}
+
+	public void nextPaginationUp() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonUp);
+	}
+
+	public void prevPaginationButtonUp() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, prevPaginationButtonUp);
+	}
+
+	public void backToTopClick() {
+		WebDriverUtils.scrolltoElement(driver, backToTopButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, backToTopButton);
+	}
+
+	public void show36ItemsDown() {
+		WebDriverUtils.scrolltoElement(driver, show36ItemLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
+	}
+
+	public void show72ItemsDown() {
+		WebDriverUtils.scrolltoElement(driver, show72ItemLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
+	}
+
+	public void show108ItemLinkDown() {
+		WebDriverUtils.scrolltoElement(driver, show108ItemLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkDown);
+	}
+	
+	public void nextPaginationDown() {
+		WebDriverUtils.scrollElementToPosition(driver, nextPaginationButtonDown);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonDown);
+	}
+
+	public void prevPaginationButtonDown() {
+		WebDriverUtils.scrollElementToPosition(driver, prevPaginationButtonDown);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, prevPaginationButtonDown);
+	}
 	
 	//Top navigation
 	public MenCategoryPage returnMenCategoryPage() {
@@ -160,8 +268,4 @@ public class MenCategoryPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(menFeaturedText));
 		return new MenFeaturedPage(driver);
 	}
-	
-	
-	
-	
 } 
