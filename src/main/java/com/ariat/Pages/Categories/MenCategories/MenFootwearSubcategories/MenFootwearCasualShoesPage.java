@@ -10,20 +10,21 @@ import com.ariat.Utils.WebDriverUtils;
 
 /**
  * Implements Men Footwear CasualShoes Category Page
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class MenFootwearCasualShoesPage extends BasePage{
-	
+public class MenFootwearCasualShoesPage extends BasePage {
+
 	private By sneakersFootwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li/a");
 	private By sneakersFootwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 
 	public MenFootwearCasualShoesPage(WebDriver driver) {
 		super(driver);
-		
+
 	}
-	
+
 	public MenFashionSneakersPage returnMenFashionSneakersCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, sneakersFootwearCategoryLeftNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,

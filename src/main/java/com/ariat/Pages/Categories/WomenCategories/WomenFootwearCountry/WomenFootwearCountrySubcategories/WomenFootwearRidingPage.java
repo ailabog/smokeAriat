@@ -1,4 +1,4 @@
-package com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories;
+package com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories;
 
 
 import org.openqa.selenium.WebDriver;

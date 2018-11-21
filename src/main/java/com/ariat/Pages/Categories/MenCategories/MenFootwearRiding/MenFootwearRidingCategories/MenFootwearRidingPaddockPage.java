@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 
 import com.ariat.Pages.BasePage;
 
-public class MenFootwearRidingPaddockPage extends BasePage{
+public class MenFootwearRidingPaddockPage extends BasePage {
 
 	public MenFootwearRidingPaddockPage(WebDriver driver) {
 		super(driver);
-	
+
 	}
 
 }

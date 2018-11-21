@@ -37,7 +37,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class TopNavMenCategoriesAndSubcategoriesTest extends BaseTest {
+public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;

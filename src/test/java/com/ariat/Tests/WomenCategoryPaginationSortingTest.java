@@ -47,7 +47,7 @@ public class WomenCategoryPaginationSortingTest extends BaseTest {
 		womenCategoryPage.nextPaginationUp();
 		womenCategoryPage.prevPaginationButtonUp();
 		womenCategoryPage.show72ItemsDown();
-		//womenCategoryPage.show108ItemLinkDown();
+		womenCategoryPage.show108ItemLinkDown();
 		womenCategoryPage.nextPaginationDown();
 		womenCategoryPage.backToTopClick();
 		logger.info("Finishing  sort and navigate pagination test.");
