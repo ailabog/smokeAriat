@@ -100,7 +100,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				//WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
+				WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
 				return new HomePageUS(driver);
 
 			case "United Kingdom":
@@ -111,7 +111,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, country.UK.getLocator());
 				return new HomePageUK(driver);
 
 			case "Belgium":
