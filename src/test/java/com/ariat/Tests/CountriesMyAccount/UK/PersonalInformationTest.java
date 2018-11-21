@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.CountriesMyAccount.UK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -10,6 +10,7 @@ import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PersonalnformationPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 

@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.WomenCategoriesNavigation;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Tests.BaseTest;
+
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**

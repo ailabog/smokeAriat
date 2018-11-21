@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.WomenCategoriesNavigation;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -28,6 +28,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 

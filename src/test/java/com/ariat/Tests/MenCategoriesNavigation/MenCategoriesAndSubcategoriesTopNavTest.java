@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.MenCategoriesNavigation;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -26,6 +26,7 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFoot
 import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearRidingPage;
 import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearWesternPage;
 import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearWorkPage;
+import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
