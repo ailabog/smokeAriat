@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -21,7 +20,6 @@ public class LoadMoreAddressUKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
@@ -73,7 +71,5 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
-
 }

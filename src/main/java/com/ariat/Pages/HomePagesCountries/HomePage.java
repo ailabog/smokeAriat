@@ -1,5 +1,7 @@
 package com.ariat.Pages.HomePagesCountries;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -40,18 +42,19 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
 	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
-	private By closeSubscription = By.xpath("//*[@id=\"subscriptionPopup\"]/div[1]/div[2]/a/span");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By menCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/a");
 	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By kidsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[3]/a");
-	private By clearanceCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[4]/a");
-	private By giftGuideMenu = By.xpath("//img[contains(@src, 'gift-guide-category-image.png')]");
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
+	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
+	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
+	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
+	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a']");
+	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -88,10 +91,26 @@ public class HomePage extends BasePage implements List<HomePage> {
 		WebDriverUtils.clickOnElementWithWait(driver, closeLocationx);
 		return new HomePage(driver);
 	}
-
-	public void closeSubscription() {
-		logger.info("Closing the subscription..");
-		WebDriverUtils.clickOnElementWithWait(driver, closeSubscription);
+	
+	public void search(String option) {
+		logger.info("Searching for a product...");
+		WebDriverUtils.clickOnElementWithWait(driver, search);
+		WebDriverUtils.enterTextBox(driver, searchTextBox, option);
+	}
+		
+	public void assertProductDisplayed(String expectedText, String option) {
+		String text = WebDriverUtils.getElementText(driver, textMsgProduct);
+		assertEquals(text, expectedText, "Product results for:" + option);
+	}
+	
+	public void seeAllproducts() {
+		logger.info("Display all the products...");
+		WebDriverUtils.clickOnElementWithWait(driver, seeAllproductsLink);
+	}
+	
+	public void closeSearch() {
+		logger.info("Close serach products...");
+		WebDriverUtils.clickOnElementWithWait(driver, closeSearch);
 	}
 
 	public List<HomePage> chooseGlobalLocation(GlobalCountries country, String currency) {

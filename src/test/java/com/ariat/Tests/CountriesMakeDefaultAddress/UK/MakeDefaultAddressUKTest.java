@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -28,7 +27,6 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
@@ -55,10 +53,8 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("GGGGG");
-		addressesPage.assertMakeDefault("DEFAULT | GGGGG");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
+		addressesPage.makeDefaultAddressCreated("5OLM5");
+		addressesPage.assertMakeDefault("DEFAULT | 5OLM5");
 		logger.info("Finishing make default address UK test");
 	}
 	
@@ -68,6 +64,5 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
 }

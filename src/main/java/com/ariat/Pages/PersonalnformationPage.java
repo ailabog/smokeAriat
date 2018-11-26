@@ -19,9 +19,8 @@ public class PersonalnformationPage extends BasePage {
 	
 	private static final Logger logger = LoggerFactory.getLogger(PersonalnformationPage.class);
 
-	private By saveEditsButton = By.className("personalinfo_save-edits-btn");
+	private By saveEditsButton = By.name("dwfrm_profile_confirm");
 	private By myAccountTitle = By.className("account-overview__title ms-font--proxima_nova_semibold");
-	private By unsubscribe = By.name("dwfrm_profile_unsubscribe");
 	private By firstNameTextBox = By.id("dwfrm_profile_customer_firstname");
 	private By lastNameTextBox = By.id("dwfrm_profile_customer_lastname");
 	private By emailTextBox = By.id("dwfrm_profile_customer_email");

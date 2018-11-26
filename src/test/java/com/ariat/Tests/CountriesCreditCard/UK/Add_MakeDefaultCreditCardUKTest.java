@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -29,7 +28,6 @@ public class Add_MakeDefaultCreditCardUKTest extends BaseTest{
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
-	private LogoutPage logoutPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private ListOfCreditCards typeCard;
@@ -69,7 +67,6 @@ public class Add_MakeDefaultCreditCardUKTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing add credit card & make it default UK test");
   } 
 	
@@ -80,6 +77,6 @@ public class Add_MakeDefaultCreditCardUKTest extends BaseTest{
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-		logoutPage.quit();
+		
 	}
 }

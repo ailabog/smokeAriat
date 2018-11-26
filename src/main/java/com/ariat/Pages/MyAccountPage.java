@@ -23,6 +23,7 @@ public class MyAccountPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(MyAccountPage.class);
 
 	private By logout = By.xpath("//a[text()='Log out']");
+	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By personalInfoLink = By.xpath("//a[text()= 'Personal Information']");
 	private By personalInfoText = By.xpath("//*[contains(text(),'Personal Information']");
@@ -58,9 +59,9 @@ public class MyAccountPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
-	private By viewAllOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div[3]/div[4]/a[2]");
+	private By viewAllOrdersLink = By.xpath("//a[text()='View all']");
 
-	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
+	private By viewAllWishListLink = By.xpath("//a[text()='View all']");
 
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
@@ -71,7 +72,7 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
+	
 
 	protected MyAccountPage(WebDriver driver) {
 		super(driver);

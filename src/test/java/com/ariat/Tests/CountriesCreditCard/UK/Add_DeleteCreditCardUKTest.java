@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -29,7 +28,6 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
-	private LogoutPage logoutPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private ListOfCreditCards typeCard;
@@ -68,8 +66,6 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add credit card & delete it UK test");
   } 
 	
@@ -80,6 +76,6 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-		logoutPage.quit();
+	
 	}
 }

@@ -31,7 +31,7 @@ public class PaymentInformationPage extends BasePage {
 	private By makeDefaultCardLink = By.xpath("a[text()='Make Default Card']");
 	private By deleteButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[2]");
 	private By cancelButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[1]/span");
-	private By creditNickname = By.xpath("//span[text()='XX']");
+	private By creditNickname = By.xpath("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/h3/span");
 
 	protected PaymentInformationPage(WebDriver driver) {
 		super(driver);

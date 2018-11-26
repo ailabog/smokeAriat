@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -27,7 +26,6 @@ public class MakeDefaultCreditCardUKTest extends BaseTest{
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private LogoutPage logoutPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private ListOfCreditCards typeCard;
@@ -53,8 +51,7 @@ public class MakeDefaultCreditCardUKTest extends BaseTest{
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(), "05/2016");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-    	logger.info("Finishing make default credit card from Payment info UK test");
+		logger.info("Finishing make default credit card from Payment info UK test");
 		
   }
 	@AfterTest
@@ -63,6 +60,5 @@ public class MakeDefaultCreditCardUKTest extends BaseTest{
 		signInPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-		logoutPage.quit();
 	}
 }

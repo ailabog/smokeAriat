@@ -68,9 +68,7 @@ public class CreateAcountUKTest extends BaseTest {
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
 		createAccountPage.addMeToAriatEmail();
-		myAccountPage = createAccountPage.returnMyAccountPage();
-		myAccountPage.logoutMiddle();
-		logger.info("Finishing create new account test...");
+	    logger.info("Finishing create new account test...");
 	}
 
 	@Test(priority = 1)
@@ -83,7 +81,6 @@ public class CreateAcountUKTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutMiddle();
 		logger.info("Finishing returning customer test...");
 	}
 

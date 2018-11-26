@@ -33,7 +33,7 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
-	private By loadMoreButton = By.xpath("//button[text()='Load More']");
+	private By loadMoreButton = By.xpath("//button]@title='Load More']");
 
 	private boolean checkAddress;
 
@@ -185,10 +185,10 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
-		for (int i = 1; i <= 3; i++) {
+		while(! WebDriverUtils.isElementDisplayed(driver, addressesText)){
 			WebDriverUtils.scrollUp(driver, addressesText);
+		  }
 		}
-	}
 
 	public void addAddress() {
 		logger.info("Adding new address...");
@@ -207,7 +207,6 @@ public class AddressesPage extends BasePage {
 	public AddAddressesPage returnAddressesEdit() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editLink);
-
 		return new AddAddressesPage(driver);
 
 	}

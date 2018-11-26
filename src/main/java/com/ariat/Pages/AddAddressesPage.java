@@ -33,7 +33,7 @@ public class AddAddressesPage extends BasePage {
 	private By cancelAddressButton = By.name("dwfrm_profile_address_cancel");
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 	private By addressesText = By.xpath("//*contains[text(), 'Address']");
-    private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
+    private By deleteAddressButton = By.xpath("//*[@id=\"edit-address-form\"]/div[11]/div/button[2]");
   		
 	protected AddAddressesPage(WebDriver driver) {
 		super(driver);
@@ -144,6 +144,7 @@ public class AddAddressesPage extends BasePage {
 	
 	public AddressesPage returnAddressesFromEditDeletePage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrollElementToPosition(driver, deleteAddressButton);
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));

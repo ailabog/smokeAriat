@@ -23,6 +23,7 @@ public class SignInPage extends BasePage {
 	public static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
 
 	private By addressEmailTextBox = By.xpath("//input[@placeholder='Email address']");
+	//Search for Products
 	private By passwordTextBox = By.id("dwfrm_login_password");
 	private By checkRememberMe = By.id("dwfrm_login_rememberme");
 	private By loginButton = By.name("dwfrm_login_login");
@@ -33,12 +34,12 @@ public class SignInPage extends BasePage {
 	private By checkOrderTextBox = By.id("dwfrm_ordertrack_orderNumber");
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
-	private By checkStatusButton = By.id("dwfrm_ordertrack_findorder");
-	private By createAccountButton = By.name("dwfrm_login_register");
+	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
+	private By createAccountButton = By.cssSelector("#dwfrm_login_register > div > button");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
-	private By errorMessageText = By.className("error-form");
-	private By closeButton = By.className("close-button");
+	private By errorMessageText = By.xpath("//*[@id=\"main\"]/div/div/div[3]/div/div[2]/div/div/div");
+	private By closeButton = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[1]/a/span");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 	private By errPassMsg = By.xpath("//*[@id=\"dwfrm_login\"]/div[1]");
 
@@ -112,7 +113,7 @@ public class SignInPage extends BasePage {
 	public void checkStatusClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
 		logger.info("Checking the order status");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void assertErrorMessage(String messageExpectedLabel) {
@@ -152,8 +153,9 @@ public class SignInPage extends BasePage {
 
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
 		return new CreateAccountPage(driver);
 	}

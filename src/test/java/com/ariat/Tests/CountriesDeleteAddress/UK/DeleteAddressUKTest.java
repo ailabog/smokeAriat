@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -29,7 +28,6 @@ public class DeleteAddressUKTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
@@ -59,7 +57,6 @@ public class DeleteAddressUKTest extends BaseTest {
 		addressesPage.deleteAddressCreatedNo("nnn");
 		addressesPage.deleteAddressCreatedYes("nn");
 		addressesPage.checkAddress("nnn");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing deleting address UK test");
 	}
 
@@ -77,7 +74,6 @@ public class DeleteAddressUKTest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
 		addressesPage.checkAddress("ccc");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing deleting address from Edit address UK test");
 	}
 
@@ -88,6 +84,5 @@ public class DeleteAddressUKTest extends BaseTest {
 		myAccountPage.quit();
 		addressesPage.quit();
 		addAddressPage.quit();
-		logoutPage.quit();
 	}
 }

@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -27,7 +26,6 @@ public class DeleteCreditCardUKTest extends BaseTest{
 	private HomePage homePage;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private LogoutPage logoutPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private ListOfCreditCards typeCard;
@@ -54,7 +52,6 @@ public class DeleteCreditCardUKTest extends BaseTest{
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
 	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing delete credit card from Payment info UK test");
 		
   }
@@ -64,6 +61,5 @@ public class DeleteCreditCardUKTest extends BaseTest{
 		signInPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-		logoutPage.quit();
 	}
 }

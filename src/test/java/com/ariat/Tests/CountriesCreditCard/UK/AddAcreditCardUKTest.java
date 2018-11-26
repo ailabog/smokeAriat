@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -29,7 +28,6 @@ public class AddAcreditCardUKTest extends BaseTest{
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
-	private LogoutPage logoutPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private ListOfCreditCards typeCard;
@@ -67,8 +65,6 @@ public class AddAcreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add a credit card UK test");
   } 
 	
@@ -92,8 +88,6 @@ public class AddAcreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add credit card from Payment info UK test");
 		
   }
@@ -104,6 +98,5 @@ public class AddAcreditCardUKTest extends BaseTest{
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-		logoutPage.quit();
 	}
 }

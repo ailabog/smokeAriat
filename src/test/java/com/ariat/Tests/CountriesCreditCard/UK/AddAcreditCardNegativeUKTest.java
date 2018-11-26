@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -29,7 +28,6 @@ public class AddAcreditCardNegativeUKTest extends BaseTest{
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 		
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
@@ -63,8 +61,6 @@ public class AddAcreditCardNegativeUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add a credit card negative UK test");
   } 
 	
@@ -74,6 +70,5 @@ public class AddAcreditCardNegativeUKTest extends BaseTest{
 		signInPage.quit();
 		addACreditCardPage.quit();
 		myAccountPage.quit();
-		logoutPage.quit();
-	}
+		}
 }

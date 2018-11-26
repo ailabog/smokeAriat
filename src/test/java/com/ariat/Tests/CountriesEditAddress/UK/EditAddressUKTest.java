@@ -8,7 +8,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -23,7 +22,6 @@ public class EditAddressUKTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
@@ -57,8 +55,6 @@ public class EditAddressUKTest extends BaseTest {
 		addAddressPage.saveAddressEdit();
 		addressesPage = addAddressPage.returnAddressesFromEditPage();
 		addressesPage.checkAddress("B1TGL1");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing edit address UK test");
 	}
 	
@@ -69,6 +65,5 @@ public class EditAddressUKTest extends BaseTest {
 		myAccountPage.quit();
 		addAddressPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
 }

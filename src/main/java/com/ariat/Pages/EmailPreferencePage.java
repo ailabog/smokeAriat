@@ -31,7 +31,7 @@ public class EmailPreferencePage extends BasePage {
 	private By otherCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[5]/div/div/div[3]/span");
 	
 	private By apparelCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[1]/div[3]/span");
-	private By saveEditsButton = By.xpath("//a[text()='Save edits']");
+	private By saveEditsButton = By.name("dwfrm_profile_confirm");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 
 	protected EmailPreferencePage(WebDriver driver) {
