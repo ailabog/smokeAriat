@@ -33,6 +33,9 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 	private WomenCategoryPage womenCategoryPage;
 	private WomenClothingPage womenClothingPage;
 	private BreechProductPage breechProductPage;
+	
+	private static final String titleReview = "This is my review";
+	private static final String contentReview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a porttitor nisl, id rhoncus massa. Nunc imperdiet luctus porta. Sed consequat eros quis pellentesque pulvinar. Nulla facilisi. Vestibulum at dui ac elit laoreet suscipit. Suspendisse erat turpis, aliquet id mauris vitae, viverra iaculis massa. Proin ullamcorper enim quis orci tempor consectetur quis vel augue. Aliquam rutrum nibh arcu, at vestibulum urna blandit at. Quisque at dapibus erat. Donec id sapien eu massa interdum laoreet a non libero. Nunc finibus, odio quis laoreet pretium, velit ante imperdiet nisl, id volutpat elit nisl sit amet mi. Aenean aliquet, elit tincidunt ullamcorper suscipit, nisi felis malesuada eros, in vehicula ipsum urna ac felis.";
 
 	@BeforeTest
 	public void setUp() {
@@ -41,7 +44,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 
 	@Test
 	public void productPageWomenCategoryWriteReviewYesRecommendTest() {
-		logger.info("Starting product page -> Women Category write review for Glove product test...");
+		logger.info("Starting product page -> Women Category write review recommend product for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -49,17 +52,17 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		gloveProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		gloveProductPage.writeReviewClick();
-		gloveProductPage.writeReviewContent("This is my review", "Absolutely gorgeous");
+		gloveProductPage.writeReviewContent(titleReview, contentReview);
 		gloveProductPage.writeReviewStar("Excellent");
 		gloveProductPage.recommendProductYes();
-		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
+		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru@gmail.com");
 		gloveProductPage.postReview();
 		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
 	}
 
 	@Test
 	public void productPageWomenCategoryWriteReviewNoRecommendTest() {
-		logger.info("Starting product page -> Women Category write review recommend product for Glove product test...");
+		logger.info("Starting product page -> Women Category write review don't recommend product for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
@@ -67,12 +70,12 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		gloveProductPage.writeReviewClick();
-		gloveProductPage.writeReviewContent("This is my review", "Absolutely gorgeous");
+		gloveProductPage.writeReviewContent(titleReview, contentReview);
 		gloveProductPage.writeReviewStar("Poor");
 		gloveProductPage.recommendProductNo();
 		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
 		gloveProductPage.postReview();
-		logger.info("Finishing product page -> Women Category write review for Glove product test.");
+		logger.info("Finishing product page -> Women Category don't recommend product for Glove product test.");
 	}
 
 	@AfterTest
@@ -81,5 +84,6 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		gloveProductPage.quit();
+		breechProductPage.quit();
 	}
 }

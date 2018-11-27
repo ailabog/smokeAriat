@@ -106,7 +106,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 
 	}
 
-	@Test(priority=3)
+@Test(priority=3)
 	public void productPageWomenCategoryAddToWishListRemoveItemTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());

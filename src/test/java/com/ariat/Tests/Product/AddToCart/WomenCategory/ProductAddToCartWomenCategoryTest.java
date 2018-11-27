@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
+import com.ariat.Pages.MyBagPage;
 import com.ariat.Pages.Categories.WomenCategories.HeritageProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Tests.BaseTest;
@@ -25,6 +26,7 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 	private HomePage homePage;
 	private WomenCategoryPage womenCategoryPage;
 	private HeritageProductPage productPage;
+	private MyBagPage myBagPage;
 
 		
 	@BeforeTest
@@ -43,9 +45,13 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		productPage.selectAttributeSize("5");
 		productPage.selectAttributeCalf("Slim");
 		productPage.selectAttributeHeight("Medium");
-		//productPage.setQtyIncrease(2);
-		//productPage.setQtyDecrease(1);
-		productPage.addToCart();
+		//productPage.addToCart();
+		myBagPage = productPage.returnMyBagPage();
+		myBagPage.cancelFreeGift();
+		myBagPage.checkMyBagNoFreeGift();
+		myBagPage = productPage.returnMyBagPage();
+		myBagPage.confirmFreeGift();
+		myBagPage.checkMyBagFreeGift();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	
@@ -55,6 +61,5 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		homePage.quit();
 		womenCategoryPage.quit();
 		productPage.quit();
-		
 	}
 }

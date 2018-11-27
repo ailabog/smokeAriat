@@ -25,7 +25,7 @@ public class WomenClothingTopsAndTshirtsPage extends BasePage{
 	
 	public TriFactorTopProductPage returnTriFactorTopProductPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, topsTshirtProduct);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(topTshirtText));
 		return new TriFactorTopProductPage(driver);
 

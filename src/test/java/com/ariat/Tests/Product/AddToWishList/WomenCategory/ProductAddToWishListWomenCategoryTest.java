@@ -82,7 +82,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
 	
-   @Test(priority=1)
+ @Test(priority=1)
 	public void productPageWomenCategoryAddToWishListNotLoggedTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -100,7 +100,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");
 	}
 	
-/*	@Test(priority=2)
+	@Test(priority=2)
 	public void productPageWomenCategoryAddToWishListCreateAccountTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist create account test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -143,7 +143,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
 		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
 		logger.info("Finishing product page -> Women Category find someone's WishList test.");
-	}*/
+	}
 		
 	@AfterTest
 	public void tearDown() {
@@ -152,5 +152,8 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		myAccountPage.quit();
 		womenCasualShoe.quit();
 		myWishListPage.quit();
+		womenFootwareCasualShoePage.quit();
+		createAccountPage.quit();
+		
 	}
 }

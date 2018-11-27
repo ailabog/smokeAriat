@@ -12,8 +12,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class HeritageProductPage extends BasePage{
 
-	private By addToBasket = By.xpath("//button[text()='Add to basket']");
-
+	private By addToBasket = By.xpath("//button[text()='Add to bag']");
 	private By productBonusDialog = By.id("bonus-product-dialog");
 	private By wishList = By.xpath("//button[text()='Add to WishList']");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
@@ -49,6 +48,7 @@ public class HeritageProductPage extends BasePage{
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	private By postReviewButton = By.xpath("//span[text()='Post Review']");
+	
 
 	public HeritageProductPage(WebDriver driver) {
 		super(driver);
@@ -72,19 +72,20 @@ public class HeritageProductPage extends BasePage{
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
 			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		}
 	}
 
 	public void setQtyDecrease(int n) {
 		for (int i = 0; i <= n; i++) {
 			WebDriverUtils.clickOnElementWithWait(driver, decreaseQty);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		}
 	}
 
 	public void writeReviewClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, writeReview);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void writeReviewStar(String star) {
@@ -118,71 +119,85 @@ public class HeritageProductPage extends BasePage{
 
 	public void writeReviewContent(String titleReviewText, String reviewText) {
 		WebDriverUtils.enterTextBox(driver, titleReview, titleReviewText);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, textReview, reviewText);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void addPhoto() {
 		WebDriverUtils.clickOnElementWithWait(driver, addPhotoReview);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		if (WebDriverUtils.findElement(driver, addPhotoModal) != null) {
 			WebDriverUtils.clickOnElementWithWait(driver, choosePhotoReview);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			// Upload the file
 		}
 	}
 
 	public void addVideo(String videoURL) {
 		WebDriverUtils.clickOnElementWithWait(driver, addVideoReview);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		if (WebDriverUtils.findElement(driver, videoModalReview) != null) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.enterTextBox(driver, insertVideoURLReview, videoURL);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, addVideoButton);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		}
 	}
 
 	public void recommendProductYes() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductYes);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void recommendProductNo() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductNo);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void userInfoReview(String nickname, String userLocationReview, String email) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nicknameReview, nickname);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, userLocation, userLocationReview);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, emailReview, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void postReview() {
 		WebDriverUtils.clickOnElementWithWait(driver, postReviewButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void addToCart() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-
+	
 	public MyBagPage returnMyBagPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(productBonusDialog));
 		return new MyBagPage(driver);
 	}
 
 	public MyAccountWishListPage returnMyAccountWishListPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishlistText));
 		return new MyAccountWishListPage(driver);
 	}
 
 	public MyWishListPage returnMyWishListPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
