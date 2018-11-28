@@ -41,6 +41,7 @@ public class WebDriverUtils {
 	public final static long WAIT_5_SECONDS = 5;
 	public final static long WAIT_2000_SECONDS = 2000;
 	public final static long WAIT_4000_SECONDS = 4000;
+	public final static long WAIT_6000_SECONDS = 6000;
 
 	public static void enterTextBox(WebDriver driver, By locator, String text) throws TimeoutException {
 		String s = "";
@@ -132,11 +133,15 @@ public class WebDriverUtils {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(250,350)");
 	}
-
+	
+	public static void scrollUp(WebDriver driver, By locator) {
+		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+		jsExec.executeScript("javascript:window.scrollBy(0,-250)");
+	}
 	public static void scrollDown(WebDriver driver, By locator) {
-  		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
-  		jsExec.executeScript("javascript:window.scrollBy(0,250)");
-  	}
+		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+		jsExec.executeScript("javascript:window.scrollBy(0,250)");
+	}
 
 	public static void moveToElement(WebDriver driver, By locator) {
 		logger.debug("Moves to element {}", locator);

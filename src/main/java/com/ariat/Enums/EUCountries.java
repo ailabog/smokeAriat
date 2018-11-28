@@ -19,13 +19,13 @@ public enum EUCountries {
 	DE("Deutsch", "(Deutschland)",         "EUR",      "EURO",                By.xpath("//img[contains(@src, 'DE.gif')]")), 
 	NO("English", "(Norway)",              "EUR",      "EURO",                By.xpath("//img[contains(@src, 'NO.gif')]")), 
 	FI("English", "(Finland)",             "EUR",      "EURO",                By.xpath("//img[contains(@src, 'FI.gif')]")),
-	SW("Deutsch", "(Schweiz)",             "EUR",      "EURO",                By.xpath("//img[contains(@src, 'CH.gif')]")),
+	CH("Deutsch", "(Schweiz)",             "EUR",      "EURO",                By.xpath("//img[contains(@src, 'CH.gif')]")),
 	NL("English", "(Netherlands)",         "EUR",      "EURO",                By.xpath("//img[contains(@src, 'NL.gif')]")),
 	LU("English", "(Luxembourg)",          "EUR",      "EURO",                By.xpath("//img[contains(@src, 'LU.gif')]")),
 	IT("English", "(Italy)",               "EUR",      "EURO",                By.xpath("//img[contains(@src, 'IT.gif')]")),
 	SE("English", "(Sweden)",              "EUR",      "EURO",                By.xpath("//img[contains(@src, 'SE.gif')]")),
-	NZ("English", "(New Zealand)",         "NZD",      "New Zealand dollar",  By.xpath("//img[contains(@src, 'NZ.gif')]"));
-	
+	NZ("English", "(New Zealand)",         "NZD",      "New Zealand dollar",  By.xpath("//img[contains(@src, 'NZ.gif')]")),
+	AT("Deutsch",  "(Österreich)",         "EUR",      "EURO",                By.xpath("//img[contains(@src, 'AT.gif')]")); 
 	
 	private String language;
 	private String countryName;
