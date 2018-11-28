@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="productAddTocartTest" verbose="1">
+<suite name="operationsWishLisTest" verbose="1">
 
-	<test name="productAddTocartTest" >
+	<test name="operationsWishLisTest" >
        <classes>
-                 <class name="com.ariat.Tests.ProductAddToCartWomenCategoryTest" />
+                 <class name="com.ariat.Tests.Product.AddToWishList.WomenCategory.OperationsWishListWomenCategoryTest" />
                
        </classes>
      </test>

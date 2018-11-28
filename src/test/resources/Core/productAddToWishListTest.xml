@@ -4,7 +4,7 @@
 
 	<test name="productAddToWishListTest" >
        <classes>
-                 <class name="com.ariat.Tests.ProductAddToWishListWomenCategoryTest" />
+                 <class name="com.ariat.Tests.Product.AddToWishList.WomenCategory.ProductAddToWishListWomenCategoryTest" />
                
        </classes>
      </test>

@@ -4,7 +4,7 @@
 
 	<test name="productWriteReviewTest" >
        <classes>
-                 <class name="com.ariat.Tests.ProductWriteReviewWomenCategoryTest" />
+                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryTest" />
                
        </classes>
      </test>
