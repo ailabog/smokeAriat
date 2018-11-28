@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.MyOrdersPage;
 import com.ariat.Pages.SignInPage;
@@ -26,7 +25,7 @@ public class OrderStatusTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
-	private LogoutPage logoutPage;
+
 
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = "Parola12345!";
@@ -48,7 +47,6 @@ public class OrderStatusTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing order status test...");
 	}
 
@@ -58,6 +56,6 @@ public class OrderStatusTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();
-		logoutPage.quit();
+		
 	}
 }
