@@ -9,9 +9,9 @@ import org.openqa.selenium.WebDriver;
 
 import com.ariat.Pages.BasePage;
 
-public class HomePageSW extends BasePage implements List<HomePage> {
+public class HomePageJE extends BasePage implements List<HomePage> {
 
-	protected HomePageSW(WebDriver driver) {
+	protected HomePageJE(WebDriver driver) {
 		super(driver);
 	}
 
