@@ -39,37 +39,36 @@ public class WomenAccessoriesPage extends BasePage{
 		
 	public WomenAccessoriesHeadwearPage returnWomenAccessoriesHeadwearCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesHeadwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesHeadwearText));
 		return new WomenAccessoriesHeadwearPage(driver);
 	}
 	
 	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
 		return new WomenAccessoriesGlovesPage(driver);
 	}
 	
 	public WomenAccessoriesBagsPage returnWomenAccessoriesBagsCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesBagsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesBagsText));
 		return new WomenAccessoriesBagsPage(driver);
 	}
 	
 	public WomenAccessoriesScarfAndPonchosPage returnWomenAccessoriesScarfAndPonchosCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesScarfAndPonchosCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesScarfAndPonchosText));
 		return new WomenAccessoriesScarfAndPonchosPage(driver);
 	}
 	
 	public WomenAccessoriesSocksPage returnWomenAccessoriesSocksCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesSocksCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesSocksText));
 		return new WomenAccessoriesSocksPage(driver);
 	}
-	
 }

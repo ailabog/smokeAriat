@@ -115,6 +115,5 @@ public class MenFootwearPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(menCasualShoesText));
 		return new MenFootwearCasualShoesPage(driver);
 	}
-	
 }
 

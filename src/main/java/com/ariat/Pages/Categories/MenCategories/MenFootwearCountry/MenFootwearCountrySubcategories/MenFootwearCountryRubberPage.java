@@ -8,7 +8,5 @@ public class MenFootwearCountryRubberPage extends BasePage{
 
 	public MenFootwearCountryRubberPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

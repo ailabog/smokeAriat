@@ -42,16 +42,19 @@ public class AddAddressesPage extends BasePage {
 	public void enterFName(String name) {
 		logger.info("Entering first name for Address :?");
 		WebDriverUtils.enterTextBox(driver, fNameTtextBox, name);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterLName(String last) {
 		logger.info("Entering last name for Address :?");
 		WebDriverUtils.enterTextBox(driver, lNameTextBox, last);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterAddress1(String address1) {
 		logger.info("Entering address1: ");
 		WebDriverUtils.enterTextBox(driver, address1TextBox, address1);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterAddress2(String address2) {
@@ -127,9 +130,9 @@ public class AddAddressesPage extends BasePage {
 	}
 
 	public AddressesPage returnAddressesPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		//WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddressesPage(driver);
 	}
@@ -143,8 +146,8 @@ public class AddAddressesPage extends BasePage {
 	}
 	
 	public AddressesPage returnAddressesFromEditDeletePage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.scrollElementToPosition(driver, deleteAddressButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));

@@ -8,7 +8,5 @@ public class MenFootwearWorkPullOnPage extends BasePage{
 
 	public MenFootwearWorkPullOnPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

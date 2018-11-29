@@ -8,7 +8,5 @@ public class MenFootwearRidingHalfChapsPage extends BasePage {
 
 	public MenFootwearRidingHalfChapsPage(WebDriver driver) {
 		super(driver);
-
 	}
-
 }

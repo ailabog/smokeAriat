@@ -8,5 +8,5 @@ public class MenFeaturedTeamCollectionPage extends BasePage{
 
 	public MenFeaturedTeamCollectionPage(WebDriver driver) {
 		super(driver);
-		}
+	}
 }

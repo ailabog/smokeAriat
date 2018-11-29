@@ -17,6 +17,6 @@ public class WomenFeaturedHeritageCollectionPage extends BasePage{
 
 	public WomenFeaturedHeritageCollectionPage(WebDriver driver) {
 		super(driver);
-		}
-	
+	}
+
 }

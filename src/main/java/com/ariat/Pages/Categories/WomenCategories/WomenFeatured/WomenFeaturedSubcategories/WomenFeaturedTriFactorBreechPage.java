@@ -16,7 +16,5 @@ public class WomenFeaturedTriFactorBreechPage extends BasePage{
 	
 	public WomenFeaturedTriFactorBreechPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

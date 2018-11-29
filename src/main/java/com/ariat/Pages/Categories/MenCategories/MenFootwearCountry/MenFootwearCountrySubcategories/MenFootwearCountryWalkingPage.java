@@ -8,7 +8,5 @@ public class MenFootwearCountryWalkingPage extends BasePage{
 
 	public MenFootwearCountryWalkingPage(WebDriver driver) {
 		super(driver);
-	
 	}
-
 }

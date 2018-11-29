@@ -9,5 +9,4 @@ public class MenFootwearWorkLaceUpPage extends BasePage{
 	public MenFootwearWorkLaceUpPage(WebDriver driver) {
 		super(driver);
 	}
-
 }

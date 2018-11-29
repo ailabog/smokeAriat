@@ -15,7 +15,5 @@ public class WomenFootwearRidingPage extends BasePage{
 	
 	public WomenFootwearRidingPage(WebDriver driver) {
 		super(driver);
-		
 	}
-	
 }

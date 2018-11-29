@@ -15,7 +15,7 @@ public class SearchUKTest extends BaseTest {
 	private HomePage homePage;
 	private Environments environment;
 	private final String OPTION = "boots";
-	private final String MESSAGE = "Product results for:";
+	private final String MESSAGE = "Product results for: ";
 
 	
 	@BeforeTest
@@ -30,7 +30,7 @@ public class SearchUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		homePage.search(OPTION);
-	    homePage.assertProductDisplayed(MESSAGE, OPTION);
+	    homePage.assertProductDisplayed(MESSAGE+OPTION, OPTION);
 		homePage.seeAllproducts();
 		logger.info("Finishing search products UK test");
 	}

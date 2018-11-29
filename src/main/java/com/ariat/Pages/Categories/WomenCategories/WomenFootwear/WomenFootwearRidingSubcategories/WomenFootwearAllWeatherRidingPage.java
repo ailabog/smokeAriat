@@ -8,6 +8,5 @@ public class WomenFootwearAllWeatherRidingPage extends BasePage{
 
 	public WomenFootwearAllWeatherRidingPage(WebDriver driver) {
 		super(driver);
-		
 	}
 }

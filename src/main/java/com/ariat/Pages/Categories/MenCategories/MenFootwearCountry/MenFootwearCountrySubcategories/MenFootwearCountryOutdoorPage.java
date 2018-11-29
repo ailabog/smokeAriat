@@ -8,7 +8,5 @@ public class MenFootwearCountryOutdoorPage extends BasePage{
 
 	public MenFootwearCountryOutdoorPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

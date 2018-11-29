@@ -38,7 +38,6 @@ public class PaymentInformationPage extends BasePage {
 	}
 
 	public AddACreditCardPage returnAddACreditCardPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
@@ -74,7 +73,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteCardLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteCardLink);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDeleteCard);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was cancelled from deletion");
 					} else {
@@ -96,7 +97,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteCardLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteCardLink);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDeleteCard);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was deleted with success");
 					} else {
@@ -118,6 +121,7 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, makeDefaultCardLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultCardLink);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was made default with success");
 					} else {

@@ -8,6 +8,5 @@ public class HeritageProductPage extends BasePage{
 
 	public HeritageProductPage(WebDriver driver) {
 		super(driver);
-		
 	}
 }

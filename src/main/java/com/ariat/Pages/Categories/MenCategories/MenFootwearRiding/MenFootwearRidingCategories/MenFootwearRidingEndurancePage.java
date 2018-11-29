@@ -8,7 +8,5 @@ public class MenFootwearRidingEndurancePage extends BasePage{
 
 	public MenFootwearRidingEndurancePage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

@@ -43,5 +43,4 @@ public class ReturnPolicyPage extends BasePage {
 		String text3 = WebDriverUtils.getElementText(driver, text4);
 		assertEquals(text3, expectedText3, "4th text is displayed accordingly");
 	}
-
 }

@@ -8,7 +8,5 @@ public class MenClothingSweatTshirtAndWoodiesPage extends BasePage{
 
 	public MenClothingSweatTshirtAndWoodiesPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

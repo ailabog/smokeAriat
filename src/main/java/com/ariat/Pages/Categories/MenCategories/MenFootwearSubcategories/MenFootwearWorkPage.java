@@ -28,13 +28,13 @@ public class MenFootwearWorkPage extends BasePage{
 	}
 	public MenFootwearWorkLaceUpPage returnMenFootwearWorkLaceUpCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, laceUpFootwearWorkCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(laceUpFootwearWorkText));
 		return new MenFootwearWorkLaceUpPage(driver);
 	}
 	public MenFootwearWorkPullOnPage returnMenFootwearWorkPullOnCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, pullOnFootwearWorkCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(pullOnFootwearWorkText));
 		return new MenFootwearWorkPullOnPage(driver);
 	}

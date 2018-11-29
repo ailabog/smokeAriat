@@ -8,7 +8,5 @@ public class MenFootwearCountryToolBootsPage extends BasePage{
 
 	public MenFootwearCountryToolBootsPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

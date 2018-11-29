@@ -17,5 +17,5 @@ public class WomenAccessoriesScarfAndPonchosPage extends BasePage{
 
 	public WomenAccessoriesScarfAndPonchosPage(WebDriver driver) {
 		super(driver);
-			}
 	}
+}

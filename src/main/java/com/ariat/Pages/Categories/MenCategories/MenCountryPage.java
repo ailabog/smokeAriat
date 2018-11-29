@@ -60,6 +60,4 @@ public class MenCountryPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(walkingCountryCategoryText));
 		return new MenFootwearCountryWalkingPage(driver);
 	}
-	
-
 }

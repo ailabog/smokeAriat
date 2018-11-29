@@ -40,21 +40,21 @@ public class MenClothingPage extends BasePage{
 	//Top navigation
 	public MenClothingOuterwearPage returnMenClothingOuterwearCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingOuterwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingOuterwearText));
 		return new MenClothingOuterwearPage(driver);
 	}
 	
 	public MenClothingSweatTshirtAndWoodiesPage returnMenClothingSweatTshirtAndWoodiesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingSweatTshirtAndWoodiesCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingSweatTshirtAndWoodiesText));
 		return new MenClothingSweatTshirtAndWoodiesPage(driver);
 	}
 	
 	public MenClothingTopsAndTshirtsPage returnMenClothingTopsAndTshirtsCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingTopsAndTshirtsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingTopsAndTshirtsText));
 		return new MenClothingTopsAndTshirtsPage(driver);
 	}
@@ -68,21 +68,21 @@ public class MenClothingPage extends BasePage{
 	
 	public MenClothingOuterwearPage returnMenClothingOuterwearCategoryLeftNavPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, clothingOuterwearCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingOuterwearText));
 		return new MenClothingOuterwearPage(driver);
 	}
 	
 	public MenClothingSweatTshirtAndWoodiesPage returnMenClothingSweatTshirtAndWoodiesCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, clothingSweatTshirtAndWoodiesCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingSweatTshirtAndWoodiesText));
 		return new MenClothingSweatTshirtAndWoodiesPage(driver);
 	}
 	
 	public MenClothingTopsAndTshirtsPage returnMenClothingTopsAndTshirtsCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, clothingTopsAndTshirtsCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingTopsAndTshirtsText));
 		return new MenClothingTopsAndTshirtsPage(driver);
 	}

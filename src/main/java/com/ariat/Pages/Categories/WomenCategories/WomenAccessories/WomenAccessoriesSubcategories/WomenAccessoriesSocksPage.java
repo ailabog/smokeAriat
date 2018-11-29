@@ -15,7 +15,5 @@ public class WomenAccessoriesSocksPage extends BasePage{
 	
 	public WomenAccessoriesSocksPage(WebDriver driver) {
 		super(driver);
-		
 	}
-	
 }

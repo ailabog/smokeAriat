@@ -24,9 +24,8 @@ public class OrderDetailsPage extends BasePage {
 	}
 	
 	public MyOrdersPage returnMyOrdersPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, returnToMyOrdersLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
 		return new MyOrdersPage(driver);
 	}

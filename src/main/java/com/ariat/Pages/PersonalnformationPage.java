@@ -41,6 +41,7 @@ public class PersonalnformationPage extends BasePage {
 	public void clearFirstName() {
 		logger.info("Clearing text box First Name:");
 		WebDriverUtils.clearElement(driver, firstNameTextBox);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void lastNameInfo(String lastName) {
@@ -88,13 +89,13 @@ public class PersonalnformationPage extends BasePage {
 	public void saveEdits() {
 		logger.info("Saving the updates for personal informations ");
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 	
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountTitle));
 		return new MyAccountPage(driver);
-
 	}
 }

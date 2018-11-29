@@ -27,6 +27,7 @@ public class LogoutPage extends BasePage {
 	public void logout() {
 		logger.info("Now I am logging out from ariat.com");
 		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		logger.info("I am succesfully logged out");
 	}
 }

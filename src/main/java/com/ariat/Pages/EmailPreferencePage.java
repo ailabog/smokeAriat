@@ -41,16 +41,16 @@ public class EmailPreferencePage extends BasePage {
 	public void checkGender(String option) {
 		switch(option) {
 		case "Male":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, maleCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		break;
 		case "Female":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, femaleCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		break;
 		case "Other":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, otherCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		default:
 			logger.info("No option found");
 		}		
@@ -61,27 +61,27 @@ public class EmailPreferencePage extends BasePage {
 		switch(option) {
 		
 		case "English":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, englishCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		break;	
 		case "Country":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, countryCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		break;	
 		case "Apparel":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, apparelCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		break;	
 		case "Western":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, westernCheck);
-		case "Work":
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		case "Work":
 			WebDriverUtils.clickOnElementWithWait(driver, workCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			
 		case "Fashion":
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, fashionCheck);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		default:
 			logger.info("No option found");
 		}			
@@ -90,20 +90,19 @@ public class EmailPreferencePage extends BasePage {
 
 	public void saveEditsClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		logger.info("Changes were saved");
 	}
 
 	public void savePreferencesClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, savePreferencesButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public MyAccountPage returnMyAccountPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}
-
-	
 }

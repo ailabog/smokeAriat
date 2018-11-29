@@ -8,6 +8,5 @@ public class MenFeaturedVentTekPage extends BasePage{
 
 	public MenFeaturedVentTekPage(WebDriver driver) {
 		super(driver);
-		
 	}
 }

@@ -32,21 +32,21 @@ public class WomenFeaturedPage extends BasePage{
 	
 	public WomenFeaturedTriFactorBreechPage returWomenFeaturedTriFactorBreechCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFeaturedTriFactorBreechCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedTriFactorBreechText));
 		return new WomenFeaturedTriFactorBreechPage(driver);
 	}
 	
 	public WomenFeaturedHeritageCollectionPage returnWomenFeaturedHeritageCollectionCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFeaturedHeritageCollectionCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedHeritageCollectionText));
 		return new WomenFeaturedHeritageCollectionPage(driver);
 	}
 	
 	public WomenFeaturedWarmWeatherRidingPage returnWomenFeaturedWarmWeatherRidingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenWarmWeatherRidingCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenWarmWeatherRidingCategoryText));
 		return new WomenFeaturedWarmWeatherRidingPage(driver);
 	}

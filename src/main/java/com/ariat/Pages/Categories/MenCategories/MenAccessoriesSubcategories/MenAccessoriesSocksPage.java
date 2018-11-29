@@ -8,6 +8,5 @@ public class MenAccessoriesSocksPage extends BasePage{
 
 	public MenAccessoriesSocksPage(WebDriver driver) {
 		super(driver);
-		
 	}
 }

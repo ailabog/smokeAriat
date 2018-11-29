@@ -16,7 +16,5 @@ public class WomenAccessoriesHeadwearPage extends BasePage{
 	
 	public WomenAccessoriesHeadwearPage(WebDriver driver) {
 		super(driver);
-		
 	}
-	
 }

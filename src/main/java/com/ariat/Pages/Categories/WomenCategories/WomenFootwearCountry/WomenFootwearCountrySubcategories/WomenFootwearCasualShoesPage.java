@@ -28,7 +28,7 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 	
 	public WomenFashionSneakersPage returnWomenFashionSneakersCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, sneakersFootwearCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(sneakersFootwearText));
 		return new WomenFashionSneakersPage(driver);
 	}
@@ -36,7 +36,7 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 	
 	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesPageCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, casualLeftCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(casualText));
 		return new WomenFootwearCasualShoesPage(driver);
 	}

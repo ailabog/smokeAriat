@@ -9,5 +9,4 @@ public class MenFootwearWesternPerformancePage extends BasePage{
 	public MenFootwearWesternPerformancePage(WebDriver driver) {
 		super(driver);
 	}
-
 }

@@ -8,6 +8,5 @@ public class WomenFootwearRidingToolBootsPage extends BasePage{
 
 	public WomenFootwearRidingToolBootsPage(WebDriver driver) {
 		super(driver);
-	
 	}
 }

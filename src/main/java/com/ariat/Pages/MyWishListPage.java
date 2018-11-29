@@ -35,23 +35,25 @@ public class MyWishListPage extends BasePage{
 	public void sendListToAFriend(String email) {
 		logger.info("Sending my wish list to a friend");
 		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 	
 	public void closeSendToAFriend() {
 		logger.info("Closing the sharing wish list with a friend window");
 		WebDriverUtils.clickOnElement(driver, closeSendFriendButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 	
 	public HomePage returnHomePage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, startShoppingButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(ukLocation));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(usLocation));
 		return new HomePage(driver);
 	}
-
 }

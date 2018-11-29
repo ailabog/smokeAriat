@@ -28,14 +28,14 @@ public class MenWesternPage extends BasePage{
 	
 	public MenFootwearWesternFashionPage returnMenWesternFashionCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, westernFashionCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(westernFashionCategoryCategoryText));
 		return new MenFootwearWesternFashionPage(driver);
 	}
 	
 	public MenFootwearWesternPerformancePage returnMenWesternPerformanceCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, performanceWesternCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(performanceWesternCategoryText));
 		return new MenFootwearWesternPerformancePage(driver);
 	}

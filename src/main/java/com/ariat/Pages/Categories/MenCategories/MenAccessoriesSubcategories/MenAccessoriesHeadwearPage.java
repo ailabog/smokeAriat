@@ -8,7 +8,5 @@ public class MenAccessoriesHeadwearPage extends BasePage{
 
 	public MenAccessoriesHeadwearPage(WebDriver driver) {
 		super(driver);
-		
 	}
-
 }

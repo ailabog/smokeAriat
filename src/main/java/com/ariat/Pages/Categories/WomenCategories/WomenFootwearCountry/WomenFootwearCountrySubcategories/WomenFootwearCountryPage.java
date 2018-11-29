@@ -35,28 +35,28 @@ public class WomenFootwearCountryPage extends BasePage{
 	
 	public WomenFootwearCountryFashionPage returnWomenFootwearCountryFashionCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, outdoorFootwearCountryCategoryleftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(outdoorFootwearCountryText));
 		return new WomenFootwearCountryFashionPage(driver);
 	}
 	
 	public WomenFootwearCountryRubberPage returnWomenFootwearCountryRubberCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, rubberFootwearCountryCategoryleftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(rubberFootwearCountryText));
 		return new WomenFootwearCountryRubberPage(driver);
 	}
 	
 	public WomenFootwearCountryToolBootsPage returnWomenFootwearCountryTallBootsCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, tallBootsFootwearCountryCategoryleftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(tallBootsFootwearCountryText));
 		return new WomenFootwearCountryToolBootsPage(driver);
 	}
 	
 	public WomenFootwearCountryWalkingPage returnWomenFootwearCountryWalkingCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, walkingFootwearCountryCategoryleftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(walkingFootwearCountryText));
 		return new WomenFootwearCountryWalkingPage(driver);
 	}

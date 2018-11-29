@@ -8,5 +8,5 @@ public class MenFootwearFashionPage extends BasePage{
 
 	public MenFootwearFashionPage(WebDriver driver) {
 		super(driver);
-		}
+	}
 }
