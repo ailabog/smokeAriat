@@ -5,9 +5,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -18,9 +19,10 @@ public class LogoutUSTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
+	private HomePageUS homePageUS;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private GlobalCountries country;
+	private EUCountries euCountry;
 
 
 
@@ -37,9 +39,8 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -53,8 +54,8 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
-		signInPage = homePage.returnSignInPage();
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -65,6 +66,7 @@ public class LogoutUSTest extends BaseTest {
 
 	@AfterMethod
 	public void tearDown() {
+		homePageUS.quit();
 		homePage.quit();
 		signInPage.quit();
 		myAccountPage.quit();

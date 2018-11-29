@@ -4,10 +4,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -18,11 +21,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class EditAddressUKTest extends BaseTest {
 
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private Environments environment;
+	private EUCountries euCountry;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
@@ -42,8 +47,8 @@ public class EditAddressUKTest extends BaseTest {
 		logger.info("Starting edit address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -61,6 +66,7 @@ public class EditAddressUKTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addAddressPage.quit();

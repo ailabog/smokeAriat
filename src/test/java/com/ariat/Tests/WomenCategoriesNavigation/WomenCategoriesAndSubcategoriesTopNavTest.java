@@ -4,8 +4,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
@@ -43,6 +46,8 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class WomenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 
 	private Environments environment;
+	private EUCountries euCountry;
+	private HomePageUK homePageUK;
 	private HomePage homePage;
 	private WomenCategoryPage womenCategoryPage;
 	
@@ -81,8 +86,8 @@ public class WomenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Women Footwear sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenCategoryPage.womenCategory();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenCategoryPage.womenCategory();
@@ -101,8 +106,8 @@ public class WomenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Women Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenCategoryPage.womenCategory();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryPage();
 		womenCategoryPage.womenCategory();
@@ -123,8 +128,8 @@ public class WomenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Women Accessories sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenCategoryPage.womenCategory();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryPage();
 		womenCategoryPage.womenCategory();
@@ -145,8 +150,8 @@ public class WomenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Women Featured sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenCategoryPage.womenCategory();
 		womenFeaturedPage = womenCategoryPage.returnWomenFeaturedCategoryPage();
 		womenCategoryPage.womenCategory();
@@ -161,6 +166,7 @@ public class WomenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		womenCategoryPage.quit();
 		womenFootwearPage.quit();
 				

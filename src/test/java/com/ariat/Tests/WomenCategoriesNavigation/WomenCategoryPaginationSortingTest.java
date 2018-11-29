@@ -4,8 +4,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Tests.BaseTest;
 
@@ -21,7 +24,9 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class WomenCategoryPaginationSortingTest extends BaseTest {
 
 	private Environments environment;
+	private EUCountries euCountry;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private WomenCategoryPage womenCategoryPage;
 	
 	
@@ -35,8 +40,8 @@ public class WomenCategoryPaginationSortingTest extends BaseTest {
 		logger.info("Starting sort and navigate pagination test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenCategoryPage.clickSortUp();
 		womenCategoryPage.sortProductWomenCategoryRecommended();
 		womenCategoryPage.clickSortUp();
@@ -58,6 +63,7 @@ public class WomenCategoryPaginationSortingTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		womenCategoryPage.quit();
 		
 	}

@@ -4,8 +4,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenAccessoriesPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingPage;
@@ -41,7 +44,9 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 
 	private Environments environment;
+	private EUCountries euCountry;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private MenCategoryPage menCategoryPage;
 	private MenFootwearPage menFootwearPage;
 	private MenFootwearWesternPage menFootwearWesterenPage;
@@ -75,8 +80,8 @@ public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Men Footwear sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		menCategoryPage = homePage.returnMenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		menCategoryPage = homePageUK.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menCategoryPage.menCategory();
@@ -97,8 +102,8 @@ public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Men Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		menCategoryPage = homePage.returnMenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		menCategoryPage = homePageUK.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menClothingPage = menCategoryPage.returnMenClothingCategoryPage();
 		menCategoryPage.menCategory();
@@ -117,8 +122,8 @@ public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate men Accessories sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		menCategoryPage = homePage.returnMenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		menCategoryPage = homePageUK.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPage();
 		menCategoryPage.menCategory();
@@ -137,8 +142,8 @@ public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 		logger.info("Starting navigate Men Featured sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		menCategoryPage = homePage.returnMenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		menCategoryPage = homePageUK.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menFeaturedPage = menCategoryPage.returnMenFeaturedCategoryPage();
 		menCategoryPage.menCategory();
@@ -151,6 +156,7 @@ public class MenCategoriesAndSubcategoriesTopNavTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		menCategoryPage.quit();
 		menFootwearPage.quit();
 		menFootwearRidingPage.quit();

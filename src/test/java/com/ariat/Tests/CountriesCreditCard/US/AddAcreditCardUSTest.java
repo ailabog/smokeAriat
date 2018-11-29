@@ -4,10 +4,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
@@ -26,12 +29,14 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class AddAcreditCardUSTest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageUS homePageUS;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
 	private LogoutPage logoutPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
+	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 	
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
@@ -52,9 +57,8 @@ public class AddAcreditCardUSTest extends BaseTest{
 		logger.info("Starting add a credit card US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.USlocation();
-		homePage.saveAndContinueLocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -78,9 +82,8 @@ public class AddAcreditCardUSTest extends BaseTest{
 		logger.info("Starting add credit card from Payment Info US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.USlocation();
-		homePage.saveAndContinueLocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -102,6 +105,7 @@ public class AddAcreditCardUSTest extends BaseTest{
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUS.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();

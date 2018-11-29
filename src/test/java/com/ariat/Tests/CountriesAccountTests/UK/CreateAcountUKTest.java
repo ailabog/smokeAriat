@@ -4,12 +4,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -25,8 +28,10 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class CreateAcountUKTest extends BaseTest {
 
 	private Environments environment;
+	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private OrderDetailsPage orderDetailsPage;
@@ -55,8 +60,8 @@ public class CreateAcountUKTest extends BaseTest {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -76,8 +81,8 @@ public class CreateAcountUKTest extends BaseTest {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -89,8 +94,8 @@ public class CreateAcountUKTest extends BaseTest {
 		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		signInPage.checkStatusClick();
 		signInPage.assertErrorMessageInexistingOrderNo(ERROR_MESSAGE);
@@ -102,8 +107,8 @@ public class CreateAcountUKTest extends BaseTest {
 		logger.info("Starting checking valid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
 		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		logger.info("Finishing checking valid order test...");
@@ -115,8 +120,8 @@ public class CreateAcountUKTest extends BaseTest {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		signInPage = homePage.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
 		signInPage.forgotPasswordClick();
 		signInPage.forgotPasswordEmail(EMAIL);
 		signInPage.ForgotPasswordSend();
@@ -128,6 +133,7 @@ public class CreateAcountUKTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();

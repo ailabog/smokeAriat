@@ -4,8 +4,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenRidingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFashionSubcategory.WomenFashionSneakersPage;
@@ -37,7 +40,9 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class WomenFootwearSubcategoriesLeftNavTest extends BaseTest {
 
 	private Environments environment;
+	private EUCountries euCountry;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private WomenCategoryPage womenCategoryPage;
 	private com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage womenFootwearPage;
 	private WomenRidingPage womenRidingPage;
@@ -72,8 +77,8 @@ public class WomenFootwearSubcategoriesLeftNavTest extends BaseTest {
 		logger.info("Starting left navigation Men Footwear Riding sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenRidingPage = womenFootwearPage.returnWomennRidingCategoryPageLeftNav();
 		womenFootwearRidingToolBootsPage = womenRidingPage.returnWomenFootwearRidingToolBootsPageLeftNav();
@@ -90,8 +95,8 @@ public class WomenFootwearSubcategoriesLeftNavTest extends BaseTest {
 		logger.info("Starting left navigation Men Footwear Country sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCountryPage = womenFootwearPage.returnWomenFootwearCountryCategoryPage();
 		womenFootwearCountryFashionPage = womenFootwearCountryPage.returnWomenFootwearCountryFashionCategoryPageLeftNav();
@@ -106,8 +111,8 @@ public class WomenFootwearSubcategoriesLeftNavTest extends BaseTest {
 		logger.info("Starting left navigation Men Footwear Western sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearWesternPage = womenFootwearPage.returnWomenFootwearWesternCategoryPage();
 		womenFootwearWesternPerformancePage = womenFootwearWesternPage
@@ -123,8 +128,8 @@ public class WomenFootwearSubcategoriesLeftNavTest extends BaseTest {
 		logger.info("Starting left navigation Men Footwear Casual shoes sub-category test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePage.UKlocation();
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		womenFootwearCasual = womenFootwearCasualShoesPage.returnWomenFootwearCasualShoesPageCategoryPageLeftNav();
@@ -135,6 +140,7 @@ public class WomenFootwearSubcategoriesLeftNavTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		womenCategoryPage.quit();
 		womenFootwearPage.quit();
 
