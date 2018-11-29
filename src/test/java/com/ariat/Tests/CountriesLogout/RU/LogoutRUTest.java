@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageCA;
+import com.ariat.Pages.HomePagesCountries.HomePageRU;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -19,7 +19,7 @@ public class LogoutRUTest extends BaseTest {
 	private Environments environment;
 	private GlobalCountries country;
 	private HomePage homePage;
-	private HomePageCA homePageCA;
+	private HomePageRU homePageRU;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
@@ -36,8 +36,8 @@ public class LogoutRUTest extends BaseTest {
 		logger.info("Starting the logout UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
-		signInPage = homePageCA.returnSignInPage();
+		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
+		signInPage = homePageRU.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -50,8 +50,8 @@ public class LogoutRUTest extends BaseTest {
 		logger.info("Starting the logout UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
-		signInPage = homePageCA.returnSignInPage();
+		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
+		signInPage = homePageRU.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -62,7 +62,7 @@ public class LogoutRUTest extends BaseTest {
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
-		homePageCA.quit();
+		homePageRU.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 	}

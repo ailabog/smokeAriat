@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesAddresses.UKAddress;
+package com.ariat.Tests.CountriesAddresses.DE;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -10,8 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.HomePagesCountries.Search;
+import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -26,15 +25,14 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class AddAddressUKTest extends BaseTest {
+public class AddAddressDETest extends BaseTest {
 
 	private HomePage homePage;
-	private HomePageUK homePageUK;
+	private HomePageDE homePageDE;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
-	private Search search;
 	private EUCountries euCountry;
 	private Environments environment;
 
@@ -52,12 +50,12 @@ public class AddAddressUKTest extends BaseTest {
 	}
 
 	@Test
-	public void addAddressUKTest() {
-		logger.info("Starting add address UK test");
+	public void addAddressDETest() {
+		logger.info("Starting add address Germany test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -66,19 +64,19 @@ public class AddAddressUKTest extends BaseTest {
 		addAddressPage.enterLName("B");
 		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Romania");
+		addAddressPage.selectCountry("Germany");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPage();
 		addressesPage.checkAddress(ADDRESS_ID);
-		logger.info("Finishing add address UK test");
+		logger.info("Finishing add address Germany test");
 	}
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageUK.quit();
+		homePageDE.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addAddressPage.quit();

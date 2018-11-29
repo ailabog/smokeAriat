@@ -30,14 +30,14 @@ public class SearchCATest extends BaseTest {
 
 	@Test
 	public void editAddressTest() {
-		logger.info("Starting search products UK test");
+		logger.info("Starting search products Canada test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
 		homePageCA.search(OPTION);
 	    homePageCA.assertProductDisplayed(MESSAGE+OPTION);
 		homePageCA.seeAllproducts();
-		logger.info("Finishing search products UK test");
+		logger.info("Finishing search products Canada test");
 	}
 	
 	@AfterTest
