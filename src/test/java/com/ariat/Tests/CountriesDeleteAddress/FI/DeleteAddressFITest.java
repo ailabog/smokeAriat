@@ -55,7 +55,7 @@ public class DeleteAddressFITest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
 		signInPage = homePageFI.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
@@ -72,7 +72,7 @@ public class DeleteAddressFITest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
 		signInPage = homePageFI.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();

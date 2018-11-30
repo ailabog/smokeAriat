@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFR;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -30,6 +31,7 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private HomePageFR homePageFR;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
@@ -45,10 +47,10 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomAlphaNumeric(4);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomString(3);
 
-	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
-	public static final String INVALID_EMAIL_MSG = "The email address is invalid.";
+	public static final String ERROR_MESSAGE = "Désolé, ce numéro de commande ou code postal ne correspond pas à celui que nous avons dans nos dossiers. Vérifiez-le puis réessayez.";
+	public static final String INVALID_EMAIL_MSG = "L'adresse courriel n'est pas valide.";
 	public static final String INVALID_PASS_MSG = "(8 - 255 characters)";
-	public static final String MISMATCH_PASS_MSG = "Sorry, this does not match our records. Check your spelling and try again.";
+	public static final String MISMATCH_PASS_MSG = "Désolé, ceci ne correspond pas aux infos que nous avons dans nos dossiers. Vérifiez l'orthographe puis réessayez.";
 	
 	public static final String WRONG_EMAIL = "aaaa@yahoo.com";
 	public static final String OK_EMAIL = "aila.bogasieru@yahoo.com";
@@ -65,6 +67,7 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 		logger.info("Starting error message in creating new account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
@@ -93,9 +96,10 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 		logger.info("Starting returning customer wrong password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(OK_EMAIL);
+		signInPage.returningCustomer(OK_EMAIL, "Francais");
 		signInPage.returningPassword(WRONG_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongPasswordMessage(MISMATCH_PASS_MSG);
@@ -107,9 +111,10 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 		logger.info("Starting returning customer wrong email test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(WRONG_EMAIL);
+		signInPage.returningCustomer(WRONG_EMAIL, "Francais");
 		signInPage.returningPassword(OK_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongEmailMessage(MISMATCH_PASS_MSG);
@@ -121,6 +126,7 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, OK_EMAIL, BILLING_ZIP_CODE);
@@ -132,6 +138,7 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		homePageFR.quit();
 		signInPage.quit();
 		createAccountPage.quit();

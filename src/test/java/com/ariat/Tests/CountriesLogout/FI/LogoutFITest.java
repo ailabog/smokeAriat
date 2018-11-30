@@ -39,7 +39,7 @@ public class LogoutFITest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logoutMiddle();
@@ -53,7 +53,7 @@ public class LogoutFITest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logoutTop();

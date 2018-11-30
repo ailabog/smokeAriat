@@ -75,14 +75,14 @@ public class CreateAcountJPTest extends BaseTest {
 	    logger.info("Finishing create new account test...");
 	}
 
-	@Test(priority = 1)
+/*	@Test(priority = 1)
 	public void returningCustomerTest() {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageJP = (HomePageJP) homePage.chooseGlobalLocation(country.JP, country.JP.getCurrencyISO());
 		signInPage = homePageJP.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		logger.info("Finishing returning customer test...");
@@ -127,7 +127,7 @@ public class CreateAcountJPTest extends BaseTest {
 		signInPage.closeForgotPassword();
 		logger.info("Finishing forgot password test...");
 	}
-	
+	*/
 
 	@AfterTest
 	public void tearDown() {

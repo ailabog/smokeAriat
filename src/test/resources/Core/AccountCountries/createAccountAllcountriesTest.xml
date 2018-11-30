@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="createAccountAllCountriesTest" verbose="1">
+
+	<test name="createAccountAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CountriesAccountTests.UK.CreateAcountUKTest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.FR.CreateAcountFRTest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.IE.CreateAcountIETest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.FI.CreateAcountFITest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.DE.CreateAcountDETest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.DK.CreateAcountDKTest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.CA.CreateAcountCATest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.RU.CreateAcountRUTest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.JP.CreateAcountJPTest" />
+                 <class name="com.ariat.Tests.CountriesAccountTests.US.CreateAcountUSTest" />
+  
+       </classes>
+     </test>
+</suite>

@@ -13,6 +13,7 @@ import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageIE;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -31,6 +32,7 @@ public class CreateAcountIETest extends BaseTest {
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private HomePageIE homePageIE;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -60,6 +62,7 @@ public class CreateAcountIETest extends BaseTest {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
@@ -81,9 +84,10 @@ public class CreateAcountIETest extends BaseTest {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		logger.info("Finishing returning customer test...");
@@ -94,6 +98,7 @@ public class CreateAcountIETest extends BaseTest {
 		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
@@ -120,6 +125,7 @@ public class CreateAcountIETest extends BaseTest {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
 		signInPage.forgotPasswordClick();
@@ -133,6 +139,7 @@ public class CreateAcountIETest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		homePageIE.quit();
 		signInPage.quit();
 		createAccountPage.quit();

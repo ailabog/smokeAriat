@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesAddresses.USAddress;
+package com.ariat.Tests.CountriesAddresses.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -58,15 +58,15 @@ public class AddAddressUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
 		addAddressPage.enterFName("A");
 		addAddressPage.enterLName("B");
-		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
+		addAddressPage.enterAddress1("Avenue, 5th");
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Romania");
+		addAddressPage.selectCountry("New York");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);

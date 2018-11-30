@@ -9,6 +9,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageIE;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -28,6 +29,7 @@ public class ErrorMessagesAccountIETest extends BaseTest {
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private HomePageIE homePageIE;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -64,6 +66,7 @@ public class ErrorMessagesAccountIETest extends BaseTest {
 		logger.info("Starting error message in creating new account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
@@ -92,9 +95,10 @@ public class ErrorMessagesAccountIETest extends BaseTest {
 		logger.info("Starting returning customer wrong password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
-		signInPage.returningCustomer(OK_EMAIL);
+		signInPage.returningCustomer(OK_EMAIL, "English");
 		signInPage.returningPassword(WRONG_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongPasswordMessage(MISMATCH_PASS_MSG);
@@ -106,9 +110,10 @@ public class ErrorMessagesAccountIETest extends BaseTest {
 		logger.info("Starting returning customer wrong email test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
-		signInPage.returningCustomer(WRONG_EMAIL);
+		signInPage.returningCustomer(WRONG_EMAIL, "English");
 		signInPage.returningPassword(OK_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongEmailMessage(MISMATCH_PASS_MSG);
@@ -120,6 +125,7 @@ public class ErrorMessagesAccountIETest extends BaseTest {
 		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, OK_EMAIL, BILLING_ZIP_CODE);
@@ -131,6 +137,7 @@ public class ErrorMessagesAccountIETest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		homePageIE.quit();
 		signInPage.quit();
 		createAccountPage.quit();

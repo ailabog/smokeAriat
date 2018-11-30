@@ -56,7 +56,7 @@ public class AddAddressUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL);
+		signInPage.returningCustomer(EMAIL, "English");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
@@ -64,7 +64,7 @@ public class AddAddressUKTest extends BaseTest {
 		addAddressPage.enterLName("B");
 		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Romania");
+		addAddressPage.selectCountry("London");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
