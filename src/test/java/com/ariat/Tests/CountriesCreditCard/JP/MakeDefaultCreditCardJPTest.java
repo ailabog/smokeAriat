@@ -45,18 +45,18 @@ public class MakeDefaultCreditCardJPTest extends BaseTest{
 	}
 
 	@Test
-	public void makeDefaultCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting make default credit card from Payment Info UK test");
+	public void makeDefaultCreditCardFromPaymentInfoJPTest() {
+		logger.info("Starting make default credit card from Payment Info Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(), "05/2016");
-		logger.info("Finishing make default credit card from Payment info UK test");
+		logger.info("Finishing make default credit card from Payment info Japan test");
 		
   }
 	@AfterTest

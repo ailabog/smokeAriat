@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesCreditCard.FI;
+package com.ariat.Tests.CountriesCreditCard.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -10,8 +10,8 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -20,17 +20,17 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & deletet credit card UK
+ * Tests for add & make default credit card UK
  * @author aila.bogasieru@ariat.com
  *
  */
 
 
-public class Add_DeleteCreditCardFITest extends BaseTest{
+public class Add_MakeDefaultCreditCardUSTest extends BaseTest{
 	
 	private HomePage homePage;
-	private HomePageFI homePageFI;
 	private HomePageUK homePageUK;
+	private HomePageUS homePageUS;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
@@ -41,7 +41,8 @@ public class Add_DeleteCreditCardFITest extends BaseTest{
 	
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
-	private static final String CARD_ID = "MASTER_ID123";
+	private static final String CARD_ID = "XX";
+	private static final String defaultCredit = "DEFAULT | ";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "December";
@@ -52,40 +53,39 @@ public class Add_DeleteCreditCardFITest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardFITest() {
+	public void add_makeDefaultCreditCardUSTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & delete it Finland test");
+		logger.info("Starting add credit card & make it default US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
-		signInPage = homePageFI.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD1.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD1.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD1.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		logger.info("Finishing add credit card & delete it Finland test");
+		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
+		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
+		logger.info("Finishing add credit card & make it default US test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageFI.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-	
+		
 	}
 }

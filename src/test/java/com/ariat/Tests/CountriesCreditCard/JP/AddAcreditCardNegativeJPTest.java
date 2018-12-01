@@ -48,13 +48,13 @@ public class AddAcreditCardNegativeJPTest extends BaseTest{
 	}
 
 	@Test
-	public void addCreditCardNegativeUKTest() {
-		logger.info("Starting add a credit card negative UK test");
+	public void addCreditCardNegativeJPTest() {
+		logger.info("Starting add a credit card negative Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -66,7 +66,7 @@ public class AddAcreditCardNegativeJPTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add a credit card negative UK test");
+		logger.info("Finishing add a credit card negative Japan test");
   } 
 	
 	@AfterTest

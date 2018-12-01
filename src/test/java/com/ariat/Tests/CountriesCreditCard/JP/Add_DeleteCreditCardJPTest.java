@@ -50,14 +50,14 @@ public class Add_DeleteCreditCardJPTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardUKTest() {
+	public void add_deleteCreditCardJPTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & delete it UK test");
+		logger.info("Starting add credit card & delete it Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -71,7 +71,7 @@ public class Add_DeleteCreditCardJPTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		logger.info("Finishing add credit card & delete it UK test");
+		logger.info("Finishing add credit card & delete it Japan test");
   } 
 	
 	@AfterTest

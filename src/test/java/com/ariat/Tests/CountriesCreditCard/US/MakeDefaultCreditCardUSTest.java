@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesCreditCard.RU;
+package com.ariat.Tests.CountriesCreditCard.US;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -7,11 +7,10 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Enums.GlobalCountries;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageRU;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
 import com.ariat.Pages.SignInPage;
@@ -26,15 +25,16 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  */
 
 
-public class DeleteCreditCardRUTest extends BaseTest{
+public class MakeDefaultCreditCardUSTest extends BaseTest{
 	
 	private HomePage homePage;
-	private HomePageRU homePageRU;
+	private HomePageUK homePageUK;
+	private HomePageUS homePageUS;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
-	private GlobalCountries country;
+	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 	
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
@@ -47,25 +47,26 @@ public class DeleteCreditCardRUTest extends BaseTest{
 	}
 
 	@Test
-	public void deleteCreditCardFromPaymentInfoRUTest() {
-		logger.info("Starting delete credit card from Payment Info Russia test");
+	public void makeDefaultCreditCardFromPaymentInfoUSTest() {
+		logger.info("Starting make default credit card from Payment Info US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
-		signInPage = homePageRU.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
-	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
-	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
-		logger.info("Finishing delete credit card from Payment info Russia test");
+	    paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(), "05/2016");
+		logger.info("Finishing make default credit card from Payment info US test");
 		
   }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageRU.quit();
+		homePageUK.quit();
+		homePageUS.quit();
 		signInPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();

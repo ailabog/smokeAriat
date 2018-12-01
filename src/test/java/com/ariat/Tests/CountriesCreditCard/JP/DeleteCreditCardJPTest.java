@@ -45,8 +45,8 @@ public class DeleteCreditCardJPTest extends BaseTest{
 	}
 
 	@Test
-	public void deleteCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting delete credit card from Payment Info UK test");
+	public void deleteCreditCardFromPaymentInfoJPTest() {
+		logger.info("Starting delete credit card from Payment Info Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -57,7 +57,7 @@ public class DeleteCreditCardJPTest extends BaseTest{
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
 	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
-		logger.info("Finishing delete credit card from Payment info UK test");
+		logger.info("Finishing delete credit card from Payment info Japan test");
 		
   }
 	@AfterTest

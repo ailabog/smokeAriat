@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
@@ -28,6 +29,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class Add_DeleteCreditCardIETest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageIE homePageIE;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -50,14 +52,15 @@ public class Add_DeleteCreditCardIETest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardUKTest() {
+	public void add_deleteCreditCardIETest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & delete it UK test");
+		logger.info("Starting add credit card & delete it Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
+		signInPage = homePageIE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -71,12 +74,13 @@ public class Add_DeleteCreditCardIETest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		logger.info("Finishing add credit card & delete it UK test");
+		logger.info("Finishing add credit card & delete it Ireland test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageIE.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();

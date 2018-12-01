@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
@@ -28,6 +29,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class AddAcreditCardNegativeIETest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageIE homePageIE;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -48,13 +50,14 @@ public class AddAcreditCardNegativeIETest extends BaseTest{
 	}
 
 	@Test
-	public void addCreditCardNegativeUKTest() {
-		logger.info("Starting add a credit card negative UK test");
+	public void addCreditCardNegativeIETest() {
+		logger.info("Starting add a credit card negative Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
+		signInPage = homePageIE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -66,12 +69,13 @@ public class AddAcreditCardNegativeIETest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add a credit card negative UK test");
+		logger.info("Finishing add a credit card negative Ireland test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageIE.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();

@@ -95,7 +95,7 @@ public class ErrorMessagesAccountCATest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
 		signInPage = homePageCA.returnSignInPage();
-		signInPage.returningCustomer(OK_EMAIL, "English");
+		signInPage.returningCustomer(OK_EMAIL, "EnglishUS");
 		signInPage.returningPassword(WRONG_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongPasswordMessage(MISMATCH_PASS_MSG);
@@ -109,7 +109,7 @@ public class ErrorMessagesAccountCATest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
 		signInPage = homePageCA.returnSignInPage();
-		signInPage.returningCustomer(WRONG_EMAIL, "English");
+		signInPage.returningCustomer(WRONG_EMAIL, "EnglishUS");
 		signInPage.returningPassword(OK_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongEmailMessage(MISMATCH_PASS_MSG);

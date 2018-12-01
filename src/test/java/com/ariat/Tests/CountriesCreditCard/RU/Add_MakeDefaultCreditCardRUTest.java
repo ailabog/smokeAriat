@@ -57,7 +57,7 @@ public class Add_MakeDefaultCreditCardRUTest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();

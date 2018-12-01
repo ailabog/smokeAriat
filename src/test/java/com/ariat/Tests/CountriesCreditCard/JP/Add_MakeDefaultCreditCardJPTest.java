@@ -51,14 +51,14 @@ public class Add_MakeDefaultCreditCardJPTest extends BaseTest{
 	}
 
 	@Test
-	public void add_makeDefaultCreditCardUKTest() {
+	public void add_makeDefaultCreditCardJPTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & make it default UK test");
+		logger.info("Starting add credit card & make it default Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -72,7 +72,7 @@ public class Add_MakeDefaultCreditCardJPTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
-		logger.info("Finishing add credit card & make it default UK test");
+		logger.info("Finishing add credit card & make it default Japan test");
   } 
 	
 	@AfterTest

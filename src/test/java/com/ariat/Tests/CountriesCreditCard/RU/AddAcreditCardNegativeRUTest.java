@@ -47,13 +47,13 @@ public class AddAcreditCardNegativeRUTest extends BaseTest{
 	}
 
 	@Test
-	public void addCreditCardNegativeUKTest() {
-		logger.info("Starting add a credit card negative UK test");
+	public void addCreditCardNegativeRUTest() {
+		logger.info("Starting add a credit card negative Russia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -65,7 +65,7 @@ public class AddAcreditCardNegativeRUTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add a credit card negative UK test");
+		logger.info("Finishing add a credit card negative Russia test");
   } 
 	
 	@AfterTest

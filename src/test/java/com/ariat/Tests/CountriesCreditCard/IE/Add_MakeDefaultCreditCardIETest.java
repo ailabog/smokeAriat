@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
@@ -28,6 +29,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class Add_MakeDefaultCreditCardIETest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageIE homePageIE;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -53,12 +55,13 @@ public class Add_MakeDefaultCreditCardIETest extends BaseTest{
 	@Test
 	public void add_makeDefaultCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & make it default UK test");
+		logger.info("Starting add credit card & make it default Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
+		signInPage = homePageIE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -72,12 +75,13 @@ public class Add_MakeDefaultCreditCardIETest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
-		logger.info("Finishing add credit card & make it default UK test");
+		logger.info("Finishing add credit card & make it default Ireland test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageIE.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();

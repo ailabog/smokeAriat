@@ -23,7 +23,8 @@ public class SignInPage extends BasePage {
 
 	public static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
 
-	private By addressEmailTextBox = By.xpath("//input[@placeholder='Email Address']");
+	private By addressEmailTextBoxUS = By.xpath("//input[@placeholder='Email Address']");
+	private By addressEmailTextBoxUK = By.xpath("//input[@placeholder='Email address']");
 	private By emailAddressTextBoxDE = By.xpath("//input[@placeholder='E-Mail-Adresse (Erforderlich)']");
 	private By emailAddressTextBoxFR = By.xpath("//input[@placeholder='Adresse courriel (Requis)']");
 	// Search for Products
@@ -52,10 +53,15 @@ public class SignInPage extends BasePage {
 
 	public void returningCustomer(String email, String language) {
 		switch (language) {
-
-		case "English":
+		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, addressEmailTextBox, email);
+			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+			
+		case "EnglishUS":
+			logger.info("Entering information for an existing customer: email address", email);
+			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			break;
 		case "Deutsch":

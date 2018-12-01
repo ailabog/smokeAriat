@@ -99,7 +99,7 @@ public class ErrorMessagesAccountDKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		signInPage = homePageDK.returnSignInPage();
-		signInPage.returningCustomer(OK_EMAIL, "English");
+		signInPage.returningCustomer(OK_EMAIL, "EnglishUK");
 		signInPage.returningPassword(WRONG_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongPasswordMessage(MISMATCH_PASS_MSG);
@@ -114,7 +114,7 @@ public class ErrorMessagesAccountDKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		signInPage = homePageDK.returnSignInPage();
-		signInPage.returningCustomer(WRONG_EMAIL, "English");
+		signInPage.returningCustomer(WRONG_EMAIL, "EnglishUK");
 		signInPage.returningPassword(OK_PASSWORD);
 		signInPage.loginClick();
 		signInPage.assertWrongEmailMessage(MISMATCH_PASS_MSG);

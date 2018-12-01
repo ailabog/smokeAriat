@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
@@ -27,6 +28,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class DeleteCreditCardIETest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageIE homePageIE;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -45,25 +47,27 @@ public class DeleteCreditCardIETest extends BaseTest{
 	}
 
 	@Test
-	public void deleteCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting delete credit card from Payment Info UK test");
+	public void deleteCreditCardFromPaymentInfoIETest() {
+		logger.info("Starting delete credit card from Payment Info Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
+		signInPage = homePageIE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
 	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
-		logger.info("Finishing delete credit card from Payment info UK test");
+		logger.info("Finishing delete credit card from Payment info Ireland test");
 		
   }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageIE.quit();
 		signInPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
