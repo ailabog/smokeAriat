@@ -76,7 +76,7 @@ public class AddAcreditCardIETest extends BaseTest{
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUKTest() {
+	public void addCreditCardFromPaymentInfoIETest() {
 		logger.info("Starting add credit card from Payment Info Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

@@ -20,7 +20,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & deletet credit card UK
+ * Tests for add & deletet credit card Deutschland
  * @author aila.bogasieru@ariat.com
  *
  */
@@ -44,7 +44,7 @@ public class Add_DeleteCreditCardDETest extends BaseTest{
 	private static final String CARD_ID = "MASTER_ID123";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "December";
+	private static final String MONTH = "Dezember";
 	
 	@BeforeTest
 	public void setUp() {

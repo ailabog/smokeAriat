@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageFR;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
@@ -19,7 +20,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & make default credit card UK
+ * Tests for add & make default credit card France
  * @author aila.bogasieru@ariat.com
  *
  */
@@ -29,6 +30,7 @@ public class Add_MakeDefaultCreditCardFRTest extends BaseTest{
 	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageFR homePageFR;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
@@ -51,13 +53,14 @@ public class Add_MakeDefaultCreditCardFRTest extends BaseTest{
 	}
 
 	@Test
-	public void add_makeDefaultCreditCardUKTest() {
+	public void add_makeDefaultCreditCardFRTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & make it default UK test");
+		logger.info("Starting add credit card & make it default France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
+		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -72,13 +75,14 @@ public class Add_MakeDefaultCreditCardFRTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
-		logger.info("Finishing add credit card & make it default UK test");
+		logger.info("Finishing add credit card & make it default France test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageFR.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();

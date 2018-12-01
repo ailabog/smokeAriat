@@ -20,7 +20,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card UK
+ * Tests for Add Credit card Deutschland
  * @author aila.bogasieru@ariat.com
  *
  */

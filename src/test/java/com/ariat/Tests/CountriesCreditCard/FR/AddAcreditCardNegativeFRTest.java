@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageFR;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
@@ -19,7 +20,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Add credit card negative test UK
+ * Add credit card negative test France
  * @author aila.bogasieru@ariat.com
  *
  */
@@ -29,6 +30,7 @@ public class AddAcreditCardNegativeFRTest extends BaseTest{
 	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageFR homePageFR;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
@@ -48,12 +50,13 @@ public class AddAcreditCardNegativeFRTest extends BaseTest{
 	}
 
 	@Test
-	public void addCreditCardNegativeUKTest() {
-		logger.info("Starting add a credit card negative UK test");
+	public void addCreditCardNegativeFRTest() {
+		logger.info("Starting add a credit card negative France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
+		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -66,13 +69,14 @@ public class AddAcreditCardNegativeFRTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add a credit card negative UK test");
+		logger.info("Finishing add a credit card negative France test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageFR.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		myAccountPage.quit();

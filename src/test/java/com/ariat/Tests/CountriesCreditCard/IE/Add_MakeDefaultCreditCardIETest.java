@@ -53,7 +53,7 @@ public class Add_MakeDefaultCreditCardIETest extends BaseTest{
 	}
 
 	@Test
-	public void add_makeDefaultCreditCardUKTest() {
+	public void add_makeDefaultCreditCardIETest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & make it default Ireland test");
 		homePage = new HomePage(new ChromeDriver());

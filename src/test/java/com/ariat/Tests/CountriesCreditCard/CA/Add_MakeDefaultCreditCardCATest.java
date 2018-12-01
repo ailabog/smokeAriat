@@ -18,7 +18,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & make default credit card UK
+ * Tests for add & make default credit card Canada
  * @author aila.bogasieru@ariat.com
  *
  */

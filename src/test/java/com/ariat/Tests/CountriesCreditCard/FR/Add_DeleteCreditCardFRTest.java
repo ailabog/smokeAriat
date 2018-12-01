@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageFR;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.PaymentInformationPage;
@@ -19,7 +20,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & deletet credit card UK
+ * Tests for add & deletet credit card France
  * @author aila.bogasieru@ariat.com
  *
  */
@@ -29,6 +30,7 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageFR homePageFR;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
@@ -42,7 +44,7 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 	private static final String CARD_ID = "MASTER_ID123";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "December";
+	private static final String MONTH = "Novembre";
 	
 	@BeforeTest
 	public void setUp() {
@@ -50,13 +52,14 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardUKTest() {
+	public void add_deleteCreditCardFRTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & delete it UK test");
+		logger.info("Starting add credit card & delete it France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
+		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -71,13 +74,14 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		logger.info("Finishing add credit card & delete it UK test");
+		logger.info("Finishing add credit card & delete it France test");
   } 
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageFR.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();

@@ -18,7 +18,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Adds a new address and checks the address was created for UK
+ * Adds a new address and checks the address was created for Canada
  * 
  * @author aila.bogasieru@ariat.com
  *

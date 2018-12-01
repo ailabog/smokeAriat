@@ -87,9 +87,9 @@ public class AddAcreditCardJPTest extends BaseTest{
 		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARDSpace.getName());
+		addACreditCardPage.enterCardNo(typeCard.MASTER_CARDSpace.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARDSpace.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
