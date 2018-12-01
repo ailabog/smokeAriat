@@ -42,7 +42,7 @@ public class AddAcreditCardNegativeDETest extends BaseTest{
 	private static final String CARD_ID = GenerateRandomDataUtils.generateRandomString(5);
 	private static final String CARD_OWNER = GenerateRandomDataUtils.generateRandomNumber(5);
 	private static final String YEAR = "2018";
-	private static final String MONTH = "May";
+	private static final String MONTH = "Dezember";
 	
 	@BeforeTest
 	public void setUp() {

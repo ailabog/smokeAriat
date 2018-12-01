@@ -45,7 +45,7 @@ public class Add_MakeDefaultCreditCardDETest extends BaseTest{
 	private static final String defaultCredit = "DEFAULT | ";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "December";
+	private static final String MONTH = "Dezember";
 	
 	@BeforeTest
 	public void setUp() {

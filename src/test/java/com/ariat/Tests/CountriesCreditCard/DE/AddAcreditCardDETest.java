@@ -44,7 +44,7 @@ public class AddAcreditCardDETest extends BaseTest{
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "January";
+	private static final String MONTH = "Dezember";
 	
 	@BeforeTest
 	public void setUp() {
@@ -87,7 +87,7 @@ public class AddAcreditCardDETest extends BaseTest{
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
-		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
+		addACreditCardPage = paymentInfoPage.returnAddACreditCardPageDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(ListOfCreditCards.MASTER_CARD.getName());
