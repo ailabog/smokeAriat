@@ -63,7 +63,7 @@ public class AddAddressJPTest extends BaseTest {
 		addAddressPage.enterLName("B");
 		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Canada");
+		addAddressPage.selectCountry("Japan");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);

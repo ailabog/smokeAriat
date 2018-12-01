@@ -62,7 +62,7 @@ public class AddAddressUKTest extends BaseTest {
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
 		addAddressPage.enterFName("A");
 		addAddressPage.enterLName("B");
-		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
+		addAddressPage.enterAddress1("Oxford Street");
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("London");
 		addAddressPage.enterPostCode(POST_CODE);
