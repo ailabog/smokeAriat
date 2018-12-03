@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageIE;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -21,6 +22,7 @@ public class LogoutIETest extends BaseTest {
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageIE homePageIE;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
@@ -33,13 +35,14 @@ public class LogoutIETest extends BaseTest {
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountMiddleIETest() {
+		logger.info("Starting the logout Ireland test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logoutMiddle();
@@ -47,16 +50,17 @@ public class LogoutIETest extends BaseTest {
 	}
 	
 	@Test
-	public void logoutFromMyAccountTopUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountTopIETest() {
+		logger.info("Starting the logout Ireland test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop();
+		myAccountPage.logoutTop("English");
 		logger.info("I was succesfully logged out from the application!");
 	}
 
@@ -64,6 +68,7 @@ public class LogoutIETest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageIE.quit();
+		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 	}

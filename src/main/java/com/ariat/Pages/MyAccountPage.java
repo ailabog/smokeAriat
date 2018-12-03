@@ -22,8 +22,10 @@ public class MyAccountPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(MyAccountPage.class);
 
-	private By logout = By.xpath("//a[text()='Log out']");
-	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[2]/div/div[4]/ul/li[5]/a");
+	private By logoutTopNav= By.xpath("//a[text()='Log out']");
+	private By logoutMiddle = By.id("account-overview__logout-link");
+	private By logouttopNavFR = By.xpath("a[text()='Se déconnecter']");
+	private By logoutTopNavDE = By.xpath("//a[text()='Abmelden']");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By personalInfoLink = By.xpath("//a[text()= 'Personal Information']");
 	private By personalInfoText = By.xpath("//*[contains(text(),'Personal Information']");
@@ -51,6 +53,8 @@ public class MyAccountPage extends BasePage {
 	
 
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
+	private By editPersonalInfoLinkUS = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div[2]/div[2]/div[1]/div[1]/a");
+	
 	private By changePasswordLink = By.xpath(
 			"//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[3]/a");
 	private By editEmailPreferenceLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/a");
@@ -80,15 +84,33 @@ public class MyAccountPage extends BasePage {
 
 	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
-		WebDriverUtils.clickOnElementWithWait(driver, logout);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
+			WebDriverUtils.clickOnElementWithWait(driver, logoutMiddle);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 	
-	public void logoutTop() {
+	public void logoutTop(String language) {
 		logger.info("Logging out from the application:");
-		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		switch (language) {
+		case "English":
+			WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+			
+		case "Deutsch":
+			WebDriverUtils.clickOnElementWithWait(driver, logoutTopNavDE);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+			
+		case "Francais":
+			WebDriverUtils.clickOnElementWithWait(driver, logouttopNavFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;	
+		default:
+			throw new RuntimeException("Language" + language + "not supported");
+		}
 	}
+	
 	
 	public void myAccountClick() {
 		logger.info("Going to My Account page...");
@@ -99,6 +121,13 @@ public class MyAccountPage extends BasePage {
 
 	public PersonalnformationPage returnPersonalInfoPageMiddleNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, editPersonalInfoLink);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
+		return new PersonalnformationPage(driver);
+	}
+	
+	public PersonalnformationPage returnPersonalInfoPageMiddleNavUS() {
+		WebDriverUtils.clickOnElementWithWait(driver, editPersonalInfoLinkUS);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
 		return new PersonalnformationPage(driver);
@@ -230,7 +259,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public LogoutPage returnLogoutPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, logout);
+		WebDriverUtils.clickOnElementWithWait(driver, logoutMiddle);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(signIn));
 		return new LogoutPage(driver);

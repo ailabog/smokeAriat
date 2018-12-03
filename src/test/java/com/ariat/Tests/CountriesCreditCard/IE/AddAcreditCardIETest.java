@@ -57,6 +57,7 @@ public class AddAcreditCardIETest extends BaseTest{
 		logger.info("Starting add a credit card Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		signInPage = homePageIE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");

@@ -67,13 +67,13 @@ public class Add_MakeDefaultCreditCardFRTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARDSpace.getName());
+		addACreditCardPage.enterCardNo(typeCard.MASTER_CARDSpace.getNumber());
+		addACreditCardPage.enterSecurityCode(ListOfCreditCards.MASTER_CARDSpace.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
+		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARDSpace.getName(), expirationDate);
 		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
 		logger.info("Finishing add credit card & make it default France test");
   } 

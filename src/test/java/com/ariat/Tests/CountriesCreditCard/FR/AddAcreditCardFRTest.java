@@ -52,9 +52,9 @@ public class AddAcreditCardFRTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardUKTest() {
+	public void addCreditCardFRTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add a credit card UK test");
+		logger.info("Starting add a credit card France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -73,7 +73,7 @@ public class AddAcreditCardFRTest extends BaseTest{
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card UK test");
+		logger.info("Finishing add a credit card France test");
   } 
 	
 	@Test(priority = 1)
@@ -91,9 +91,9 @@ public class AddAcreditCardFRTest extends BaseTest{
 		addACreditCardPage = paymentInfoPage.returnAddACreditCardPageFR();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARDSpace.getName());
+		addACreditCardPage.enterCardNo(typeCard.MASTER_CARDSpace.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARDSpace.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();

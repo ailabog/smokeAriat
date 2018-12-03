@@ -66,9 +66,9 @@ public class AddAcreditCardDETest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(ListOfCreditCards.VISA.getName());
-		addACreditCardPage.enterCardNo(ListOfCreditCards.VISA.getNumber());
-		addACreditCardPage.enterSecurityCode(ListOfCreditCards.VISA.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
+		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
@@ -81,6 +81,7 @@ public class AddAcreditCardDETest extends BaseTest{
 		logger.info("Starting add credit card from Payment Info Germany test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
@@ -90,9 +91,9 @@ public class AddAcreditCardDETest extends BaseTest{
 		addACreditCardPage = paymentInfoPage.returnAddACreditCardPageDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(ListOfCreditCards.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(ListOfCreditCards.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(ListOfCreditCards.MASTER_CARD.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();

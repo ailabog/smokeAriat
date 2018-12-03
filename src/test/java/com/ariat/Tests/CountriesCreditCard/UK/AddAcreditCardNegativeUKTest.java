@@ -34,6 +34,7 @@ public class AddAcreditCardNegativeUKTest extends BaseTest{
 	private AddACreditCardPage addACreditCardPage;
 	private Environments environment;
 	private EUCountries euCountry;
+	private ListOfCreditCards typeCard;
 		
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
@@ -60,9 +61,9 @@ public class AddAcreditCardNegativeUKTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(ListOfCreditCards.INVALID_CARD.getName());
-		addACreditCardPage.enterCardNo(ListOfCreditCards.INVALID_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(ListOfCreditCards.INVALID_CARD.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.INVALID_CARD.getName());
+		addACreditCardPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();

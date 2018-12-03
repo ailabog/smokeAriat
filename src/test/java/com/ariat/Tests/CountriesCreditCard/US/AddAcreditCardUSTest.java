@@ -68,7 +68,7 @@ public class AddAcreditCardUSTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
+		addACreditCardPage.selectTypeCardUS(typeCard.VISA.getName());
 		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
 		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
@@ -95,7 +95,7 @@ public class AddAcreditCardUSTest extends BaseTest{
 		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		addACreditCardPage.selectTypeCardUS(typeCard.MASTER_CARD.getName());
 		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
 		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);

@@ -67,7 +67,7 @@ public class Add_MakeDefaultCreditCardUSTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARDSpace.getName());
+		addACreditCardPage.selectTypeCardUS(typeCard.MASTER_CARDSpace.getName());
 		addACreditCardPage.enterCardNo(typeCard.MASTER_CARDSpace.getNumber());
 		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARDSpace.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);

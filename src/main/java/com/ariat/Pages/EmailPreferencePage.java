@@ -57,9 +57,7 @@ public class EmailPreferencePage extends BasePage {
 	}
 	
 	public void ariatProductsCheck(String option) {
-		
 		switch(option) {
-		
 		case "English":
 			WebDriverUtils.clickOnElementWithWait(driver, englishCheck);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);

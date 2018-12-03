@@ -8,7 +8,8 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageFI;
+import com.ariat.Pages.HomePagesCountries.HomePageDE;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -20,7 +21,8 @@ public class LogoutDETest extends BaseTest {
 	private Environments environment;
 	private EUCountries euCountry;
 	private HomePage homePage;
-	private HomePageFI homePageFI;
+	private HomePageDE homePageDE;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
@@ -33,12 +35,13 @@ public class LogoutDETest extends BaseTest {
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountMiddleDETest() {
+		logger.info("Starting the logout Deutschland test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
-		signInPage = homePageFI.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -47,23 +50,25 @@ public class LogoutDETest extends BaseTest {
 	}
 	
 	@Test
-	public void logoutFromMyAccountTopUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountTopDETest() {
+		logger.info("Starting the logout Deutschland test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
-		signInPage = homePageFI.returnSignInPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop();
+		myAccountPage.logoutTop("Deutsch");
 		logger.info("I was succesfully logged out from the application!");
 	}
 
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
-		homePageFI.quit();
+		homePageUK.quit();
+		homePageDE.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 	}

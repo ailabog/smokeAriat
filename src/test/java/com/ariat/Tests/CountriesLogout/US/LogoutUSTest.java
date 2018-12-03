@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
@@ -20,6 +21,7 @@ public class LogoutUSTest extends BaseTest {
 	private Environments environment;
 	private HomePage homePage;
 	private HomePageUS homePageUS;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private EUCountries euCountry;
@@ -39,9 +41,10 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logoutMiddle();
@@ -54,9 +57,10 @@ public class LogoutUSTest extends BaseTest {
 		logger.info("Starting the logout US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnLogoutFromMyAccountPageTopNav();
@@ -67,6 +71,7 @@ public class LogoutUSTest extends BaseTest {
 	@AfterMethod
 	public void tearDown() {
 		homePageUS.quit();
+		homePageUK.quit();
 		homePage.quit();
 		signInPage.quit();
 		myAccountPage.quit();

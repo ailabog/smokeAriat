@@ -50,7 +50,7 @@ public class AddAcreditCardRUTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardUKTest() {
+	public void addCreditCardRUTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card Russia test");
 		homePage = new HomePage(new ChromeDriver());
@@ -74,7 +74,7 @@ public class AddAcreditCardRUTest extends BaseTest{
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUKTest() {
+	public void addCreditCardFromPaymentInfoRUTest() {
 		logger.info("Starting add credit card from Payment Info Russia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

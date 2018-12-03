@@ -549,7 +549,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
+				//WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
 			}
 			return new HomePageFI(driver);
 

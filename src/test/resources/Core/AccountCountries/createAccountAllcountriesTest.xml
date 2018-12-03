@@ -4,6 +4,7 @@
 
 	<test name="createAccountAllCountriesTest" >
        <classes>
+                 <class name="com.ariat.Tests.CountriesAccountTests.US.CreateAcountUSTest" />
                  <class name="com.ariat.Tests.CountriesAccountTests.UK.CreateAcountUKTest" />
                  <class name="com.ariat.Tests.CountriesAccountTests.FR.CreateAcountFRTest" />
                  <class name="com.ariat.Tests.CountriesAccountTests.IE.CreateAcountIETest" />
@@ -13,8 +14,7 @@
                  <class name="com.ariat.Tests.CountriesAccountTests.CA.CreateAcountCATest" />
                  <class name="com.ariat.Tests.CountriesAccountTests.RU.CreateAcountRUTest" />
                  <class name="com.ariat.Tests.CountriesAccountTests.JP.CreateAcountJPTest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.US.CreateAcountUSTest" />
-  
+ 
        </classes>
      </test>
 </suite>

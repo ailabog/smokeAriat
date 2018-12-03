@@ -32,13 +32,13 @@ public class LogoutRUTest extends BaseTest {
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountMiddleRUTest() {
+		logger.info("Starting the logout Russia test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logoutMiddle();
@@ -46,16 +46,16 @@ public class LogoutRUTest extends BaseTest {
 	}
 	
 	@Test
-	public void logoutFromMyAccountTopUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountTopRUTest() {
+		logger.info("Starting the logout Russia test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop();
+		myAccountPage.logoutTop("English");
 		logger.info("I was succesfully logged out from the application!");
 	}
 

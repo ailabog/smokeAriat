@@ -36,6 +36,7 @@ public class AddAcreditCardNegativeDETest extends BaseTest{
 	private AddACreditCardPage addACreditCardPage;
 	private Environments environment;
 	private EUCountries euCountry;
+	private ListOfCreditCards typeCard;
 		
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
@@ -56,16 +57,16 @@ public class AddAcreditCardNegativeDETest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(ListOfCreditCards.INVALID_CARD.getName());
-		addACreditCardPage.enterCardNo(ListOfCreditCards.INVALID_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(ListOfCreditCards.INVALID_CARD.getCvs());
+		addACreditCardPage.selectTypeCard(typeCard.INVALID_CARD.getName());
+		addACreditCardPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
+		addACreditCardPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();

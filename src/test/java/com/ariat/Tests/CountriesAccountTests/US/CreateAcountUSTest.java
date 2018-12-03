@@ -74,8 +74,6 @@ public class CreateAcountUSTest extends BaseTest {
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
 		createAccountPage.addMeToAriatEmail();
-		myAccountPage = createAccountPage.returnMyAccountPage();
-		myAccountPage.logoutMiddle();
 		logger.info("Finishing create new account test...");
 	}
 
@@ -89,8 +87,6 @@ public class CreateAcountUSTest extends BaseTest {
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutMiddle();
 		logger.info("Finishing returning customer test...");
 	}
 

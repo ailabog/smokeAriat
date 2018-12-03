@@ -42,7 +42,7 @@ public class Add_MakeDefaultCreditCardDETest extends BaseTest{
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "XX";
-	private static final String defaultCredit = "DEFAULT | ";
+	private static final String defaultCredit = "STANDARDKARTE | ";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "Dezember";
@@ -74,7 +74,7 @@ public class Add_MakeDefaultCreditCardDETest extends BaseTest{
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
-		paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
+		paymentInfoPage.assertMakeDefaultCreditCardDE(defaultCredit.concat(CARD_ID));
 		logger.info("Finishing add credit card & make it default Germany test");
   } 
 	

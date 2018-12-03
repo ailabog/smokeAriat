@@ -29,6 +29,7 @@ public class AddACreditCardPage extends BasePage {
 	private By applyButton = By.id("applyBtn");
 	private By cancelButton = By.xpath("//button[text()='Cancel]");
 	private By creditCardInfoText = By.xpath("//*contains[text(), 'Credit card information']");
+	private By typeCardSelectUS = By.xpath("//*[@id=\"c-ct\"]");
 
 	protected AddACreditCardPage(WebDriver driver) {
 		super(driver);
@@ -51,6 +52,13 @@ public class AddACreditCardPage extends BasePage {
 		WebDriverUtils.selectDropDown(driver, typeCardSelect, type);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void selectTypeCardUS(String type) {
+		logger.info("Selecting the type of the card...");
+		WebDriverUtils.selectDropDown(driver, typeCardSelectUS, type);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+
 
 	public void enterCardNo(String number) {
 		logger.info("Selecting the type of the card...");

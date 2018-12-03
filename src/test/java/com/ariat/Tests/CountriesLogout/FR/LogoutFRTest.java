@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFR;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -21,6 +22,7 @@ public class LogoutFRTest extends BaseTest {
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageFR homePageFR;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
@@ -33,10 +35,11 @@ public class LogoutFRTest extends BaseTest {
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountMiddleFRTest() {
+		logger.info("Starting the logout France test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
@@ -47,22 +50,24 @@ public class LogoutFRTest extends BaseTest {
 	}
 	
 	@Test
-	public void logoutFromMyAccountTopUKTest() {
-		logger.info("Starting the logout UK test...");
+	public void logoutFromMyAccountTopFRTest() {
+		logger.info("Starting the logout France test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop();
+		myAccountPage.logoutTop("Francais");
 		logger.info("I was succesfully logged out from the application!");
 	}
 
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		homePageFR.quit();
 		signInPage.quit();
 		myAccountPage.quit();

@@ -66,7 +66,7 @@ public class Add_DeleteCreditCardUSTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD1Space.getName());
+		addACreditCardPage.selectTypeCardUS(typeCard.MASTER_CARD1Space.getName());
 		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD1Space.getNumber());
 		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD1Space.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
