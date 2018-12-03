@@ -49,7 +49,7 @@ public class DeleteAddressRUTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressUKTest() {
+	public void deleteAddressRUTest() {
 		logger.info("Starting deleting address Russia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

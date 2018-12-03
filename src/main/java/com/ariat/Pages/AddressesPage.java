@@ -24,6 +24,7 @@ public class AddressesPage extends BasePage {
 
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
+	private By addressTextDE = By.xpath("//*[contains(text(), Adressen']");
 	private By editLink = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[2]/a[1]");
 	private By deleteLink = By.xpath("//a[text()='Delete']");
 	private By makeDefaultLink = By.xpath("a[text()='Make default']");
@@ -33,7 +34,8 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
-	private By loadMoreButton = By.xpath("//button]@title='Load More']");
+	private By loadMoreButton = By.xpath("//button[text()='Load More']");
+	private By loadMoreButtonDE = By.xpath("//button[text()='Weitere laden']");
 
 	private boolean checkAddress;
 
@@ -198,6 +200,19 @@ public class AddressesPage extends BasePage {
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
 		while(! WebDriverUtils.isElementDisplayed(driver, addressesText)){
 			WebDriverUtils.scrollUp(driver, addressesText);
+		  }
+		}
+	
+	public void loadMoreAddessesDE() {
+		do {
+			logger.info("Loading more addresses...");
+			WebDriverUtils.scrollDown(driver, loadMoreButtonDE);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonDE);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} while (WebDriverUtils.findElement(driver, loadMoreButtonDE) == null);
+		while(! WebDriverUtils.isElementDisplayed(driver, addressTextDE)){
+			WebDriverUtils.scrollUp(driver, addressTextDE);
 		  }
 		}
 

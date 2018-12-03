@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesAddresses.IE;
+package com.ariat.Tests.CountriesAddresses.DK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageIE;
+import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -19,21 +19,15 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-/**
- * 
- * @author aila.bogasieru@ariat.com
- *
- */
-
-public class DeleteAddressIETest extends BaseTest {
+public class LoadMoreAddressDKTest extends BaseTest {
 
 	private HomePage homePage;
-	private HomePageIE homePageIE;
+	private HomePageDK homePageDK;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
+	private LogoutPage logoutPage;
 	private Environments environment;
 	private EUCountries euCountry;
 
@@ -42,7 +36,7 @@ public class DeleteAddressIETest extends BaseTest {
 	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String PHONE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest
@@ -51,49 +45,48 @@ public class DeleteAddressIETest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressIETest() {
-		logger.info("Starting deleting address Ireland test");
+	public void loadMoreAddressesFromEditDKTest() {
+		logger.info("Starting load more addresses France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
-		signInPage = homePageIE.returnSignInPage();
+		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
+		signInPage = homePageDK.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
-		addressesPage.checkAddress("nnn");
-		logger.info("Finishing deleting address Ireland test");
+		addressesPage.loadMoreAddesses();
+		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		logger.info("Finishing load more addresses France test");
 	}
-
+	
 	@Test(priority = 1)
-	public void deleteAddressFromEditIETest() {
-		logger.info("Starting deleting address from Edit address Ireland test");
+	public void loadMoreAddressesLeftNavigationDKTest() {
+		logger.info("Starting load more addresses left navigation France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
-		signInPage = homePageIE.returnSignInPage();
+		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
+		signInPage = homePageDK.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		addressesPage.checkAddress("ccc");
-		logger.info("Finishing deleting address from Edit address Ireland test");
+		addressesPage = myAccountPage.returnAddressesPageLeftNav();
+		addressesPage.loadMoreAddesses();
+		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		logger.info("Finishing load more addresses lef navigation France test");
 	}
-
+	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageIE.quit();
+		homePageDK.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		addAddressPage.quit();
+		logoutPage.quit();
 	}
+
 }

@@ -33,7 +33,7 @@ public class AddAddressesPage extends BasePage {
 	private By cancelAddressButton = By.name("dwfrm_profile_address_cancel");
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 	private By addressesText = By.xpath("//*contains[text(), 'Address']");
-    private By deleteAddressButton = By.xpath("//*[@id=\"edit-address-form\"]/div[11]/div/button[2]");
+    private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
   		
 	protected AddAddressesPage(WebDriver driver) {

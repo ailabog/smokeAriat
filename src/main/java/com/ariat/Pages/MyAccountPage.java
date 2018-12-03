@@ -36,6 +36,10 @@ public class MyAccountPage extends BasePage {
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 	
+	private By addressesTextDE = By.xpath("//*[contains(text(), 'Adressen']");
+	private By addressesLinkDE = By.xpath("//a[text()='Adressen']");
+	
+	
 	private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
 	private By paymentInformationText = By.className("//*contains[text(),'Credit card information']");
 	
@@ -232,6 +236,13 @@ public class MyAccountPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, addressesLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
+	}
+	
+	public AddressesPage returnAddressesPageLeftNavDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, addressesLinkDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesTextDE));
 		return new AddressesPage(driver);
 	}
 

@@ -10,6 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
@@ -23,6 +24,7 @@ public class EditAddressUSTest extends BaseTest {
 
 	private HomePage homePage;
 	private HomePageUS homePageUS;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
@@ -49,6 +51,7 @@ public class EditAddressUSTest extends BaseTest {
 		logger.info("Starting edit address US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL,"English");
@@ -71,6 +74,7 @@ public class EditAddressUSTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUS.quit();
+		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addAddressPage.quit();

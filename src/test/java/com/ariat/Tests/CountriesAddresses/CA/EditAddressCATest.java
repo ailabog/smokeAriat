@@ -1,16 +1,16 @@
-package com.ariat.Tests.CountriesAddresses.US;
+package com.ariat.Tests.CountriesAddresses.CA;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.GlobalCountries;
+import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.HomePagesCountries.HomePageUS;
+import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
@@ -19,17 +19,17 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-public class LoadMoreAddressUSTest extends BaseTest {
+public class EditAddressCATest extends BaseTest {
 
 	private HomePage homePage;
-	private HomePageUS homePageUS;
-	private HomePageUK homePageUK;
+	private HomePageCA homePageCA;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
+	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private LogoutPage logoutPage;
 	private Environments environment;
-	private EUCountries euCountry;
+	private GlobalCountries country;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
@@ -44,48 +44,37 @@ public class LoadMoreAddressUSTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
-	public void loadMoreAddressesFromEditUSTest() {
-		logger.info("Starting load more addresses US test");
+	@Test
+	public void editAddressCATest() {
+		logger.info("Starting edit address Canada test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());;
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		signInPage = homePageCA.returnSignInPage();
+		signInPage.returningCustomer(EMAIL,"EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.loadMoreAddesses();
+		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
+		addressesPage.editAddressCreated("B1TGL");
+		addAddressPage = addressesPage.returnAddressesEdit();
+		addAddressPage.clearAddressId();
+		addAddressPage.enterAddressId("B1TGL1");
+		addAddressPage.saveAddressEdit();
+		addressesPage = addAddressPage.returnAddressesFromEditPage();
+		addressesPage.checkAddress("B1TGL1");
 		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logger.info("Finishing load more addresses US test");
-	}
-	
-	@Test(priority = 1)
-	public void loadMoreAddressesLeftNavigationUSTest() {
-		logger.info("Starting load more addresses left navigation US test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageLeftNav();
-		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logger.info("Finishing load more addresses lef navigation US test");
+		logoutPage.logout();
+		logger.info("Finishing edit address Canada test");
 	}
 	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageUS.quit();
-		homePageUK.quit();
+		homePageCA.quit();
 		signInPage.quit();
 		myAccountPage.quit();
+		addAddressPage.quit();
 		addressesPage.quit();
 		logoutPage.quit();
 	}
-
 }

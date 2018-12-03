@@ -11,6 +11,7 @@ import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFR;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -28,6 +29,7 @@ public class DeleteAddressFRTest extends BaseTest {
 
 	private HomePage homePage;
 	private HomePageFR homePageFR;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
@@ -53,6 +55,7 @@ public class DeleteAddressFRTest extends BaseTest {
 		logger.info("Starting deleting address France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
@@ -70,6 +73,7 @@ public class DeleteAddressFRTest extends BaseTest {
 		logger.info("Starting deleting address from Edit address France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Francais");
@@ -86,6 +90,7 @@ public class DeleteAddressFRTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageFR.quit();
+		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();

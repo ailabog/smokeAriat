@@ -9,7 +9,6 @@ import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageJP;
 import com.ariat.Pages.HomePagesCountries.HomePageRU;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;

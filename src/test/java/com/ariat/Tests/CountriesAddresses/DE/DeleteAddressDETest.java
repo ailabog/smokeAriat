@@ -30,6 +30,7 @@ public class DeleteAddressDETest extends BaseTest {
 	private HomePage homePage;
 	private HomePageDE homePageDE;
 	private SignInPage signInPage;
+	private HomePageUK homePageUK;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
@@ -55,6 +56,7 @@ public class DeleteAddressDETest extends BaseTest {
 		logger.info("Starting deleting address Germany test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
@@ -72,6 +74,7 @@ public class DeleteAddressDETest extends BaseTest {
 		logger.info("Starting deleting address from Edit address Germany test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
@@ -88,6 +91,7 @@ public class DeleteAddressDETest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageDE.quit();
+		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();

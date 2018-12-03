@@ -49,13 +49,13 @@ public class DeleteAddressJPTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressUKTest() {
+	public void deleteAddressJPTest() {
 		logger.info("Starting deleting address Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageJP = (HomePageJP) homePage.chooseGlobalLocation(country.JP, country.JP.getCurrencyISO());
 		signInPage = homePageJP.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
@@ -66,7 +66,7 @@ public class DeleteAddressJPTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressFromEditUKTest() {
+	public void deleteAddressFromEditJPTest() {
 		logger.info("Starting deleting address from Edit address Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
