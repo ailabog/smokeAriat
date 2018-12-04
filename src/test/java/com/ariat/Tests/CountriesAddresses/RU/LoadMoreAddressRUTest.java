@@ -10,7 +10,6 @@ import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageRU;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -25,7 +24,6 @@ public class LoadMoreAddressRUTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 	private GlobalCountries country;
 
@@ -54,7 +52,6 @@ public class LoadMoreAddressRUTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing load more addresses Russia test");
 	}
 	
@@ -70,7 +67,6 @@ public class LoadMoreAddressRUTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
 		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing load more addresses lef navigation Russia test");
 	}
 	
@@ -81,7 +77,5 @@ public class LoadMoreAddressRUTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
-
 }

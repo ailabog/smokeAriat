@@ -1,4 +1,4 @@
-package com.ariat.Tests.CountriesAddresses.UK;
+package com.ariat.Tests.CountriesMyAccount.DK;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -7,33 +7,32 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
-import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-public class LoadMoreAddressUKTest extends BaseTest {
+/**
+ * Include tests for My account left navigation UK
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
 
+public class MyAccountTopRightNavigationUKTest extends BaseTest {
+
+	private Environments environment;
+	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private AddressesPage addressesPage;
-	private Environments environment;
-	private EUCountries euCountry;
 
-	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
-	public static final String PHONE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
-	private static final String PASSWORD = "Parola12345!";
+	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest
 	public void setUp() {
@@ -41,8 +40,8 @@ public class LoadMoreAddressUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void loadMoreAddressesFromEditUKTest() {
-		logger.info("Starting load more addresses UK test");
+	public void myAccountAccessPersonalInfoUKTest() {
+		logger.info("Starting personal info UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -50,14 +49,15 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.loadMoreAddesses();
-		logger.info("Finishing load more addresses UK test");
+		myAccountPage.returnPersonalInformationPageTopNav();
+		myAccountPage.myAccountClick();
+		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		logger.info("Finishing personal info UK test...");
 	}
-	
+
 	@Test(priority = 1)
-	public void loadMoreAddressesLeftNavigationUKTest() {
-		logger.info("Starting load more addresses left navigation UK test");
+	public void myAccountAccessOrdersUKTest() {
+		logger.info("Starting orders UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -65,17 +65,33 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageLeftNav();
-		addressesPage.loadMoreAddesses();
-		logger.info("Finishing load more addresses lef navigation UK test");
+		myAccountPage.returnMyOrdersPageTopNav();
+		myAccountPage.myAccountClick();
+		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		logger.info("Finishing orders UK test...");
 	}
-	
+
+	@Test(priority = 2)
+	public void myAccountAccessWishListUKTest() {
+		logger.info("Starting wish list UK test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		myAccountPage.returnWishListPageTopNav();
+		myAccountPage.myAccountClick();
+		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		logger.info("Finishing wish list UK test...");
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		addressesPage.quit();
 	}
 }

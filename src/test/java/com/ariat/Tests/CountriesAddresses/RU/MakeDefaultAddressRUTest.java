@@ -10,7 +10,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageRU;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -32,7 +31,6 @@ public class MakeDefaultAddressRUTest extends BaseTest {
     private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 	private GlobalCountries country;
 
@@ -60,10 +58,8 @@ public class MakeDefaultAddressRUTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("B1TGL");
-		addressesPage.assertMakeDefault("DEFAULT | B1TGL");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
+		addressesPage.makeDefaultAddressCreated("235432");
+		addressesPage.assertMakeDefault("DEFAULT | 235432");
 		logger.info("Finishing make default address Russia test");
 	}
 	
@@ -74,6 +70,5 @@ public class MakeDefaultAddressRUTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
 }

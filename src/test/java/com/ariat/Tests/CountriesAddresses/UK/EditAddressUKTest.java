@@ -42,14 +42,14 @@ public class EditAddressUKTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	@Test
 	public void editAddressTest() {
 		logger.info("Starting edit address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
@@ -57,8 +57,7 @@ public class EditAddressUKTest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("B1TGL1");
-		addAddressPage.saveAddressEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditPage();
+		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		addressesPage.checkAddress("B1TGL1");
 		logger.info("Finishing edit address UK test");
 	}

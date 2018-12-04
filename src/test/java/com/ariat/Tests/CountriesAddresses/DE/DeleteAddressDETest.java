@@ -35,6 +35,7 @@ public class DeleteAddressDETest extends BaseTest {
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private Environments environment;
+	
 	private EUCountries euCountry;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
@@ -82,7 +83,7 @@ public class DeleteAddressDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addAddressPage = addressesPage.returnAddressesEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
+		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
 		addressesPage.checkAddress("ccc");
 		logger.info("Finishing deleting address from Edit address Germany test");
 	}

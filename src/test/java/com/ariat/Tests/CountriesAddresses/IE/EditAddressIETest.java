@@ -12,7 +12,6 @@ import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -29,7 +28,6 @@ public class EditAddressIETest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 	private EUCountries euCountry;
 
@@ -62,11 +60,8 @@ public class EditAddressIETest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("B1TGL1");
-		addAddressPage.saveAddressEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditPage();
+		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		addressesPage.checkAddress("B1TGL1");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing edit address Ireland test");
 	}
 	
@@ -79,6 +74,5 @@ public class EditAddressIETest extends BaseTest {
 		myAccountPage.quit();
 		addAddressPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
 }

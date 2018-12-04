@@ -12,7 +12,6 @@ import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -29,7 +28,6 @@ public class EditAddressDETest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 	private EUCountries euCountry;
 
@@ -58,15 +56,12 @@ public class EditAddressDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.editAddressCreated("B1TGL");
+		addressesPage.editAddressCreated("235432");
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
-		addAddressPage.enterAddressId("B1TGL1");
-		addAddressPage.saveAddressEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditPage();
-		addressesPage.checkAddress("B1TGL1");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
+		addAddressPage.enterAddressId("235432A");
+		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
+		addressesPage.checkAddress("235432A");
 		logger.info("Finishing edit address Deutschland test");
 	}
 	
@@ -74,10 +69,10 @@ public class EditAddressDETest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageDE.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addAddressPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
 }

@@ -34,8 +34,10 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	WebElement addressesTable = driver.findElement(By.id("addresses"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
+	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
 	private By loadMoreButton = By.xpath("//button[text()='Load More']");
 	private By loadMoreButtonDE = By.xpath("//button[text()='Weitere laden']");
+	private By loadMoreButtonFR = By.xpath("//button[text()='Afficher plus']");
 
 	private boolean checkAddress;
 
@@ -183,8 +185,22 @@ public class AddressesPage extends BasePage {
 		}
 	}
 
+	public void assertMakeDefaultDE(String expectedAddress) {
+		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
+		String substring = "STANDARD | ";
+		String makeDefault = substring + addressLabel;
+		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
+	}
+	
 	public void assertMakeDefault(String expectedAddress) {
 		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
+		String substring = "DEFAULT | ";
+		String makeDefault = substring + addressLabel;
+		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
+	}
+	
+	public void assertMakeDefaultUS(String expectedAddress) {
+		String addressLabel = WebDriverUtils.getElementText(driver, addressNicknameUS);
 		String substring = "DEFAULT | ";
 		String makeDefault = substring + addressLabel;
 		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
@@ -194,9 +210,9 @@ public class AddressesPage extends BasePage {
 		do {
 			logger.info("Loading more addresses...");
 			WebDriverUtils.scrollDown(driver, loadMoreButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
 		while(! WebDriverUtils.isElementDisplayed(driver, addressesText)){
 			WebDriverUtils.scrollUp(driver, addressesText);
@@ -207,12 +223,25 @@ public class AddressesPage extends BasePage {
 		do {
 			logger.info("Loading more addresses...");
 			WebDriverUtils.scrollDown(driver, loadMoreButtonDE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonDE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButtonDE) == null);
 		while(! WebDriverUtils.isElementDisplayed(driver, addressTextDE)){
 			WebDriverUtils.scrollUp(driver, addressTextDE);
+		  }
+		}
+	
+	public void loadMoreAddessesFR() {
+		do {
+			logger.info("Loading more addresses...");
+			WebDriverUtils.scrollDown(driver, loadMoreButtonFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
+		while(! WebDriverUtils.isElementDisplayed(driver, addressesText)){
+			WebDriverUtils.scrollUp(driver, addressesText);
 		  }
 		}
 
@@ -235,6 +264,5 @@ public class AddressesPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddAddressesPage(driver);
-
 	}
 }

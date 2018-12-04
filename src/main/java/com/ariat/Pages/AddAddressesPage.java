@@ -34,6 +34,8 @@ public class AddAddressesPage extends BasePage {
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 	private By addressesText = By.xpath("//*contains[text(), 'Address']");
     private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
+	private By deleteAddressButtonDE = By.xpath("//*[@value='Löschen']");
+	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
   		
 	protected AddAddressesPage(WebDriver driver) {
@@ -143,6 +145,13 @@ public class AddAddressesPage extends BasePage {
 		return new AddressesPage(driver);
 	}
 	
+	public AddressesPage returnAddressesSaveFromEditPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, saveAddressEditButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
+	}
+	
 	public AddressesPage returnAddressesFromEditPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editAddressButton);
@@ -157,6 +166,15 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
+	}
+	
+	public AddressesPage returnAddressesFromEditDeletePageDE() {
+		WebDriverUtils.scrollElementToPosition(driver, deleteAddressButtonDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButtonDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesTextDE));
 		return new AddressesPage(driver);
 	}
 }
