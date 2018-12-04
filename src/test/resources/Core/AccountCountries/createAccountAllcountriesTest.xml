@@ -4,17 +4,16 @@
 
 	<test name="createAccountAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.CountriesAccountTests.US.CreateAcountUSTest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.UK.CreateAcountUKTest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.FR.CreateAcountFRTest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.IE.CreateAcountIETest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.FI.CreateAcountFITest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.DE.CreateAcountDETest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.DK.CreateAcountDKTest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.CA.CreateAcountCATest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.RU.CreateAcountRUTest" />
-                 <class name="com.ariat.Tests.CountriesAccountTests.JP.CreateAcountJPTest" />
- 
-       </classes>
+                 <class name="com.ariat.Tests.AccountCountriesTests.US.CreateAccountUSTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.UK.CreateAccountUKTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.FR.CreateAccountFRTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.IE.CreateAccountIETest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.FI.CreateAccountFITest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.DE.CreateAccountDETest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.DK.CreateAccountDKTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.CA.CreateAccountCATest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.RU.CreateAccountRUTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.JP.CreateAccountJPTest" />
+        </classes>
      </test>
 </suite>

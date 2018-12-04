@@ -4,7 +4,7 @@
 
 	<test name="add_makeDefaultCreditCardUKTest" >
        <classes>
-                 <class name="com.ariat.Tests.CountriesCreditCard.UK.Add_MakeDefaultCreditCardUKTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.UK.Add_MakeDefaultCreditCardUKTest" />
                  
        </classes>
      </test>

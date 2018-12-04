@@ -4,7 +4,7 @@
 
 	<test name="deleteCreditCardUKTest" >
        <classes>
-                 <class name="com.ariat.Tests.CountriesCreditCard.UK.DeleteCreditCardUKTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.UK.DeleteCreditCardUKTest" />
                  
        </classes>
      </test>

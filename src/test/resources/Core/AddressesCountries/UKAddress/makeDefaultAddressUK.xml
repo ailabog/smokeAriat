@@ -4,7 +4,7 @@
 
 	<test name="makeDefaultAddressUKTest" >
        <classes>
-                <class name="ccom.ariat.Tests.CountriesMakeDefaultAddress.UK.MakeDefaultAddressUKTest" />
+                <class name="com.ariat.Tests.AddressesCountriesTests.UK.MakeDefaultAddressUKTest" />
                
        </classes>
      </test>

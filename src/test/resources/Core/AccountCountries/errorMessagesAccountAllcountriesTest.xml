@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="createAccountAllCountriesTest" verbose="1">
+
+	<test name="createAccountAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.AccountCountriesTests.US.ErrorMessagesUSTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.UK.ErrorMessagesUKTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.FR.ErrorMessagesFRTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.IE.ErrorMessagesIETest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.FI.ErrorMessagesFITest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.DE.ErrorMessagesDETest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.DK.ErrorMessagesDKTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.CA.ErrorMessagesCATest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.RU.ErrorMessagesRUTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.JP.ErrorMessagesJPTest" />
+        </classes>
+     </test>
+</suite>

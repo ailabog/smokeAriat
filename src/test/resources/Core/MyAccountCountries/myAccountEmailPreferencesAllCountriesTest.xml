@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="myAccountEmailPreferencesAllCountriesTest" verbose="1">
+
+	<test name="myAccountEmailPreferencesAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.MyAccountEmailPreferencesUSTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.MyAccountEmailPreferencesUKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.MyAccountEmailPreferencesFRTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.MyAccountEmailPreferencesIETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.MyAccountEmailPreferencesFITest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountEmailPreferencesDETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.MyAccountEmailPreferencesDKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountEmailPreferencesCATest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.MyAccountEmailPreferencesRUTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.MyAccountEmailPreferencesJPTest" />
+        </classes>
+     </test>
+</suite>

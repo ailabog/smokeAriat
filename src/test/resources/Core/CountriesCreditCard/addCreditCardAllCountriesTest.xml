@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="addCreditCardAllCountriesTest" verbose="1">
+
+	<test name="addCreditCardAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.US.AddCreditCardUSTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.UK.AddCreditCardUKTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.FR.AddCreditCardFRTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.IE.AddCreditCardIETest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.FI.AddCreditCardFITest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.DE.AddCreditCardDETest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.DK.AddCreditCardDKTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.CA.AddCreditCardCATest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.RU.AddCreditCardRUTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.JP.AddCreditCardJPTest" />
+        </classes>
+     </test>
+</suite>
