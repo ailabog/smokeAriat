@@ -26,6 +26,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomePageUS.class);
 	
+	
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
@@ -77,17 +78,18 @@ public class HomePageUS extends BasePage implements List<HomePage>{
     private By partnersEquestrianFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[2]/a/span");
     private By partnersRodeoFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[3]/a/span");
     
-    private By returningCustomerText = By.xpath("//*text()='Returning customer']");
-	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
-	private By newcustomerText = By.xpath("//*text()='New Customer']");
-	private By womenText = By.xpath("//*contains(text(),'Women']");
-	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	
-	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
+    private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
+	
+	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
+	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
+	private By newcustomerText = By.xpath("//*text()='New Customer']");
+	private By womenText = By.xpath("//*contains(text(),'Women']");
+	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+
 	
 	public HomePageUS(WebDriver driver) {
 		super(driver);
@@ -307,7 +309,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 			WebDriverUtils.clickOnElementWithWait(driver, privacyFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
-			logger.info("This element {}" + privacyFooter + "was not found");
+			logger.info("This element {}" +  privacyFooter + "was not found");
 		}
 		if(WebDriverUtils.isElementDisplayed(driver, CAnoticeFooter)) {
 			WebDriverUtils.clickOnElementWithWait(driver, CAnoticeFooter);
@@ -358,6 +360,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 			logger.info("This element {}" + partnersRodeoFooter + "was not found");
 		}
 	}
+
 	
 	public void search(String option) {
 		logger.info("Searching for a product...");
