@@ -37,7 +37,58 @@ public class HomePageFI extends BasePage implements List<HomePage> {
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
+	
+	private By ariatLogo = By.className("global-nav-logo-svg");
+	private By kidsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[3]/a");
+	private By clearanceCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[4]/a");
+	private By ariatLifeCategory = By.linkText("Ariat Life");
+	private By exploreCategory = By.linkText("Explore");
+	private By giftGuideMenu = By.xpath("//img[contains(@src, 'gift-guide-category-image.png')]");
+	private By searchIcon = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[1]");
+	private By basket = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[2]/a/span[1]");
+	private By bannerDeliveryText = By.xpath("//*[@id=\"ar-global-utility-promo\"]/div/div");
+	private By closeSearchIcon = By
+			.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
+	private By findARetailerHeader = By.linkText("Find a Retailer");
+	private By aboutUsHeader = By.linkText("About Us");
+	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
+	private By saveAndContinueLocationButton = By.id("btnSaveContext");
+	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
 
+	private By emailSubscriptionTextBoxFooter = By.name("email");
+	private By subscribeButtonFooter = By.name("submit");
+	private By facebookIcon = By
+			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[1]/span");
+	private By twitterIcon = By
+			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[2]/span");
+	private By instagramIcon = By
+			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[3]/span");
+	
+	private By orderStatusFooter = By.linkText("Order Status");
+	private By returnsFooter = By.linkText("Returns");
+	private By trackYourOrderFooter = By.linkText("Track Your Order");
+	private By warrantyFooter = By.linkText("Warranty");
+	private By deliveryFooter = By.linkText("Delivery");
+	private By faqsFooter = By.linkText("FAQs");
+	private By sizeChartsFooter = By.linkText("Size Charts");
+
+	private By findARetailerFooter = By.linkText("Find a Retailer");
+	private By divinoStockListFooter = By.linkText("Divino Stockists");
+	private By contactUsFooter = By.linkText("Contact Us");
+	private By emailSignUpFooter = By.linkText("Email Sign Up");
+	private By internationalFooter = By.linkText("International");
+	private By pressRoomFooter = By.linkText("Press Room");
+	private By aboutUsFooter = By.linkText("About Us");
+	private By careersFooter = By.linkText("Careers");
+	private By privacyFooter = By.linkText("Privacy");
+	private By cookiePolicyFooter = By.linkText("CCookie Policy");
+	private By termsAndConditionsFooter = By.linkText("Terms & Conditions");
+	private By modernSlaveryActFooter = By.linkText("Modern Slavery Act");
+	private By athletesFooter = By.linkText("Athletes");
+	private By myAccountsFooter = By.linkText("My Accounts");
+	private By wishListFooter = By.linkText("Wishlist");
+	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
+	
 	protected HomePageFI(WebDriver driver) {
 		super(driver);
 	}
