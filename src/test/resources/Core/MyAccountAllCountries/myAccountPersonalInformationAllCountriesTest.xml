@@ -4,16 +4,16 @@
 
 	<test name="myAccountPersonalInformationAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.MyAccountPersonalInformationUSTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.MyAccountPersonalInformationUKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.MyAccountPersonalInformationFRTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.MyAccountPersonalInformationIETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.MyAccountPersonalInformationFITest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountPersonalInformationDETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.MyAccountPersonalInformationDKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountPersonalInformationCATest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.MyAccountPersonalInformationRUTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.MyAccountPersonalInformationJPTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.PersonalInformationUSTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.PersonalInformationUKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.PersonalInformationFRTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.PersonalInformationIETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.PersonalInformationFITest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.PersonalInformationDETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.PersonalInformationDKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.PersonalInformationCATest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.PersonalInformationRUTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.PersonalInformationJPTest" />
         </classes>
      </test>
 </suite>

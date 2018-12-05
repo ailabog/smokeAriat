@@ -4,16 +4,16 @@
 
 	<test name="loadMoreAddressesAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.AddressesTestsCountries.US.LoadMoreAddressesUSTest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.UK.LoadMoreAddressesUKTest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.FR.LoadMoreAddressesFRTest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.IE.LoadMoreAddressesIETest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.FI.LoadMoreAddressesFITest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.DE.LoadMoreAddressesDETest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.DK.LoadMoreAddressesDKTest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.CA.LoadMoreAddressesCATest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.RU.LoadMoreAddressesRUTest" />
-                 <class name="com.ariat.Tests.AddressesTestsCountries.JP.LoadMoreAddressesJPTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.US.LoadMoreAddressUSTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.UK.LoadMoreAddressUKTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.FR.LoadMoreAddressFRTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.IE.LoadMoreAddressIETest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.FI.LoadMoreAddressFITest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.DE.LoadMoreAddressDETest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.DK.LoadMoreAddressDKTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.LoadMoreAddressCATest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.RU.LoadMoreAddressRUTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.JP.LoadMoreAddressJPTest" />
         </classes>
      </test>
 </suite>
