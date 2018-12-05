@@ -54,7 +54,7 @@ public class MyAccountTopRightNavigationFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInformationPageTopNavFR();
 		myAccountPage.myAccountClickFR();
-		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		myAccountPage.returnLogoutFromMyAccountPageTopNavFR();
 		logger.info("Finishing personal info France test...");
 	}
 
@@ -71,7 +71,7 @@ public class MyAccountTopRightNavigationFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageTopNavFR();
 		myAccountPage.myAccountClickFR();
-		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		myAccountPage.returnLogoutFromMyAccountPageTopNavFR();
 		logger.info("Finishing orders France test...");
 	}
 
@@ -88,7 +88,7 @@ public class MyAccountTopRightNavigationFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnWishListPageTopNavFR();
 		myAccountPage.myAccountClickFR();
-		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		myAccountPage.returnLogoutFromMyAccountPageTopNavFR();
 		logger.info("Finishing wish list France test...");
 	}
 

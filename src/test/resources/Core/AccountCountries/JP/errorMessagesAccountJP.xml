@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="errorMessagesAccountJP" verbose="1">
+
+	<test name="errorMessagesAccountJP" >
+       <classes>
+                 <class name="com.ariat.Tests.AccountCountriesTests.JP.ErrorMessagesAccountJP" />
+               
+       </classes>
+     </test>
+</suite>

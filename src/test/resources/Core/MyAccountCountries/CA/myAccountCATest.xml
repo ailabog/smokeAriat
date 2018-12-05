@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="myAccountCATest" verbose="1">
+
+	<test name="myAccountCATest" >
+       <classes>
+                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.CA.MyAccountLeftNavigationCATest" />
+                 <class name=com.ariat.Tests.com.ariat.Tests.MyAccountCountries.CA.MyAccountMiddleNavigationCATest" />
+                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.CA.MyAccountTopRightNavigationCATest" />
+       </classes>
+     </test>
+</suite>

@@ -87,7 +87,7 @@ public class MyAccountLeftNavigationFRTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnAddressesPageLeftNav();
+		myAccountPage.returnAddressesPageLeftNavFR();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing addresses France test...");

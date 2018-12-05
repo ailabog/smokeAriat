@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="deleteAddressJPTest" verbose="1">
+
+	<test name="deleteAddressJPTest" >
+       <classes>
+                <class name="com.ariat.Tests.AddressesCountriesTests.JP.DeleteAddressJPTest" />
+               
+       </classes>
+     </test>
+</suite>

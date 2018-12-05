@@ -23,11 +23,13 @@ public class MyAccountPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(MyAccountPage.class);
 
 	private By logoutTopNav= By.xpath("//a[text()='Log out']");
+	private By logoutTopNavFR= By.xpath("//a[text()='Se déconnecter']");
 	private By logoutMiddle = By.id("account-overview__logout-link");
 	private By logouttopNavFR = By.xpath("a[text()='Se déconnecter']");
 	private By logoutTopNavDE = By.xpath("//a[text()='Abmelden']");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By signInDE = By.xpath("//a[text()='Einloggen']");
+	private By signInFR = By.xpath("//a[text()='Connexion']");
 	private By personalInfoLink = By.xpath("//a[text()= 'Personal Information']");
 	private By personalInfoLinkDE = By.xpath("//a[text()= 'Persönliche Daten']");
 	private By personalInfoText = By.xpath("//*[contains(text(),'Personal Information']");
@@ -36,7 +38,7 @@ public class MyAccountPage extends BasePage {
 	private By emailPreferencesText = By.xpath("//*[contains(text(), Email Preferences']");
 	private By emailPreferencesLink = By.xpath("//a[text()='Email Preferences']");
 	private By emailPreferencesLinkDE = By.xpath("//a[text()='E-Mail-Einstellungen']");
-	private By emailPreferencesLinkFR = By.xpath("//a[text()='Préférences d'e-mail']");
+	private By emailPreferencesLinkFR = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[3]/a");
 	
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
@@ -56,7 +58,7 @@ public class MyAccountPage extends BasePage {
 	private By orderDetailsLink = By.xpath("//a[text()='Order details']");
 	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
-	private By myWishListLinkFR = By.xpath("//a[text()='Ma liste d'envies']");
+	private By myWishListLinkFR = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountLink = By.xpath("//a[text()='My account']");
@@ -74,7 +76,7 @@ public class MyAccountPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
-	private By viewAllOrdersLink = By.xpath("//a[text()='View all']");
+	private By viewAllOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[5]/div[1]/a");
 	private By viewAllOrdersLinkDE = By.xpath("//a[text()='Alle Anzeigen']");
 	
 	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
@@ -96,6 +98,7 @@ public class MyAccountPage extends BasePage {
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
 	private By wishListTopNavLinkDE = By.xpath("//a[@title='Wunschliste']");
 	private By wishListTopNavLinkFR = By.xpath("//a[@title='Liste d’envies']");
+	private By addressesLinkFR = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[4]/a");
 
 	protected MyAccountPage(WebDriver driver) {
 		super(driver);
@@ -308,6 +311,13 @@ public class MyAccountPage extends BasePage {
 		return new AddressesPage(driver);
 	}
 	
+	public AddressesPage returnAddressesPageLeftNavFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, addressesLinkFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
+	}
+	
 	public AddressesPage returnAddressesPageLeftNavDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, addressesLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
@@ -385,7 +395,7 @@ public class MyAccountPage extends BasePage {
 	}
 	
 	public MyOrdersPage returnMyOrdersPageTopNavFR() {
-		WebDriverUtils.moveToElement(driver, myAccountLink);
+		WebDriverUtils.moveToElement(driver, myAccountLinkFR);
 		WebDriverUtils.clickOnElementWithWait(driver, ordersTopNavLinkFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
@@ -435,7 +445,7 @@ public class MyAccountPage extends BasePage {
 	}
 	
 	public MyWishListPage returnWishListPageTopNavFR() {
-		WebDriverUtils.moveToElement(driver, myAccountLinkDE);
+		WebDriverUtils.moveToElement(driver, myAccountLinkFR);
 		WebDriverUtils.clickOnElementWithWait(driver, wishListTopNavLinkFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
@@ -447,6 +457,14 @@ public class MyAccountPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(signIn));
+		return new LogoutPage(driver);
+	}
+	
+	public LogoutPage returnLogoutFromMyAccountPageTopNavFR() {
+		WebDriverUtils.moveToElement(driver, myAccountLinkFR);
+		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNavFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(signInFR));
 		return new LogoutPage(driver);
 	}
 	

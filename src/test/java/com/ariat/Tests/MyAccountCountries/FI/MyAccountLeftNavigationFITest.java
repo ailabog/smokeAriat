@@ -53,7 +53,7 @@ public class MyAccountLeftNavigationFITest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnEditProfilePageLeftNavFR();
+		myAccountPage.returnEditProfilePageLeftNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing personal info Finland test...");
@@ -70,7 +70,7 @@ public class MyAccountLeftNavigationFITest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnEmailPreferencePageLeftNavFR();
+		myAccountPage.returnEmailPreferencePageLeftNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing email preferences Finland test...");
@@ -88,7 +88,7 @@ public class MyAccountLeftNavigationFITest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageLeftNav();
-		myAccountPage.myAccountClickFR();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing addresses Finland test...");
 	}
@@ -105,9 +105,9 @@ public class MyAccountLeftNavigationFITest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageLeftNav();
-		myAccountPage.myAccountClickFR();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnAddACreditCardMiddleNav();
-		myAccountPage.myAccountClickFR();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info Finland test...");
 	}
@@ -123,8 +123,8 @@ public class MyAccountLeftNavigationFITest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyOrdersPageLeftNavFR();
-		myAccountPage.myAccountClickFR();
+		myAccountPage.returnMyOrdersPageLeftNav();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing orders Finland test...");
 	}
@@ -140,8 +140,8 @@ public class MyAccountLeftNavigationFITest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyWishListPageLeftNavFR();
-		myAccountPage.myAccountClickFR();
+		myAccountPage.returnMyWishListPageLeftNav();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing wish list Finland test...");
 	} 

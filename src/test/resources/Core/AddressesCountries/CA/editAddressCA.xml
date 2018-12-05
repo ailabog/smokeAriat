@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="editAddressUCATest" verbose="1">
+
+	<test name="editAddressCATest" >
+       <classes>
+                <class name="com.ariat.Tests.AddressesCountriesTests.CA.EditAddressCATest" />
+               
+       </classes>
+     </test>
+</suite>

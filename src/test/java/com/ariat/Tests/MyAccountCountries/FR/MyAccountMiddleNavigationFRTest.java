@@ -89,7 +89,7 @@ public class MyAccountMiddleNavigationFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageMiddleNav();
-		myAccountPage.myAccountClick();
+		myAccountPage.myAccountClickFR();
 		myAccountPage.returnAddAddressesPageMiddleNav();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.logoutMiddle();

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="createAccountRUTest" verbose="1">
+
+	<test name="createAccountRUTest" >
+       <classes>
+                 <class name="com.ariat.Tests.AccountCountriesTests.RU.CreateAcountRUTest" />
+               
+       </classes>
+     </test>
+</suite>

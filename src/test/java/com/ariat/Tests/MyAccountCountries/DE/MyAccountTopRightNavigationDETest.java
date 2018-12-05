@@ -54,7 +54,7 @@ public class MyAccountTopRightNavigationDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInformationPageTopNavDE();
 		myAccountPage.myAccountClickDE();
-		myAccountPage.returnLogoutFromMyAccountPageTopNav();
+		myAccountPage.returnLogoutFromMyAccountPageTopNavDE();
 		logger.info("Finishing personal info Deutschland test...");
 	}
 
