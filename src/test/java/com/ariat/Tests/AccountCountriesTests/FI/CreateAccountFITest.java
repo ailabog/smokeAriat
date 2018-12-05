@@ -1,4 +1,4 @@
-package com.ariat.Tests.AccountCountriesTests.UK;
+package com.ariat.Tests.AccountCountriesTests.FI;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -12,6 +12,7 @@ import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -25,13 +26,14 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CreateAcountUKTest extends BaseTest {
+public class CreateAccountFITest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageFI homePageFI;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private OrderDetailsPage orderDetailsPage;
@@ -61,7 +63,8 @@ public class CreateAcountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -82,7 +85,8 @@ public class CreateAcountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -95,7 +99,8 @@ public class CreateAcountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		signInPage.checkStatusClick();
 		signInPage.assertErrorMessageInexistingOrderNo(ERROR_MESSAGE);
@@ -108,7 +113,8 @@ public class CreateAcountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
 		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		logger.info("Finishing checking valid order test...");
@@ -121,7 +127,8 @@ public class CreateAcountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
 		signInPage.forgotPasswordClick();
 		signInPage.forgotPasswordEmail(EMAIL);
 		signInPage.ForgotPasswordSend();
@@ -129,11 +136,11 @@ public class CreateAcountUKTest extends BaseTest {
 		logger.info("Finishing forgot password test...");
 	}
 	
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageFI.quit();
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();

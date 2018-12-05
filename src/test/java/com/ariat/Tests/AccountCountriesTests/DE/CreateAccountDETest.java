@@ -1,4 +1,4 @@
-package com.ariat.Tests.Account.CountriesTests.DK;
+package com.ariat.Tests.AccountCountriesTests.DE;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -12,7 +12,7 @@ import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.OrderDetailsPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDK;
+import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -26,13 +26,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CreateAcountDKTest extends BaseTest {
+public class CreateAccountDETest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
-	private HomePageDK homePageDK;
+	private HomePageDE homePageDE;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -40,7 +40,7 @@ public class CreateAcountDKTest extends BaseTest {
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
-	public static final String BIRTH_MONTH = "March";
+	public static final String BIRTH_MONTH = "Februar";
 	public static final String BIRTH_DAY = "02";
 
 	public static final String EMAIL = GenerateRandomDataUtils.generateEmail(12);
@@ -49,7 +49,7 @@ public class CreateAcountDKTest extends BaseTest {
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomNumber(8);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
-	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
+	public static final String ERROR_MESSAGE = "Es tut uns leid, aber diese Bestellnummer oder Postleitzahl stimmt nicht mit den bei uns hinterlegten Daten überein. Prüfen Sie Ihre Unterlagen und versuchen Sie es erneut.";
 	
 			
 	@BeforeTest
@@ -63,8 +63,8 @@ public class CreateAcountDKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -85,9 +85,9 @@ public class CreateAcountDKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		logger.info("Finishing returning customer test...");
@@ -99,22 +99,22 @@ public class CreateAcountDKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		signInPage.checkStatusClick();
 		signInPage.assertErrorMessageInexistingOrderNo(ERROR_MESSAGE);
 		logger.info("Finishing checking invalid order test...");
 	}
 	
-	@Test(priority = 3)
+		@Test(priority = 3)
 	public void checkValidOrderTest() {
 		logger.info("Starting checking valid order test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		logger.info("Finishing checking valid order test...");
@@ -127,8 +127,8 @@ public class CreateAcountDKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.forgotPasswordClick();
 		signInPage.forgotPasswordEmail(EMAIL);
 		signInPage.ForgotPasswordSend();
@@ -136,11 +136,12 @@ public class CreateAcountDKTest extends BaseTest {
 		logger.info("Finishing forgot password test...");
 	}
 	
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageDK.quit();
+		homePageDE.quit();
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();

@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CreateAcountIETest extends BaseTest {
+public class CreateAccountIETest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;

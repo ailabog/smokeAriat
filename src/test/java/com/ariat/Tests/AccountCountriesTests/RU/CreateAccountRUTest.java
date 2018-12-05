@@ -24,7 +24,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CreateAcountRUTest extends BaseTest {
+public class CreateAccountRUTest extends BaseTest {
 
 	private Environments environment;
 	private GlobalCountries country;
