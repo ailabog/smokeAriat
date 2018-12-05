@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="headerAndFooterTestsAllCountriesTest" verbose="1">
+
+	<test name="headerAndFooterTestsAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.US.HeaderAndFooterUSTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.UK.HeaderAndFooterUKTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.FR.HeaderAndFooterFRTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.IE.HeaderAndFooterIETest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.FI.HeaderAndFooterFITest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.DE.HeaderAndFooterDETest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.DK.HeaderAndFooterDKTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.CA.HeaderAndFooterCATest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.RU.HeaderAndFooterRUTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterTests.JP.HeaderAndFooterJPTest" />
+        </classes>
+     </test>
+</suite>
