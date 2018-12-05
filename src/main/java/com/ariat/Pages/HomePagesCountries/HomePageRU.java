@@ -42,6 +42,269 @@ public class HomePageRU extends BasePage implements List<HomePage> {
 		super(driver);
 	}
 	
+	public void checkElementsHeader() {
+		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
+			WebDriverUtils.clickOnElementWithWait(driver, ariatLogo);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + ariatLogo + "was not found");
+		}
+
+		if (WebDriverUtils.isElementDisplayed(driver, womenCategory)) {
+			WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + womenCategory + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, menCategory)) {
+			WebDriverUtils.clickOnElementWithWait(driver, menCategory);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + menCategory + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, kidsCategory)) {
+			WebDriverUtils.clickOnElementWithWait(driver, kidsCategory);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + kidsCategory + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, clearanceCategory)) {
+			WebDriverUtils.clickOnElementWithWait(driver, clearanceCategory);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + clearanceCategory + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, giftGuideMenu)) {
+			WebDriverUtils.clickOnElementWithWait(driver, giftGuideMenu);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + giftGuideMenu + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, ariatLifeCategory)) {
+			WebDriverUtils.clickOnElementWithWait(driver, ariatLifeCategory);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + ariatLifeCategory + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, exploreCategory)) {
+			WebDriverUtils.clickOnElementWithWait(driver, exploreCategory);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + exploreCategory + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, basket)) {
+			WebDriverUtils.clickOnElementWithWait(driver, basket);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + basket + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, signIn)) {
+			WebDriverUtils.clickOnElementWithWait(driver, signIn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + signIn + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, bannerDeliveryText)) {
+			WebDriverUtils.clickOnElementWithWait(driver, bannerDeliveryText);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + bannerDeliveryText + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, findARetailerHeader)) {
+			WebDriverUtils.clickOnElementWithWait(driver, findARetailerHeader);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + findARetailerHeader + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, aboutUsHeader)) {
+			WebDriverUtils.clickOnElementWithWait(driver, aboutUsHeader);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + aboutUsHeader + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, chooseLocationArrow)) {
+			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			if (WebDriverUtils.isElementDisplayed(driver, countrySelectorWindow)) {
+				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			} else {
+				logger.info("Country selector window did not show up");
+			}
+		} else {
+			logger.info("This element {}" + chooseLocationArrow + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, searchIcon)) {
+			WebDriverUtils.clickOnElementWithWait(driver, searchIcon);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, closeSearchIcon);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + searchIcon + "was not found");
+		}
+	}
+
+	public void checkElementsFooter() {
+		if (WebDriverUtils.isElementDisplayed(driver, emailSubscriptionTextBoxFooter)
+				&& WebDriverUtils.isElementDisplayed(driver, subscribeButtonFooter)) {
+			logger.info("These elements {}" + emailSubscriptionTextBoxFooter + subscribeButtonFooter + "were found");
+		} else {
+			logger.info(
+					"These elements {}" + emailSubscriptionTextBoxFooter + subscribeButtonFooter + "were not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, facebookIcon)
+				&& WebDriverUtils.isElementDisplayed(driver, twitterIcon)
+				&& WebDriverUtils.isElementDisplayed(driver, instagramIcon)) {
+			logger.info("Elements {}" + facebookIcon + twitterIcon + instagramIcon + "were found");
+		} else {
+			logger.info("Elements {}" + facebookIcon + twitterIcon + instagramIcon + "were not found");
+		}
+
+		if (WebDriverUtils.isElementDisplayed(driver, orderStatusFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, orderStatusFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.scrollDown(driver, orderStatusFooter);
+		} else {
+			logger.info("This element {}" + orderStatusFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, returnsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, returnsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + returnsFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, trackYourOrderFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, trackYourOrderFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + trackYourOrderFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, warrantyFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, warrantyFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + warrantyFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, deliveryFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, deliveryFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + deliveryFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, faqsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, faqsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + faqsFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, sizeChartsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, sizeChartsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + sizeChartsFooter + "was not found");
+		}
+
+		if (WebDriverUtils.isElementDisplayed(driver, findARetailerFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, findARetailerFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + findARetailerFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, divinoStockListFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, divinoStockListFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + divinoStockListFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, contactUsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, contactUsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + contactUsFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, emailSignUpFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, emailSignUpFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + emailSignUpFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, internationalFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, internationalFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + internationalFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, pressRoomFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, pressRoomFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + pressRoomFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, aboutUsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, aboutUsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + aboutUsFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, careersFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, careersFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + careersFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, cookiePolicyFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, cookiePolicyFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + cookiePolicyFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, privacyFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, privacyFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + privacyFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, termsAndConditionsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, termsAndConditionsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + termsAndConditionsFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, modernSlaveryActFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, modernSlaveryActFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + modernSlaveryActFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, athletesFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, athletesFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + athletesFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, myAccountsFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, myAccountsFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + myAccountsFooter + "was not found");
+		}
+
+		if (WebDriverUtils.isElementDisplayed(driver, wishListFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, wishListFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + wishListFooter + "was not found");
+		}
+		if (WebDriverUtils.isElementDisplayed(driver, partnersFeiFooter)) {
+			WebDriverUtils.clickOnElementWithWait(driver, partnersFeiFooter);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		} else {
+			logger.info("This element {}" + partnersFeiFooter + "was not found");
+		}
+
+	}
+	
+	
 	public void search(String option) {
 		logger.info("Searching for a product...");
 		WebDriverUtils.clickOnElementWithWait(driver, search);

@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -37,23 +36,23 @@ public class HeaderAndFooterRUTest extends BaseTest{
 	}
 
 	@Test(priority=0)
-	public void UKHeader() {
-		logger.info("Starting the check for Header UK elements:");
+	public void RUHeader() {
+		logger.info("Starting the check for Header Russia elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
-		homePageUK.checkElementsHeader();
-		logger.info("Finishing the check for Header UK elements:");
+		homePageRU.checkElementsHeader();
+		logger.info("Finishing the check for Header Russia elements:");
 	}
 	
 	@Test(priority=1)
-	public void UKFooter() {
-		logger.info("Starting the check for Footer UK elements:");
+	public void ruFooter() {
+		logger.info("Starting the check for Footer Russia elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
-		homePageUK.checkElementsFooter();
-		logger.info("Finishing the check for Footer UK elements:");
+		homePageRU.checkElementsFooter();
+		logger.info("Finishing the check for Footer Russia elements:");
 	}
 
 	@AfterTest

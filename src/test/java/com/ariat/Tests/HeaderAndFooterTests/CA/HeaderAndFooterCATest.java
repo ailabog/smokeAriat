@@ -36,23 +36,23 @@ public class HeaderAndFooterCATest extends BaseTest{
 	}
 
 	@Test(priority=0)
-	public void UKHeader() {
-		logger.info("Starting the check for Header UK elements:");
+	public void CAHeader() {
+		logger.info("Starting the check for Header Canada elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
-		homePageUK.checkElementsHeader();
-		logger.info("Finishing the check for Header UK elements:");
+		homePageCA.checkElementsHeader();
+		logger.info("Finishing the check for Header Canada elements:");
 	}
 	
 	@Test(priority=1)
-	public void UKFooter() {
-		logger.info("Starting the check for Footer UK elements:");
+	public void CAFooter() {
+		logger.info("Starting the check for Footer Canada elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
-		homePageUK.checkElementsFooter();
-		logger.info("Finishing the check for Footer UK elements:");
+		homePageCA.checkElementsFooter();
+		logger.info("Finishing the check for Footer Canada elements:");
 	}
 
 	@AfterTest

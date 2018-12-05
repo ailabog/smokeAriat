@@ -36,25 +36,25 @@ public class HeaderAndFooterDETest extends BaseTest{
 	}
 
 	@Test(priority=0)
-	public void UKHeader() {
-		logger.info("Starting the check for Header UK elements:");
+	public void DEHeader() {
+		logger.info("Starting the check for Header Deutschland elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		homePageUK.checkElementsHeader();
-		logger.info("Finishing the check for Header UK elements:");
+		homePageDE.checkElementsHeader();
+		logger.info("Finishing the check for Header Deutschland elements:");
 	}
 	
 	@Test(priority=1)
-	public void UKFooter() {
-		logger.info("Starting the check for Footer UK elements:");
+	public void DEFooter() {
+		logger.info("Starting the check for Footer Deutschland elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		homePageUK.checkElementsFooter();
-		logger.info("Finishing the check for Footer UK elements:");
+		homePageDE.checkElementsFooter();
+		logger.info("Finishing the check for Footer Deutschland elements:");
 	}
 
 	@AfterTest
