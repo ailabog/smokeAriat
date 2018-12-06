@@ -50,9 +50,10 @@ public class WomenCategoryPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[2]/h3/p[1]/span");
 	private By show36ItemLink = By.xpath("//a[text()='36 Items']");
 	private By show72ItemLink = By.xpath("//a[text()='72 Items']");
+	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[2]/a");
 	private By show108ItemLink = By.xpath("//a[text()='108 Items']");
 	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
-	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[5]/a");
+	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[3]/a");
 	private By prevPaginationButtonUp = By
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
 	private By backToTopButton = By.xpath("//*[@id=\"main\"]/div/div[1]/div[1]/a");
@@ -146,8 +147,7 @@ public class WomenCategoryPage extends BasePage {
 	}
 
 	public void show72ItemsDown() {
-		WebDriverUtils.scrolltoElement(driver, show72ItemLink);
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLinkDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -179,7 +179,7 @@ public class WomenCategoryPage extends BasePage {
 //Top navigation
 	public  WomenFootwearPage returnWomenFootwearPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
 		return new WomenFootwearPage(driver);
 	}
