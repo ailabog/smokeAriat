@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="womenCategoryPaginationAndSortingCATest" verbose="1" >
+
+	<test name="womenCategoryPaginationAndSortingCATest" >
+       <classes>
+                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingCATest" />
+       </classes>
+     </test>
+</suite>
