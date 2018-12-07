@@ -63,16 +63,15 @@ public class MenCategoryPage extends BasePage{
 	private By sortDropWomenCategoryDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
 	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
 	private By prevPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
-	private By recommendedLink = By.linkText("Recommended");
-	private By priceHighToLowLink = By.linkText("Price (High to Low)");
-	private By priceLowToHighLink = By.linkText("Price (Low to High)");
-	private By bestSellersLink = By.linkText("Best Sellers");
+	private By recommendedLink = By.xpath("//a[text()='Recommended']");
+	private By priceHighToLowLink = By.xpath("//a[text()='Price (High to Low)']");
+	private By priceLowToHighLink = By.xpath("//a[text()='Price (Low to High)']");
+	private By bestSellersLink = By.xpath("//a[text()='Best Sellers']");
     
 	public MenCategoryPage(WebDriver driver) {
 		super(driver);
 	}
 	
-
 	public void menCategory() {
 		WebDriverUtils.moveToElement(driver, menCategory);
 	}

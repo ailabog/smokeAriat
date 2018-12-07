@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="menCategoriesAndSubcategoriesTopNavTest" verbose="1">
+
+	<test name="menCategoriesAndSubcategoriesTopNavTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavUKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavUSTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavDKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavDETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavFRTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavFITest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavIETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavCATest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavJPTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavRUTest" />
+        </classes>
+     </test>
+</suite>
