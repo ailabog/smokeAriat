@@ -39,8 +39,7 @@
       <artifactId>webdrivermanager</artifactId>
       <version>${webdrivermanager.version}</version>
      </dependency>  
-    
-          
+   
        <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>

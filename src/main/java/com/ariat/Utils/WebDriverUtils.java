@@ -114,7 +114,6 @@ public class WebDriverUtils {
 			new Select(findElement(driver, locator)).selectByVisibleText(option);
 		} catch (WebDriverException e) {
 			logger.debug("Element was not found in select element", option);
-
 			driver.quit();
 			throw new WebDriverException(e);
 		}
@@ -195,7 +194,6 @@ public class WebDriverUtils {
 				.findFirst()
 				.isPresent();
 	}
-
 	
 	public static void disableCookie() {
 		DesiredCapabilities caps = new DesiredCapabilities();

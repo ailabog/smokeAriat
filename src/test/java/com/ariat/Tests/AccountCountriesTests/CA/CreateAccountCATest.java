@@ -113,7 +113,6 @@ public class CreateAccountCATest extends BaseTest {
 		logger.info("Finishing checking valid order test...");
 	}
 	
-	
 	@Test(priority = 4)
 	public void forgotPasswordTest() {
 		logger.info("Starting forgot password test...");
@@ -128,7 +127,6 @@ public class CreateAccountCATest extends BaseTest {
 		logger.info("Finishing forgot password test...");
 	}
 	
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

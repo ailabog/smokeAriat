@@ -360,7 +360,6 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 			logger.info("This element {}" + partnersRodeoFooter + "was not found");
 		}
 	}
-
 	
 	public void search(String option) {
 		logger.info("Searching for a product...");
