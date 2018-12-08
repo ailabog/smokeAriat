@@ -33,7 +33,7 @@ public class HomePageFR extends BasePage implements List<HomePage> {
 	private By signIn = By.xpath("//a[text()= 'Connexion']");
 	
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
-	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
+	private By searchTextBox = By.xpath("//input[@placeholder='Rechercher des produits']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
@@ -365,7 +365,7 @@ public class HomePageFR extends BasePage implements List<HomePage> {
 
 	public void assertProductDisplayed(String expectedText) {
 		String text = WebDriverUtils.getElementText(driver, textMsgProduct);
-		assertEquals(text, expectedText, "Product results for:" + text);
+		assertEquals(text, expectedText, "Résultats pour:" + text);
 	}
 
 	public void seeAllproducts() {
