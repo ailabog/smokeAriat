@@ -21,7 +21,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Adds a new address and checks the address was created for US
+ * Adds a new address and checks the address was created for Ireland
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -69,14 +69,12 @@ public class AddAddressIETest extends BaseTest {
 		addAddressPage.enterLName("B");
 		addAddressPage.enterAddress1("Avenue, 5th");
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectState("New York");
+		addAddressPage.selectCountry("Ireland");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPage();
 		addressesPage.checkAddress(ADDRESS_ID);
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add address Ireland test");
 	}
 	

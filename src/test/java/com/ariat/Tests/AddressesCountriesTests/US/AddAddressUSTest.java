@@ -4,15 +4,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.PhoneUS;
 import com.ariat.Pages.AddAddressesPage;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -36,14 +35,13 @@ public class AddAddressUSTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
+	private PhoneUS phoneUS;
 	private EUCountries euCountry;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
-	public static final String PHONE = "(208)252-7991";
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
@@ -71,12 +69,10 @@ public class AddAddressUSTest extends BaseTest {
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectState("New York");
 		addAddressPage.enterPostCode(POST_CODE);
-		addAddressPage.enterPhone(PHONE);
+		addAddressPage.enterPhone(phoneUS.phone1.getNumber());
 		addAddressPage.enterAddressId(ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPage();
 		addressesPage.checkAddress(ADDRESS_ID);
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add address US test");
 	}
 	
@@ -89,7 +85,5 @@ public class AddAddressUSTest extends BaseTest {
 		myAccountPage.quit();
 		addAddressPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
-
 }

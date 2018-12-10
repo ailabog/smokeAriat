@@ -19,7 +19,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Make default test US
+ * Make default test Denmark
  * 
  * @author aila.bogasieru@ariat.com
  *

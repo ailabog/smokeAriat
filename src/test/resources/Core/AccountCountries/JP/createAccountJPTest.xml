@@ -4,7 +4,7 @@
 
 	<test name="createAccountJPTest" >
        <classes>
-                 <class name="com.ariat.Tests.AccountCountriesTests.JP.CreateAcountJPTest" />
+                 <class name="com.ariat.Tests.AccountCountriesTests.JP.CreateAccountJPTest" />
                
        </classes>
      </test>

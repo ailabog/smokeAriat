@@ -29,11 +29,13 @@ public class AddAddressesPage extends BasePage {
 	private By phoneTextBox = By.id("dwfrm_profile_address_phone");
 	private By addressIdTextBox = By.id("dwfrm_profile_address_addressid");
 	private By saveAddressButton = By.name("dwfrm_profile_address_create");
-	private By saveAddressEditButton = By.name("dwfrm_profile_address_edit");
+	//private By saveAddressEditButton = By.name("dwfrm_profile_address_edit");
+	private By saveAddressEditButton = By.xpath("//button[@value='Apply']");
 	private By cancelAddressButton = By.name("dwfrm_profile_address_cancel");
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 	private By addressesText = By.xpath("//*contains[text(), 'Address']");
-    private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
+   // private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
+	private By deleteAddressButton = By.xpath("//button[@value='Delete']");
 	private By deleteAddressButtonDE = By.xpath("//*[@value='Löschen']");
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");

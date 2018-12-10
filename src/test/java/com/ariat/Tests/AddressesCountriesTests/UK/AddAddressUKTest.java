@@ -64,7 +64,7 @@ public class AddAddressUKTest extends BaseTest {
 		addAddressPage.enterLName("B");
 		addAddressPage.enterAddress1("Oxford Street");
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("London");
+		addAddressPage.selectCountry("United Kingdom");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);

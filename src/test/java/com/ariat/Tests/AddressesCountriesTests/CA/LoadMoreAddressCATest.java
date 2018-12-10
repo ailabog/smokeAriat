@@ -54,7 +54,6 @@ public class LoadMoreAddressCATest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing load more addresses Canada test");
 	}
 	
@@ -70,7 +69,6 @@ public class LoadMoreAddressCATest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
 		addressesPage.loadMoreAddesses();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
 		logger.info("Finishing load more addresses lef navigation Canada test");
 	}
 	
@@ -81,7 +79,5 @@ public class LoadMoreAddressCATest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
-
 }

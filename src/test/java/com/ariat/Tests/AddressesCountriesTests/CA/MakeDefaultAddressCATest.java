@@ -10,9 +10,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.AddressesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageCA;
-import com.ariat.Pages.HomePagesCountries.HomePageJP;
 
-import com.ariat.Pages.LogoutPage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Tests.BaseTest;
@@ -21,7 +19,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Make default test US
+ * Make default test Canada
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -34,7 +32,6 @@ public class MakeDefaultAddressCATest extends BaseTest {
    private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddressesPage addressesPage;
-	private LogoutPage logoutPage;
 	private Environments environment;
 	private GlobalCountries country;
 
@@ -64,8 +61,6 @@ public class MakeDefaultAddressCATest extends BaseTest {
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.makeDefaultAddressCreated("B1TGL");
 		addressesPage.assertMakeDefault("DEFAULT | B1TGL");
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing make default address Canada test");
 	}
 	
@@ -76,6 +71,5 @@ public class MakeDefaultAddressCATest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		logoutPage.quit();
 	}
 }
