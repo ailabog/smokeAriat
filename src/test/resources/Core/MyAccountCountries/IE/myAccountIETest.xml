@@ -4,9 +4,9 @@
 
 	<test name="myAccountIETest" >
        <classes>
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.IE.MyAccountLeftNavigationIETest" />
-                 <class name=com.ariat.Tests.com.ariat.Tests.MyAccountCountries.IE.MyAccountMiddleNavigationIETest" />
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.IE.MyAccountTopRightNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccountCountries.IE.MyAccountLeftNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccountCountries.IE.MyAccountMiddleNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccountCountries.IE.MyAccountTopRightNavigationIETest" />
        </classes>
      </test>
 </suite>

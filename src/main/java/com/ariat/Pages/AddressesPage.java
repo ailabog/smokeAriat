@@ -32,11 +32,11 @@ public class AddressesPage extends BasePage {
 	private By cancelButtonDialog = By.xpath("//span[text()='Cancel']");
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
-	WebElement addressesTable = driver.findElement(By.id("addresses"));
+	WebElement addressesTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]"));
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
 	private By loadMoreButton = By.xpath("//button[text()='Load More']");
-	private By loadMoreButtonDE = By.xpath("//button[text()='Weitere laden']");
+    private By loadMoreButtonDE = By.xpath("//button[text()='Weitere laden']");
 	private By loadMoreButtonFR = By.xpath("//button[text()='Afficher plus']");
 
 	private boolean checkAddress;

@@ -4,7 +4,7 @@
 
 	<test name="headerAndFooterCATest" >
        <classes>
-                 <class name="com.ariat.Tests.HeaderAndFooterCountries.HeaderAndFooterCATest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterCountriesTests.CA.HeaderAndFooterCATest" />
        </classes>
      </test>
 </suite>

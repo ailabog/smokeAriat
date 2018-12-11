@@ -4,9 +4,9 @@
 
 	<test name="myAccountCATest" >
        <classes>
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.CA.MyAccountLeftNavigationCATest" />
-                 <class name=com.ariat.Tests.com.ariat.Tests.MyAccountCountries.CA.MyAccountMiddleNavigationCATest" />
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.CA.MyAccountTopRightNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountLeftNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountMiddleNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountTopRightNavigationCATest" />
        </classes>
      </test>
 </suite>

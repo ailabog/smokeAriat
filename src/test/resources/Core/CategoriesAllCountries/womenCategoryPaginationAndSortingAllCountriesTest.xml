@@ -4,16 +4,16 @@
 
 	<test name="womenCategoryPaginationAndSortingAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingUKTest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingUSTest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingDETest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingFRTest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingFITest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingIETest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingDKTest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingCATest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingJPTest" />
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingRUTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingUKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingUSTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingDETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingFRTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingFITest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingIETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingDKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingCATest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingJPTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.WomenCategoryPaginationSortingRUTest" />
                               
        </classes>
      </test>

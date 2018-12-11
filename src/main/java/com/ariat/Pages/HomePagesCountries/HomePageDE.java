@@ -351,9 +351,7 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 		} else {
 			logger.info("This element {}" + partnersFeiFooter + "was not found");
 		}
-
 	}
-	
 	
 	public void search(String option) {
 		logger.info("Searching for a product...");
@@ -395,7 +393,6 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 		return new SignInPage(driver);
 	}
 	
-
 	public WomenCategoryPage returnWomenCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,

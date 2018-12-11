@@ -4,7 +4,7 @@
 
 	<test name="topNavMenCategoriesAndSubcategoriesDKTest" >
        <classes>
-                 <class name="com.ariat.Tests.CtaegoriesTests.MenCategoriesAndSubcategoriesTopNavDKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.DK.MenCategoriesAndSubcategoriesTopNavDKTest" />
        </classes>
      </test>
 </suite>

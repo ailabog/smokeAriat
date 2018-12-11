@@ -4,7 +4,7 @@
 
 	<test name="headerAndFooterIETest" >
        <classes>
-                 <class name="com.ariat.Tests.HeaderAndFooterCountries.HeaderAndFooterIETest" />
+                 <class name="com.ariat.Tests.HeaderAndFooterCountriesTests.IE.HeaderAndFooterIETest" />
        </classes>
      </test>
 </suite>

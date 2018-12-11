@@ -4,9 +4,9 @@
 
 	<test name="myAccountDKTest" >
        <classes>
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.DK.MyAccountLeftNavigationDKTest" />
-                 <class name=com.ariat.Tests.com.ariat.Tests.MyAccountCountries.DK.MyAccountMiddleNavigationDKTest" />
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.DK.MyAccountTopRightNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountries.DK.MyAccountLeftNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountries.DK.MyAccountMiddleNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountries.DK.MyAccountTopRightNavigationDKTest" />
        </classes>
      </test>
 </suite>

@@ -4,7 +4,7 @@
 
 	<test name="womenCategoryPaginationAndSortingDETest" >
        <classes>
-                 <class name="com.ariat.Tests.Categoriestests.WomenCategoryPaginationSortingDETest" />
+                 <class name="com.ariat.Tests.Categoriestests.DE.WomenCategoryPaginationSortingDETest" />
        </classes>
      </test>
 </suite>

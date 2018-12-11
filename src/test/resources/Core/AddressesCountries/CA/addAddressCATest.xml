@@ -4,7 +4,7 @@
 
 	<test name="addAddressCATest" >
        <classes>
-                 <class name="com.ariat.Tests.AddressesCountriesTests.UCA.AddAddressCATest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.AddAddressCATest" />
        </classes>
      </test>
 </suite>

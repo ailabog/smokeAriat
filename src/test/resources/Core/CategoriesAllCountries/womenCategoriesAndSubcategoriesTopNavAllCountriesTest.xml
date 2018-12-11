@@ -2,7 +2,7 @@
 
 <suite name="topNavWomenCategoriesAndSubcategoriesAllCountriesTest" verbose="1" >
 
-	<test name="topNavWomenCategoriesAndSubcategoriesAllCoountriesTest" >
+	<test name="topNavWomenCategoriesAndSubcategoriesAllCountriesTest" >
        <classes>
                  <class name="com.ariat.Tests.CategoriesTests.WomenCategoriesAndSubcategoriesTopNavUKTest" />
                  <class name="com.ariat.Tests.CategoriesTests.WomenCategoriesAndSubcategoriesTopNavUSTest" />

@@ -4,9 +4,9 @@
 
 	<test name="myAccountDETest" >
        <classes>
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.DE.MyAccountLeftNavigationDETest" />
-                 <class name=com.ariat.Tests.com.ariat.Tests.MyAccountCountries.DE.MyAccountMiddleNavigationDETest" />
-                 <class name="com.ariat.Tests.com.ariat.Tests.MyAccountCountries.DE.MyAccountTopRightNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountLeftNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountMiddleNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountTopRightNavigationDETest" />
        </classes>
      </test>
 </suite>

@@ -1,19 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="menCategoriesAndSubcategoriesTopNavTest" verbose="1">
+<suite name="menCategoriesAndSubcategoriesAllCountriesTopNavTest" verbose="1">
 
-	<test name="menCategoriesAndSubcategoriesTopNavTest" >
+	<test name="menCategoriesAndSubcategoriesAllCountriesTopNavTest" >
        <classes>
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavUKTest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavUSTest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavDKTest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavDETest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavFRTest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavFITest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavIETest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavCATest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavJPTest" />
-                 <class name="com.ariat.Tests.CategoriesTests.MenCategoriesAndSubcategoriesTopNavRUTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.UK.MenCategoriesAndSubcategoriesTopNavUKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.US.MenCategoriesAndSubcategoriesTopNavUSTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.DK.MenCategoriesAndSubcategoriesTopNavDKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.DE.MenCategoriesAndSubcategoriesTopNavDETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.FR.MenCategoriesAndSubcategoriesTopNavFRTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.FI.MenCategoriesAndSubcategoriesTopNavFITest" />
+                 <class name="com.ariat.Tests.CategoriesTests.IE.MenCategoriesAndSubcategoriesTopNavIETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.CA.MenCategoriesAndSubcategoriesTopNavCATest" />
+                 <class name="com.ariat.Tests.CategoriesTests.JP.MenCategoriesAndSubcategoriesTopNavJPTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.RU.MenCategoriesAndSubcategoriesTopNavRUTest" />
         </classes>
      </test>
 </suite>
