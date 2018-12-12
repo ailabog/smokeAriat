@@ -415,6 +415,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 	
 	public ProductRegistrationPage returnProductRegistrationPage() {
 		WebDriverUtils.scrollDown(driver, productRegistrationFooter);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, productRegistrationFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(ariatProductRegistrationText));
