@@ -22,7 +22,8 @@ public class GlovesProductPage extends BasePage{
 	private By selectSize = By.id("va-size");
     private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
-	private By writeReview = By.xpath("//button[text()=' Write a review   ']");
+	//private By writeReview = By.xpath("//button[text()=' Write a review   ']");
+	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div/button");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
 	private By starReviewExcellent = By.xpath("//*[@id=\"bv-radio-rating-5\"]/span[1]");
 	private By starReviewGood = By.xpath("//*[@id=\"bv-radio-rating-4\"]/span[1]");
@@ -40,7 +41,7 @@ public class GlovesProductPage extends BasePage{
 	private By insertVideoURLReview = By.id("bv-text-field-videourl_1");
 	private By addVideoButton = By.xpath("//button[text()='Add Video']");
 	private By recommendProductYes = By.id("bv-radio-isrecommended-true-label");
-	private By recommendProductNo = By.id("bv-radio-isrecommended-false-label");
+    private By recommendProductNo = By.id("bv-radio-isrecommended-false-label");
 	private By nicknameReview = By.id("bv-text-field-usernickname");
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");

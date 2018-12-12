@@ -45,13 +45,10 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		productPage.selectAttributeSize("5");
 		productPage.selectAttributeCalf("Slim");
 		productPage.selectAttributeHeight("Medium");
-		//productPage.addToCart();
-		myBagPage = productPage.returnMyBagPage();
-		myBagPage.cancelFreeGift();
+		productPage.addToCart();
+		//myBagPage = productPage.returnMyBagPage();
 		myBagPage.checkMyBagNoFreeGift();
 		myBagPage = productPage.returnMyBagPage();
-		myBagPage.confirmFreeGift();
-		myBagPage.checkMyBagFreeGift();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	

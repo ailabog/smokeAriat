@@ -12,8 +12,8 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class HeritageProductPage extends BasePage{
 
-	private By addToBasket = By.xpath("//button[text()='Add to bag']");
-	private By productBonusDialog = By.id("bonus-product-dialog");
+	private By addToBasket = By.xpath("//button[text()='Add to Bag']");
+	private By myBagText = By.xpath("*contains[text(), 'My Bag']");
 	private By wishList = By.xpath("//button[text()='Add to WishList']");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
@@ -177,10 +177,9 @@ public class HeritageProductPage extends BasePage{
 	}
 	
 	public MyBagPage returnMyBagPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(productBonusDialog));
+				ExpectedConditions.invisibilityOfElementLocated(myBagText));
 		return new MyBagPage(driver);
 	}
 

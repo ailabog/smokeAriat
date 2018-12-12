@@ -60,7 +60,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
 	}
 
-	@Test
+@Test
 	public void productPageWomenCategoryWriteReviewNoRecommendTest() {
 		logger.info("Starting product page -> Women Category write review don't recommend product for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
