@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ariat.Pages.BasePage;
+import com.ariat.Pages.ProductRegistrationPage;
 import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
@@ -89,6 +90,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+	private By ariatProductRegistrationText = By.xpath("//*contains[text()='Register your ariat product for a free gift*']");
 
 	
 	public HomePageUS(WebDriver driver) {
@@ -410,6 +412,14 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 				ExpectedConditions.invisibilityOfElementLocated(menText));
 		return new MenCategoryPage(driver);
 	}
+	
+	public ProductRegistrationPage returnProductRegistrationPage() {
+		WebDriverUtils.scrollDown(driver, productRegistrationFooter);
+		WebDriverUtils.clickOnElementWithWait(driver, productRegistrationFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(ariatProductRegistrationText));
+		return new ProductRegistrationPage(driver);
+	}
 
 	@Override
 	public boolean add(HomePage e) {
@@ -419,8 +429,6 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 
 	@Override
 	public void add(int index, HomePage element) {
-		
-
 	}
 
 	@Override
@@ -437,7 +445,6 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 
 	@Override
 	public void clear() {
-		
 
 	}
 

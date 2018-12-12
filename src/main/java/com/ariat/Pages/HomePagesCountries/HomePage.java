@@ -7,12 +7,14 @@ import java.util.ListIterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.BasePage;
+import com.ariat.Pages.ProductRegistrationPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -34,7 +36,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
 	private By continueShoppingButton = By.xpath("//*[@id=\"button\"]/button");
-	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -114,7 +115,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, continueShoppingButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				
+
 			}
 			return new HomePageCA(driver);
 
@@ -339,11 +340,11 @@ public class HomePage extends BasePage implements List<HomePage> {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				//WebDriverUtils.clickOnElementWithWait(driver, country.RU.getLocator());
+				// WebDriverUtils.clickOnElementWithWait(driver, country.RU.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, continueShoppingButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				
+
 			}
 			return new HomePageRU(driver);
 
@@ -549,7 +550,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				//WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
+				// WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
 			}
 			return new HomePageFI(driver);
 
@@ -646,7 +647,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}
 	}
-
 
 	@Override
 	public boolean add(HomePage e) {
