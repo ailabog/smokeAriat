@@ -42,7 +42,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test
+/*	@Test
 	public void productPageWomenCategoryWriteReviewYesRecommendTest() {
 		logger.info("Starting product page -> Women Category write review recommend product for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -58,24 +58,24 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru@gmail.com");
 		gloveProductPage.postReview();
 		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
-	}
+	}*/
 
 @Test
 	public void productPageWomenCategoryWriteReviewNoRecommendTest() {
-		logger.info("Starting product page -> Women Category write review don't recommend product for Glove product test...");
+		logger.info("Starting product page -> Women Category write review don't recommend product for Breech product test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePage.UKlocation();
 		womenCategoryPage = homePage.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
-		gloveProductPage.writeReviewClick();
-		gloveProductPage.writeReviewContent(titleReview, contentReview);
-		gloveProductPage.writeReviewStar("Poor");
-		gloveProductPage.recommendProductNo();
-		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
-		gloveProductPage.postReview();
-		logger.info("Finishing product page -> Women Category don't recommend product for Glove product test.");
+		breechProductPage.writeReviewClick();
+		breechProductPage.writeReviewContent(titleReview, contentReview);
+		breechProductPage.writeReviewStar("Poor");
+		breechProductPage.recommendProductNo();
+		breechProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
+		breechProductPage.postReview();
+		logger.info("Finishing product page -> Women Category don't recommend product for Breech product test.");
 	}
 
 	@AfterTest
