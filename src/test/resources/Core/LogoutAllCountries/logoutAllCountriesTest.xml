@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="logoutAllCountriesTest" verbose="1">
+
+	<test name="logoutAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.LogoutCountriesTests.US.LogoutUSTest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.UK.LogoutUKTest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.FR.LogoutFRTest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.IE.LogoutIETest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.FI.LogoutFITest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.DE.LogoutDETest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.DK.LogoutDKTest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.CA.LogoutCATest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.RU.LogoutRUTest" />
+                 <class name="com.ariat.Tests.LogoutCountriesTests.JP.LogoutJPTest" />
+        </classes>
+     </test>
+</suite>

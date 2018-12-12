@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="add_makeDefaultCreditCardJPTest" verbose="1">
+
+	<test name="add_makeDefaultCreditCardJPTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.JP.Add_MakeDefaultCreditCardJPTest" />
+                 
+       </classes>
+     </test>
+</suite>

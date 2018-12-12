@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="logoutRUTest" verbose="1">
+
+	<test name="logoutRUTest" >
+       <classes>
+                 <class name="com.ariat.Tests.LogoutCountriesTests.RU.LogoutRUTest" />
+       </classes>
+     </test>
+</suite>

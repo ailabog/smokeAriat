@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="searchAllCountriesTest" verbose="1" >
+
+	<test name="searchAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.SearchCountriesTests.UK.SearchUKTest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.IE.SearchIETest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.DK.SearchDKTest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.DE.SearchDETest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.FI.SearchFITest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.FR.SearchFRTest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.US.SearchCUSTest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.CA.SearchCATest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.JP.SearchJPTest" />
+                 <class name="com.ariat.Tests.SearchCountriesTests.RU.SearchRUTest" />
+                          
+       </classes>
+     </test>
+</suite>

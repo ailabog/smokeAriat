@@ -92,8 +92,8 @@ public class HomeGlobalCountriesTest extends BaseTest {
 				"Start choosing EU countries one by one from the list starting with United Kingdom & finishing with United States...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseGlobalLocation(country.UK, country.UK.getCurrencyISO());
-		homePageBE = (HomePageBE) homePage.chooseGlobalLocation(country.BE, country.BE.getCurrencyISO());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		homePageNO = (HomePageNO) homePage.chooseEULocation(euCountry.NO, euCountry.NO.getCurrencyISO());
 		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());

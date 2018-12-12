@@ -2,21 +2,29 @@ package com.ariat.Enums;
 
 /**
  * Enumerator with available environments
+ * 
  * @author aila.bogasieru@ariat.com
  */
 
 public enum Environments {
-	
-	STAGING("http://staging.ariat.com"),
-	DEVELOPMENT("http://development.ariat.com");
-	
+
+	STAGING("http://staging.ariat.com", "https://staging-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
+	DEVELOPMENT("http://development.ariat.com",
+			"https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site");
+
 	private String URL;
-	
-	private Environments(String URL) {
+	private String businessMngmtURL;
+
+	private Environments(String URL, String businessMngmtURL) {
 		this.URL = URL;
+		this.businessMngmtURL = businessMngmtURL;
 	}
-	
+
 	public String getURL() {
 		return URL;
+	}
+
+	public String getbusinessMngmtURL() {
+		return businessMngmtURL;
 	}
 }

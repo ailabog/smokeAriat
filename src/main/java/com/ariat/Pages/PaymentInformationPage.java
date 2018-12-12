@@ -24,21 +24,37 @@ public class PaymentInformationPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(PaymentInformationPage.class);
 
-	private By addACreditCardButton = By.xpath("//a[@title='Add a credit card']");
+	private By addACreditCardButton = By.xpath("//*contains[text(), 'Add a credit card']");
+	private By addACreditCardButtonFR = By.xpath("//*contains[text(), 'Ajouter une carte de paiement']");
+	private By addACreditCardButtonDE = By.xpath("//*contains[text(), 'Eine Kreditkarte hinzufügen']");
 	private By addACreditCardText = By.xpath("//*contains[text(), 'Add a credit card']");
 	WebElement cardTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]"));
 	private By deleteCardLink = By.xpath("//a[text()='Delete card']");
-	private By makeDefaultCardLink = By.xpath("a[text()='Make Default Card']");
+	private By makeDefaultCardLink =  By.xpath("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/div[2]/div[3]/div/a");
 	private By deleteButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[2]");
 	private By cancelButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[1]/span");
-	private By creditNickname = By.xpath("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/h3/span");
-
+	private By creditNickname = By.cssSelector("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/h3/span");
+	
 	protected PaymentInformationPage(WebDriver driver) {
 		super(driver);
 	}
 
 	public AddACreditCardPage returnAddACreditCardPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
+		return new AddACreditCardPage(driver);
+	}
+	
+	public AddACreditCardPage returnAddACreditCardPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
+		return new AddACreditCardPage(driver);
+	}
+	
+	public AddACreditCardPage returnAddACreditCardPageDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
@@ -138,6 +154,13 @@ public class PaymentInformationPage extends BasePage {
 	public void assertMakeDefaultCreditCard(String expectedCreditCard) {
 		String creditLabel = WebDriverUtils.getElementText(driver, creditNickname);
 		String substring = "DEFAULT | ";
+		String makeDefault = substring + creditLabel;
+		assertEquals(makeDefault , expectedCreditCard, "Credit card made as default is being displayed");
+	}
+	
+	public void assertMakeDefaultCreditCardDE(String expectedCreditCard) {
+		String creditLabel = WebDriverUtils.getElementText(driver, creditNickname);
+		String substring = "STANDARDKARTE | ";
 		String makeDefault = substring + creditLabel;
 		assertEquals(makeDefault , expectedCreditCard, "Credit card made as default is being displayed");
 	}

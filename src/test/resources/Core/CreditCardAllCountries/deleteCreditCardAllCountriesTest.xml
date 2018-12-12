@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="deleteCreditCardAllCountriesTest" verbose="1">
+
+	<test name="deleteCreditCardAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.US.DeleteCreditCardUSTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.UK.DeleteCreditCardUKTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.FR.DeleteCreditCardFRTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.IE.DeleteCreditCardIETest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.FI.DeleteCreditCardFITest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.DE.DeleteCreditCardDETest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.DK.DeleteCreditCardDKTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.CA.DeleteCreditCardCATest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.RU.DeleteCreditCardRUTest" />
+                 <class name="com.ariat.Tests.CreditCardCountriesTests.JP.DeleteCreditCardJPTest" />
+        </classes>
+     </test>
+</suite>

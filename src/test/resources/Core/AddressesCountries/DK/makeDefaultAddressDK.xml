@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="makeDefaultAddressDKTest" verbose="1">
+
+	<test name="makeDefaultAddressDKTest" >
+       <classes>
+                <class name="com.ariat.Tests.AddressesCountriesTests.DK.MakeDefaultAddressDKTest" />
+               
+       </classes>
+     </test>
+</suite>

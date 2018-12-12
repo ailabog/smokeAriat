@@ -18,7 +18,7 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 	
 	private By sneakersFootwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li/a");
 	private By sneakersFootwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By casualLeftCategory = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
+	private By casualLeftCategory = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[4]/a");
 	private By casualText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[1]/h1");
 
 	public WomenFootwearCasualShoesPage(WebDriver driver) {
@@ -28,7 +28,7 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 	
 	public WomenFashionSneakersPage returnWomenFashionSneakersCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, sneakersFootwearCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(sneakersFootwearText));
 		return new WomenFashionSneakersPage(driver);
 	}
@@ -36,7 +36,7 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 	
 	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesPageCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, casualLeftCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(casualText));
 		return new WomenFootwearCasualShoesPage(driver);
 	}

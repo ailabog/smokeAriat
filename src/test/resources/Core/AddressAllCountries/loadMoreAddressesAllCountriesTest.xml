@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="loadMoreAddressesAllCountriesTest" verbose="1">
+
+	<test name="loadMoreAddressesAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.AddressesCountriesTests.US.LoadMoreAddressUSTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.UK.LoadMoreAddressUKTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.FR.LoadMoreAddressFRTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.IE.LoadMoreAddressIETest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.FI.LoadMoreAddressFITest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.DE.LoadMoreAddressDETest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.DK.LoadMoreAddressDKTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.LoadMoreAddressCATest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.RU.LoadMoreAddressRUTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.JP.LoadMoreAddressJPTest" />
+        </classes>
+     </test>
+</suite>

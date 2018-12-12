@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="myAccountLeftNavAllCountriesTest" verbose="1">
+
+	<test name="myAccountLeftNavAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.MyAccountLeftNavigationUSTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.MyAccountLeftNavigationUKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.MyAccountLeftNavigationFRTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.MyAccountLeftNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.MyAccountLeftNavigationFITest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountLeftNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.MyAccountLeftNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountLeftNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.MyAccountLeftNavigationRUTest" />
+                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.MyAccountLeftNavigationJPTest" />
+        </classes>
+     </test>
+</suite>

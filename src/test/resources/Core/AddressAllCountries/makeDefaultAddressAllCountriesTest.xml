@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="makeDefaultAddressAllCountriesTest" verbose="1">
+
+	<test name="makeDefaultAddressAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.AddressesCountriesTests.US.MakeDefaultAddressUSTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.UK.MakeDefaultAddressUKTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.FR.MakeDefaultAddressFRTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.IE.MakeDefaultAddressIETest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.FI.MakeDefaultAddressFITest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.DE.MakeDefaultAddressDETest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.DK.MakeDefaultAddressDKTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.MakeDefaultAddressCATest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.RU.MakeDefaultAddressRUTest" />
+                 <class name="com.ariat.Tests.AddressesCountriesTests.JP.MakeDefaultAddressJPTest" />
+        </classes>
+     </test>
+</suite>

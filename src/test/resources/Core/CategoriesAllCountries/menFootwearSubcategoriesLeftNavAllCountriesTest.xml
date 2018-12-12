@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="leftNavMenFootwearSubcategoriesCATest" verbose="1" >
+
+	<test name="leftNavMenFootwearSubcategoriesCATest" >
+       <classes>
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavUKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavUSTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavFRTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavDETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavFITest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavIETest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavDKTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavCATest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavJPTest" />
+                 <class name="com.ariat.Tests.CategoriesTests.MenFootwearSubcategoriesLeftNavRUTest" />
+       </classes>
+     </test>
+</suite>

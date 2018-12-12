@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="topNavWomenCategoriesAndSubcategoriesCATest" verbose="1" >
+
+	<test name="topNavWomenCategoriesAndSubcategoriesCATest" >
+       <classes>
+                 <class name="com.ariat.Tests.CategoriesTests.CA.WomenCategoriesAndSubcategoriesTopNavCATest" />
+       </classes>
+     </test>
+</suite>
