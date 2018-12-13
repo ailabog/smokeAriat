@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.ariat.Pages.BasePage;
 import com.ariat.Pages.Categories.MenCategories.MenAccessoriesSubcategories.MenAccessoriesBagsPage;
 import com.ariat.Pages.Categories.MenCategories.MenAccessoriesSubcategories.MenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.MenCategories.MenAccessoriesSubcategories.MenAccessoriesHeadwearPage;
@@ -19,6 +18,7 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearRiding.MenFootwearRid
 import com.ariat.Pages.Categories.MenCategories.MenFootwearRiding.MenFootwearRidingCategories.MenFootwearRidingPaddockPage;
 import com.ariat.Pages.Categories.MenCategories.MenFootwearRiding.MenFootwearRidingCategories.MenFootwearRidingToolBootsPage;
 import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearRidingPage;
+import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class MenRidingPage extends BasePage {

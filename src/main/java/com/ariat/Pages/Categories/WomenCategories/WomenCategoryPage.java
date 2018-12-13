@@ -3,12 +3,13 @@ package com.ariat.Pages.Categories.WomenCategories;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import com.ariat.Pages.BasePage;
+
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearRidingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
+import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**

@@ -2,7 +2,7 @@ package com.ariat.Pages.Categories.MenCategories.MenFootwearRiding.MenFootwearRi
 
 import org.openqa.selenium.WebDriver;
 
-import com.ariat.Pages.BasePage;
+import com.ariat.Pages.Main.BasePage;
 
 public class MenFootwearAllWeatherRidingPage extends BasePage{
 

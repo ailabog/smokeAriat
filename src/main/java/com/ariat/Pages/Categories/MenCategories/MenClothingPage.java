@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.ariat.Pages.BasePage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingSubcategories.MenClothingBreechesPage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingSubcategories.MenClothingOuterwearPage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingSubcategories.MenClothingSweatTshirtAndWoodiesPage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingSubcategories.MenClothingTopsAndTshirtsPage;
+import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**

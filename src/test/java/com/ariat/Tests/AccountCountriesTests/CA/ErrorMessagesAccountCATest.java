@@ -7,11 +7,10 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
-import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageCA;
-import com.ariat.Pages.MyAccountPage;
-import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Main.CreateAccountPage;
+import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -30,7 +29,7 @@ public class ErrorMessagesAccountCATest extends BaseTest {
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private HomePageCA homePageCA;
-	private SignInPage signInPage;
+	private com.ariat.Pages.Header.SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);

@@ -1,4 +1,4 @@
-package com.ariat.Pages;
+package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ public class OrderDetailsPage extends BasePage {
 	private By myOrdersText = By.xpath("//*contains[text(),'My orders']");
 
 
-	protected OrderDetailsPage(WebDriver driver) {
+	public OrderDetailsPage(WebDriver driver) {
 		super(driver);
 	}
 	

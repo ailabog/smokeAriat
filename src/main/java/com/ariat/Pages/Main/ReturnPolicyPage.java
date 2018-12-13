@@ -1,4 +1,4 @@
-package com.ariat.Pages;
+package com.ariat.Pages.Main;
 
 import static org.testng.Assert.assertEquals;
 
@@ -20,7 +20,7 @@ public class ReturnPolicyPage extends BasePage {
 	private By text3 = By.xpath("//*[@id=\"main\"]/div/div/div/div/div[2]/div[3]/div[1]/span");
 	private By text4 = By.xpath("//*[@id=\"main\"]/div/div/div/div/div[2]/div[4]/div[1]/span");
 
-	protected ReturnPolicyPage(WebDriver driver) {
+	public ReturnPolicyPage(WebDriver driver) {
 		super(driver);
 	}
 

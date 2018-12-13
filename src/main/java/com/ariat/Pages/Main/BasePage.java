@@ -1,4 +1,4 @@
-package com.ariat.Pages;
+package com.ariat.Pages.Main;
 
 import org.openqa.selenium.WebDriver;
 import org.slf4j.LoggerFactory;

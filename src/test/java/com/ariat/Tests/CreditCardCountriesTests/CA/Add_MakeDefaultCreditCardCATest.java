@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Enums.ListOfCreditCards;
-import com.ariat.Pages.AddACreditCardPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageCA;
-import com.ariat.Pages.MyAccountPage;
-import com.ariat.Pages.PaymentInformationPage;
-import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Main.AddACreditCardPage;
+import com.ariat.Pages.Main.MyAccountPage;
+import com.ariat.Pages.Main.PaymentInformationPage;
+import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;

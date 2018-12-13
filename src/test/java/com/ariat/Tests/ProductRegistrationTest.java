@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.MyAccountPage;
-import com.ariat.Pages.ProductRegistrationPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
+import com.ariat.Pages.Main.MyAccountPage;
+import com.ariat.Pages.Main.ProductRegistrationPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 

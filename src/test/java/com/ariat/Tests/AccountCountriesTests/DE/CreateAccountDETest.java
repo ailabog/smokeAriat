@@ -7,13 +7,13 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.CreateAccountPage;
-import com.ariat.Pages.MyAccountPage;
-import com.ariat.Pages.OrderDetailsPage;
-import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.Main.CreateAccountPage;
+import com.ariat.Pages.Main.MyAccountPage;
+import com.ariat.Pages.Main.OrderDetailsPage;
+import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;

@@ -2,7 +2,8 @@ package com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccesso
 
 
 import org.openqa.selenium.WebDriver;
-import com.ariat.Pages.BasePage;
+
+import com.ariat.Pages.Main.BasePage;
 
 
 /**

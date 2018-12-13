@@ -13,10 +13,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ariat.Pages.BasePage;
-import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class HomePageRU extends BasePage implements List<HomePage> {
@@ -352,9 +352,7 @@ public class HomePageRU extends BasePage implements List<HomePage> {
 		} else {
 			logger.info("This element {}" + partnersFeiFooter + "was not found");
 		}
-
 	}
-	
 	
 	public void search(String option) {
 		logger.info("Searching for a product...");
@@ -391,7 +389,6 @@ public class HomePageRU extends BasePage implements List<HomePage> {
 		return new SignInPage(driver);
 	}
 	
-
 	public WomenCategoryPage returnWomenCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
@@ -543,5 +540,4 @@ public class HomePageRU extends BasePage implements List<HomePage> {
 		
 		return null;
 	}
-
 }

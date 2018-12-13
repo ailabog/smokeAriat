@@ -1,4 +1,4 @@
-package com.ariat.Pages;
+package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

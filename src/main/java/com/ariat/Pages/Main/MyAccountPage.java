@@ -1,4 +1,4 @@
-package com.ariat.Pages;
+package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -100,7 +100,7 @@ public class MyAccountPage extends BasePage {
 	private By wishListTopNavLinkFR = By.xpath("//a[@title='Liste d’envies']");
 	private By addressesLinkFR = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[4]/a");
 
-	protected MyAccountPage(WebDriver driver) {
+	public MyAccountPage(WebDriver driver) {
 		super(driver);
 	}
 

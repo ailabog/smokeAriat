@@ -11,9 +11,9 @@ import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.MyAccountPage;
-import com.ariat.Pages.PaymentInformationPage;
-import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Main.MyAccountPage;
+import com.ariat.Pages.Main.PaymentInformationPage;
+import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;

@@ -13,14 +13,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.ariat.Pages.BasePage;
-import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Footer.DeliveryPage;
+import com.ariat.Pages.Footer.FaqsPage;
+import com.ariat.Pages.Footer.OrderStatusPage;
+import com.ariat.Pages.Footer.TrackYourOrderPage;
+import com.ariat.Pages.Footer.WarrantyPage;
+import com.ariat.Pages.Header.AboutUsPage;
+import com.ariat.Pages.Header.FindARetailerPage;
+import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Main.ReturnPolicyPage;
 import com.ariat.Utils.WebDriverUtils;
 
-public class HomePageUK extends BasePage implements List<HomePage>{
+public class HomePageUK extends BasePage implements List<HomePage> {
 
 	public HomePageUK(WebDriver driver) {
 		super(driver);
@@ -43,7 +50,7 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 	private By closeSearchIcon = By
 			.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
 	private By findARetailerHeader = By.linkText("Find a Retailer");
-	private By aboutUsHeader = By.linkText("About Us");
+	private By ourStoryImg = By.linkText("//img[contains(@href, 'We-Believe_973x1193px_3.jpg']");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
@@ -56,7 +63,7 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[2]/span");
 	private By instagramIcon = By
 			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[3]/span");
-	
+
 	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
 	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
@@ -65,13 +72,19 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 
 	private By orderStatusFooter = By.linkText("Order Status");
 	private By returnsFooter = By.linkText("Returns");
-	private By trackYourOrderFooter = By.linkText("Track Your Order");
+	private By returnsFooterText = By.xpath("//h1[text()='Returns']");
+	private By trackYourOrderFooterLink = By.linkText("Track Your Order");
+	private By trackYourOrderFooterText = By.xpath("//h1[text()='TRACK YOUR ORDER']");
 	private By warrantyFooter = By.linkText("Warranty");
+	private By warrantyText = By.xpath("//h1[text()='Warranty']");
 	private By deliveryFooter = By.linkText("Delivery");
+	private By deliveryFooterText = By.xpath("//h1[text()='Delivery Information']");
 	private By faqsFooter = By.linkText("FAQs");
+	private By faqsFooterText = By.xpath("//h1[text()='FAQs']");
 	private By sizeChartsFooter = By.linkText("Size Charts");
 
 	private By findARetailerFooter = By.linkText("Find a Retailer");
+	private By findARetailerText = By.xpath("//h1[text()='Find a retailer']");
 	private By divinoStockListFooter = By.linkText("Divino Stockists");
 	private By contactUsFooter = By.linkText("Contact Us");
 	private By emailSignUpFooter = By.linkText("Email Sign Up");
@@ -87,12 +100,15 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 	private By myAccountsFooter = By.linkText("My Accounts");
 	private By wishListFooter = By.linkText("Wishlist");
 	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
-	
+
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
+	
+
+	private By aboutUsHeader = By.linkText("About Us");
 
 	public void checkElementsHeader() {
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
@@ -225,11 +241,11 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 		} else {
 			logger.info("This element {}" + returnsFooter + "was not found");
 		}
-		if (WebDriverUtils.isElementDisplayed(driver, trackYourOrderFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, trackYourOrderFooter);
+		if (WebDriverUtils.isElementDisplayed(driver, trackYourOrderFooterLink)) {
+			WebDriverUtils.clickOnElementWithWait(driver, trackYourOrderFooterLink);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
-			logger.info("This element {}" + trackYourOrderFooter + "was not found");
+			logger.info("This element {}" + trackYourOrderFooterLink + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, warrantyFooter)) {
 			WebDriverUtils.clickOnElementWithWait(driver, warrantyFooter);
@@ -353,9 +369,8 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 		} else {
 			logger.info("This element {}" + partnersFeiFooter + "was not found");
 		}
-
 	}
-	
+
 	public void search(String option) {
 		logger.info("Searching for a product...");
 		WebDriverUtils.clickOnElementWithWait(driver, search);
@@ -379,7 +394,7 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 		WebDriverUtils.clickOnElementWithWait(driver, closeSearch);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
+
 	public SignInPage returnSignInPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, signIn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
@@ -390,7 +405,6 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 				ExpectedConditions.invisibilityOfElementLocated(newcustomerText));
 		return new SignInPage(driver);
 	}
-	
 
 	public WomenCategoryPage returnWomenCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
@@ -405,144 +419,196 @@ public class HomePageUK extends BasePage implements List<HomePage>{
 				ExpectedConditions.invisibilityOfElementLocated(menText));
 		return new MenCategoryPage(driver);
 	}
+
+	public AboutUsPage returnAboutUsPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, aboutUsHeader);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(ourStoryImg));
+		return new AboutUsPage(driver);
+	}
+
+	public FindARetailerPage returnFindARetailer() {
+		WebDriverUtils.clickOnElementWithWait(driver, findARetailerFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(findARetailerText));
+		return new FindARetailerPage(driver);
+	}
+
+	public OrderStatusPage returnOrderStatusPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, findARetailerFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(findARetailerText));
+		return new OrderStatusPage(driver);
+	}
+
+	public ReturnPolicyPage returnReturnPolicyPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, returnsFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(returnsFooterText));
+		return new ReturnPolicyPage(driver);
+	}
+
+	public TrackYourOrderPage returnTrackYourOrderPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, trackYourOrderFooterLink);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(trackYourOrderFooterText));
+		return new TrackYourOrderPage(driver);
+	}
+
+	public WarrantyPage returnWarrantyPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, warrantyFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(warrantyText));
+		return new WarrantyPage(driver);
+	}
 	
+	public DeliveryPage returnDeliveryPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, deliveryFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(deliveryFooterText));
+		return new DeliveryPage(driver);
+	}
+	
+	public FaqsPage returnFaqsPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, faqsFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
+		return new FaqsPage(driver);
+	}
 
 	@Override
 	public boolean add(HomePage e) {
-		
+
 		return false;
 	}
 
 	@Override
 	public void add(int index, HomePage element) {
-		
 
 	}
 
 	@Override
 	public boolean addAll(Collection<? extends HomePage> c) {
-		
+
 		return false;
 	}
 
 	@Override
 	public boolean addAll(int index, Collection<? extends HomePage> c) {
-		
+
 		return false;
 	}
 
 	@Override
 	public void clear() {
-		
 
 	}
 
 	@Override
 	public boolean contains(Object o) {
-		
+
 		return false;
 	}
 
 	@Override
 	public boolean containsAll(Collection<?> c) {
-		
+
 		return false;
 	}
 
 	@Override
 	public HomePage get(int index) {
-		
+
 		return null;
 	}
 
 	@Override
 	public int indexOf(Object o) {
-		
+
 		return 0;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		
+
 		return false;
 	}
 
 	@Override
 	public Iterator<HomePage> iterator() {
-		
+
 		return null;
 	}
 
 	@Override
 	public int lastIndexOf(Object o) {
-		
+
 		return 0;
 	}
 
 	@Override
 	public ListIterator<HomePage> listIterator() {
-		
+
 		return null;
 	}
 
 	@Override
 	public ListIterator<HomePage> listIterator(int index) {
-		
+
 		return null;
 	}
 
 	@Override
 	public boolean remove(Object o) {
-		
+
 		return false;
 	}
 
 	@Override
 	public HomePage remove(int index) {
-		
+
 		return null;
 	}
 
 	@Override
 	public boolean removeAll(Collection<?> c) {
-		
+
 		return false;
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> c) {
-		
+
 		return false;
 	}
 
 	@Override
 	public HomePage set(int index, HomePage element) {
-		
+
 		return null;
 	}
 
 	@Override
 	public int size() {
-		
+
 		return 0;
 	}
 
 	@Override
 	public List<HomePage> subList(int fromIndex, int toIndex) {
-		
+
 		return null;
 	}
 
 	@Override
 	public Object[] toArray() {
-		
+
 		return null;
 	}
 
 	@Override
 	public <T> T[] toArray(T[] a) {
-		
+
 		return null;
 	}
-
 }

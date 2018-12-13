@@ -14,10 +14,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ariat.Pages.BasePage;
-import com.ariat.Pages.SignInPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class HomePageBE extends BasePage implements List<HomePage>{
@@ -230,5 +230,4 @@ public class HomePageBE extends BasePage implements List<HomePage>{
 		
 		return null;
 	}
-	
 }

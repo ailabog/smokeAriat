@@ -7,14 +7,12 @@ import java.util.ListIterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.GlobalCountries;
-import com.ariat.Pages.BasePage;
-import com.ariat.Pages.ProductRegistrationPage;
+import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
