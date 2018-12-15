@@ -10,6 +10,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageJP;
 import com.ariat.Pages.Main.AddAddressesPage;
 import com.ariat.Pages.Main.AddressesPage;
+import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
