@@ -4,16 +4,16 @@
 
 	<test name="loadMoreAddressesAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.AddressesCountriesTests.US.LoadMoreAddressUSTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.UK.LoadMoreAddressUKTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.FR.LoadMoreAddressFRTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.IE.LoadMoreAddressIETest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.FI.LoadMoreAddressFITest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.DE.LoadMoreAddressDETest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.DK.LoadMoreAddressDKTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.LoadMoreAddressCATest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.RU.LoadMoreAddressRUTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.JP.LoadMoreAddressJPTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressDETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressDKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressIETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressFRTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUSTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressFITest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressJPTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressRUTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressCATest" />
         </classes>
      </test>
 </suite>

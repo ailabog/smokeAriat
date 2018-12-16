@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="headerAndFooterUKTest" verbose="1" >
+
+	<test name="headerAndFooterUKTest" >
+       <classes>
+                   <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUKTest" />
+       </classes>
+     </test>
+</suite>

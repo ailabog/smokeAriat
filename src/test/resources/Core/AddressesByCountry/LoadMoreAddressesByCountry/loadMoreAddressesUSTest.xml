@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="loadMoreAddressesUSTest" verbose="1" >
+
+	<test name="loadMoreAddressesUSTest" >
+       <classes>
+                 <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUSTest" />
+       </classes>
+     </test>
+</suite>

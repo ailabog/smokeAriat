@@ -4,16 +4,16 @@
 
 	<test name="makeDefaultCreditCardAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.US.MakeDefaultCreditCardUSTest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.UK.MakeDefaultCreditCardUKTest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.FR.MakeDefaultCreditCardFRTest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.IE.MakeDefaultCreditCardIETest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.FI.MakeDefaultCreditCardFITest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.DE.MakeDefaultCreditCardDETest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.DK.MakeDefaultCreditCardDKTest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.CA.MakeDefaultCreditCardCATest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.RU.MakeDefaultCreditCardRUTest" />
-                 <class name="com.ariat.Tests.CreditCardCountriesTests.JP.MakeDefaultCreditCardJPTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUKTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDKTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardIETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFRTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUSTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFITest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardJPTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardRUTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardCATest" />
         </classes>
      </test>
 </suite>

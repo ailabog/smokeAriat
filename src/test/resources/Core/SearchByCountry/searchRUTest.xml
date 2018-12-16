@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="searchRUTest" verbose="1" >
+
+	<test name="searchRUTest" >
+       <classes>
+                 <class name="com.ariat.Tests.Search.Countries.SearchRUTest" />
+       </classes>
+     </test>
+</suite>

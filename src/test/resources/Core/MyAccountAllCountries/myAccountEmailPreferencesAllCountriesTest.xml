@@ -4,16 +4,16 @@
 
 	<test name="myAccountEmailPreferencesAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.EmailPreferencesUSTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.EmailPreferencesUKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.EmailPreferencesFRTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.EmailPreferencesIETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.EmailPreferencesFITest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.EmailPreferencesDETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.EmailPreferencesDKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.EmailPreferencesCATest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.EmailPreferencesRUTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.EmailPreferencesJPTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesFRTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesIETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesFITest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesCATest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesRUTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesJPTest" />
         </classes>
      </test>
 </suite>

@@ -4,16 +4,16 @@
 
 	<test name="deleteAddressAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.AddressesCountriesTests.US.DeleteAddressUSTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.UK.DeleteAddressUKTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.FR.DeleteAddressFRTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.IE.DeleteAddressIETest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.FI.DeleteAddressFITest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.DE.DeleteAddressDETest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.DK.DeleteAddressDKTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.DeleteAddressCATest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.RU.DeleteAddressRUTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.JP.DeleteAddressJPTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressIETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressFRTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUSTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressFITest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressJPTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressRUTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressCATest" />
         </classes>
      </test>
 </suite>

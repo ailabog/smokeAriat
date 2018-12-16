@@ -41,8 +41,8 @@ public class CreateAccountPage extends BasePage {
 	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
 	private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
-	private By emailMsgDE = By.xpath("//*[contains(text(),'Die E-Mail-Adresse ist ungültig.']");
-	private By emailMsg = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[6]/div/span");
+	private By emailMsgDE = By.xpath("//span[contains(text(),'Die E-Mail-Adresse ist ungültig.']");
+	private By emailMsg = By.xpath("//span[contains(text(), 'The email address is invalid.']");
 	private By invalidConfirmEmailMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[7]/div/span");
 	private By invalidPassMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[8]/div/span");
 	private By invalidConfirmMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[9]/div/span");

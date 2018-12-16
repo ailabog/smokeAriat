@@ -4,16 +4,16 @@
 
 	<test name="myAccountMiddleNavAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.MyAccountMiddleNavigationUSTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.MyAccountMiddleNavigationUKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.MyAccountMiddleNavigationFRTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.MyAccountMiddleNavigationIETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.MyAccountMiddleNavigationFITest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountMiddleNavigationDETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.MyAccountMiddleNavigationDKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountMiddleNavigationCATest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.MyAccountMiddleNavigationRUTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.MyAccountMiddleNavigationJPTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationFRTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationFITest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationRUTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationJPTest" />
         </classes>
      </test>
 </suite>

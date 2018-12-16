@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="addCreditCardRUTest" verbose="1">
+
+	<test name="addCreditCardRUTest" >
+       <classes>
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddAcreditCardRUTest" />
+                 
+       </classes>
+     </test>
+</suite>

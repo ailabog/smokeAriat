@@ -46,10 +46,10 @@ public class SignInPage extends BasePage {
 	private By createAccountButton = By.cssSelector("#dwfrm_login_register > div > button");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
-	private By errorMessageText = By.xpath("//*[@id=\"main\"]/div/div/div[3]/div/div[2]/div/div/div");
+	private By errorMessageText = By.xpath("#main > div.section-container.myaccount-container > div.col-xs-12.col-md-5.col-md-offset-1 > div");
 	private By closeButton = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[1]/a/span");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
-	private By errPassMsg = By.xpath("//*[@id=\"dwfrm_login\"]/div[1]");
+	private By errPassMsg = By.xpath("#dwfrm_login > div.error-form");
 
 	public SignInPage(WebDriver driver) {
 		super(driver);

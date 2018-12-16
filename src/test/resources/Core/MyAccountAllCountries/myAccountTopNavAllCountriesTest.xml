@@ -4,16 +4,16 @@
 
 	<test name="myAccountTopNavAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.US.MyAccountTopRightNavigationUSTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.UK.MyAccountTopRightNavigationUKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FR.MyAccountTopRightNavigationFRTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.IE.MyAccountTopRightNavigationIETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.FI.MyAccountTopRightNavigationFITest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DE.MyAccountTopRightNavigationDETest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.DK.MyAccountTopRightNavigationDKTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.CA.MyAccountTopRightNavigationCATest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.RU.MyAccountTopRightNavigationRUTest" />
-                 <class name="com.ariat.Tests.MyAccountCountriesTests.JP.MyAccountTopRightNavigationJPTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUSTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationFRTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationFITest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationRUTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationJPTest" />
         </classes>
      </test>
 </suite>

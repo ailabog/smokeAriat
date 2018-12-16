@@ -4,16 +4,16 @@
 
 	<test name="headerAndFooterTestsAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.US.HeaderAndFooterUSTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.UK.HeaderAndFooterUKTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.FR.HeaderAndFooterFRTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.IE.HeaderAndFooterIETest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.FI.HeaderAndFooterFITest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.DE.HeaderAndFooterDETest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.DK.HeaderAndFooterDKTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.CA.HeaderAndFooterCATest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.RU.HeaderAndFooterRUTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooterTests.JP.HeaderAndFooterJPTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUSTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUKTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterFRTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterIETest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterFITest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterDETest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterDKTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterCATest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterRUTest" />
+                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterJPTest" />
         </classes>
      </test>
 </suite>

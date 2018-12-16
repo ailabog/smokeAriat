@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="myAccountJPTest" verbose="1">
+
+	<test name="myAccountJPTest" >
+       <classes>
+                <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesJPTest" />
+                <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationJPTest" />
+                <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationJPTest" />
+                <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationJPTest" />
+                <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationJPTest" />
+       </classes>
+     </test>
+</suite>

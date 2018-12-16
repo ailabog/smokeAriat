@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="deleteCreditCardJPTest" verbose="1">
+
+	<test name="deleteCreditCardJPTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardJPTest" />
+                 
+       </classes>
+     </test>
+</suite>

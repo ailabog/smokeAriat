@@ -4,16 +4,16 @@
 
 	<test name="makeDefaultAddressAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.AddressesCountriesTests.US.MakeDefaultAddressUSTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.UK.MakeDefaultAddressUKTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.FR.MakeDefaultAddressFRTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.IE.MakeDefaultAddressIETest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.FI.MakeDefaultAddressFITest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.DE.MakeDefaultAddressDETest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.DK.MakeDefaultAddressDKTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.CA.MakeDefaultAddressCATest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.RU.MakeDefaultAddressRUTest" />
-                 <class name="com.ariat.Tests.AddressesCountriesTests.JP.MakeDefaultAddressJPTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressUKTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressDETest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressDKTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressFITest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressFRTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressIETest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressUSTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressCATest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressJPTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressRUTest" />
         </classes>
      </test>
 </suite>

@@ -4,16 +4,16 @@
 
 	<test name="searchAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.SearchCountriesTests.UK.SearchUKTest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.IE.SearchIETest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.DK.SearchDKTest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.DE.SearchDETest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.FI.SearchFITest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.FR.SearchFRTest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.US.SearchCUSTest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.CA.SearchCATest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.JP.SearchJPTest" />
-                 <class name="com.ariat.Tests.SearchCountriesTests.RU.SearchRUTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchUKTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchIETest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchDKTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchDETest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchFITest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchFRTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchCATest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchJPTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchRUTest" />
                           
        </classes>
      </test>
