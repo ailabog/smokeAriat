@@ -1,4 +1,4 @@
-package com.ariat.Tests.Categories.Countries.MenCategory.Sorting;
+package com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.BaseTest;
@@ -22,13 +21,12 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class MenCategoryPaginationSortingDETest extends BaseTest {
+public class MenCategoryPaginationSortingUKTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
-	private HomePageDE homePageDE;
 	private MenCategoryPage menCategoryPage;
 	
 	
@@ -43,8 +41,7 @@ public class MenCategoryPaginationSortingDETest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		menCategoryPage = homePageDE.returnMenCategoryPage();
+		menCategoryPage = homePageUK.returnMenCategoryPage();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
@@ -67,7 +64,6 @@ public class MenCategoryPaginationSortingDETest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageDE.quit();
 		menCategoryPage.quit();
 		
 	}

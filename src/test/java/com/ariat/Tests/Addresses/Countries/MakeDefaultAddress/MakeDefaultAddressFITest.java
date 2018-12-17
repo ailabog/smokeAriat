@@ -50,7 +50,7 @@ public class MakeDefaultAddressFITest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressFiTest() {
+	public void makeDefaultAddressFITest() {
 		logger.info("Starting make default address Finland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

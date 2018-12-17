@@ -60,8 +60,7 @@ public class EditAddressFRTest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("B1TGL1");
-		addAddressPage.saveAddressEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditPage();
+		addressesPage = addAddressPage.returnAddressesSaveFromEditPageFR();
 		addressesPage.checkAddress("B1TGL1");
 		logger.info("Finishing edit address France test");
 	}

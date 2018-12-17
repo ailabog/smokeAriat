@@ -48,7 +48,7 @@ public class MakeDefaultAddressJPTest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressJPTest() {
+	public void makeDefaultAddressJPTest() {
 		logger.info("Starting make default address Japan test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

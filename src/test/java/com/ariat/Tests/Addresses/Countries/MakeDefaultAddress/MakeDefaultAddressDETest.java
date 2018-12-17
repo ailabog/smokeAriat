@@ -50,8 +50,8 @@ public class MakeDefaultAddressDETest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressFRTest() {
-		logger.info("Starting make default address Deutschland test");
+	public void makeDefaultAddressFRTest() {
+		logger.info("Starting make default address France test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -63,7 +63,7 @@ public class MakeDefaultAddressDETest extends BaseTest {
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.makeDefaultAddressCreated("235432");
 		addressesPage.assertMakeDefaultDE("STANDARD | 235432");
-		logger.info("Finishing make default address Deutschland test");
+		logger.info("Finishing make default address France test");
 	}
 	
 	@AfterTest

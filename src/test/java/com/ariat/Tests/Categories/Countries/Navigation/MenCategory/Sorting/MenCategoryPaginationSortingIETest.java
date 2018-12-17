@@ -1,4 +1,4 @@
-package com.ariat.Tests.Categories.Countries.MenCategory.Sorting;
+package com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageFI;
+import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.BaseTest;
@@ -22,13 +22,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class MenCategoryPaginationSortingFITest extends BaseTest {
+public class MenCategoryPaginationSortingIETest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
-	private HomePageFI homePageFI;
+	private HomePageIE homePageIE;
 	private MenCategoryPage menCategoryPage;
 	
 	
@@ -43,8 +43,8 @@ public class MenCategoryPaginationSortingFITest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
-		menCategoryPage = homePageFI.returnMenCategoryPage();
+		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
+		menCategoryPage = homePageIE.returnMenCategoryPage();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
@@ -67,7 +67,7 @@ public class MenCategoryPaginationSortingFITest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageFI.quit();
+		homePageIE.quit();
 		menCategoryPage.quit();
 		
 	}

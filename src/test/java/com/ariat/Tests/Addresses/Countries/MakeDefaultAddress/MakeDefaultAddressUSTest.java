@@ -49,7 +49,7 @@ public class MakeDefaultAddressUSTest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressUSTest() {
+	public void makeDefaultAddressUSTest() {
 		logger.info("Starting make default address US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

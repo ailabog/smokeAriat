@@ -48,7 +48,7 @@ public class MakeDefaultAddressRUTest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressRUTest() {
+	public void makeDefaultAddressRUTest() {
 		logger.info("Starting make default address Russia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

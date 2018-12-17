@@ -4,7 +4,7 @@
 
 	<test name="womenCategoryPaginationAndSortingDKTest" >
        <classes>
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingCATest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingDKTest" />
        </classes>
      </test>
 </suite>

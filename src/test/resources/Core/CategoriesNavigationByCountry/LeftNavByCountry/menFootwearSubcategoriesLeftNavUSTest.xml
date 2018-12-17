@@ -4,7 +4,7 @@
 
 	<test name="leftNavMenFootwearSubcategoriesUSTest" >
        <classes>
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavUSTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.LeftNav.MenFootwearSubcategoriesLeftNavUSTest" />
        </classes>
      </test>
 </suite>

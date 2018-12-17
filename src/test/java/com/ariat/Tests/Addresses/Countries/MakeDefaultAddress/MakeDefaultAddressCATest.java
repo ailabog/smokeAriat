@@ -48,7 +48,7 @@ public class MakeDefaultAddressCATest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressCATest() {
+	public void makeDefaultAddressCATest() {
 		logger.info("Starting make default address Canada test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
