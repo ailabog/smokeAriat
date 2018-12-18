@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Footer.ContactUsPage;
 import com.ariat.Pages.Footer.DeliveryPage;
 import com.ariat.Pages.Footer.FaqsPage;
 import com.ariat.Pages.Footer.OrderStatusPage;
@@ -474,6 +475,13 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
 		return new FaqsPage(driver);
+	}
+	
+	public ContactUsPage returnContactUsPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, contactUsFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
+		return new ContactUsPage(driver);
 	}
 
 	@Override

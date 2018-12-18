@@ -3,6 +3,7 @@ package com.ariat.Pages.Main;
 import static org.testng.Assert.assertEquals;
 import java.util.ArrayList;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 
 /**
  * Contains Addresses page utility with locators, methods and links with pages: Add Address page
@@ -32,7 +33,7 @@ public class AddressesPage extends BasePage {
 	private By cancelButtonDialog = By.xpath("//span[text()='Cancel']");
 	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
-	WebElement addressesTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]"));
+	private By addressesTable = By.xpath("//*[@id=\\\"main\\\"]/div/div[2]/div[1]");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
 	private By loadMoreButton = By.xpath("//button[@title='Load More']");
@@ -72,7 +73,7 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -94,7 +95,7 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void makeDefaultAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -116,7 +117,7 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void deleteAddressCreatedNo(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -140,7 +141,7 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void deleteAddressCreatedYes(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -164,7 +165,7 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void editAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements(By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
