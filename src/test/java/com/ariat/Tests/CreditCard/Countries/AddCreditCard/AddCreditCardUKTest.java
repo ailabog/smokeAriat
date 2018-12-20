@@ -49,7 +49,7 @@ public class AddCreditCardUKTest extends BaseTest{
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void addCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card UK test");
@@ -71,7 +71,7 @@ public class AddCreditCardUKTest extends BaseTest{
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add a credit card UK test");
-  } 
+  } */
 	
 	@Test(priority = 1)
 	public void addCreditCardFromPaymentInfoUKTest() {
@@ -80,7 +80,7 @@ public class AddCreditCardUKTest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();

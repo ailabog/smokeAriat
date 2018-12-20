@@ -4,7 +4,7 @@
 
 	<test name="addCreditCardDKNegativeTest" >
        <classes>
-                <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddAcreditCardNegativeDKTest" />
+                <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddCreditCardNegativeDKTest" />
                  
        </classes>
      </test>
