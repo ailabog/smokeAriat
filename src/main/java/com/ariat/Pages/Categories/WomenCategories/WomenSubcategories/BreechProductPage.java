@@ -13,9 +13,9 @@ import com.ariat.Utils.WebDriverUtils;
 public class BreechProductPage extends BasePage{
 	
 	
-	private By addToBasket = By.id("add-to-cart");
+	private By addToBasket = By.cssSelector("#add-to-cart");
+	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By productBonusDialog = By.id("bonus-product-dialog");
-	private By wishList = By.xpath("//button[text()='Add to WishList']");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountText = By.xpath("//*contains[text()='My account']");

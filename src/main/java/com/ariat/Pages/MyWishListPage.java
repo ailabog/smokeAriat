@@ -19,7 +19,8 @@ public class MyWishListPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(MyWishListPage.class);
 
-	private By sendToAFriendButton = By.id("send-to-friend");
+	private By sendToAFriendButton = By.xpath("//a[@title='Send to a Friend']");
+	private By nameTxtBox = By.id("dwfrm_sendtofriend_friendsname");
 	private By emailFriendTextBox = By.id("dwfrm_sendtofriend_friendsemail");
 	private By shareEmailListButton = By.name("dwfrm_sendtofriend_send");
 	private By closeSendFriendButton = By.xpath("//*[@id=\"ext-gen44\"]/body/div[7]/div[1]/a/span");
@@ -35,8 +36,7 @@ public class MyWishListPage extends BasePage {
 	private By removeItemWishList = By.name("dwfrm_wishlist_items_i0_deleteItem");
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
-	private By shareIcon = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div/div[5]/form/div[2]/a/span");
-    private By goBackToWishListEdit = By.xpath("//*[@id=\"ext-gen44\"]/body/div[11]/div[1]/a/span");
+	private By goBackToWishListEdit = By.xpath("//*[@id=\"ext-gen44\"]/body/div[11]/div[1]/a/span");
     
     private By noIteminWishListText = By.xpath("//*contains[text(), 'You have no items on your wishlist.']");
 	 
@@ -46,9 +46,10 @@ public class MyWishListPage extends BasePage {
 		super(driver);
 	}
 
-	public void sendListToAFriend(String email) {
+	public void sendListToAFriend(String nameFrined, String email) {
 		logger.info("Sending my wish list to a friend");
 		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButton);
+		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
 		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
 		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
 	}
@@ -109,10 +110,6 @@ public class MyWishListPage extends BasePage {
 	public void addToCartItemWishList() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToCartWishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void shareToAFriend() {
-		WebDriverUtils.clickOnElementWithWait(driver, shareIcon);
 	}
 	
 	public boolean noItemWishList() {

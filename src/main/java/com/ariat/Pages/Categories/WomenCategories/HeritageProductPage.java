@@ -12,9 +12,10 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class HeritageProductPage extends BasePage{
 
-	private By addToBasket = By.xpath("//button[text()='Add to Bag']");
-	private By myBagText = By.xpath("*contains[text(), 'My Bag']");
-	private By wishList = By.xpath("//button[text()='Add to WishList']");
+	//private By addToBasket = By.xpath("//button[text()='Add to Bag']");
+	private By addToBasket = By.cssSelector("#add-to-cart");
+	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
+	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
@@ -173,7 +174,7 @@ public class HeritageProductPage extends BasePage{
 	
 	public void addToCart() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
 	public MyBagPage returnMyBagPage() {

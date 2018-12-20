@@ -13,7 +13,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSub
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Tests.BaseTest;
 
-
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -43,7 +42,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority=0)
+	@Test(priority = 0)
 	public void productPageWomenCategoryAddToWishListShareToAFriendTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & share it to a friend test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -57,12 +56,11 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
-		myWishListPage.shareToAFriend();
-		myWishListPage.sendListToAFriend("aila.bogasieru@yahoo.com");
+		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
 	}
 
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void productPageWomenCategoryAddToWishListDifferentActionsTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & different actions test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -86,7 +84,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList  & different actions test.");
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2)
 	public void productPageWomenCategoryAddToWishListAddToCartTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -106,7 +104,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 
 	}
 
-@Test(priority=3)
+	@Test(priority = 3)
 	public void productPageWomenCategoryAddToWishListRemoveItemTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -123,7 +121,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 				+ myWishListPage.noItemWishList());
-	} 
+	}
 
 	@AfterTest
 	public void tearDown() {
