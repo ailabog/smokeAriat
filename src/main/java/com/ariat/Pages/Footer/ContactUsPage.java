@@ -22,7 +22,7 @@ public class ContactUsPage extends BasePage {
 	private By checkBox = By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]");
 	private By submitBtn = By.name("dwfrm_contactus_send");
 
-	protected ContactUsPage(WebDriver driver) {
+	public ContactUsPage(WebDriver driver) {
 		super(driver);
 	}
 

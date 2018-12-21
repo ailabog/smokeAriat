@@ -20,7 +20,7 @@ import com.ariat.Tests.BaseTest;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & deletet credit card Finland
+ * Tests for add & delete credit card Finland
  * @author aila.bogasieru@ariat.com
  *
  */
@@ -86,6 +86,5 @@ public class Add_DeleteCreditCardFITest extends BaseTest{
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-	
 	}
 }
