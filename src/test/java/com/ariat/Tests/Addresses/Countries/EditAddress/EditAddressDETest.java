@@ -60,7 +60,7 @@ public class EditAddressDETest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("235432A");
-		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
+		addressesPage = addAddressPage.returnAddressesSaveFromEditPageDE();
 		addressesPage.checkAddress("235432A");
 		logger.info("Finishing edit address Deutschland test");
 	}

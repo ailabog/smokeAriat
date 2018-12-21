@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="womenCategoryPaginationAndSortingDETest" verbose="1" >
+<suite name="menCategoryPaginationAndSortingDETest" verbose="1" >
 
-	<test name="womenCategoryPaginationAndSortingDETest" >
+	<test name="menCategoryPaginationAndSortingDETest" >
        <classes>
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingDETest" />
        </classes>

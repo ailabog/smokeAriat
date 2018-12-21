@@ -1,4 +1,4 @@
-package com.ariat.Tests.Categories.Countries.MenCategory.Sorting;
+package com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageJP;
+import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.BaseTest;
 
@@ -20,12 +20,12 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class MenCategoryPaginationSortingJPTest extends BaseTest {
+public class MenCategoryPaginationSortingCATest extends BaseTest {
 
 	private Environments environment;
 	private GlobalCountries country;
 	private HomePage homePage;
-	private HomePageJP homePageJP;
+	private HomePageCA homePageCA;
 	private MenCategoryPage menCategoryPage;
 	
 	
@@ -39,8 +39,8 @@ public class MenCategoryPaginationSortingJPTest extends BaseTest {
 		logger.info("Starting sort and navigate pagination test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageJP = (HomePageJP) homePage.chooseGlobalLocation(country.JP, country.JP.getCurrencyISO());
-		menCategoryPage = homePageJP.returnMenCategoryPage();
+		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		menCategoryPage = homePageCA.returnMenCategoryPage();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
@@ -62,7 +62,7 @@ public class MenCategoryPaginationSortingJPTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageJP.quit();
+		homePageCA.quit();
 		menCategoryPage.quit();
 		
 	}

@@ -1,13 +1,15 @@
-package com.ariat.Tests.Categories.Countries.MenCategory.Sorting;
+package com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageCA;
+import com.ariat.Pages.HomePagesCountries.HomePageFR;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.BaseTest;
 
@@ -20,12 +22,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class MenCategoryPaginationSortingCATest extends BaseTest {
+public class MenCategoryPaginationSortingFRTest extends BaseTest {
 
 	private Environments environment;
-	private GlobalCountries country;
+	private EUCountries euCountry;
 	private HomePage homePage;
-	private HomePageCA homePageCA;
+	private HomePageUK homePageUK;
+	private HomePageFR homePageFR;
 	private MenCategoryPage menCategoryPage;
 	
 	
@@ -39,8 +42,9 @@ public class MenCategoryPaginationSortingCATest extends BaseTest {
 		logger.info("Starting sort and navigate pagination test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
-		menCategoryPage = homePageCA.returnMenCategoryPage();
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
+		menCategoryPage = homePageFR.returnMenCategoryPage();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
@@ -62,7 +66,8 @@ public class MenCategoryPaginationSortingCATest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageCA.quit();
+		homePageUK.quit();
+		homePageFR.quit();
 		menCategoryPage.quit();
 		
 	}

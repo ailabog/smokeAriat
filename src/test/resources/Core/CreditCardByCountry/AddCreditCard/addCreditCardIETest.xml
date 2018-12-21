@@ -5,7 +5,6 @@
 	<test name="addCreditCardIETest" >
        <classes>
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardIETest" />
-                 
        </classes>
      </test>
 </suite>

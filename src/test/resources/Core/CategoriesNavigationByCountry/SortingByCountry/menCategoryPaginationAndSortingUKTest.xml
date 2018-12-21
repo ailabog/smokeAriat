@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="womenCategoryPaginationAndSortingUKTest" verbose="1" >
+<suite name="menCategoryPaginationAndSortingUKTest" verbose="1" >
 
-	<test name="womenCategoryPaginationAndSortingUKTest" >
+	<test name="menCategoryPaginationAndSortingUKTest" >
        <classes>
-                <class name="com.ariat.Tests.Categories.MenCategory.Sorting.MenCategoryPaginationSortingUKTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingUKTest" />
        </classes>
      </test>
 </suite>

@@ -3,9 +3,7 @@
 <suite name="addCreditCardUSNegativeTest" verbose="1">
 
 	<test name="addCreditCardUSNegativeTest" >
-       <classes>
-                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddCreditCardNegativeUSTest" />
-                 
-       </classes>
+                <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddCreditCardNegativeUSTest" />
+         </classes>
      </test>
 </suite>

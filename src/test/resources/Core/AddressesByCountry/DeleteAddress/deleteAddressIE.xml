@@ -4,7 +4,7 @@
 
 	<test name="deleteAddressIETest" >
        <classes>
-                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressIETest" />
+                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressIETest" />
                
        </classes>
      </test>

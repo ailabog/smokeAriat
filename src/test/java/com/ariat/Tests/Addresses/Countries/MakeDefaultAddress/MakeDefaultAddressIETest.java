@@ -50,7 +50,7 @@ public class MakeDefaultAddressIETest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressIETest() {
+	public void makeDefaultAddressIETest() {
 		logger.info("Starting make default address Ireland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

@@ -4,16 +4,16 @@
 
 	<test name="makeDefaultAddressAllCountriesTest" >
        <classes>
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressUKTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressDETest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressDKTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressFITest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressFRTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressIETest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressUSTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressCATest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressJPTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.LoadMoreAddressRUTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressUKTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDETest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDKTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressFITest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressFRTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressIETest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressUSTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressCATest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressJPTest" />
+                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressRUTest" />
         </classes>
      </test>
 </suite>

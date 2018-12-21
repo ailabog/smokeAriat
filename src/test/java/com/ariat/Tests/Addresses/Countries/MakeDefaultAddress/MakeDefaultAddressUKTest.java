@@ -48,7 +48,7 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressUKTest() {
+	public void makeDefaultAddressUKTest() {
 		logger.info("Starting make default address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -58,8 +58,8 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("B1TGL1");
-		addressesPage.assertMakeDefault("DEFAULT | B1TGL1");
+		addressesPage.makeDefaultAddressCreated("8IRVJ");
+		addressesPage.assertMakeDefault("DEFAULT | 8IRVJ");
 		logger.info("Finishing make default address UK test");
 	}
 	
