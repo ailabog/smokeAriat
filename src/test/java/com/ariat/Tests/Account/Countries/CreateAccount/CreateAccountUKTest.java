@@ -119,7 +119,7 @@ public class CreateAccountUKTest extends BaseTest {
 	public void forgotPasswordTest() {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+	    homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
 		signInPage.forgotPasswordClick();

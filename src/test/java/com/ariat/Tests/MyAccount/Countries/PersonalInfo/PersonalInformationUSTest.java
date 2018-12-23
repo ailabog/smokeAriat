@@ -29,9 +29,9 @@ public class PersonalInformationUSTest extends BaseTest {
 	private PersonalnformationPage personalInformationPage;
 	
 
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
-	private static final String NEW_EMAIL = "aila.bogasieru@yahoo.com";
+	private static final String NEW_EMAIL = "aila.bogasieru@ariat.com";
 
 	@BeforeTest
 	public void setUp() {

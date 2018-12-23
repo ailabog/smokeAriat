@@ -51,6 +51,7 @@ public class CreateAccountCATest extends BaseTest {
 	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
+		
 	}
 
 	@Test(priority = 0)

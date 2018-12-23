@@ -34,7 +34,7 @@ public class WomenClothingPage extends BasePage{
 	private By womenClothingTopsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenClothingShowCategory = By.linkText("Show");
 	private By womenClothingShowText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenClothingBreechesAndTightsCategory = By.xpath("Breeches & Tights");
+	private By womenClothingBreechesAndTightsCategory = By.linkText("Breeches & Tights");
 	private By womenClothingBreechesAndTightsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	
 	 
