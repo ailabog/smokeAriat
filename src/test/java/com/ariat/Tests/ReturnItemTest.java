@@ -74,7 +74,7 @@ public class ReturnItemTest extends BaseTest {
 		logger.info("Finishing return item for a customer not being logged test...");
 	}
 
-	@Test
+/*	@Test
 	public void returnItemReturningCustomerTest() {
 		logger.info("Starting  return item as returning customer test");
 		homePage = new HomePage(new ChromeDriver());
@@ -98,7 +98,7 @@ public class ReturnItemTest extends BaseTest {
 		salesReturnConfirmationPage = verifyReturnItemsPage.returnSalesReturnConfirmationPage();
 		salesReturnConfirmationPage.returnOrderDetailsPage();
 		logger.info("Finishing return item as returning customer test...");
-	}
+	}*/
 
 	@AfterMethod
 	public void tearDown() {

@@ -41,11 +41,10 @@ public class MyAccountPage extends BasePage {
 	private By yesOrdersText = By.xpath("//*contains[text(),'My orders']");
 
 	//private By orderStatusLink = By.xpath("//a[text()='Order Status']");
-	private By orderStatusLink = By.xpath("//a[text()='Order Status']");
+	private By orderStatusLink = By.xpath("(//a[contains(text(),'Order Status')])[2]");
 	private By orderDetailsMyOrderLink = By.xpath("//*[@id=\"order-items\"]/div[1]/div[3]/a");
-	//private By orderDetailsMyAccountLink = By.xpath("//a[text()='Order Details']");
-	private By orderDetailsMyAccountLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div[5]/div[4]/a[2]");
-
+	private By orderDetailsMyAccountLink = By.xpath("//div[@id='main']/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div/div[4]/a[2]");
+   // private By orderDetailsMyAccountLink = By.xpath("//a[contains(text(),'Order Details')]");
 	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
 
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
@@ -60,7 +59,7 @@ public class MyAccountPage extends BasePage {
 	private By addAddressLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
-	private By viewAllOrdersLink = By.xpath("//a[text()='View all']");
+	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[50]");
 	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
 
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
@@ -72,7 +71,6 @@ public class MyAccountPage extends BasePage {
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
 	private By logoutTopNav = By.xpath("//*[@id=\"pg-container\"]/nav/div[1]/div[1]/div[3]/div/div[5]/ul/li[5]/a");
-	private By orderNo = By.xpath("//span[text()='16270805']");
 
 	protected MyAccountPage(WebDriver driver) {
 		super(driver);
@@ -141,7 +139,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyOrdersPage returnMyOrdersPageViewAllMiddleNav() {
-		WebDriverUtils.scrolltoElement(driver, viewAllOrdersLink);
+		WebDriverUtils.scrollElementToPosition(driver, viewAllOrdersLink);
 		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
@@ -151,6 +149,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
+		WebDriverUtils.scrollElementToPosition(driver, orderStatusLink);
 		WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
@@ -167,11 +166,10 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public OrderDetailsPage returnOrderDetailsMyAccountPageMiddleNav() {
-		WebDriverUtils.scrolltoElement(driver, orderDetailsMyAccountLink);
-		if(WebDriverUtils.findElement(driver, orderNo) != null) {
+		WebDriverUtils.scrollElementToPosition(driver, orderDetailsMyAccountLink);
 		WebDriverUtils.clickOnElementWithWait(driver, orderDetailsMyAccountLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));}
+				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
 

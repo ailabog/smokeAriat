@@ -56,6 +56,5 @@ public class OrderStatusTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();
-		
 	}
 }
