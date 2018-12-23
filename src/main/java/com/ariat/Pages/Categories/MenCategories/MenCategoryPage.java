@@ -22,17 +22,17 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenCategoryPage extends BasePage{
 	
-	private By menFootwearCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/a");
+	private By menFootwearCategory = By.xpath("//a[contains(text(),'Footwear')]");
 
 	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[2]/li/a");
+	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing')(");
 	private By menClothingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By menAccesoriesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[3]/li/a");
+    private By menAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-    private By menFeaturedCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[9]/li/a");
+    private By menFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
     private By menFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
   
-    private By menCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/a");
+    private By menCategory = By.xpath("//a[contains(text(),'Men')]");
     private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     
     private By footwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
@@ -51,7 +51,7 @@ public class MenCategoryPage extends BasePage{
     private By workTextLeftNav = By.xpath("//*[contains(text(),'Work']");
     
     private By sortDropWomenCategoryUp = By
-			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[2]/h3/p[1]/span");
+			.xpath("//div[@id='main']/div/div[2]/div[3]/div[2]/div/div[2]/h3/p/span");
 	private By show36ItemLink = By.xpath("//a[text()='36 Items']");
 	private By show72ItemLink = By.xpath("//a[text()='72 Items']");
 	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[2]/a");

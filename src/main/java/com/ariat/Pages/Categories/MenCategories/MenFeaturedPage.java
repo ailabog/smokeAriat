@@ -17,9 +17,9 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenFeaturedPage extends BasePage{
 	
-	private By menFeaturedTeamCollectionCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[9]/li/ul/li[1]/a");
+	private By menFeaturedTeamCollectionCategory = By.linkText("Team Collection");
 	private By menFeaturedTeamCollectionText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menFeaturedVentTekCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[9]/li/ul/li[2]/a");
+	private By menFeaturedVentTekCategory = By.linkText("VentTEK Western Boots");
 	private By menFeaturedVentTekText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	
 

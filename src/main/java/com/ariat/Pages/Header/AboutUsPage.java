@@ -11,9 +11,9 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class AboutUsPage extends BasePage{
 	
-	private By carrersLink = By.xpath("//a[text()='Careers']");
+	private By carrersLink = By.linkText("Careers");
 	private By carrersText = By.xpath("//*contains[text(), 'CAREERS']");
-	private By pressRoomLink = By.xpath("a[text()='Press Room']");
+	private By pressRoomLink = By.linkText("'Press Room");
 	private By pressRoomText = By.xpath("//*contains[text(), Press room']");
 
 	public AboutUsPage(WebDriver driver) {

@@ -26,15 +26,15 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenClothingPage extends BasePage{
 	
-	private By womenClothingOuterwearCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[1]/a");
+	private By womenClothingOuterwearCategory = By.linkText("Outerwear");
 	private By womenClothingOuterwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-    private By womenClothingSweatTshirtAndWoodiesCatagory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[2]/a");
+    private By womenClothingSweatTshirtAndWoodiesCatagory = By.linkText("Sweatshirts & Hoodies");
     private By womenClothingSweatTshirtAndWoodiesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenClothingTopsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
+	private By womenClothingTopsAndTshirtsCategory = By.linkText("Tops & T-Shirts");
 	private By womenClothingTopsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By womenClothingShowCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[4]/a");
+	private By womenClothingShowCategory = By.linkText("Show");
 	private By womenClothingShowText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenClothingBreechesAndTightsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[5]/a");
+	private By womenClothingBreechesAndTightsCategory = By.xpath("Breeches & Tights");
 	private By womenClothingBreechesAndTightsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	
 	 

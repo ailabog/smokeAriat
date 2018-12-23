@@ -31,7 +31,7 @@ public class SearchDKTest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressTest() {
+	public void searchAddressTest() {
 		logger.info("Starting search products Denmark test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

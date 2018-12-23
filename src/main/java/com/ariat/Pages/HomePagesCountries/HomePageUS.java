@@ -85,10 +85,10 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
 	
-	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
-	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
-	private By newcustomerText = By.xpath("//*text()='New Customer']");
-	private By womenText = By.xpath("//*contains(text(),'Women']");
+	private By returningCustomerText = By.xpath("//*[congtains(text()='Returning customer']");
+	private By checkOrderText = By.xpath("//*contains[text()='Check an order / request return']");
+	private By newcustomerText = By.xpath("//*contains[text()='New Customer']");
+	private By womenText = By.xpath("//*[contains(text(),'Women']");
 	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By ariatProductRegistrationText = By.xpath("//*contains[text()='Register your ariat product for a free gift*']");
 

@@ -19,13 +19,13 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenAccessoriesPage extends BasePage{
 	
-	private By menAccessoriesHeadwearCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[3]/li/ul/li[1]/a");
+	private By menAccessoriesHeadwearCategory = By.linkText("Headwear");
 	private By menAccessoriesHeadwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menAccessoriesGlovesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[3]/li/ul/li[3]/a");
+	private By menAccessoriesGlovesCategory = By.linkText("Gloves");
 	private By menAccessoriesGlovesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menAccessoriesBagsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[3]/li/ul/li[2]/a");
+	private By menAccessoriesBagsCategory = By.linkText("Bags");
 	private By menAccessoriesBagsText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menAccessoriesSocksCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[3]/li/ul/li[4]/a");
+	private By menAccessoriesSocksCategory = By.linkText("Socks");
 	private By menAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	
 	private By accessoriesHeadwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");

@@ -20,15 +20,15 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenFootwearPage extends BasePage{
 	
-	private By menFootwearRidingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
+	private By menFootwearRidingCategory = By.linkText("Riding");
 	private By menFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menFootwearCountryCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/ul/li[2]/a");
+	private By menFootwearCountryCategory = By.linkText("Country");
 	private By menFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menFootwearWesternCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/a");
+	private By menFootwearWesternCategory = By.linkText("Western");
     private By menFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By menFootwearCasualShoesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/ul/li[5]/a");
+    private By menFootwearCasualShoesCategory = By.linkText("Casual Shoe");
     private By menCasualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-    private By menFootwearWorkCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");
+    private By menFootwearWorkCategory = By.linkText("Work");
     private By menFootwearWorkText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     
     private By footwearRidingCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");

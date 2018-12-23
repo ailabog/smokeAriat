@@ -31,7 +31,7 @@ public class SearchDETest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressTest() {
+	public void searchAddressTest() {
 		logger.info("Starting search products Deutschland test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

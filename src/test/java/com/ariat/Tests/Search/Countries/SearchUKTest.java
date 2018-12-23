@@ -29,7 +29,7 @@ public class SearchUKTest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressTest() {
+	public void searchAddressTest() {
 		logger.info("Starting search products UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

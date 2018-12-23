@@ -18,11 +18,11 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenFeaturedPage extends BasePage{
 	
-	private By womenFeaturedTriFactorBreechCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/ul/li[1]/a");
+	private By womenFeaturedTriFactorBreechCategory = By.linkText("Tri Factor Breech");
 	private By womenFeaturedTriFactorBreechText = By.xpath("");
-	private By womenFeaturedHeritageCollectionCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/ul/li[2]/a");
+	private By womenFeaturedHeritageCollectionCategory = By.linkText("Heritage Collection");
 	private By womenFeaturedHeritageCollectionText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenWarmWeatherRidingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/ul/li[3]/a");
+	private By womenWarmWeatherRidingCategory = By.linkText("Warm Weather Riding");
 	private By womenWarmWeatherRidingCategoryText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 		 
 			

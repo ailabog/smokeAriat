@@ -29,7 +29,7 @@ public class SearchCATest extends BaseTest {
 	}
 
 	@Test
-	public void editAddressTest() {
+	public void searchAddressTest() {
 		logger.info("Starting search products Canada test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
