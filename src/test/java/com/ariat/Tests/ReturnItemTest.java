@@ -37,8 +37,8 @@ public class ReturnItemTest extends BaseTest {
 
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = "Parola12345!";
-	public static final String ORDER_NO = "10002429";
-	public static final String BILLING_ZIP_CODE = "35435";
+	public static final String ORDER_NO = "10003202";
+	public static final String BILLING_ZIP_CODE = "41641";
 	private static final String RETURN_REASON = "Uncomfortable";
 	private static final String RETURN_REASON1 = "Shipping error";
 	private static final String EXPECTED_MESSAGE = "Please select at least one item you wish to return";

@@ -17,7 +17,7 @@ public class OrderDetailsPage extends BasePage {
 
 	private By returnToMyOrdersLink = By.xpath("//a[text()='Return to My Orders']");
 	private By myOrdersText = By.xpath("//*contains[text(),'My orders']");
-	private By createReturnButton = By.xpath("//*[@id=\"newreturn\"]/button");
+	private By createReturnButton = By.xpath("//form[@id='newreturn']/button");
 	private By backToMyOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/a/span[2]");
 	
 
@@ -34,7 +34,7 @@ public class OrderDetailsPage extends BasePage {
 	}
 	
 	public ReturnItemsPage returnReturnItemsPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrollMiddlePage(driver, createReturnButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createReturnButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));

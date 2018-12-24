@@ -30,27 +30,33 @@ public class ReturnItemsPage extends BasePage{
 	
 	public void checkItemClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, itemCheck);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void describeReason(String reasonDescription) {
 		WebDriverUtils.enterTextBox(driver, describeReasonTextBox, reasonDescription);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void selectReturnReason(String reason) {
 		WebDriverUtils.selectDropDown(driver, returnReasonSelect, reason);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		
 	}
 	
 	public void selectQuantity(String quantityValue) {
 		WebDriverUtils.selectDropDown(driver, quantitySelect, quantityValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void continueClick() {
 		WebDriverUtils.clickOnElement(driver, continueButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void cancelClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, cancelButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void AssertNoReason(String expectedMessage) {
