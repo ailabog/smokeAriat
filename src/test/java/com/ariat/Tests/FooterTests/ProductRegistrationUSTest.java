@@ -31,7 +31,7 @@ public class ProductRegistrationUSTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void createAccountTest() {
+	public void productRegistrationTest() {
 		logger.info("Starting product registration test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.STAGING.getURL());
