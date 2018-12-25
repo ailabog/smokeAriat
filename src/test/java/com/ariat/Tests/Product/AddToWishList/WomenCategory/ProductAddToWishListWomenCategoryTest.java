@@ -57,7 +57,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 	
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru";
+	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
 	
 	
 	@BeforeTest
@@ -82,7 +82,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
 	
- /*@Test(priority=1)
+ @Test(priority=1)
 	public void productPageWomenCategoryAddToWishListNotLoggedTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -141,9 +141,9 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
 		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
-		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
+		myAccountWishListPage.findWishListClick();
 		logger.info("Finishing product page -> Women Category find someone's WishList test.");
-	}*/
+	}
 		
 	@AfterTest
 	public void tearDown() {

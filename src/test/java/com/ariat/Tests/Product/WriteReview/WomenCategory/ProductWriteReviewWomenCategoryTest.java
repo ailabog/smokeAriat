@@ -42,7 +42,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-/*	@Test
+	@Test
 	public void productPageWomenCategoryWriteReviewYesRecommendTest() {
 		logger.info("Starting product page -> Women Category write review recommend product for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -58,7 +58,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		gloveProductPage.userInfoReview("aila", "London", "aila.bogasieru@gmail.com");
 		gloveProductPage.postReview();
 		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
-	}*/
+	}
 
 @Test
 	public void productPageWomenCategoryWriteReviewNoRecommendTest() {
@@ -72,7 +72,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		breechProductPage.writeReviewClick();
 		breechProductPage.writeReviewContent(titleReview, contentReview);
 		breechProductPage.writeReviewStar("Poor");
-		breechProductPage.recommendProductNo();
+		//breechProductPage.recommendProductNo();
 		breechProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
 		breechProductPage.postReview();
 		logger.info("Finishing product page -> Women Category don't recommend product for Breech product test.");

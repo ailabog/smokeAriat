@@ -31,7 +31,7 @@ public class BreechProductPage extends BasePage{
 	private By starReviewGood = By.xpath("//span[text()='Good']");
 	private By starReviewAverage = By.xpath("//span[text()='Average']");
 	private By starReviewFair = By.xpath("//span[text()='Fair']");
-	private By starReviewPoor = By.xpath("//span[text()='Poor']");
+	private By starReviewPoor = By.xpath("//a[@id='bv-radio-rating-1']/span");
 
 	private By titleReview = By.id("bv-text-field-title");
 	private By textReview = By.id("bv-textarea-field-reviewtext");
@@ -47,7 +47,7 @@ public class BreechProductPage extends BasePage{
 	private By nicknameReview = By.id("bv-text-field-usernickname");
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
-	private By postReviewButton = By.xpath("//span[text()='Post Review']");
+	private By postReviewButton = By.name("bv-submit-button");
 
 	protected BreechProductPage(WebDriver driver) {
 		super(driver);
@@ -142,11 +142,13 @@ public class BreechProductPage extends BasePage{
 	}
 
 	public void recommendProductYes() {
+		WebDriverUtils.scrollLittDown(driver, recommendProductYes);
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductYes);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void recommendProductNo() {
+		WebDriverUtils.scrollLittDown(driver, recommendProductNo);
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductNo);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -161,6 +163,7 @@ public class BreechProductPage extends BasePage{
 	}
 
 	public void postReview() {
+		WebDriverUtils.scrollMoreDown(driver, postReviewButton);
 		WebDriverUtils.clickOnElementWithWait(driver, postReviewButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -174,6 +177,7 @@ public class BreechProductPage extends BasePage{
 	}
 
 	public MyAccountWishListPage returnMyAccountWishListPage() {
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));

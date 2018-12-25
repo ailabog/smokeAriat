@@ -22,6 +22,7 @@ public class TriFactorTopProductPage extends BasePage{
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	
 	private By selectSize = By.id("va-size");
+	private By selectSizeTshirt = By.name("dwvar_TRI_FACTOR_1_4_ZIP_W_APP_size");
 	private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
@@ -57,6 +58,12 @@ public class TriFactorTopProductPage extends BasePage{
 	
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	
+	public void selectAttributeSizeTShirt(String size) {
+		WebDriverUtils.selectVisibleText(driver, selectSizeTshirt, size);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -190,7 +197,7 @@ public class TriFactorTopProductPage extends BasePage{
 	}
 
 	public MyWishListPage returnMyWishListPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));

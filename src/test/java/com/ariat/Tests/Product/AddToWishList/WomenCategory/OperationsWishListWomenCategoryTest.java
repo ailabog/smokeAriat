@@ -35,14 +35,14 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru";
+	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
 
 	@BeforeTest
 	public void setUp() {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void productPageWomenCategoryAddToWishListShareToAFriendTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & share it to a friend test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -58,7 +58,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
-	}
+	}*/
 
 	@Test(priority = 1)
 	public void productPageWomenCategoryAddToWishListDifferentActionsTest() {
@@ -78,13 +78,12 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage.increaseQtyWishList(3);
 		myWishListPage.decreaseQtyWishList(2);
 		myWishListPage.editItemWishList();
-		triFactorTopProductPage.selectAttributeSize("Medium");
+		triFactorTopProductPage.selectAttributeSizeTShirt("Medium");
 		triFactorTopProductPage.update();
 		myWishListPage.goBackFromEditToWishlist();
 		logger.info("Finishing product page -> Women Category Add to WishList  & different actions test.");
 	}
-
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	public void productPageWomenCategoryAddToWishListAddToCartTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -121,7 +120,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 				+ myWishListPage.noItemWishList());
-	}
+	}*/
 
 	@AfterTest
 	public void tearDown() {

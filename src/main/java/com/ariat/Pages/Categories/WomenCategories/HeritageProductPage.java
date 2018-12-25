@@ -12,11 +12,14 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class HeritageProductPage extends BasePage{
 
-	//private By addToBasket = By.xpath("//button[text()='Add to Bag']");
 	private By addToBasket = By.cssSelector("#add-to-cart");
 	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
-	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
+	private By bonusDialog = By.id("bonus-choose-container product-content");
+	//css=.add-to-wishlist
+	//xpath=//div[@id='product-content']/div[6]/form/button
+	//xpath=(//button[@type='button'])[2]
+    private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
@@ -25,6 +28,9 @@ public class HeritageProductPage extends BasePage{
 	private By selectCalf = By.id("va-calf");
 	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
+	
+	//increase qty //css=.quantity-increase
+	//increase qty//xpath=//form[@id='dwfrm_product_addtocart_d0ljhniztjyr']/div/div/div/div/span[2]
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
@@ -178,9 +184,10 @@ public class HeritageProductPage extends BasePage{
 	}
 	
 	public MyBagPage returnMyBagPage() {
+		WebDriverUtils.scrollLittDown(driver, addToBasket);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(myBagText));
+				ExpectedConditions.invisibilityOfElementLocated(bonusDialog));
 		return new MyBagPage(driver);
 	}
 

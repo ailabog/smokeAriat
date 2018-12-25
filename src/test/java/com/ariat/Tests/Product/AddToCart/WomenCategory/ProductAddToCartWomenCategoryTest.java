@@ -9,6 +9,12 @@ import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyBagPage;
 import com.ariat.Pages.Categories.WomenCategories.HeritageProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.GlovesProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -25,8 +31,14 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 	private Environments environment;
 	private HomePage homePage;
 	private WomenCategoryPage womenCategoryPage;
-	private HeritageProductPage productPage;
 	private MyBagPage myBagPage;
+	private WomenAccessoriesPage womenAccessoriesPage;
+	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
+	private GlovesProductPage glovesProductPage;
+	private WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
+	private WomenFootwearPage womenFootwearPage;
+	private CasualShoeProductPage casualProductShoePage;
+	private HeritageProductPage productPage;
 
 		
 	@BeforeTest
@@ -34,8 +46,40 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test
+    @Test(priority=0)
 	public void productPageWomenCategoryAddToCartTest() {
+		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.UKlocation();
+		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("6");
+		myBagPage = glovesProductPage.returnMyBagPage();
+		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
+	}
+	
+	@Test(priority=1)
+	public void productPageWomenCategoryAddToCartNoFreeGiftTest() {
+		logger.info("Starting product page -> Women Category Casual Shoe prduct category add to cart test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.UKlocation();
+		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
+		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
+		casualProductShoePage.selectAttributeSize("3");
+		myBagPage = casualProductShoePage.returnMyBagPage();
+		myBagPage.cancelFreeGift();
+		myBagPage.checkMyBagNoFreeGift();
+		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
+	}
+	
+	@Test(priority=2)
+	public void productPageWomenCategoryAddToCartYesFreeGiftTest() {
 		logger.info("Starting product page -> Women Category Add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -45,9 +89,6 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		productPage.selectAttributeSize("5");
 		productPage.selectAttributeCalf("Slim");
 		productPage.selectAttributeHeight("Medium");
-		productPage.addToCart();
-		//myBagPage = productPage.returnMyBagPage();
-		myBagPage.checkMyBagNoFreeGift();
 		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
@@ -57,6 +98,12 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		womenCategoryPage.quit();
+		myBagPage.quit();
+		womenAccessoriesPage.quit();
+		womenAccessoriesGlovesPage.quit();
+		glovesProductPage.quit();
+		womenFootwearCasualShoesCategoryPage.quit();
+		casualProductShoePage.quit();
 		productPage.quit();
 	}
 }

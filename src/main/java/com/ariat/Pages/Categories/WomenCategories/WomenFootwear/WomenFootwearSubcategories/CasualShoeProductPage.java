@@ -161,6 +161,7 @@ public class CasualShoeProductPage extends BasePage{
 	}
 
 	public MyBagPage returnMyBagPage() {
+		WebDriverUtils.scrollLittDown(driver, addToBasket);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
@@ -179,6 +180,7 @@ public class CasualShoeProductPage extends BasePage{
 	}
 
 	public MyWishListPage returnMyWishListPage() {
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,

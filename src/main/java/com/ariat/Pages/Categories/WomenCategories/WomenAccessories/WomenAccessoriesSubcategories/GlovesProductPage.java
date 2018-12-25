@@ -11,7 +11,7 @@ import com.ariat.Pages.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class GlovesProductPage extends BasePage{
-	private By addToBasket = By.id("add-to-cart");
+	private By addToBasket = By.cssSelector("#add-to-cart");
 	private By productBonusDialog = By.id("bonus-product-dialog");
 	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
@@ -22,10 +22,9 @@ public class GlovesProductPage extends BasePage{
 	private By selectSize = By.id("va-size");
     private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
-	//private By writeReview = By.xpath("//button[text()=' Write a review   ']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div/button");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
-	private By starReviewExcellent = By.xpath("//*[@id=\"bv-radio-rating-5\"]/span[1]");
+	private By starReviewExcellent = By.xpath("//a[@id='bv-radio-rating-5']/span");
 	private By starReviewGood = By.xpath("//*[@id=\"bv-radio-rating-4\"]/span[1]");
 	private By starReviewAverage = By.xpath("//*[@id=\"bv-radio-rating-3\"]/span[1]");
 	private By starReviewFair = By.xpath("//*[@id=\"bv-radio-rating-2\"]/span[1]");
@@ -161,6 +160,7 @@ public class GlovesProductPage extends BasePage{
 	}
 
 	public MyBagPage returnMyBagPage() {
+		WebDriverUtils.scrollLittDown(driver, addToBasket);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,

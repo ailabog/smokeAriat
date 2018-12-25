@@ -49,22 +49,28 @@ public class MyAccountWishListPage extends BasePage {
 	
 	public void createAccountNowClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountNowButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void findWishListFName(String Fname) {
 		WebDriverUtils.enterTextBox(driver, findFirstNameWishList, Fname);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void findWishListLName(String Lname) {
 		WebDriverUtils.enterTextBox(driver, findLastNameWishList, Lname);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void findWishListEmail(String email) {
 		WebDriverUtils.enterTextBox(driver, findEmailWishList, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void findWishListClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, findWishListButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		
 	}
 	
 	public MyWishListPage returnMyWishListPage() {
@@ -76,7 +82,7 @@ public class MyAccountWishListPage extends BasePage {
 	}
 	
 	public CreateAccountPage returnCreateAccountPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.scrollLittDown(driver, createAccountNowButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountNowButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
