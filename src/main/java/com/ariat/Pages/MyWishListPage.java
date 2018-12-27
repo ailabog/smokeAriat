@@ -1,7 +1,10 @@
 package com.ariat.Pages;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,12 +36,13 @@ public class MyWishListPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[5]/form/div[3]/div[1]/div/div/span[1]");
 	private By prioritySelect = By.id("dwfrm_wishlist_items_i0_priority");
 	private By updateItemWishList = By.name("dwfrm_wishlist_items_i0_updateItem");
-	private By removeItemWishList = By.name("dwfrm_wishlist_items_i0_deleteItem");
+	private By removeItemWishList = By.xpath("(//button[@name='dwfrm_wishlist_items_i0_deleteItem'])[2]");
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
-	private By goBackToWishListEdit = By.xpath("//*[@id=\"ext-gen44\"]/body/div[11]/div[1]/a/span");
+	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
     
-    private By noIteminWishListText = By.xpath("//*contains[text(), 'You have no items on your wishlist.']");
+    private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
+    private By ItemsTable = By.id("id-b74204a4db5dec790e1f5d43c0");
 	 
     private boolean noItemWishList;
     
@@ -108,6 +112,7 @@ public class MyWishListPage extends BasePage {
 	}
 
 	public void addToCartItemWishList() {
+		WebDriverUtils.scrollLittDown(driver, addToCartWishList);
 		WebDriverUtils.clickOnElementWithWait(driver, addToCartWishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -119,5 +124,5 @@ public class MyWishListPage extends BasePage {
 		}
 		return noItemWishList;
 	}
-
 }
+

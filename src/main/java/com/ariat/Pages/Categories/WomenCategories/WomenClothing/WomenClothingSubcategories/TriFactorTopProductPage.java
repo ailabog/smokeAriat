@@ -22,7 +22,7 @@ public class TriFactorTopProductPage extends BasePage{
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	
 	private By selectSize = By.id("va-size");
-	private By selectSizeTshirt = By.name("dwvar_TRI_FACTOR_1_4_ZIP_W_APP_size");
+	private By selectSizeTshirt = By.id("product-content");
 	private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
@@ -49,7 +49,7 @@ public class TriFactorTopProductPage extends BasePage{
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	private By postReviewButton = By.xpath("//span[text()='Post Review']");
 
-	private By updateButton = By.xpath("//button[text()='Update']");
+	private By updateButton = By.xpath("//button[@id='add-to-cart']");
 	
 	public TriFactorTopProductPage(WebDriver driver) {
 		super(driver);
@@ -203,5 +203,4 @@ public class TriFactorTopProductPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
-
 }

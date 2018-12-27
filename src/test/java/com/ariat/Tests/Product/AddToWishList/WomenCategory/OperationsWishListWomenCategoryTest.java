@@ -9,8 +9,15 @@ import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.MyWishListPage;
 import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.GlovesProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.TriFactorTopProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -32,6 +39,14 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
 	private TriFactorTopProductPage triFactorTopProductPage;
 	private MyWishListPage myWishListPage;
+
+	private WomenAccessoriesPage womenAccessoriesPage;
+	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
+	private GlovesProductPage glovesProductPage;
+	private WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
+	private WomenFootwearPage womenFootwearPage;
+	private CasualShoeProductPage casualProductShoePage;
+	private WomenCategoryPage womenCategoryPage;
 
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
@@ -58,7 +73,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
-	}*/
+	}
 
 	@Test(priority = 1)
 	public void productPageWomenCategoryAddToWishListDifferentActionsTest() {
@@ -78,12 +93,12 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		myWishListPage.increaseQtyWishList(3);
 		myWishListPage.decreaseQtyWishList(2);
 		myWishListPage.editItemWishList();
-		triFactorTopProductPage.selectAttributeSizeTShirt("Medium");
 		triFactorTopProductPage.update();
-		myWishListPage.goBackFromEditToWishlist();
+		// myWishListPage.goBackFromEditToWishlist();
 		logger.info("Finishing product page -> Women Category Add to WishList  & different actions test.");
 	}
-	/*@Test(priority = 2)
+
+	@Test(priority = 2)
 	public void productPageWomenCategoryAddToWishListAddToCartTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -101,7 +116,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 				+ homePage.minicartShow());
 
-	}
+	}*/
 
 	@Test(priority = 3)
 	public void productPageWomenCategoryAddToWishListRemoveItemTest() {
@@ -118,9 +133,10 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.removeItemWishList();
-		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
-				+ myWishListPage.noItemWishList());
-	}*/
+		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
+		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
+		//		+ myWishListPage.noItemWishList());
+	}
 
 	@AfterTest
 	public void tearDown() {

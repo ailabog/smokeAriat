@@ -179,7 +179,7 @@ public class GlovesProductPage extends BasePage{
 	}
 
 	public MyWishListPage returnMyWishListPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
