@@ -22,17 +22,24 @@ public class WomenAccessoriesPage extends BasePage{
 	
 	private By womenAccessoriesHeadwearCategory = By.linkText("Headwear");
 	private By womenAccessoriesHeadwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+<<<<<<< HEAD
 	private By womenAccessoriesGlovesCategory = By.linkText("Gloves");
 	private By womenAccessoriesGlovesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesBagsCategory = By.linkText("Bags");
+=======
+	private By womenAccessoriesGlovesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[3]/li/ul/li[2]/a");
+	private By womenAccessoriesGlovesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+	private By womenAccessoriesBagsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[3]/li/ul/li[3]/a");
+>>>>>>> Product
 	private By womenAccessoriesBagsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesScarfAndPonchosCategory = By.linkText("Scarves & Ponchos");
 	private By womenAccessoriesScarfAndPonchosText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesSocksCategory = By.linkText("Socks");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	
-
-	public WomenAccessoriesPage(WebDriver driver) {
+    private By womenAccessoriesGlovesLeftNav = By.linkText("Gloves");
+	
+    		public WomenAccessoriesPage(WebDriver driver) {
 		super(driver);
 	}
 	
@@ -47,6 +54,16 @@ public class WomenAccessoriesPage extends BasePage{
 	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+<<<<<<< HEAD
+=======
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
+		return new WomenAccessoriesGlovesPage(driver);
+	}
+	
+	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryleftNavPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesLeftNav);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+>>>>>>> Product
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
 		return new WomenAccessoriesGlovesPage(driver);
 	}

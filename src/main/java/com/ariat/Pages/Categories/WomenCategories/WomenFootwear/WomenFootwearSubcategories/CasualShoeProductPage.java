@@ -1,37 +1,27 @@
-package com.ariat.Pages.Categories.WomenCategories;
+package com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-<<<<<<< HEAD
-import com.ariat.Pages.Main.BasePage;
-=======
 import com.ariat.Pages.BasePage;
 import com.ariat.Pages.MyAccountWishListPage;
 import com.ariat.Pages.MyBagPage;
 import com.ariat.Pages.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
-
-public class HeritageProductPage extends BasePage{
-
+public class CasualShoeProductPage extends BasePage{
+	
 	private By addToBasket = By.cssSelector("#add-to-cart");
-	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
-	private By bonusDialog = By.id("bonus-choose-container product-content");
-
-    private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
+	private By productBonusDialog = By.id("bonus-product-dialog");
+	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	
 	private By selectSize = By.id("va-size");
-	private By selectCalf = By.id("va-calf");
-	private By selectHeight = By.id("va-height");
-	private By increaseQty = By.xpath("//span[text()='+']");
-	//increase qty //css=.quantity-increase
-	
+    private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
@@ -56,24 +46,14 @@ public class HeritageProductPage extends BasePage{
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	private By postReviewButton = By.xpath("//span[text()='Post Review']");
-	
 
-	public HeritageProductPage(WebDriver driver) {
+	public CasualShoeProductPage(WebDriver driver) {
 		super(driver);
+		
 	}
-
+	
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void selectAttributeCalf(String calf) {
-		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void selectAttributeHeight(String height) {
-		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -126,6 +106,7 @@ public class HeritageProductPage extends BasePage{
 	}
 
 	public void writeReviewContent(String titleReviewText, String reviewText) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, titleReview, titleReviewText);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, textReview, reviewText);
@@ -136,8 +117,8 @@ public class HeritageProductPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, addPhotoReview);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		if (WebDriverUtils.findElement(driver, addPhotoModal) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, choosePhotoReview);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, choosePhotoReview);
 			// Upload the file
 		}
 	}
@@ -178,17 +159,13 @@ public class HeritageProductPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, postReviewButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
-	public void addToCart() {
-		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-	
+
 	public MyBagPage returnMyBagPage() {
 		WebDriverUtils.scrollLittDown(driver, addToBasket);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(bonusDialog));
+				ExpectedConditions.invisibilityOfElementLocated(productBonusDialog));
 		return new MyBagPage(driver);
 	}
 
@@ -197,12 +174,13 @@ public class HeritageProductPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishlistText));
 		return new MyAccountWishListPage(driver);
 	}
 
 	public MyWishListPage returnMyWishListPage() {
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
@@ -210,3 +188,5 @@ public class HeritageProductPage extends BasePage{
 		return new MyWishListPage(driver);
 	}
 }
+
+

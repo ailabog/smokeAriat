@@ -23,7 +23,7 @@ public class MenFashionPage extends BasePage{
 	
 	public MenFashionSneakersPage returnMenWorkPullOnPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, sneakersCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(sneakersCategoryText));
 		return new MenFashionSneakersPage(driver);
 	}

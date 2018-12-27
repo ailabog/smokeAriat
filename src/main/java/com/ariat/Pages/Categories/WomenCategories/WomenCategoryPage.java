@@ -25,9 +25,13 @@ public class WomenCategoryPage extends BasePage {
 	private By womenFootwearCategory = By.xpath("//a[contains(text(),'Women')]");
 	private By womenFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenClothingCategory = By.xpath("//a[contains(text(),'Clothing')]");
+
+	private By womenFootwearCategory = By.linkText("Footwear");
+	private By womenFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+	private By womenClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/a");
+
 	private By womenClothingText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccesoriesCategory = By
-			.xpath("//a[contains(text(),'Accessories')]");
+	private By womenAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
 	private By womenFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -58,6 +62,7 @@ public class WomenCategoryPage extends BasePage {
 	private By prevPaginationButtonUp = By
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
 	private By backToTopButton = By.xpath("//*[@id=\"main\"]/div/div[1]/div[1]/a");
+
 	private By sortDropWomenCategoryDown = By
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
 	private By nextPaginationButtonDown = By
@@ -65,11 +70,25 @@ public class WomenCategoryPage extends BasePage {
 	private By prevPaginationButtonDown = By
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
 	private By heritageProductLink = By.xpath("//*[@id=\"026613ca2d03c726cde6054af3\"]/div[1]/a/picture/img");
+
+	private By sortDropWomenCategoryDown = By
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
+	private By show36ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[1]/a");
+	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[2]/a");
+	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[3]/a");
+	private By nextPaginationButtonDown = By
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
+	private By prevPaginationButtonDown = By
+			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
+	private By heritageProductLink = By.xpath("//img[@title='Heritage II Ellipse Tall Riding Boot']");
+
 	private By heritaheProductText = By.xpath("//*contains[text(),'Heritage II Ellipse Tall Riding Boot']");
 	private By recommendedLink = By.linkText("Recommended");
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
+
+	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
 
 	public WomenCategoryPage(WebDriver driver) {
 		super(driver);
@@ -77,37 +96,38 @@ public class WomenCategoryPage extends BasePage {
 
 	public void womenCategory() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickSortUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryUp);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickSortDown() {
 		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryDown);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void sortProductWomenCategoryRecommended() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendedLink);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void sortProductWomenCategoryPriceHighToLow() {
 		WebDriverUtils.clickOnElementWithWait(driver, priceHighToLowLink);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void sortProductWomenCategoryPriceLowToHigh() {
 		WebDriverUtils.clickOnElementWithWait(driver, priceLowToHighLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void sortProductWomenCategoryBestSellers() {
 		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLink);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void show36ItemsUp() {
@@ -123,11 +143,23 @@ public class WomenCategoryPage extends BasePage {
 	public void show108ItemLinkUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLinkUp);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+
+	public void show72ItemsUp() {
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLinkUp);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+
+	public void show108ItemLinkUp() {
+		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkUp);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void nextPaginationUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonUp);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void prevPaginationButtonUp() {
@@ -172,13 +204,13 @@ public class WomenCategoryPage extends BasePage {
 
 	public WomenCategoryPage returnWomenCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenText));
 		return new WomenCategoryPage(driver);
 	}
 
 //Top navigation
-	public  WomenFootwearPage returnWomenFootwearPage() {
+	public WomenFootwearPage returnWomenFootwearPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
@@ -187,7 +219,7 @@ public class WomenCategoryPage extends BasePage {
 
 	public WomenClothingPage returnWomenClothingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
 		return new WomenClothingPage(driver);
 	}
@@ -199,16 +231,23 @@ public class WomenCategoryPage extends BasePage {
 		return new WomenAccessoriesPage(driver);
 	}
 
+	public WomenAccessoriesPage returnWomenAccessoriesCategoryLeftNavPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccesoriesCategoryLefytNav);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
+		return new WomenAccessoriesPage(driver);
+	}
+
 	public WomenFeaturedPage returnWomenFeaturedCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFeaturedCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedText));
 		return new WomenFeaturedPage(driver);
 	}
 
 	public HeritageProductPage returnHeritageProduct() {
 		WebDriverUtils.clickOnElementWithWait(driver, heritageProductLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(heritaheProductText));
 		return new HeritageProductPage(driver);
 
@@ -221,6 +260,13 @@ public class WomenCategoryPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
 		return new WomenFootwearPage(driver);
+	}
+
+	public WomenClothingPage returnWomenClothingCategoryLeftNavPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, leftnavClothing);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
+		return new WomenClothingPage(driver);
 	}
 
 	public WomenClothingPage returnWomenClothingPageLeftNav() {

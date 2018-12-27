@@ -61,6 +61,7 @@ public class MenClothingPage extends BasePage{
 	
 	public MenClothingBreechesPage returnMenClothingBreechesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingBreechesCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		return new MenClothingBreechesPage(driver);
 	}
 	
@@ -89,6 +90,7 @@ public class MenClothingPage extends BasePage{
 	
 	public MenClothingBreechesPage returnMenClothingBreechesCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, clothingBreechesCategoryLeftNav);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		return new MenClothingBreechesPage(driver);
 	}
 }
