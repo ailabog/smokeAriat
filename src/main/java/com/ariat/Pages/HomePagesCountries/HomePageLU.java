@@ -38,7 +38,7 @@ public class HomePageLU extends BasePage implements List<HomePage> {
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
 
-	protected HomePageLU(WebDriver driver) {
+	public HomePageLU(WebDriver driver) {
 		super(driver);
 	}
 	
