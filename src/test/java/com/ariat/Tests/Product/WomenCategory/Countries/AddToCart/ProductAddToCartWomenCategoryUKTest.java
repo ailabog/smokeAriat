@@ -1,4 +1,4 @@
-package com.ariat.Tests.Product.AddToCart.WomenCategory;
+package com.ariat.Tests.Product.WomenCategory.Countries.AddToCart;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -29,7 +29,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class ProductAddToCartWomenCategoryTest extends BaseTest {
+public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;

@@ -1,4 +1,4 @@
-package com.ariat.Tests.Product.AddToWishList.WomenCategory;
+package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +32,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class ProductAddToWishListWomenCategoryTest extends BaseTest {
+public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;

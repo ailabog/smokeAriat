@@ -1,4 +1,4 @@
-package com.ariat.Tests.Product.WriteReview.WomenCategory;
+package com.ariat.Tests.Product.WomenCategory.WriteReview;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class ProductWriteReviewWomenCategoryTest extends BaseTest {
+public class ProductWriteReviewWomenCategoryUKTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
