@@ -54,11 +54,8 @@ public class MyWishListPage extends BasePage {
 	public void sendListToAFriend(String nameFrined, String email) {
 		logger.info("Sending my wish list to a friend");
 		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButton);
-<<<<<<< HEAD:src/main/java/com/ariat/Pages/Main/MyWishListPage.java
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-=======
 		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
->>>>>>> Product:src/main/java/com/ariat/Pages/MyWishListPage.java
 		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
@@ -79,8 +76,6 @@ public class MyWishListPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(usLocation));
 		return new HomePage(driver);
 	}
-<<<<<<< HEAD:src/main/java/com/ariat/Pages/Main/MyWishListPage.java
-=======
 
 	public void increaseQtyWishList(int n) {
 		for (int i = 0; i < n; i++) {
@@ -133,6 +128,5 @@ public class MyWishListPage extends BasePage {
 		}
 		return noItemWishList;
 	}
->>>>>>> Product:src/main/java/com/ariat/Pages/MyWishListPage.java
 }
 

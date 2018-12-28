@@ -8,8 +8,9 @@ import org.slf4j.LoggerFactory;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.GlobalCountries;
-import com.ariat.Pages.BasePage;
-import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Pages.HomePagesCountries.HomePageNL;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
@@ -226,7 +227,7 @@ public class HomePage extends BasePage {
 		logger.info("Selecting EU  Ariat store country...");
 		WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 		if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
-			switch (euCountry.getLanguageCountryName()) {
+			switch (euCountry.getLanguage()) {
 			case "English (United Kingdom)":
 				logger.info("I choose English United Kingdom as location");
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
@@ -325,17 +326,6 @@ public class HomePage extends BasePage {
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
 				return new HomePage(driver);
 
-			case "Deutsch (Schweiz)":
-				logger.info("I choose Deutsch Schweiz as location");
-				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.SW.getLocator());
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				logger.info("Saving location...");
-				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.SW.getLocator());
-				return new HomePage(driver);
-
 			case "English (Netherlands)":
 				logger.info("I choose English Netherlands as location");
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
@@ -345,7 +335,7 @@ public class HomePage extends BasePage {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.NL.getLocator());
-				return new HomePage(driver);
+				return new HomePageNL(driver);
 
 			case "English (Luxembourg)":
 				logger.info("I choose English  Luxembourg as location");

@@ -20,7 +20,7 @@ public class MyOrdersPage extends BasePage {
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 	private By returnsText = By.xpath("//*contains[text(),'Returns']");
 
-	protected MyOrdersPage(WebDriver driver) {
+	public MyOrdersPage(WebDriver driver) {
 		super(driver);
 	}
 

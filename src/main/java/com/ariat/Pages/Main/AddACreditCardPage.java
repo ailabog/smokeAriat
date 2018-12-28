@@ -31,7 +31,7 @@ public class AddACreditCardPage extends BasePage {
 	private By creditCardInfoText = By.xpath("//*contains[text(), 'Credit card information']");
 	private By typeCardSelectUS = By.xpath("//*[@id=\"c-ct\"]");
 
-	protected AddACreditCardPage(WebDriver driver) {
+	public AddACreditCardPage(WebDriver driver) {
 		super(driver);
 	}
 

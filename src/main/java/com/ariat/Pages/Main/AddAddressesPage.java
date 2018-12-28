@@ -40,7 +40,7 @@ public class AddAddressesPage extends BasePage {
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
   		
-	protected AddAddressesPage(WebDriver driver) {
+	public AddAddressesPage(WebDriver driver) {
 		super(driver);
 	}
 

@@ -42,7 +42,7 @@ public class AddressesPage extends BasePage {
 
 	private boolean checkAddress;
 
-	protected AddressesPage(WebDriver driver) {
+	public AddressesPage(WebDriver driver) {
 		super(driver);
 	}
 

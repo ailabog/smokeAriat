@@ -36,7 +36,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageTR;
 import com.ariat.Pages.HomePagesCountries.HomePageTW;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
-import com.ariat.Tests.BaseTest;
+import com.ariat.Tests.Base.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 

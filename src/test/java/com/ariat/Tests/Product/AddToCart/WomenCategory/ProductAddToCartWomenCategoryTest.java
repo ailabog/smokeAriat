@@ -4,6 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyBagPage;
@@ -15,7 +17,9 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSub
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
-import com.ariat.Tests.BaseTest;
+import com.ariat.Pages.HomePagesCountries.HomePageDK;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Tests.Base.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -40,6 +44,7 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 	private WomenFootwearPage womenFootwearPage;
 	private CasualShoeProductPage casualProductShoePage;
 	private HeritageProductPage productPage;
+	private EUCountries euCountry;
 
 		
 	@BeforeTest

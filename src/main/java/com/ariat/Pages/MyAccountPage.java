@@ -8,6 +8,17 @@ import org.slf4j.LoggerFactory;
 
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
+import com.ariat.Pages.Main.AddACreditCardPage;
+import com.ariat.Pages.Main.AddAddressesPage;
+import com.ariat.Pages.Main.AddressesPage;
+import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Main.EmailPreferencePage;
+import com.ariat.Pages.Main.LogoutPage;
+import com.ariat.Pages.Main.MyOrdersPage;
+import com.ariat.Pages.Main.MyWishListPage;
+import com.ariat.Pages.Main.OrderDetailsPage;
+import com.ariat.Pages.Main.PaymentInformationPage;
+import com.ariat.Pages.Main.PersonalnformationPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**

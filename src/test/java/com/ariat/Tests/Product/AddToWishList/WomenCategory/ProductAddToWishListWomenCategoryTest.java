@@ -6,18 +6,19 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.CreateAccountPage;
 import com.ariat.Pages.HomePage;
 import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.MyAccountWishListPage;
 import com.ariat.Pages.MyWishListPage;
-import com.ariat.Pages.SignInPage;
+import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.Main.CreateAccountPage;
+import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.BreechProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
-import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -33,6 +34,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
     private CasualShoeProductPage womenCasualShoe;

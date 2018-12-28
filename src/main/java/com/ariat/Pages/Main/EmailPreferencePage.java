@@ -34,7 +34,7 @@ public class EmailPreferencePage extends BasePage {
 	private By saveEditsButton = By.name("dwfrm_profile_confirm");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 
-	protected EmailPreferencePage(WebDriver driver) {
+	public EmailPreferencePage(WebDriver driver) {
 		super(driver);
 	}
 	

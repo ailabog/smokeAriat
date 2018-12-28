@@ -28,7 +28,7 @@ public class PersonalnformationPage extends BasePage {
 	private By passwordTextBox = By.id("dwfrm_profile_login_password");
 	private By confirmPasswordTextBox = By.id("dwfrm_profile_login_passwordconfirm");
 
-	protected PersonalnformationPage(WebDriver driver) {
+	public PersonalnformationPage(WebDriver driver) {
 		super(driver);
 	}
 	

@@ -9,9 +9,9 @@ import org.testng.annotations.BeforeTest;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Main.OrderDetailsPage;
+import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Footer.OrderStatusPage;
 import com.ariat.Pages.Header.SignInPage;
-import com.ariat.Tests.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 

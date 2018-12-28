@@ -39,7 +39,7 @@ public class PaymentInformationPage extends BasePage {
 	private By creditNickname = By.xpath("//div[@id='paymentinfo']/div[2]/div/div/div/div/div/div/h3/span");
 	//private By creditNickname = By.xpath("//span[contains(text()='xx']");
 	
-	protected PaymentInformationPage(WebDriver driver) {
+	public PaymentInformationPage(WebDriver driver) {
 		super(driver);
 	}
 

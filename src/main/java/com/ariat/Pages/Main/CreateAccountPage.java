@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.ariat.Pages.MyAccountWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -41,18 +43,15 @@ public class CreateAccountPage extends BasePage {
 	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
 	private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
-<<<<<<< HEAD:src/main/java/com/ariat/Pages/Main/CreateAccountPage.java
 	private By emailMsgDE = By.xpath("//span[contains(text(),'Die E-Mail-Adresse ist ungültig.']");
 	private By emailMsg = By.xpath("//span[contains(text(), 'The email address is invalid.']");
 	private By invalidConfirmEmailMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[7]/div/span");
 	private By invalidPassMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[8]/div/span");
 	private By invalidConfirmMessage = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[9]/div/span");
-	
-=======
+
 	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
->>>>>>> Product:src/main/java/com/ariat/Pages/CreateAccountPage.java
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
@@ -221,9 +220,6 @@ public class CreateAccountPage extends BasePage {
 		return new MyAccountPage(driver);
 
 	}
-<<<<<<< HEAD:src/main/java/com/ariat/Pages/Main/CreateAccountPage.java
-}
-=======
 	
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
@@ -233,8 +229,6 @@ public class CreateAccountPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishlistText));
 		return new MyAccountWishListPage(driver);
-	}
+	  }
+  	}
 
-	}
-
->>>>>>> Product:src/main/java/com/ariat/Pages/CreateAccountPage.java

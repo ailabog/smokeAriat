@@ -9,8 +9,8 @@ import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageJP;
 import com.ariat.Pages.Main.MyAccountPage;
+import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
-import com.ariat.Tests.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
