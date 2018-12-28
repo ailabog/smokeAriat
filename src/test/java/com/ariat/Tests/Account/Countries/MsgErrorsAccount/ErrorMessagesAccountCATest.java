@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
+import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.Main.CreateAccountPage;
@@ -29,7 +30,7 @@ public class ErrorMessagesAccountCATest extends BaseTest {
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private HomePageCA homePageCA;
-	private com.ariat.Pages.Header.SignInPage signInPage;
+	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);

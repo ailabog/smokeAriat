@@ -53,7 +53,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenAccessoriesPage = homePage.returnAccessoriesCategoryPage();
+		womenAccessoriesPage = homePageUK.returnAccessoriesCategoryPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		gloveProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		gloveProductPage.writeReviewClick();
@@ -71,11 +71,11 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.writeReviewClick();
-		breechProductPage.writeReviewContent(titleReview, contentReview);git
+		breechProductPage.writeReviewContent(titleReview, contentReview);
 		breechProductPage.writeReviewStar("Poor");
 		//breechProductPage.recommendProductNo();
 		breechProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");

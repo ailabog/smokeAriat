@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Header.SignInPage;
@@ -91,7 +93,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.selectAttributeSize("36");
@@ -109,7 +111,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.selectAttributeSize("34");
@@ -135,7 +137,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.selectAttributeSize("34");

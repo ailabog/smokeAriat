@@ -90,7 +90,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePage.returnWomenClothingTopsAndTshirtsPage();
+		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
@@ -113,13 +113,13 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePage.returnWomenClothingTopsAndTshirtsPage();
+		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
-				+ homePage.minicartShow());
+				+ homePageUK.minicartShow());
 
 	}
 
@@ -133,7 +133,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePage.returnWomenClothingTopsAndTshirtsPage();
+		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();

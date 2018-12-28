@@ -4,11 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.HomePage;
-import com.ariat.Pages.MyBagPage;
 import com.ariat.Pages.Categories.WomenCategories.HeritageProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.GlovesProductPage;
@@ -17,8 +14,10 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSub
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
+import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Tests.Base.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
@@ -58,7 +57,7 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -73,7 +72,7 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
@@ -90,7 +89,7 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePage.returnWomenCategoryPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
 		productPage.selectAttributeSize("5");
 		productPage.selectAttributeCalf("Slim");

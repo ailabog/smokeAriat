@@ -484,6 +484,14 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		return new ContactUsPage(driver);
 	}
 
+	public boolean minicartShow() {
+			if(WebDriverUtils.findElement(driver, minicartDialog) !=null) {
+				showMinicart = true;
+			logger.info("Product was added in cart from WishList" + showMinicart);
+		}
+		return showMinicart;
+	}
+}
 	@Override
 	public boolean add(HomePage e) {
 

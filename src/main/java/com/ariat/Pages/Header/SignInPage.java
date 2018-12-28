@@ -1,8 +1,16 @@
 package com.ariat.Pages.Header;
 
 import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.By;
+
+/**
+ * Page that contains all the elements for Sign In page and its methods: 
+ * returning customer, create account, forgot password & check order & links to Create Account page
+ * 
+ * @author aila.bogasieru@ariat.com
+ * 
+ */
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
@@ -11,27 +19,13 @@ import org.slf4j.LoggerFactory;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
-import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Utils.WebDriverUtils;
-
-/**
- * Page that contains all the elements for Sign In page and its methods:
- * returning customer, create account, forgot password & check order & links to
- * Create Account page
- * 
- * @author aila.bogasieru@ariat.com
- * 
- */
 
 public class SignInPage extends BasePage {
 
 	public static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
 
-	private By addressEmailTextBoxUS = By.xpath("//input[@placeholder='Email Address (Required)']");
-	private By addressEmailTextBoxUK = By.xpath("//input[@placeholder='Email address']");
-	private By emailAddressTextBoxDE = By.xpath("//input[@placeholder='E-Mail-Adresse (Erforderlich)']");
-	private By emailAddressTextBoxFR = By.xpath("//input[@placeholder='Adresse courriel (Requis)']");
-	// Search for Products
+	private By addressEmailTextBox = By.xpath("//input[@placeholder='Email address']");
 	private By passwordTextBox = By.id("dwfrm_login_password");
 	private By checkRememberMe = By.id("dwfrm_login_rememberme");
 	private By loginButton = By.name("dwfrm_login_login");
@@ -42,46 +36,21 @@ public class SignInPage extends BasePage {
 	private By checkOrderTextBox = By.id("dwfrm_ordertrack_orderNumber");
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
-	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
-	private By createAccountButton = By.cssSelector("#dwfrm_login_register > div > button");
+	private By checkStatusButton = By.id("dwfrm_ordertrack_findorder");
+	private By createAccountButton = By.name("dwfrm_login_register");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
-	private By errorMessageText = By.xpath("#main > div.section-container.myaccount-container > div.col-xs-12.col-md-5.col-md-offset-1 > div");
-	private By closeButton = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[1]/a/span");
-	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
-	private By errPassMsg = By.xpath("#dwfrm_login > div.error-form");
+	private By errorMessageText = By.className("error-form");
+	private By closeButton = By.className("close-button");
 
 	public SignInPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public void returningCustomer(String email, String language) {
-		switch (language) {
-		case "EnglishUK":
-			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-			break;
-			
-		case "EnglishUS":
-			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-			break;
-		case "Deutsch":
-			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-			break;
-		case "Francais":
-			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-			break;
-		default:
-			throw new RuntimeException("Language" + language + "not supported");
-		}
-
+	public void returningCustomer(String email) {
+		logger.info("Entering information for an existing customer: email address", email);
+		WebDriverUtils.enterTextBox(driver, addressEmailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void returningPassword(String password) {
@@ -119,7 +88,7 @@ public class SignInPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, sendForgotButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
-
+	
 	public void closeForgotPassword() {
 		logger.info("Closing the forgot password dialog");
 		WebDriverUtils.clickOnElementWithWait(driver, closeButton);
@@ -144,53 +113,32 @@ public class SignInPage extends BasePage {
 	public void checkStatusClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
 		logger.info("Checking the order status");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
-
+	
 	public void assertErrorMessage(String messageExpectedLabel) {
 		String message = WebDriverUtils.getElementText(driver, errorMessageText);
 		assertEquals(message, messageExpectedLabel, "Error! Error message displayed is not correct");
 	}
-
+	
 	public void assertMsg(String actualText, String messageExpected) {
 		WebDriverUtils.findText(driver, actualText);
 		assertEquals(actualText, messageExpected, "Message displayed is correct");
-
-	}
-
-	public void assertErrorMessageInexistingOrderNo(String messageExpectedLabel) {
-		String message = WebDriverUtils.getElementText(driver, errorMessageText);
-		assertEquals(message, messageExpectedLabel, "Message displayed is ok");
-	}
-
-	public void assertWrongPasswordMessage(String passwordExpectedMsg) {
-		String passwordMsg = WebDriverUtils.getElementText(driver, errPassMsg);
-		assertEquals(passwordMsg, passwordExpectedMsg, "Message displayed is ok");
-	}
-
-	public void assertWrongEmailMessage(String emailExpectedMsg) {
-		String emailMsg = WebDriverUtils.getElementText(driver, errPassMsg);
-		assertEquals(emailMsg, emailExpectedMsg, "Message displayed is ok");
-	}
-
-	public OrderDetailsPage returnOrderDetailsPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
-		return new OrderDetailsPage(driver);
+		
 	}
 
 	public CreateAccountPage returnCreateAccountPage() {
-		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
 		return new CreateAccountPage(driver);
 	}
 
 	public MyAccountPage returnMyAccountPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}
