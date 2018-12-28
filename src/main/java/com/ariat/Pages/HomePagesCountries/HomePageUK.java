@@ -529,9 +529,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
 	
-	
-	
-	
+
 	@Override
 	public boolean add(HomePage e) {
 

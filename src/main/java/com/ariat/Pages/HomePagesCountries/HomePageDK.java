@@ -15,6 +15,9 @@ import org.slf4j.LoggerFactory;
 
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
@@ -88,6 +91,13 @@ public class HomePageDK extends BasePage implements List<HomePage> {
 	private By myAccountsFooter = By.linkText("My Accounts");
 	private By wishListFooter = By.linkText("Wishlist");
 	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
+	
+	private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
+    private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+    private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
+   
+   private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
+   private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	
 
 	protected HomePageDK(WebDriver driver) {
@@ -405,6 +415,28 @@ public class HomePageDK extends BasePage implements List<HomePage> {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menText));
 		return new MenCategoryPage(driver);
+	}
+	public CasualShoeProductPage returnCasualShoeProductPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCasualShoesCategory));
+		return new CasualShoeProductPage(driver);
+	}
+	
+	public WomenAccessoriesPage returnAccessoriesCategoryPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElement(driver, accessoriesCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
+		return new WomenAccessoriesPage(driver);
+	}
+	
+	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElement(driver, topsAndTshirtsCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
+		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
 
 	@Override
