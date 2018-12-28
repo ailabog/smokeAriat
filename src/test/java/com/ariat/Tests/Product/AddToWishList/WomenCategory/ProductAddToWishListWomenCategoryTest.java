@@ -6,12 +6,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.MyAccountPage;
-import com.ariat.Pages.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
+import com.ariat.Pages.Main.MyAccountPage;
+import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
@@ -44,6 +45,7 @@ public class ProductAddToWishListWomenCategoryTest extends BaseTest {
 	private BreechProductPage breechProductPage;
 	private MyAccountWishListPage myAccountWishListPage;
 	private CreateAccountPage createAccountPage;
+	private EUCountries euCountry;
 	
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);

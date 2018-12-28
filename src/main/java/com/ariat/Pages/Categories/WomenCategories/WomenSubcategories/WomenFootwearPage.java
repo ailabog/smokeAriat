@@ -31,11 +31,7 @@ public class WomenFootwearPage extends BasePage{
 	private By womenFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearWesternCategory = By.linkText("Western");
     private By womenFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-<<<<<<< HEAD
-    private By womenFootwearCasualShoesCategory = By.xpath("Casual Show");
-=======
     private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
->>>>>>> Product
     private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By womenCategory = By.linkText("//a[contains(text(),'Women')]");
     private By menFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -52,44 +48,28 @@ public class WomenFootwearPage extends BasePage{
 	
 	public WomenFootwearRidingPage returnWomenFootwearRidingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearRidingCategory);
-<<<<<<< HEAD
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-=======
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
->>>>>>> Product
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearRidingText));
 		return new WomenFootwearRidingPage(driver);
 	}
 	
 	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategory);
-<<<<<<< HEAD
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-=======
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
->>>>>>> Product
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCountryText));
 		return new WomenFootwearCountryPage(driver);
 	}
 	
 	public WomenFootwearWesternPage returnWomenFootwearWesternCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearWesternCategory);
-<<<<<<< HEAD
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-=======
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
->>>>>>> Product
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearWesternText));
 		return new WomenFootwearWesternPage(driver);
 	}
 	
 	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategory);
-<<<<<<< HEAD
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-=======
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
->>>>>>> Product
 				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));
 		return new WomenFootwearCasualShoesPage(driver);
 	}

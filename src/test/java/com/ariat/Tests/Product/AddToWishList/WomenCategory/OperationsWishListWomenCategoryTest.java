@@ -4,8 +4,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.MyAccountPage;
+import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -41,6 +43,7 @@ public class OperationsWishListWomenCategoryTest extends BaseTest {
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
 	private TriFactorTopProductPage triFactorTopProductPage;
 	private MyWishListPage myWishListPage;
+	private EUCountries euCountry;
 
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;

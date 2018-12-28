@@ -80,15 +80,11 @@ public class WomenClothingPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingBreechesAndTightsText));
 		return new WomenClothingBreechesAndTightsPage(driver);
 	}
-<<<<<<< HEAD
-=======
-	
-	
+
 	public BreechProductPage returnBreechProductPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, breechProduct);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(breechText));
 		return new BreechProductPage(driver);
 	}
->>>>>>> Product
 }

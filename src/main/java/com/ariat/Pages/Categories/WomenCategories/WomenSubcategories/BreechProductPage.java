@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import com.ariat.Pages.BasePage;
-import com.ariat.Pages.MyAccountWishListPage;
-import com.ariat.Pages.MyBagPage;
-import com.ariat.Pages.MyWishListPage;
+import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Main.MyAccountWishListPage;
+import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class BreechProductPage extends BasePage{

@@ -75,7 +75,7 @@ public class ProductWriteReviewWomenCategoryTest extends BaseTest {
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.writeReviewClick();
-		breechProductPage.writeReviewContent(titleReview, contentReview);
+		breechProductPage.writeReviewContent(titleReview, contentReview);git
 		breechProductPage.writeReviewStar("Poor");
 		//breechProductPage.recommendProductNo();
 		breechProductPage.userInfoReview("aila", "London", "aila.bogasieru.gmail.com");
