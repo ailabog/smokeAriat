@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.HeritageProductPage;
@@ -15,7 +16,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSub
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Tests.Base.BaseTest;
@@ -32,6 +32,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class ProductAddToCartWomenCategoryTest extends BaseTest {
 
 	private Environments environment;
+	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private WomenCategoryPage womenCategoryPage;
@@ -39,11 +40,10 @@ public class ProductAddToCartWomenCategoryTest extends BaseTest {
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
-	private WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
+	private com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
 	private WomenFootwearPage womenFootwearPage;
 	private CasualShoeProductPage casualProductShoePage;
 	private HeritageProductPage productPage;
-	private EUCountries euCountry;
 
 		
 	@BeforeTest
