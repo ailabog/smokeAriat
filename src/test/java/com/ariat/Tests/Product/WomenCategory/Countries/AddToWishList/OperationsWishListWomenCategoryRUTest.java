@@ -71,7 +71,7 @@ public class OperationsWishListWomenCategoryRUTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
+		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUS");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageRU.returnWomenClothingTopsAndTshirtsPage();
@@ -89,7 +89,7 @@ public class OperationsWishListWomenCategoryRUTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
+		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUS");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageRU.returnWomenClothingTopsAndTshirtsPage();
@@ -112,7 +112,7 @@ public class OperationsWishListWomenCategoryRUTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
+		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUS");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageRU.returnWomenClothingTopsAndTshirtsPage();
@@ -132,7 +132,7 @@ public class OperationsWishListWomenCategoryRUTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
 		signInPage = homePageRU.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
+		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUS");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageRU.returnWomenClothingTopsAndTshirtsPage();

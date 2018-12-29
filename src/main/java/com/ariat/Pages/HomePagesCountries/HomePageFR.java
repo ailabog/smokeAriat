@@ -95,9 +95,11 @@ public class HomePageFR extends BasePage implements List<HomePage> {
 	private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
     private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
+    private By accessoriesCategoryFR = By.xpath("//a[text()=' Accessoires']");
    
    private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
    private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+   
 	
 	public HomePageFR(WebDriver driver) {
 		super(driver);
@@ -424,6 +426,14 @@ public class HomePageFR extends BasePage implements List<HomePage> {
 	public WomenAccessoriesPage returnAccessoriesCategoryPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.clickOnElement(driver, accessoriesCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
+		return new WomenAccessoriesPage(driver);
+	}
+	
+	public WomenAccessoriesPage returnAccessoriesCategoryPageFR() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElement(driver, accessoriesCategoryFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
 		return new WomenAccessoriesPage(driver);

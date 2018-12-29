@@ -79,7 +79,7 @@ public class ProductAddToCartWomenCategoryIETest extends BaseTest {
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		casualProductShoePage.selectAttributeSize("3");
+		casualProductShoePage.selectAttributeSize("36");
 		myBagPage = casualProductShoePage.returnMyBagPage();
 		myBagPage.cancelFreeGift();
 		myBagPage.checkMyBagNoFreeGift();
@@ -95,7 +95,7 @@ public class ProductAddToCartWomenCategoryIETest extends BaseTest {
 		homePageIE = (HomePageIE) homePage.chooseEULocation(euCountry.IE, euCountry.IE.getCurrencyISO());
 		womenCategoryPage = homePageIE.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		productPage.selectAttributeSize("5");
+		productPage.selectAttributeSize("36");
 		productPage.selectAttributeCalf("Slim");
 		productPage.selectAttributeHeight("Medium");
 		myBagPage = productPage.returnMyBagPage();

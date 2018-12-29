@@ -22,6 +22,9 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenCategoryPage extends BasePage {
 
 	private By womenFootwearCategory = By.linkText("Footwear");
+	private By womenFootwearCategoryDE = By.linkText(" Schuhe");
+	
+	private By womenFootwearCategoryFR = By.linkText(" Bottes et boots");
 	private By womenFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/a");
 
@@ -64,6 +67,9 @@ public class WomenCategoryPage extends BasePage {
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
 	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
+	private By womenAccesoriesCategoryLefytNavDE= By.linkText("Accessoires");
+	private By womenAccesoriesCategoryLefytNavFR= By.linkText("Accessoires");
+	
 	
 	public WomenCategoryPage(WebDriver driver) {
 		super(driver);
@@ -183,6 +189,20 @@ public class WomenCategoryPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
 		return new WomenFootwearPage(driver);
 	}
+	
+	public WomenFootwearPage returnWomenFootwearPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategoryFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
+		return new WomenFootwearPage(driver);
+	}
+	
+	public WomenFootwearPage returnWomenFootwearPageDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategoryDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
+		return new WomenFootwearPage(driver);
+	}
 
 	public WomenClothingPage returnWomenClothingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingCategory);
@@ -201,6 +221,20 @@ public class WomenCategoryPage extends BasePage {
 	
 	public WomenAccessoriesPage returnWomenAccessoriesCategoryLeftNavPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccesoriesCategoryLefytNav);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
+		return new WomenAccessoriesPage(driver);
+	}
+	
+	
+	public WomenAccessoriesPage returnWomenAccessoriesCategoryLeftNavPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccesoriesCategoryLefytNavFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
+		return new WomenAccessoriesPage(driver);
+	}
+	public WomenAccessoriesPage returnWomenAccessoriesCategoryLeftNavPageDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccesoriesCategoryLefytNavDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
 		return new WomenAccessoriesPage(driver);

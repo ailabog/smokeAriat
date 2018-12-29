@@ -81,7 +81,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		casualProductShoePage.selectAttributeSize("3");
+		casualProductShoePage.selectAttributeSize("7");
 		myBagPage = casualProductShoePage.returnMyBagPage();
 		myBagPage.cancelFreeGift();
 		myBagPage.checkMyBagNoFreeGift();

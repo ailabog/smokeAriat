@@ -99,8 +99,8 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		breechProductPage.selectAttributeSize("36");
 		breechProductPage.selectAttributeLength("Regular");
 		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
-		myAccountWishListPage.returningCustomer(EMAIL);
-		myAccountWishListPage.returningCustomer(PASSWORD);
+		myAccountWishListPage.returningCustomer(EMAIL, "EnglishUK");
+		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");
 	}

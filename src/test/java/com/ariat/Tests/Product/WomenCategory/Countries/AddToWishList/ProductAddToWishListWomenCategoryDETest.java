@@ -80,7 +80,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
+		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Deutsch");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
@@ -103,8 +103,8 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		breechProductPage.selectAttributeSize("36");
 		breechProductPage.selectAttributeLength("Regular");
 		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
-		myAccountWishListPage.returningCustomer(EMAIL);
-		myAccountWishListPage.returningCustomer(PASSWORD);
+		myAccountWishListPage.returningCustomer(EMAIL, "Deutsch");
+		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");
 	}

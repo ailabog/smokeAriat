@@ -25,17 +25,44 @@ public class MyAccountWishListPage extends BasePage {
 	private By findEmailWishList = By.id("dwfrm_wishlist_search_email");
 	private By findWishListButton = By.name("dwfrm_wishlist_search_search");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
+	private By addressEmailTextBoxUK = By.xpath("//input[@placeholder='Email address']");
+	private By emailAddressTextBoxDE = By.xpath("//input[@placeholder='E-Mail-Adresse (Erforderlich)']");
+	private By emailAddressTextBoxFR = By.xpath("//input[@placeholder='Adresse courriel (Requis)']");
+	private By addressEmailTextBoxUS = By.xpath("//input[@placeholder='Email Address']");
 	
 	public MyAccountWishListPage(WebDriver driver) {
 		super(driver);
 
 	}
 
-	public void returningCustomer(String email) {
-		logger.info("Entering information for an existing customer: email address", email);
-		WebDriverUtils.enterTextBox(driver, addressEmailTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	public void returningCustomer(String email, String language) {
+		switch (language) {
+		case "EnglishUK":
+			logger.info("Entering information for an existing customer: email address", email);
+			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+			
+		case "EnglishUS":
+			logger.info("Entering information for an existing customer: email address", email);
+			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+		case "Deutsch":
+			logger.info("Entering information for an existing customer: email address", email);
+			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+		case "Francais":
+			logger.info("Entering information for an existing customer: email address", email);
+			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			break;
+		default:
+			throw new RuntimeException("Language" + language + "not supported");
+		}
 	}
+
 
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);

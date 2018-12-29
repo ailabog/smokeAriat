@@ -85,7 +85,7 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
 		womenCasualShoe = womenFootwareCasualShoePage.returnCasualShoeProductPage();
-		womenCasualShoe.selectAttributeSize("6");
+		womenCasualShoe.selectAttributeSize("36");
 		myWishListPage = womenCasualShoe.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
@@ -103,8 +103,8 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		breechProductPage.selectAttributeSize("36");
 		breechProductPage.selectAttributeLength("Regular");
 		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
-		myAccountWishListPage.returningCustomer(EMAIL);
-		myAccountWishListPage.returningCustomer(PASSWORD);
+		myAccountWishListPage.returningCustomer(EMAIL, "Francais");
+		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");
 	}
