@@ -79,7 +79,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
-		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
+		myWishListPage.sendListToAFriendFR("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
 	}
 
@@ -98,7 +98,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
-		myWishListPage.setPriorityWishList("Medium");
+		myWishListPage.setPriorityWishList("Bas");
 		myWishListPage.increaseQtyWishList(3);
 		myWishListPage.decreaseQtyWishList(2);
 		myWishListPage.editItemWishList();

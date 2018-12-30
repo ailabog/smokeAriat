@@ -22,9 +22,9 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenCategoryPage extends BasePage {
 
 	private By womenFootwearCategory = By.linkText("Footwear");
-	private By womenFootwearCategoryDE = By.linkText(" Schuhe");
+	private By womenFootwearCategoryDE = By.linkText("Schuhe");
 	
-	private By womenFootwearCategoryFR = By.linkText(" Bottes et boots");
+	private By womenFootwearCategoryFR = By.linkText("Bottes et boots");
 	private By womenFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenClothingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/a");
 
@@ -69,10 +69,20 @@ public class WomenCategoryPage extends BasePage {
 	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
 	private By womenAccesoriesCategoryLefytNavDE= By.linkText("Accessoires");
 	private By womenAccesoriesCategoryLefytNavFR= By.linkText("Accessoires");
+	private By expandIconFootwear = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
+	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
 	
 	
 	public WomenCategoryPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	public void expandSubCategoriesFootwear() {
+		WebDriverUtils.clickOnElementWithWait(driver, expandIconFootwear);
+	}
+	
+	public void expandSubCategoriesAccessories() {
+		WebDriverUtils.clickOnElementWithWait(driver, expandIconAccessories);
 	}
 
 	public void womenCategory() {

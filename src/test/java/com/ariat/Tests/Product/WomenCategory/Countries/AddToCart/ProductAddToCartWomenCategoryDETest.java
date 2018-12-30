@@ -52,7 +52,7 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-   /* @Test(priority=0)
+    @Test(priority=0)
 	public void productPageWomenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -66,7 +66,7 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		glovesProductPage.selectAttributeSize("6");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
-	}*/
+	}
 	
 	@Test(priority=1)
 	public void productPageWomenCategoryAddToCartNoFreeGiftTest() {
@@ -86,7 +86,7 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
 	}
 	
-	/*@Test(priority=2)
+	@Test(priority=2)
 	public void productPageWomenCategoryAddToCartYesFreeGiftTest() {
 		logger.info("Starting product page -> Women Category Add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -100,7 +100,7 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		productPage.selectAttributeHeight("Medium");
 		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
-	}*/
+	}
 	
 	
 	@AfterTest

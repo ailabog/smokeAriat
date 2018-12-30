@@ -85,7 +85,7 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
 		womenCasualShoe = womenFootwareCasualShoePage.returnCasualShoeProductPage();
-		womenCasualShoe.selectAttributeSize("6");
+		womenCasualShoe.selectAttributeSize("36");
 		myWishListPage = womenCasualShoe.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 

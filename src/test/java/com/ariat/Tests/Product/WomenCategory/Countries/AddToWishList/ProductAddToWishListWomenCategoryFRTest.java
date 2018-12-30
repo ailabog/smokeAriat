@@ -80,7 +80,7 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
+		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Francais");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();

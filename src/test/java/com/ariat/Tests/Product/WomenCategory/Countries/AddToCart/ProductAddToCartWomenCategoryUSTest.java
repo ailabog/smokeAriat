@@ -10,7 +10,8 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.Categories.WomenCategories.HeritageProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.GlovesProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.BagsProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
@@ -41,12 +42,12 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 	private WomenCategoryPage womenCategoryPage;
 	private MyBagPage myBagPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
-	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
-	private GlovesProductPage glovesProductPage;
+	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
 	private com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
 	private WomenFootwearPage womenFootwearPage;
 	private CasualShoeProductPage casualProductShoePage;
 	private HeritageProductPage productPage;
+	private BagsProductPage bagsProductPage;
 
 		
 	@BeforeTest
@@ -62,11 +63,11 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
+		womenCategoryPage.expandSubCategoriesAccessories();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6");
-		myBagPage = glovesProductPage.returnMyBagPage();
+		womenAccessoriesBagsPage= womenAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
+		bagsProductPage = womenAccessoriesBagsPage.returnBagsProductPage();
+		myBagPage = bagsProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	
@@ -78,13 +79,14 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
+		womenCategoryPage.expandSubCategoriesAccessories();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
 		casualProductShoePage.selectAttributeSize("7");
 		myBagPage = casualProductShoePage.returnMyBagPage();
-		myBagPage.cancelFreeGift();
-		myBagPage.checkMyBagNoFreeGift();
+		//myBagPage.cancelFreeGift();
+		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
 	}
 	
@@ -113,8 +115,8 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		womenCategoryPage.quit();
 		myBagPage.quit();
 		womenAccessoriesPage.quit();
-		womenAccessoriesGlovesPage.quit();
-		glovesProductPage.quit();
+		womenAccessoriesBagsPage.quit();
+		bagsProductPage.quit();
 		womenFootwearCasualShoesCategoryPage.quit();
 		casualProductShoePage.quit();
 		productPage.quit();

@@ -33,6 +33,7 @@ public class WomenFootwearPage extends BasePage{
     private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
     private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
+   
     		
 	public WomenFootwearPage(WebDriver driver) {
 		super(driver);
@@ -41,6 +42,7 @@ public class WomenFootwearPage extends BasePage{
 	public void womenCategory() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 	}
+	
 	
 	
 	public WomenFootwearRidingPage returnWomenFootwearRidingCategoryPage() {

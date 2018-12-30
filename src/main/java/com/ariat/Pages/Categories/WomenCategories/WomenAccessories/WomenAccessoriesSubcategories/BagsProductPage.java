@@ -1,4 +1,4 @@
-package com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories;
+package com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,28 +9,26 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
-public class TriFactorTopProductPage extends BasePage{
+public class BagsProductPage extends BasePage{
 	
 	private By addToBasket = By.cssSelector("#add-to-cart");
-	private By wishList = By.cssSelector(".add-to-wishlist");
-
 	private By productBonusDialog = By.id("bonus-product-dialog");
+	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	
 	private By selectSize = By.id("va-size");
-	private By selectSizeTshirt = By.id("product-content");
-	private By increaseQty = By.xpath("//span[text()='+']");
+    private By increaseQty = By.xpath("//span[text()='+']");
 	private By decreaseQty = By.xpath("//span[text()='-']");
-	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
+	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div/button");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
-	private By starReviewExcellent = By.xpath("//span[text()='Excellent']");
-	private By starReviewGood = By.xpath("//span[text()='Good']");
-	private By starReviewAverage = By.xpath("//span[text()='Average']");
-	private By starReviewFair = By.xpath("//span[text()='Fair']");
-	private By starReviewPoor = By.xpath("//span[text()='Poor']");
+	private By starReviewExcellent = By.xpath("//a[@id='bv-radio-rating-5']/span");
+	private By starReviewGood = By.xpath("//*[@id=\"bv-radio-rating-4\"]/span[1]");
+	private By starReviewAverage = By.xpath("//*[@id=\"bv-radio-rating-3\"]/span[1]");
+	private By starReviewFair = By.xpath("//*[@id=\"bv-radio-rating-2\"]/span[1]");
+	private By starReviewPoor = By.xpath("//*[@id=\"bv-radio-rating-1\"]/span[1]");
 
 	private By titleReview = By.id("bv-text-field-title");
 	private By textReview = By.id("bv-textarea-field-reviewtext");
@@ -42,29 +40,16 @@ public class TriFactorTopProductPage extends BasePage{
 	private By insertVideoURLReview = By.id("bv-text-field-videourl_1");
 	private By addVideoButton = By.xpath("//button[text()='Add Video']");
 	private By recommendProductYes = By.id("bv-radio-isrecommended-true-label");
-	private By recommendProductNo = By.id("bv-radio-isrecommended-false-label");
+    private By recommendProductNo = By.id("bv-radio-isrecommended-false-label");
 	private By nicknameReview = By.id("bv-text-field-usernickname");
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
-	private By postReviewButton = By.xpath("//span[text()='Post Review']");
-	private By updateButton = By.id("add-to-cart");
-	
-	public TriFactorTopProductPage(WebDriver driver) {
-		super(driver);
-		
-	}
-	
-	public void selectAttributeSize(String size) {
-		WebDriverUtils.selectVisibleText(driver, selectSize, size);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	
-	public void selectAttributeSizeTShirt(String size) {
-		WebDriverUtils.selectVisibleText(driver, selectSizeTshirt, size);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
+	private By postReviewButton = By.name("bv-submit-button");
 
+	protected BagsProductPage(WebDriver driver) {
+		super(driver);
+	}
+	
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
 			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
@@ -114,6 +99,7 @@ public class TriFactorTopProductPage extends BasePage{
 	}
 
 	public void writeReviewContent(String titleReviewText, String reviewText) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, titleReview, titleReviewText);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, textReview, reviewText);
@@ -126,6 +112,7 @@ public class TriFactorTopProductPage extends BasePage{
 		if (WebDriverUtils.findElement(driver, addPhotoModal) != null) {
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, choosePhotoReview);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			// Upload the file
 		}
 	}
@@ -153,6 +140,7 @@ public class TriFactorTopProductPage extends BasePage{
 	}
 
 	public void userInfoReview(String nickname, String userLocationReview, String email) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nicknameReview, nickname);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, userLocation, userLocationReview);
@@ -165,21 +153,12 @@ public class TriFactorTopProductPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, postReviewButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
-	public void addToCart() {
-		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void update() {
-		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
 
 	public MyBagPage returnMyBagPage() {
+		WebDriverUtils.scrollLittDown(driver, addToBasket);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(productBonusDialog));
 		return new MyBagPage(driver);
 	}
@@ -187,9 +166,9 @@ public class TriFactorTopProductPage extends BasePage{
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishlistText));
 		return new MyAccountWishListPage(driver);
 	}

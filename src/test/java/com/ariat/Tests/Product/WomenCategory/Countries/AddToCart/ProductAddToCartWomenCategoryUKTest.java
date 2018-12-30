@@ -75,8 +75,8 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
 		casualProductShoePage.selectAttributeSize("3");
 		myBagPage = casualProductShoePage.returnMyBagPage();
-		myBagPage.cancelFreeGift();
-		myBagPage.checkMyBagNoFreeGift();
+		//myBagPage.cancelFreeGift();
+		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
 	}
 	
@@ -88,8 +88,8 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		productPage.selectAttributeSize("3");
-		productPage.selectAttributeCalf("Slim");
+		productPage.selectAttributeSize("6");
+		productPage.selectAttributeCalf("Extra Slim");
 		productPage.selectAttributeHeight("Medium");
 		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
