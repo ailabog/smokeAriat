@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -24,7 +24,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class OrderDetailsTest extends BaseTest {
+public class OrderDetailsUKTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;

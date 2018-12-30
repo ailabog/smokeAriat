@@ -1,4 +1,4 @@
-package com.ariat.Tests;
+package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -23,7 +23,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class OrderStatusTest extends BaseTest {
+public class OrderStatusUKTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
