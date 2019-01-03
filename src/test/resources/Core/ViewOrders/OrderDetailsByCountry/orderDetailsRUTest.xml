@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="orderDetailsRUTest" verbose="1" >
+
+	<test name="orderDetailsRUTest" >
+       <classes>
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsRUTest" />
+       </classes>
+     </test>
+</suite>

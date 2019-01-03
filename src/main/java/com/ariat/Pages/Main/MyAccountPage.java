@@ -48,6 +48,9 @@ public class MyAccountPage extends BasePage {
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
 	private By myAccountLink = By.xpath("//a[text()='My account']");
+	private By myAccountLinkUS = By.xpath("//a[contains(text(),'My Account')]");
+
+	
 
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
 	private By changePasswordLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[3]/a");
@@ -57,6 +60,9 @@ public class MyAccountPage extends BasePage {
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
 	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[50]");
+	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[50]");
+	private By viewAllOrdersLinkDE = By.xpath("//a[text()='Alle Anzeigen']");
+	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");
 	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
 
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
@@ -90,7 +96,6 @@ public class MyAccountPage extends BasePage {
 	private By myAccountLinkDE = By.xpath("//a[text()='Mein Konto']");
 	private By myAccountLinkFR = By.xpath("//a[text()='Mon compte']");
 	private By editPersonalInfoLinkUS = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div[2]/div[2]/div[1]/div[1]/a");
-	private By viewAllOrdersLinkDE = By.xpath("//a[text()='Alle Anzeigen']");
 	private By viewAllWishListLinkDE = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
 	private By addDeleteCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 
@@ -231,6 +236,26 @@ public class MyAccountPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
+	
+	public MyOrdersPage returnMyOrdersPageViewAllMiddleNavFR() {
+		WebDriverUtils.scrollLittDown(driver, viewAllOrdersLinkFR);
+		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLinkFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
+		return new MyOrdersPage(driver);
+	}
+	
+	public MyOrdersPage returnMyOrdersPageViewAllMiddleNavUS() {
+		WebDriverUtils.scrollLittDown(driver, viewAllOrdersLink);
+		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLinkUS);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
+		return new MyOrdersPage(driver);
+	}
 
 	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
 		WebDriverUtils.scrollLittDown(driver, orderStatusLink);
@@ -361,7 +386,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyOrdersPage returnMyOrdersPageTopNavDE() {
-		WebDriverUtils.moveToElement(driver, myAccountLink);
+		WebDriverUtils.moveToElement(driver, myAccountLinkDE);
 		WebDriverUtils.clickOnElementWithWait(driver, ordersTopNavLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
@@ -419,7 +444,7 @@ public class MyAccountPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(signInFR));
 		return new LogoutPage(driver);
 	}
-
+	
 	public LogoutPage returnLogoutFromMyAccountPageTopNavDE() {
 		WebDriverUtils.moveToElement(driver, myAccountLinkDE);
 		WebDriverUtils.clickOnElementWithWait(driver, logoutTopNavDE);
@@ -432,6 +457,16 @@ public class MyAccountPage extends BasePage {
 
 	public MyOrdersPage returnMyOrdersPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
+		WebDriverUtils.clickOnElementWithWait(driver, ordersTopNavLink);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
+		return new MyOrdersPage(driver);
+	}
+	
+	public MyOrdersPage returnMyOrdersPageTopNavUS() {
+		WebDriverUtils.moveToElement(driver, myAccountLinkUS);
 		WebDriverUtils.clickOnElementWithWait(driver, ordersTopNavLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));

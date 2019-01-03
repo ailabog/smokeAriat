@@ -6,9 +6,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Tests.Base.BaseTest;
 
@@ -21,18 +22,18 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class OrderStatusUKTest extends BaseTest {
+public class OrderStatusCATest extends BaseTest {
 
 	private Environments environment;
-	private EUCountries euCountry;
+	private GlobalCountries country;
 	private HomePage homePage;
-	private HomePageUK homePageUK;
+	private HomePageCA homePageCA;
 	private SignInPage signInPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
 
 
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
+	public static final String EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORD = "Parola12345!";
 	
 
@@ -46,9 +47,9 @@ public class OrderStatusUKTest extends BaseTest {
 		logger.info("Starting  order status test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		signInPage = homePageCA.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
@@ -58,7 +59,7 @@ public class OrderStatusUKTest extends BaseTest {
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
-		homePageUK.quit();
+		homePageCA.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();

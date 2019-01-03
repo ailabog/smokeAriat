@@ -9,6 +9,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Tests.Base.BaseTest;
 
@@ -21,18 +22,19 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class OrderStatusUKTest extends BaseTest {
+public class OrderStatusRUTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageUS homePageUS;
 	private SignInPage signInPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
 
 
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
+	public static final String EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORD = "Parola12345!";
 	
 
@@ -47,8 +49,9 @@ public class OrderStatusUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
@@ -59,6 +62,7 @@ public class OrderStatusUKTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageUS.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();

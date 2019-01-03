@@ -1,13 +1,13 @@
 package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
@@ -23,7 +23,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class OrderDetailsUKTest extends BaseTest {
+public class OrderDetailsDETest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
@@ -32,6 +32,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
 	private HomePageUK homePageUK;
+	private HomePageDE homePageDE;
 	private EUCountries euCountry;
 
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
@@ -48,11 +49,12 @@ public class OrderDetailsUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyOrdersPageViewAllMiddleNav();
+		myAccountPage.returnMyOrdersPageViewAllMiddleNavDE();
 		orderDetailsPage = myAccountPage.returnOrderDetailsMyOrdersPageMiddleNav();
 		orderDetailsPage.returnMyOrdersBackFromOrderDetailsPage();
 		logger.info("Finishing order details checks - View all orders test...");
@@ -64,8 +66,9 @@ public class OrderDetailsUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		orderDetailsPage = myAccountPage.returnOrderDetailsMyAccountPageMiddleNav();
@@ -79,11 +82,11 @@ public class OrderDetailsUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
-		logger.info("Finishing orders check information orders test.");
-	}
-}
+		myOrdersPage = myAccountPage.returnMyOrdersPageTopNavDE();
+		logger.info("Finishing orders check information orders test.");       
+	}}

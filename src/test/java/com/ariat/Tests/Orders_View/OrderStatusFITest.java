@@ -8,6 +8,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageFI;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Tests.Base.BaseTest;
@@ -21,12 +22,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class OrderStatusUKTest extends BaseTest {
+public class OrderStatusFITest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageFI homePageFI;
 	private SignInPage signInPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
@@ -47,7 +49,8 @@ public class OrderStatusUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageFI = (HomePageFI) homePage.chooseEULocation(euCountry.FI, euCountry.FI.getCurrencyISO());
+		signInPage = homePageFI.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -59,6 +62,7 @@ public class OrderStatusUKTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageFI.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		myOrdersPage.quit();
