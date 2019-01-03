@@ -223,6 +223,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyOrdersPage returnMyOrdersPageViewAllMiddleNav() {
+		WebDriverUtils.scrollLittDown(driver, viewAllOrdersLink);
 		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
@@ -232,6 +233,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
+		WebDriverUtils.scrollLittDown(driver, orderStatusLink);
 		WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
@@ -248,6 +250,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyWishListPage returnMyWishListPageViewAllMiddleNav() {
+		WebDriverUtils.scrollMiddlePage(driver, viewAllWishListLink);
 		WebDriverUtils.clickOnElementWithWait(driver, viewAllWishListLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
