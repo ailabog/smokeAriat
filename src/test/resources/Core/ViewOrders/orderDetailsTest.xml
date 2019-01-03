@@ -4,7 +4,7 @@
 
 	<test name="orderDetailsTest" >
        <classes>
-                 <class name="com.ariat.Tests.OrderDetailsTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsUKTest" />
        </classes>
      </test>
 </suite>

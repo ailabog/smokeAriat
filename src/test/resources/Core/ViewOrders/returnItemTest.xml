@@ -4,7 +4,7 @@
 
 	<test name="returnItemTest" >
        <classes>
-                 <class name="com.ariat.Tests.ReturnItemTest" />
+                 <class name="com.ariat.Tests.Orders_View.ReturnItemUKTest" />
        </classes>
      </test>
 </suite>
