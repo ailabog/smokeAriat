@@ -63,7 +63,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
     private By faqsFooter = By.linkText("FAQs");
     private By sizeChartsFooter = By.linkText("Size Charts");
     //private By productRegistrationFooter = By.linkText("Product Registration");
-    private By productRegistrationFooter = By.xpath("//div/div[2]/div/div/div/ul/li[7]/a");
+    private By productRegistrationFooter = By.xpath("(//a[contains(text(),'Product Registration')])[2]");
     private By shopByCountryFooter = By.linkText("Shop By Country");
     private By findARetailerFooter = By.linkText("Find a Retailer");
     private By brandShopFooter = By.linkText("Brand Shop");

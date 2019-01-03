@@ -75,6 +75,7 @@ public class CreateAccountFRTest extends BaseTest {
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
 		createAccountPage.addMeToAriatEmail();
+		createAccountPage.createAccountClick();
 		logger.info("Finishing create new account test...");
 	}
 
