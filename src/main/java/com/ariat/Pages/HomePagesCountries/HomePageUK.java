@@ -22,12 +22,14 @@ import com.ariat.Pages.Footer.ContactUsPage;
 import com.ariat.Pages.Footer.DeliveryPage;
 import com.ariat.Pages.Footer.FaqsPage;
 import com.ariat.Pages.Footer.OrderStatusPage;
+import com.ariat.Pages.Footer.SizeChartsPage;
 import com.ariat.Pages.Footer.TrackYourOrderPage;
 import com.ariat.Pages.Footer.WarrantyPage;
 import com.ariat.Pages.Header.AboutUsPage;
 import com.ariat.Pages.Header.FindARetailerPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.ReturnPolicyPage;
 import com.ariat.Utils.WebDriverUtils;
 
@@ -74,23 +76,23 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 
-	private By orderStatusFooter = By.linkText("Order Status");
-	private By returnsFooter = By.linkText("Returns");
+	private By orderStatusFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[1]/li[1]/a");
+	private By returnsFooter = By.xpath("(//a[contains(text(),'Returns')])[2]");
 	private By returnsFooterText = By.xpath("//h1[text()='Returns']");
-	private By trackYourOrderFooterLink = By.linkText("Track Your Order");
+	private By trackYourOrderFooterLink = By.xpath("(//a[contains(text(),'Track Your Order')])[2]");
 	private By trackYourOrderFooterText = By.xpath("//h1[text()='TRACK YOUR ORDER']");
-	private By warrantyFooter = By.linkText("Warranty");
+	private By warrantyFooter = By.xpath("(//a[contains(text(),'Warranty')])[2]");
 	private By warrantyText = By.xpath("//h1[text()='Warranty']");
-	private By deliveryFooter = By.linkText("Delivery");
+	private By deliveryFooter = By.xpath("//a[contains(text(),'Delivery')]");
 	private By deliveryFooterText = By.xpath("//h1[text()='Delivery Information']");
 	private By faqsFooter = By.linkText("FAQs");
 	private By faqsFooterText = By.xpath("//h1[text()='FAQs']");
-	private By sizeChartsFooter = By.linkText("Size Charts");
-
-	private By findARetailerFooter = By.linkText("Find a Retailer");
+	private By sizeChartsFooter = By.xpath("(//a[contains(text(),'Size Charts')])[2]");
+    private By sizeChartsFooterText = By.xpath("//h1[text()='SIZE CHARTS']");
+	private By findARetailerFooter = By.xpath("//a[contains(text(),'Find a Retailer')]");
 	private By findARetailerText = By.xpath("//h1[text()='Find a retailer']");
 	private By divinoStockListFooter = By.linkText("Divino Stockists");
-	private By contactUsFooter = By.linkText("Contact Us");
+	private By contactUsFooter = By.xpath("//a[contains(text(),'Contact Us')]");
 	private By emailSignUpFooter = By.linkText("Email Sign Up");
 	private By internationalFooter = By.linkText("International");
 	private By pressRoomFooter = By.linkText("Press Room");
@@ -102,7 +104,9 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By modernSlaveryActFooter = By.linkText("Modern Slavery Act");
 	private By athletesFooter = By.linkText("Athletes");
 	private By myAccountsFooter = By.linkText("My Accounts");
-	private By wishListFooter = By.linkText("Wishlist");
+	private By wishListFooter = By.xpath("(//a[contains(text(),'Wishlist')])[2]");
+	private By wishListText = By.xpath("//h1[text()='My account']");
+	private By wishListText1 = By.xpath("//h2[text()='Wishlist']");
 	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
 
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
@@ -120,9 +124,11 @@ public class HomePageUK extends BasePage implements List<HomePage> {
     
     private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
     private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-  
-	
-
+    private By emailText = By.xpath("//input[@placeholder='Email address']");
+    
+    private By myAccountFooter = By.xpath("//a[contains(text(),'My Accounts')]");
+    private By myAccountText = By.xpath("//h2[text()='Returning customer']");
+    
 	private By aboutUsHeader = By.linkText("About Us");
 
 	public void checkElementsHeader() {
@@ -443,6 +449,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 
 	public FindARetailerPage returnFindARetailer() {
+		WebDriverUtils.scrollBottomPage(driver, findARetailerFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, findARetailerFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(findARetailerText));
@@ -450,13 +457,15 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 
 	public OrderStatusPage returnOrderStatusPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, findARetailerFooter);
+		WebDriverUtils.scrollBottomPage(driver, orderStatusFooter);
+		WebDriverUtils.clickOnElementWithWait(driver, orderStatusFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(findARetailerText));
+				ExpectedConditions.invisibilityOfElementLocated(emailText));
 		return new OrderStatusPage(driver);
 	}
 
 	public ReturnPolicyPage returnReturnPolicyPage() {
+		WebDriverUtils.scrollBottomPage(driver, returnsFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, returnsFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(returnsFooterText));
@@ -464,6 +473,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 
 	public TrackYourOrderPage returnTrackYourOrderPage() {
+		WebDriverUtils.scrollBottomPage(driver, trackYourOrderFooterLink);
 		WebDriverUtils.clickOnElementWithWait(driver, trackYourOrderFooterLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(trackYourOrderFooterText));
@@ -471,6 +481,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 
 	public WarrantyPage returnWarrantyPage() {
+		WebDriverUtils.scrollBottomPage(driver, warrantyFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, warrantyFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(warrantyText));
@@ -478,6 +489,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 	
 	public DeliveryPage returnDeliveryPage() {
+		WebDriverUtils.scrollBottomPage(driver, deliveryFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, deliveryFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(deliveryFooterText));
@@ -485,19 +497,47 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 	
 	public FaqsPage returnFaqsPage() {
+		WebDriverUtils.scrollBottomPage(driver, faqsFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, faqsFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
 		return new FaqsPage(driver);
 	}
 	
+	public SizeChartsPage returnSizeChartsPage() {
+		WebDriverUtils.scrollBottomPage(driver, sizeChartsFooter);
+		WebDriverUtils.clickOnElementWithWait(driver, sizeChartsFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(sizeChartsFooterText));
+		return new SizeChartsPage(driver);
+	}
+	
 	public ContactUsPage returnContactUsPage() {
+		WebDriverUtils.scrollBottomPage(driver, contactUsFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, contactUsFooter);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
 		return new ContactUsPage(driver);
 	}
-
+	
+	public SignInPage returnSignInPageFromFooter() {
+		WebDriverUtils.scrollBottomPage(driver, myAccountFooter);
+		WebDriverUtils.clickOnElementWithWait(driver, myAccountFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
+		return new SignInPage(driver);
+	}
+	
+	public MyAccountWishListPage returnMyAccountWishListPage() {
+		WebDriverUtils.scrollBottomPage(driver, wishListFooter);
+		WebDriverUtils.clickOnElementWithWait(driver, wishListFooter);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(wishListText));
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(wishListText1));
+		return new MyAccountWishListPage(driver);
+	}
+	
 	public boolean minicartShow() {
 			if(WebDriverUtils.findElement(driver, minicartDialog) !=null) {
 				showMinicart = true;

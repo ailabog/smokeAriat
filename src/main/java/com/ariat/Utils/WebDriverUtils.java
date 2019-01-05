@@ -145,7 +145,7 @@ public class WebDriverUtils {
 	
 	public static void scrollBottomPage(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
-		jsExec.executeScript("javascript:window.scrollBy(0,3500)");
+		jsExec.executeScript("javascript:window.scrollBy(0,4000)");
 	}
 	
 	public static void scrollLittDown(WebDriver driver, By locator) {
@@ -155,7 +155,7 @@ public class WebDriverUtils {
 	
 	public static void scrollMoreDown(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
-		jsExec.executeScript("javascript:window.scrollBy(0, 500)");
+		jsExec.executeScript("javascript:window.scrollBy(0, 5000)");
 	}
 	public static void scrollMiddlePage(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;

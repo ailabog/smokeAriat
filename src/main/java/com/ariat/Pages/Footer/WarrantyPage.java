@@ -12,8 +12,8 @@ public class WarrantyPage extends BasePage{
 	
 	private By warrantyText = By.xpath("//*[@id=\"main\"]/div/div/p[1]");
 	private By warrantyText1 = By.xpath("//*[@id=\"main\"]/div/div/p[2]");
-	private By warrantyText2 = By.xpath("//*[@id=\"main\"]/div/div/p[4]");
-	private By customerServiceText = By.xpath("//p[text()='Customer Service Hours']");
+	private By warrantyText2 = By.xpath("//*[@id=\"main\"]/div/div/p[3]");
+	private By warrantyText3 = By.xpath("//*[@id=\"main\"]/div/div/p[4]");
 
 	public WarrantyPage(WebDriver driver) {
 		super(driver);
@@ -23,11 +23,11 @@ public class WarrantyPage extends BasePage{
 		String text = WebDriverUtils.getElementText(driver, warrantyText);
 		assertEquals(text, expectedText1, "1st text is displayed accordingly");
 		String text1 = WebDriverUtils.getElementText(driver, warrantyText1);
-		assertEquals(text1, expectedText2, "1st text is displayed accordingly");
+		assertEquals(text1, expectedText2, "2nd text is displayed accordingly");
 		String text2 = WebDriverUtils.getElementText(driver, warrantyText2);
-		assertEquals(text2, expectedText3, "1st text is displayed accordingly");
-		String text3 = WebDriverUtils.getElementText(driver, customerServiceText);
-		assertEquals(text3, expectedText4, "1st text is displayed accordingly");
+		assertEquals(text2, expectedText3, "3rd text is displayed accordingly");
+		String text3 = WebDriverUtils.getElementText(driver, warrantyText3);
+		assertEquals(text3, expectedText4, "4th text is displayed accordingly");
 	} 
 }
 

@@ -10,7 +10,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class DeliveryPage extends BasePage{
 	
-	private By textDelivery = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div");
+	private By textDelivery = By.xpath("//h2[text()='Delivery Charges']");
 
 	public DeliveryPage(WebDriver driver) {
 		super(driver);

@@ -16,7 +16,7 @@ import com.ariat.Tests.Base.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-public class ProductRegistrationUSTest extends BaseTest{
+public class ProductRegistrationUSFooterTest extends BaseTest{
 	 
 	private HomePage homePage;
 	private HomePageUK homePageUK;

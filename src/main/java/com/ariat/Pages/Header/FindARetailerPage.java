@@ -60,7 +60,7 @@ public class FindARetailerPage extends BasePage {
 		WebDriverUtils.selectVisibleText(driver, radiusSelect, radius);
 	}
 
-	public void search(String radius) {
+	public void search() {
 		WebDriverUtils.clickOnElementWithWait(driver, searchBtn);
 	}
 }

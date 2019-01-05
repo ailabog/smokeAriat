@@ -53,11 +53,13 @@ public class TrackYourOrderPage extends BasePage {
 	}
 
 	public void assertText1(String expectedText) {
+		WebDriverUtils.scrollLittDown(driver, checkOrder);
 		String text = WebDriverUtils.getElementText(driver, checkOrder);
 		assertEquals(text, expectedText, "Order number info text is displayed accordingly");
 	}
 
 	public void assertText3(String expectedText) {
+		WebDriverUtils.scrollMiddlePage(driver, contactUsText);
 		String text = WebDriverUtils.getElementText(driver, contactUsText);
 		assertEquals(text, expectedText, "Contact Us text is displayed accordingly");
 	}
