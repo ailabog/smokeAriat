@@ -35,9 +35,7 @@ public class WomenAccessoriesPage extends BasePage{
     private By womenAccessoriesGlovesLeftNavFR = By.linkText("Gants");
     private By womenAccessoriesGlovesLeftNavDE = By.linkText("Handschuhe");
     
-    
-	
-    		public WomenAccessoriesPage(WebDriver driver) {
+   		public WomenAccessoriesPage(WebDriver driver) {
 		super(driver);
 	}
 	

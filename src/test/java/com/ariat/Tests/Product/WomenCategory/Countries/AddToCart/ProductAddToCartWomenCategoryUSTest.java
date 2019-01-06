@@ -4,17 +4,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.Categories.WomenCategories.HeritageProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.BagsProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -23,6 +19,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Tests.Base.BaseTest;
 
+import Interfaces.ProductAttributes;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -67,7 +64,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesBagsPage= womenAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
 		bagsProductPage = womenAccessoriesBagsPage.returnBagsProductPage();
-		myBagPage = bagsProductPage.returnMyBagPage();
+		myBagPage = ProductAttributes.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	
@@ -83,8 +80,8 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		casualProductShoePage.selectAttributeSize("7");
-		myBagPage = casualProductShoePage.returnMyBagPage();
+		ProductAttributes.selectAttributeSize("7");
+		myBagPage = ProductAttributes.returnMyBagPage();
 		//myBagPage.cancelFreeGift();
 		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
@@ -99,10 +96,10 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		productPage.selectAttributeSize("5");
-		productPage.selectAttributeCalf("Slim");
-		productPage.selectAttributeHeight("Medium");
-		myBagPage = productPage.returnMyBagPage();
+		ProductAttributes.selectAttributeSize("5");
+		ProductAttributes.selectAttributeCalf("Slim");
+		ProductAttributes.selectAttributeHeight("Medium");
+		myBagPage = ProductAttributes.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	

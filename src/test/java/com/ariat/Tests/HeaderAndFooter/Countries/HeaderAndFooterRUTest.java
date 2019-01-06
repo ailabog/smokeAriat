@@ -47,7 +47,7 @@ public class HeaderAndFooterRUTest extends BaseTest{
 	}
 	
 	@Test(priority=1)
-	public void ruFooter() {
+	public void RUFooter() {
 		logger.info("Starting the check for Footer Russia elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

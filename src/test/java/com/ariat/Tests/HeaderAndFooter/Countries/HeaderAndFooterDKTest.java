@@ -43,7 +43,7 @@ public class HeaderAndFooterDKTest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		homePageUK.checkElementsHeader();
+		homePageDK.checkElementsHeader();
 		logger.info("Finishing the check for Header Denmark elements:");
 	}
 	
@@ -54,7 +54,7 @@ public class HeaderAndFooterDKTest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		homePageUK.checkElementsFooter();
+		homePageDK.checkElementsFooter();
 		logger.info("Finishing the check for Footer Denmark elements:");
 	}
 

@@ -60,7 +60,7 @@ public class LogoutDKTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop("Eglish");
+		myAccountPage.logoutTop("Deutsch");
 		logger.info("I was succesfully logged out from the application!");
 	}
 

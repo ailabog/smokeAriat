@@ -18,6 +18,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageJP;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Tests.Base.BaseTest;
 
+import Interfaces.ProductAttributes;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -74,8 +75,8 @@ public class ProductAddToCartWomenCategoryJPTest extends BaseTest {
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		casualProductShoePage.selectAttributeSize("36");
-		myBagPage = casualProductShoePage.returnMyBagPage();
+		ProductAttributes.selectAttributeSize("36");
+		myBagPage = ProductAttributes.returnMyBagPage();
 		myBagPage.cancelFreeGift();
 		myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
@@ -89,10 +90,10 @@ public class ProductAddToCartWomenCategoryJPTest extends BaseTest {
 		homePageJP = (HomePageJP) homePage.chooseGlobalLocation(country.JP, country.JP.getCurrencyISO());
 		womenCategoryPage = homePageJP.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		productPage.selectAttributeSize("536");
-		productPage.selectAttributeCalf("Slim");
-		productPage.selectAttributeHeight("Medium");
-		myBagPage = productPage.returnMyBagPage();
+		ProductAttributes.selectAttributeSize("536");
+		ProductAttributes.selectAttributeCalf("Slim");
+		ProductAttributes.selectAttributeHeight("Medium");
+		myBagPage = ProductAttributes.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	

@@ -42,7 +42,7 @@ public class HeaderAndFooterJPTest extends BaseTest{
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageJP = (HomePageJP) homePage.chooseGlobalLocation(country.JP, country.JP.getCurrencyISO());
-		homePageUK.checkElementsHeader();
+		homePageJP.checkElementsHeader();
 		logger.info("Finishing the check for Header Japan elements:");
 	}
 	
@@ -52,7 +52,7 @@ public class HeaderAndFooterJPTest extends BaseTest{
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageJP = (HomePageJP) homePage.chooseGlobalLocation(country.JP, country.JP.getCurrencyISO());
-		homePageUK.checkElementsFooter();
+		homePageJP.checkElementsFooter();
 		logger.info("Finishing the check for Footer Japan elements:");
 	}
 

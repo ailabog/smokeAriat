@@ -24,6 +24,7 @@ import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
+import Interfaces.ProductAttributes;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -85,8 +86,8 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
 		womenCasualShoe = womenFootwareCasualShoePage.returnCasualShoeProductPage();
-		womenCasualShoe.selectAttributeSize("36");
-		myWishListPage = womenCasualShoe.returnMyWishListPage();
+		ProductAttributes.selectAttributeSize("36");
+		myWishListPage = ProductAttributes.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
 	
@@ -100,9 +101,9 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.selectAttributeSize("36");
-		breechProductPage.selectAttributeLength("Regular");
-		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
+		ProductAttributes.selectAttributeSize("36");
+		ProductAttributes.selectAttributeLength("Regular");
+		myAccountWishListPage = ProductAttributes.returnMyAccountWishListPage();
 		myAccountWishListPage.returningCustomer(EMAIL, "Francais");
 		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
@@ -119,9 +120,9 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.selectAttributeSize("34");
-		breechProductPage.selectAttributeLength("Long");
-		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
+		ProductAttributes.selectAttributeSize("34");
+		ProductAttributes.selectAttributeLength("Long");
+		myAccountWishListPage = ProductAttributes.returnMyAccountWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -146,9 +147,9 @@ public class ProductAddToWishListWomenCategoryFRTest extends BaseTest {
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.selectAttributeSize("34");
-		breechProductPage.selectAttributeLength("Long");
-		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
+		ProductAttributes.selectAttributeSize("34");
+		ProductAttributes.selectAttributeLength("Long");
+		myAccountWishListPage = ProductAttributes.returnMyAccountWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
 		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);

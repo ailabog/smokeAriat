@@ -17,6 +17,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageRU;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
+import Interfaces.ProductAttributes;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -77,12 +78,12 @@ public class ProductWriteReviewWomenCategoryRUTest extends BaseTest {
 		womenCategoryPage = homePageRU.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.writeReviewClick();
-		breechProductPage.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
-		breechProductPage.writeReviewStar("Poor");
+		ProductAttributes.writeReviewClick();
+		ProductAttributes.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
+		ProductAttributes.writeReviewStar("Poor");
 		//breechProductPage.recommendProductNo();
-		breechProductPage.userInfoReview(USER, CITY, EMAIL);
-		breechProductPage.postReview();
+		ProductAttributes.userInfoReview(USER, CITY, EMAIL);
+		ProductAttributes.postReview();
 		logger.info("Finishing product page -> Women Category don't recommend product for Breech product test.");
 	}
 

@@ -2,12 +2,9 @@ package com.ariat.Tests.FooterTests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyAccountWishListPage;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import com.ariat.Enums.EUCountries;
@@ -44,7 +41,7 @@ public class WishListFooterUKTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-	@Test(priority=0)
+	@Test
 	public void productPageWomenCategoryAddToWishListLoggedTest() {
 		logger.info("Starting WishList page test...");
 		homePage = new HomePage(new ChromeDriver());
