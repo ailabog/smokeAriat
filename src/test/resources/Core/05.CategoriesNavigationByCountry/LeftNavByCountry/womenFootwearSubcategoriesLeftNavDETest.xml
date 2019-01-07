@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="leftNavMenFootwearSubcategoriesDETest" verbose="1" >
+<suite name="leftNavWomenFootwearSubcategoriesDETest" verbose="1" >
 
-	<test name="leftNavMenFootwearSubcategoriesDETest" >
+	<test name="leftNavMWomenFootwearSubcategoriesDETest" >
        <classes>
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDETest" />
        </classes>

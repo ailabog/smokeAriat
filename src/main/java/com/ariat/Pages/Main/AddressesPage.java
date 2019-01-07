@@ -24,7 +24,7 @@ public class AddressesPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(AddressesPage.class);
 
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
-	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
+	private By addressesText = By.xpath("//h1[text()='Addresses']");
 	private By addressTextDE = By.xpath("//*[contains(text(), Adressen']");
 	private By editLink = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[2]/a[1]");
 	private By deleteLink = By.xpath("//a[text()='Delete']");
@@ -36,7 +36,8 @@ public class AddressesPage extends BasePage {
 	private By addressesTable = By.xpath("//*[@id=\\\"main\\\"]/div/div[2]/div[1]");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
-	private By loadMoreButton = By.xpath("//button[@title='Load More']");
+	//private By loadMoreButton = By.xpath("//button[@title='Load More']");
+	private By loadMoreButton = By.xpath("//div[@id='addresses']/div[127]/button");
 	private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
 	private By loadMoreButtonFR = By.xpath("//button[@title='Afficher plus']");
 
@@ -210,7 +211,7 @@ public class AddressesPage extends BasePage {
 	public void loadMoreAddesses() {
 		do {
 			logger.info("Loading more addresses...");
-			WebDriverUtils.scrollDown(driver, loadMoreButton);
+			WebDriverUtils.scrollMiddlePage(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -223,7 +224,7 @@ public class AddressesPage extends BasePage {
 	public void loadMoreAddessesDE() {
 		do {
 			logger.info("Loading more addresses...");
-			WebDriverUtils.scrollDown(driver, loadMoreButtonDE);
+			WebDriverUtils.scrollMiddlePage(driver, loadMoreButtonDE);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonDE);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -236,7 +237,7 @@ public class AddressesPage extends BasePage {
 	public void loadMoreAddessesFR() {
 		do {
 			logger.info("Loading more addresses...");
-			WebDriverUtils.scrollDown(driver, loadMoreButtonFR);
+			WebDriverUtils.scrollMiddlePage(driver, loadMoreButtonFR);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonFR);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);

@@ -22,7 +22,7 @@ public class WomenFootwearWesternPage extends BasePage {
 	private By fashionFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 
 	private By performanceFootwearWesternCategoryLeftNav = By
-			.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
+			.linkText("Performance");
 	private By fashionFootwearWesternCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
 
 	public WomenFootwearWesternPage(WebDriver driver) {

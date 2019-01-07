@@ -75,8 +75,8 @@ public class WomenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void leftNavigationMenFootwearRidingSubcategories() {
-		logger.info("Starting left navigation Men Footwear Riding sub-categories test...");
+	public void leftNavigationWomenFootwearRidingSubcategories() {
+		logger.info("Starting left navigation Women Footwear Riding sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -90,12 +90,12 @@ public class WomenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 		womenFootwearAllWeatherRidingPage = womenRidingPage.returnWomenFootwearAllWeatherRidingCategoryPageLeftNav();
 		womenFootwearRidingEndurancePage = womenRidingPage.returnWomenFootwearRidingEnduranceCategoryPageLeftNav();
 		womenFootwearRidingBarnyardPage = womenRidingPage.returnWomenFootwearRidingBarnyardCategoryPageLeftNav();
-		logger.info("Finishing left navigation Men Footwear Riding sub-categories test.");
+		logger.info("Finishing left navigation Women Footwear Riding sub-categories test.");
 	}
 
 	@Test(priority = 1)
-	public void leftNavigationMenFootwearCountrySubcategories() {
-		logger.info("Starting left navigation Men Footwear Country sub-categories test...");
+	public void leftNavigationWomenFootwearCountrySubcategories() {
+		logger.info("Starting left navigation Women Footwear Country sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -107,12 +107,12 @@ public class WomenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 		womenFootwearCountryRubberPage = womenFootwearCountryPage.returnWomenFootwearCountryRubberCategoryPageLeftNav();
 		womenFootwearCountryToolBootsPage = womenFootwearCountryPage.returnWomenFootwearCountryTallBootsCategoryPageLeftNav();
 		womenFootwearCountryWalkingPage = womenFootwearCountryPage.returnWomenFootwearCountryWalkingCategoryPageLeftNav();
-		logger.info("Finishing left navigation Men Footwear Country sub-categories test.");
+		logger.info("Finishing left navigation Women Footwear Country sub-categories test.");
 	}
 
 	@Test(priority = 2)
-	public void leftNavigationMenFootwearWesternSubcategories() {
-		logger.info("Starting left navigation Men Footwear Western sub-categories test...");
+	public void leftNavigationWomenFootwearWesternSubcategories() {
+		logger.info("Starting left navigation Women Footwear Western sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -123,14 +123,14 @@ public class WomenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 		womenFootwearWesternPerformancePage = womenFootwearWesternPage
 				.returnWomenFootwearWesternPerformanceCategoryPageLeftNav();
 		womenFootwearWesternFashionPage = womenFootwearWesternPage.returnWomenFootwearWesternFashionCategoryLeftNav();
-		logger.info("Finishing left navigation Men Footwear Western sub-categories test.");
+		logger.info("Finishing left navigation Women Footwear Western sub-categories test.");
 	}
 
 	
 
 	@Test(priority = 3)
-	public void leftNavigationMenFootwearCasualShoesSubcategories() {
-		logger.info("Starting left navigation Men Footwear Casual shoes sub-category test...");
+	public void leftNavigationWomenFootwearCasualShoesSubcategories() {
+		logger.info("Starting left navigation Women Footwear Casual shoes sub-category test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -140,7 +140,7 @@ public class WomenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 		womenFootwearCasualShoesPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		womenFootwearCasual = womenFootwearCasualShoesPage.returnWomenFootwearCasualShoesPageCategoryPageLeftNav();
 		womenFootwearSneakersPage = womenFootwearCasualShoesPage.returnWomenFashionSneakersCategoryPageLeftNav();
-		logger.info("Finishing left navigation Men Footwear Casual shoes sub-category test.");
+		logger.info("Finishing left navigation Women Footwear Casual shoes sub-category test.");
 	}
 
 	@AfterTest

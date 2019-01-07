@@ -90,7 +90,7 @@ public class MenFootwearSubcategoriesLeftNavFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
-		menFootwearPage = menCategoryPage.returnMenFootwearPage();
+		menFootwearPage = menCategoryPage.returnMenFootwearPageFR();
 		menRidingPage = menFootwearPage.returnMenRidingCategoryPageLeftNav();
 		menFootwearRidingToolBootsPage = menRidingPage.returnMenFootwearRidingToolBootsPageLeftNav();
 		menFootwearRidingPaddockPage = menRidingPage.returnMenFootwearRidingPaddockPageLeftNav();
@@ -107,8 +107,9 @@ public class MenFootwearSubcategoriesLeftNavFRTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
-		menFootwearPage = menCategoryPage.returnMenFootwearPage();
+		menFootwearPage = menCategoryPage.returnMenFootwearPageFR();
 		menFootwearCountryPage = menFootwearPage.returnMenFootwearCountryCategoryPageLeftNav();
 		menFootwearCountryOutdoorPage = menFootwearCountryPage.returnMenFootwearCountryOutdoorCategoryPageLeftNav();
 		menFootwearCountryRubberPage = menFootwearCountryPage.returnMenFootwearCountryRubberCategoryPageLeftNav();
@@ -123,8 +124,9 @@ public class MenFootwearSubcategoriesLeftNavFRTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
-		menFootwearPage = menCategoryPage.returnMenFootwearPage();
+		menFootwearPage = menCategoryPage.returnMenFootwearPageFR();
 		menFootwearWesternPage = menFootwearPage.returnMenFootwearWesternCategoryPageLeftNav();
 		menFootwearWesternPerformancePage = menFootwearWesternPage
 				.returnMenFootwearWesternPerformanceCategoryPageLeftNav();
@@ -138,8 +140,9 @@ public class MenFootwearSubcategoriesLeftNavFRTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
-		menFootwearPage = menCategoryPage.returnMenFootwearPage();
+		menFootwearPage = menCategoryPage.returnMenFootwearPageFR();
 		menFootwearWorkPage = menFootwearPage.returnMenFootwearWorkCategoryPageLeftNav();
 		menFootwearWorkLaceUpPage = menFootwearWorkPage.returnMenFootwearWorkLaceUpCategoryPageLeftNav();
 		menFootwearWorkPullOnPage = menFootwearWorkPage.returnMenFootwearWorkPullOnCategoryPageLeftNav();
@@ -152,8 +155,9 @@ public class MenFootwearSubcategoriesLeftNavFRTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
-		menFootwearPage = menCategoryPage.returnMenFootwearPage();
+		menFootwearPage = menCategoryPage.returnMenFootwearPageFR();
 		menFootwearCasualShoesPage = menFootwearPage.returnMenFootwearCasualShoesCategoryPageLeftNav();
 		menFootwearSneakersPage = menFootwearCasualShoesPage.returnMenFashionSneakersCategoryPageLeftNav();
 		logger.info("Finishing left navigation Men Footwear Casual shoes sub-category test.");

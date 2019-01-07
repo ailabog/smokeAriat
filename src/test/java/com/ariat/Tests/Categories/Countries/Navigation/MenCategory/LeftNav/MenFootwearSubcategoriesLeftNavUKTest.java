@@ -98,7 +98,7 @@ public class MenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 		logger.info("Finishing left navigation Men Footwear Riding sub-categories test.");
 	}
 
-/*	@Test(priority = 1)
+	@Test(priority = 1)
 	public void leftNavigationMenFootwearCountrySubcategories() {
 		logger.info("Starting left navigation Men Footwear Country sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -154,7 +154,7 @@ public class MenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 		menFootwearCasualShoesPage = menFootwearPage.returnMenFootwearCasualShoesCategoryPageLeftNav();
 		menFootwearSneakersPage = menFootwearCasualShoesPage.returnMenFashionSneakersCategoryPageLeftNav();
 		logger.info("Finishing left navigation Men Footwear Casual shoes sub-category test.");
-	}*/
+	}
 
 	@AfterTest
 	public void tearDown() {
