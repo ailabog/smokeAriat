@@ -5,16 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.Footer.CarrersPage;
-import com.ariat.Pages.Footer.PressRoomPage;
+
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
+
+/**
+ * Implements About Us Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 
 public class AboutUsPage extends BasePage{
 	
 	private By carrersLink = By.linkText("Careers");
 	private By carrersText = By.xpath("//*contains[text(), 'CAREERS']");
-	private By pressRoomLink = By.linkText("'Press Room");
-	private By pressRoomText = By.xpath("//*contains[text(), Press room']");
+	
 
 	public AboutUsPage(WebDriver driver) {
 		super(driver);
@@ -25,12 +31,5 @@ public class AboutUsPage extends BasePage{
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(carrersText));
 		return new CarrersPage(driver);
-	}
-	
-	public PressRoomPage returnPressRoom() {
-		WebDriverUtils.clickOnElementWithWait(driver, pressRoomLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(pressRoomText));
-		return new PressRoomPage(driver);	
 	}
 }

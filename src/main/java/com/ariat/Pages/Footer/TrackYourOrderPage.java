@@ -10,6 +10,13 @@ import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Track Your Order Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class TrackYourOrderPage extends BasePage {
 
 	private By checkOrder = By.xpath("//h2[text()='Check an order / request return']");

@@ -8,6 +8,12 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Shipping Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class ShippingPage extends BasePage{
 	
 	private By text1 = By.xpath("//h2[text()='Ariat.com Shipping Guidelines:']");

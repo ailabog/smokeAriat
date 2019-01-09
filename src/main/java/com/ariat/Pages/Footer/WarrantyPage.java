@@ -8,6 +8,13 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Warranty Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class WarrantyPage extends BasePage{
 	
 	private By warrantyText = By.xpath("//*[@id=\"main\"]/div/div/p[1]");

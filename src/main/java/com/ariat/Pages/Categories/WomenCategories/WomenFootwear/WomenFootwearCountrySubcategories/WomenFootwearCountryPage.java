@@ -7,6 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Women Footwear Country Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class WomenFootwearCountryPage extends BasePage {
 
 	private By tallBootsFootwearCountryCategoryleftNav = By

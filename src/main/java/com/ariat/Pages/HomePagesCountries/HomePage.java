@@ -33,7 +33,10 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
-	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
+	//private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
+	private By countrySelectorWindow = By.xpath("/html/body/div[9]");
+	
+	
 	private By continueShoppingButton = By.xpath("//*[@id=\"button\"]/button");
 
 	public HomePage(WebDriver driver) {

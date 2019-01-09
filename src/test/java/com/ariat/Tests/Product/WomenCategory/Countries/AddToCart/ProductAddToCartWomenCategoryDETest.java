@@ -64,8 +64,8 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6");
-		myBagPage = glovesProductPage.returnMyBagPage();
+		ProductAttributes.selectAttributeSize("6");
+		myBagPage = ProductAttributes.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	

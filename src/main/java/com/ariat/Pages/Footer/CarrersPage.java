@@ -8,6 +8,13 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Carrers Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class CarrersPage extends BasePage{
 	
 	private By text1 = By.xpath("//p[text()='At Ariat, we measure our success in our people. It's their commitment, talent, work ethic, and endless dedication that helps us reach our goals. We're dedicated to creating a motivated and energetic team, and giving them an environment where they can thrive. "

@@ -19,6 +19,13 @@ import org.slf4j.LoggerFactory;
 
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Addresses Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class AddressesPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(AddressesPage.class);
@@ -36,7 +43,7 @@ public class AddressesPage extends BasePage {
 	private By addressesTable = By.xpath("//*[@id=\\\"main\\\"]/div/div[2]/div[1]");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
-	//private By loadMoreButton = By.xpath("//button[@title='Load More']");
+	// private By loadMoreButton = By.xpath("//button[@title='Load More']");
 	private By loadMoreButton = By.xpath("//div[@id='addresses']/div[127]/button");
 	private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
 	private By loadMoreButtonFR = By.xpath("//button[@title='Afficher plus']");
@@ -74,9 +81,10 @@ public class AddressesPage extends BasePage {
 	}
 
 	public boolean checkAddress(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
+			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
 			for (WebElement cell : cells) {
 				while (cell.getText() == addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null
@@ -96,7 +104,8 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void makeDefaultAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -118,7 +127,8 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void deleteAddressCreatedNo(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -142,7 +152,8 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void deleteAddressCreatedYes(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -166,7 +177,8 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void editAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable.findElements((SearchContext) By.tagName("div"));
+		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
@@ -193,14 +205,14 @@ public class AddressesPage extends BasePage {
 		String makeDefault = substring + addressLabel;
 		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
 	}
-	
+
 	public void assertMakeDefault(String expectedAddress) {
 		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
 		String substring = "DEFAULT | ";
 		String makeDefault = substring + addressLabel;
 		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
 	}
-	
+
 	public void assertMakeDefaultUS(String expectedAddress) {
 		String addressLabel = WebDriverUtils.getElementText(driver, addressNicknameUS);
 		String substring = "DEFAULT | ";
@@ -216,11 +228,11 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
-		while(! WebDriverUtils.isElementDisplayed(driver, addressesText)){
+		while (!WebDriverUtils.isElementDisplayed(driver, addressesText)) {
 			WebDriverUtils.scrollUp(driver, addressesText);
-		  }
 		}
-	
+	}
+
 	public void loadMoreAddessesDE() {
 		do {
 			logger.info("Loading more addresses...");
@@ -229,11 +241,11 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonDE);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButtonDE) == null);
-		while(! WebDriverUtils.isElementDisplayed(driver, addressTextDE)){
+		while (!WebDriverUtils.isElementDisplayed(driver, addressTextDE)) {
 			WebDriverUtils.scrollUp(driver, addressTextDE);
-		  }
 		}
-	
+	}
+
 	public void loadMoreAddessesFR() {
 		do {
 			logger.info("Loading more addresses...");
@@ -242,10 +254,10 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonFR);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
-		while(! WebDriverUtils.isElementDisplayed(driver, addressesText)){
+		while (!WebDriverUtils.isElementDisplayed(driver, addressesText)) {
 			WebDriverUtils.scrollUp(driver, addressesText);
-		  }
 		}
+	}
 
 	public void addAddress() {
 		logger.info("Adding new address...");

@@ -9,6 +9,13 @@ import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenFootwearWork
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This contains Men Work Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class MenWorkPage extends BasePage{
 	
 	private By footwearSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/a/span[2]");

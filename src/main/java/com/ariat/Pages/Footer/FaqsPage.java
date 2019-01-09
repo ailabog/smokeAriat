@@ -8,6 +8,12 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Faqs Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class FaqsPage extends BasePage {
 
 	private By customerText = By.xpath("//div[text()='Customer Care']");

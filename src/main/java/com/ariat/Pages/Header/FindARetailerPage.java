@@ -6,6 +6,13 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Find A Retailer Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class FindARetailerPage extends BasePage {
 
 	private By countrySelect = By.id("dwfrm_storelocator_countries_countryCode");

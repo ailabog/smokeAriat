@@ -1,5 +1,11 @@
 package com.ariat.Enums;
 
+/**
+ * List of US phones
+ * @author aila.bogasieru@ariat.com
+ */
+
+
 public enum PhoneUS {
 	phone1("(208)252-7991"), 
 	phone2("(442)226-3903"), 

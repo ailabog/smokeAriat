@@ -27,6 +27,7 @@ public class MenCategoryPage extends BasePage{
     private By menFootwearCategoryFR = By.linkText("Bottes et boots");
 	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing')(");
+	private By menClothingCategoryDE = By.xpath("(//a[contains(text(),'Bekleidung')])[2]");
 	private By menClothingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
@@ -35,6 +36,7 @@ public class MenCategoryPage extends BasePage{
   
     private By menCategory = By.xpath("//a[contains(text(),'Men')]");
     private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+    private By menCategoryDE = By.xpath("//a[contains(text(),'Herren')]");
     
     private By footwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
     private By clothingCategoryLeftNav =By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
@@ -65,7 +67,7 @@ public class MenCategoryPage extends BasePage{
 	private By show108ItemLinkFR = By.xpath("108 Articles");
 	
 	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[2]/a");
-	private By show108ItemLink = By.xpath("108 Items");
+	private By show108ItemLink = By.linkText("108 Items");
 	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
 	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[3]/a");
 	private By prevPaginationButtonUp = By
@@ -75,7 +77,7 @@ public class MenCategoryPage extends BasePage{
 	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
 	private By prevPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
 	private By recommendedLink = By.linkText("Recommended");
-	private By priceHighToLowLink = By.linkText("Price (High to Low");
+	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
 	private By bestSellersLinkFR = By.linkText("Meilleurs Ventes");
@@ -88,6 +90,12 @@ public class MenCategoryPage extends BasePage{
 	
 	public void menCategory() {
 		WebDriverUtils.moveToElement(driver, menCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+	}
+	
+	public void menCategoryDE() {
+		WebDriverUtils.moveToElement(driver, menCategoryDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
 	public void clickSortUp() {
@@ -249,6 +257,13 @@ public class MenCategoryPage extends BasePage{
 	
 	public MenClothingPage returnMenClothingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(menClothingText));
+		return new MenClothingPage(driver);
+	}
+	
+	public MenClothingPage returnMenClothingCategoryPageDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingText));
 		return new MenClothingPage(driver);

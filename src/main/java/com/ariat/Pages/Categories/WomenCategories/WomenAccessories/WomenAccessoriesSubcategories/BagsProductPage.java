@@ -3,6 +3,12 @@ package com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccesso
 import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 
+/**
+ * Implements product attributes methods for Bags Product Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 
 import Interfaces.ProductAttributes;
 

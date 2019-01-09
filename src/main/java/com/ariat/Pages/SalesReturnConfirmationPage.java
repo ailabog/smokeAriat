@@ -8,6 +8,12 @@ import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This contains Sales Return Confirmation Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class SalesReturnConfirmationPage extends BasePage{
 	
 	

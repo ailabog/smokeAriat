@@ -8,6 +8,12 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Delivery Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class DeliveryPage extends BasePage{
 	
 	private By textDelivery = By.xpath("//h2[text()='Delivery Charges']");

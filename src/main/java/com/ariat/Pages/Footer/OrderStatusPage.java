@@ -12,6 +12,12 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Order Status Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class OrderStatusPage extends BasePage{
 
 	public static final Logger logger = LoggerFactory.getLogger(SignInPage.class);

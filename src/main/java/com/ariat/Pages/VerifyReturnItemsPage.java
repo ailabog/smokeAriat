@@ -7,6 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This contains Verify Return Items Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class VerifyReturnItemsPage extends BasePage{
 	
 	private By editReturnButton = By.name("dwfrm_returns_verifyreturn_edit");

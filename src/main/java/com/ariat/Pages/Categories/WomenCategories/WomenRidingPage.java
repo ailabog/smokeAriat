@@ -21,6 +21,12 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFoot
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Women Riding Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class WomenRidingPage extends BasePage{
 
 	private By shopRidingButton = By

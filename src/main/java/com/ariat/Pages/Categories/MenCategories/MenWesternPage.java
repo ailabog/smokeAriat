@@ -9,6 +9,12 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFoot
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This contains Men Western Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class MenWesternPage extends BasePage{
 	
 	private By footwearSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/a/span[2]");

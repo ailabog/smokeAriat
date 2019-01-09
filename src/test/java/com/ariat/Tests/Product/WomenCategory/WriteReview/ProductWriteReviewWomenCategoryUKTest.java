@@ -61,12 +61,12 @@ public class ProductWriteReviewWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = homePageUK.returnAccessoriesCategoryPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		gloveProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		gloveProductPage.writeReviewClick();
-		gloveProductPage.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
-		gloveProductPage.writeReviewStar("Excellent");
-		gloveProductPage.recommendProductYes();
-		gloveProductPage.userInfoReview(USER, CITY, EMAIL);
-		gloveProductPage.postReview();
+		ProductAttributes.writeReviewClick();
+		ProductAttributes.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
+		ProductAttributes.writeReviewStar("Excellent");
+		ProductAttributes.recommendProductYes();
+		ProductAttributes.userInfoReview(USER, CITY, EMAIL);
+		ProductAttributes.postReview();
 		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
 	}
 

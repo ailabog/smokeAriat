@@ -11,6 +11,12 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearCountry.MenFootwearCo
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This contains Men Country Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class MenCountryPage extends BasePage{
 	
 	private By footwearSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/a/span[2]");

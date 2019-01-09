@@ -9,6 +9,12 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearWes
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Women Western Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class WomenWesternPage extends BasePage{
 	
 	private By footwearSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/a/span[2]");

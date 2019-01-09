@@ -6,6 +6,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Contains methods specific to Product Registration US Page
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class ProductRegistrationPage extends BasePage {
 
 	

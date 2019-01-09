@@ -9,6 +9,12 @@ import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Size Chart Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class SizeChartsPage extends BasePage{
 	
 	private By text1 = By.xpath("//*[@id=\"main\"]/div/div/div/div/div[1]/div[1]");

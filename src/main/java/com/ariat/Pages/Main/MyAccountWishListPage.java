@@ -11,6 +11,14 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This page is designed implement methods specific to My Account WishList Page
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class MyAccountWishListPage extends BasePage {
 
 	public static final Logger logger = LoggerFactory.getLogger(MyAccountWishListPage.class);

@@ -85,17 +85,17 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
-		menCategoryPage.menCategory();
-		menFootwearPage = menCategoryPage.returnMenFootwearPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
+		menFootwearPage = menCategoryPage.returnMenFootwearPageDE();
+		menCategoryPage.menCategoryDE();
 		menFootwearRidingPage = menFootwearPage.returnMenFootwearRidingCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFootwearWesterenPage = menFootwearPage.returnMenFootwearWesternCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFootwearCountryPage = menFootwearPage.returnMenFootwearCountryCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFootwearCasualShoesPage = menFootwearPage.returnMenFootwearCasualShoesCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFootwearWorkPage = menFootwearPage.returnMenFootwearWorkCategoryPage();
 		logger.info("Finishing navigate Men Footwear sub-categories test.");
 	}
@@ -108,15 +108,15 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
-		menCategoryPage.menCategory();
-		menClothingPage = menCategoryPage.returnMenClothingCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
+		menClothingPage = menCategoryPage.returnMenClothingCategoryPageDE();
+		menCategoryPage.menCategoryDE();
 		menClothingOuterwearPage = menClothingPage.returnMenClothingOuterwearCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menClothingBreechesPage = menClothingPage.returnMenClothingBreechesCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menClothingSweatTshirtAndWoodiesPage = menClothingPage.returnMenClothingSweatTshirtAndWoodiesCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menClothingTopsAndTshirtsPage = menClothingPage.returnMenClothingTopsAndTshirtsCategoryPage();
 		logger.info("Finishing navigate Men Clothing sub-categories test.");
 	}
@@ -129,15 +129,15 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menAccessoriesBagsPage = menAccessoriesPage.returnMenAccessoriesBagsCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menAccessoriesGlovesPage = menAccessoriesPage.returnMenAccessoriesGlovesCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menAccessoriesHeadwearPage = menAccessoriesPage.returnMenAccessoriesHeadwearCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menAccessoriesSocksPage = menAccessoriesPage.returnMenAccessoriesSocksCategoryPage();
 		logger.info("Finishing navigate men Accessories sub-categories test.");
 	}
@@ -150,11 +150,11 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFeaturedPage = menCategoryPage.returnMenFeaturedCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFeaturedTeamCollectionPage = menFeaturedPage.returMenFeaturedTeamCollectionCategoryPage();
-		menCategoryPage.menCategory();
+		menCategoryPage.menCategoryDE();
 		menFeaturedVentTekPage = menFeaturedPage.returnMenFeaturedVentTekCategoryPage();
 		logger.info("Finishing navigate Men Featured sub-categories test.");
 	} 

@@ -7,6 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * This contains Men Fashion Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class MenFashionPage extends BasePage{
 	
 	private By footwearSwitcher = By.xpath("//*[@id=\"main\"]/div[1]/ul/li/a/span[2]");

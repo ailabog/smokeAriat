@@ -8,6 +8,12 @@ import org.slf4j.LoggerFactory;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
+/**
+ * Implements Email Sign Up Page
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class EmailSignUpPage extends BasePage{
 	
 	private static final Logger logger = LoggerFactory.getLogger(EmailSignUpPage.class);

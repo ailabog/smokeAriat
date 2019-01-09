@@ -2,6 +2,12 @@ package com.ariat.Pages;
 
 import static org.testng.Assert.assertEquals;
 
+/**
+ * This contains Return Items Page' locators, methods and links with next pages
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
