@@ -18,7 +18,7 @@ import com.ariat.Utils.WebDriverUtils;
 public class MenFootwearWorkPage extends BasePage{
 	
 	private By laceUpFootwearWorkText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By laceUpFootwearWorkCategoryLeftNav = By.linkText("Lace Up");
+	private By laceUpFootwearWorkCategoryLeftNav = By.xpath("(//a[contains(text(),'Lace Up')])[3]");
 	private By pullOnFootwearWorkText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By pullOnFootwearWorkCategoryLeftNav = By.linkText("Pull On");
 

@@ -57,7 +57,7 @@ public class MyAccountPage extends BasePage {
 	private By addAddressLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
-	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[50]");
+	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[57]");
 	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[50]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[text()='Alle Anzeigen']");
 	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");

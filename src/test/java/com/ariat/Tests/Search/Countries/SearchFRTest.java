@@ -22,7 +22,7 @@ public class SearchFRTest extends BaseTest {
 	private EUCountries euCountry;
 	private Environments environment;
 	private final String OPTION = "boots";
-	private final String MESSAGE = "Product results for: ";
+	private final String MESSAGE = "Résultats pour : ";
 
 	
 	@BeforeTest

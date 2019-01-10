@@ -82,7 +82,7 @@ public class WomenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
 		womenRidingPage = womenFootwearPage.returnWomennRidingCategoryPageLeftNav();
 		womenFootwearRidingToolBootsPage = womenRidingPage.returnWomenFootwearRidingToolBootsPageLeftNav();
 		womenFootwearRidingPaddockPage = womenRidingPage.returnWomenFootwearRidingPaddockPagePageLeftNav();
@@ -101,7 +101,7 @@ public class WomenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
 		womenFootwearCountryPage = womenFootwearPage.returnWomenFootwearCountryCategoryPage();
 		womenFootwearCountryFashionPage = womenFootwearCountryPage.returnWomenFootwearCountryFashionCategoryPageLeftNav();
 		womenFootwearCountryRubberPage = womenFootwearCountryPage.returnWomenFootwearCountryRubberCategoryPageLeftNav();
@@ -118,7 +118,7 @@ public class WomenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
 		womenFootwearWesternPage = womenFootwearPage.returnWomenFootwearWesternCategoryPage();
 		womenFootwearWesternPerformancePage = womenFootwearWesternPage
 				.returnWomenFootwearWesternPerformanceCategoryPageLeftNav();
@@ -136,7 +136,7 @@ public class WomenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
 		womenFootwearCasualShoesPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		womenFootwearCasual = womenFootwearCasualShoesPage.returnWomenFootwearCasualShoesPageCategoryPageLeftNav();
 		womenFootwearSneakersPage = womenFootwearCasualShoesPage.returnWomenFashionSneakersCategoryPageLeftNav();

@@ -34,7 +34,7 @@ public class AddressesPage extends BasePage {
 	private By addressesText = By.xpath("//h1[text()='Addresses']");
 	private By addressTextDE = By.xpath("//*[contains(text(), Adressen']");
 	private By editLink = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[2]/a[1]");
-	private By deleteLink = By.xpath("//a[text()='Delete']");
+	private By deleteLink = By.xpath("//a[@title='Delete']");
 	private By makeDefaultLink = By.xpath("a[text()='Make default']");
 	private By deleteButton = By.name("dwfrm_profile_address_remove");
 	private By cancelButtonDialog = By.xpath("//span[text()='Cancel']");
