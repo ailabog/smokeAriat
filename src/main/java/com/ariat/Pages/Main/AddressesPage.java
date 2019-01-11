@@ -43,7 +43,6 @@ public class AddressesPage extends BasePage {
 	private By addressesTable = By.xpath("//*[@id=\\\"main\\\"]/div/div[2]/div[1]");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
-	// private By loadMoreButton = By.xpath("//button[@title='Load More']");
 	private By loadMoreButton = By.xpath("//div[@id='addresses']/div[127]/button");
 	private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
 	private By loadMoreButtonFR = By.xpath("//button[@title='Afficher plus']");

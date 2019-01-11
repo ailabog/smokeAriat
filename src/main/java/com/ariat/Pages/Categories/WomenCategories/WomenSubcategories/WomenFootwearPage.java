@@ -28,6 +28,8 @@ public class WomenFootwearPage extends BasePage{
 	private By womenFootwearRidingCategory = By.linkText("Riding");
 	private By womenFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearCountryCategory = By.linkText("Country");
+	private By womenFootwearCountryCategoryFR = By.linkText("Campagne");
+	
 	private By womenFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearWesternCategory = By.linkText("Western");
     private By womenFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -57,6 +59,13 @@ public class WomenFootwearPage extends BasePage{
 	
 	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCountryText));
+		return new WomenFootwearCountryPage(driver);
+	}
+	
+	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategoryFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCountryText));
 		return new WomenFootwearCountryPage(driver);

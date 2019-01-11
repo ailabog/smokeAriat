@@ -102,7 +102,7 @@ public class WomenFootwearSubcategoriesLeftNavFRTest extends BaseTest {
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		womenCategoryPage = homePageFR.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageFR();
-		womenFootwearCountryPage = womenFootwearPage.returnWomenFootwearCountryCategoryPage();
+		womenFootwearCountryPage = womenFootwearPage.returnWomenFootwearCountryCategoryPageFR();
 		womenFootwearCountryFashionPage = womenFootwearCountryPage.returnWomenFootwearCountryFashionCategoryPageLeftNav();
 		womenFootwearCountryRubberPage = womenFootwearCountryPage.returnWomenFootwearCountryRubberCategoryPageLeftNav();
 		womenFootwearCountryToolBootsPage = womenFootwearCountryPage.returnWomenFootwearCountryTallBootsCategoryPageLeftNav();
