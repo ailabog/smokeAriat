@@ -10,7 +10,6 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.BreechProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
@@ -22,6 +21,7 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
+import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 

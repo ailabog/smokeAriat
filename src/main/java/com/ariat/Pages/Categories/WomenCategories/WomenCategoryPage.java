@@ -9,6 +9,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothi
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -264,8 +265,7 @@ public class WomenCategoryPage extends BasePage {
 		return new HeritageProductPage(driver);
 		
 	}
-	
-	
+		
 	public WomenClothingPage returnWomenClothingCategoryLeftNavPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, leftnavClothing);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,

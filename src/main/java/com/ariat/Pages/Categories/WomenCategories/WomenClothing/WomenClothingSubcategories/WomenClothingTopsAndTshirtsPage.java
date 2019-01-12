@@ -3,6 +3,8 @@ package com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSu
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Products.TriFactorTopProductPage;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.ariat.Utils.WebDriverUtils;
 

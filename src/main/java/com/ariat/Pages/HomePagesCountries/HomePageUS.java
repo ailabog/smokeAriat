@@ -17,11 +17,11 @@ import org.slf4j.LoggerFactory;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.CasualShoeProductPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.ProductRegistrationPage;
+import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 

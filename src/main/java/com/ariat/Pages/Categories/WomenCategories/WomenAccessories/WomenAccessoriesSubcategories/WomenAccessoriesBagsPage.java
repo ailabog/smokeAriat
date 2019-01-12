@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 

@@ -1,4 +1,4 @@
-package com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories;
+package com.ariat.Pages.Products;
 
 
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,7 @@ import Interfaces.ProductAttributes;
 
 public class GlovesProductPage extends BasePage implements ProductAttributes{
 	
-	protected GlovesProductPage(WebDriver driver) {
+	public GlovesProductPage(WebDriver driver) {
 		super(driver);
 	}
 }

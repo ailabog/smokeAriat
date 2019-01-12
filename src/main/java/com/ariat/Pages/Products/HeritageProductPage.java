@@ -1,4 +1,4 @@
-package com.ariat.Pages.Categories.WomenCategories;
+package com.ariat.Pages.Products;
 
 
 import org.openqa.selenium.WebDriver;
