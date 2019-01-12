@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="editAddressAllCountriesTest" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="editAddressAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressDETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressDKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressIETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFRTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUSTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFITest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressJPTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressRUTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressCATest" />
+        </classes>
+     </test>
+</suite>

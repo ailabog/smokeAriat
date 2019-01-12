@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="addCreditCardJPTest" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="addCreditCardJPTest" >
+       <classes>
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardJPTest" />
+       </classes>
+     </test>
+</suite>

@@ -42,7 +42,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private static final Logger logger = LoggerFactory.getLogger(HomePageUK.class);
 
 	private By ariatLogo = By.className("global-nav-logo-svg");
-	private By signIn = By.xpath("//a[text()= 'Sign In']");
+	private By signIn = By.xpath("//a[text()='Sign In']");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By menCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/a");
 	private By kidsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[3]/a");

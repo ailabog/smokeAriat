@@ -126,7 +126,7 @@ public class MyAccountMiddleNavigationFRTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyOrdersPageViewAllMiddleNav();
+		myAccountPage.returnMyOrdersPageViewAllMiddleNavFR();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing orders France test...");

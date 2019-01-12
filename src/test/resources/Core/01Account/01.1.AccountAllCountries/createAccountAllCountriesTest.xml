@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="createAccountAllCountriesTest" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="createAccountAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFRTest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountIETest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFITest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDKTest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCATest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountRUTest" />
+                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountJPTest" />
+        </classes>
+     </test>
+</suite>

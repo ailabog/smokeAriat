@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="myAccountLeftNavAllCountriesTest" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="myAccountLeftNavAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUSTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationFRTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationFITest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationRUTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationJPTest" />
+        </classes>
+     </test>
+</suite>

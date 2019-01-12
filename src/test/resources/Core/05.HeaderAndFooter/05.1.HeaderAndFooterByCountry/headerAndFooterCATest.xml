@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="headerAndFooterCATest" verbose="1" >
+<parameter name="environment" value="${environment}" />
+	<test name="headerAndFooterCATest" >
+       <classes>
+                   <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterCATest" />
+       </classes>
+     </test>
+</suite>

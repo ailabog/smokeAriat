@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="errorMessagesAccountRU" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="errorMessagesAccountRU" >
+       <classes>
+                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountRUTest" />
+               
+       </classes>
+     </test>
+</suite>

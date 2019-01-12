@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="deleteCreditCardRUTest" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="deleteCreditCardRUTest" >
+       <classes>
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardRUTest" />
+                 
+       </classes>
+     </test>
+</suite>

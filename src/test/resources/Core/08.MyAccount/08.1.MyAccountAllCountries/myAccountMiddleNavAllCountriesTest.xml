@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="myAccountMiddleNavAllCountriesTest" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="myAccountMiddleNavAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationFRTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationFITest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDKTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationCATest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationRUTest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationJPTest" />
+        </classes>
+     </test>
+</suite>

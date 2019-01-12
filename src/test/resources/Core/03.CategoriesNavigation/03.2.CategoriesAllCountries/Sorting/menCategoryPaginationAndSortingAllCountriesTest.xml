@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="menCategoryPaginationAndSortingAllCountriesTest" verbose="1" >
+<parameter name="environment" value="${environment}" />
+	<test name="menCategoryPaginationAndSortingAllCountriesTest" >
+       <classes>
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingUKTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingUSTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingDETest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingFRTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingFITest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingIETest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingDKTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingCATest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingJPTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingRUTest" />
+                              
+       </classes>
+     </test>
+</suite>
