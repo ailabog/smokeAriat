@@ -2,9 +2,11 @@ package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Utils.WebDriverUtils;
 
@@ -29,7 +31,12 @@ public class MyBagPage extends BasePage {
 	private By checkoutButton = By.xpath("//a[text()='Checkout']");
 	private By continueShoppingButton = By.xpath("//a[contains(text(),'Continue shopping')]");
 	private By bonusDialog = By.id("bonus-product-dialog");
-	private By checkoutBtn = By.xpath("//a[contains(text(),'Checkout')]");
+	//private By checkoutBtn = By.xpath("//a[contains(text(),'Checkout')]");
+	private By closeMinicart = By.xpath("//span[@class='icon-close close-minicart']");
+	private By checkoutBtn = By.xpath("//a[text()='Checkout']");
+	private By continueShoppingBtn = By.xpath("//a[text()='Continue shopping']");
+	private By myBagCheckoutText = By.xpath("//p[text()='My Bag']");
+	private By ariatLogo = By.className("global-nav-logo-svg");
 
 	public MyBagPage(WebDriver driver) {
 		super(driver);
@@ -74,5 +81,35 @@ public class MyBagPage extends BasePage {
 		} else {
 			logger.info("My bag does not contain the right elements");
 		}
+	}
+	
+	public void closeMiniCart() {
+		logger.info("Closing minicart..");
+		WebDriverUtils.clickOnElementWithWait(driver, closeMinicart);
+		}
+	
+	public void clickCheckout() {
+		logger.info("Going to checkout process..");
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
+	}
+	
+	public void clickContinueShopping() {
+		logger.info("Continue shopping..");
+		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingBtn);
+	}
+	
+	public CheckoutPage returnCheckoutPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(myBagCheckoutText));
+		return new CheckoutPage(driver);
+	}
+	
+
+	public HomePage returnHomePage() {
+		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingBtn);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(ariatLogo));
+		return new HomePage(driver);
 	}
 }
