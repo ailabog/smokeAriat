@@ -21,7 +21,9 @@ public interface ProductAttributes {
 	By myAccountText = By.xpath("//*contains[text()='My account']");
 	By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 
-	By selectSize = By.id("va-size");
+	//By selectSize = By.id("va-size");
+	By selectSize = By.id("select2-va-size-container");
+	//By selectSize = By.xpath("//select[@placeholder='Select Size']");
 	By selectCalf = By.id("va-calf");
 	By selectHeight = By.id("va-height");
 	By increaseQty = By.xpath("//span[text()='+']");

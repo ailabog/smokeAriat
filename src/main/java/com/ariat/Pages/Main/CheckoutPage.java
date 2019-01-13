@@ -37,7 +37,8 @@ public class CheckoutPage extends BasePage {
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By emailAccount = By.xpath("//input[@placeholder='Email address']");
 	private By shippingAddressText = By.id("el-collapse-head-3303");
-
+	
+	
 
 	protected CheckoutPage(WebDriver driver) {
 		super(driver);
