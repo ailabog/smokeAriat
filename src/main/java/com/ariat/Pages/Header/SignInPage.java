@@ -29,7 +29,7 @@ public class SignInPage extends BasePage {
 
 	private By addressEmailTextBoxUS = By.xpath("//input[@placeholder='Email Address (Required)']");
 	private By addressEmailTextBoxUK = By.xpath("//input[@placeholder='Email address']");
-	private By emailAddressTextBoxDE = By.xpath("//input[@placeholder='E-Mail-Adresse (Erforderlich)']");
+	private By emailAddressTextBoxDE = By.xpath("//input[@placeholder='E-Mail-Adresse (Erforderlich)");
 	private By emailAddressTextBoxFR = By.xpath("//input[@placeholder='Adresse courriel (Requis)']");
 	// Search for Products
 	private By passwordTextBox = By.id("dwfrm_login_password");

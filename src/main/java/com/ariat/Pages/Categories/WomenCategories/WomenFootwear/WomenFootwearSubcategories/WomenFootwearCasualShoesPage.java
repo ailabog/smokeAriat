@@ -16,7 +16,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenFootwearCasualShoesPage extends BasePage{
 	
-	private By casualShoeFuse = By.xpath("//*[@id=\"424eebcf34f27da1d56bc5e306\"]/div[1]/a/picture/img");
+	private By casualShoeFuse = By.xpath("img[contains(@title, 'Fuse')]");
 	private By fuseText = By.xpath("//*contains[text()='Fuse']");
 
 	public WomenFootwearCasualShoesPage(WebDriver driver) {

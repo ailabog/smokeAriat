@@ -64,12 +64,12 @@ public class ProductWriteReviewWomenCategoryIETest extends BaseTest {
 		womenAccessoriesPage = homePageIE.returnAccessoriesCategoryPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		gloveProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		ProductAttributes.writeReviewClick();
-		ProductAttributes.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
-		ProductAttributes.writeReviewStar("Excellent");
-		ProductAttributes.recommendProductYes();
-		ProductAttributes.userInfoReview(USER, CITY, EMAIL);
-		ProductAttributes.postReview();
+		gloveProductPage.writeReviewClick();
+		gloveProductPage.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
+		gloveProductPage.writeReviewStar("Excellent");
+		gloveProductPage.recommendProductYes();
+		gloveProductPage.userInfoReview(USER, CITY, EMAIL);
+		gloveProductPage.postReview();
 		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
 	}
 
@@ -83,12 +83,12 @@ public class ProductWriteReviewWomenCategoryIETest extends BaseTest {
 		womenCategoryPage = homePageIE.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
-		ProductAttributes.writeReviewClick();
-		ProductAttributes.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
-		ProductAttributes.writeReviewStar("Poor");
+		breechProductPage.writeReviewClick();
+		breechProductPage.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
+		breechProductPage.writeReviewStar("Poor");
 		//breechProductPage.recommendProductNo();
-		ProductAttributes.userInfoReview(USER, CITY, EMAIL);
-		ProductAttributes.postReview();
+		breechProductPage.userInfoReview(USER, CITY, EMAIL);
+		breechProductPage.postReview();
 		logger.info("Finishing product page -> Women Category don't recommend product for Breech product test.");
 	}
 

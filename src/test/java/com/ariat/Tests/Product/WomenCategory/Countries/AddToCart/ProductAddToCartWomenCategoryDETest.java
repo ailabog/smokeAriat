@@ -63,8 +63,8 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		ProductAttributes.selectAttributeSize("6");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		glovesProductPage.selectAttributeSize("6");
+		myBagPage = glovesProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	
@@ -77,10 +77,10 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
-		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
+		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPageDE();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		ProductAttributes.selectAttributeSize("36");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		casualProductShoePage.selectAttributeSize("36");
+		myBagPage = casualProductShoePage.returnMyBagPage();
 		myBagPage.cancelFreeGift();
 		myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
@@ -95,10 +95,10 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		ProductAttributes.selectAttributeSize("37");
-		ProductAttributes.selectAttributeCalf("Slim");
-		ProductAttributes.selectAttributeHeight("Medium");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		productPage.selectAttributeSize("37");
+		productPage.selectAttributeCalf("Slim");
+		productPage.selectAttributeHeight("Medium");
+		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	

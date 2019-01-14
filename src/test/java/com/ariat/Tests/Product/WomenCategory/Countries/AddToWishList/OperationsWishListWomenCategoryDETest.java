@@ -78,8 +78,8 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
-		ProductAttributes.selectAttributeSize("Small");
-		myWishListPage = ProductAttributes.returnMyWishListPage();
+		triFactorTopProductPage.selectAttributeSize("Small");
+		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriendDE("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
 	}
@@ -96,13 +96,13 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
-		ProductAttributes.selectAttributeSize("Small");
-		myWishListPage = ProductAttributes.returnMyWishListPage();
+		triFactorTopProductPage.selectAttributeSize("Small");
+		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Medium");
 		myWishListPage.increaseQtyWishList(3);
 		myWishListPage.decreaseQtyWishList(2);
 		myWishListPage.editItemWishList();
-		ProductAttributes.update();
+		triFactorTopProductPage.update();
 		// myWishListPage.goBackFromEditToWishlist();
 		logger.info("Finishing product page -> Women Category Add to WishList  & different actions test.");
 	}
@@ -120,8 +120,8 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
-		ProductAttributes.selectAttributeSize("Small");
-		myWishListPage = ProductAttributes.returnMyWishListPage();
+		triFactorTopProductPage.selectAttributeSize("Small");
+		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 				+ homePageUK.minicartShow());
@@ -141,8 +141,8 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
 		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
-		ProductAttributes.selectAttributeSize("Small");
-		myWishListPage = ProductAttributes.returnMyWishListPage();
+		triFactorTopProductPage.selectAttributeSize("Small");
+		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
 		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."

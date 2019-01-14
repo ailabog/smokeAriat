@@ -60,8 +60,8 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		ProductAttributes.selectAttributeSize("6");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		glovesProductPage.selectAttributeSize("6");
+		myBagPage = glovesProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	
@@ -75,8 +75,8 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		ProductAttributes.selectAttributeSize("3");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		casualProductShoePage.selectAttributeSize("3");
+		myBagPage = casualProductShoePage.returnMyBagPage();
 		//myBagPage.cancelFreeGift();
 		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
@@ -95,10 +95,10 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		//productPage.selectAttributeHeight("Medium");
 		//myBagPage = productPage.returnMyBagPage();
 		
-		ProductAttributes.selectAttributeSize("6");
-		ProductAttributes.selectAttributeCalf("Extra Slim");
-		ProductAttributes.selectAttributeHeight("Medium");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		productPage.selectAttributeSize("6");
+		productPage.selectAttributeCalf("Extra Slim");
+		productPage.selectAttributeHeight("Medium");
+		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	

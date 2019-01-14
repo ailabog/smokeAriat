@@ -64,7 +64,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesBagsPage= womenAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
 		bagsProductPage = womenAccessoriesBagsPage.returnBagsProductPage();
-		myBagPage = ProductAttributes.returnMyBagPage();
+		myBagPage = bagsProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 	
@@ -80,8 +80,8 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
 		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		ProductAttributes.selectAttributeSize("7");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		casualProductShoePage.selectAttributeSize("7");
+		myBagPage = casualProductShoePage.returnMyBagPage();
 		//myBagPage.cancelFreeGift();
 		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
@@ -96,10 +96,10 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
 		productPage = womenCategoryPage.returnHeritageProduct();
-		ProductAttributes.selectAttributeSize("5");
-		ProductAttributes.selectAttributeCalf("Slim");
-		ProductAttributes.selectAttributeHeight("Medium");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		productPage.selectAttributeSize("5");
+		productPage.selectAttributeCalf("Slim");
+		productPage.selectAttributeHeight("Medium");
+		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
 	}
 	
