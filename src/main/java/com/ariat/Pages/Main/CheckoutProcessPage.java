@@ -19,7 +19,8 @@ public class CheckoutProcessPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(CheckoutProcessPage.class);
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
-	private By selectOption = By.xpath("//input[@placeholder='Select']");
+	private By arrowCountry = By.xpath("//div[@id='el-collapse-content-4312']/div/form/div[5]/div[2]/div/div/div/div/span/span/i");
+	private By selectOption = By.xpath("//div[5]/div[2]/div/div/div/div/input");
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");
@@ -68,9 +69,10 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, editBagLink);
 	}
 
-	public void selectAddress(String optionAddress) {
+	public void selectAddress() {
 		logger.info("Selecting address..");
-		WebDriverUtils.selectVisibleText(driver, selectOption, optionAddress);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.clickOnElementWithWait(driver, selectOption);
 	}
 
 	public void enterFName(String nameValue) {

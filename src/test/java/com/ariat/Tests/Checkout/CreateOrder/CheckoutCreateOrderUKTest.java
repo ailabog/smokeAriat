@@ -52,7 +52,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
-	private MyAccountPage myAccountPage;
+	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -85,12 +85,12 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		ProductAttributes.selectAttributeSize("7");
-		myBagPage = ProductAttributes.returnMyBagPage();
+		glovesProductPage.selectAttributeSize("7");
+		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		checkoutPage.checkProductImage();
-		checkoutPage.enterPromoCode("243432");
-		checkoutPage.clickApply();
+		//checkoutPage.checkProductImage();
+		//checkoutPage.enterPromoCode("CSA25HNJ-X3DE684");
+		//checkoutPage.clickApply();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
@@ -98,7 +98,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectAddress(COUNTRY);
+		//checkoutProcessPage.selectAddress();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.enterConfirmEmail(EMAIL);
@@ -114,28 +114,50 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessCompletePage.checkItem();
 		checkoutProcessCompletePage.enterPassword(PASSWORD);
 		checkoutProcessCompletePage.confirmPassword(PASSWORD);
-		//myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
+		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
 	}
-	
-	/*@Test(priority=1)
-	public void productPageWomenCategoryAddToCartNoFreeGiftTest() {
-		logger.info("Starting product page -> Women Category Casual Shoe prduct category add to cart test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
-		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
-		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		ProductAttributes.selectAttributeSize("3");
-		myBagPage = ProductAttributes.returnMyBagPage();
+    
+    @Test(priority=1)
+   	public void checkoutCreateNewOrderBeingLogged() {
+   		logger.info("Starting checkout -> create new order without being logged test...");
+   		homePage = new HomePage(new ChromeDriver());
+   		homePage.load(environment.DEVELOPMENT.getURL());
+   		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+   		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+   		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+   		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+   		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+   		glovesProductPage.selectAttributeSize("7");
+   		myBagPage = glovesProductPage.returnMyBagPage();
+   		checkoutPage = myBagPage.returnCheckoutPage();
+   		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+   		checkoutProcessPage.enterFName(FIRST_NAME);
+   		checkoutProcessPage.enterLName(LAST_NAME);
+   		checkoutProcessPage.enterAddress(ADDRESS);
+   		checkoutProcessPage.enterAddress1(ADDRESS1);
+   		checkoutProcessPage.enterCity(CITY);
+   		checkoutProcessPage.enterZipCode(ZIP_CODE);
+   		//checkoutProcessPage.selectAddress();
+   		checkoutProcessPage.enterMobile(MOBILE);
+   		checkoutProcessPage.enterEmail(EMAIL);
+   		checkoutProcessPage.enterConfirmEmail(EMAIL);
+   		checkoutProcessPage.continueCheckout();
+   		checkoutProcessPage.continueCheckout();
+   		checkoutProcessPage.enterCardName(CARD_NAME);
+   		//checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+   		//checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+   		//checkoutProcessPage.selectExpirationMonth(MONTH);
+   		//checkoutProcessPage.selectExpirationYear(YEAR);
+   		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+   		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+   		checkoutProcessCompletePage.checkItem();
+   		//checkoutProcessCompletePage.enterPassword(PASSWORD);
+   		//checkoutProcessCompletePage.confirmPassword(PASSWORD);
+   		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
+   		logger.info("Finishing checkout -> create new order without being logged test.");
+   	}
 		
-		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
-	}*/
-	
-	
-	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

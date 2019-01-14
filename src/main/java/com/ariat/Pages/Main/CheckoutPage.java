@@ -19,18 +19,18 @@ public class CheckoutPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(CheckoutPage.class);
 
-	private By productImage = By.xpath("//img[@title='Heritage II Ellipse Tall Riding Boot']");
-	private By productNameLink = By.xpath("//a[@title='Heritage II Ellipse Tall Riding Boot']");
+	private By productImage = By.xpath("//img[@title='Insulated Pro Grip']");
+	private By productNameLink = By.xpath("//a[@title='Insulated Pro Grip']");
 	private By addToWishListLink = By.xpath(
 			"//*[@id=\"app\"]/main/div/div[1]/div/div/div[1]/div[2]/div[2]/div/div[4]/div/span/div/div[1]/button/span");
 	private By removeLink = By.xpath(
 			"//*[@id=\"app\"]/main/div/div[1]/div/div/div[1]/div[2]/div[2]/div/div[4]/div/span/div/div[2]/button/span");
 	private By increseQty = By.xpath("//i[@class='el-icon-plus']");
 	private By decreaseQty = By.xpath("//i[@class='el-icon-minus']");
-	private By promoCode = By.xpath("//input[@placeholder='Promo code']");
-	private By applyPromoCode = By.xpath("//div[@class='el-form-item__content']");
+	private By promoCode = By.xpath("(//input[@type='text'])[4]");
+	private By applyPromoCode = By.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
 	private By payPalCheckoutBtn = By.xpath("//*[@id=\"paypal-animation-content\"]/div[1]/div[1]");
-	private By checkoutCheckoutBtn = By.xpath("//a//button[span()='Checkout']");
+	private By checkoutCheckoutBtn = By.xpath("//section[@id='app']/main/div/div/div/div/div/div[4]/div[2]/a/button");
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
 	private By returnPolicyBtn = By.xpath("//a[text()='Return Policies']");
 	private By continueShoppingCheckoutBtn = By.xpath("//a[text()='Continue Shopping']");
@@ -101,7 +101,7 @@ public class CheckoutPage extends BasePage {
 	}
 	
 	public HomePage returnHomePage() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingCheckoutBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(ariatLogo));
 		return new HomePage(driver);
@@ -115,7 +115,8 @@ public class CheckoutPage extends BasePage {
 	}
 	
 	public CheckoutProcessPage returnCheckoutProcessPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingCheckoutBtn);
+		WebDriverUtils.scrollLittDown(driver, checkoutCheckoutBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(shippingAddressText));
 		return new CheckoutProcessPage(driver);

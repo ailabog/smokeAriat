@@ -35,7 +35,7 @@ public class MyBagPage extends BasePage {
 	private By closeMinicart = By.xpath("//span[@class='icon-close close-minicart']");
 	private By checkoutBtn = By.xpath("//a[text()='Checkout']");
 	private By continueShoppingBtn = By.xpath("//a[text()='Continue shopping']");
-	private By myBagCheckoutText = By.xpath("//p[text()='My Bag']");
+	private By myBagCheckoutText = By.cssSelector("p.cart_my-bag-heading");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 
 	public MyBagPage(WebDriver driver) {
@@ -90,6 +90,7 @@ public class MyBagPage extends BasePage {
 	
 	public void clickCheckout() {
 		logger.info("Going to checkout process..");
+		WebDriverUtils.scrollBottomPage(driver, checkoutBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
 	}
 	
@@ -100,8 +101,8 @@ public class MyBagPage extends BasePage {
 	
 	public CheckoutPage returnCheckoutPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(myBagCheckoutText));
+		//WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		//		ExpectedConditions.invisibilityOfElementLocated(myBagCheckoutText));
 		return new CheckoutPage(driver);
 	}
 	
