@@ -17,7 +17,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenClothingTopsAndTshirtsPage extends BasePage {
 
-	private By topsTshirtProduct = By.xpath("//img[contains(@title='Tri Factor 1/4 Zip Baselayer')]");
+	private By topsTshirtProduct = By.xpath("//img[contains(@title, 'Tri Factor 1/4 Zip Baselayer')]");
 	private By topTshirtText = By.xpath("//*contains[text(), 'Tri Factor 1/4 Zip Baselayer']");
 
 	public WomenClothingTopsAndTshirtsPage(WebDriver driver) {

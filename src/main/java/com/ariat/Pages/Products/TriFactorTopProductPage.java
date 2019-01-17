@@ -191,6 +191,7 @@ public class TriFactorTopProductPage extends BasePage{
 	}
 
 	public void update() {
+		WebDriverUtils.scrollLittDown(driver, updateButton);
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -214,6 +215,7 @@ public class TriFactorTopProductPage extends BasePage{
 	}
 
 	public MyWishListPage returnMyWishListPage() {
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,

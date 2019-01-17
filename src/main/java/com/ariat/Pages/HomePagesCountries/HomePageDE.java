@@ -98,7 +98,8 @@ public class HomePageDE extends BasePage implements List<HomePage> {
    
    private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
    private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	
+   private By topsAndTshirtsCategoryDE = By.xpath("//a[text()='Oberteile & T-Shirts']");
+   
 	protected HomePageDE(WebDriver driver) {
 		super(driver);
 	}
@@ -444,6 +445,14 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.clickOnElement(driver, topsAndTshirtsCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
+		return new WomenClothingTopsAndTshirtsPage(driver);
+	}
+	
+	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsPageDE() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElement(driver, topsAndTshirtsCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
 		return new WomenClothingTopsAndTshirtsPage(driver);

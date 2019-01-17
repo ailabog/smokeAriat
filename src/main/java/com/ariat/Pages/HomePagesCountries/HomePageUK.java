@@ -122,7 +122,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
     private By minicartDialog = By.id("mini-cart-products-ariat");
     private boolean showMinicart;
     
-    private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
+    private By topsAndTshirtsCategory = By.xpath("//a[text()='Tops & T-Shirts']");
     private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By emailText = By.xpath("//input[@placeholder='Email address']");
     
@@ -569,7 +569,6 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
 	
-
 	@Override
 	public boolean add(HomePage e) {
 
