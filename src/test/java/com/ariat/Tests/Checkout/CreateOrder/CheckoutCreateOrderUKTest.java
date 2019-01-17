@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
-import com.ariat.Pages.MyAccountPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
@@ -23,8 +22,6 @@ import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
-
-import Interfaces.ProductAttributes;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
@@ -79,7 +76,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.DEV01.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -98,7 +95,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		//checkoutProcessPage.selectAddress();
+		checkoutProcessPage.selectAddress();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.enterConfirmEmail(EMAIL);
@@ -122,7 +119,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
    	public void checkoutCreateNewOrderBeingLogged() {
    		logger.info("Starting checkout -> create new order without being logged test...");
    		homePage = new HomePage(new ChromeDriver());
-   		homePage.load(environment.DEVELOPMENT.getURL());
+   		homePage.load(environment.DEV01.getURL());
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		womenCategoryPage = homePageUK.returnWomenCategoryPage();
    		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();

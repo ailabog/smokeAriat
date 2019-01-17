@@ -19,8 +19,10 @@ public class CheckoutProcessPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(CheckoutProcessPage.class);
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
-	private By arrowCountry = By.xpath("//div[@id='el-collapse-content-4312']/div/form/div[5]/div[2]/div/div/div/div/span/span/i");
-	private By selectOption = By.xpath("//div[5]/div[2]/div/div/div/div/input");
+	private By arrowCountry = By.xpath("//div[@id='el-collapse-content-3711']/div/form/div[5]/div[2]/div/div/div/div/span/span/i");
+	//cssSelector='.el-row:nth-child(6) .el-select__caret'
+	
+	private By selectOption = By.xpath("//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[4]/span");
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");
@@ -35,6 +37,8 @@ public class CheckoutProcessPage extends BasePage {
 	private By stayInTouchCheck = By
 			.xpath("//input[@vlaue='Stay in touch. Learn about our new products and special offers first!']");
 	private By continueCheckout = By.xpath("//button//span[text()='Continue']");
+	//private By continueCheckout = By.xpath("//(//button[@type='button'])[2]");
+	
 	private By standardCheck = By.xpath("//input[@value='X-1']");
 	private By expressCheck = By.xpath("//input[@value='U-1']");
 	private By paypalCheck = By.xpath("//input[@vlaue='PAYPAL']");
