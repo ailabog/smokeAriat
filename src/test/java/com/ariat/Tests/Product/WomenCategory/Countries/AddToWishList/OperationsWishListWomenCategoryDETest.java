@@ -75,7 +75,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageDE.returnWomenClothingTopsAndTshirtsPageDE();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriendDE("Ana", "aila.bogasieru@yahoo.com");
@@ -93,7 +93,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageDE.returnWomenClothingTopsAndTshirtsPageDE();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Medium");
@@ -117,7 +117,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageDE.returnWomenClothingTopsAndTshirtsPageDE();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
@@ -138,7 +138,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageDE.returnWomenClothingTopsAndTshirtsPageDE();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.removeItemWishList();

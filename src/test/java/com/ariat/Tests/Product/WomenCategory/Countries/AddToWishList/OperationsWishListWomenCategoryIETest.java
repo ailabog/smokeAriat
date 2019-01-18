@@ -77,7 +77,7 @@ public class OperationsWishListWomenCategoryIETest extends BaseTest {
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenClothingTopsAndTshirtsPage = homePageIE.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
@@ -95,8 +95,8 @@ public class OperationsWishListWomenCategoryIETest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		womenClothingTopsAndTshirtsPage = homePageIE.returnWomenClothingTopsAndTshirtsPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Medium");
@@ -119,8 +119,8 @@ public class OperationsWishListWomenCategoryIETest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		womenClothingTopsAndTshirtsPage = homePageIE.returnWomenClothingTopsAndTshirtsPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
@@ -140,8 +140,8 @@ public class OperationsWishListWomenCategoryIETest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPage();
+		womenClothingTopsAndTshirtsPage = homePageIE.returnWomenClothingTopsAndTshirtsPage();
+		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
 		triFactorTopProductPage.selectAttributeSize("Small");
 		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
 		myWishListPage.removeItemWishList();
