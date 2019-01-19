@@ -33,7 +33,7 @@ public class MyAccountLeftNavigationUSTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	public static final String EMAIL = "aila.bogasieru@yahoo.com";
+	public static final String EMAIL = "aila.bogasieru@ariatcom";
 	public static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest

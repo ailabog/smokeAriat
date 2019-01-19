@@ -31,7 +31,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest

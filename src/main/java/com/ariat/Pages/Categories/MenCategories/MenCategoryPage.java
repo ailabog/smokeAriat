@@ -26,7 +26,7 @@ public class MenCategoryPage extends BasePage{
     private By menFootwearCategoryDE = By.linkText("Schuhe");
     private By menFootwearCategoryFR = By.linkText("Bottes et boots");
 	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing')(");
+	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing']");
 	private By menClothingCategoryDE = By.xpath("(//a[contains(text(),'Bekleidung')])[2]");
 	private By menClothingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");

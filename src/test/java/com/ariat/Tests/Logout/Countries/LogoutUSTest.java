@@ -28,7 +28,7 @@ public class LogoutUSTest extends BaseTest {
 
 
 
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest

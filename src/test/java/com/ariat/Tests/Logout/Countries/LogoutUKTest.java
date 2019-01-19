@@ -24,7 +24,7 @@ public class LogoutUKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	private static final String EMAIL = "aila.bogasieru@gmail.com";
+	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest

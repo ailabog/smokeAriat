@@ -84,7 +84,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menCategoryPage.menCategory();
@@ -107,7 +107,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menClothingPage = menCategoryPage.returnMenClothingCategoryPage();
 		menCategoryPage.menCategory();
@@ -128,7 +128,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPage();
 		menCategoryPage.menCategory();
@@ -149,7 +149,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menCategoryPage.menCategory();
 		menFeaturedPage = menCategoryPage.returnMenFeaturedCategoryPage();
 		menCategoryPage.menCategory();

@@ -17,7 +17,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenAccessoriesGlovesPage extends BasePage {
 
-	private By proGripGloveProduct = By.xpath("//*[@id=\"332482af8202e6efe14800a649\"]/div[1]/a/picture/img");
+	private By proGripGloveProduct = By.xpath("//img[contains(@title, 'Insulated Pro Grip')]");
 	private By proGripText = By.xpath("//*contains[text()='Pro Grip']");
 
 	public WomenAccessoriesGlovesPage(WebDriver driver) {
@@ -25,6 +25,7 @@ public class WomenAccessoriesGlovesPage extends BasePage {
 	}
 
 	public GlovesProductPage returnGlovesProductPagePage() {
+		WebDriverUtils.scrollLittDown(driver, proGripGloveProduct);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, proGripGloveProduct);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,

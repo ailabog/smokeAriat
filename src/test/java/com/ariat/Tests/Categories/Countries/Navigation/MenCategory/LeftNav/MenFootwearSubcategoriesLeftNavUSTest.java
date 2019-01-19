@@ -89,7 +89,7 @@ public class MenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menRidingPage = menFootwearPage.returnMenRidingCategoryPageLeftNav();
 		menFootwearRidingToolBootsPage = menRidingPage.returnMenFootwearRidingToolBootsPageLeftNav();
@@ -108,7 +108,7 @@ public class MenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menFootwearCountryPage = menFootwearPage.returnMenFootwearCountryCategoryPageLeftNav();
 		menFootwearCountryOutdoorPage = menFootwearCountryPage.returnMenFootwearCountryOutdoorCategoryPageLeftNav();
@@ -125,7 +125,7 @@ public class MenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menFootwearWesternPage = menFootwearPage.returnMenFootwearWesternCategoryPageLeftNav();
 		menFootwearWesternPerformancePage = menFootwearWesternPage
@@ -141,7 +141,7 @@ public class MenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menFootwearWorkPage = menFootwearPage.returnMenFootwearWorkCategoryPageLeftNav();
 		menFootwearWorkLaceUpPage = menFootwearWorkPage.returnMenFootwearWorkLaceUpCategoryPageLeftNav();
@@ -156,7 +156,7 @@ public class MenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menFootwearCasualShoesPage = menFootwearPage.returnMenFootwearCasualShoesCategoryPageLeftNav();
 		menFootwearSneakersPage = menFootwearCasualShoesPage.returnMenFashionSneakersCategoryPageLeftNav();

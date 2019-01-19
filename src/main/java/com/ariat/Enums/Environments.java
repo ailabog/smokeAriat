@@ -12,6 +12,8 @@ public enum Environments {
 	DEVELOPMENT("http://development.ariat.com",
 			"https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
 	DEV03("http://dev03.ariat.com",
+			"https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
+	DEMO("http://demo.ariat.com",
 			"https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site");
 
 	private String URL;

@@ -44,7 +44,7 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUK.returnMenCategoryPage();
+		menCategoryPage = homePageUS.returnMenCategoryPage();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
