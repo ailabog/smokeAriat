@@ -28,17 +28,17 @@ public class CheckoutPage extends BasePage {
 	private By increseQty = By.xpath("//i[@class='el-icon-plus']");
 	private By decreaseQty = By.xpath("//i[@class='el-icon-minus']");
 	private By promoCode = By.xpath("(//input[@type='text'])[4]");
-	private By applyPromoCode = By.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
+	private By applyPromoCode = By
+			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
 	private By payPalCheckoutBtn = By.xpath("//*[@id=\"paypal-animation-content\"]/div[1]/div[1]");
-	private By checkoutCheckoutBtn = By.xpath("//section[@id='app']/main/div/div/div/div/div/div[4]/div[2]/a/button");
+	private By checkoutCheckoutBtn = By.xpath("//a[contains(@href, '/checkout')]");
+
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
 	private By returnPolicyBtn = By.xpath("//a[text()='Return Policies']");
 	private By continueShoppingCheckoutBtn = By.xpath("//a[text()='Continue Shopping']");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By emailAccount = By.xpath("//input[@placeholder='Email address']");
 	private By shippingAddressText = By.id("el-collapse-head-3303");
-	
-	
 
 	protected CheckoutPage(WebDriver driver) {
 		super(driver);
@@ -99,23 +99,23 @@ public class CheckoutPage extends BasePage {
 		logger.info("Continuing shopping..");
 		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingCheckoutBtn);
 	}
-	
+
 	public HomePage returnHomePage() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(ariatLogo));
 		return new HomePage(driver);
 	}
-	
+
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToWishListLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(emailAccount));
 		return new MyAccountWishListPage(driver);
 	}
-	
+
 	public CheckoutProcessPage returnCheckoutProcessPage() {
-		WebDriverUtils.scrollLittDown(driver, checkoutCheckoutBtn);
+		WebDriverUtils.scroll500Down(driver, checkoutCheckoutBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(shippingAddressText));

@@ -4,8 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.GlobalCountries;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
@@ -13,7 +13,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDK;
+import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
@@ -33,13 +33,13 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CheckoutCreateOrderUKTest extends BaseTest {
+public class CheckoutCreateOrderRUTest extends BaseTest {
 
 	private Environments environment;
-	private EUCountries euCountry;
+	private GlobalCountries country;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
-	private HomePageDK homePageDK;
+	private HomePageCA homePageCA;
 	private WomenCategoryPage womenCategoryPage;
 	private MyBagPage myBagPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
@@ -82,9 +82,8 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		womenCategoryPage = homePageCA.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -126,12 +125,12 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
    		logger.info("Starting checkout -> create new order without being logged test...");
    		homePage = new HomePage(new ChromeDriver());
    		homePage.load(environment.DEVELOPMENT.getURL());
-   		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT,"EnglishUK");
+   		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		signInPage = homePageCA.returnSignInPage();
+		signInPage.returningCustomer(EMAILEXISTENT,"EnglishUS");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
-   		womenCategoryPage = homePageDK.returnWomenCategoryPage();
+   		womenCategoryPage = homePageCA.returnWomenCategoryPage();
    		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
    		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
    		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -139,7 +138,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
    		myBagPage = glovesProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
    		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-   		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
+   	    checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
    		checkoutProcessPage.continueCheckout();
    		checkoutProcessPage.continueCheckout1();
    		checkoutProcessPage.enterCardName(CARD_NAME);
@@ -160,7 +159,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageDK.quit();
+		homePageCA.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();

@@ -33,7 +33,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class CheckoutCreateOrderUKTest extends BaseTest {
+public class CheckoutCreateOrderDKTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
@@ -84,7 +84,8 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
+		womenCategoryPage = homePageDK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -127,7 +128,8 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
    		homePage = new HomePage(new ChromeDriver());
    		homePage.load(environment.DEVELOPMENT.getURL());
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
+   		signInPage = homePageDK.returnSignInPage();
 		signInPage.returningCustomer(EMAILEXISTENT,"EnglishUK");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -139,7 +141,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
    		myBagPage = glovesProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
    		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-   		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
+   	    checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
    		checkoutProcessPage.continueCheckout();
    		checkoutProcessPage.continueCheckout1();
    		checkoutProcessPage.enterCardName(CARD_NAME);
