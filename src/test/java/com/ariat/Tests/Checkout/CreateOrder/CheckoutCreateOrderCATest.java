@@ -13,7 +13,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageRU;
+import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
@@ -39,7 +39,7 @@ public class CheckoutCreateOrderCATest extends BaseTest {
 	private GlobalCountries country;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
-	private HomePageRU homePageRU;
+	private HomePageCA homePageCA;
 	private WomenCategoryPage womenCategoryPage;
 	private MyBagPage myBagPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
@@ -82,8 +82,8 @@ public class CheckoutCreateOrderCATest extends BaseTest {
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
-		womenCategoryPage = homePageRU.returnWomenCategoryPage();
+		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		womenCategoryPage = homePageCA.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -125,12 +125,12 @@ public class CheckoutCreateOrderCATest extends BaseTest {
    		logger.info("Starting checkout -> create new order without being logged test...");
    		homePage = new HomePage(new ChromeDriver());
    		homePage.load(environment.DEVELOPMENT.getURL());
-   		homePageRU = (HomePageRU) homePage.chooseGlobalLocation(country.RU, country.RU.getCurrencyISO());
-		signInPage = homePageRU.returnSignInPage();
+   		homePageCA = (HomePageCA) homePage.chooseGlobalLocation(country.CA, country.CA.getCurrencyISO());
+		signInPage = homePageCA.returnSignInPage();
 		signInPage.returningCustomer(EMAILEXISTENT,"EnglishUS");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
-   		womenCategoryPage = homePageRU.returnWomenCategoryPage();
+   		womenCategoryPage = homePageCA.returnWomenCategoryPage();
    		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
    		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
    		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -138,7 +138,7 @@ public class CheckoutCreateOrderCATest extends BaseTest {
    		myBagPage = glovesProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
    		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-   		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
+   	    checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
    		checkoutProcessPage.continueCheckout();
    		checkoutProcessPage.continueCheckout1();
    		checkoutProcessPage.enterCardName(CARD_NAME);
@@ -159,7 +159,7 @@ public class CheckoutCreateOrderCATest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageRU.quit();
+		homePageCA.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
