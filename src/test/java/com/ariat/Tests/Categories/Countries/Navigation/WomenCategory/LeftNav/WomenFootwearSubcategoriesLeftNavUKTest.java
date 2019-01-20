@@ -31,7 +31,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFoot
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Left navigation for Men category
+ * Left navigation for Men category United Kingdom test
  * 
  * @author aila.bogasieru@ariat.com
  *

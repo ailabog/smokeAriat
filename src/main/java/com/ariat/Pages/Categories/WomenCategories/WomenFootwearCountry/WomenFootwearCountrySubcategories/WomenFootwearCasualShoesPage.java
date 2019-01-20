@@ -24,7 +24,7 @@ public class WomenFootwearCasualShoesPage extends BasePage {
 	private By casualText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[1]/h1");
 	private By casualShoeFuse = By.xpath("//img[@alt='Fuse']");
 	private By fuseText = By.xpath("//*contains[text()='Fuse']");
-
+	
 	public WomenFootwearCasualShoesPage(WebDriver driver) {
 		super(driver);
 	}
@@ -50,4 +50,5 @@ public class WomenFootwearCasualShoesPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(fuseText));
 		return new CasualShoeProductPage(driver);
 	}
+	
 }

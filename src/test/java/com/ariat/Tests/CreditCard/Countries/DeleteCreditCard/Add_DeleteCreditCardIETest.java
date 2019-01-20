@@ -20,7 +20,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & deletet credit card UK
+ * Tests for add & deletet credit card Ireland
  * @author aila.bogasieru@ariat.com
  *
  */

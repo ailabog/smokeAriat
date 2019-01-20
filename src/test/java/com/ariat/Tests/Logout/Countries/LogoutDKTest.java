@@ -16,6 +16,13 @@ import com.ariat.Pages.Header.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Logout test Denmark
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class LogoutDKTest extends BaseTest {
 
 	private Environments environment;

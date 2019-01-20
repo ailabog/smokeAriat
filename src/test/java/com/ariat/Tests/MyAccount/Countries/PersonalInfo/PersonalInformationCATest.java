@@ -15,6 +15,14 @@ import com.ariat.Pages.Header.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Personal Information Canada test
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class PersonalInformationCATest extends BaseTest {
 
 	private HomePage homePage;

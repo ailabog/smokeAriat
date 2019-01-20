@@ -17,6 +17,14 @@ import com.ariat.Pages.Header.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * EmailPreferences Deutschland test
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
+
 public class EmailPreferencesDETest extends BaseTest {
 
 	private HomePage homePage;

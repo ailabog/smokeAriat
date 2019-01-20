@@ -19,7 +19,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for add & make default credit card UK
+ * Tests for add & make default credit card United Kingdom
  * @author aila.bogasieru@ariat.com
  *
  */

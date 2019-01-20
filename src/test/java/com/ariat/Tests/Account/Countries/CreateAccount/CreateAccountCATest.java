@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
- * all the methods such as: create account, login, check order status
+ * all the methods such as: create account, login, check order status for Canada
  * 
  * @author aila.bogasieru@ariat.com
  *

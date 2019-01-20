@@ -16,6 +16,13 @@ import com.ariat.Pages.Header.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Logout test Ireland
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class LogoutIETest extends BaseTest {
 
 	private Environments environment;

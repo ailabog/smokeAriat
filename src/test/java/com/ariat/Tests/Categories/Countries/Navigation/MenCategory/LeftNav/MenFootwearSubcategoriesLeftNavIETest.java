@@ -37,7 +37,7 @@ import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenFootwearWork
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Left navigation for Men category
+ * Left navigation for Men category Ireland test
  * 
  * @author aila.bogasieru@ariat.com
  *

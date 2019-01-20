@@ -20,7 +20,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Adds a new address and checks the address was created for US
+ * Adds a new address and checks the address was created for United States
  * 
  * @author aila.bogasieru@ariat.com
  *

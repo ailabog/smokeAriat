@@ -4,6 +4,7 @@ package com.ariat.Pages.Categories.WomenCategories;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
@@ -36,15 +37,10 @@ public class WomenCategoryPage extends BasePage {
 	private By womenFeaturedCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/a");
 	private By womenFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 
-	private By leftnavFootwear = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
+	
 	private By leftnavClothing = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
-	private By leftnavAccessories = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
-	private By leftnavRiding = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[4]/a");
-	private By leftnavCountry = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[5]/a");
-	private By leftnavWestern = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[6]/a");
-	private By leftnavFashion = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[7]/a");
-	private By leftnavFeatured = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[8]/a");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
+	//private By womenCategory = By.xpath("//a[contains(text(),'Women')]");
 	private By womenText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By sortDropWomenCategoryUp = By
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[2]/h3/p[1]/span");
@@ -68,11 +64,14 @@ public class WomenCategoryPage extends BasePage {
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
 	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
+	
 	private By womenAccesoriesCategoryLefytNavDE= By.linkText("Accessoires");
 	private By womenAccesoriesCategoryLefytNavFR= By.linkText("Accessoires");
 	private By expandIconFootwear = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
 	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
-	
+	private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
+	private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+
 	
 	public WomenCategoryPage(WebDriver driver) {
 		super(driver);
@@ -265,6 +264,13 @@ public class WomenCategoryPage extends BasePage {
 		return new HeritageProductPage(driver);
 		
 	}
+	
+	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));
+		return new WomenFootwearCasualShoesPage(driver);
+	}
 		
 	public WomenClothingPage returnWomenClothingCategoryLeftNavPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, leftnavClothing);
@@ -272,4 +278,5 @@ public class WomenCategoryPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
 		return new WomenClothingPage(driver);
 	}
+	
 }

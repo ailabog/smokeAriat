@@ -16,7 +16,7 @@ import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Pagination and sorting for Men Category
+ * Pagination and sorting for Men Category France test
  * 
  * @author aila.bogasieru@ariat.com
  *

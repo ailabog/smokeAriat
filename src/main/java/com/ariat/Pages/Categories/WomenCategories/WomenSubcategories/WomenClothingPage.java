@@ -10,6 +10,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSub
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingSweatTshirtAndWoodiesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Products.BreechProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**

@@ -18,7 +18,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Negative tests for US account
+ * Negative tests for United State account
  * 
  * @author aila.bogasieru@ariat.com
  *

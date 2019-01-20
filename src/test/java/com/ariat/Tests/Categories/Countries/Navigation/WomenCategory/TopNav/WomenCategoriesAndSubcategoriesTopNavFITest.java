@@ -37,7 +37,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwe
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test pages redirection from Women Category to all its sub-categories tree
+ * Test pages redirection from Women Category to all its sub-categories tree Finland test
  * structure
  * 
  * @author aila.bogasieru@ariat.com

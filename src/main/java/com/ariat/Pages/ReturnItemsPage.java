@@ -1,8 +1,8 @@
 package com.ariat.Pages;
 
 import static org.testng.Assert.assertEquals;
-
 /**
+ * 
  * This contains Return Items Page' locators, methods and links with next pages
  * @author aila.bogasieru@ariat.com
  *

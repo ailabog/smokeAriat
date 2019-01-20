@@ -30,7 +30,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFoot
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Left navigation for Men category
+ * Left navigation for Men category Russia test
  * 
  * @author aila.bogasieru@ariat.com
  *

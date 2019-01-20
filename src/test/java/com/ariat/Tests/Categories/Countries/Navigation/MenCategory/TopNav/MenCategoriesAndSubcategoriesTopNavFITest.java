@@ -35,7 +35,7 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFoot
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Test pages redirection from Men Category to all its sub-categories tree
+ * Test pages redirection from Men Category to all its sub-categories tree Finland test
  * structure
  * 
  * @author aila.bogasieru@ariat.com

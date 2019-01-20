@@ -14,7 +14,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Pagination and sorting for Women Category
+ * Pagination and sorting for Women Category Canada test
  * 
  * @author aila.bogasieru@ariat.com
  *

@@ -9,21 +9,19 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.BreechProductPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Products.GlovesProductPage;
+import com.ariat.Pages.Products.RebarTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
-
-import Interfaces.ProductAttributes;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Product page - > Women Category test write review on Glove product
+ * Product page - > Men Category test write review on Glove product
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -38,9 +36,9 @@ public class ProductWriteReviewWomenCategoryUSTest extends BaseTest {
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage gloveProductPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
+	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
+	private RebarTopProductPage rebarTopProductPage;
 	private WomenCategoryPage womenCategoryPage;
-	private WomenClothingPage womenClothingPage;
-	private BreechProductPage breechProductPage;
 	private EUCountries euCountry;
 	
 	private static final String TITLE_REVIEW = "This is my review";
@@ -56,7 +54,7 @@ public class ProductWriteReviewWomenCategoryUSTest extends BaseTest {
 
 	@Test
 	public void productPageWomenCategoryWriteReviewYesRecommendTest() {
-		logger.info("Starting product page -> Women Category write review recommend product for Glove product test...");
+		logger.info("Starting product page -> Men Category write review recommend product for Glove product test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -70,26 +68,26 @@ public class ProductWriteReviewWomenCategoryUSTest extends BaseTest {
 		gloveProductPage.recommendProductYes();
 		gloveProductPage.userInfoReview(USER, CITY, EMAIL);
 		gloveProductPage.postReview();
-		logger.info("Finishing product page -> Women Category write review recommend product for Glove product test.");
+		logger.info("Finishing product page -> Men Category write review recommend product for Glove product test.");
 	}
 
 @Test
 	public void productPageWomenCategoryWriteReviewNoRecommendTest() {
-		logger.info("Starting product page -> Women Category write review don't recommend product for Breech product test...");
+		logger.info("Starting product page -> Men Category write review don't recommend product for Breech product test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
-		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.writeReviewClick();
-		breechProductPage.writeReviewContent(TITLE_REVIEW, TITLE_REVIEW);
-		breechProductPage.writeReviewStar("Poor");
+		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
+		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
+		rebarTopProductPage.writeReviewClick();
+		rebarTopProductPage.writeReviewContent(TITLE_REVIEW, TITLE_REVIEW);
+		rebarTopProductPage.writeReviewStar("Poor");
 		//breechProductPage.recommendProductNo();
-		breechProductPage.userInfoReview(USER, CITY, EMAIL);
-		breechProductPage.postReview();
-		logger.info("Finishing product page -> Women Category don't recommend product for Breech product test.");
+		rebarTopProductPage.userInfoReview(USER, CITY, EMAIL);
+		rebarTopProductPage.postReview();
+		logger.info("Finishing product page -> Men Category don't recommend product for Breech product test.");
 	}
 
 	@AfterTest
@@ -98,8 +96,9 @@ public class ProductWriteReviewWomenCategoryUSTest extends BaseTest {
 		homePageUK.quit();
 		homePageUS.quit();
 		womenAccessoriesPage.quit();
+		womenCategoryPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		gloveProductPage.quit();
-		breechProductPage.quit();
+		rebarTopProductPage.quit();
 	}
 }

@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and
- * verifies all elements on Home Page UK
+ * verifies all elements on Home Page Russia
  * 
  * @author aila.bogasieru@ariat.com
  *
