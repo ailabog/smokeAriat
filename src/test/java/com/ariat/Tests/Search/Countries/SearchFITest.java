@@ -14,6 +14,13 @@ import com.ariat.Tests.Base.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Search product Finland test
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class SearchFITest extends BaseTest {
 
 	private HomePage homePage;

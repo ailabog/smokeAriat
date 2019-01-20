@@ -1,6 +1,5 @@
 package com.ariat.Pages.Products;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,13 +11,13 @@ import com.ariat.Utils.WebDriverUtils;
 
 /**
  * Implements product attributes' methods for Casual Shoe product
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
+public class CasualShoeProductPage extends BasePage {
 
-public class CasualShoeProductPage extends BasePage{
-	
 	private By addToBasket = By.cssSelector("#add-to-cart");
 	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
@@ -34,9 +33,9 @@ public class CasualShoeProductPage extends BasePage{
 	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
 	// increase qty //css=.quantity-increase
-
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
+	// private By writeReview = By.cssSelector(".bv-write-review");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
 	private By starReviewExcellent = By.xpath("//a[@id='bv-radio-rating-5']/span");
 	private By starReviewGood = By.xpath("//a[@id='bv-radio-rating-4']/span");
@@ -60,11 +59,12 @@ public class CasualShoeProductPage extends BasePage{
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
 	private By updateButton = By.id("add-to-cart");
 	private By lengthLocator = By.id("va-length");
-	
+
 	public CasualShoeProductPage(WebDriver driver) {
 		super(driver);
-		
+
 	}
+
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -222,5 +222,3 @@ public class CasualShoeProductPage extends BasePage{
 		return new MyWishListPage(driver);
 	}
 }
-
-

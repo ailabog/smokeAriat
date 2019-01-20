@@ -12,6 +12,13 @@ import com.ariat.Tests.Base.BaseTest;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Search product Canada test
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class SearchCATest extends BaseTest {
 
 	private HomePage homePage;
