@@ -37,7 +37,7 @@ public class ErrorMessagesAccountFRTest extends BaseTest {
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String BIRTH_MONTH = "March";
+	public static final String BIRTH_MONTH = "Mars";
 	public static final String BIRTH_DAY = "02";
 
 	public static final String EMAIL = GenerateRandomDataUtils.generateRandomAlphaNumeric(7);

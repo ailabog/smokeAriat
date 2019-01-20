@@ -47,7 +47,7 @@ public class ErrorMessagesAccountDETest extends BaseTest {
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomAlphaNumeric(4);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomString(3);
 
-	public static final String ERROR_MESSAGE = "Es tut uns leid, aber diese Bestellnummer oder Postleitzahl stimmt nicht mit den bei uns hinterlegten Daten Ã¼berein. PrÃ¼fen Sie Ihre Unterlagen und versuchen Sie es erneut.";
+	public static final String ERROR_MESSAGE = "Es tut uns leid, aber diese Bestellnummer oder Postleitzahl stimmt nicht mit den bei uns hinterlegten Daten überein. Prüfen Sie Ihre Unterlagen und versuchen Sie es erneut.";
 	public static final String INVALID_EMAIL_MSG = "Die E-Mail-Adresse ist ungültig.";
 	public static final String INVALID_PASS_MSG = "(8 - 255 characters)";
 	public static final String MISMATCH_PASS_MSG = "Es tut uns leid, aber das stimmt nicht mit den bei uns hinterlegten Daten überein. Prüfen Sie Ihre Eingabe auf Tippfehler und versuchen Sie es erneut.";
