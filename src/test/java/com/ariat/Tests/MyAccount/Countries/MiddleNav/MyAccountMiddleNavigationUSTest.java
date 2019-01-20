@@ -17,7 +17,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Include tests for My account middle navigation US
+ * Include tests for My account middle navigation United States
  * 
  * @author aila.bogasieru@ariat.com
  *

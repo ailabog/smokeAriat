@@ -28,7 +28,9 @@ public class AddAddressesPage extends BasePage {
 	private By postCodeTextBox = By.id("dwfrm_profile_address_zip");
 	private By phoneTextBox = By.id("dwfrm_profile_address_phone");
 	private By addressIdTextBox = By.id("dwfrm_profile_address_addressid");
-	private By saveAddressButton = By.name("dwfrm_profile_address_create");
+	//private By saveAddressButton = By.name("dwfrm_profile_address_create");
+	private By saveAddressButton =By.xpath("//button[@value='Apply']");
+	
 	private By saveAddressEditButton = By.xpath("//*[@value='Apply']");
 	private By saveAddressEditButtonDE = By.xpath("//*[@value='Anwenden']");
 	private By saveAddressEditButtonFR = By.xpath("//*[@value='Appliquer']");

@@ -19,7 +19,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for delete credit card UK
+ * Tests for delete credit card United States
  * @author aila.bogasieru@ariat.com
  *
  */

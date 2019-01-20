@@ -47,7 +47,7 @@ public class ErrorMessagesAccountUSTest extends BaseTest {
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomAlphaNumeric(4);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomString(3);
 
-	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
+	public static final String ERROR_MESSAGE = "Sorry this order number, email or postal code does not match our records. Check your records and try again.";
 	public static final String INVALID_EMAIL_MSG = "The email address is invalid.";
 	public static final String INVALID_PASS_MSG = "(8 - 255 characters)";
 	public static final String MISMATCH_PASS_MSG = "Sorry, this does not match our records. Check your spelling and try again.";

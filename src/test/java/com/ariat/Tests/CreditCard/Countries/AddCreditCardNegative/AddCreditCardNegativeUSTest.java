@@ -20,7 +20,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Add credit card negative test UK
+ * Add credit card negative test United States
  * @author aila.bogasieru@ariat.com
  *
  */

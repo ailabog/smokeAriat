@@ -18,6 +18,13 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Load addresses test Finland
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class LoadMoreAddressFITest extends BaseTest {
 
 	private HomePage homePage;

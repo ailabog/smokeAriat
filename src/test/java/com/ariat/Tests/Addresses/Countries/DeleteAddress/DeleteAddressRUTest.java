@@ -19,10 +19,12 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
+ * Delete address test Russia
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
+
 
 public class DeleteAddressRUTest extends BaseTest {
 

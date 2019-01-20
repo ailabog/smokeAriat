@@ -33,6 +33,15 @@ public class EmailPreferencePage extends BasePage {
 	private By apparelCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[1]/div[3]/span");
 	private By saveEditsButton = By.name("dwfrm_profile_confirm");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
+	private By emailTxtBox = By.name("ctl00_cphContent_txtEmail");
+	private By confirmEmailTxtBox = By.id("ctl00_cphContent_txtConfirmEmail");
+	private By fNameTxtBox = By.id("ctl00_cphContent_firstname");
+	private By lNameTxtBox = By.id("ctl00_cphContent_lastname");
+	private By genderCheck = By.id("ctl00_cphContent_Female");
+	private By monthSelect = By.id("ctl00_cphContent_ddlBMonth");
+	private By daySelect = By.id("ctl00_cphContent_ddlBDay");
+	private By yearSelect = By.id("ctl00_cphContent_ddlBYear");
+	private By saveprefBtn = By.xpath("//input[@value='SAVE PREFERENCES']");
 
 	public EmailPreferencePage(WebDriver driver) {
 		super(driver);
@@ -84,8 +93,46 @@ public class EmailPreferencePage extends BasePage {
 			logger.info("No option found");
 		}			
 	}
+	
+	public void enterEmail(String emailValue) {
+		logger.info("Entering email..");
+		WebDriverUtils.enterTextBox(driver, emailTxtBox, emailValue);
+	}
+	
+	public void enterConfirmEmail(String confirmEmailValue) {
+		logger.info("Entering email..");
+		WebDriverUtils.enterTextBox(driver, confirmEmailTxtBox, confirmEmailValue);
+	}
+	
+	public void enterFName(String fName) {
+		logger.info("Entering First name..");
+		WebDriverUtils.enterTextBox(driver, fNameTxtBox, fName);
+	}
+	
+	public void enterLName(String lName) {
+		logger.info("Entering Last name..");
+		WebDriverUtils.enterTextBox(driver, lNameTxtBox, lName);
+	}
 
-
+	public void checkGenderFemale() {
+		WebDriverUtils.clickOnElementWithWait(driver, genderCheck);
+	}
+	
+	public void selectBirthData(String monthValue, String dayValue, String yearValue) {
+		logger.info("Selecting month of birth..");
+		WebDriverUtils.selectVisibleText(driver, monthSelect, monthValue);
+		logger.info("Selecting day of birth..");
+		WebDriverUtils.selectVisibleText(driver, daySelect, dayValue);
+		logger.info("Selecting year of birth..");
+		WebDriverUtils.selectVisibleText(driver, yearSelect, yearValue);
+	}
+	
+	public void savePrefUS() {
+		logger.info("Saving email preferences..");
+		WebDriverUtils.clickOnElementWithWait(driver, saveprefBtn);
+	}
+	
+	
 	public void saveEditsClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);

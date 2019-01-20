@@ -17,6 +17,13 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Load addresses test United Kingdom
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class LoadMoreAddressUKTest extends BaseTest {
 
 	private HomePage homePage;

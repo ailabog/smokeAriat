@@ -29,7 +29,9 @@ public class MyAccountPage extends BasePage {
 	private By personalInfoText = By.xpath("//*[contains(text(),'Personal Information']");
 
 	private By emailPreferencesText = By.xpath("//*[contains(text(), 'Email Preferences']");
-	private By emailPreferencesLink = By.xpath("//a[contains(text(),'Email Preferences')]");
+	//private By emailPreferencesLink = By.xpath("//a[contains(text(),'Email Preferences')]");
+	private By emailPreferencesLink= By.xpath("//a[contains(@href, 'https://development.ariat.com/on/demandware.store/Sites-Ariat-Site/default/Account-EditEmailPreference')]");
+	
 
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
@@ -47,7 +49,11 @@ public class MyAccountPage extends BasePage {
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 
-	private By myAccountLink = By.xpath("//a[contains(text(),'My account')]");
+	//private By myAccountLink = By.xpath("//a[contains(text(),'My account')]");
+	private By myAccountLink = By.xpath("//a[contains(@href, 'https://development.ariat.com/account')]");
+	////a[contains(@href, 'https://development.ariat.com/account')]
+	//div[@id='pg-container']/nav/div/div/div[3]/div/div[5]/span/a
+	//.menu-utility-user:nth-child(5) .ms_desktop-only
 	private By myAccountLinkUS = By.xpath("//a[contains(text(),'My Account')]");
 
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
@@ -58,11 +64,11 @@ public class MyAccountPage extends BasePage {
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	//private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
 	private By addCardLink = By.xpath("//a[contains(text(),'Add Card')]");
-	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[57]");
+	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View All')]");
 	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[57]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
 	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");
-	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
+	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[71]");
 
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
@@ -72,8 +78,8 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//div[@id='pg-container']/nav/div/div/div[2]/div/div[4]/ul/li[5]/a");
-
+	private By logoutTopNav = By.xpath("//a[contains(text(),'Log out')]");
+	////a[contains(@href, '/on/demandware.store/Sites-Ariat-Site/default/Login-Logout')]
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenFootwearCasualShoesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");

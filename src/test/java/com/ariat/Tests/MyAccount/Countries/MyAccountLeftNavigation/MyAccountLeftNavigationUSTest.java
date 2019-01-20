@@ -17,7 +17,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Include tests for My account left navigation US
+ * Include tests for My account left navigation United States
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -33,7 +33,7 @@ public class MyAccountLeftNavigationUSTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	public static final String EMAIL = "aila.bogasieru@ariatcom";
+	public static final String EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORD = "Parola12345!";
 
 	@BeforeTest

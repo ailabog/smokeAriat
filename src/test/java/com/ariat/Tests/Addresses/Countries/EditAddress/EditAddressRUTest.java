@@ -18,6 +18,13 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Edit address test Russia
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class EditAddressRUTest extends BaseTest {
 
 	private HomePage homePage;

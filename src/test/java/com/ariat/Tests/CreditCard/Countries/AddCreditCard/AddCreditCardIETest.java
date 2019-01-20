@@ -20,7 +20,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card UK
+ * Tests for Add Credit card Ireland
  * @author aila.bogasieru@ariat.com
  *
  */

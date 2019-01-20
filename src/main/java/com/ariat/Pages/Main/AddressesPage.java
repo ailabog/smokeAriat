@@ -33,7 +33,8 @@ public class AddressesPage extends BasePage {
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 	private By addressesText = By.xpath("//h1[text()='Addresses']");
 	private By addressTextDE = By.xpath("//*[contains(text(), Adressen']");
-	private By editLink = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[2]/a[1]");
+	//private By editLink = By.xpath("//a[contains(text(),'Edit')]");
+	private By editLink =By.cssSelector("a.address-action.address-action--edit");
 	private By deleteLink = By.xpath("//a[@title='Delete']");
 	private By makeDefaultLink = By.xpath("a[text()='Make default']");
 	private By deleteButton = By.name("dwfrm_profile_address_remove");
@@ -103,12 +104,12 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void makeDefaultAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+	/*	ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
 				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
+				if (cell.getText() == addressValue) {*/
 					if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -118,20 +119,20 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Make default {}" + addressValue + "was not possible");
 					}
-				} else {
+			/*	} else {
 					logger.info("Address {}" + addressValue + "was not found");
 				}
 			}
-		}
+		}*/
 	}
 
 	public void deleteAddressCreatedNo(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+		/*ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
 				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
+				if (cell.getText() == addressValue) {*/
 					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -143,20 +144,20 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Cancel deleting {}" + addressValue + "was not possible");
 					}
-				} else {
+				/*} else {
 					logger.info("Address {}" + addressValue + "was not found");
 				}
 			}
-		}
+		}*/
 	}
 
 	public void deleteAddressCreatedYes(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+		/*ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
 				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
+				if (cell.getText() == addressValue) {*/
 					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -168,20 +169,21 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Delete {}" + addressValue + "was not possible");
 					}
-				} else {
+				
+			/*	} else {
 					logger.info("Address {}" + addressValue + "was not found");
 				}
 			}
-		}
+		}*/
 	}
 
 	public void editAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
+	/*	ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
 				.findElements((SearchContext) By.tagName("div"));
 		for (WebElement row : rows) {
 			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
 			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
+				if (cell.getText() == addressValue) {*/
 					if (WebDriverUtils.findElement(driver, editLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, editLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -191,11 +193,11 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Edit address {}" + addressValue + "was not possible");
 					}
-				} else {
+				/*} else {
 					logger.info("Address {}" + addressValue + "was not found");
 				}
 			}
-		}
+		}*/
 	}
 
 	public void assertMakeDefaultDE(String expectedAddress) {

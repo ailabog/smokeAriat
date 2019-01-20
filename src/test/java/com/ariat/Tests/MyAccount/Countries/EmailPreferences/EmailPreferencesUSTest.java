@@ -17,6 +17,13 @@ import com.ariat.Pages.Header.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Email Preferences test United States
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class EmailPreferencesUSTest extends BaseTest {
 
 	private HomePage homePage;
@@ -29,7 +36,7 @@ public class EmailPreferencesUSTest extends BaseTest {
 	private EmailPreferencePage emailPreferencesPage;
 	
 
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 
 
@@ -50,8 +57,14 @@ public class EmailPreferencesUSTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		emailPreferencesPage = myAccountPage.returnEmailPreferencePageLeftNav();
-		emailPreferencesPage.ariatProductsCheck("FASHION");
-		emailPreferencesPage.saveEditsClick();
+		emailPreferencesPage.enterEmail(EMAIL);
+		emailPreferencesPage.enterConfirmEmail(EMAIL);
+		emailPreferencesPage.enterFName("Aila");
+		emailPreferencesPage.enterLName("Bogasieru");
+		emailPreferencesPage.checkGenderFemale();
+		emailPreferencesPage.selectBirthData("May", "01", "1980");
+		//emailPreferencesPage.ariatProductsCheck("FASHION");
+		emailPreferencesPage.savePrefUS();
 		logger.info("Update personal information test ended...");
 	}
 	

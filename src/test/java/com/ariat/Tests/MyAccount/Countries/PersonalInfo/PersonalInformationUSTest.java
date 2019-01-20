@@ -17,6 +17,13 @@ import com.ariat.Pages.Header.SignInPage;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
+/**
+ * Include tests for Personal Information United States
+ * 
+ * @author aila.bogasieru@ariat.com
+ *
+ */
+
 public class PersonalInformationUSTest extends BaseTest {
 
 	private HomePage homePage;

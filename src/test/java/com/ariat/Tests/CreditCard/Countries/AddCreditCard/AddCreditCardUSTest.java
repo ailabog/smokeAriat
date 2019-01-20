@@ -21,7 +21,7 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card US
+ * Tests for Add Credit card United States
  * @author aila.bogasieru@ariat.com
  *
  */
@@ -68,8 +68,8 @@ public class AddCreditCardUSTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCardUS(typeCard.VISA.getName());
-		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
+		//addACreditCardPage.selectTypeCardUS(typeCard.VISA.getName());
+		addACreditCardPage.enterCardNoUS(typeCard.VISA.getNumber());
 		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
