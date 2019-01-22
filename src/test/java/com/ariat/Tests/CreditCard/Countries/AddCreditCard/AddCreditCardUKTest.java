@@ -60,7 +60,7 @@ public class AddCreditCardUKTest extends BaseTest{
 		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
@@ -84,7 +84,7 @@ public class AddCreditCardUKTest extends BaseTest{
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
-		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
+		addACreditCardPage = paymentInfoPage.returnAddACreditCardPageDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());

@@ -64,7 +64,7 @@ public class Add_MakeDefaultCreditCardDETest extends BaseTest{
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
@@ -73,7 +73,7 @@ public class Add_MakeDefaultCreditCardDETest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
+		paymentInfoPage.makeDefaultCreditCardDE(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
 		//paymentInfoPage.assertMakeDefaultCreditCardDE(defaultCredit.concat(CARD_ID));
 		logger.info("Finishing add credit card & make it default Germany test");
   } 

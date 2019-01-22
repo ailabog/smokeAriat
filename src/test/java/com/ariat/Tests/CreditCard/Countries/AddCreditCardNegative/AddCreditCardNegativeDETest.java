@@ -61,7 +61,7 @@ public class AddCreditCardNegativeDETest extends BaseTest{
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.INVALID_CARD.getName());

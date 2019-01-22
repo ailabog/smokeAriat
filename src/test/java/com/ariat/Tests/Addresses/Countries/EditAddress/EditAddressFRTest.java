@@ -63,12 +63,12 @@ public class EditAddressFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.editAddressCreated("B1TGL");
-		addAddressPage = addressesPage.returnAddressesEdit();
+		addressesPage.editAddressCreatedFR("B1TGL");
+		addAddressPage = addressesPage.returnAddressesEditFR();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("B1TGL1");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPageFR();
-		addressesPage.checkAddress("B1TGL1");
+		addressesPage.checkAddressFR("B1TGL1");
 		logger.info("Finishing edit address France test");
 	}
 	

@@ -64,6 +64,8 @@ public class MyAccountPage extends BasePage {
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	//private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
 	private By addCardLink = By.xpath("//a[contains(text(),'Add Card')]");
+	private By addCardLinkDE = By.xpath("//a[contains(text(),'Karte hinzufügen')]");	
+    private By addCardLinkFR = By.xpath("//a[contains(text(),'Ajouter carte')]");
 	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View All')]");
 	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[57]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
@@ -227,6 +229,20 @@ public class MyAccountPage extends BasePage {
 
 	public AddACreditCardPage returnAddACreditCardMiddleNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLink);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
+		return new AddACreditCardPage(driver);
+	}
+	
+	public AddACreditCardPage returnAddACreditCardMiddleNavFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, addCardLinkFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
+		return new AddACreditCardPage(driver);
+	}
+	
+	public AddACreditCardPage returnAddACreditCardMiddleNavDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, addCardLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
 		return new AddACreditCardPage(driver);
@@ -557,4 +573,5 @@ public class MyAccountPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
+
 }

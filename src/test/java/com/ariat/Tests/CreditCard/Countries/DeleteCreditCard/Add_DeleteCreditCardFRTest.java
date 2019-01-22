@@ -63,7 +63,7 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavFR();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD1Space.getName());
@@ -72,8 +72,8 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1Space.getName(), expirationDate);
-		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1Space.getName(), expirationDate);
+		paymentInfoPage.checkCreditCardFR(CARD_OWNER, typeCard.MASTER_CARD1Space.getName(), expirationDate);
+		paymentInfoPage.deleteCreditCardYesFR(CARD_OWNER, typeCard.MASTER_CARD1Space.getName(), expirationDate);
 		logger.info("Finishing add credit card & delete it France test");
   } 
 	

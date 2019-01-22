@@ -63,12 +63,12 @@ public class EditAddressDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.editAddressCreated("235432");
-		addAddressPage = addressesPage.returnAddressesEdit();
+		addressesPage.editAddressCreatedDE("235432");
+		addAddressPage = addressesPage.returnAddressesEditDE();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("235432A");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPageDE();
-		addressesPage.checkAddress("235432A");
+		addressesPage.checkAddressDE("235432A");
 		logger.info("Finishing edit address Deutschland test");
 	}
 	
