@@ -116,7 +116,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.selectAttributeSize("34");
-		breechProductPage.selectAttributeLength("Long");
+		breechProductPage.selectAttributeLength("Regular");
 		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -142,7 +142,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
 		breechProductPage = womenClothingPage.returnBreechProductPage();
 		breechProductPage.selectAttributeSize("34");
-		breechProductPage.selectAttributeLength("Long");
+		breechProductPage.selectAttributeLength("Regular");
 		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);

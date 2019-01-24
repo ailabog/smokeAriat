@@ -79,8 +79,8 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
 		casualProductShoePage.selectAttributeSize("36");
 		myBagPage = casualProductShoePage.returnMyBagPage();
-		myBagPage.cancelFreeGift();
-		myBagPage.checkMyBagNoFreeGift();
+		//myBagPage.cancelFreeGift();
+		//myBagPage.checkMyBagNoFreeGift();
 		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
 	}
 	

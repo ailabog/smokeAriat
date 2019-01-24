@@ -87,7 +87,7 @@ public class OrderDetailsUSTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myOrdersPage = myAccountPage.returnMyOrdersPageTopNavUS();
+		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
 		logger.info("Finishing orders check information orders test.");
 	}
 }

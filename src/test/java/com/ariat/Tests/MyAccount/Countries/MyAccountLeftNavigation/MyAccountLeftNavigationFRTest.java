@@ -106,7 +106,7 @@ public class MyAccountLeftNavigationFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageLeftNav();
 		myAccountPage.myAccountClickFR();
-		myAccountPage.returnAddACreditCardMiddleNav();
+		myAccountPage.returnAddACreditCardMiddleNavFR();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info France test...");

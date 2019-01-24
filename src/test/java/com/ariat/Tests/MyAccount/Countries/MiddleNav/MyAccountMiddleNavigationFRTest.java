@@ -109,7 +109,7 @@ public class MyAccountMiddleNavigationFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageMiddleNav();
 		myAccountPage.myAccountClickFR();
-		myAccountPage.returnAddACreditCardMiddleNav();
+		myAccountPage.returnAddACreditCardMiddleNavFR();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info France test...");
@@ -143,7 +143,7 @@ public class MyAccountMiddleNavigationFRTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnMyWishListPageViewAllMiddleNav();
+		myAccountPage.returnMyWishListPageViewAllMiddleNavFR();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing wish list France test...");
