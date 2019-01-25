@@ -33,10 +33,10 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
-	//private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
+	// private By countrySelectorWindow =
+	// By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
 	private By countrySelectorWindow = By.xpath("/html/body/div[9]");
-	
-	
+
 	private By continueShoppingButton = By.xpath("//*[@id=\"button\"]/button");
 
 	public HomePage(WebDriver driver) {
@@ -433,7 +433,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.BE.getLocator());
 			}
 			return new HomePageBE(driver);
 
@@ -448,7 +447,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.AT.getLocator());
 			}
 			return new HomePageAT(driver);
 
@@ -552,7 +550,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				// WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
 			}
 			return new HomePageFI(driver);
 
@@ -582,7 +579,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.NL.getLocator());
+			//	WebDriverUtils.clickOnElementWithWait(driver, euCountry.NL.getLocator());
 			}
 			return new HomePageNL(driver);
 
@@ -597,8 +594,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.LU.getLocator());
-			}
+		}
 			return new HomePageLU(driver);
 
 		case "(Italy)":
@@ -612,7 +608,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.IT.getLocator());
+				//WebDriverUtils.clickOnElementWithWait(driver, euCountry.IT.getLocator());
 			}
 			return new HomePageIT(driver);
 
