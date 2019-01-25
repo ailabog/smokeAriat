@@ -13,7 +13,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
@@ -39,7 +38,6 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
-	private HomePageDK homePageDK;
 	private WomenCategoryPage womenCategoryPage;
 	private MyBagPage myBagPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
@@ -78,7 +76,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		ChromeDriverManager.getInstance().setup();
 	}
 
-  /*  @Test(priority=0)
+  @Test(priority=0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -119,9 +117,9 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}*/
+	}
     
-  @Test(priority=1)
+ /* @Test(priority=1)
    	public void checkoutCreateNewOrderBeingLogged() {
    		logger.info("Starting checkout -> create new order without being logged test...");
    		homePage = new HomePage(new ChromeDriver());
@@ -131,7 +129,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		signInPage.returningCustomer(EMAILEXISTENT,"EnglishUK");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
-   		womenCategoryPage = homePageDK.returnWomenCategoryPage();
+   		womenCategoryPage = homePageUK.returnWomenCategoryPage();
    		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
    		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
    		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -154,13 +152,12 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
    		//checkoutProcessCompletePage.confirmPassword(PASSWORD);
    		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
    		logger.info("Finishing checkout -> create new order without being logged test.");
-   	}
+   	}*/
 		
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageDK.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();

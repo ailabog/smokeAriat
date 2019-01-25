@@ -19,10 +19,10 @@ public class CheckoutProcessPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(CheckoutProcessPage.class);
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
-	private By arrowCountry = By.xpath("i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
-	//cssSelector='.el-row:nth-child(6) .el-select__caret'
-	
-	private By selectOption = By.xpath("//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[4]/span");
+	private By arrowCountry = By.cssSelector(".el-row:nth-child(6) .el-select__caret");
+	//	private By selectOption = By.xpath("//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[4]/span");
+	private By selectOption = By.cssSelector("li.el-select-dropdown__item.hover > span");
+	//
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");
@@ -46,12 +46,15 @@ public class CheckoutProcessPage extends BasePage {
 	private By paypalCheck = By.xpath("//input[@vlaue='PAYPAL']");
 	private By creditCardCheck = By.xpath("//input[@value='SA_SILENTPOST']");
 	private By cardArrow = By.cssSelector(".el-row:nth-child(4) .el-select__caret");
+	//private By cardArrow = By.xpath("//div[@id='el-collapse-content-4403']/div/div/form/div/form/div[2]/div/div/form/div[3]/div/div/div/div/div/span/span/i");
 	//div[@id='el-collapse-content-6212']/div/div/form/div/form/div[2]/div/div/form/div[3]/div/div/div/div/div/span/span/i
 	private By selectCard = By.cssSelector("li.el-select-dropdown__item.hover > span");
 	////html[@id='ext-gen45']/body/div[8]/div/div/ul/li/span
 	private By cardName = By.xpath(
 			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[4]/div/div/div/div[1]/input");
+	
 	private By selectTypeCard = By.xpath("//div[@class='el-select checkout_input']");
+	//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[2]/span
 	private By expirationDateMonth = By.xpath(
 			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[7]/div[1]/div/div/div[1]/div/input");
 	private By expirationDateYear = By.xpath(
@@ -59,6 +62,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By securityCode = By.xpath(
 			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[8]/div/div/div/div[1]/input");
 	private By buyNowBtn = By.id("paymentbtncs");
+	
 	private By checkoutCompleteText = By.xpath("//h1[text()='Checkout Complete']");
 	private By paypalBtn = By.id("paypal-animation-content");
 	private By placeOrderBtn = By.id("paymentbtn");
