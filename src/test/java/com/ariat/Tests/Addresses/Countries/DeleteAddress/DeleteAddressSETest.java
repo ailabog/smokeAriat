@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDE;
+import com.ariat.Pages.HomePagesCountries.HomePageSE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddAddressesPage;
 import com.ariat.Pages.Main.AddressesPage;
@@ -20,23 +20,23 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Delete address test Deutschland
+ * Delete address test Sweden
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class DeleteAddressDETest extends BaseTest {
+
+public class DeleteAddressSETest extends BaseTest {
 
 	private HomePage homePage;
-	private HomePageDE homePageDE;
-	private SignInPage signInPage;
+	private HomePageSE homePageSE;
 	private HomePageUK homePageUK;
+	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private Environments environment;
-	
 	private EUCountries euCountry;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
@@ -46,7 +46,6 @@ public class DeleteAddressDETest extends BaseTest {
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
 	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
-	
 
 	@BeforeTest
 	public void setUp() {
@@ -54,45 +53,44 @@ public class DeleteAddressDETest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressDETest() {
-		logger.info("Starting deleting address Germany test");
+	public void deleteAddressDKTest() {
+		logger.info("Starting deleting address Sweden test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
+		homePageSE = (HomePageSE) homePage.chooseEULocation(euCountry.SE, euCountry.SE.getCurrencyISO());
+		signInPage = homePageSE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNoDE("nnn");
-		addressesPage.deleteAddressCreatedYesDE("nn");
-		addressesPage.checkAddressDE("nnn");
-		logger.info("Finishing deleting address Germany test");
+		addressesPage.deleteAddressCreatedNo("nnn");
+		addressesPage.deleteAddressCreatedYes("nn");
+		addressesPage.checkAddress("nnn");
+		logger.info("Finishing deleting address Sweden test");
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressFromEditDETest() {
-		logger.info("Starting deleting address from Edit address Germany test");
+	public void deleteAddressFromEditDKTest() {
+		logger.info("Starting deleting address from Edit address Sweden test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.SE.getCurrencyISO());
+		signInPage = homePageSE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEditDE();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
-		addressesPage.checkAddressDE("ccc");
-		logger.info("Finishing deleting address from Edit address Germany test");
+		addAddressPage = addressesPage.returnAddressesEdit();
+		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
+		addressesPage.checkAddress("ccc");
+		logger.info("Finishing deleting address from Edit address Sweden test");
 	}
 
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageDE.quit();
+		homePageSE.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();

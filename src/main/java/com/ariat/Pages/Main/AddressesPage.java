@@ -174,7 +174,7 @@ public class AddressesPage extends BasePage {
 		if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 			WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialogDE);
+			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			logger.info("Delete {}" + addressValue + "was done with success");
 

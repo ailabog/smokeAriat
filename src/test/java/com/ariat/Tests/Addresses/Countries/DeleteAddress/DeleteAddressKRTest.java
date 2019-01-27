@@ -5,11 +5,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDE;
-import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.HomePagesCountries.HomePageKR;
 import com.ariat.Pages.Main.AddAddressesPage;
 import com.ariat.Pages.Main.AddressesPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -20,24 +19,23 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Delete address test Deutschland
+ * Delete address test Korea
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class DeleteAddressDETest extends BaseTest {
+
+public class DeleteAddressKRTest extends BaseTest {
 
 	private HomePage homePage;
-	private HomePageDE homePageDE;
+	private HomePageKR homePageKR;
 	private SignInPage signInPage;
-	private HomePageUK homePageUK;
 	private MyAccountPage myAccountPage;
 	private AddAddressesPage addAddressPage;
 	private AddressesPage addressesPage;
 	private Environments environment;
-	
-	private EUCountries euCountry;
+	private GlobalCountries country;
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
@@ -46,7 +44,6 @@ public class DeleteAddressDETest extends BaseTest {
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
 	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
-	
 
 	@BeforeTest
 	public void setUp() {
@@ -54,46 +51,43 @@ public class DeleteAddressDETest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressDETest() {
-		logger.info("Starting deleting address Germany test");
+	public void deleteAddressKRTest() {
+		logger.info("Starting deleting address Korea test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
+		homePageKR = (HomePageKR) homePage.chooseGlobalLocation(country.KR, country.KR.getCurrencyISO());
+		signInPage = homePageKR.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNoDE("nnn");
-		addressesPage.deleteAddressCreatedYesDE("nn");
-		addressesPage.checkAddressDE("nnn");
-		logger.info("Finishing deleting address Germany test");
+		addressesPage.deleteAddressCreatedNo("nnn");
+		addressesPage.deleteAddressCreatedYes("nn");
+		addressesPage.checkAddress("nnn");
+		logger.info("Finishing deleting address Korea test");
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressFromEditDETest() {
-		logger.info("Starting deleting address from Edit address Germany test");
+	public void deleteAddressFromEditKRTest() {
+		logger.info("Starting deleting address from Edit address Korea test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
+		homePageKR = (HomePageKR) homePage.chooseGlobalLocation(country.KR, country.KR.getCurrencyISO());
+		signInPage = homePageKR.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEditDE();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
-		addressesPage.checkAddressDE("ccc");
-		logger.info("Finishing deleting address from Edit address Germany test");
+		addAddressPage = addressesPage.returnAddressesEdit();
+		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
+		addressesPage.checkAddress("ccc");
+		logger.info("Finishing deleting address from Edit address Korea test");
 	}
 
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageDE.quit();
-		homePageUK.quit();
+		homePageKR.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();

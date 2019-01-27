@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageDE;
+import com.ariat.Pages.HomePagesCountries.HomePageCH;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddAddressesPage;
 import com.ariat.Pages.Main.AddressesPage;
@@ -20,16 +20,16 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Delete address test Deutschland
+ * Delete address test Cehia
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class DeleteAddressDETest extends BaseTest {
+public class DeleteAddressCHTest extends BaseTest {
 
 	private HomePage homePage;
-	private HomePageDE homePageDE;
+	private HomePageCH homePageCH;
 	private SignInPage signInPage;
 	private HomePageUK homePageUK;
 	private MyAccountPage myAccountPage;
@@ -54,13 +54,13 @@ public class DeleteAddressDETest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressDETest() {
-		logger.info("Starting deleting address Germany test");
+	public void deleteAddressCHTest() {
+		logger.info("Starting deleting address Cehia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
+		homePageCH = (HomePageCH) homePage.chooseEULocation(euCountry.CH, euCountry.CH.getCurrencyISO());
+		signInPage = homePageCH.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -68,17 +68,17 @@ public class DeleteAddressDETest extends BaseTest {
 		addressesPage.deleteAddressCreatedNoDE("nnn");
 		addressesPage.deleteAddressCreatedYesDE("nn");
 		addressesPage.checkAddressDE("nnn");
-		logger.info("Finishing deleting address Germany test");
+		logger.info("Finishing deleting address Cehia test");
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressFromEditDETest() {
-		logger.info("Starting deleting address from Edit address Germany test");
+	public void deleteAddressFromEditCHTest() {
+		logger.info("Starting deleting address from Edit address Cehia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
+		homePageCH = (HomePageCH) homePage.chooseEULocation(euCountry.CH, euCountry.CH.getCurrencyISO());
+		signInPage = homePageCH.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -86,13 +86,13 @@ public class DeleteAddressDETest extends BaseTest {
 		addAddressPage = addressesPage.returnAddressesEditDE();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
 		addressesPage.checkAddressDE("ccc");
-		logger.info("Finishing deleting address from Edit address Germany test");
+		logger.info("Finishing deleting address from Edit address Cehia test");
 	}
 
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageDE.quit();
+		homePageCH.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
