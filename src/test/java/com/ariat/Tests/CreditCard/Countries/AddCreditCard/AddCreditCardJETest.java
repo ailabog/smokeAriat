@@ -56,7 +56,7 @@ public class AddCreditCardJETest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageJE = (HomePageJE) homePage.chooseGlobalLocation(country.JE, country.JE.getCurrencyISO());
 		signInPage = homePageJE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -79,7 +79,7 @@ public class AddCreditCardJETest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageJE = (HomePageJE) homePage.chooseGlobalLocation(country.JE, country.JE.getCurrencyISO());
 		signInPage = homePageJE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "English");
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
