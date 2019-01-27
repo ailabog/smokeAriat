@@ -51,7 +51,7 @@ public class EditAddressUKTest extends BaseTest {
 
 	@Test
 	public void editAddressTest() {
-		logger.info("Starting edit address UK test");
+		logger.info("Starting edit address Uniteg Kigdom test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -66,7 +66,7 @@ public class EditAddressUKTest extends BaseTest {
 		addAddressPage.enterAddressId("B1TGL1");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		addressesPage.checkAddress("B1TGL1");
-		logger.info("Finishing edit address UK test");
+		logger.info("Finishing edit address Uniteg Kigdom test");
 	}
 	
 	@AfterTest

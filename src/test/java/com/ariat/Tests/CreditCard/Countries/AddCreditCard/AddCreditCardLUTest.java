@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageLU;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddACreditCardPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -19,15 +20,16 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card United Kingdom
+ * Tests for Add Credit card Luxembourg
  * @author aila.bogasieru@ariat.com
  *
  */
 
 
-public class AddCreditCardUKTest extends BaseTest{
+public class AddCreditCardLUTest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageLU homePageLU;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -37,7 +39,7 @@ public class AddCreditCardUKTest extends BaseTest{
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 	
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
@@ -50,14 +52,15 @@ public class AddCreditCardUKTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardUKTest() {
+	public void addCreditCardDKTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add a credit card UK test");
+		logger.info("Starting add a credit card Luxembourg test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL,"EnglishUK");
+		homePageLU = (HomePageLU) homePage.chooseEULocation(euCountry.LU, euCountry.LU.getCurrencyISO());
+		signInPage = homePageLU.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -70,16 +73,17 @@ public class AddCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card UK test");
+		logger.info("Finishing add a credit card Luxembourg test");
   } 
 	
 	@Test(priority = 1)
 	public void addCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting add credit card from Payment Info UK test");
+		logger.info("Starting add credit card from Payment Info Luxembourg test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageLU = (HomePageLU) homePage.chooseEULocation(euCountry.LU, euCountry.LU.getCurrencyISO());
+		signInPage = homePageLU.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -93,13 +97,14 @@ public class AddCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add credit card from Payment info UK test");
+		logger.info("Finishing add credit card from Payment info Luxembourg test");
 		
   }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageLU.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();

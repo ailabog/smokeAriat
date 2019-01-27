@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageCH;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddACreditCardPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -19,15 +20,16 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card United Kingdom
+ * Tests for Add Credit card Cehia
  * @author aila.bogasieru@ariat.com
  *
  */
 
 
-public class AddCreditCardUKTest extends BaseTest{
+public class AddCreditCardCHTest extends BaseTest{
 	
 	private HomePage homePage;
+	private HomePageCH homePageCH;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
@@ -37,12 +39,12 @@ public class AddCreditCardUKTest extends BaseTest{
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 	
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "January";
+	private static final String MONTH = "Dezember";
 	
 	@BeforeTest
 	public void setUp() {
@@ -50,17 +52,18 @@ public class AddCreditCardUKTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardUKTest() {
+	public void addCreditCardCHTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add a credit card UK test");
+		logger.info("Starting add a credit card Cehia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL,"EnglishUK");
+		homePageCH = (HomePageCH) homePage.chooseEULocation(euCountry.CH, euCountry.CH.getCurrencyISO());
+		signInPage = homePageCH.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
@@ -69,22 +72,23 @@ public class AddCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card UK test");
+		paymentInfoPage.checkCreditCard(CARD_OWNER, ListOfCreditCards.VISA.getName(), expirationDate);
+		logger.info("Finishing add a credit card Cehia test");
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting add credit card from Payment Info UK test");
+	public void addCreditCardFromPaymentInfoCHTest() {
+		logger.info("Starting add credit card from Payment Info Germany test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		homePageCH = (HomePageCH) homePage.chooseEULocation(euCountry.CH, euCountry.CH.getCurrencyISO());
+		signInPage = homePageCH.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
-		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
+		addACreditCardPage = paymentInfoPage.returnAddACreditCardPageDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
@@ -93,12 +97,13 @@ public class AddCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add credit card from Payment info UK test");
+		logger.info("Finishing add credit card from Payment info Cehia test");
 		
   }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageCH.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();

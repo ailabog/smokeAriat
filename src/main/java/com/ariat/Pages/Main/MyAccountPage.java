@@ -37,7 +37,12 @@ public class MyAccountPage extends BasePage {
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 
-	private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
+	//private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
+	private By paymentInformationLink = By.xpath("//a[contains(text(),'Payment information')]");
+	
+	//a[contains(text(),'Payment information')]
+	//div[@id='main']/div/div/div/div/ul/li[5]/a
+	//a[title="Manage Credit Cards"]
 	private By paymentInformationText = By.className("//*contains[text(),'Credit card information']");
 
 	private By myOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[6]/a");

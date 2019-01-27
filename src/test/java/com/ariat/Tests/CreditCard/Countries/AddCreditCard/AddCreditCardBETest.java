@@ -9,6 +9,7 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageBE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.AddACreditCardPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -19,16 +20,17 @@ import com.ariat.Pages.Header.SignInPage;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
- * Tests for Add Credit card United Kingdom
+ * Tests for Add Credit card Belgium
  * @author aila.bogasieru@ariat.com
  *
  */
 
 
-public class AddCreditCardUKTest extends BaseTest{
+public class AddCreditCardBETest extends BaseTest{
 	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageBE homePageBE;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
@@ -52,11 +54,12 @@ public class AddCreditCardUKTest extends BaseTest{
 	@Test(priority = 0)
 	public void addCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add a credit card UK test");
+		logger.info("Starting add a credit card Belgium test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
+		signInPage = homePageBE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -70,16 +73,17 @@ public class AddCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card UK test");
+		logger.info("Finishing add a credit card Belgium test");
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting add credit card from Payment Info UK test");
+	public void addCreditCardFromPaymentInfoBETest() {
+		logger.info("Starting add credit card from Payment Info Belgium test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageBE = (HomePageBE) homePage.chooseEULocation(euCountry.BE, euCountry.BE.getCurrencyISO());
+		signInPage = homePageBE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -93,13 +97,14 @@ public class AddCreditCardUKTest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add credit card from Payment info UK test");
+		logger.info("Finishing add credit card from Payment info Belgium test");
 		
   }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageBE.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
