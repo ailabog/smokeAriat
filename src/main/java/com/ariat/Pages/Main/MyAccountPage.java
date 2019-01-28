@@ -31,14 +31,12 @@ public class MyAccountPage extends BasePage {
 	private By emailPreferencesText = By.xpath("//*[contains(text(), 'Email Preferences']");
 	// private By emailPreferencesLink = By.xpath("//a[contains(text(),'Email
 	// Preferences')]");
-	private By emailPreferencesLink = By.xpath(
-			"//a[contains(@href, 'https://development.ariat.com/on/demandware.store/Sites-Ariat-Site/default/Account-EditEmailPreference')]");
-
+	private By emailPreferencesLink = By.xpath("//a[@title='Show or update your email preference']");
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 
-	//private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
-	private By paymentInformationLink = By.xpath("//a[contains(text(),'Payment information')]");
+	private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
+	//private By paymentInformationLink = By.xpath("//a[contains(text(),'Payment information')]");
 	
 	//a[contains(text(),'Payment information')]
 	//div[@id='main']/div/div/div/div/ul/li[5]/a
