@@ -64,11 +64,11 @@ public class MyAccountPage extends BasePage {
 	private By addCardLink = By.xpath("//a[contains(text(),'Add Card')]");
 	private By addCardLinkDE = By.xpath("//a[contains(text(),'Karte hinzufügen')]");
 	private By addCardLinkFR = By.xpath("//a[contains(text(),'Ajouter carte')]");
-	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View All')]");
+	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[57]");
 	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[57]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
 	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");
-	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[71]");
+	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[58]");
 	private By viewAllWishListLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[58]");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
@@ -102,7 +102,7 @@ public class MyAccountPage extends BasePage {
 	private By myAccountLinkDE = By.xpath("//a[text()='Mein Konto']");
 	private By myAccountLinkFR = By.xpath("//a[text()='Mon compte']");
 	private By editPersonalInfoLinkUS = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div[2]/div[2]/div[1]/div[1]/a");
-	private By viewAllWishListLinkDE = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
+	private By viewAllWishListLinkDE = By.xpath("(//a[contains(text(),'Alle ansehen')])[57]");
 	private By addDeleteCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 
 	private By ordersTopNavLinkDE = By.xpath("//a[@title='Bestellungen']");
