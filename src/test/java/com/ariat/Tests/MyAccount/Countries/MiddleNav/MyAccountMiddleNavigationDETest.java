@@ -109,7 +109,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageMiddleNav();
 		myAccountPage.myAccountClickDE();
-		myAccountPage.returnAddACreditCardMiddleNav();
+		myAccountPage.returnAddACreditCardMiddleNavDE();
 		myAccountPage.myAccountClickDE();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info Deutschland test...");
