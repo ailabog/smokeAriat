@@ -6,7 +6,15 @@
        <classes>
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardCHTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardATTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDKTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardNOTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardBETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardNLTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardLUTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardSETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardITTest" />    
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardIETest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUSTest" />
@@ -14,6 +22,10 @@
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardJPTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardRUTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardCATest" />
-        </classes>
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardTRTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardTWTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardCNTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardJETest" />
+             </classes>
      </test>
 </suite>

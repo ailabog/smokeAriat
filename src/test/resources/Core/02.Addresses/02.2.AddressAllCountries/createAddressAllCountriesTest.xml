@@ -6,7 +6,15 @@
        <classes>
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUKTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressCHTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressATTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDKTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressBETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressLUTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressNLTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressNOTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressSETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressITTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressIETest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUSTest" />
@@ -14,6 +22,13 @@
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressJPTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressRUTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressCATest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressTRTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressTWTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressJETest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressCNTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressKRTest" />
+                 <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressCATest" />
+                       
         </classes>
      </test>
 </suite>

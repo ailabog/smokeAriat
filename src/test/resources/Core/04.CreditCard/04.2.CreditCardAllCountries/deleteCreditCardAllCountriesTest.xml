@@ -6,14 +6,26 @@
        <classes>
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardUKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardDETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardCHTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardATTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardDKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardIETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardSETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardBETest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardNOTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardITTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardNLTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardLUTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardUSTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardFITest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardJPTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardRUTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardCATest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardCNTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardTRTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardTWTest" />
+                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardJETest" />
         </classes>
      </test>
 </suite>
