@@ -28,7 +28,7 @@
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressCNTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressKRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressCATest" />
-                       
+                        
         </classes>
      </test>
 </suite>
