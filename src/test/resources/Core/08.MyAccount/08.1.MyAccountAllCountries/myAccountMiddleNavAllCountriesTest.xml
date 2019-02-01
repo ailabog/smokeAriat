@@ -27,7 +27,7 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationTRTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationTWTest" / 
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationCNTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationJETest" />>
+                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationJETest" />
         </classes>
      </test>
 </suite>
