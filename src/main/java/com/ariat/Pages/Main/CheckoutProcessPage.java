@@ -73,6 +73,16 @@ public class CheckoutProcessPage extends BasePage {
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
 	private By cardNo = By.xpath("");
+	
+	//private By checkoutBtn=By.xpath("//img[contains(@alt, 'paypal')]");
+	private By checkoutBtn=By.xpath("//div[@id='paypal-animation-content']/div/div");
+	
+	private By emailTxtBoxPayPal=By.id("email");
+	private By passwordTxtBoxPaypal=By.id("password");
+	private By loginPayPal=By.id("btnLogin");
+	private By continueBtnPayPal=By.xpath("//button[text()='Continue']");
+	private By confirmPayPal=By.id("confirmButtonTop");
+	
 
 	protected CheckoutProcessPage(WebDriver driver) {
 		super(driver);
@@ -83,6 +93,38 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, editBagLink);
 	}
 
+	
+	public void clickCheckoutBtn() {
+		WebDriverUtils.scroll500Down(driver, checkoutBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
+	}
+	
+	public void enterEmailPayPal(String emailValue) {
+		logger.info("Entering email..");
+		WebDriverUtils.enterTextBox(driver, emailTxtBoxPayPal, emailValue);
+	}
+	
+	public void enterPasswordPayPal(String passwordValue) {
+		logger.info("Entering password..");
+		WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
+	}
+	
+	
+	public void clickLoginPayPal() {
+		logger.info("Loging into PayPal Account..");
+		WebDriverUtils.clickOnElementWithWait(driver, loginPayPal);
+	}
+	
+	public void clickContinuePayPal() {
+		logger.info("Continue into PayPal Account..");
+		WebDriverUtils.clickOnElementWithWait(driver, continueBtnPayPal);
+	}
+	
+	public void clickConfirmPayPal() {
+		logger.info("Confirm paypal payment into PayPal Account..");
+		WebDriverUtils.clickOnElementWithWait(driver, confirmPayPal);
+	}
+	
 	public void selectAddress() {
 		logger.info("Selecting address..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);

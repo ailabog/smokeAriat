@@ -119,6 +119,55 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged test.");
 	}
     
+  
+  @Test(priority=1)
+	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
+		logger.info("Starting checkout -> create new order without being logged using paypal as payment method test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myBagPage = glovesProductPage.returnMyBagPage();
+		checkoutPage = myBagPage.returnCheckoutPage();
+		//checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.clickCheckoutBtn();
+		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@ariat.com");
+		checkoutProcessPage.enterPasswordPayPal("Ariat123$");
+		checkoutProcessPage.clickLoginPayPal();
+		checkoutProcessPage.clickContinuePayPal();
+		checkoutProcessPage.clickConfirmPayPal();
+		
+		
+		/*checkoutProcessPage.enterFName(FIRST_NAME);
+		checkoutProcessPage.enterLName(LAST_NAME);
+		checkoutProcessPage.enterAddress(ADDRESS);
+		checkoutProcessPage.enterAddress1(ADDRESS1);
+		checkoutProcessPage.enterCity(CITY);
+		checkoutProcessPage.enterZipCode(ZIP_CODE);
+		checkoutProcessPage.selectAddress();
+		checkoutProcessPage.enterMobile(MOBILE);
+		checkoutProcessPage.enterEmail(EMAIL);
+		checkoutProcessPage.enterConfirmEmail(EMAIL);
+		checkoutProcessPage.continueCheckout();
+		checkoutProcessPage.continueCheckout();
+		
+		checkoutProcessPage.enterCardName(CARD_NAME);
+		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		checkoutProcessPage.selectExpirationMonth(MONTH);
+		checkoutProcessPage.selectExpirationYear(YEAR);
+		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessCompletePage.checkItem();
+		checkoutProcessCompletePage.enterPassword(PASSWORD);
+		checkoutProcessCompletePage.confirmPassword(PASSWORD);*/
+		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
+		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
+	}
  /* @Test(priority=1)
    	public void checkoutCreateNewOrderBeingLogged() {
    		logger.info("Starting checkout -> create new order without being logged test...");
