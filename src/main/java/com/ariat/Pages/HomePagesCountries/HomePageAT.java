@@ -48,6 +48,11 @@ public class HomePageAT extends BasePage implements List<HomePage> {
 		WebDriverUtils.enterTextBox(driver, searchTextBox, option);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void assertProductDisplayedDE(String expectedText) {
+		String text = WebDriverUtils.getElementText(driver, textMsgProduct);
+		assertEquals(text, expectedText, "Produktergebnisse für" + text);
+	}
 
 	public void assertProductDisplayed(String expectedText) {
 		String text = WebDriverUtils.getElementText(driver, textMsgProduct);

@@ -53,6 +53,11 @@ public class HomePageCH extends BasePage implements List<HomePage> {
 		String text = WebDriverUtils.getElementText(driver, textMsgProduct);
 		assertEquals(text, expectedText, "Product results for:" + text);
 	}
+	
+	public void assertProductDisplayedDE(String expectedText) {
+		String text = WebDriverUtils.getElementText(driver, textMsgProduct);
+		assertEquals(text, expectedText, "Produktergebnisse für" + text);
+	}
 
 	public void seeAllproducts() {
 		logger.info("Display all the products...");
