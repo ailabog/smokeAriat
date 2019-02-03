@@ -37,6 +37,7 @@ public class HomePageCH extends BasePage implements List<HomePage> {
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
+	private By searchTextBoxDE = By.xpath("//input[@placeholder='Produktsuche']");
 
 	protected HomePageCH(WebDriver driver) {
 		super(driver);
@@ -46,6 +47,13 @@ public class HomePageCH extends BasePage implements List<HomePage> {
 		logger.info("Searching for a product...");
 		WebDriverUtils.clickOnElementWithWait(driver, search);
 		WebDriverUtils.enterTextBox(driver, searchTextBox, option);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void searchDE(String option) {
+		logger.info("Searching for a product...");
+		WebDriverUtils.clickOnElementWithWait(driver, search);
+		WebDriverUtils.enterTextBox(driver, searchTextBoxDE, option);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 

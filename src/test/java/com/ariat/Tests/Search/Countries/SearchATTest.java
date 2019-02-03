@@ -44,7 +44,7 @@ public class SearchATTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageAT = (HomePageAT) homePage.chooseEULocation(euCountry.AT, euCountry.AT.getCurrencyISO());
-		homePageAT.search(OPTION);
+		homePageAT.searchDE(OPTION);
 	    homePageAT.assertProductDisplayedDE(MESSAGE+OPTION);
 		homePageAT.seeAllproducts();
 		logger.info("Finishing search products Deutschland test");

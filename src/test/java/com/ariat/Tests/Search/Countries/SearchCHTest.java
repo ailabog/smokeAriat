@@ -44,7 +44,7 @@ public class SearchCHTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageCH = (HomePageCH) homePage.chooseEULocation(euCountry.CH, euCountry.CH.getCurrencyISO());
-		homePageCH.search(OPTION);
+		homePageCH.searchDE(OPTION);
 	    homePageCH.assertProductDisplayedDE(MESSAGE+OPTION);
 		homePageCH.seeAllproducts();
 		logger.info("Finishing search products Deutschland test");
