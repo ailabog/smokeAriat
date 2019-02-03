@@ -4,16 +4,17 @@
 <parameter name="environment" value="${environment}" />
 	<test name="productWriteReviewAllCountriesTest" >
        <classes>
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryUKTest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryDKTest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryIETest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryFITest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryDETest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryFRTest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryUSTest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryCATest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryJPTest" />
-                 <class name="com.ariat.Tests.Product.WriteReview.WomenCategory.ProductWriteReviewWomenCategoryRUTest" />
+                       
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryUKTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDKTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryIETest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryFITest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDETest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryFRTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryUSTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryCATest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryJPTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryRUTest"  />
                
        </classes>
      </test>
