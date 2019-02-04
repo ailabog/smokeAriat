@@ -63,8 +63,8 @@ public class DeleteAddressFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
+		addressesPage.deleteAddressCreatedNoFR("nnn");
+		addressesPage.deleteAddressCreatedYesFR("nn");
 		addressesPage.checkAddress("nnn");
 		logger.info("Finishing deleting address France test");
 	}

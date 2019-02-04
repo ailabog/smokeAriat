@@ -35,7 +35,9 @@ public class AddressesPage extends BasePage {
 	private By cancelButtonDialog = By.xpath("//span[text()='Cancel']");
 	private By cancelButtonDialogDE = By.xpath("//span[text()='Abbrechen']");
 	private By deleteButtonDialogDE = By.xpath("//span[text()='Löschen']");
-	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
+	private By cancelButtonDialogFR = By.xpath("//span[text()='Annuler']");
+	private By deleteButtonDialogFR = By.xpath("//span[text()='Supprimer']");
+	private By deleteButtonDialog = By.xpath("//span[text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
@@ -154,6 +156,19 @@ public class AddressesPage extends BasePage {
 			logger.info("Cancel deleting {}" + addressValue + "was not possible");
 		}
 	}
+	public void deleteAddressCreatedNoFR(String addressValue) {
+		if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, deleteLinkFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialogFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			logger.info("Cancel deleting {}" + addressValue + "was done with success");
+
+		} else {
+
+			logger.info("Cancel deleting {}" + addressValue + "was not possible");
+		}
+	}
 
 	public void deleteAddressCreatedNoDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
@@ -175,6 +190,20 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			logger.info("Delete {}" + addressValue + "was done with success");
+
+		} else {
+
+			logger.info("Delete {}" + addressValue + "was not possible");
+		}
+	}
+	
+	public void deleteAddressCreatedYesFR(String addressValue) {
+		if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, deleteLinkFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialogFR);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			logger.info("Delete {}" + addressValue + "was done with success");
 
