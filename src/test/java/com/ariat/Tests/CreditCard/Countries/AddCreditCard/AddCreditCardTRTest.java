@@ -49,7 +49,7 @@ public class AddCreditCardTRTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardJETest() {
+	public void addCreditCardTRTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card Turkey test");
 		homePage = new HomePage(new ChromeDriver());
@@ -73,7 +73,7 @@ public class AddCreditCardTRTest extends BaseTest{
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoJETest() {
+	public void addCreditCardFromPaymentInfoTRTest() {
 		logger.info("Starting add credit card from Payment Info Turkey test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
