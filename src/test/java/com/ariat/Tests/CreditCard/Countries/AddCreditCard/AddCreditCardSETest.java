@@ -52,7 +52,7 @@ public class AddCreditCardSETest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardDKTest() {
+	public void addCreditCardSETest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card Sweden test");
 		homePage = new HomePage(new ChromeDriver());
@@ -77,7 +77,7 @@ public class AddCreditCardSETest extends BaseTest{
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUKTest() {
+	public void addCreditCardFromPaymentInfoSETest() {
 		logger.info("Starting add credit card from Payment Info Sweden test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

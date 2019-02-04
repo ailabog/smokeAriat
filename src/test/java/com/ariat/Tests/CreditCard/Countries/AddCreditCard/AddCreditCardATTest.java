@@ -77,7 +77,7 @@ public class AddCreditCardATTest extends BaseTest{
   } 
 	
 	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoDETest() {
+	public void addCreditCardFromPaymentInfoATTest() {
 		logger.info("Starting add credit card from Payment Info Austria test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

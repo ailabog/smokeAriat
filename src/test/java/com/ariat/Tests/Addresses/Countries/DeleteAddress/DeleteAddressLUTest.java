@@ -53,7 +53,7 @@ public class DeleteAddressLUTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void deleteAddressDKTest() {
+	public void deleteAddressLUTest() {
 		logger.info("Starting deleting address Luxembourg test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -71,7 +71,7 @@ public class DeleteAddressLUTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressFromEditDKTest() {
+	public void deleteAddressFromEditLUTest() {
 		logger.info("Starting deleting address from Edit address Luxembourg test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

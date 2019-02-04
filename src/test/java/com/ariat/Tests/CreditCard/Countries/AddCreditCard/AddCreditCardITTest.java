@@ -52,7 +52,7 @@ public class AddCreditCardITTest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardDKTest() {
+	public void addCreditCardITTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card Italy test");
 		homePage = new HomePage(new ChromeDriver());

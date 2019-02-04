@@ -52,7 +52,7 @@ public class AddCreditCardBETest extends BaseTest{
 	}
 
 	@Test(priority = 0)
-	public void addCreditCardUKTest() {
+	public void addCreditCardBETest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card Belgium test");
 		homePage = new HomePage(new ChromeDriver());
