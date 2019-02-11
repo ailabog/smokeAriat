@@ -25,7 +25,6 @@
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountKRTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountTRTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountTWTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountJETest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCNTest" />
                  
             
