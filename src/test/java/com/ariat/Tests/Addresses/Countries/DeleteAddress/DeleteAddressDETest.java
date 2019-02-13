@@ -64,9 +64,9 @@ public class DeleteAddressDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
-		addressesPage.checkAddress("nnn");
+		addressesPage.deleteAddressCreatedNoDE("nnn");
+		addressesPage.deleteAddressCreatedYesDE("nn");
+		addressesPage.checkAddressDE("nnn");
 		logger.info("Finishing deleting address Germany test");
 	}
 
@@ -84,7 +84,7 @@ public class DeleteAddressDETest extends BaseTest {
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
-		addressesPage.checkAddress("ccc");
+		addressesPage.checkAddressDE("ccc");
 		logger.info("Finishing deleting address from Edit address Germany test");
 	}
 

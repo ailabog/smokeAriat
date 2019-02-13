@@ -62,9 +62,9 @@ public class DeleteAddressFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
-		addressesPage.checkAddress("nnn");
+		addressesPage.deleteAddressCreatedNoFR("nnn");
+		addressesPage.deleteAddressCreatedYesFR("nn");
+		addressesPage.checkAddressFR("nnn");
 		logger.info("Finishing deleting address France test");
 	}
 
@@ -82,7 +82,7 @@ public class DeleteAddressFRTest extends BaseTest {
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		addressesPage.checkAddress("ccc");
+		addressesPage.checkAddressFR("ccc");
 		logger.info("Finishing deleting address from Edit address France test");
 	}
 

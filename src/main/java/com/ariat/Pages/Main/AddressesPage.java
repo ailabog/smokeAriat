@@ -35,12 +35,17 @@ public class AddressesPage extends BasePage {
 	private By addressTextDE = By.xpath("//*[contains(text(), Adressen']");
 	private By editLink = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[2]/a[1]");
 	private By deleteLink = By.xpath("//a[@title='Delete']");
+	private By deleteLinkDE = By.xpath("//a[@title='Löschen']");
+	private By deleteLinkFR = By.xpath("//a[@title='Supprimer']");
 	private By makeDefaultLink = By.xpath("a[text()='Make default']");
 	private By deleteButton = By.name("dwfrm_profile_address_remove");
 	private By cancelButtonDialog = By.xpath("//span[text()='Cancel']");
-	private By deleteButtonDialog = By.xpath("//span[(text()='Delete']");
+	private By cancelButtonDialogDE = By.xpath("//span[text()='Abbrechen']");
+	private By cancelButtonDialogFR = By.xpath("//span[text()='Annuler']");
+	private By deleteButtonDialog = By.xpath("//span[text()='Delete']");
+	private By deleteButtonDialogDE = By.xpath("//span[text()='Löschen']");
+	private By deleteButtonDialogFR = By.xpath("//span[text()='Supprimer']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
-	private By addressesTable = By.xpath("//*[@id=\\\"main\\\"]/div/div[2]/div[1]");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
 	private By loadMoreButton = By.xpath("//div[@id='addresses']/div[127]/button");
@@ -79,37 +84,36 @@ public class AddressesPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public boolean checkAddress(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
-				.findElements((SearchContext) By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("td"));
-			for (WebElement cell : cells) {
-				while (cell.getText() == addressValue) {
+	public boolean checkAddressDE(String addressValue) {
+				if (WebDriverUtils.findElement(driver, editLink) != null
+							&& WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
+						logger.info("Address {}" + addressValue
+								+ "was created with success and actions as Edit and Delete can de done");
+		}
+		return checkAddress;
+	}
+	
+	public boolean checkAddressFR(String addressValue) {
 					if (WebDriverUtils.findElement(driver, editLink) != null
+							&& WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
+						logger.info("Address {}" + addressValue
+								+ "was created with success and actions as Edit and Delete can de done");
+			}
+		return checkAddress;
+	}
+	
+	public boolean checkAddress(String addressValue) {
+		if (WebDriverUtils.findElement(driver, editLink) != null
 							&& WebDriverUtils.findElement(driver, deleteLink) != null) {
 						logger.info("Address {}" + addressValue
 								+ "was created with success and actions as Edit and Delete can de done");
-
-					} else {
-						boolean checkAddress = false;
-						logger.info("Something went wrong");
-					}
-				}
-			}
 
 		}
 		return checkAddress;
 	}
 
 	public void makeDefaultAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
-				.findElements((SearchContext) By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
+		if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 						logger.info("Make default {}" + addressValue + "was done with success");
@@ -118,21 +122,10 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Make default {}" + addressValue + "was not possible");
 					}
-				} else {
-					logger.info("Address {}" + addressValue + "was not found");
-				}
-			}
-		}
 	}
 
 	public void deleteAddressCreatedNo(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
-				.findElements((SearchContext) By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
+		if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialog);
@@ -143,21 +136,38 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Cancel deleting {}" + addressValue + "was not possible");
 					}
-				} else {
-					logger.info("Address {}" + addressValue + "was not found");
-				}
-			}
-		}
 	}
+	
+	public void deleteAddressCreatedNoDE(String addressValue) {
+		if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkDE);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialogDE);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						logger.info("Cancel deleting {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Cancel deleting {}" + addressValue + "was not possible");
+					}
+			}
+	
+	public void deleteAddressCreatedNoFR(String addressValue) {
+			if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkFR);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialogFR);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						logger.info("Cancel deleting {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Cancel deleting {}" + addressValue + "was not possible");
+					}
+			}
 
 	public void deleteAddressCreatedYes(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
-				.findElements((SearchContext) By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, deleteLink) != null) {
+		if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
@@ -168,21 +178,38 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Delete {}" + addressValue + "was not possible");
 					}
-				} else {
-					logger.info("Address {}" + addressValue + "was not found");
 				}
+	
+	public void deleteAddressCreatedYesDE(String addressValue) {
+		if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkDE);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialogDE);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						logger.info("Delete {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Delete {}" + addressValue + "was not possible");
+					}
 			}
-		}
+	
+	public void deleteAddressCreatedYesFR(String addressValue) {
+			if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
+						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkFR);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialogFR);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+						logger.info("Delete {}" + addressValue + "was done with success");
+
+					} else {
+
+						logger.info("Delete {}" + addressValue + "was not possible");
+					}
 	}
 
 	public void editAddressCreated(String addressValue) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) addressesTable
-				.findElements((SearchContext) By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == addressValue) {
-					if (WebDriverUtils.findElement(driver, editLink) != null) {
+			if (WebDriverUtils.findElement(driver, editLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, editLink);
 						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 						logger.info("Edit address {}" + addressValue + "was done with success");
@@ -191,12 +218,7 @@ public class AddressesPage extends BasePage {
 
 						logger.info("Edit address {}" + addressValue + "was not possible");
 					}
-				} else {
-					logger.info("Address {}" + addressValue + "was not found");
-				}
 			}
-		}
-	}
 
 	public void assertMakeDefaultDE(String expectedAddress) {
 		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
