@@ -248,6 +248,44 @@ public class AddressesPage extends BasePage {
 			logger.info("Edit address {}" + addressValue + "was not possible");
 		}
 	}
+	
+	
+	public void makeDefaultAddressCreated(String addressValue) {
+		if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			logger.info("Make default address {}" + addressValue + "was done with success");
+
+		} else {
+
+			logger.info("Make default {}" + addressValue + "was not possible");
+		}
+	}
+	
+	public void makeDefaultAddressCreatedFR(String addressValue) {
+		if (WebDriverUtils.findElement(driver, makeDefaultLinkFR) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLinkFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			logger.info("Make default address {}" + addressValue + "was done with success");
+
+		} else {
+
+			logger.info("Make default {}" + addressValue + "was not possible");
+		}
+	}
+	
+	public void makeDefaultAddressCreatedDE(String addressValue) {
+		if (WebDriverUtils.findElement(driver, makeDefaultLinkDE) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLinkDE);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			logger.info("Make default address {}" + addressValue + "was done with success");
+
+		} else {
+
+			logger.info("Make default {}" + addressValue + "was not possible");
+		}
+	}
+
 
 	public void assertMakeDefaultDE(String expectedAddress) {
 		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
