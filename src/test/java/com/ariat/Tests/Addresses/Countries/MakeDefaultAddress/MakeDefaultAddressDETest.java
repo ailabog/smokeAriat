@@ -61,7 +61,7 @@ public class MakeDefaultAddressDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreatedDE("235432");
+		addressesPage.makeDefaultAddressCreatedFR("235432");
 		addressesPage.assertMakeDefaultDE("STANDARD | 235432");
 		logger.info("Finishing make default address France test");
 	}
