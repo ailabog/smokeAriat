@@ -11,6 +11,7 @@ import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Utils.WebDriverUtils;
 
 
+
 /**
  * Implements Product attributes methods for Gloves Page
  * @author aila.bogasieru@ariat.com
@@ -19,17 +20,12 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class GlovesProductPage extends BasePage{
 	
-	private By addToBasket = By.cssSelector("#add-to-cart");
+
 	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
-	private By bonusDialog = By.id("bonus-choose-container product-content");
-
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
-
-	private By selectSize = By.id("va-size");
 	private By selectCalf = By.id("va-calf");
 	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
@@ -61,14 +57,20 @@ public class GlovesProductPage extends BasePage{
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
     private By updateButton = By.id("add-to-cart");
 	private By lengthLocator = By.id("va-length");
-	
+
+	By selectSize = By.id("va-size");
+	By addToBasket = By.cssSelector("#add-to-cart");
+	By bonusDialog = By.id("bonus-choose-container product-content");
+
 	public GlovesProductPage(WebDriver driver) {
 		super(driver);
 	}
+
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+
 
 	public void selectAttributeCalf(String calf) {
 		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
@@ -204,6 +206,7 @@ public class GlovesProductPage extends BasePage{
 		return new MyBagPage(driver);
 	}
 
+
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
@@ -221,4 +224,5 @@ public class GlovesProductPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
+
 }
