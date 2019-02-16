@@ -23,7 +23,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenCategoryPage extends BasePage {
 
-	private By womenFootwearCategory = By.linkText("Footwear");
+	private By womenFootwearCategory = By.xpath("//a[text()=' Footwear']");
 	private By womenFootwearCategoryDE = By.linkText("Schuhe");
 	
 	private By womenFootwearCategoryFR = By.linkText("Bottes et boots");
