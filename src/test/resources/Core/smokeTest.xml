@@ -20,7 +20,6 @@
                <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryUSTest" />
                <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
                       
-             
         </classes>
      </test>
 </suite>
