@@ -53,6 +53,10 @@ public class CreateAccountPage extends BasePage {
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 	private By emailMsgTxt = By.xpath("//span[text()='The email address is invalid.']");
 	private By missingMsg =By.xpath("//span[text()='This field is required.']");
+	private By emailMsgTxtDE = By.xpath("//span[text()='Die E-Mail-Adresse ist ungültig.']");
+	private By emailMsgTxtFR = By.xpath("//span[text()='L'adresse courriel n'est pas valide.']");
+	
+	
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
@@ -117,6 +121,16 @@ public class CreateAccountPage extends BasePage {
 	
 	public void assertWrongNameCreateAccount(String emailMsgTxtValue) {
 		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxt);
+		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
+	}
+	
+	public void assertWrongNameCreateAccountFR(String emailMsgTxtValue) {
+		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxtFR);
+		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
+	}
+	
+	public void assertWrongNameCreateAccountDE(String emailMsgTxtValue) {
+		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxtDE);
 		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
 	}
 	

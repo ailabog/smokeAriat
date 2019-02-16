@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageNO;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -19,23 +20,24 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 /**
  * Test negative create account by instantiating the browser, go to Home page,
  * and calls all the methods such as: create account, login, check order status
- * for United Kingdom
+ * for Norway
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class NegativeCreateAccountUKTest extends BaseTest {
+public class NegativeCreateAccountNOTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageNO homePageNO;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private String loggingMessage = "The email address is invalid.";
-	private String missingLoggingValue = "This field is required.";
+	private String missingLoggingValue = "The email address is required.";
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
@@ -60,6 +62,7 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageNO = (HomePageNO) homePage.chooseEULocation(euCountry.NO, euCountry.NO.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -83,6 +86,7 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageNO = (HomePageNO) homePage.chooseEULocation(euCountry.NO, euCountry.NO.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME1);
@@ -106,6 +110,7 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageNO = (HomePageNO) homePage.chooseEULocation(euCountry.NO, euCountry.NO.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -119,6 +124,7 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageNO.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		createAccountPage.quit();

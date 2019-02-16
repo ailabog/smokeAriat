@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="contactUsTest" verbose="1" >
+
+	<test name="contactUsTest" >
+       <classes>
+               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
+               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUKTest" />
+               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryUKTest" />
+               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryUKTest" />
+               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderUKTest" />
+            </classes>
+     </test>
+</suite>
