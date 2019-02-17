@@ -88,7 +88,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By faqsFooter = By.linkText("FAQs");
 	private By faqsFooterText = By.xpath("//h1[text()='FAQs']");
 	private By sizeChartsFooter = By.xpath("(//a[contains(text(),'Size Charts')])[2]");
-    private By sizeChartsFooterText = By.xpath("//h1[text()='SIZE CHARTS']");
+	private By sizeChartsFooterText = By.xpath("//h1[text()='SIZE CHARTS']");
 	private By findARetailerFooter = By.xpath("//a[contains(text(),'Find a Retailer')]");
 	private By findARetailerText = By.xpath("//h1[text()='Find a retailer']");
 	private By divinoStockListFooter = By.linkText("Divino Stockists");
@@ -114,21 +114,22 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
-	
-	 private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
-     private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-     private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
-	
-    private By minicartDialog = By.id("mini-cart-products-ariat");
-    private boolean showMinicart;
-    
-    private By topsAndTshirtsCategory = By.xpath("//a[text()='Tops & T-Shirts']");
-    private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-    private By emailText = By.xpath("//input[@placeholder='Email address']");
-    
-    private By myAccountFooter = By.xpath("//a[contains(text(),'My Accounts')]");
-    private By myAccountText = By.xpath("//h2[text()='Returning customer']");
-    
+
+	private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
+	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+
+	private By accessoriesCategory = By.xpath("//a[contains(text(),'Accessories']");
+
+	private By minicartDialog = By.id("mini-cart-products-ariat");
+	private boolean showMinicart;
+
+	private By topsAndTshirtsCategory = By.xpath("//a[text()='Tops & T-Shirts']");
+	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+	private By emailText = By.xpath("//input[@placeholder='Email address']");
+
+	private By myAccountFooter = By.xpath("//a[contains(text(),'My Accounts')]");
+	private By myAccountText = By.xpath("//h2[text()='Returning customer']");
+
 	private By aboutUsHeader = By.linkText("About Us");
 
 	public void checkElementsHeader() {
@@ -487,7 +488,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(warrantyText));
 		return new WarrantyPage(driver);
 	}
-	
+
 	public DeliveryPage returnDeliveryPage() {
 		WebDriverUtils.scrollBottomPage(driver, deliveryFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, deliveryFooter);
@@ -495,7 +496,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(deliveryFooterText));
 		return new DeliveryPage(driver);
 	}
-	
+
 	public FaqsPage returnFaqsPage() {
 		WebDriverUtils.scrollBottomPage(driver, faqsFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, faqsFooter);
@@ -503,7 +504,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
 		return new FaqsPage(driver);
 	}
-	
+
 	public SizeChartsPage returnSizeChartsPage() {
 		WebDriverUtils.scrollBottomPage(driver, sizeChartsFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, sizeChartsFooter);
@@ -511,7 +512,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(sizeChartsFooterText));
 		return new SizeChartsPage(driver);
 	}
-	
+
 	public ContactUsPage returnContactUsPage() {
 		WebDriverUtils.scrollBottomPage(driver, contactUsFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, contactUsFooter);
@@ -519,7 +520,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
 		return new ContactUsPage(driver);
 	}
-	
+
 	public SignInPage returnSignInPageFromFooter() {
 		WebDriverUtils.scrollBottomPage(driver, myAccountFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, myAccountFooter);
@@ -527,7 +528,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new SignInPage(driver);
 	}
-	
+
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.scrollBottomPage(driver, wishListFooter);
 		WebDriverUtils.clickOnElementWithWait(driver, wishListFooter);
@@ -537,22 +538,22 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(wishListText1));
 		return new MyAccountWishListPage(driver);
 	}
-	
+
 	public boolean minicartShow() {
-			if(WebDriverUtils.findElement(driver, minicartDialog) !=null) {
-				showMinicart = true;
+		if (WebDriverUtils.findElement(driver, minicartDialog) != null) {
+			showMinicart = true;
 			logger.info("Product was added in cart from WishList" + showMinicart);
 		}
 		return showMinicart;
 	}
-	
+
 	public CasualShoeProductPage returnCasualShoeProductPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCasualShoesCategory));
 		return new CasualShoeProductPage(driver);
 	}
-	
+
 	public WomenAccessoriesPage returnAccessoriesCategoryPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.clickOnElement(driver, accessoriesCategory);
@@ -560,7 +561,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesText));
 		return new WomenAccessoriesPage(driver);
 	}
-	
+
 	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
 		WebDriverUtils.clickOnElement(driver, topsAndTshirtsCategory);
@@ -568,7 +569,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
 		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
-	
+
 	@Override
 	public boolean add(HomePage e) {
 

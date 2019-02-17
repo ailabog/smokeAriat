@@ -9,6 +9,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageLU;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
@@ -22,11 +23,12 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
  *
  */
 
-public class NegativeProductWriteReviewWomenCategoryUKTest extends BaseTest {
+public class NegativeProductWriteReviewWomenCategoryLUTest extends BaseTest {
 
 	private Environments environment;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageLU homePageLU;
 	private BagsProductPage bagsProductPage;
 	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
@@ -50,7 +52,8 @@ public class NegativeProductWriteReviewWomenCategoryUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenAccessoriesPage = homePageUK.returnAccessoriesCategoryPage();
+		homePageLU = (HomePageLU) homePage.chooseEULocation(euCountry.LU, euCountry.LU.getCurrencyISO());
+		womenAccessoriesPage = homePageLU.returnAccessoriesCategoryPage();
 		womenAccessoriesBagsPage = womenAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
 		bagsProductPage = womenAccessoriesBagsPage.returnBagsProductPage();
 		bagsProductPage.writeReviewClick();
@@ -64,6 +67,7 @@ public class NegativeProductWriteReviewWomenCategoryUKTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
+		homePageLU.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesBagsPage.quit();
 		bagsProductPage.quit();
