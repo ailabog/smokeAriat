@@ -4,39 +4,8 @@
 <parameter name="environment" value="${environment}" />
 	<test name="smokeTest" >
        <classes>
-               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
-               <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDETest" />
-               <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDETest" />
-               <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressDETest" />
-               <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.Add_DeleteCreditCardDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.Add_MakeDefaultCreditCardDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddCreditCardNegativeDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDETest" />
-               <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" />
-               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryDETest" />
-               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryDETest" />
-               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" />
-               
-               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFRTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressFRTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressFRTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFRTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.Add_DeleteCreditCardFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.Add_MakeDefaultCreditCardFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddCreditCardNegativeFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFRTest" />
-               <class name="com.ariat.Tests.Logout.Countries.LogoutFRTest" />
-               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryFRTest" />
-               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryFRTest" />
-               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryFRTest" />
-                   
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
+                               
+               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
                <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUKTest" />
                <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUKTest" />
                <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUKTest" />

@@ -1,15 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="contactUsTest" verbose="1" >
+<suite name="negativeTests" verbose="1" >
 
-	<test name="contactUsTest" >
+	<test name="negativeTests" >
        <classes>
-               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUKTest" />
-               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryUKTest" />
-               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryUKTest" />
-               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderUKTest" />
+               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDETest" />
+               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDETest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardDETest" />
+               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryDETest" />
+               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryDETest" />
+               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderDETest" />
             </classes>
      </test>
 </suite>

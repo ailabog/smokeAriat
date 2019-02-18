@@ -47,7 +47,7 @@ public class DeleteCreditCardNLTest extends BaseTest{
 	}
 
 	@Test
-	public void deleteCreditCardFromPaymentInfoIETest() {
+	public void deleteCreditCardFromPaymentInfoNLTest() {
 		logger.info("Starting delete credit card from Payment Info Netherlands test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
