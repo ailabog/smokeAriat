@@ -75,7 +75,10 @@
           <artifactId>maven-surefire-plugin></artifactId>
           <version>${maven.surefire.version}</version>
           <configuration>
-             <skipTests>true</skipTests>
+           <suiteXmlFiles>
+              <suiteXmlFiles>testSuites.xml</suiteXmlFiles>
+           </suiteXmlFiles>
+             <skipTests>false</skipTests>
           </configuration> 
         </plugin>
         <plugin>
@@ -84,7 +87,7 @@
         <version>${maven.failsafe.version}</version>
         <configuration>
            <suiteXmlFiles>
-              <suiteXmlFiles>${testSuite}</suiteXmlFiles>
+              <suiteXmlFiles>testSuites.xml</suiteXmlFiles>
            </suiteXmlFiles>
         </configuration>
         </plugin>

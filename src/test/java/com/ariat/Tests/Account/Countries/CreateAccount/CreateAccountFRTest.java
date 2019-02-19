@@ -60,7 +60,7 @@ public class CreateAccountFRTest extends BaseTest {
 	public void createAccountTest() {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.STAGING.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
@@ -83,7 +83,7 @@ public class CreateAccountFRTest extends BaseTest {
 	public void returningCustomerTest() {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.STAGING.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
@@ -97,7 +97,7 @@ public class CreateAccountFRTest extends BaseTest {
 	public void checkInvalidOrderTest() {
 		logger.info("Starting checking invalid order test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.STAGING.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
@@ -111,7 +111,7 @@ public class CreateAccountFRTest extends BaseTest {
 	public void checkValidOrderTest() {
 		logger.info("Starting checking valid order test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.STAGING.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
@@ -124,7 +124,7 @@ public class CreateAccountFRTest extends BaseTest {
 	public void forgotPasswordTest() {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.STAGING.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
