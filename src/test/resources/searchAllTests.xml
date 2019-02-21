@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="searchAllTests" verbose="1">
+<parameter name="environment" value="DEVELOPMENT" />
+	<test name="searchAllTests" >
+       <classes>
+                               
+                       
+                  <class name="com.ariat.Tests.Search.Countries.SearchUKTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchIETest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchDKTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchDETest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchATTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchCHTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchFITest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchBETest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchSETest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchITTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchNLTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchNOTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchLUTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchFRTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchCATest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchJPTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchRUTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchCNTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchKRTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchTRTest" />
+                 <class name="com.ariat.Tests.Search.Countries.SearchTWTest" />
+               
+        
+        </classes>
+     </test>
+</suite>

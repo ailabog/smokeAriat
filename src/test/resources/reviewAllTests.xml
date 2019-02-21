@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="reviewAllTests" verbose="1">
+<parameter name="environment" value="DEVELOPMENT" />
+	<test name="reviewAllTests" >
+       <classes>
+      
+                  <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryUKTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDKTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryIETest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryFITest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDETest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryFRTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryUSTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryCATest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryJPTest"  />
+                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryRUTest"  />
+             
+        </classes>
+     </test>
+</suite>

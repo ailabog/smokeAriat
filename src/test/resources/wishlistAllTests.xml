@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="wishlistAllTests" verbose="1">
+<parameter name="environment" value="DEVELOPMENT" />
+	<test name="wishlistAllTests" >
+       <classes>
+            
+                          
+                         
+                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryUKTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryDKTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryFITest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryIETest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryDETest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryFRTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryUSTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryCATest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryJPTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryRUTest" />
+                 
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUKTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDKTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryFITest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryIETest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryFRTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryCATest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryJPTest" />
+                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryRUTest" />
+                 
+               
+        </classes>
+     </test>
+</suite>

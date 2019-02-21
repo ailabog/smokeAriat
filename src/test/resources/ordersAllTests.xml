@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ordersAllTests" verbose="1">
+<parameter name="environment" value="DEVELOPMENT" />
+	<test name="ordersAllTests" >
+       <classes>
+                             
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsUKTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsUSTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsDKTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsFITest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsIETest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsDETest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsFRTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsJPTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsRUTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderDetailsCATest" />
+                 
+                   <class name="com.ariat.Tests.Orders_View.OrderStatusUKTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusIETest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusDKTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusFITest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusDETest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusFRTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusCATest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusRUTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusJPTest" />
+                 
+                </classes>
+     </test>
+</suite>
