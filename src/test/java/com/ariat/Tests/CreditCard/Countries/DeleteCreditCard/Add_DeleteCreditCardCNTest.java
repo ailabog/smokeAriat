@@ -49,7 +49,7 @@ public class Add_DeleteCreditCardCNTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardJPTest() {
+	public void add_deleteCreditCardCNTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & delete it China test");
 		homePage = new HomePage(new ChromeDriver());

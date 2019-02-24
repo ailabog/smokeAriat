@@ -51,7 +51,7 @@ public class Add_DeleteCreditCardJETest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardDKTest() {
+	public void add_deleteCreditCardJETest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & delete it Jersey test");
 		homePage = new HomePage(new ChromeDriver());

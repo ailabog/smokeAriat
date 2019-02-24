@@ -49,7 +49,7 @@ public class Add_DeleteCreditCardTRTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardJPTest() {
+	public void add_deleteCreditCardTRTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & delete it Turkey test");
 		homePage = new HomePage(new ChromeDriver());

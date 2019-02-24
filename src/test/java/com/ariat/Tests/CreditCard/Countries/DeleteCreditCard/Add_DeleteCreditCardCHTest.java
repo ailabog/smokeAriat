@@ -52,7 +52,7 @@ public class Add_DeleteCreditCardCHTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardDETest() {
+	public void add_deleteCreditCardCHTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & delete it Cehia test");
 		homePage = new HomePage(new ChromeDriver());

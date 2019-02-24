@@ -52,7 +52,7 @@ public class Add_DeleteCreditCardNOTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardDKTest() {
+	public void add_deleteCreditCardNOTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & delete it Norway test");
 		homePage = new HomePage(new ChromeDriver());
