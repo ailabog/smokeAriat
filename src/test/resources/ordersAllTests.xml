@@ -16,7 +16,7 @@
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsRUTest" />
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsCATest" />
                  
-                   <class name="com.ariat.Tests.Orders_View.OrderStatusUKTest" />
+                 <class name="com.ariat.Tests.Orders_View.OrderStatusUKTest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusIETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusDKTest" />

@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="logoutAllTests" verbose="1">
+<suite name="myAccountAllTests" verbose="1">
 <parameter name="environment" value="DEVELOPMENT" />
-	<test name="logoutAllTests" >
+	<test name="myAccountAllTests" >
        <classes>
             
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />

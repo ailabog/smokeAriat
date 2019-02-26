@@ -42,7 +42,7 @@ public class LogoutBETest extends BaseTest {
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleDKTest() {
+	public void logoutFromMyAccountMiddleBETest() {
 		logger.info("Starting the logout Belgium test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -57,7 +57,7 @@ public class LogoutBETest extends BaseTest {
 	}
 	
 	@Test
-	public void logoutFromMyAccountTopDKTest() {
+	public void logoutFromMyAccountTopBETest() {
 		logger.info("Starting the logout Belgium test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

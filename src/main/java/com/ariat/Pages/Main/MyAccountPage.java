@@ -64,12 +64,12 @@ public class MyAccountPage extends BasePage {
 	private By addCardLink = By.xpath("//a[contains(text(),'Add Card')]");
 	private By addCardLinkDE = By.xpath("//a[contains(text(),'Karte hinzufügen')]");
 	private By addCardLinkFR = By.xpath("//a[contains(text(),'Ajouter carte')]");
-	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[57]");
-	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[57]");
+	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[58]");
+	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[58]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
 	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");
-	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[58]");
-	private By viewAllWishListLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[58]");
+	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[59]");
+	private By viewAllWishListLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[59]");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
 
