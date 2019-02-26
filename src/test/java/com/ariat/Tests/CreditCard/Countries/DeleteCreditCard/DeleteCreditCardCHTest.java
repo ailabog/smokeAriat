@@ -47,7 +47,7 @@ public class DeleteCreditCardCHTest extends BaseTest{
 	}
 
 	@Test
-	public void deleteCreditCardFromPaymentInfoDETest() {
+	public void deleteCreditCardFromPaymentInfoCHTest() {
 		logger.info("Starting delete credit card from Payment Info Cehia test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

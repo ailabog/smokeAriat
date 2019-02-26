@@ -37,10 +37,8 @@ public class WomenClothingPage extends BasePage{
 	private By womenClothingShowText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenClothingBreechesAndTightsCategory = By.linkText("Breeches & Tights");
 	private By womenClothingBreechesAndTightsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	
-	
-	private By breechProduct = By.xpath("//*[@id=\"090063bcf97c645fd559e70ac5\"]/div[1]/a/picture/img");
 	private By breechText = By.xpath("//*contains[text(),'Whipstitch Knee Patch Breech']");
+	private By breechProduct = By.xpath("img[contains(@title, 'Whipstitch Knee Patch Breech']");
 	 
 	public WomenClothingPage(WebDriver driver) {
 		super(driver);

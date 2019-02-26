@@ -39,7 +39,8 @@ public class CreateAccountPage extends BasePage {
 	private By checkEnglish = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[1]/span");
 	private By checkOutdoor = By.xpath("//*[@id=\"RegistrationForm\"]/div[12]/div[2]/div[2]/span");
 	private By checkAddToEmailList = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[10]/div/span");
-	private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
+	//private By createAccountButton = By.xpath("//*[@id=\"RegistrationForm\"]/div/div[12]/div/button");
+	private By createAccountButton=By.name("dwfrm_profile_confirm");
 	private By myAccountTitle = By.className("/account-overview__title ms-font--proxima_nova_semibold");
 	private By emailMsgDE = By.xpath("//span[contains(text(),'Die E-Mail-Adresse ist ungültig.']");
 	private By emailMsg = By.xpath("//span[contains(text(), 'The email address is invalid.']");
@@ -50,6 +51,12 @@ public class CreateAccountPage extends BasePage {
 	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
+	private By emailMsgTxt = By.xpath("//span[text()='The email address is invalid.']");
+	private By missingMsg =By.xpath("//span[text()='This field is required.']");
+	private By emailMsgTxtDE = By.xpath("//span[text()='Die E-Mail-Adresse ist ungültig.']");
+	private By emailMsgTxtFR = By.xpath("//span[text()='L'adresse courriel n'est pas valide.']");
+	
+	
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
@@ -110,6 +117,26 @@ public class CreateAccountPage extends BasePage {
 	public void assertWrongEmailCreateAccount(String emailMsgExpected) {
 		String emailMessage = WebDriverUtils.getElementText(driver, emailMsg);
 		assertEquals(emailMessage, emailMsgExpected, "Invalid email message is displayed");
+	}
+	
+	public void assertWrongNameCreateAccount(String emailMsgTxtValue) {
+		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxt);
+		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
+	}
+	
+	public void assertWrongNameCreateAccountFR(String emailMsgTxtValue) {
+		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxtFR);
+		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
+	}
+	
+	public void assertWrongNameCreateAccountDE(String emailMsgTxtValue) {
+		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxtDE);
+		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
+	}
+	
+	public void asserCreateAccountMissingValues(String missingValue) {
+		String missing = WebDriverUtils.getElementText(driver, missingMsg);
+		assertEquals(missing, missingValue, "This field is required.");
 	}
 	
 	public void assertWrongEmailCreateAccountDE(String emailMsgExpected) {

@@ -61,7 +61,7 @@ public class LoadMoreAddressFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.loadMoreAddessesFR();
+		addressesPage.loadMoreAddesses();
 		logger.info("Finishing load more addresses France test");
 	}
 	
@@ -77,7 +77,7 @@ public class LoadMoreAddressFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
-		addressesPage.loadMoreAddessesFR();
+		addressesPage.loadMoreAddesses();
 		logger.info("Finishing load more addresses lef navigation France test");
 	}
 	
