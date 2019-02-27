@@ -10,6 +10,27 @@
                <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryDETest" />
                <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryDETest" />
                <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderDETest" />
+               
+               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
+               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUKTest" />
+               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryUKTest" />
+               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryUKTest" />
+               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderUKTest" />
+               
+               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNOTest" />
+               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNOTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardNOTest" />
+               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryNOTest" />
+               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryNOTest" />
+               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderNOTest" />
+               
+               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNLTest" />
+               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNLTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardNLTest" />
+               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryNLTest" />
+               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryNLTest" />
+               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderNLTest" />
             </classes>
      </test>
 </suite>
