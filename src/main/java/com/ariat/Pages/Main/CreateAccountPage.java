@@ -172,55 +172,56 @@ public class CreateAccountPage extends BasePage {
 
 	public void GenderFemale() {
 		logger.info("Choosing Female option:");
-		WebDriverUtils.clickOnElement(driver, FemaleRadio);
-		
+		WebDriverUtils.clickOnElementWithWait(driver, FemaleRadio);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
 	public void GenderMale() {
 		logger.info("Choosing Male option:");
-		WebDriverUtils.clickOnElement(driver, MaleRadio);
+		WebDriverUtils.clickOnElementWithWait(driver, MaleRadio);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	
 	}
 
 	public void rideYes() {
 		logger.info("Choose I ride");
-		WebDriverUtils.clickOnElement(driver, rideYes);
+		WebDriverUtils.clickOnElementWithWait(driver, rideYes);
 		
 	}
 
 	public void rideNo() {
 		logger.info("Choose I don't ride");
-		WebDriverUtils.clickOnElement(driver, rideNo);
+		WebDriverUtils.clickOnElementWithWait(driver, rideNo);
 		
 	}
 
 	public void productsWesternCheck() {
 		logger.info("Check Western products");
-		WebDriverUtils.clickOnElement(driver, checkWestern);
+		WebDriverUtils.clickOnElementWithWait(driver, checkWestern);
 	
 	}
 
 	public void productsFashionCheck() {
 		logger.info("Check Fashion products");
-		WebDriverUtils.clickOnElement(driver, checkFashion);
+		WebDriverUtils.clickOnElementWithWait(driver, checkFashion);
 
 	}
 
 	public void productsWorkCheck() {
 		logger.info("Check Work products");
-		WebDriverUtils.clickOnElement(driver, checkWork);
+		WebDriverUtils.clickOnElementWithWait(driver, checkWork);
 
 	}
 
 	public void productsEnglishCheck() {
 		logger.info("Check English products");
-		WebDriverUtils.clickOnElement(driver, checkEnglish);
+		WebDriverUtils.clickOnElementWithWait(driver, checkEnglish);
 	
 	}
 
 	public void productsOutdoorCheck() {
 		logger.info("Check Outdoor products");
-		WebDriverUtils.clickOnElement(driver, checkOutdoor);
+		WebDriverUtils.clickOnElementWithWait(driver, checkOutdoor);
 	
 	}
 

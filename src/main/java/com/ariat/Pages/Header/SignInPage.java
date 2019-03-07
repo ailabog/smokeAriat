@@ -114,11 +114,13 @@ public class SignInPage extends BasePage {
 	public void closeForgotPassword() {
 		logger.info("Closing the forgot password dialog");
 		WebDriverUtils.clickOnElementWithWait(driver, closeButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
 	public void closeForgot() {
 		logger.info("Closing the forgot password modal");
 		WebDriverUtils.clickOnElementWithWait(driver, closeForgotButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
 	public void checkOrder(String orderNo, String email, String billing) {
