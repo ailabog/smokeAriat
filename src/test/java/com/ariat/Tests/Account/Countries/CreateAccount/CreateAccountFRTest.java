@@ -69,12 +69,10 @@ public class CreateAccountFRTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 		logger.info("Finishing create new account test...");
 	}
