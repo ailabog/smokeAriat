@@ -31,22 +31,22 @@ public class WomenFootwearCasualShoesPage extends BasePage {
 
 	public WomenFashionSneakersPage returnWomenFashionSneakersCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, sneakersFootwearCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(sneakersFootwearText));
 		return new WomenFashionSneakersPage(driver);
 	}
 
 	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesPageCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, casualLeftCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(casualText));
 		return new WomenFootwearCasualShoesPage(driver);
 	}
 
 	public CasualShoeProductPage returnCasualShoeProductPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, casualShoeFuse);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(fuseText));
 		return new CasualShoeProductPage(driver);
 	}

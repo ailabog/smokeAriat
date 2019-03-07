@@ -30,14 +30,14 @@ public class WomenClothingTopsAndTshirtsPage extends BasePage {
 
 	public TriFactorTopProductPage returnTriFactorTopProductPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, topsTshirtProductDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(topTshirtText));
 		return new TriFactorTopProductPage(driver);
 	}
 	
 	public TriFactorTopProductPage returnTriFactorTopProductPageFR() {
 		WebDriverUtils.clickOnElementWithWait(driver, topsTshirtProductFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(topTshirtText));
 		return new TriFactorTopProductPage(driver);
 
@@ -45,7 +45,7 @@ public class WomenClothingTopsAndTshirtsPage extends BasePage {
 	
 	public RebarTopProductPage returnRebarToptPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, rebarTShirt);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(rebarTShirtText));
 		return new RebarTopProductPage(driver);
 

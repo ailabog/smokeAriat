@@ -31,24 +31,24 @@ public class MyOrdersPage extends BasePage {
 	}
 
 	public OrderDetailsPage returnOrderDetailsPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, orderNoText);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
 
 	public ReturnPolicyPage returnReturnPolicyPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, returnPolicyLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(returnsPolicyText));
 		return new ReturnPolicyPage(driver);
 	}
 
 	public void searchOrderNo(String expectedOrderNo) {
 		WebDriverUtils.clickOnElementWithWait(driver, orderNoText);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 	
 	public void assertInfoOrderMyOrder(String expectedDate, String expectedStatus, String expectedTotal) {

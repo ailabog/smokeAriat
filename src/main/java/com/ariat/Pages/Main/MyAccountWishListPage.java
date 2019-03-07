@@ -48,23 +48,23 @@ public class MyAccountWishListPage extends BasePage {
 		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 			break;
 			
 		case "EnglishUS":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 			break;
 		case "Deutsch":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 			break;
 		case "Francais":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 			break;
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
@@ -75,38 +75,38 @@ public class MyAccountWishListPage extends BasePage {
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void loginClick() {
 		logger.info("Logging into your account...");
 		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 	
 	public void createAccountNowClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountNowButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 	
 	public void findWishListFName(String Fname) {
 		WebDriverUtils.enterTextBox(driver, findFirstNameWishList, Fname);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 	
 	public void findWishListLName(String Lname) {
 		WebDriverUtils.enterTextBox(driver, findLastNameWishList, Lname);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+
 	}
 	
 	public void findWishListEmail(String email) {
 		WebDriverUtils.enterTextBox(driver, findEmailWishList, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 	
 	public void findWishListClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, findWishListButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 		
 	}
 	

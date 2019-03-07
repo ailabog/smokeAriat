@@ -55,21 +55,21 @@ public class PaymentInformationPage extends BasePage {
 
 	public AddACreditCardPage returnAddACreditCardPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
 	
 	public AddACreditCardPage returnAddACreditCardPageFR() {
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
 	
 	public AddACreditCardPage returnAddACreditCardPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
@@ -145,9 +145,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteCardLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteCardLink);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDeleteCard);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was cancelled from deletion");
 					} else {
@@ -169,9 +169,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkFR);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDeleteCardFR);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was cancelled from deletion");
 					} else {
@@ -217,9 +217,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteCardLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteCardLink);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDeleteCard);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was deleted with success");
 					} else {
@@ -241,9 +241,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkFR);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDeleteCardFR);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was deleted with success");
 					} else {
@@ -265,9 +265,9 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, deleteLinkDE);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialogDE);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was deleted with success");
 					} else {
@@ -289,7 +289,7 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, makeDefaultCardLink) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultCardLink);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was made default with success");
 					} else {
@@ -311,7 +311,7 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, makeDefaultLinkDE) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLinkDE);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was made default with success");
 					} else {
@@ -333,7 +333,7 @@ public class PaymentInformationPage extends BasePage {
 				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
 					if (WebDriverUtils.findElement(driver, makeDefaultLinkFR) != null) {
 						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLinkFR);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
 						logger.info(
 								"Credit card with:{}" + cardowner + cardType + expireDate + "was made default with success");
 					} else {

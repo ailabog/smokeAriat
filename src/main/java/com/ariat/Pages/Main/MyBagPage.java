@@ -47,7 +47,7 @@ public class MyBagPage extends BasePage {
 	public void cancelFreeGift() {
 		if(WebDriverUtils.findElement(driver, bonusDialog) !=null){
 		WebDriverUtils.clickOnElementWithWait(driver, cancelFreeGift);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		}else {
 			logger.info("Dialog not able to be displayed");
 		}
@@ -56,7 +56,7 @@ public class MyBagPage extends BasePage {
 	public void confirmFreeGift() {
 		if(WebDriverUtils.findElement(driver, bonusDialog) !=null){
 		WebDriverUtils.clickOnElementWithWait(driver, confirmFreeGift);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	 }else {
 			logger.info("Dialog not able to be displayed");
 		}

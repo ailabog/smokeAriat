@@ -35,19 +35,19 @@ public class PersonalnformationPage extends BasePage {
 	public void firstName(String firstName) {
 		logger.info("Start collecting information to create a new account: First Name");
 		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void clearFirstName() {
 		logger.info("Clearing text box First Name:");
 		WebDriverUtils.clearElement(driver, firstNameTextBox);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void lastNameInfo(String lastName) {
 		logger.info("Start collecting information to create a new account: Last Name");
 		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void clearLastName() {
@@ -58,7 +58,7 @@ public class PersonalnformationPage extends BasePage {
 	public void enterEmail(String email) {
 		logger.info("Start collecting information to create a new account: enter email");
 		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+
 	}
 
 	public void clearEmail() {
@@ -69,19 +69,18 @@ public class PersonalnformationPage extends BasePage {
 	public void confirmEmail(String email) {
 		logger.info("Start collecting information to create a new account: confirm email");
 		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void enterPassword(String password) {
 		logger.info("Start collecting information to create a new account: enter passsword");
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+
 	}
 
 	public void confirmPassword(String password) {
 		logger.info("Start collecting information to create a new account: confirm email");
 		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		logger.info("Finalize collecting information to create a new account");
 	}
 
@@ -89,12 +88,12 @@ public class PersonalnformationPage extends BasePage {
 	public void saveEdits() {
 		logger.info("Saving the updates for personal informations ");
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 	
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountTitle));
 		return new MyAccountPage(driver);
 	}

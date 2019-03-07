@@ -26,9 +26,9 @@ public class WomenAccessoriesGlovesPage extends BasePage {
 
 	public GlovesProductPage returnGlovesProductPagePage() {
 		WebDriverUtils.scrollLittDown(driver, proGripGloveProduct);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, proGripGloveProduct);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(proGripText));
 		return new GlovesProductPage(driver);
 	}

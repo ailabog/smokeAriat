@@ -51,15 +51,15 @@ public class EmailPreferencePage extends BasePage {
 		switch(option) {
 		case "Male":
 			WebDriverUtils.clickOnElementWithWait(driver, maleCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		break;
 		case "Female":
 			WebDriverUtils.clickOnElementWithWait(driver, femaleCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		break;
 		case "Other":
 			WebDriverUtils.clickOnElementWithWait(driver, otherCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		default:
 			logger.info("No option found");
 		}		
@@ -69,26 +69,26 @@ public class EmailPreferencePage extends BasePage {
 		switch(option) {
 		case "English":
 			WebDriverUtils.clickOnElementWithWait(driver, englishCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		break;	
 		case "Country":
 			WebDriverUtils.clickOnElementWithWait(driver, countryCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			
 		break;	
 		case "Apparel":
 			WebDriverUtils.clickOnElementWithWait(driver, apparelCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		break;	
 		case "Western":
 			WebDriverUtils.clickOnElementWithWait(driver, westernCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+			
 		case "Work":
 			WebDriverUtils.clickOnElementWithWait(driver, workCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 			
 		case "Fashion":
 			WebDriverUtils.clickOnElementWithWait(driver, fashionCheck);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		default:
 			logger.info("No option found");
 		}			
@@ -135,18 +135,18 @@ public class EmailPreferencePage extends BasePage {
 	
 	public void saveEditsClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 		logger.info("Changes were saved");
 	}
 
 	public void savePreferencesClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, savePreferencesButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}

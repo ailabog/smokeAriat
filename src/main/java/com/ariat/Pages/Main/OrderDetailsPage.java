@@ -27,7 +27,7 @@ public class OrderDetailsPage extends BasePage {
 	
 	public MyOrdersPage returnMyOrdersPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, returnToMyOrdersLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
 		return new MyOrdersPage(driver);
 	}
@@ -35,15 +35,15 @@ public class OrderDetailsPage extends BasePage {
 	public ReturnItemsPage returnReturnItemsPage() {
 		WebDriverUtils.scrollMiddlePage(driver, createReturnButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createReturnButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
 		return new ReturnItemsPage(driver);
 	}
 	
 	public MyOrdersPage returnMyOrdersBackFromOrderDetailsPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, backToMyOrdersLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
 		return new MyOrdersPage(driver);
 	}

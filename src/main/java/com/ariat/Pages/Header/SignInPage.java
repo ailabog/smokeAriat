@@ -62,24 +62,20 @@ public class SignInPage extends BasePage {
 		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			break;
 			
 		case "EnglishUS":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-			break;
+		    break;
 		case "Deutsch":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			break;
 		case "Francais":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-			break;
+				break;
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
 		}
@@ -88,37 +84,31 @@ public class SignInPage extends BasePage {
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void loginClick() {
 		logger.info("Logging into your account...");
 		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-	}
+		}
 
 	public void returningCustomerRememberMe() {
 		logger.info("Remeber me");
 		WebDriverUtils.clickOnElement(driver, checkRememberMe);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void forgotPasswordClick() {
 		logger.info("Forgot password");
 		WebDriverUtils.clickOnElementWithWait(driver, forgotPassword);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-	}
+		}
 
 	public void forgotPasswordEmail(String email) {
 		logger.info("This is my email for which I forgot my passowrd:", email);
 		WebDriverUtils.enterTextBox(driver, emailAddressForgot, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-	}
+		}
 
 	public void ForgotPasswordSend() {
 		logger.info("Sending my email so the password is reset");
 		WebDriverUtils.clickOnElementWithWait(driver, sendForgotButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void closeForgotPassword() {
@@ -129,7 +119,6 @@ public class SignInPage extends BasePage {
 	public void closeForgot() {
 		logger.info("Closing the forgot password modal");
 		WebDriverUtils.clickOnElementWithWait(driver, closeForgotButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 	}
 
 	public void checkOrder(String orderNo, String email, String billing) {
@@ -145,8 +134,7 @@ public class SignInPage extends BasePage {
 	public void checkStatusClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
 		logger.info("Checking the order status");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
+		}
 
 	public void assertErrorMessage(String messageExpectedLabel) {
 		String message = WebDriverUtils.getElementText(driver, errorMessageText);
@@ -178,14 +166,14 @@ public class SignInPage extends BasePage {
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
 		return new CreateAccountPage(driver);
 	}
 
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}

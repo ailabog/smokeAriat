@@ -47,42 +47,42 @@ public class WomenClothingPage extends BasePage{
 	
 	public WomenClothingOuterwearPage returnWomenClothingOuterwearCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingOuterwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingOuterwearText));
 		return new WomenClothingOuterwearPage(driver);
 	}
 	
 	public WomenClothingSweatTshirtAndWoodiesPage returnWomenClothingSweatTshirtAndWoodiesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingSweatTshirtAndWoodiesCatagory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingSweatTshirtAndWoodiesText));
 		return new WomenClothingSweatTshirtAndWoodiesPage(driver);
 	}
 	
 	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingTopsAndTshirtsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingTopsAndTshirtsText));
 		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
 	
 	public WomenClothingShowPage returnWomenClothingShowCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingShowCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingShowText));
 		return new WomenClothingShowPage(driver);
 	}
 	
 	public WomenClothingBreechesAndTightsPage returnWomenClothingBreechesAndTightsCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingBreechesAndTightsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingBreechesAndTightsText));
 		return new WomenClothingBreechesAndTightsPage(driver);
 	}
 
 	public BreechProductPage returnBreechProductPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, breechProduct);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(breechText));
 		return new BreechProductPage(driver);
 	}

@@ -35,14 +35,14 @@ public class MenWorkPage extends BasePage{
 
 	public MenFootwearWorkLaceUpPage returnMenWorkLaceUpPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, laceUpLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(laceUpCategoryText));
 		return new MenFootwearWorkLaceUpPage(driver);
 	}
 	
 	public MenFootwearWorkPullOnPage returnMenWorkPullOnPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, pullOnLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(pullOnCategoryText));
 		return new MenFootwearWorkPullOnPage(driver);
 	}

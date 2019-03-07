@@ -24,9 +24,9 @@ public class WomenFootwearCasualShoesPage extends BasePage{
 	}
 	
 	public CasualShoeProductPage returnCasualShoeProductPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, casualShoeFuse);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(fuseText));
 		return new CasualShoeProductPage(driver);
 	}

@@ -28,7 +28,7 @@ public class AboutUsPage extends BasePage{
 	
 	public CarrersPage returnCarrersPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, carrersLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(carrersText));
 		return new CarrersPage(driver);
 	}

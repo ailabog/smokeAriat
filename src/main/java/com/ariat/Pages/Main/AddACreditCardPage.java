@@ -39,72 +39,66 @@ public class AddACreditCardPage extends BasePage {
 	public void enterCardId(String cardId) {
 		logger.info("Entering card id...");
 		WebDriverUtils.enterTextBox(driver, cardNickNameTextBox, cardId);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterCardOwner(String cardOwner) {
 		logger.info("Entering card owner...");
 		WebDriverUtils.enterTextBox(driver, nameOnTheCardTextBox, cardOwner);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
+		}
 
 	public void selectTypeCard(String type) {
 		logger.info("Selecting the type of the card...");
 		WebDriverUtils.selectDropDown(driver, typeCardSelect, type);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		
 	}
 	
 	public void selectTypeCardUS(String type) {
 		logger.info("Selecting the type of the card...");
 		WebDriverUtils.selectDropDown(driver, typeCardSelectUS, type);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 
 
 	public void enterCardNo(String number) {
 		logger.info("Selecting the type of the card...");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, cardNoTextBox, number);
 	}
 	
 	public void enterCardNoUS(String number) {
 		logger.info("Selecting the type of the card...");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, cardNoTextBoxUS, number);
 	}
 
 	public void selectExpirationMonthCard(String month) {
 		logger.info("Selecting expiration month card...");
 		WebDriverUtils.selectDropDown(driver, expirationMonthSelect, month);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
+		}
 
 	public void selectExpirationYearCard(String year) {
 		logger.info("Selecting expiration year card...");
 		WebDriverUtils.selectDropDown(driver, expirationYearSelect, year);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
+		}
 
 	public void enterSecurityCode(String cvs) {
 		logger.info("Entering security code...");
 		WebDriverUtils.enterTextBox(driver, securityCodeText, cvs);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 	public void applyCardCreation() {
 		logger.info("Creating new credit card");
 		WebDriverUtils.clickOnElementWithWait(driver, applyButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 
 	public void cancelCardCreation() {
 		logger.info("Canceling the card creation");
 		WebDriverUtils.clickOnElementWithWait(driver, cancelButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 	
      public PaymentInformationPage returnPaymentInformationPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, applyButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(creditCardInfoText));
 		return new PaymentInformationPage(driver);
 	}

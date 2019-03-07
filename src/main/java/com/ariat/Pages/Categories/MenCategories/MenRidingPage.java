@@ -70,71 +70,71 @@ public class MenRidingPage extends BasePage {
 
 	public MenFootwearRidingPage returnMenFootwearRidingCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, shopRidingButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menFootwearRidingText));
 		return new MenFootwearRidingPage(driver);
 	}
 
 	public void footwearClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, footwearSwitcher);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
 	public void clothingClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, clothingSwitcher);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
 	public void accessoriesClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, accessoriesSwitcher);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
 	public MenFootwearRidingToolBootsPage returnMenFootwearRidingToolBootsPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, tallBootsFootwearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(tallBootsFootwearCategoryText));
 		return new MenFootwearRidingToolBootsPage(driver);
 	}
 
 	public MenFootwearRidingPaddockPage returnMenFootwearRidingPaddockPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, paddockFootwearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(paddockFootwearCategoryText));
 		return new MenFootwearRidingPaddockPage(driver);
 	}
 
 	public MenFootwearRidingHalfChapsPage returnMenFootwearRidingHalfChapsCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, halfChapsFoowearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(halfChapsFootwearCategoryText));
 		return new MenFootwearRidingHalfChapsPage(driver);
 	}
 
 	public MenFootwearAllWeatherRidingPage returnMenFootwearAllWeatherRidingCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, allWeatherRidingFootwearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(allWeatherRidingBootsCategoryText));
 		return new MenFootwearAllWeatherRidingPage(driver);
 	}
 
 	public MenFootwearRidingEndurancePage returnMenFootwearRidingEnduranceCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, enduranceFootwearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(enduranceFootwearText));
 		return new MenFootwearRidingEndurancePage(driver);
 	}
 
 	public MenFootwearRidingBarnyardPage returnMenFootwearRidingBarnyardCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, barnyardFootwearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(barnyardFootwearText));
 		return new MenFootwearRidingBarnyardPage(driver);
 	}
 
 	public MenClothingOuterwearPage returnMenClothingOutwearCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, outwearClothingLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingOuterwearText));
 		return new MenClothingOuterwearPage(driver);
 
@@ -142,7 +142,7 @@ public class MenRidingPage extends BasePage {
 
 	public MenClothingSweatTshirtAndWoodiesPage returnMenClothingSweatTshirtAndWoodiesCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, sweatshirtsAndWoodiesClothingLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingSweatTshirtAndWoodiesText));
 		return new MenClothingSweatTshirtAndWoodiesPage(driver);
 
@@ -150,7 +150,7 @@ public class MenRidingPage extends BasePage {
 
 	public MenClothingTopsAndTshirtsPage returnMenClothingTopsAndTshirtsCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, topsAndTshirtsClothingCategoryLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingTopsAndTshirtsText));
 		return new MenClothingTopsAndTshirtsPage(driver);
 
@@ -158,7 +158,7 @@ public class MenRidingPage extends BasePage {
 
 	public MenAccessoriesBagsPage returnMenAccessoriesBagsCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, accessoriesBagsLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesBagsText));
 		return new MenAccessoriesBagsPage(driver);
 
@@ -166,7 +166,7 @@ public class MenRidingPage extends BasePage {
 
 	public MenAccessoriesSocksPage returnMenAccessoriesSocksCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, accessoriesSocksLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesSocksText));
 		return new MenAccessoriesSocksPage(driver);
 
@@ -174,7 +174,7 @@ public class MenRidingPage extends BasePage {
 
 	public MenAccessoriesGlovesPage returnMenAccessoriesGlovesCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, accessoriesGlovesLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesGlovesText));
 		return new MenAccessoriesGlovesPage(driver);
 
@@ -182,7 +182,7 @@ public class MenRidingPage extends BasePage {
 
 	public MenAccessoriesHeadwearPage returnMenAccessoriesHeadwearCategoryPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, accessoriesHeadwearLeftNav);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesHeadwearText));
 		return new MenAccessoriesHeadwearPage(driver);
 

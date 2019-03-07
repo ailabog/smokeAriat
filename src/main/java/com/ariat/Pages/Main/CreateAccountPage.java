@@ -65,19 +65,19 @@ public class CreateAccountPage extends BasePage {
 	public void firstName(String firstName) {
 		logger.info("Start collecting information to create a new account: First Name");
 		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void clearFirstName() {
 		logger.info("Clearing text box First Name:");
 		WebDriverUtils.clearElement(driver, firstNameTextBox);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void lastNameInfo(String lastName) {
 		logger.info("Start collecting information to create a new account: Last Name");
 		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void clearLastName() {
@@ -88,19 +88,19 @@ public class CreateAccountPage extends BasePage {
 	public void selectBirthMonth(String month) {
 		logger.info("Start collecting information to create a new account: Month of birth");
 		WebDriverUtils.selectDropDown(driver, birthMonth, month);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void selectBirthDay(String day) {
 		logger.info("Start collecting information to create a new account: Day of birth");
 		WebDriverUtils.selectDropDown(driver, birthDay, day);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void enterEmail(String email) {
 		logger.info("Start collecting information to create a new account: enter email");
 		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void clearEmail() {
@@ -111,7 +111,7 @@ public class CreateAccountPage extends BasePage {
 	public void confirmEmail(String email) {
 		logger.info("Start collecting information to create a new account: confirm email");
 		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 	
 	public void assertWrongEmailCreateAccount(String emailMsgExpected) {
@@ -160,13 +160,12 @@ public class CreateAccountPage extends BasePage {
 	public void enterPassword(String password) {
 		logger.info("Start collecting information to create a new account: enter passsword");
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void confirmPassword(String password) {
 		logger.info("Start collecting information to create a new account: confirm email");
 		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		logger.info("Finalize collecting information to create a new account");
 
 	}
@@ -174,73 +173,73 @@ public class CreateAccountPage extends BasePage {
 	public void GenderFemale() {
 		logger.info("Choosing Female option:");
 		WebDriverUtils.clickOnElement(driver, FemaleRadio);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void GenderMale() {
 		logger.info("Choosing Male option:");
 		WebDriverUtils.clickOnElement(driver, MaleRadio);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void rideYes() {
 		logger.info("Choose I ride");
 		WebDriverUtils.clickOnElement(driver, rideYes);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void rideNo() {
 		logger.info("Choose I don't ride");
 		WebDriverUtils.clickOnElement(driver, rideNo);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 	}
 
 	public void productsWesternCheck() {
 		logger.info("Check Western products");
 		WebDriverUtils.clickOnElement(driver, checkWestern);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void productsFashionCheck() {
 		logger.info("Check Fashion products");
 		WebDriverUtils.clickOnElement(driver, checkFashion);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+
 	}
 
 	public void productsWorkCheck() {
 		logger.info("Check Work products");
 		WebDriverUtils.clickOnElement(driver, checkWork);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+
 	}
 
 	public void productsEnglishCheck() {
 		logger.info("Check English products");
 		WebDriverUtils.clickOnElement(driver, checkEnglish);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void productsOutdoorCheck() {
 		logger.info("Check Outdoor products");
 		WebDriverUtils.clickOnElement(driver, checkOutdoor);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public void addMeToAriatEmail() {
 		logger.info("Add me to Ariat email list");
 		WebDriverUtils.clickOnElementWithWait(driver, checkAddToEmailList);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		
 
 	}
 
 	public void createAccountClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		logger.info("New account was created with success");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+	
 	}
 
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountTitle));
 		return new MyAccountPage(driver);
 

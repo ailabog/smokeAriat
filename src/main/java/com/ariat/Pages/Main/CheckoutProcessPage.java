@@ -312,7 +312,7 @@ public class CheckoutProcessPage extends BasePage {
 
 	public CheckoutProcessCompletePage returnCheckoutProcessCompletePage() {
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));
 		return new CheckoutProcessCompletePage(driver);
 	}

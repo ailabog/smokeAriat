@@ -30,14 +30,14 @@ public class MenFeaturedPage extends BasePage{
 
 	public MenFeaturedTeamCollectionPage returMenFeaturedTeamCollectionCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedTeamCollectionCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menFeaturedTeamCollectionText));
 		return new MenFeaturedTeamCollectionPage(driver);
 	}
 	
 	public MenFeaturedVentTekPage returnMenFeaturedVentTekCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedVentTekCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menFeaturedVentTekText));
 		return new MenFeaturedVentTekPage(driver);
 	}
