@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ariat.Enums.Browserstack;
+import com.ariat.Enums.Environments;
 import com.ariat.Exceptions.BrowserException;
 import com.ariat.Exceptions.WebDriverException;
 import com.ariat.Pages.Main.CreateAccountPage;
@@ -36,11 +37,11 @@ import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 
 		private static final Logger logger = LoggerFactory.getLogger(CreateAccountPage.class);
 
-		private static final String BROWSERSTACK_URL = "http://philipcurran1:4spUHXyyFMag5tfVF2AY@hub.browserstack.com/wd/hub";
-		private static final String BROWSERSTACK_BROWSERS_URL = "https://philipcurran1:4spUHXyyFMag5tfVF2AY@www.browserstack.com/automate/browsers.json";
+		private static final String BROWSERSTACK_URL = "http://mohammed.jamboo@ariat.com:Rocking@10@hub.browserstack.com/wd/hub";
+		private static final String BROWSERSTACK_BROWSERS_URL = "https://mohammed.jamboo@ariat.com:Rocking@10@www.browserstack.com/automate/browsers.json";
 		private static final List<Browser> browsers = getAllSupportedBrowsers();
 
-		public static WebDriver configureBrowser(String device, String browser, Environment environment, Integer offset) {
+		public static WebDriver configureBrowser(String device, String browser, Environments environment, Integer offset) {
 			try {
 				logger.debug("Configuring browser {} for device {} and offset {}", browser, device, offset);
 				return new RemoteWebDriver(new URL(BROWSERSTACK_URL), getConfiguration(device, browser, offset));

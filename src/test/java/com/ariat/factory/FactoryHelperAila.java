@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.reflect.ConstructorUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
+import com.ariat.Enums.Environments;
+
 import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 
 /**
@@ -16,13 +18,13 @@ import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
  * @author aila.bogasieru@ariat.com
  *
  */
-public class FactoryHelper {
+public class FactoryHelperAila {
 
 	// @formatter:off
-	public static Object[] setup(Class<?> clazz, String device, String browser, Environment environment,
+	public static Object[] setup(Class<?> clazz, String device, String browser, Environments enviroment,
 			Integer offset) {
 		List<Object> tests = Arrays.stream(device.split(",")).flatMap(
-				x -> Arrays.stream(browser.split(",")).map(y -> instantiateTestClass(clazz, x, y, environment, offset)))
+				x -> Arrays.stream(browser.split(",")).map(y -> instantiateTestClass(clazz, x, y,enviroment, offset)))
 				.collect(Collectors.toList());
 		tests.removeIf(testInstance -> isMobileAndBrowser(testInstance, "Firefox")
 				|| isMobileAndBrowser(testInstance, "Edge") || isMobileAndBrowser(testInstance, "Internet Explorer"));
@@ -33,12 +35,12 @@ public class FactoryHelper {
 	}
 	// @formatter:on
 
-	private static Object instantiateTestClass(Class<?> clazz, String device, String browser, Environment environment,
+	private static Object instantiateTestClass(Class<?> clazz, String device, String browser, Environments enviroment,
 			Integer offset) {
 		Object testInstance = invokeConstructor(clazz);
 		writeField(testInstance, "device", device);
 		writeField(testInstance, "browser", browser);
-		writeField(testInstance, "environment", environment);
+		writeField(testInstance, "environment", enviroment);
 		writeField(testInstance, "offset", offset);
 		return testInstance;
 	}

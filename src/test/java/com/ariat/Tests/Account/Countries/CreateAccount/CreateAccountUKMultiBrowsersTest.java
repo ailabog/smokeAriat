@@ -8,6 +8,7 @@ import org.testng.annotations.Factory;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
+import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
@@ -30,7 +31,7 @@ import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 
 public class CreateAccountUKMultiBrowsersTest extends BaseTest {
 
-	private Environment environment;
+	private Environments environment;
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
@@ -62,7 +63,7 @@ public class CreateAccountUKMultiBrowsersTest extends BaseTest {
 	 * @param z
 	 * @param offset
 	 */
-	public CreateAccountUKMultiBrowsersTest(String device, String browser, Environment environment, Integer offset) {
+	public CreateAccountUKMultiBrowsersTest(String device, String browser, Environments environment, Integer offset) {
 		this.device = device;
 		this.browser = browser;
 		this.environment = environment;
@@ -74,7 +75,7 @@ public class CreateAccountUKMultiBrowsersTest extends BaseTest {
 
 	@Parameters({ "device", "browser", "environment", "offset" })
 	@Factory
-	public Object[] factoryMethod(String device, String browser, Environment environment, Integer offset) {
+	public Object[] factoryMethod(String device, String browser, Environments environment, Integer offset) {
 
 		List<CreateAccountUKMultiBrowsersTest> tests = Arrays.stream(device.split(","))
 				.flatMap(x -> Arrays.stream(browser.split(",")).map(y -> new CreateAccountUKMultiBrowsersTest(x, y, environment, offset)))

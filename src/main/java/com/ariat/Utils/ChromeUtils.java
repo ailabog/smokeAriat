@@ -34,6 +34,7 @@ package com.ariat.Utils;
 			co.addArguments("--user-agent=" + chromeMobile);
 			return new ChromeDriver(co);
 		}
+		
 
 		public static WebDriver openChrome(String device) {
 

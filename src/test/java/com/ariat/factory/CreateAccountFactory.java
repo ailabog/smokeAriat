@@ -3,10 +3,12 @@ package com.ariat.factory;
 	import org.testng.annotations.Factory;
 	import org.testng.annotations.Parameters;
 
-    import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
+import com.ariat.Enums.Environments;
+
+import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 
 	/**
-	 * Utility for creating instances of {@link CheckoutPageTranslationsTest} test
+	 * Utility for creating instances of {} test
 	 * classes for provided input parameters.
 	 * 
 	 * @author aila.bogasieru@ariat.com
@@ -16,7 +18,10 @@ package com.ariat.factory;
 
 		@Parameters({ "device", "browser", "environment", "offset" })
 		@Factory
-		public Object[] createAccount(String device, String browser, Environment environment,	Integer offset) {
-			return FactoryHelper.setup(CreateAccountFactory.class, device, browser, environment, offset);
+		public Object[] createAccount(String device, String browser, Environments enviroment, Integer offset) {
+			System.out.println("DEV = "+device);
+			System.out.println("BRW = "+browser);
+			System.out.println("ENV = "+enviroment);
+			return FactoryHelperAila.setup(CreateAccountFactory.class, device, browser, enviroment, offset);
 		}
 }
