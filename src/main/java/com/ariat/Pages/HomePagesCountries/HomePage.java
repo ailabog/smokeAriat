@@ -28,6 +28,8 @@ public class HomePage extends BasePage implements List<HomePage> {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomePage.class);
 
+	public static final String URL = "https://development.ariat.com";
+
 	private By closeLocationx = By.xpath("//*[@id=\"ext-gen44\"]/body/div[6]/div[1]/a/span");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
@@ -648,6 +650,10 @@ public class HomePage extends BasePage implements List<HomePage> {
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}
+	}
+	
+	public void loadHomePage(String url) {
+		load(url);
 	}
 
 	@Override

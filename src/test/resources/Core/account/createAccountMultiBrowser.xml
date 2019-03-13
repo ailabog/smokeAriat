@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="accountMultiBrowsersAllTests">
+	
+	<parameter name="device" value="${device}" />
+	<parameter name="browser" value="${browser}" />
+	<parameter name="environment" value="${environment}" />
+	
+	<test name="accountMultiBrowsersAllTests">
+		<parameter name="offset" value="0" />
+		<classes>
+			<class name="com.ariar.factory.CreateAccountFactory" />
+		</classes>
+	</test>
+
+	<test name="accountMultiBrowsersAllTests">
+		<parameter name="offset" value="1" />
+		<classes>
+			<class name="com.ariat.factory.CreateAccountFactory" />
+		</classes>
+	</test>
+
+	<test name="accountMultiBrowsersAllTests">
+		<parameter name="offset" value="2" />
+		<classes>
+			<class name="com.ariat.factory.CreateAccountFactory" />
+		</classes>
+	</test>
+
+</suite>
