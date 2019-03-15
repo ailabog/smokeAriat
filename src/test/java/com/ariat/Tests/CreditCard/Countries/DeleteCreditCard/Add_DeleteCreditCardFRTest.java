@@ -45,10 +45,11 @@ public class Add_DeleteCreditCardFRTest extends BaseTest{
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "Novembre";
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

@@ -37,10 +37,11 @@ public class OrderStatusIETest extends BaseTest {
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = "Parola12345!";
 	
-
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

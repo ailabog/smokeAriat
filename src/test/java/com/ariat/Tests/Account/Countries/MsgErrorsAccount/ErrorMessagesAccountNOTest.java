@@ -15,7 +15,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 
 /**
  * Negative tests for Norway account
@@ -56,10 +56,11 @@ public class ErrorMessagesAccountNOTest extends BaseTest {
 	public static final String OK_EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String WRONG_PASSWORD = "Password";
 	public static final String OK_PASSWORD = "Parola12345!";
-			
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)
@@ -75,8 +76,7 @@ public class ErrorMessagesAccountNOTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
-		createAccountPage.enterEmail(EMAIL);
+    	createAccountPage.enterEmail(EMAIL);
 		createAccountPage.assertWrongEmailCreateAccount(INVALID_EMAIL_MSG);
 		createAccountPage.clearEmail();
 		createAccountPage.enterEmail("aila.bogasieru@ariat.com");

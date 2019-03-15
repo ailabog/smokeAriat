@@ -15,7 +15,6 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Tests for add & deletet credit card Japan
@@ -42,10 +41,11 @@ public class Add_DeleteCreditCardJPTest extends BaseTest{
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "December";
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

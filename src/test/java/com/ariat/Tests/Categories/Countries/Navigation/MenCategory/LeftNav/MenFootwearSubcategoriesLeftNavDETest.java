@@ -34,7 +34,6 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFoot
 import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenFootwearWorkCategories.MenFootwearWorkLaceUpPage;
 import com.ariat.Pages.Categories.MenCategories.MenSubcategories.MenFootwearWorkCategories.MenFootwearWorkPullOnPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Left navigation for Men category Deutschland test
@@ -76,12 +75,12 @@ public class MenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 
 	private MenFootwearCasualShoesPage menFootwearCasualShoesPage;
 	private MenFashionSneakersPage menFootwearSneakersPage;
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
-
 	@Test(priority = 0)
 	public void leftNavigationMenFootwearRidingSubcategories() {
 		logger.info("Starting left navigation Men Footwear Riding sub-categories test...");

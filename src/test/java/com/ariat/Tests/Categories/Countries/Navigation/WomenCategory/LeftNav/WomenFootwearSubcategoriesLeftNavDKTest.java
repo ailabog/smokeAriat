@@ -29,7 +29,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearWes
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearWesternPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Left navigation for Men category Denmark test
@@ -68,10 +67,11 @@ public class WomenFootwearSubcategoriesLeftNavDKTest extends BaseTest {
 	private WomenFootwearCasualShoesPage womenFootwearCasualShoesPage;
 	private WomenFashionSneakersPage womenFootwearSneakersPage;
 	private WomenFootwearCasualShoesPage womenFootwearCasual;
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

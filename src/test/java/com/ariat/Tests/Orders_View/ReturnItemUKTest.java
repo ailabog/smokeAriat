@@ -49,12 +49,12 @@ public class ReturnItemUKTest extends BaseTest {
 	private static final String RETURN_REASON1 = "Shipping error";
 	private static final String EXPECTED_MESSAGE = "Please select at least one item you wish to return";
 	private static final String REASON_DESCRIPTION = "The article is not comfortable as expected";
-
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
-
 	@Test
 	public void returnItemWithoutBeingLoggedTest() {
 		logger.info("Starting  return item for a customer not being logged test");

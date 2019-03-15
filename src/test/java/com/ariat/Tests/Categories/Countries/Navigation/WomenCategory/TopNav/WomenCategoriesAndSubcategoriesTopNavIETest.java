@@ -34,7 +34,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothi
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test pages redirection from Women Category to all its sub-categories tree Ireland test
@@ -77,10 +76,11 @@ public class WomenCategoriesAndSubcategoriesTopNavIETest extends BaseTest {
 	private WomenFeaturedHeritageCollectionPage womenFeaturedHeritageCollectionPage;
 	private WomenFeaturedWarmWeatherRidingPage womenFeaturedWarmWeatherRidingPage;
 	private WomenFeaturedTriFactorBreechPage womenFeaturedTriFactorBreechPage;
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

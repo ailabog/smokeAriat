@@ -41,10 +41,11 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
 	private RebarTopProductPage rebarTopProductPage;
 
-		
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
     @Test(priority=0)

@@ -41,9 +41,11 @@ public class NegativeProductWriteReviewWomenCategoryDKTest extends BaseTest {
     private static final String EMAIL = "aila.bogasieru@gmail.com";
     private static final String CITY = "London";
     
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

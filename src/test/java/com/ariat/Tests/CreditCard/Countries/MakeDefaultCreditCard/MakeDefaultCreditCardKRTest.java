@@ -14,17 +14,15 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Tests for delete credit card Korea
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
+public class MakeDefaultCreditCardKRTest extends BaseTest {
 
-public class MakeDefaultCreditCardKRTest extends BaseTest{
-	
 	private HomePage homePage;
 	private HomePageKR homePageKR;
 	private SignInPage signInPage;
@@ -33,14 +31,15 @@ public class MakeDefaultCreditCardKRTest extends BaseTest{
 	private Environments environment;
 	private GlobalCountries country;
 	private ListOfCreditCards typeCard;
-	
+
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
-	
-	
+
+	public static final String filePath = "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test
@@ -54,10 +53,12 @@ public class MakeDefaultCreditCardKRTest extends BaseTest{
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
-	   // paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(), "05/2016");
+		// paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(),
+		// "05/2016");
 		logger.info("Finishing make default credit card from Payment info Korea test");
-		
-  }
+
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

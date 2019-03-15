@@ -16,7 +16,7 @@ import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
@@ -50,10 +50,11 @@ public class CreateAccountFRTest extends BaseTest {
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
 	public static final String ERROR_MESSAGE = "Désolé, ce numéro de commande ou code postal ne correspond pas à celui que nous avons dans nos dossiers. Vérifiez-le puis réessayez.";
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

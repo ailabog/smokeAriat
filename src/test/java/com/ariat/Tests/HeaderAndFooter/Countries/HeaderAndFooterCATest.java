@@ -29,11 +29,11 @@ public class HeaderAndFooterCATest extends BaseTest{
 	private HomePageCA homePageCA;
 	private HomePage homePage;
 	private GlobalCountries country;
-
-
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority=0)

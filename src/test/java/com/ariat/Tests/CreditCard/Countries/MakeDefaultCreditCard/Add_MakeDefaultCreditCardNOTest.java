@@ -17,17 +17,15 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Tests for add & make default credit card Norway
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
+public class Add_MakeDefaultCreditCardNOTest extends BaseTest {
 
-public class Add_MakeDefaultCreditCardNOTest extends BaseTest{
-	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private HomePageNO homePageNO;
@@ -38,7 +36,7 @@ public class Add_MakeDefaultCreditCardNOTest extends BaseTest{
 	private Environments environment;
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
-	
+
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "XX";
@@ -46,10 +44,12 @@ public class Add_MakeDefaultCreditCardNOTest extends BaseTest{
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "December";
-	
+
+	public static final String filePath = "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test
@@ -74,10 +74,10 @@ public class Add_MakeDefaultCreditCardNOTest extends BaseTest{
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.makeDefaultCreditCard(CARD_OWNER, typeCard.MASTER_CARD.getName(), expirationDate);
-		//paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
+		// paymentInfoPage.assertMakeDefaultCreditCard(defaultCredit.concat(CARD_ID));
 		logger.info("Finishing add credit card & make it default Norway test");
-  } 
-	
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -87,6 +87,6 @@ public class Add_MakeDefaultCreditCardNOTest extends BaseTest{
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-		
+
 	}
 }

@@ -13,7 +13,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Pagination and sorting for Men Category United States test
@@ -31,10 +30,11 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private MenCategoryPage menCategoryPage;
 	
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

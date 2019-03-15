@@ -7,13 +7,12 @@ import org.testng.annotations.Test;
 
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageFR;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
-import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Pagination and sorting for Men Category France test
@@ -30,11 +29,11 @@ public class MenCategoryPaginationSortingFRTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private HomePageFR homePageFR;
 	private MenCategoryPage menCategoryPage;
-	
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

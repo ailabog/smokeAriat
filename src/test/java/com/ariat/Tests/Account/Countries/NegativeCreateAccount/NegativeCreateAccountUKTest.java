@@ -14,7 +14,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 
 /**
  * Test negative create account by instantiating the browser, go to Home page,
@@ -48,10 +48,11 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 	public static final String FIRST_NAME1 = "@#$%^&*()";
 	public static final String LAST_NAME1 = "@#$%^&*()";
 	public static final String EMAIL1 = "@#$%^&*()";
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

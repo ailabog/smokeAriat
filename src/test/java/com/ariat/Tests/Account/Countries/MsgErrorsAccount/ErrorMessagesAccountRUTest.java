@@ -14,7 +14,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 
 /**
  * Negative tests for Russia account
@@ -54,10 +54,11 @@ public class ErrorMessagesAccountRUTest extends BaseTest {
 	public static final String OK_EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String WRONG_PASSWORD = "Password";
 	public static final String OK_PASSWORD = "Parola12345!";
-			
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

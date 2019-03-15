@@ -30,7 +30,6 @@ import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFoot
 import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearWesternPage;
 import com.ariat.Pages.Categories.MenCategories.MenFootwearSubcategories.MenFootwearWorkPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test pages redirection from Men Category to all its sub-categories tree Canada test
@@ -68,10 +67,11 @@ public class MenCategoriesAndSubcategoriesTopNavCATest extends BaseTest {
 	private MenFeaturedTeamCollectionPage menFeaturedTeamCollectionPage;
 	private MenFeaturedVentTekPage menFeaturedVentTekPage;
 	
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

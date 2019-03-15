@@ -11,7 +11,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageJP;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Pagination and sorting for Women Category Japan test
@@ -27,11 +26,11 @@ public class WomenCategoryPaginationSortingJPTest extends BaseTest {
 	private HomePage homePage;
 	private HomePageJP homePageJP;
 	private WomenCategoryPage womenCategoryPage;
-	
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

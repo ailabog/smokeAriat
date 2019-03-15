@@ -14,7 +14,6 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Tests for delete credit card Japan
@@ -38,9 +37,11 @@ public class DeleteCreditCardJPTest extends BaseTest{
 	private static final String PASSWORD = "Parola12345!";
 	
 	
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

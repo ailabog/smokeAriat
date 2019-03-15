@@ -16,7 +16,6 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Tests for delete credit card Italy
@@ -40,11 +39,12 @@ public class MakeDefaultCreditCardITTest extends BaseTest{
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 	
-	
-	@BeforeTest
-	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
-	}
+	 public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+		
+		@BeforeTest
+		public void setUp() {
+			System.setProperty("webdriver.chrome.driver", filePath);
+		}
 
 	@Test
 	public void makeDefaultCreditCardFromPaymentInfoFITest() {

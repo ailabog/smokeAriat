@@ -1,6 +1,7 @@
 package com.ariat.Tests.CreditCard.Countries.DeleteCreditCard;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import com.ariat.Pages.Header.SignInPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -12,9 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageKR;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
-import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Tests for delete credit card Korea
@@ -38,9 +37,11 @@ public class DeleteCreditCardKRTest extends BaseTest{
 	private static final String PASSWORD = "Parola12345!";
 	
 	
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

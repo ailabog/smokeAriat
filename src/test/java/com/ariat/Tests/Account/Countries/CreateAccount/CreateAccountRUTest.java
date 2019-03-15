@@ -47,11 +47,11 @@ public class CreateAccountRUTest extends BaseTest {
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
-			
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

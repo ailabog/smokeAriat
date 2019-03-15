@@ -49,10 +49,11 @@ public class NegativeCreateAccountFITest extends BaseTest {
 	public static final String FIRST_NAME1 = "@#$%^&*()";
 	public static final String LAST_NAME1 = "@#$%^&*()";
 	public static final String EMAIL1 = "@#$%^&*()";
-
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

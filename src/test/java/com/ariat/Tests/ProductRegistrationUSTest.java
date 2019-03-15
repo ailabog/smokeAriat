@@ -13,7 +13,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.ProductRegistrationPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 public class ProductRegistrationUSTest extends BaseTest{
 	 
@@ -24,10 +23,11 @@ public class ProductRegistrationUSTest extends BaseTest{
 	private ProductRegistrationPage productRegistrationPage;
 	private MyAccountPage myAccountPage;
 	private EUCountries euCountry;
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

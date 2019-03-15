@@ -1,14 +1,10 @@
 package com.ariat.Tests.Account.Countries.CreateAccount;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -52,41 +48,29 @@ public class CreateAccountUKTest extends BaseTest {
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
-			
-	//@BeforeTest
-	//public void setUp() {
-	//	ChromeDriverManager.getInstance().setup();
-//	}
+	@BeforeTest
+	public void setUp() {
+		System.setProperty("webdriver.chrome.driver", filePath);
+	}
 
 	@Test(priority = 0)
 	public void createAccountTest() {
 		logger.info("Starting create account test");
-		//homePage = new HomePage(new ChromeDriver());
-		//homePage.load(environment.DEVELOPMENT.getURL());
-		System.setProperty("webdriver.gecko.driver", "C:\\GeckoDriver\\geckodriver.exe");
-		ProfilesIni profile = new ProfilesIni();
-		FirefoxProfile myprofile = profile.getProfile("xyzProfile");
-	// Initialize Firefox driver
-		System.out.println("FFOX driver init");
-		WebDriver driver = new FirefoxDriver(myprofile);
-	//Maximize browser window
-		
-		driver.get("http://development.ariat.com");}
-		//driver.manage().window().maximize();
-		//homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		//signInPage = homePageUK.returnSignInPage();
-		//createAccountPage = signInPage.returnCreateAccountPage();
-		//createAccountPage.firstName(FIRST_NAME);
-		//createAccountPage.lastNameInfo(LAST_NAME);
-		//createAccountPage.selectBirthMonth(BIRTH_MONTH);
-		//createAccountPage.selectBirthDay(BIRTH_DAY);
-		//createAccountPage.GenderFemale();
-	/*	createAccountPage.enterEmail(EMAIL);
+		homePage = new HomePage(new ChromeDriver());
+	    homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
+		createAccountPage = signInPage.returnCreateAccountPage();
+		createAccountPage.firstName(FIRST_NAME);
+		createAccountPage.lastNameInfo(LAST_NAME);
+		createAccountPage.selectBirthMonth(BIRTH_MONTH);
+		createAccountPage.selectBirthDay(BIRTH_DAY);
+		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		//createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 	    logger.info("Finishing create new account test...");
 	}
@@ -143,7 +127,7 @@ public class CreateAccountUKTest extends BaseTest {
 		signInPage.closeForgotPassword();
 		logger.info("Finishing forgot password test...");
 	}
-	*/
+
 
 	@AfterTest
 	public void tearDown() {

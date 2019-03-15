@@ -8,11 +8,9 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.GlobalCountries;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageRU;
-import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.BaseTest;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Pagination and sorting for Men Category
@@ -29,10 +27,11 @@ public class MenCategoryPaginationSortingRUTest extends BaseTest {
 	private HomePageRU homePageRU;
 	private MenCategoryPage menCategoryPage;
 	
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

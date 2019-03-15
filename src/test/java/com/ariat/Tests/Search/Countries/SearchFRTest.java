@@ -31,10 +31,11 @@ public class SearchFRTest extends BaseTest {
 	private final String OPTION = "boots";
 	private final String MESSAGE = "Résultats pour : ";
 
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

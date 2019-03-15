@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageNZ;
 import com.ariat.Pages.HomePagesCountries.HomePageSE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
@@ -17,7 +16,7 @@ import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
@@ -51,11 +50,11 @@ public class CreateAccountSETest extends BaseTest {
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
-			
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

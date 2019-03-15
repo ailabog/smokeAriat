@@ -17,7 +17,6 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Add credit card negative test Austria
@@ -45,9 +44,11 @@ public class AddCreditCardNegativeATTest extends BaseTest{
 	private static final String YEAR = "2018";
 	private static final String MONTH = "Dezember";
 	
+	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test
