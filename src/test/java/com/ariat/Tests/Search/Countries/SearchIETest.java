@@ -12,8 +12,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Search product Ireland test
  * 

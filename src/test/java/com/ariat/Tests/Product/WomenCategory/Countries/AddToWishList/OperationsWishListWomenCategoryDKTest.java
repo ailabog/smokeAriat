@@ -23,7 +23,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSub
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Women Category -> Add to wishlist update, edit, set

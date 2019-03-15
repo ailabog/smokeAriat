@@ -12,8 +12,6 @@ import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Test Order details from different type of navigation and checks values from
  * order

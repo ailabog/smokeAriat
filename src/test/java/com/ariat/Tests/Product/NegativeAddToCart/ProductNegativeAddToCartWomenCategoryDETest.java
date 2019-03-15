@@ -15,7 +15,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Women Category -> Negative Add to cart test

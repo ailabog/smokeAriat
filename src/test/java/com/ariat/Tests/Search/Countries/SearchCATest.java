@@ -10,8 +10,6 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Tests.Base.BaseTest;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Search product Canada test
  * 

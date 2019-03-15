@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeTest;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Tests.Base.BaseTest;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Warranty page
@@ -32,10 +31,11 @@ public class WarrantyFooterUKTest extends BaseTest {
 	private static final String MESSAGE3 = "Contact Customer Care by calling +44 (0)1367 242818 or email customer.care@ariat.com Mon-Fri 8am-5pm (UK Time)";
 	private static final String MESSAGE4 = "If you have a warranty issue with a product purchased through one of our retailers, contact the Ariat retailer where the product was purchased. Make sure to have your original receipt with you. Upon inspection from your Ariat authorised retailer, consumers may be offered a credit, replacement or repair depending on the defect.";
 	
-				
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

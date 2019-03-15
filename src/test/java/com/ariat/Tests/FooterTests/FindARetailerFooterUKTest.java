@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeTest;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Tests.Base.BaseTest;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Find a retailer page
@@ -30,10 +29,11 @@ public class FindARetailerFooterUKTest extends BaseTest {
 	public static final String POST_CODE = "020232";
 	public static final String RADIUS = "30 km";
 	
-				
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

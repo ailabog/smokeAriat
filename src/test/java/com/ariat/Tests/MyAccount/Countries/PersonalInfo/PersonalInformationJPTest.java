@@ -13,8 +13,6 @@ import com.ariat.Pages.Main.PersonalnformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Personal Information Japan test
  * 

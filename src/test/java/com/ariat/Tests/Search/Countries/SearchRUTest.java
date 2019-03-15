@@ -11,8 +11,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageCA;
 import com.ariat.Pages.HomePagesCountries.HomePageRU;
 import com.ariat.Tests.Base.BaseTest;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Search product Russia test
  * 

@@ -12,7 +12,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Contact Us page
@@ -35,10 +34,11 @@ public class WishListFooterUKTest extends BaseTest {
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
 	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
-
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test

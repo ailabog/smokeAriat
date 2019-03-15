@@ -12,7 +12,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and

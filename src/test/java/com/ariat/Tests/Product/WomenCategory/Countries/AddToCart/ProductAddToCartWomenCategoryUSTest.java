@@ -17,7 +17,6 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Pages.Products.RebarTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Men Category -> Add to cart test

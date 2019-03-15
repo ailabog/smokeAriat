@@ -21,7 +21,6 @@ import com.ariat.Pages.Products.BreechProductPage;
 import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Women Category -> Add to Wishlist test

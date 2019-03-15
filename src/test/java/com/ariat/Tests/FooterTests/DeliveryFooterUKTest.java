@@ -10,7 +10,6 @@ import org.testng.annotations.BeforeTest;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Tests.Base.BaseTest;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Test Delivery page
@@ -26,10 +25,11 @@ public class DeliveryFooterUKTest extends BaseTest {
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private DeliveryPage deliveryPage;
-					
+    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	
 	@BeforeTest
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
+		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
 	@Test(priority = 0)

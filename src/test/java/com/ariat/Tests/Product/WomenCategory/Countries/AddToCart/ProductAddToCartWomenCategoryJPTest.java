@@ -17,7 +17,6 @@ import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Women Category -> Add to cart test

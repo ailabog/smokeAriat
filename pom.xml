@@ -13,7 +13,6 @@
    <project.build.sourceEnconding>UTF-8</project.build.sourceEnconding>
    <testng.version>6.11</testng.version>
    <selenium.version>3.4.0</selenium.version>
-   <webdrivermanager.version>1.6.2</webdrivermanager.version>
    <slf4j.version>1.7.25</slf4j.version>
    <logback.version>1.2.3</logback.version>
    <maven.compiler.version>3.6.1</maven.compiler.version>
@@ -34,12 +33,7 @@
       <version>${selenium.version}</version>
        </dependency>  
           
-    <dependency>
-      <groupId>io.github.bonigarciag</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>${webdrivermanager.version}</version>
-     </dependency>  
-   
+     
        <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>

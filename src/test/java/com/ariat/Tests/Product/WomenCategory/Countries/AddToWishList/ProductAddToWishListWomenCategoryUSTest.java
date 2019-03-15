@@ -20,7 +20,6 @@ import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.RebarTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Men Category -> Add to Wishlist test

@@ -18,7 +18,6 @@ import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Pages.Products.RebarTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 /**
  * Product page - > Men Category test write review on Glove product

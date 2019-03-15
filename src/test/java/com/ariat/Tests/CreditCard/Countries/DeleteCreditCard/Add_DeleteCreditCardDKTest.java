@@ -17,8 +17,6 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 /**
  * Tests for add & deletet credit card Denmark
  * @author aila.bogasieru@ariat.com
