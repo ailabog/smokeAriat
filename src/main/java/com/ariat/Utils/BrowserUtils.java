@@ -24,7 +24,6 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 
 /**
  * Utility class that provides browser/device configuration by using

@@ -69,12 +69,10 @@ public class NegativeCreateAccountDETest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongNameCreateAccountDE(loggingMessage);
 		logger.info("Finishing negative create account test...");
