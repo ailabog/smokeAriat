@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
-import com.ariat.Pages.HomePagesCountries.HomePageNL;
+import com.ariat.Pages.HomePagesCountries.HomePageSE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -20,20 +20,20 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 /**
  * Test negative create account by instantiating the browser, go to Home page,
  * and calls all the methods such as: create account, login, check order status
- * for Netherlands
+ * for Sweden
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class NegativeCreateAccountNLTest extends BaseTest {
+public class NegativeCreateAccountSETest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
 	private CreateAccountPage createAccountPage;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
-	private HomePageNL homePageNL;
+	private HomePageSE homePageSE;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private String loggingMessage = "The email address is invalid.";
@@ -63,8 +63,8 @@ public class NegativeCreateAccountNLTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageNL = (HomePageNL) homePage.chooseEULocation(euCountry.NL, euCountry.NL.getCurrencyISO());
-		signInPage = homePageNL.returnSignInPage();
+		homePageSE = (HomePageSE) homePage.chooseEULocation(euCountry.SE, euCountry.SE.getCurrencyISO());
+		signInPage = homePageSE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -85,8 +85,8 @@ public class NegativeCreateAccountNLTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageNL = (HomePageNL) homePage.chooseEULocation(euCountry.NL, euCountry.NL.getCurrencyISO());
-		signInPage = homePageNL.returnSignInPage();
+		homePageSE = (HomePageSE) homePage.chooseEULocation(euCountry.SE, euCountry.SE.getCurrencyISO());
+		signInPage = homePageSE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME1);
 		createAccountPage.lastNameInfo(LAST_NAME1);
@@ -107,8 +107,8 @@ public class NegativeCreateAccountNLTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageNL = (HomePageNL) homePage.chooseEULocation(euCountry.NL, euCountry.NL.getCurrencyISO());
-		signInPage = homePageNL.returnSignInPage();
+		homePageSE = (HomePageSE) homePage.chooseEULocation(euCountry.SE, euCountry.SE.getCurrencyISO());
+		signInPage = homePageSE.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -121,7 +121,7 @@ public class NegativeCreateAccountNLTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageNL.quit();
+		homePageSE.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		createAccountPage.quit();

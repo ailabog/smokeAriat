@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="negativeTests" verbose="1" >
+
+	<test name="negativeTests" >
+       <classes>
+              
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDETest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressATTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressCHTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressITTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDKTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressJETest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFRTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNOTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNLTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressLUTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressSETest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressCNTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressTWTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUSTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressRUTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFITest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressKRTest" />
+                              
+                                  
+              
+            </classes>
+     </test>
+</suite>

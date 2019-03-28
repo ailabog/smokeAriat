@@ -67,12 +67,10 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongNameCreateAccount(loggingMessage);
 		logger.info("Finishing negative create account test...");
@@ -90,12 +88,10 @@ public class NegativeCreateAccountUKTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME1);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL1);
 		createAccountPage.confirmEmail(EMAIL1);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongNameCreateAccount(loggingMessage);
 		logger.info("Finishing negative create account test...");
