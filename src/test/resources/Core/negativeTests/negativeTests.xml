@@ -4,33 +4,63 @@
 
 	<test name="negativeTests" >
        <classes>
-               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDETest" />
+       
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUSTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNOTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNLTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountLUTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountITTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountJETest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountSETest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountFRTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountRUTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountTWTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountATTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountCHTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountCNTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountTWTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDKTest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountBETest" />
+              
                <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDETest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressATTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressCHTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressITTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDKTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressJETest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFRTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNOTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNLTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressLUTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressSETest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressCNTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressTWTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUSTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressRUTest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFITest" />
+              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressKRTest" />
+              
                <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardDETest" />
-               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryDETest" />
-               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryDETest" />
-               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderDETest" />
-               
-               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUKTest" />
-               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryUKTest" />
-               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryUKTest" />
-               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderUKTest" />
-               
-               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNOTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNOTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardNOTest" />
-               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryNOTest" />
-               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryNOTest" />
-               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderNOTest" />
-               
-               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNLTest" />
-               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNLTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardATTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardCHTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardITTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardDKTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardFRTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardJETest" />
                <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardNLTest" />
-               <class name="com.ariat.Tests.Product.NegativeAddToCart.ProductNegativeAddToCartWomenCategoryNLTest" />
-               <class name="com.ariat.Tests.Product.NegativeWriteReview.NegativeProductWriteReviewWomenCategoryNLTest" />
-               <class name="com.ariat.Tests.Checkout.NegativeCreateOrder.NegativeCheckoutCreateOrderNLTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardNOTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardLUTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardSETest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardTWTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardKRTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUKTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUSTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardBETest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardCNTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardRUTest" />
+          
             </classes>
      </test>
 </suite>
