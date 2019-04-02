@@ -17,6 +17,7 @@ import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
 
+
 /**
  * Test negative create account by instantiating the browser, go to Home page,
  * and calls all the methods such as: create account, login, check order status
@@ -55,6 +56,7 @@ public class NegativeCreateAccountNOTest extends BaseTest {
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", filePath);
+
 	}
 
 	@Test(priority = 0)

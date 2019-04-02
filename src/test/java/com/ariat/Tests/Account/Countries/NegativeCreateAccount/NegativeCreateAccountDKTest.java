@@ -50,6 +50,7 @@ public class NegativeCreateAccountDKTest extends BaseTest {
 	public static final String FIRST_NAME1 = "@#$%^&*()";
 	public static final String LAST_NAME1 = "@#$%^&*()";
 	public static final String EMAIL1 = "@#$%^&*()";
+
 	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest
@@ -70,12 +71,10 @@ public class NegativeCreateAccountDKTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongNameCreateAccount(loggingMessage);
 		logger.info("Finishing negative create account test...");
@@ -94,12 +93,10 @@ public class NegativeCreateAccountDKTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME1);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL1);
 		createAccountPage.confirmEmail(EMAIL1);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.addMeToAriatEmail();
 		createAccountPage.createAccountClick();
 		createAccountPage.assertWrongNameCreateAccount(loggingMessage);
 		logger.info("Finishing negative create account test...");

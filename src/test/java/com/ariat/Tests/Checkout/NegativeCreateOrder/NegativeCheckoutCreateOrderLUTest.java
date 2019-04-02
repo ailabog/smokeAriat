@@ -25,7 +25,6 @@ import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
  * Checkout -> Negative Create new order
  * 
@@ -78,6 +77,8 @@ public class NegativeCheckoutCreateOrderLUTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
+
+
   @Test(priority=0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create negative order without being logged test...");

@@ -25,7 +25,6 @@ import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
  * Checkout -> Negative Create new order
  * 

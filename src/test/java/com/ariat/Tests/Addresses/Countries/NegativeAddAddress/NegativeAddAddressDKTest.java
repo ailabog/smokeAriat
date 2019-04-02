@@ -17,7 +17,6 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
  * Adds negative address and checks the address was created for Denmark
  * 

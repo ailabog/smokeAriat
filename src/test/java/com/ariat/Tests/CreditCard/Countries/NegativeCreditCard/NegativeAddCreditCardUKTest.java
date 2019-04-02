@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
+
 /**
  * Tests for Negative Add Credit card United Kingdom
  * 
@@ -23,7 +24,8 @@ import com.ariat.Pages.Header.SignInPage;
  *
  */
 
-public class NegativeAddCreditCardUKTest extends BaseTest {
+
+public class NegativeAddCreditCardUKTest extends BaseTest{
 
 	private HomePage homePage;
 	private HomePageUK homePageUK;
@@ -34,14 +36,12 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 	private Environments environment;
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
-
 	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "ryttrytry";
 	private static final String CARD_OWNER = "5654657665";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
-
 	private static final String YEAR1 = "2009";
 	private static final String MONTH1 = "January";
 
@@ -63,7 +63,7 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -77,8 +77,8 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add negative credit card UK test");
-	}
-
+  } 
+	
 	@Test(priority = 1)
 	public void negativeAddCreditCardUKTestWildCard() {
 		String expirationDate = "MONTH/YEAR";
@@ -87,7 +87,7 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -101,7 +101,8 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add negative credit card UK test");
-	}
+
+  } 
 
 	@Test(priority = 2)
 	public void negativeAddCreditCardUKTestMissingValues() {
@@ -111,7 +112,7 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -126,28 +127,28 @@ public class NegativeAddCreditCardUKTest extends BaseTest {
 
 	@Test(priority = 3)
 	public void negativeAddCreditCardUKTestExpirationDate() {
-		String expirationDate = "MONTH1/YEAR1";
-		logger.info("Starting add a credit card UK test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
-		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR1);
-		addACreditCardPage.selectExpirationMonthCard(MONTH1);
-		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card UK test");
-	}
-
+	String expirationDate = "MONTH1/YEAR1";
+			logger.info("Starting add a credit card UK test");
+			homePage = new HomePage(new ChromeDriver());
+			homePage.load(environment.DEVELOPMENT.getURL());
+			homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+			signInPage = homePageUK.returnSignInPage();
+			signInPage.returningCustomer(EMAIL,"EnglishUK");
+			signInPage.returningPassword(PASSWORD);
+			myAccountPage = signInPage.returnMyAccountPage();
+			addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+			addACreditCardPage.enterCardId(CARD_ID);
+			addACreditCardPage.enterCardOwner(CARD_OWNER);
+			addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
+			addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
+			addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
+			addACreditCardPage.selectExpirationYearCard(YEAR1);
+			addACreditCardPage.selectExpirationMonthCard(MONTH1);
+			paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
+			paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
+			logger.info("Finishing add a credit card UK test");
+  } 
+	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

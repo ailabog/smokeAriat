@@ -15,6 +15,7 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 
+
 /**
  * Product page - > Women Category -> Negative Add to cart test
  * 

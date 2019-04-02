@@ -15,7 +15,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
-
 /**
  * Product page - > Women Category -> Negative Add to cart test
  * 
@@ -36,7 +35,6 @@ public class ProductNegativeAddToCartWomenCategoryDKTest extends BaseTest {
 	private WomenFootwearPage womenFootwearPage;
 	private WomenFootwearRidingPage womenFootwearRidingPage;
 	private HeritageProductPage heritageProductPage;
-	
 
     public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	

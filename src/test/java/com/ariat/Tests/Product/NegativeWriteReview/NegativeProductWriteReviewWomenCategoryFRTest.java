@@ -32,13 +32,13 @@ public class NegativeProductWriteReviewWomenCategoryFRTest extends BaseTest {
 	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private EUCountries euCountry;
-	
-    
+	   
     private static final String TITLE_REVIEW =  GenerateRandomDataUtils.generateRandomNumber(10);
 	private static final String CONTENT_REVIEW = GenerateRandomDataUtils.generateRandomNumber(50);
     private static final String USER = GenerateRandomDataUtils.generateRandomNumber(5);
     private static final String EMAIL = "aila.bogasieru@gmail.com";
     private static final String CITY = "London";
+
     public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
 	@BeforeTest

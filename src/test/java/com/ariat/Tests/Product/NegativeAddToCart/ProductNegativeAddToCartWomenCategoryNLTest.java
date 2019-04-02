@@ -15,7 +15,6 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
-
 /**
  * Product page - > Women Category -> Negative Add to cart test
  * 
@@ -43,7 +42,7 @@ public class ProductNegativeAddToCartWomenCategoryNLTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
-	
+
   @Test(priority=0)
 	public void productPageWomenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove negative add to cart test...");

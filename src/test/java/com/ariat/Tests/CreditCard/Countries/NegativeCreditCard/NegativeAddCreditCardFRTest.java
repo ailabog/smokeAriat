@@ -19,12 +19,11 @@ import com.ariat.Pages.Header.SignInPage;
 
 /**
  * Tests for Negative Add Credit card United Kingdom
- * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class NegativeAddCreditCardFRTest extends BaseTest {
+public class NegativeAddCreditCardFRTest extends BaseTest{
 
 	private HomePage homePage;
 	private HomePageUK homePageUK;
@@ -44,6 +43,7 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
 
+
 	private static final String YEAR1 = "2009";
 	private static final String MONTH1 = "January";
 
@@ -56,7 +56,7 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
-
+	
 	@Test(priority = 0)
 	public void negativeAddCreditCardFRTest() {
 		String expirationDate = "MONTH/YEAR";
@@ -66,7 +66,7 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Francais");
+		signInPage.returningCustomer(EMAIL,"Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavFR();
@@ -80,7 +80,8 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add negative credit card FR test");
-	}
+  } 
+	
 
 	@Test(priority = 1)
 	public void negativeAddCreditCardFRTestWildCard() {
@@ -91,7 +92,7 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Francais");
+		signInPage.returningCustomer(EMAIL,"Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavFR();
@@ -105,7 +106,9 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add negative credit card FR test");
+
 	}
+
 
 	@Test(priority = 2)
 	public void negativeAddCreditCardFRTestMissingValues() {
@@ -116,7 +119,7 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Francais");
+		signInPage.returningCustomer(EMAIL,"Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavFR();
@@ -129,30 +132,33 @@ public class NegativeAddCreditCardFRTest extends BaseTest {
 		logger.info("Finishing add negative credit card FR test");
 	}
 
+
+
 	@Test(priority = 3)
 	public void negativeAddCreditCardFRTestExpirationDate() {
-		String expirationDate = "MONTH1/YEAR1";
-		logger.info("Starting add a credit card FR test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
-		signInPage = homePageFR.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Francais");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavFR();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
-		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR1);
-		addACreditCardPage.selectExpirationMonthCard(MONTH1);
-		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card FR test");
-	}
+	String expirationDate = "MONTH1/YEAR1";
+			logger.info("Starting add a credit card FR test");
+			homePage = new HomePage(new ChromeDriver());
+			homePage.load(environment.DEVELOPMENT.getURL());
+			homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+			homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
+			signInPage = homePageFR.returnSignInPage();
+			signInPage.returningCustomer(EMAIL,"Francais");
+			signInPage.returningPassword(PASSWORD);
+			myAccountPage = signInPage.returnMyAccountPage();
+			addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNavFR();
+			addACreditCardPage.enterCardId(CARD_ID);
+			addACreditCardPage.enterCardOwner(CARD_OWNER);
+			addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
+			addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
+			addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
+			addACreditCardPage.selectExpirationYearCard(YEAR1);
+			addACreditCardPage.selectExpirationMonthCard(MONTH1);
+			paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
+			paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
+			logger.info("Finishing add a credit card FR test");
+  } 
+	
 
 	@AfterTest
 	public void tearDown() {

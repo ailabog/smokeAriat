@@ -24,7 +24,9 @@ import com.ariat.Pages.Header.SignInPage;
  *
  */
 
-public class NegativeAddCreditCardDKTest extends BaseTest {
+
+
+public class NegativeAddCreditCardDKTest extends BaseTest{
 
 	private HomePage homePage;
 	private HomePageUK homePageUK;
@@ -44,6 +46,7 @@ public class NegativeAddCreditCardDKTest extends BaseTest {
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
 
+
 	private static final String YEAR1 = "2009";
 	private static final String MONTH1 = "January";
 
@@ -55,8 +58,9 @@ public class NegativeAddCreditCardDKTest extends BaseTest {
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", filePath);
-	}
 
+	}
+	
 	@Test(priority = 0)
 	public void negativeAddCreditCardDKTest() {
 		String expirationDate = "MONTH/YEAR";
@@ -82,6 +86,7 @@ public class NegativeAddCreditCardDKTest extends BaseTest {
 		logger.info("Finishing add negative credit card DK test");
 	}
 
+
 	@Test(priority = 1)
 	public void negativeAddCreditCardDKTestWildCard() {
 		String expirationDate = "MONTH/YEAR";
@@ -90,8 +95,8 @@ public class NegativeAddCreditCardDKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+	   signInPage = homePageDK.returnSignInPage();
+		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -116,7 +121,7 @@ public class NegativeAddCreditCardDKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		signInPage = homePageDK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -129,31 +134,33 @@ public class NegativeAddCreditCardDKTest extends BaseTest {
 		logger.info("Finishing add negative credit card DK test");
 	}
 
+
+
 	@Test(priority = 3)
 	public void negativeAddCreditCardDKTestExpirationDate() {
-		String expirationDate = "MONTH1/YEAR1";
-		logger.info("Starting add a credit card DK test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
-		signInPage = homePageDK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
-		addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR1);
-		addACreditCardPage.selectExpirationMonthCard(MONTH1);
-		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card DK test");
-	}
-
+	String expirationDate = "MONTH1/YEAR1";
+			logger.info("Starting add a credit card DK test");
+			homePage = new HomePage(new ChromeDriver());
+			homePage.load(environment.DEVELOPMENT.getURL());
+			homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+			homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
+			signInPage = homePageDK.returnSignInPage();
+			signInPage.returningCustomer(EMAIL,"EnglishUK");
+			signInPage.returningPassword(PASSWORD);
+			myAccountPage = signInPage.returnMyAccountPage();
+			addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
+			addACreditCardPage.enterCardId(CARD_ID);
+			addACreditCardPage.enterCardOwner(CARD_OWNER);
+			addACreditCardPage.selectTypeCard(typeCard.VISA.getName());
+			addACreditCardPage.enterCardNo(typeCard.VISA.getNumber());
+			addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
+			addACreditCardPage.selectExpirationYearCard(YEAR1);
+			addACreditCardPage.selectExpirationMonthCard(MONTH1);
+			paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
+			paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
+			logger.info("Finishing add a credit card DK test");
+  } 
+	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

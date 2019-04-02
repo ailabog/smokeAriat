@@ -25,7 +25,6 @@ import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
  * Checkout -> Negative Create new order
  * 
@@ -71,6 +70,7 @@ public class NegativeCheckoutCreateOrderNOTest extends BaseTest {
 	private ListOfCreditCards typeCard;
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
+
 
 	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
