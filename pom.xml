@@ -18,6 +18,8 @@
    <maven.compiler.version>3.6.1</maven.compiler.version>
    <maven.surefire.version>2.20</maven.surefire.version>
    <maven.failsafe.version>2.20</maven.failsafe.version>
+   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
   <dependencies>
@@ -58,6 +60,14 @@
       <artifactId>logback-classic</artifactId>
       <version>${logback.version}</version>
        </dependency>
+       
+       <!-- https://mvnrepository.com/artifact/com.macasaet.lambda/fluent-lambda -->
+<dependency>
+    <groupId>com.macasaet.lambda</groupId>
+    <artifactId>fluent-lambda</artifactId>
+    <version>0.0.3</version>
+</dependency>
+       
              
   </dependencies>
   

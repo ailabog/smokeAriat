@@ -23,8 +23,6 @@ import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-import Interfaces.ProductAttributes;
-
 /**
  * Product page - > Women Category -> Add to Wishlist test
  * 
@@ -84,7 +82,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
 		womenCasualShoe = womenFootwareCasualShoePage.returnCasualShoeProductPage();
 		womenCasualShoe.selectAttributeSize("6");
-		myWishListPage = ProductAttributes.returnMyWishListPage();
+		myWishListPage = womenCasualShoe.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
 	

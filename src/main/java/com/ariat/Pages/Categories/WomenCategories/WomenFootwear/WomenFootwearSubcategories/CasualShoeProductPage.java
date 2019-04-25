@@ -11,9 +11,7 @@ import com.ariat.Pages.Main.BasePage;
  */
 
 
-import Interfaces.ProductAttributes;
-
-public class CasualShoeProductPage extends BasePage implements ProductAttributes{
+public class CasualShoeProductPage extends BasePage {
 	
 	public CasualShoeProductPage(WebDriver driver) {
 		super(driver);
