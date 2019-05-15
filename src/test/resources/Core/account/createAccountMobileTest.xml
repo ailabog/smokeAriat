@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="createAccountMobile">
+
+	<parameter name="device" value="mobile" />
+	<parameter name="browser" value="Chrome" />
+	<parameter name="environment" value="DEVELOPMENT" />
+
+
+	<test name="createAccountMobileCurrent">
+		<parameter name="offset" value="0" />
+		<classes>
+			<class name="com.ariat.factory.CreateAccountFactory" />
+		</classes>
+	</test>
+
+	<test name="createAccountMobileMinusOne">
+		<parameter name="offset" value="1" />
+		<classes>
+			<class name="com.ariat.factory.CreateAccountFactory" />
+		</classes>
+	</test>
+	
+	<test name="createAccountMobileMinusTwo">
+		<parameter name="offset" value="2" />
+		<classes>
+			<class name="com.ariat.factory.CreateAccountFactory" />
+		</classes>
+	</test>
+
+</suite>

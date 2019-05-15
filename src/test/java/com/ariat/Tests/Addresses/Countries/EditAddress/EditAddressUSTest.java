@@ -62,10 +62,10 @@ public class EditAddressUSTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.editAddressCreated("B1TGL");
+		addressesPage.editAddressCreated("AFA25");
 		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
-		addAddressPage.enterAddressId("B1TGL1");
+		addAddressPage.enterAddressId("AFA251");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPage();
 		//addressesPage.checkAddress("B1TGL1");
 		logger.info("Finishing edit address US test");

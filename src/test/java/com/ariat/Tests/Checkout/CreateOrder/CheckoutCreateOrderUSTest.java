@@ -79,7 +79,7 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
-  /*  @Test(priority=0)
+  @Test(priority=0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -121,7 +121,7 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}*/
+	}
     
   @Test(priority=1)
    	public void checkoutCreateNewOrderBeingLogged() {

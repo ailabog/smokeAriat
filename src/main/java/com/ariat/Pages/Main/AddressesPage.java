@@ -29,7 +29,7 @@ public class AddressesPage extends BasePage {
 	private By deleteLinkDE = By.xpath("//a[@title='Löschen']");
 
 	private By deleteLinkFR = By.xpath("//a[@title='Supprimer']");
-	private By makeDefaultLink = By.xpath("//a[text()='Make default']");
+	private By makeDefaultLink = By.xpath("//u[text()='Make Default']");
 	private By makeDefaultLinkDE = By.xpath("//a[text()='Als Standard festlegen']");
 	private By makeDefaultLinkFR = By.xpath("//a[text()='Utiliser par défaut']");
 	private By deleteButton = By.name("dwfrm_profile_address_remove");
@@ -43,7 +43,7 @@ public class AddressesPage extends BasePage {
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
 	private By addressNicknameUS = By.xpath("//*[@id=\"addresses\"]/div[1]/div[1]/div[1]/h3/span");
-	private By loadMoreButton = By.xpath("//div[@id='addresses']/div[229]/button");
+	private By loadMoreButton = By.xpath("//button[@title='Load More']");
     private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
 	private By loadMoreButtonFR = By.xpath("//button[@title='Afficher plus']");
 

@@ -65,8 +65,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, country.USA.getLocator());
-				WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
+			    WebDriverUtils.clickOnElementWithWait(driver, country.USA.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
@@ -401,7 +400,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.USA.getLocator());
+				WebDriverUtils.scrollLittDown(driver, euCountry.USA.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.USA.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -445,7 +444,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.AT.getLocator());
+				WebDriverUtils.scrollLittDown(driver, euCountry.AT.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.AT.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -475,7 +474,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.IE.getLocator());
+				WebDriverUtils.scroll500Down(driver, euCountry.IE.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.IE.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -490,7 +489,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.DK.getLocator());
+				WebDriverUtils.scrollLittDown(driver, euCountry.DK.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.DK.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -505,7 +504,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.FR.getLocator());
+				WebDriverUtils.scroll500Down(driver, euCountry.FR.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.FR.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -548,7 +547,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				//WebDriverUtils.scrollDown(driver, euCountry.FI.getLocator());
+				WebDriverUtils.scrollLittDown(driver, euCountry.FI.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.FI.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -594,7 +593,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.LU.getLocator());
+				WebDriverUtils.scrollLittDown(driver, euCountry.LU.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.LU.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -609,7 +608,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.IT.getLocator());
+				WebDriverUtils.scrollLittDown(driver, euCountry.IT.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.IT.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -624,7 +623,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.SE.getLocator());
+				WebDriverUtils.scroll500Down(driver, euCountry.SE.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.SE.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");
@@ -639,7 +638,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				WebDriverUtils.scrollDown(driver, euCountry.NZ.getLocator());
+				WebDriverUtils.scroll500Down(driver, euCountry.NZ.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.NZ.getLocator());
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				logger.info("Saving location...");

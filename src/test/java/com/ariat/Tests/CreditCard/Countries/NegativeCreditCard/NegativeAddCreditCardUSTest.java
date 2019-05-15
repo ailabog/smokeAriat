@@ -6,9 +6,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.ariat.Enums.GlobalCountries;
+import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
+import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.AddACreditCardPage;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -27,12 +29,13 @@ public class NegativeAddCreditCardUSTest extends BaseTest {
 
 	private HomePage homePage;
 	private HomePageUS homePageUS;
+	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private AddACreditCardPage addACreditCardPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
-	private GlobalCountries country;
+	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 
 	private static final String EMAIL = "aila.bogasieru@ariat.com";
@@ -56,14 +59,15 @@ public class NegativeAddCreditCardUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void negativeAddCreditCardUKTest() {
+	public void negativeAddCreditCardUSTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add negative credit card UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUS = (HomePageUS) homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -76,18 +80,19 @@ public class NegativeAddCreditCardUSTest extends BaseTest {
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add negative credit card UK test");
+		logger.info("Finishing add negative credit card US test");
 	}
 
 	@Test(priority = 1)
-	public void negativeAddCreditCardUKTestWildCard() {
+	public void negativeAddCreditCardUSTestWildCard() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add negative credit card UK test");
+		logger.info("Starting add negative credit card US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUS = (HomePageUS) homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -100,18 +105,19 @@ public class NegativeAddCreditCardUSTest extends BaseTest {
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add negative credit card UK test");
+		logger.info("Finishing add negative credit card US test");
 	}
 
 	@Test(priority = 2)
-	public void negativeAddCreditCardUKTestMissingValues() {
+	public void negativeAddCreditCardUSTestMissingValues() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add negative credit card UK test");
+		logger.info("Starting add negative credit card US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUS = (HomePageUS) homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -121,18 +127,19 @@ public class NegativeAddCreditCardUSTest extends BaseTest {
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add negative credit card UK test");
+		logger.info("Finishing add negative credit card US test");
 	}
 
 	@Test(priority = 3)
-	public void negativeAddCreditCardUKTestExpirationDate() {
+	public void negativeAddCreditCardUSTestExpirationDate() {
 		String expirationDate = "MONTH1/YEAR1";
-		logger.info("Starting add a credit card UK test");
+		logger.info("Starting add a credit card US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUS = (HomePageUS) homePage.chooseGlobalLocation(country.USA, country.USA.getCurrencyISO());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
@@ -145,12 +152,13 @@ public class NegativeAddCreditCardUSTest extends BaseTest {
 		addACreditCardPage.selectExpirationMonthCard(MONTH1);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logger.info("Finishing add a credit card UK test");
+		logger.info("Finishing add a credit card US test");
 	}
 
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
+		homePageUK.quit();
 		homePageUS.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();

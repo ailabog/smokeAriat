@@ -60,8 +60,8 @@ public class MakeDefaultAddressUSTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("TCIIN");
-		addressesPage.assertMakeDefaultUS("DEFAULT | TCIIN");
+		addressesPage.makeDefaultAddressCreated("C47ME");
+		addressesPage.assertMakeDefaultUS("DEFAULT | C47ME");
 		logger.info("Finishing make default address US test");
 	}
 	

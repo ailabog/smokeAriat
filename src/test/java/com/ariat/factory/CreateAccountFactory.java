@@ -4,6 +4,7 @@ package com.ariat.factory;
 	import org.testng.annotations.Parameters;
 
 import com.ariat.Enums.Environments;
+import com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest;
 
 import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 
@@ -22,6 +23,6 @@ import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
 			System.out.println("DEV = "+device);
 			System.out.println("BRW = "+browser);
 			System.out.println("ENV = "+enviroment);
-			return FactoryHelperAila.setup(CreateAccountFactory.class, device, browser, enviroment, offset);
+			return FactoryHelperAila.setup(CreateAccountUKTest.class, device, browser, enviroment, offset);
 		}
 }
