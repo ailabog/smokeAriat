@@ -73,7 +73,7 @@ public class ErrorMessagesAccountUKTest extends BaseTest {
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
+		//createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.assertWrongEmailCreateAccount(INVALID_EMAIL_MSG);
 		createAccountPage.clearEmail();

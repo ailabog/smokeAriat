@@ -14,30 +14,25 @@
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavDETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavDKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavUSTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavJPTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavRUTest" />
+       
                  
-                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUKTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavIETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavFITest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavFRTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavCATest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUSTest" />
-                <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavRUTest" />
-                <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavJPTest" />
+               
                 
-                <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingUKTest" />
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingUKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingUSTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingDETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingFRTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingFITest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingIETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingDKTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingCATest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingJPTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingRUTest" />
+
                  
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingUKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingUSTest" />
@@ -46,20 +41,16 @@
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingFITest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingIETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingDKTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingCATest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingJPTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingRUTest" />
                  
-                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavUKTest" />
+                 
+                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavUKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavIETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavFRTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavFITest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavDETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavDKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavUSTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavCATest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavRUTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavJPTest" />
+                
                  
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUKTest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavDETest" />
@@ -67,10 +58,8 @@
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavFITest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavIETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavDKTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavCATest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUSTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavJPTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavRUTest" />
+                 
                 
              
         </classes>

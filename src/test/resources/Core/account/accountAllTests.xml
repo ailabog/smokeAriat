@@ -18,14 +18,8 @@
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFRTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountIETest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountITTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCATest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountJETest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountJPTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountKRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountTRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountTWTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCNTest" />
+                
                  
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountUSTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountUKTest" />
@@ -42,14 +36,7 @@
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountNLTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountNOTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountDKTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountCATest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountRUTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountJPTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountCNTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountJETest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountKRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountTRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountTWTest" />
+                
                  
                  
         </classes>

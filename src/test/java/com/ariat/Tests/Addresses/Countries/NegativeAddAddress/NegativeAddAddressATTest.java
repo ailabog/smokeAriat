@@ -60,14 +60,14 @@ public class NegativeAddAddressATTest extends BaseTest {
 	}
 
 	@Test(priority=0)
-	public void negativeAddAddressNOTest() {
-		logger.info("Starting add negative address NO test");
+	public void negativeAddAddressATTest() {
+		logger.info("Starting add negative address AT test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageAT = (HomePageAT) homePage.chooseEULocation(euCountry.AT, euCountry.AT.getCurrencyISO());
 		signInPage = homePageAT.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutschland");
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
@@ -75,23 +75,23 @@ public class NegativeAddAddressATTest extends BaseTest {
 		addAddressPage.enterLName("4444");
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Norway");
+		addAddressPage.selectCountry("Viena");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPage();
-		logger.info("Finishing add negative address NO test");
+		logger.info("Finishing add negative address AT test");
 	}
 	
 	@Test(priority=1)
-	public void negativeAddAddressNOTestWildcards() {
-		logger.info("Starting add negative address NO test");
+	public void negativeAddAddressATTestWildcards() {
+		logger.info("Starting add negative address AT test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageAT = (HomePageAT) homePage.chooseEULocation(euCountry.AT, euCountry.AT.getCurrencyISO());
 		signInPage = homePageAT.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutschland");
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
@@ -99,31 +99,31 @@ public class NegativeAddAddressATTest extends BaseTest {
 		addAddressPage.enterLName("4444");
 		addAddressPage.enterAddress1(ADDRESSWILD);
 		addAddressPage.enterCity(CITYWILD);
-		addAddressPage.selectCountry("Norway");
+		addAddressPage.selectCountry("Viena");
 		addAddressPage.enterPostCode(POST_CODEWILD);
 		addAddressPage.enterPhone(PHONEWILD);
 		addAddressPage.enterAddressId(ADDRESS_IDWILD);
 		addressesPage = addAddressPage.returnAddressesPage();
-		logger.info("Finishing add negative address NO test");
+		logger.info("Finishing add negative address AT test");
 	}
 	
 	@Test(priority=2)
-	public void negativeAddAddressNOTestMissingValues() {
-		logger.info("Starting add negative address NO test");
+	public void negativeAddAddressATTestMissingValues() {
+		logger.info("Starting add negative address AT test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageAT = (HomePageAT) homePage.chooseEULocation(euCountry.AT, euCountry.AT.getCurrencyISO());
 		signInPage = homePageAT.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutschland");
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Norway");
+		addAddressPage.selectCountry("Viena");
      	addressesPage = addAddressPage.returnAddressesPage();
-		logger.info("Finishing add negative address NO test");
+		logger.info("Finishing add negative address AT test");
 	}
 	
 	@AfterTest

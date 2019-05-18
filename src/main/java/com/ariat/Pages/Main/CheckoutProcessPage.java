@@ -21,8 +21,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.cssSelector(".el-row:nth-child(6) .el-select__caret");
 	//	private By selectOption = By.xpath("//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[4]/span");
-	private By selectOption = By.cssSelector("li.el-select-dropdown__item.hover > span");
-	//
+	private By selectOption = By.xpath("//input[@placeholder='Belgium']");
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");

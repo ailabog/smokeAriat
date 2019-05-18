@@ -7,7 +7,6 @@
                
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountATTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCHTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFITest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDKTest" />
@@ -18,14 +17,8 @@
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFRTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountIETest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountITTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCATest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountJETest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountJPTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountKRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountTRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountTWTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountCNTest" />
+            
                  
             
         </classes>

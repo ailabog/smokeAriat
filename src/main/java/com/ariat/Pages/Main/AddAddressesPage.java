@@ -1,5 +1,7 @@
 package com.ariat.Pages.Main;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,7 +31,7 @@ public class AddAddressesPage extends BasePage {
 	private By phoneTextBox = By.id("dwfrm_profile_address_phone");
 	private By addressIdTextBox = By.id("dwfrm_profile_address_addressid");
 	//private By saveAddressButton = By.name("dwfrm_profile_address_create");
-	private By saveAddressButton =By.xpath("//button[@value='Apply']");
+	private By saveAddressButton =By.name("dwfrm_profile_address_create");
 	private By saveAddressButtonFR =By.xpath("//button[@value='Appliquer']");
 	 private By saveAddressButtonDE = By.xpath("//button[@value='Anwenden']");
 	private By saveAddressEditButton = By.xpath("//*[@value='Apply']");
@@ -44,6 +46,7 @@ public class AddAddressesPage extends BasePage {
 
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
+    private By missingFieldsText=By.xpath("//*contains[text(),'This field is required.']");
    
   		
 	public AddAddressesPage(WebDriver driver) {
@@ -138,6 +141,13 @@ public class AddAddressesPage extends BasePage {
 		logger.info("Canceling this address to be created: ");
 		WebDriverUtils.clickOnElementWithWait(driver, cancelAddressButton);
 		
+	}
+	
+	public void assertMissingValueAddress(String msgExpected) {
+		String msg = WebDriverUtils.getElementText(driver, missingFieldsText);
+		assertEquals(msg, msgExpected, "This field is required.");
+		
+	
 	}
 
 	public void deleteAddress() {

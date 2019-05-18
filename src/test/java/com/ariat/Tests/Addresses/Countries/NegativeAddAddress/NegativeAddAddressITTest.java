@@ -60,8 +60,8 @@ public class NegativeAddAddressITTest extends BaseTest {
 	}
 
 	@Test(priority=0)
-	public void negativeAddAddressFRTest() {
-		logger.info("Starting add negative address FR test");
+	public void negativeAddAddressITTest() {
+		logger.info("Starting add negative address IT test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -75,17 +75,17 @@ public class NegativeAddAddressITTest extends BaseTest {
 		addAddressPage.enterLName("B4444");
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("France");
+		addAddressPage.selectCountry("Italy");
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPageFR();
-		logger.info("Finishing add negative address FR test");
+		addressesPage = addAddressPage.returnAddressesPage();
+		logger.info("Finishing add negative address IT test");
 	}
 	
 	@Test(priority=1)
-	public void negativeAddAddressFRTestWildcards() {
-		logger.info("Starting add negative address FR test");
+	public void negativeAddAddressITTestWildcards() {
+		logger.info("Starting add negative address IT test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -99,17 +99,17 @@ public class NegativeAddAddressITTest extends BaseTest {
 		addAddressPage.enterLName("B4444");
 		addAddressPage.enterAddress1(ADDRESSWILD);
 		addAddressPage.enterCity(CITYWILD);
-		addAddressPage.selectCountry("French");
+		addAddressPage.selectCountry("Italy");
 		addAddressPage.enterPostCode(POST_CODEWILD);
 		addAddressPage.enterPhone(PHONEWILD);
 		addAddressPage.enterAddressId(ADDRESS_IDWILD);
-		addressesPage = addAddressPage.returnAddressesPageFR();
-		logger.info("Finishing add negative address FR test");
+		addressesPage = addAddressPage.returnAddressesPage();
+		logger.info("Finishing add negative address IT test");
 	}
 	
 	@Test(priority=2)
-	public void negativeAddAddressFRTestMissingValues() {
-		logger.info("Starting add negative address FR test");
+	public void negativeAddAddressITTestMissingValues() {
+		logger.info("Starting add negative address FIT test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -121,9 +121,9 @@ public class NegativeAddAddressITTest extends BaseTest {
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("French");
-     	addressesPage = addAddressPage.returnAddressesPageFR();
-		logger.info("Finishing add negative address FR test");
+		addAddressPage.selectCountry("Italy");
+     	addressesPage = addAddressPage.returnAddressesPage();
+		logger.info("Finishing add negative address IT test");
 	}
 	
 	@AfterTest

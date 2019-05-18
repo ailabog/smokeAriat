@@ -10,7 +10,6 @@
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountIETest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountFITest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountDETest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountCHTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountATTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountIETest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountITTest" />
@@ -19,15 +18,7 @@
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountNLTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountNOTest" />
                  <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountDKTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountCATest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountRUTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountJPTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountCNTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountJETest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountKRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountTRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountTWTest" />
-      
+                     
         </classes>
      </test>
 </suite>

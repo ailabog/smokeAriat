@@ -50,6 +50,7 @@ public class NegativeAddAddressUKTest extends BaseTest {
 	public static final String PHONEWILD = GenerateRandomDataUtils.generateRandomString(7);
 	public static final String ADDRESS_IDWILD = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	public static final String MESSAGE ="This field is required.";
 	
 	@BeforeTest
 	public void setUp() {
@@ -116,7 +117,8 @@ public class NegativeAddAddressUKTest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("United Kingdom");
-     	addressesPage = addAddressPage.returnAddressesPage();
+		addAddressPage.saveAddress();
+		addAddressPage.assertMissingValueAddress(MESSAGE);
 		logger.info("Finishing add negative address UK test");
 	}
 	

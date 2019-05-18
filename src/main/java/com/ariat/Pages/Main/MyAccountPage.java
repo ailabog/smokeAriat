@@ -52,7 +52,7 @@ public class MyAccountPage extends BasePage {
 	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-	private By myAccountLink = By.xpath("//a[contains(text(),'My account')]");
+	private By myAccountLink = By.xpath("//a[@title='My account')]");
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
 	private By changePasswordLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[3]/a");
 	private By editEmailPreferenceLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/a");
@@ -78,17 +78,17 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//a[contains(text(),'Log out')]");
+	private By logoutTopNav = By.xpath("//a[@title='Log out']");
 	//// a[contains(@href,
 	//// '/on/demandware.store/Sites-Ariat-Site/default/Login-Logout')]
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenFootwearCasualShoesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");
 	private By footwearCasualShowsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By logoutTopNavFR = By.xpath("//a[contains(text(),'Se déconnecter')]");
+	private By logoutTopNavFR = By.xpath("//a[@title='Se déconnecter']");
 	private By logoutMiddle = By.id("account-overview__logout-link");
-	private By logouttopNavFR = By.xpath("a[text()='Se déconnecter']");
-	private By logoutTopNavDE = By.xpath("//a[contains(text(),'Abmelden')]");
+	private By logouttopNavFR = By.xpath("a[@title='Se déconnecter']");
+	private By logoutTopNavDE = By.xpath("//a[@title='Abmelden']");
 	private By signInDE = By.xpath("//a[text()='Einloggen']");
 	private By signInFR = By.xpath("//a[text()='Connexion']");
 	private By personalInfoLinkDE = By.xpath("//a[text()= 'Persönliche Daten']");
