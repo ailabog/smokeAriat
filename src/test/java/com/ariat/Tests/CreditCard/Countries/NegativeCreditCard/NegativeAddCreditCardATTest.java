@@ -42,10 +42,10 @@ public class NegativeAddCreditCardATTest extends BaseTest {
 	private static final String CARD_ID = "ryttrytry";
 	private static final String CARD_OWNER = "5654657665";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "January";
+	private static final String MONTH = "Januar";
 
 	private static final String YEAR1 = "2009";
-	private static final String MONTH1 = "January";
+	private static final String MONTH1 = "Januar";
 
 	private static final String CARD_IDWILD = "#$%^&*(";
 	private static final String CARD_OWNERWILD = "@#$%^&*(";

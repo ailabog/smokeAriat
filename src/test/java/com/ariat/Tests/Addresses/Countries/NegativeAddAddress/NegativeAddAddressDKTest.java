@@ -121,7 +121,7 @@ public class NegativeAddAddressDKTest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("Denmark");
-     	addressesPage = addAddressPage.returnAddressesPage();
+		addAddressPage.saveAddress();
 		logger.info("Finishing add negative address DK test");
 	}
 	

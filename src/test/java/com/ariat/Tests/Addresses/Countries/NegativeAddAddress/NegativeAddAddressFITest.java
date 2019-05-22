@@ -121,7 +121,7 @@ public class NegativeAddAddressFITest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("Finland");
-     	addressesPage = addAddressPage.returnAddressesPage();
+		addAddressPage.saveAddress();
 		logger.info("Finishing add negative address FI test");
 	}
 	

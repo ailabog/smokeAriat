@@ -19,7 +19,7 @@ import com.ariat.Pages.Header.SignInPage;
 
 
 /**
- * Tests for Negative Add Credit card United Kingdom
+ * Tests for Negative Add Credit card Norway
  * 
  * @author aila.bogasieru@ariat.com
  *

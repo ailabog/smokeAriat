@@ -9,16 +9,9 @@
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNOTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNLTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountLUTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountITTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountJETest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountSETest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountFRTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountRUTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountTWTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountATTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountCHTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountCNTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountTWTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDKTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountBETest" />
                     

@@ -19,7 +19,7 @@ import com.ariat.Pages.Header.SignInPage;
 
 
 /**
- * Tests for Negative Add Credit card United Kingdom
+ * Tests for Negative Add Credit card Deutschland
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -43,11 +43,11 @@ public class NegativeAddCreditCardDETest extends BaseTest {
 	private static final String CARD_ID = "ryttrytry";
 	private static final String CARD_OWNER = "5654657665";
 	private static final String YEAR = "2023";
-	private static final String MONTH = "January";
+	private static final String MONTH = "Januar";
 
 
 	private static final String YEAR1 = "2009";
-	private static final String MONTH1 = "January";
+	private static final String MONTH1 = "Januar";
 
 	private static final String CARD_IDWILD = "#$%^&*(";
 	private static final String CARD_OWNERWILD = "@#$%^&*(";

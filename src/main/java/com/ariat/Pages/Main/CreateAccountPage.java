@@ -61,6 +61,11 @@ public class CreateAccountPage extends BasePage {
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
 	}
+	
+	public void asserCreateAccountMissingValues(String missingValue) {
+		String missing = WebDriverUtils.getElementText(driver, missingMsg);
+		assertEquals(missing, missingValue, "This field is required.");
+	}
 
 	public void firstName(String firstName) {
 		logger.info("Start collecting information to create a new account: First Name");
@@ -134,10 +139,7 @@ public class CreateAccountPage extends BasePage {
 		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
 	}
 	
-	public void asserCreateAccountMissingValues(String missingValue) {
-		String missing = WebDriverUtils.getElementText(driver, missingMsg);
-		assertEquals(missing, missingValue, "This field is required.");
-	}
+	
 	
 	public void assertWrongEmailCreateAccountDE(String emailMsgExpected) {
 		String emailMessage = WebDriverUtils.getElementText(driver, emailMsgDE);
@@ -233,12 +235,14 @@ public class CreateAccountPage extends BasePage {
 	}
 
 	public void createAccountClick() {
+		WebDriverUtils.scroll500Down(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		logger.info("New account was created with success");
 	
 	}
 
 	public MyAccountPage returnMyAccountPage() {
+		WebDriverUtils.scroll500Down(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountTitle));

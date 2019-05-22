@@ -121,6 +121,7 @@ public class AddAddressesPage extends BasePage {
 
 	public void saveAddress() {
 		logger.info("Saving this address: ");
+		WebDriverUtils.scroll500Down(driver, saveAddressButton);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
 		
 	}
@@ -155,8 +156,24 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 		
 	}
+	
+	public void saveAddressDE() {
+		logger.info("Saving this address: ");
+		WebDriverUtils.scroll500Down(driver, saveAddressButtonDE);
+		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
+		
+	}
+	
+	public void saveAddressFR() {
+		logger.info("Saving this address: ");
+		WebDriverUtils.scroll500Down(driver, saveAddressButtonFR);
+		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
+		
+	}
+
 
 	public AddressesPage returnAddressesPage() {
+		WebDriverUtils.scroll500Down(driver, saveAddressButton);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
@@ -164,6 +181,7 @@ public class AddAddressesPage extends BasePage {
 	}
 	
 	public AddressesPage returnAddressesPageFR() {
+		WebDriverUtils.scroll500Down(driver, saveAddressButtonFR);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
@@ -171,6 +189,7 @@ public class AddAddressesPage extends BasePage {
 	}
 	
 	public AddressesPage returnAddressesPageDE() {
+		WebDriverUtils.scroll500Down(driver, saveAddressButtonDE);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));

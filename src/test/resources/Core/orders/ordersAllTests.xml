@@ -12,9 +12,7 @@
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsIETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsDETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsFRTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsJPTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsRUTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsCATest" />
+  
                  
                  <class name="com.ariat.Tests.Orders_View.OrderStatusUKTest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
@@ -23,9 +21,6 @@
                  <class name="com.ariat.Tests.Orders_View.OrderStatusFITest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusDETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusFRTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusCATest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusRUTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusJPTest" />
                  
                 </classes>
      </test>

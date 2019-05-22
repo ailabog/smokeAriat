@@ -122,7 +122,7 @@ public class NegativeAddAddressITTest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("Italy");
-     	addressesPage = addAddressPage.returnAddressesPage();
+		addAddressPage.saveAddress();
 		logger.info("Finishing add negative address IT test");
 	}
 	

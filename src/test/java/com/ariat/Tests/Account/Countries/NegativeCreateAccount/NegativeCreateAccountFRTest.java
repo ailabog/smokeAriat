@@ -42,7 +42,7 @@ public class NegativeCreateAccountFRTest extends BaseTest {
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String BIRTH_MONTH = "March";
+	public static final String BIRTH_MONTH = "Mars";
 	public static final String BIRTH_DAY = "02";
 
 	public static final String EMAIL = GenerateRandomDataUtils.generateRandomNumber(12);
@@ -113,7 +113,7 @@ public class NegativeCreateAccountFRTest extends BaseTest {
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
-		myAccountPage = createAccountPage.returnMyAccountPage();
+		createAccountPage.createAccountClick();
 		createAccountPage.asserCreateAccountMissingValues(missingLoggingValue);
 		logger.info("Finishing negative create account test...");
 	}

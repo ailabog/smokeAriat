@@ -111,7 +111,7 @@ public class NegativeCreateAccountUSTest extends BaseTest {
 		createAccountPage = signInPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
-		myAccountPage = createAccountPage.returnMyAccountPage();
+		createAccountPage.createAccountClick();
 		createAccountPage.asserCreateAccountMissingValues(missingLoggingValue);
 		logger.info("Finishing negative create account test...");
 	}

@@ -4,14 +4,12 @@
 <parameter name="environment" value="${environment}" />
 	<test name="createOrder" >
        <classes>
-                 <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderCATest" />
+            
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderDETest" />
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderDKTest" />
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderFITest" />
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderFRTest" />
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderIETest" />
-                 <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderJPTest" />
-                 <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderRUTest" />
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUKTest" />
                  <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUSTest" />
         </classes>

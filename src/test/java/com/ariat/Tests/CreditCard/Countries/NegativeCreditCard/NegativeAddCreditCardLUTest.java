@@ -18,7 +18,7 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
- * Tests for Negative Add Credit card United Kingdom
+ * Tests for Negative Add Credit card Luxembourg
  * 
  * @author aila.bogasieru@ariat.com
  *

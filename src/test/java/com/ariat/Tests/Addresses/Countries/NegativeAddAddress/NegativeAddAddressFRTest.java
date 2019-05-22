@@ -121,7 +121,7 @@ public class NegativeAddAddressFRTest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("France");
-     	addressesPage = addAddressPage.returnAddressesPageFR();
+		addAddressPage.saveAddressFR();
 		logger.info("Finishing add negative address FR test");
 	}
 	
