@@ -9,7 +9,7 @@ package com.ariat.Enums;
 public enum PhoneUS {
 	
 	
-	phone1("(208)252-7991"), 
+	phone1("208252-7991"), 
 	phone2("(442)226-3903"), 
 	phone3("(669)666-5709"),
 	phone4("(201)455-3324"),

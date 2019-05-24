@@ -11,10 +11,7 @@
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingFITest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingIETest" />
                  <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingDKTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingCATest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingJPTest" />
-                 <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.Sorting.MenCategoryPaginationSortingRUTest" />
-                              
+                                             
        </classes>
      </test>
 </suite>

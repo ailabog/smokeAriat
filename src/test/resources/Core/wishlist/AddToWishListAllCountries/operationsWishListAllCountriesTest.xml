@@ -11,10 +11,7 @@
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryFRTest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
-                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryCATest" />
-                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryJPTest" />
-                 <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryRUTest" />
-     
+                     
        </classes>
      </test>
 </suite>

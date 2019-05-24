@@ -240,6 +240,12 @@ public class CreateAccountPage extends BasePage {
 		logger.info("New account was created with success");
 	
 	}
+	
+	public void createAccountClickWithoutScroll() {
+		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
+		logger.info("New account was created with success");
+	
+	}
 
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.scroll500Down(driver, createAccountButton);

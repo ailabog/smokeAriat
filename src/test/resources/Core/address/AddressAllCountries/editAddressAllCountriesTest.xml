@@ -11,9 +11,6 @@
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUSTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFITest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressJPTest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressRUTest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressCATest" />
-        </classes>
+   
      </test>
 </suite>

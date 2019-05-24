@@ -71,7 +71,7 @@ public class AddAddressNLTest extends BaseTest {
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPage();
+		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		//addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address Netherlands test");
 	}

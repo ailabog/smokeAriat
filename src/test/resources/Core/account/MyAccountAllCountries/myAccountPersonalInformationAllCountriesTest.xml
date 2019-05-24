@@ -11,9 +11,5 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDKTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationCATest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationRUTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationJPTest" />
-        </classes>
-     </test>
+            </test>
 </suite>

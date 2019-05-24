@@ -11,10 +11,7 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDKTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesCATest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesRUTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesJPTest" />
-                
+                           
         </classes>
      </test>
 </suite>

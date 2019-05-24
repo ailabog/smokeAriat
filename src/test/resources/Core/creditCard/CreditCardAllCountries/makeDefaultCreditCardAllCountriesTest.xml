@@ -6,7 +6,6 @@
        <classes>
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDETest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardCHTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardATTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardITTest" />
@@ -19,13 +18,7 @@
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUSTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFITest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardJPTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardRUTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardCATest" />
-                      <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardCNTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardTRTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardTWTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardJETest" />
+              
         </classes>
      </test>
 </suite>

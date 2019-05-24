@@ -71,7 +71,7 @@ public class AddAddressDETest extends BaseTest {
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPageDE();
+		addressesPage = addAddressPage.returnAddressesPageWithoutScrollDE();
 		//addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address Germany test");
 	}

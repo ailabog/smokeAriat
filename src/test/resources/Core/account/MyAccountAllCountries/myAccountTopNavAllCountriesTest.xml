@@ -11,9 +11,6 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDKTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationCATest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationRUTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationJPTest" />
                 
         </classes>
      </test>

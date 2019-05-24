@@ -71,7 +71,7 @@ public class CreateAccountUKTest extends BaseTest {
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
 		createAccountPage.confirmPassword(PASSWORD);
-		createAccountPage.createAccountClick();
+		createAccountPage.createAccountClickWithoutScroll();
 	    logger.info("Finishing create new account test...");
 	}
 

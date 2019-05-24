@@ -71,7 +71,7 @@ public class AddAddressUSTest extends BaseTest {
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(phoneUS.phone1.getNumber());
 		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPage();
+		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		//addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address US test");
 	}

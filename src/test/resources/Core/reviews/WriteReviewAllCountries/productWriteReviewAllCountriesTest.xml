@@ -12,10 +12,7 @@
                  <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDETest"  />
                  <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryFRTest"  />
                  <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryUSTest"  />
-                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryCATest" />
-                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryJPTest"  />
-                 <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryRUTest"  />
-               
+                       
        </classes>
      </test>
 </suite>

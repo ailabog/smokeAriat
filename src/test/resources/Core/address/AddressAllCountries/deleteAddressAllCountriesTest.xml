@@ -6,7 +6,6 @@
        <classes>
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUKTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDETest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressCHTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressATTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressBETest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressLUTest" />
@@ -19,14 +18,7 @@
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUSTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressFITest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressJPTest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressRUTest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressCATest" />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressCNTest"  />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressKRTest"  />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressJETest"  />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressTRTest"  />
-                 <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressTWTest"  />
+                 <c
           
         </classes>
      </test>

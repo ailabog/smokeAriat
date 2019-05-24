@@ -6,7 +6,6 @@
        <classes>
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressUKTest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDETest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressCHTest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressATTest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressBETest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressNLTest" />
@@ -19,13 +18,7 @@
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressFRTest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressIETest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressUSTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressCATest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressJPTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressRUTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressCNTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressTRTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressTWTest" />
-                <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressJETest" />
+               
               
         </classes>
      </test>

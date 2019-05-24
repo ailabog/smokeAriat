@@ -20,8 +20,7 @@
                  <class name="com.ariat.Tests.Search.Countries.SearchLUTest" />
                  <class name="com.ariat.Tests.Search.Countries.SearchFRTest" />
                  <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
-              
-               
+   
         
         </classes>
      </test>

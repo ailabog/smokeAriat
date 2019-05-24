@@ -17,9 +17,7 @@
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressSETest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUSTest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFITest" />
-        
-                              
-                                  
+                   
               
             </classes>
      </test>
