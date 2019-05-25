@@ -61,7 +61,7 @@ public class LoadMoreAddressDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.loadMoreAddesses();
+		addressesPage.loadMoreAddessesDE();
 		logger.info("Finishing load more addresses Deutschland test");
 	}
 	

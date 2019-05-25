@@ -33,14 +33,24 @@ public class EmailPreferencePage extends BasePage {
 	private By apparelCheck = By.xpath("//*[@id=\"RegistrationForm\"]/div[1]/div[9]/div[1]/div[3]/span");
 	private By saveEditsButton = By.name("dwfrm_profile_confirm");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
-	private By emailTxtBox = By.name("ctl00_cphContent_txtEmail");
-	private By confirmEmailTxtBox = By.id("ctl00_cphContent_txtConfirmEmail");
-	private By fNameTxtBox = By.id("ctl00_cphContent_firstname");
-	private By lNameTxtBox = By.id("ctl00_cphContent_lastname");
-	private By genderCheck = By.id("ctl00_cphContent_Female");
-	private By monthSelect = By.id("ctl00_cphContent_ddlBMonth");
-	private By daySelect = By.id("ctl00_cphContent_ddlBDay");
-	private By yearSelect = By.id("ctl00_cphContent_ddlBYear");
+	private By emailTxtBox = By.name("dwfrm_profile_customer_email");
+	private By confirmEmailTxtBox = By.id("dwfrm_profile_customer_emailconfirm");
+	private By fNameTxtBox = By.id("dwfrm_profile_customer_firstname");
+	private By lNameTxtBox = By.id("dwfrm_profile_customer_lastname");
+	private By genderCheck = By.id("RadioGender01");
+	private By monthSelect = By.id("dwfrm_profile_customer_customProfile_birthdayMonth");
+	private By daySelect = By.id("dwfrm_profile_customer_customProfile_birthdayDay");
+	
+	
+	
+	private By emailTxtBoxUS = By.id("ctl00_cphContent_txtEmail");
+	private By confirmEmailTxtBoxUS = By.id("ctl00_cphContent_txtConfirmEmail");
+	private By fNameTxtBoxUS = By.id("ctl00_cphContent_firstname");
+	private By lNameTxtBoxUS = By.id("ctl00_cphContent_lastname");
+	private By genderCheckUS = By.id("ctl00_cphContent_Female");
+	private By monthSelectUS = By.id("ctl00_cphContent_ddlBMonth");
+	private By daySelectUS = By.id("ctl00_cphContent_ddlBDay");
+	private By yearSelectUS = By.id("ctl00_cphContent_ddlBYear");
 	private By saveprefBtn = By.xpath("//input[@value='SAVE PREFERENCES']");
 
 	public EmailPreferencePage(WebDriver driver) {
@@ -123,9 +133,10 @@ public class EmailPreferencePage extends BasePage {
 		WebDriverUtils.selectVisibleText(driver, monthSelect, monthValue);
 		logger.info("Selecting day of birth..");
 		WebDriverUtils.selectVisibleText(driver, daySelect, dayValue);
-		logger.info("Selecting year of birth..");
-		WebDriverUtils.selectVisibleText(driver, yearSelect, yearValue);
+		
 	}
+	
+	
 	
 	public void savePrefUS() {
 		logger.info("Saving email preferences..");
@@ -134,9 +145,43 @@ public class EmailPreferencePage extends BasePage {
 	
 	
 	public void saveEditsClick() {
+		WebDriverUtils.scroll500Down(driver, saveEditsButton);
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
 		
 		logger.info("Changes were saved");
+	}
+	
+	public void enterEmailUS(String emailValue) {
+		logger.info("Entering email..");
+		WebDriverUtils.enterTextBox(driver, emailTxtBoxUS, emailValue);
+	}
+	
+	public void enterConfirmEmailUS(String confirmEmailValue) {
+		logger.info("Entering email..");
+		WebDriverUtils.enterTextBox(driver, confirmEmailTxtBoxUS, confirmEmailValue);
+	}
+	
+	public void enterFNameUS(String fName) {
+		logger.info("Entering First name..");
+		WebDriverUtils.enterTextBox(driver, fNameTxtBoxUS, fName);
+	}
+	
+	public void enterLNameUS(String lName) {
+		logger.info("Entering Last name..");
+		WebDriverUtils.enterTextBox(driver, lNameTxtBoxUS, lName);
+	}
+
+	public void checkGenderFemaleUS() {
+		WebDriverUtils.clickOnElementWithWait(driver, genderCheckUS);
+	}
+	
+	public void selectBirthDataUS(String monthValue, String dayValue, String yearValue) {
+		logger.info("Selecting month of birth..");
+		WebDriverUtils.selectVisibleText(driver, monthSelectUS, monthValue);
+		logger.info("Selecting day of birth..");
+		WebDriverUtils.selectVisibleText(driver, daySelectUS, dayValue);
+		logger.info("Selecting year of birth..");
+		WebDriverUtils.selectVisibleText(driver, yearSelectUS, dayValue);
 	}
 
 	public void savePreferencesClick() {

@@ -61,8 +61,8 @@ public class MakeDefaultAddressLUTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("BY9GD");
-		addressesPage.assertMakeDefault("DEFAULT | BY9GD");
+		addressesPage.makeDefaultAddressCreated("26515");
+		addressesPage.assertMakeDefault("DEFAULT | 26515");
 		logger.info("Finishing make default address Luxembourg test");
 	}
 	

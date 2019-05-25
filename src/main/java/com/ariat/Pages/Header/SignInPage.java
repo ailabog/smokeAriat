@@ -40,6 +40,7 @@ public class SignInPage extends BasePage {
 	private By sendForgotButton = By.name("dwfrm_requestpassword_send");
 	private By closeForgotButton = By.xpath("//*[@id=\"ext-gen44\"]/body/div[9]/div[1]/a/span");
 	private By checkOrderTextBox = By.id("dwfrm_ordertrack_orderNumber");
+
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
 	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");

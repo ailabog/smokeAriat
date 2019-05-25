@@ -13,7 +13,6 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationATTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationITTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationSETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationBETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationLUTest" />

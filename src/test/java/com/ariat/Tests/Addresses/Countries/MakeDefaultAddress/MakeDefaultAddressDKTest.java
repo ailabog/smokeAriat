@@ -61,8 +61,8 @@ public class MakeDefaultAddressDKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("235432");
-		addressesPage.assertMakeDefault("DEFAULT | 235432");
+		addressesPage.makeDefaultAddressCreated("26515");
+		addressesPage.assertMakeDefault("DEFAULT | 26515");
 		logger.info("Finishing make default address Denmark test");
 	}
 	

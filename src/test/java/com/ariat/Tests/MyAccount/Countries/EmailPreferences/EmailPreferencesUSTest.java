@@ -55,12 +55,12 @@ public class EmailPreferencesUSTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		emailPreferencesPage = myAccountPage.returnEmailPreferencePageLeftNav();
-		emailPreferencesPage.enterEmail(EMAIL);
-		emailPreferencesPage.enterConfirmEmail(EMAIL);
-		emailPreferencesPage.enterFName("Aila");
-		emailPreferencesPage.enterLName("Bogasieru");
-		emailPreferencesPage.checkGenderFemale();
-		emailPreferencesPage.selectBirthData("May", "01", "1980");
+		emailPreferencesPage.enterEmailUS(EMAIL);
+		emailPreferencesPage.enterConfirmEmailUS(EMAIL);
+		emailPreferencesPage.enterFNameUS("Aila");
+		emailPreferencesPage.enterLNameUS("Bogasieru");
+		emailPreferencesPage.checkGenderFemaleUS();
+		emailPreferencesPage.selectBirthDataUS("May", "01", "1980");
 		//emailPreferencesPage.ariatProductsCheck("FASHION");
 		emailPreferencesPage.savePrefUS();
 		logger.info("Update personal information test ended...");
