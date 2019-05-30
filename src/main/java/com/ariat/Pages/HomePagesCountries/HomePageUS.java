@@ -21,6 +21,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.ProductRegistrationPage;
+import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
@@ -62,7 +63,6 @@ public class HomePageUS extends BasePage implements List<HomePage>{
     private By shippingFooter = By.linkText("Shipping");
     private By faqsFooter = By.linkText("FAQs");
     private By sizeChartsFooter = By.linkText("Size Charts");
-    //private By productRegistrationFooter = By.linkText("Product Registration");
     private By productRegistrationFooter = By.xpath("a[contains(text(),'Product Registration']");
     private By shopByCountryFooter = By.linkText("Shop By Country");
     private By findARetailerFooter = By.linkText("Find a Retailer");
@@ -102,6 +102,9 @@ public class HomePageUS extends BasePage implements List<HomePage>{
    
    private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
    private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+   
+	private By garmentBagProduct = By.xpath("//*[@id=\"6637647889b5b1522cd5df99b6\"]/div[1]/a/picture/img");
+	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
  
 
 	
@@ -454,6 +457,14 @@ public class HomePageUS extends BasePage implements List<HomePage>{
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
 		return new WomenClothingTopsAndTshirtsPage(driver);
+	}
+	
+	public BagsProductPage returnBagsProductPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, garmentBagProduct);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(garmentText));
+		return new BagsProductPage(driver);
 	}
 
 	@Override

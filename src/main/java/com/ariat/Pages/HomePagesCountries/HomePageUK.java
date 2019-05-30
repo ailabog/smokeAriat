@@ -115,7 +115,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
 
-	private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
+	private By womenFootwearCasualShoesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[5]/a]");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 
 	private By accessoriesCategory = By.xpath("//a[contains(text(),'Accessories']");
@@ -131,6 +131,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By myAccountText = By.xpath("//h2[text()='Returning customer']");
 
 	private By aboutUsHeader = By.linkText("About Us");
+	private By closeButton = By.xpath("//div[text()='closeButton']");
 
 	public void checkElementsHeader() {
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
@@ -416,7 +417,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		WebDriverUtils.clickOnElementWithWait(driver, closeSearch);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-
+	
 	public SignInPage returnSignInPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, signIn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,

@@ -22,7 +22,7 @@ public class GlovesProductPage extends BasePage{
 	
 
 	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
-	private By wishList = By.cssSelector(".add-to-wishlist");
+	private By wishList = By.xpath("//button[@class='add-to-wishlist in-stock-element wl-action product__button product__button--pdp ']");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
@@ -55,7 +55,7 @@ public class GlovesProductPage extends BasePage{
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	//private By postReviewButton = By.xpath("//span[text()='Post Review']");
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
-    private By updateButton = By.id("add-to-cart");
+    private By updateButton = By.xpath("//button[@value='Update']");
 	private By lengthLocator = By.id("va-length");
 
 	By selectSize = By.id("va-size");
@@ -194,6 +194,7 @@ public class GlovesProductPage extends BasePage{
 	}
 
 	public void update() {
+		WebDriverUtils.scrollMoreDown(driver, updateButton);
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
 
 	}
@@ -209,6 +210,7 @@ public class GlovesProductPage extends BasePage{
 
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
@@ -218,6 +220,7 @@ public class GlovesProductPage extends BasePage{
 	}
 
 	public MyWishListPage returnMyWishListPage() {
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,

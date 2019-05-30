@@ -5,12 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothingPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDK;
@@ -19,8 +18,7 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
-import com.ariat.Pages.Products.BreechProductPage;
-import com.ariat.Pages.Products.CasualShoeProductPage;
+import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
@@ -40,14 +38,13 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 	private HomePageDK homePageDK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-    private CasualShoeProductPage womenCasualShoe;
-    private WomenFootwearCasualShoesPage womenFootwareCasualShoePage;
 	private MyWishListPage myWishListPage;
 	private WomenCategoryPage womenCategoryPage;
-	private WomenClothingPage womenClothingPage;
-	private BreechProductPage breechProductPage;
 	private MyAccountWishListPage myAccountWishListPage;
 	private CreateAccountPage createAccountPage;
+	private WomenAccessoriesPage womenAccessoriesPage;
+	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
+	private GlovesProductPage glovesProductPage;
 	
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -82,10 +79,12 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenFootwareCasualShoePage = myAccountPage.returnWomenFootwearCasualShoesPage();
-		womenCasualShoe = womenFootwareCasualShoePage.returnCasualShoeProductPage();
-		womenCasualShoe.selectAttributeSize("36");
-		myWishListPage = womenCasualShoe.returnMyWishListPage();
+		womenCategoryPage = homePageDK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myWishListPage = glovesProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
 	
@@ -97,11 +96,11 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		womenCategoryPage = homePageDK.returnWomenCategoryPage();
-		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
-		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.selectAttributeSize("36");
-		breechProductPage.selectAttributeLength("Regular");
-		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.returningCustomer(EMAIL, "EnglishUK");
 		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
@@ -116,17 +115,16 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		womenCategoryPage = homePageDK.returnWomenCategoryPage();
-		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
-		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.selectAttributeSize("34");
-		breechProductPage.selectAttributeLength("Long");
-		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
@@ -143,11 +141,11 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDK = (HomePageDK) homePage.chooseEULocation(euCountry.DK, euCountry.DK.getCurrencyISO());
 		womenCategoryPage = homePageDK.returnWomenCategoryPage();
-		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
-		breechProductPage = womenClothingPage.returnBreechProductPage();
-		breechProductPage.selectAttributeSize("34");
-		breechProductPage.selectAttributeLength("Long");
-		myAccountWishListPage = breechProductPage.returnMyAccountWishListPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
 		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
@@ -159,13 +157,13 @@ public class ProductAddToWishListWomenCategoryDKTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageDK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		womenCasualShoe.quit();
+		womenCategoryPage.quit();
+		womenAccessoriesPage.quit();
+		womenAccessoriesGlovesPage.quit();
+		glovesProductPage.quit();
 		myWishListPage.quit();
-		womenFootwareCasualShoePage.quit();
-		createAccountPage.quit();
-		
+	   createAccountPage.quit();
 	}
 }

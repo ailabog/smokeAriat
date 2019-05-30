@@ -29,7 +29,7 @@ public class AddressesPage extends BasePage {
 	private By deleteLinkDE = By.xpath("//a[@title='Löschen']");
 
 	private By deleteLinkFR = By.xpath("//a[@title='Supprimer']");
-	private By makeDefaultLink = By.xpath("//u[text()='Make Default']");
+	private By makeDefaultLink = By.xpath("//u[text()='Make default']");
 	private By makeDefaultLinkDE = By.xpath("//a[text()='Als Standard festlegen']");
 	private By makeDefaultLinkFR = By.xpath("//a[text()='Utiliser par défaut']");
 	private By deleteButton = By.name("dwfrm_profile_address_remove");

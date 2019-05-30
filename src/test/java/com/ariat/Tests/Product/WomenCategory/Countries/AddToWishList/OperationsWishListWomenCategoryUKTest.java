@@ -9,18 +9,14 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyWishListPage;
-import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Pages.Products.GlovesProductPage;
-import com.ariat.Pages.Products.TriFactorTopProductPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Tests.Base.BaseTest;
 
 /**
@@ -39,16 +35,12 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
-	private TriFactorTopProductPage triFactorTopProductPage;
 	private MyWishListPage myWishListPage;
 	private EUCountries euCountry;
 
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
-	private WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
-	private WomenFootwearPage womenFootwearPage;
-	private CasualShoeProductPage casualProductShoePage;
 	private WomenCategoryPage womenCategoryPage;
 
 	public static final String F_NAME = "Aila";
@@ -71,10 +63,12 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
-		triFactorTopProductPage.selectAttributeSize("Small");
-		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
 	}
@@ -89,15 +83,17 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
-		triFactorTopProductPage.selectAttributeSize("Small");
-		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Medium");
 		myWishListPage.increaseQtyWishList(3);
 		myWishListPage.decreaseQtyWishList(2);
 		myWishListPage.editItemWishList();
-		triFactorTopProductPage.update();
+		glovesProductPage.update();
 		// myWishListPage.goBackFromEditToWishlist();
 		logger.info("Finishing product page -> Women Category Add to WishList  & different actions test.");
 	}
@@ -112,13 +108,15 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
-		triFactorTopProductPage.selectAttributeSize("Small");
-		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
-		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
-				+ homePageUK.minicartShow());
+		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
+		//+ homePageUK.minicartShow());
 	}
 
 	@Test(priority = 3)
@@ -131,14 +129,14 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
 		signInPage.returningPassword("Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenClothingTopsAndTshirtsPage = homePageUK.returnWomenClothingTopsAndTshirtsPage();
-		triFactorTopProductPage = womenClothingTopsAndTshirtsPage.returnTriFactorTopProductPageDE();
-		triFactorTopProductPage.selectAttributeSize("Small");
-		myWishListPage = triFactorTopProductPage.returnMyWishListPage();
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
-		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
-		//		+ myWishListPage.noItemWishList());
+		
 	}
 
 	@AfterTest
@@ -149,6 +147,6 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		myAccountPage.quit();
 		womenClothingTopsAndTshirtsPage.quit();
 		myWishListPage.quit();
-		triFactorTopProductPage.quit();
+		glovesProductPage.quit();
 	}
 }

@@ -8,7 +8,8 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
+import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
@@ -17,7 +18,7 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
-import com.ariat.Pages.Products.RebarTopProductPage;
+import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
@@ -39,10 +40,11 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private MyWishListPage myWishListPage;
 	private WomenCategoryPage womenCategoryPage;
+	private WomenAccessoriesPage womenAccessoriesPage;
+	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
+	private BagsProductPage bagsProductPage;
 	private MyAccountWishListPage myAccountWishListPage;
 	private CreateAccountPage createAccountPage;
-	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
-	private RebarTopProductPage rebarTopProductPage;
 	
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -76,10 +78,10 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUS");
 		signInPage.returningPassword("Parola12345!");
-		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
-		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
-		rebarTopProductPage.selectAttributeSize("Small");
-		myWishListPage = rebarTopProductPage.returnMyWishListPage();
+		myAccountPage = signInPage.returnMyAccountPage();
+		womenCategoryPage = homePageUS.returnWomenCategoryPage();
+		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		myWishListPage = bagsProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList being logged test.");
 		
 	} 
@@ -92,10 +94,8 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
-		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
-		rebarTopProductPage.selectAttributeSize("Small");
-		myAccountWishListPage = rebarTopProductPage.returnMyAccountWishListPage();
+		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		myAccountWishListPage = bagsProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.returningCustomer(EMAIL, "EnglishUS");
 		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
@@ -110,16 +110,13 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
-		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
-		rebarTopProductPage.selectAttributeSize("Small");
-		myAccountWishListPage = rebarTopProductPage.returnMyAccountWishListPage();
+		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		myWishListPage = bagsProductPage.returnMyWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
 		createAccountPage.selectBirthMonth(BIRTH_MONTH);
 		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.GenderFemale();
 		createAccountPage.enterEmail(EMAIL);
 		createAccountPage.confirmEmail(EMAIL);
 		createAccountPage.enterPassword(PASSWORD);
@@ -136,10 +133,8 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
-		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
-		rebarTopProductPage.selectAttributeSize("Small");
-		myAccountWishListPage = rebarTopProductPage.returnMyAccountWishListPage();
+		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
 		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
@@ -151,13 +146,13 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
-		homePageUS.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		womenCategoryPage.quit();
+		womenAccessoriesPage.quit();
+		womenAccessoriesBagsPage.quit();
+	    bagsProductPage.quit();
 		myWishListPage.quit();
-		createAccountPage.quit();
-		rebarTopProductPage.quit();
-		womenClothingTopsAndTshirtsPage.quit();
+	   createAccountPage.quit();
 	}
 }

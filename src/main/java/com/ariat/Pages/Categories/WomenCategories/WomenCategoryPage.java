@@ -10,6 +10,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenClothi
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFeaturedPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.Main.BasePage;
+import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
@@ -23,7 +24,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenCategoryPage extends BasePage {
 
-	private By womenFootwearCategory = By.xpath("//a[text()=' Footwear']");
+	private By womenFootwearCategory = By.xpath("//a[@class='global-nav-level-2-label ']");
 	private By womenFootwearCategoryDE = By.linkText("Schuhe");
 	
 	private By womenFootwearCategoryFR = By.linkText("Bottes et boots");
@@ -71,6 +72,9 @@ public class WomenCategoryPage extends BasePage {
 	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
 	private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
 	private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+	
+	private By garmentBagProduct = By.xpath("//*[@id=\"6637647889b5b1522cd5df99b6\"]/div[1]/a/picture/img");
+	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
 
 	
 	public WomenCategoryPage(WebDriver driver) {
@@ -277,6 +281,14 @@ public class WomenCategoryPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingText));
 		return new WomenClothingPage(driver);
+	}
+	
+	public BagsProductPage returnBagsProductPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, garmentBagProduct);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(garmentText));
+		return new BagsProductPage(driver);
 	}
 	
 }

@@ -53,7 +53,7 @@ public class AddAddressUKTest extends BaseTest {
 	public void addAddressUKTest() {
 		logger.info("Starting add address UK test");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.STAGING.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");

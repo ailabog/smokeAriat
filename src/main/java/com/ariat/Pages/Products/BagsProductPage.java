@@ -30,9 +30,6 @@ public class BagsProductPage extends BasePage {
 	private By myAccountText = By.xpath("//*contains[text()='My account']");
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 
-	private By selectSize = By.id("va-size");
-	private By selectCalf = By.id("va-calf");
-	private By selectHeight = By.id("va-height");
 	private By increaseQty = By.xpath("//span[text()='+']");
 	// increase qty //css=.quantity-increase
 
@@ -60,27 +57,12 @@ public class BagsProductPage extends BasePage {
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
 	private By updateButton = By.id("add-to-cart");
-	private By lengthLocator = By.id("va-length");
+
 
 	public BagsProductPage(WebDriver driver) {
 		super(driver);
 	}
 		
-
-	public void selectAttributeSize(String size) {
-		WebDriverUtils.selectVisibleText(driver, selectSize, size);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	}
-
-	public void selectAttributeCalf(String calf) {
-		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	}
-
-	public void selectAttributeHeight(String height) {
-		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	}
 
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
@@ -173,11 +155,6 @@ public class BagsProductPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, nicknameReview, nickname);
 		WebDriverUtils.enterTextBox(driver, userLocation, userLocationReview);
   		WebDriverUtils.enterTextBox(driver, emailReview, email);
-	
-	}
-
-	public void selectAttributeLength(String lengthSize) {
-		WebDriverUtils.enterTextBox(driver, lengthLocator, lengthSize);
 	}
 
 	public void postReview() {
@@ -191,6 +168,7 @@ public class BagsProductPage extends BasePage {
 	}
 
 	public void update() {
+		WebDriverUtils.scrollMoreDown(driver, updateButton);
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
 	
 	}
@@ -203,8 +181,10 @@ public class BagsProductPage extends BasePage {
 		return new MyBagPage(driver);
 	}
 
+
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
@@ -214,6 +194,7 @@ public class BagsProductPage extends BasePage {
 	}
 
 	public MyWishListPage returnMyWishListPage() {
+		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
