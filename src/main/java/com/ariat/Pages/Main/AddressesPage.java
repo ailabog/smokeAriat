@@ -21,8 +21,8 @@ public class AddressesPage extends BasePage {
 
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 	private By addressesText = By.xpath("//h1[text()='Addresses']");
-	private By addressTextDE = By.xpath("//*[contains(text(), Adressen']");
-	private By editLink = By.xpath("//a[contains(text(),'Edit')]");
+	private By addressTextDE = By.xpath("//h1[text()='Adressen']");
+	private By editLink = By.xpath("//a[@class='address-action address-action--edit']");
 	private By editLinkDE = By.xpath("//a[contains(text(), 'Bearbeiten')]");
 	private By editLinkFR = By.xpath("//a[contains(text(), 'Modifier')]");
 	private By deleteLink = By.xpath("//a[@title='Delete']");
@@ -341,7 +341,7 @@ public class AddressesPage extends BasePage {
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_60_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonFR);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_60_SECONDS);
-		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
+		} while (WebDriverUtils.findElement(driver, loadMoreButtonFR) == null);
 		while (!WebDriverUtils.isElementDisplayed(driver, addressesText)) {
 			WebDriverUtils.scrollUp(driver, addressesText);
 		}

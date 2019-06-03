@@ -30,7 +30,6 @@ public class AddAddressesPage extends BasePage {
 	private By postCodeTextBox = By.id("dwfrm_profile_address_zip");
 	private By phoneTextBox = By.id("dwfrm_profile_address_phone");
 	private By addressIdTextBox = By.id("dwfrm_profile_address_addressid");
-	//private By saveAddressButton = By.name("dwfrm_profile_address_create");
 	private By saveAddressButton =By.name("dwfrm_profile_address_create");
 	private By saveAddressButtonFR =By.xpath("//button[@value='Appliquer']");
 	 private By saveAddressButtonDE = By.xpath("//button[@value='Anwenden']");
@@ -40,9 +39,9 @@ public class AddAddressesPage extends BasePage {
 	private By cancelAddressButton = By.name("dwfrm_profile_address_cancel");
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 	private By addressesText = By.xpath("//*contains[text(), 'Address']");
+	private By addressesTextFR = By.xpath("//*contains[text(), 'Addresses']");
  	private By deleteAddressButton = By.xpath("//*[@value='Delete']");
-	//private By deleteAddressButtonDE = By.xpath("//*[@value='Löschen']");
- 	private By deleteAddressButtonDE = By.name("dwfrm_profile_address_remove");
+	private By deleteAddressButtonDE = By.name("dwfrm_profile_address_remove");
 
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
@@ -173,7 +172,7 @@ public class AddAddressesPage extends BasePage {
 
 
 	public AddressesPage returnAddressesPage() {
-		WebDriverUtils.scroll500Down(driver, saveAddressButton);
+		WebDriverUtils.scroll350Down(driver, saveAddressButton);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
@@ -191,7 +190,7 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.scroll500Down(driver, saveAddressButtonFR);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+				ExpectedConditions.invisibilityOfElementLocated(addressesTextFR));
 		return new AddressesPage(driver);
 	}
 	
@@ -199,7 +198,7 @@ public class AddAddressesPage extends BasePage {
 		WebDriverUtils.scroll500Down(driver, saveAddressButtonFR);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+				ExpectedConditions.invisibilityOfElementLocated(addressesTextFR));
 		return new AddressesPage(driver);
 	}
 	

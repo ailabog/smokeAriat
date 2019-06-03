@@ -20,8 +20,7 @@ public class CheckoutProcessPage extends BasePage {
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.cssSelector(".el-row:nth-child(6) .el-select__caret");
-	//	private By selectOption = By.xpath("//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[4]/span");
-	private By selectOption = By.xpath("//input[@placeholder='Belgium']");
+	private By selectOption = By.xpath("//span[text()='Austria']");
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");
@@ -38,22 +37,17 @@ public class CheckoutProcessPage extends BasePage {
 	private By continueCheckout = By.xpath("//button//span[text()='Continue']");
 	private By continueCheckoutDE = By.xpath("//button//span[text()='Fortsetzen']");
 	private By continueCheckout1 = By.cssSelector(".el-button--primary:nth-child(1)");
-	//private By continueCheckout1 = By.xpath("div[@id='el-collapse-content-7565']/div/div/div[3]/div/button");
-	
 	private By standardCheck = By.xpath("//input[@value='X-1']");
 	private By expressCheck = By.xpath("//input[@value='U-1']");
 	private By paypalCheck = By.xpath("//input[@vlaue='PAYPAL']");
 	private By creditCardCheck = By.xpath("//input[@value='SA_SILENTPOST']");
 	private By cardArrow = By.cssSelector(".el-row:nth-child(4) .el-select__caret");
-	//private By cardArrow = By.xpath("//div[@id='el-collapse-content-4403']/div/div/form/div/form/div[2]/div/div/form/div[3]/div/div/div/div/div/span/span/i");
-	//div[@id='el-collapse-content-6212']/div/div/form/div/form/div[2]/div/div/form/div[3]/div/div/div/div/div/span/span/i
-	private By selectCard = By.cssSelector("li.el-select-dropdown__item.hover > span");
-	////html[@id='ext-gen45']/body/div[8]/div/div/ul/li/span
+	private By selectCard = By.xpath("//span[text()='(MasterCard) ************4444 1.2033']");
 	private By cardName = By.xpath(
 			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[4]/div/div/div/div[1]/input");
 	
 	private By selectTypeCard = By.xpath("//div[@class='el-select checkout_input']");
-	//html[@id='ext-gen45']/body/div[8]/div/div/ul/li[2]/span
+	
 	private By expirationDateMonth = By.xpath(
 			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[7]/div[1]/div/div/div[1]/div/input");
 	private By expirationDateYear = By.xpath(
@@ -72,9 +66,8 @@ public class CheckoutProcessPage extends BasePage {
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
 	private By cardNo = By.xpath("");
-	
-	//private By checkoutBtn=By.xpath("//img[contains(@alt, 'paypal')]");
-	private By checkoutBtn=By.xpath("//div[@id='paypal-animation-content']/div/div");
+
+	private By checkoutBtn=By.xpath("//div[@class='paypal-button paypal-button-number-0 paypal-button-layout-horizontal paypal-button-shape-rect paypal-button-branding-branded paypal-button-number-single paypal-button-env-sandbox paypal-should-focus paypal-button-label-checkout paypal-button-color-gold paypal-button-logo-color-blue']");
 	
 	private By emailTxtBoxPayPal=By.id("email");
 	private By passwordTxtBoxPaypal=By.id("password");
@@ -94,7 +87,7 @@ public class CheckoutProcessPage extends BasePage {
 
 	
 	public void clickCheckoutBtn() {
-		WebDriverUtils.scroll500Down(driver, checkoutBtn);
+		//WebDriverUtils.scroll500Down(driver, checkoutBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
 	}
 	
@@ -124,7 +117,7 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, confirmPayPal);
 	}
 	
-	public void selectAddress() {
+	public void selectCountry() {
 		logger.info("Selecting address..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
 		WebDriverUtils.clickOnElementWithWait(driver, selectOption);
@@ -260,7 +253,7 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void enterSecurityCode(String secutityCardValue) {
 		logger.info("Entering security card..");
-		WebDriverUtils.scrollLittDown(driver, securityCode);
+		WebDriverUtils.scroll500Down(driver, securityCode);
 		WebDriverUtils.enterTextBox(driver, securityCode, secutityCardValue);
 	}
 
@@ -315,4 +308,5 @@ public class CheckoutProcessPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));
 		return new CheckoutProcessCompletePage(driver);
 	}
+
 }

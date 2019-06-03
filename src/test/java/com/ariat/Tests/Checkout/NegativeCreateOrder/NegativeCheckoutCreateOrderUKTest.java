@@ -96,7 +96,7 @@ public class NegativeCheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectAddress();
+		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.enterConfirmEmail(EMAIL);

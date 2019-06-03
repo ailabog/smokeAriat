@@ -4,8 +4,8 @@
 <parameter name="environment" value="DEVELOPMENT" />
 	<test name="testSuites" >
        <classes>
-            
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
+       
+                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountBETest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFITest" />
@@ -53,8 +53,8 @@
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUSTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressFITest" />
-                           
                  
+                  
                  <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUKTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressDETest" />
                  <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressDKTest" />
@@ -215,13 +215,12 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationIETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDETest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDKTest" />
-              
-                 
+                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDKTest" />       
+                        
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationFRTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationIETest" />
+                 <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationIETest" /> 
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDETest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDKTest" />
@@ -275,6 +274,8 @@
                  <class name="com.ariat.Tests.Search.Countries.SearchFRTest" />
                  <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
                  
+                
+                 
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUSTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNOTest" />
@@ -299,8 +300,9 @@
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressSETest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUSTest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFITest" />
-       
               
+
+                
                <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardDETest" />
                <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardATTest" />
                <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardITTest" />

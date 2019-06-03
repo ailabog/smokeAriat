@@ -103,7 +103,7 @@ public class HomePageUS extends BasePage implements List<HomePage>{
    private By topsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
    private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
    
-	private By garmentBagProduct = By.xpath("//*[@id=\"6637647889b5b1522cd5df99b6\"]/div[1]/a/picture/img");
+	private By garmentBagProduct = By.xpath("//img[@title='Ariat Team Garment Bag']");
 	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
  
 

@@ -78,9 +78,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUS");
 		signInPage.returningPassword("Parola12345!");
-		myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList being logged test.");
 		
@@ -93,8 +91,8 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		bagsProductPage = homePageUS.returnBagsProductPage();
+		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage = bagsProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.returningCustomer(EMAIL, "EnglishUS");
 		myAccountWishListPage.returningPassword(PASSWORD);
@@ -109,8 +107,8 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		bagsProductPage = homePageUS.returnBagsProductPage();
+		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -132,8 +130,8 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		womenCategoryPage = homePageUS.returnWomenCategoryPage();
-		bagsProductPage= womenCategoryPage.returnBagsProductPage();
+		bagsProductPage = homePageUS.returnBagsProductPage();
+		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);

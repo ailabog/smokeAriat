@@ -53,7 +53,6 @@ public class GlovesProductPage extends BasePage{
 	private By nicknameReview = By.id("bv-text-field-usernickname");
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
-	//private By postReviewButton = By.xpath("//span[text()='Post Review']");
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
     private By updateButton = By.xpath("//button[@value='Update']");
 	private By lengthLocator = By.id("va-length");

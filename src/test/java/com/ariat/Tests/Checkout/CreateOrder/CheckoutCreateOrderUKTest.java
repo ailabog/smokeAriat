@@ -24,7 +24,6 @@ import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
  * Checkout -> Create new order
  * 
@@ -52,7 +51,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
-	
+
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -70,15 +69,14 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
 
-		
-	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
-	
+	public static final String filePath = "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
-  @Test(priority=0)
+	@Test(priority = 0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -86,14 +84,14 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		//checkoutPage.checkProductImage();
-		//checkoutPage.enterPromoCode("CSA25HNJ-X3DE684");
-		//checkoutPage.clickApply();
+		// checkoutPage.checkProductImage();
+		// checkoutPage.enterPromoCode("CSA25HNJ-X3DE684");
+		// checkoutPage.clickApply();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
@@ -101,7 +99,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectAddress();
+		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.enterConfirmEmail(EMAIL);
@@ -120,91 +118,93 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
 	}
-    
-  
-  @Test(priority=1)
+
+	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
-		logger.info("Starting checkout -> create new order without being logged using paypal as payment method test...");
+		logger.info(
+				"Starting checkout -> create new order without being logged using paypal as payment method test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		//checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		// checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.clickCheckoutBtn();
-		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@ariat.com");
-		checkoutProcessPage.enterPasswordPayPal("Ariat123$");
+		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
+		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
 		checkoutProcessPage.clickContinuePayPal();
 		checkoutProcessPage.clickConfirmPayPal();
-		
-		
-		/*checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectAddress();
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.enterConfirmEmail(EMAIL);
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout();
-		
-		checkoutProcessPage.enterCardName(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		checkoutProcessPage.selectExpirationMonth(MONTH);
-		checkoutProcessPage.selectExpirationYear(YEAR);
-		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.checkItem();
-		checkoutProcessCompletePage.enterPassword(PASSWORD);
-		checkoutProcessCompletePage.confirmPassword(PASSWORD);*/
+
+		/*
+		 * checkoutProcessPage.enterFName(FIRST_NAME);
+		 * checkoutProcessPage.enterLName(LAST_NAME);
+		 * checkoutProcessPage.enterAddress(ADDRESS);
+		 * checkoutProcessPage.enterAddress1(ADDRESS1);
+		 * checkoutProcessPage.enterCity(CITY);
+		 * checkoutProcessPage.enterZipCode(ZIP_CODE);
+		 * checkoutProcessPage.selectAddress(); checkoutProcessPage.enterMobile(MOBILE);
+		 * checkoutProcessPage.enterEmail(EMAIL);
+		 * checkoutProcessPage.enterConfirmEmail(EMAIL);
+		 * checkoutProcessPage.continueCheckout();
+		 * checkoutProcessPage.continueCheckout();
+		 * 
+		 * checkoutProcessPage.enterCardName(CARD_NAME);
+		 * checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		 * checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		 * checkoutProcessPage.selectExpirationMonth(MONTH);
+		 * checkoutProcessPage.selectExpirationYear(YEAR);
+		 * checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		 * checkoutProcessCompletePage =
+		 * checkoutProcessPage.returnCheckoutProcessCompletePage();
+		 * checkoutProcessCompletePage.checkItem();
+		 * checkoutProcessCompletePage.enterPassword(PASSWORD);
+		 * checkoutProcessCompletePage.confirmPassword(PASSWORD);
+		 */
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	}
- /* @Test(priority=1)
-   	public void checkoutCreateNewOrderBeingLogged() {
-   		logger.info("Starting checkout -> create new order without being logged test...");
-   		homePage = new HomePage(new ChromeDriver());
-   		homePage.load(environment.DEVELOPMENT.getURL());
-   		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+
+	@Test(priority = 1)
+	public void checkoutCreateNewOrderBeingLogged() {
+		logger.info("Starting checkout -> create new order without being logged test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT,"EnglishUK");
+		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
-   		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-   		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-   		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-   		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-   		glovesProductPage.selectAttributeSize("7");
-   		myBagPage = glovesProductPage.returnMyBagPage();
-   		checkoutPage = myBagPage.returnCheckoutPage();
-   		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-   		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
-   		checkoutProcessPage.continueCheckout();
-   		checkoutProcessPage.continueCheckout1();
-   		checkoutProcessPage.enterCardName(CARD_NAME);
-   		//checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-   		//checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-   		//checkoutProcessPage.selectExpirationMonth(MONTH);
-   		//checkoutProcessPage.selectExpirationYear(YEAR);
-   		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-   		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-   		checkoutProcessCompletePage.checkItem();
-   		//checkoutProcessCompletePage.enterPassword(PASSWORD);
-   		//checkoutProcessCompletePage.confirmPassword(PASSWORD);
-   		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
-   		logger.info("Finishing checkout -> create new order without being logged test.");
-   	}*/
-		
+		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myBagPage = glovesProductPage.returnMyBagPage();
+		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
+		checkoutProcessPage.continueCheckout();
+		checkoutProcessPage.continueCheckout1();
+		checkoutProcessPage.enterCardName(CARD_NAME);
+		// checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		// checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
+		// checkoutProcessPage.selectExpirationMonth(MONTH);
+		// checkoutProcessPage.selectExpirationYear(YEAR);
+		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessCompletePage.checkItem();
+		// checkoutProcessCompletePage.enterPassword(PASSWORD);
+		// checkoutProcessCompletePage.confirmPassword(PASSWORD);
+		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
+		logger.info("Finishing checkout -> create new order without being logged test.");
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
