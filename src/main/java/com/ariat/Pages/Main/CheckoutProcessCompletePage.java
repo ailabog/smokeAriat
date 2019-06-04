@@ -1,5 +1,7 @@
 package com.ariat.Pages.Main;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +28,7 @@ public class CheckoutProcessCompletePage extends BasePage{
 	private By printThisPageLink = By.xpath("//span[text()='Print This Page']");
 	private By itemText = By.xpath("//a[@title='FEI WC Bodymap Softshell Jkt']");
 	private By myAccountText = By.xpath("//h1[text()='My account']");
+	private By errorMsgPlaceOrder = By.xpath("//div[@class='opc-error-msg el-col el-col-12']");
 
 	protected CheckoutProcessCompletePage(WebDriver driver) {
 		super(driver);
@@ -66,6 +69,12 @@ public class CheckoutProcessCompletePage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, itemText);
 	}
 	
+	public void assertErrMsgOrderNotPlaced(String expectedErrorMsg) {
+		logger.info("Check that error message is diplayed..");
+		String errMsg = WebDriverUtils.getElementText(driver, errorMsgPlaceOrder);
+		assertEquals(errMsg, expectedErrorMsg, "Error message with not being placed the order is displayed");
+	}
+
 	public MyAccountPage returnMyAccountPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,

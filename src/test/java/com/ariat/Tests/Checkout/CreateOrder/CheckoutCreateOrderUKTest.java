@@ -10,7 +10,6 @@ import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
@@ -18,9 +17,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
-import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Pages.Products.GlovesProductPage;
-import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
@@ -42,11 +39,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
-	private com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
-	private WomenFootwearPage womenFootwearPage;
-	private SignInPage signInPage;
-	private CasualShoeProductPage casualProductShoePage;
-	private HeritageProductPage productPage;
+	private SignInPage signInPage; 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
@@ -101,11 +94,11 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.enterConfirmEmail(EMAIL);
+		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
+		checkoutProcessPage.enterConfirmEmail("aila.bogasieru@gmail.com");
 		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.enterCardName(CARD_NAME);
+		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
 		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
 		checkoutProcessPage.selectExpirationMonth(MONTH);
@@ -133,44 +126,16 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		// checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickCheckoutBtn();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
 		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
 		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
 		checkoutProcessPage.clickContinuePayPal();
 		checkoutProcessPage.clickConfirmPayPal();
-
-		/*
-		 * checkoutProcessPage.enterFName(FIRST_NAME);
-		 * checkoutProcessPage.enterLName(LAST_NAME);
-		 * checkoutProcessPage.enterAddress(ADDRESS);
-		 * checkoutProcessPage.enterAddress1(ADDRESS1);
-		 * checkoutProcessPage.enterCity(CITY);
-		 * checkoutProcessPage.enterZipCode(ZIP_CODE);
-		 * checkoutProcessPage.selectAddress(); checkoutProcessPage.enterMobile(MOBILE);
-		 * checkoutProcessPage.enterEmail(EMAIL);
-		 * checkoutProcessPage.enterConfirmEmail(EMAIL);
-		 * checkoutProcessPage.continueCheckout();
-		 * checkoutProcessPage.continueCheckout();
-		 * 
-		 * checkoutProcessPage.enterCardName(CARD_NAME);
-		 * checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		 * checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		 * checkoutProcessPage.selectExpirationMonth(MONTH);
-		 * checkoutProcessPage.selectExpirationYear(YEAR);
-		 * checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		 * checkoutProcessCompletePage =
-		 * checkoutProcessPage.returnCheckoutProcessCompletePage();
-		 * checkoutProcessCompletePage.checkItem();
-		 * checkoutProcessCompletePage.enterPassword(PASSWORD);
-		 * checkoutProcessCompletePage.confirmPassword(PASSWORD);
-		 */
-		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	}
 
-	@Test(priority = 1)
+    @Test(priority = 2)
 	public void checkoutCreateNewOrderBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -192,10 +157,6 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.continueCheckout1();
 		checkoutProcessPage.enterCardName(CARD_NAME);
-		// checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		// checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		// checkoutProcessPage.selectExpirationMonth(MONTH);
-		// checkoutProcessPage.selectExpirationYear(YEAR);
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.checkItem();
@@ -217,9 +178,6 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutPage.quit();
 		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
-		womenFootwearCasualShoesCategoryPage.quit();
-		casualProductShoePage.quit();
-		productPage.quit();
 		myAccountPage.quit();
 	}
 }

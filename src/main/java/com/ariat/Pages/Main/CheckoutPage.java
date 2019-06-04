@@ -39,6 +39,7 @@ public class CheckoutPage extends BasePage {
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By emailAccount = By.xpath("//input[@placeholder='Email address']");
 	private By shippingAddressText = By.id("el-collapse-head-3303");
+	private By loginPayPalPageTitle = By.xpath("//section[@page-title='Log in to your PayPal account']");
 
 	protected CheckoutPage(WebDriver driver) {
 		super(driver);
@@ -119,6 +120,14 @@ public class CheckoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(shippingAddressText));
+		return new CheckoutProcessPage(driver);
+	}
+	
+	public CheckoutProcessPage returnCheckoutProcessPayPalPage() {
+		WebDriverUtils.scroll500Down(driver, payPalCheckoutBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(loginPayPalPageTitle));
 		return new CheckoutProcessPage(driver);
 	}
 
