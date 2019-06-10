@@ -122,7 +122,7 @@ public class NegativeAddAddressATTest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("Viena");
-		addAddressPage.saveAddressDE();
+		addAddressPage.saveAddress();
 		logger.info("Finishing add negative address AT test");
 	}
 	

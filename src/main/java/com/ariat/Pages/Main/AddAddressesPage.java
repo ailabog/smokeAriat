@@ -194,23 +194,7 @@ public class AddAddressesPage extends BasePage {
 		return new AddressesPage(driver);
 	}
 	
-	public AddressesPage returnAddressesPageWithoutScrollFR() {
-		WebDriverUtils.scroll500Down(driver, saveAddressButtonFR);
-		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesTextFR));
-		return new AddressesPage(driver);
-	}
-	
 	public AddressesPage returnAddressesPageDE() {
-		WebDriverUtils.scroll500Down(driver, saveAddressButtonDE);
-		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
-		return new AddressesPage(driver);
-	}
-	
-	public AddressesPage returnAddressesPageWithoutScrollDE() {
 		WebDriverUtils.scroll500Down(driver, saveAddressButtonDE);
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButtonDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,

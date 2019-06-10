@@ -43,7 +43,7 @@ public class ProductRegistrationUSFooterTest extends BaseTest{
 	public void productRegistrationTest() {
 		logger.info("Starting product registration test...");
 		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.STAGING.getURL());
+		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		productRegistrationPage = homePageUS.returnProductRegistrationPage();
@@ -54,7 +54,7 @@ public class ProductRegistrationUSFooterTest extends BaseTest{
 		productRegistrationPage.continue3();
 		productRegistrationPage.selectCat("Women's", "Footwear", "Casual");
 		productRegistrationPage.continue4();
-		productRegistrationPage.collectInfoCustomer("A", "B", "Str", "New York", "New York", "345", "3643544");
+		productRegistrationPage.collectInfoCustomer("A", "B", "Str", "Florida", "Florida", "345", "3643544");
 		productRegistrationPage.continue5();
 		productRegistrationPage.saveInfo();
 		myAccountPage = productRegistrationPage.returnMyAccountPage();

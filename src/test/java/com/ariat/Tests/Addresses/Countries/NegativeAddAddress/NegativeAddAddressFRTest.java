@@ -78,7 +78,7 @@ public class NegativeAddAddressFRTest extends BaseTest {
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPageFR();
+		addressesPage = addAddressPage.returnAddressesPage();
 		logger.info("Finishing add negative address FR test");
 	}
 	
@@ -102,7 +102,7 @@ public class NegativeAddAddressFRTest extends BaseTest {
 		addAddressPage.enterPostCode(POST_CODEWILD);
 		addAddressPage.enterPhone(PHONEWILD);
 		addAddressPage.enterAddressId(ADDRESS_IDWILD);
-		addressesPage = addAddressPage.returnAddressesPageFR();
+		addressesPage = addAddressPage.returnAddressesPage();
 		logger.info("Finishing add negative address FR test");
 	}
 	
@@ -121,7 +121,7 @@ public class NegativeAddAddressFRTest extends BaseTest {
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("France");
-		addAddressPage.saveAddressFR();
+		addAddressPage.saveAddress();
 		logger.info("Finishing add negative address FR test");
 	}
 	

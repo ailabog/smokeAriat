@@ -71,7 +71,7 @@ public class AddAddressFRTest extends BaseTest {
 		addAddressPage.enterPostCode(POST_CODE);
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPageWithoutScrollFR();
+		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		//addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address France test");
 	}

@@ -26,7 +26,7 @@ public class ContactUsPage extends BasePage {
 	private By orderNoTxtBox = By.id("dwfrm_contactus_ordernumber");
 	private By myQuestionSelect = By.id("dwfrm_contactus_myquestion");
 	private By commentTxtBox = By.id("dwfrm_contactus_comment");
-	private By checkBox = By.xpath("//*[@id=\"recaptcha-anchor\"]/div[5]");
+	private By checkBox = By.xpath("//span[@id='recaptcha-anchor']//div[@class='recaptcha-checkbox-border']//div[@class='recaptcha-checkbox-borderAnimation']");
 	private By submitBtn = By.name("dwfrm_contactus_send");
 
 	public ContactUsPage(WebDriver driver) {
@@ -69,6 +69,7 @@ public class ContactUsPage extends BasePage {
 	}
 	
 	public void checkNotRobot() {
+		WebDriverUtils.scrollLittDown(driver, checkBox);
 		WebDriverUtils.clickOnElementWithWait(driver, checkBox);
 	}
 	

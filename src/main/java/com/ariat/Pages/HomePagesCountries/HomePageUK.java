@@ -85,14 +85,14 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By warrantyText = By.xpath("//h1[text()='Warranty']");
 	private By deliveryFooter = By.xpath("//a[contains(text(),'Delivery')]");
 	private By deliveryFooterText = By.xpath("//h1[text()='Delivery Information']");
-	private By faqsFooter = By.linkText("FAQs");
+	private By faqsFooter = By.xpath("(//a[contains(text(),'FAQs')])[2]");
 	private By faqsFooterText = By.xpath("//h1[text()='FAQs']");
 	private By sizeChartsFooter = By.xpath("(//a[contains(text(),'Size Charts')])[2]");
 	private By sizeChartsFooterText = By.xpath("//h1[text()='SIZE CHARTS']");
 	private By findARetailerFooter = By.xpath("//a[contains(text(),'Find a Retailer')]");
 	private By findARetailerText = By.xpath("//h1[text()='Find a retailer']");
 	private By divinoStockListFooter = By.linkText("Divino Stockists");
-	private By contactUsFooter = By.xpath("//a[contains(text(),'Contact Us')]");
+	private By contactUsFooter = By.xpath("//a[text()='Contact Us']");
 	private By emailSignUpFooter = By.linkText("Email Sign Up");
 	private By internationalFooter = By.linkText("International");
 	private By pressRoomFooter = By.linkText("Press Room");
