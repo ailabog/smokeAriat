@@ -7,18 +7,12 @@
                              
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsUKTest" />
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsUSTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsDKTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsFITest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsIETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsDETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderDetailsFRTest" />
   
                  
                  <class name="com.ariat.Tests.Orders_View.OrderStatusUKTest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusIETest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusDKTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusFITest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusDETest" />
                  <class name="com.ariat.Tests.Orders_View.OrderStatusFRTest" />
                  

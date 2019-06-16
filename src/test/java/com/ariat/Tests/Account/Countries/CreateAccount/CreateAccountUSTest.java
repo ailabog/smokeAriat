@@ -137,7 +137,6 @@ public class CreateAccountUSTest extends BaseTest {
 		homePageUK.quit();
 		homePageUS.quit();
 		signInPage.quit();
-		myAccountPage.quit();
 		orderDetailsPage.quit();
 	}
 }

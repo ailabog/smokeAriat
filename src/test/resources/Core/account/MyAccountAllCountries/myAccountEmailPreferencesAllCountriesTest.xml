@@ -7,10 +7,7 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesFRTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesIETest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDETest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDKTest" />
                            
         </classes>
      </test>

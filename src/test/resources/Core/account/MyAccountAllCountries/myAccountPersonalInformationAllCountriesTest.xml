@@ -7,9 +7,7 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationFRTest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationIETest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationFITest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDETest" />
-                 <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDKTest" />
+                
             </test>
 </suite>

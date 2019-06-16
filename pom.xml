@@ -1,6 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+   
 
   <groupId>AriatRegressionProject</groupId>
   <artifactId>ariat-regression</artifactId>
@@ -21,7 +22,8 @@
    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-    </properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       </properties>
 
   <dependencies>
     <dependency>
@@ -164,5 +166,32 @@
         </configuration>
         </plugin>
       </plugins>
-    </build>            
- </project>
+    </build>    
+    
+    <reporting>
+              <plugins>
+                     <!-- TestNG-xslt related configuration. -->
+                     <plugin>
+                           <groupId>org.reportyng</groupId>
+                           <artifactId>reporty-ng</artifactId>
+                           <version>1.2</version>
+                           <configuration>
+                                  <!-- Output directory for the testng xslt report -->
+                                  <outputDir>/target/testng-xslt-report</outputDir>
+                                  <sortTestCaseLinks>true</sortTestCaseLinks>
+                                                        <testDetailsFilter>FAIL,SKIP,PASS,CONF,BY_CLASS</testDetailsFilter>
+                                  <showRuntimeTotals>true</showRuntimeTotals>
+                           </configuration>
+                     </plugin>
+              </plugins>
+       </reporting>
+
+       <pluginRepositories>
+              <pluginRepository>
+                     <id>reporty-ng</id>
+                     <url>https://github.com/cosminaru/reporty-      ng/raw/master/dist/maven</url>
+              </pluginRepository>
+       </pluginRepositories>
+
+</project>        
+

@@ -193,7 +193,7 @@ public class GlovesProductPage extends BasePage{
 	}
 
 	public void update() {
-		WebDriverUtils.scrollMoreDown(driver, updateButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
 
 	}

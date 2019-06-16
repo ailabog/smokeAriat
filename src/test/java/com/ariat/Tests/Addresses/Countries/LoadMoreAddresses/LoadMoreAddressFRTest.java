@@ -77,7 +77,7 @@ public class LoadMoreAddressFRTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
-		addressesPage.loadMoreAddesses();
+		addressesPage.loadMoreAddessesFR();
 		logger.info("Finishing load more addresses lef navigation France test");
 	}
 	

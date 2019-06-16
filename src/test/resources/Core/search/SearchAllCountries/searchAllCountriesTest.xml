@@ -5,17 +5,7 @@
 	<test name="searchAllCountriesTest" >
        <classes>
                  <class name="com.ariat.Tests.Search.Countries.SearchUKTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchIETest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchDKTest" />
                  <class name="com.ariat.Tests.Search.Countries.SearchDETest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchATTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchFITest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchBETest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchSETest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchITTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchNLTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchNOTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchLUTest" />
                  <class name="com.ariat.Tests.Search.Countries.SearchFRTest" />
                  <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
                 

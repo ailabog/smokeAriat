@@ -6,17 +6,6 @@
        <classes>
                  <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
                  <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" />
-                <class name="com.ariat.Tests.Logout.Countries.LogoutATTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutDKTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutFITest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutSETest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutBETest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutNLTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutNOTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutLUTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutITTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutFRTest" />
-                 <class name="com.ariat.Tests.Logout.Countries.LogoutIETest" />
                  <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
                  <class name="com.ariat.Tests.Logout.Countries.LogoutFRTest" />
   

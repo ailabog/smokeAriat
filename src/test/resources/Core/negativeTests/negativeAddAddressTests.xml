@@ -7,16 +7,8 @@
               
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDETest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressATTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressITTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDKTest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFRTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNOTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressNLTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressLUTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressSETest" />
               <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUSTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFITest" />
                    
               
             </classes>

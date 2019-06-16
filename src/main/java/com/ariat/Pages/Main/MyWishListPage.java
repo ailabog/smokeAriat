@@ -116,7 +116,7 @@ public class MyWishListPage extends BasePage {
 
 	public void removeItemWishList() {
 		WebDriverUtils.clickOnElementWithWait(driver, removeItemWishList);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void editItemWishList() {

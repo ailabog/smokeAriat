@@ -6,19 +6,9 @@
        <classes>
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardUKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardDETest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardATTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardDKTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardIETest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardSETest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardBETest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardNOTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardITTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardNLTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardLUTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardUSTest" />
-                 <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardFITest" />
-
+       
         </classes>
      </test>
 </suite>

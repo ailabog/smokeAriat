@@ -37,7 +37,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	// private By countrySelectorWindow =
 	// By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
-	private By countrySelectorWindow = By.xpath("/html/body/div[9]");
+	private By countrySelectorWindow = By.xpath("//span[@class='icon icon-full-arrow-down ms_desktop-only']");
 
 	private By continueShoppingButton = By.xpath("//*[@id=\"button\"]/button");
 

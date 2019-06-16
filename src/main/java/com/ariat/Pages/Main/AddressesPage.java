@@ -312,9 +312,9 @@ public class AddressesPage extends BasePage {
 		do {
 			logger.info("Loading more addresses...");
 			WebDriverUtils.scrollMiddlePage(driver, loadMoreButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_60_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_60_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
 		while (!WebDriverUtils.isElementDisplayed(driver, addressesText)) {
 			WebDriverUtils.scrollUp(driver, addressesText);

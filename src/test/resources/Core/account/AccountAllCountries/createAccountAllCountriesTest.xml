@@ -5,21 +5,12 @@
 	<test name="createAccountAllCountriesTest" >
        <classes>
                
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountATTest" />
+              
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFITest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDKTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountLUTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountSETest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountNLTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountNOTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountFRTest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountIETest" />
-                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountITTest" />
                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
-            
-                 
+   
             
         </classes>
      </test>

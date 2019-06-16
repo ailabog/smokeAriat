@@ -30,7 +30,7 @@ public class CheckoutPage extends BasePage {
 	private By promoCode = By.xpath("(//input[@type='text'])[4]");
 	private By applyPromoCode = By
 			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
-	private By payPalCheckoutBtn = By.xpath("//*[@id=\"paypal-animation-content\"]/div[1]/div[1]");
+	private By payPalCheckoutBtn = By.xpath("//iframe[@class='zoid-component-frame zoid-visible']//div[@id='paypal-animation-container']//div[@data-funding-source='paypal']");
 	private By checkoutCheckoutBtn = By.xpath("//a[contains(@href, '/checkout')]");
 
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");

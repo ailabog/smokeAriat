@@ -69,7 +69,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -111,7 +111,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
 	}
-
+*/
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
 		logger.info(
@@ -135,7 +135,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	}
 
-    @Test(priority = 2)
+  /*  @Test(priority = 2)
 	public void checkoutCreateNewOrderBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -164,7 +164,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		// checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}
+	}*/
 
 	@AfterTest
 	public void tearDown() {

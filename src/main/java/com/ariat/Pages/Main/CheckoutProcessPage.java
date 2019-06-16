@@ -66,8 +66,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
 	private By cardNo = By.xpath("//label[@for='number']");
     private By selectState = By.xpath("//input[@placeholder='Alabama']");
-	private By checkoutBtn=By.xpath("//div[@class='paypal-button paypal-button-number-0 paypal-button-layout-horizontal paypal-button-shape-rect paypal-button-branding-branded paypal-button-number-single paypal-button-env-sandbox paypal-should-focus paypal-button-label-checkout paypal-button-color-gold paypal-button-logo-color-blue']");
-	
+	private By checkoutBtn=By.xpath("//div[@data-funding-source='paypal']");
 	private By emailTxtBoxPayPal=By.id("email");
 	private By passwordTxtBoxPaypal=By.id("password");
 	private By loginPayPal=By.id("btnLogin");

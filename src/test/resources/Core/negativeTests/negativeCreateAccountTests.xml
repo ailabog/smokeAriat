@@ -6,14 +6,8 @@
        <classes>
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUSTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNOTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountNLTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountLUTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountSETest" />
               <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountFRTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountATTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDKTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountBETest" />
+              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDETest" />
                     
              
             </classes>
