@@ -170,29 +170,14 @@
     </build>    
     
     <reporting>
-              <plugins>
-                     <!-- TestNG-xslt related configuration. -->
-                     <plugin>
-                           <groupId>org.reportyng</groupId>
-                           <artifactId>reporty-ng</artifactId>
-                           <version>1.2</version>
-                           <configuration>
-                                  <!-- Output directory for the testng xslt report -->
-                                  <outputDir>/target/testng-xslt-report</outputDir>
-                                  <sortTestCaseLinks>true</sortTestCaseLinks>
-                                                        <testDetailsFilter>FAIL,SKIP,PASS,CONF,BY_CLASS</testDetailsFilter>
-                                  <showRuntimeTotals>true</showRuntimeTotals>
-                           </configuration>
-                     </plugin>
-              </plugins>
-       </reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>3.0.0-M3</version>
+      </plugin>
+    </plugins>
+  </reporting>
 
-       <pluginRepositories>
-              <pluginRepository>
-                     <id>reporty-ng</id>
-                     <url>https://github.com/cosminaru/reporty-ng/raw/master/dist/maven</url>
-              </pluginRepository>
-       </pluginRepositories>
-
-</project>        
+  </project>        
 
