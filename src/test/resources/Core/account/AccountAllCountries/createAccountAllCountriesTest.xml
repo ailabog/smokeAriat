@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="createAccountAllCountriesTest" verbose="1">
-<parameter name="environment" value="DEVELOPMENT" />
+<parameter name="environment" value="${environment}" />
 	<test name="createAccountAllCountriesTest" >
        <classes>
                

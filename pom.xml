@@ -17,7 +17,7 @@
    <slf4j.version>1.7.25</slf4j.version>
    <logback.version>1.2.3</logback.version>
    <maven.compiler.version>3.6.1</maven.compiler.version>
-   <maven.surefire.version>2.20</maven.surefire.version>
+   <maven.surefire.version>2.22.2</maven.surefire.version>
    <maven.failsafe.version>2.20</maven.failsafe.version>
    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -105,22 +105,25 @@
            <target>${java.version}</target>
           </configuration>
        </plugin>
-       <plugin>
-              <artifactId>maven-assembly-plugin</artifactId>
-              <configuration>
-                <descriptorRefs>
-                  <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-              </configuration>
-              <executions>
-                <execution>
-                  <id>make-assembly</id>
-                  <phase>package</phase>
-                  <goals>
-                    <goal>single</goal>
-                  </goals>
-                </execution>
-              </executions>
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <encoding>iso-8859-1</encoding>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/Core/testSuites.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
        
           <plugin>
@@ -149,8 +152,10 @@
           <version>${maven.surefire.version}</version>
           <configuration>
             <testFailureIgnore>true</testFailureIgnore>
+             <reuseForks>true</reuseForks>
+              <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
            <suiteXmlFiles>
-              <suiteXmlFiles>testSuites.xml</suiteXmlFiles>
+              <suiteXmlFile>src/test/resources/Core/testSuites.xml</suiteXmlFile>
            </suiteXmlFiles>
              <skipTests>false</skipTests>
           </configuration> 
@@ -159,11 +164,7 @@
         <groupId>org.apache.maven.plugins></groupId>
         <artifactId>maven-failsafe-plugin></artifactId>
         <version>${maven.failsafe.version}</version>
-        <configuration>
-           <suiteXmlFiles>
-              <suiteXmlFiles>testSuites.xml</suiteXmlFiles>
-           </suiteXmlFiles>
-        </configuration>
+      
         </plugin>
       </plugins>
     </build>    
@@ -189,7 +190,7 @@
        <pluginRepositories>
               <pluginRepository>
                      <id>reporty-ng</id>
-                     <url>https://github.com/cosminaru/reporty-      ng/raw/master/dist/maven</url>
+                     <url>https://github.com/cosminaru/reporty-ng/raw/master/dist/maven</url>
               </pluginRepository>
        </pluginRepositories>
 
