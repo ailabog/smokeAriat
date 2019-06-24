@@ -2,7 +2,7 @@
 
 <suite name="addressAllTests" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="addressAllTests" >
+	<test name="addressAllTests">
        <classes>
                    
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUKTest" />

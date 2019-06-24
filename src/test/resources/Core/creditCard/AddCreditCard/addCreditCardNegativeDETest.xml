@@ -2,7 +2,7 @@
 
 <suite name="addCreditCardDENegativeTest" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="addCreditCardDENegativeTest" >
+	<test name="addCreditCardDENegativeTest">
        <classes>
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCardNegative.AddCreditCardNegativeDETest" />
          </classes>

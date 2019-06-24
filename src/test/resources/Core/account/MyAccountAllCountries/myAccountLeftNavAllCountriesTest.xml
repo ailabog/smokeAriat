@@ -2,7 +2,7 @@
 
 <suite name="myAccountLeftNavAllCountriesTest" verbose="1">
 <parameter name="environment" value="DEVELOPMENT" />
-	<test name="myAccountLeftNavAllCountriesTest" >
+	<test name="myAccountLeftNavAllCountriesTest">
        <classes>
                  <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUKTest" />

@@ -2,7 +2,7 @@
 
 <suite name="errorMessagesAccountUK" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="errorMessagesAccountUK" >
+	<test name="errorMessagesAccountUK">
        <classes>
                    <class name="com.ariat.Tests.Account.Countries.MsgErrorsAccount.ErrorMessagesAccountUKTest" />
                

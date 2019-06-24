@@ -40,7 +40,7 @@ public class AddAddressesPage extends BasePage {
 	private By editAddressButton = By.name("dwfrm_profile_address_edit");
 	private By addressesText = By.xpath("//*contains[text(), 'Address']");
 	private By addressesTextFR = By.xpath("//*contains[text(), 'Addresses']");
- 	private By deleteAddressButton = By.xpath("//*[@value='Delete']");
+ 	private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
 	private By deleteAddressButtonDE = By.name("dwfrm_profile_address_remove");
 
 	private By addressesTextDE = By.xpath("//*contains[text(), 'Adressen']");

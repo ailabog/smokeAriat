@@ -2,7 +2,7 @@
 
 <suite name="createAccountAllCountriesTest" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="createAccountAllCountriesTest" >
+	<test name="createAccountAllCountriesTest">
        <classes>
                
               

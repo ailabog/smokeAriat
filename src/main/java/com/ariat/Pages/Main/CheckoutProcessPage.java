@@ -194,7 +194,7 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void continueCheckout() {
 		logger.info("Continue checkout..");
-		WebDriverUtils.scrollLittDown(driver, continueCheckout);
+		WebDriverUtils.scrollUp150(driver, continueCheckout);
 		WebDriverUtils.clickOnElementWithWait(driver, continueCheckout);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}

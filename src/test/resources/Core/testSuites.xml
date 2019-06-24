@@ -74,15 +74,7 @@
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUSTest" />
 
-                
-             
-                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUSTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUKTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterFRTest" />
-                 <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterDETest" />
-                 
-                 
-                 <class name="com.ariat.Tests.HomeCountries.HomeGlobalCountriesTest" />
+               
                   
                  <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
                  <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" />
@@ -134,43 +126,12 @@
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryFRTest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
-                               
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsUKTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsUSTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsDETest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderDetailsFRTest" />
+                
                
-                 
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusUKTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusDETest" />
-                 <class name="com.ariat.Tests.Orders_View.OrderStatusFRTest" />
-              
-                 
-                 <class name="com.ariat.Tests.Search.Countries.SearchUKTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchDETest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchFRTest" />
-                 <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
-               
-                       
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUKTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountUSTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountFRTest" />
-              <class name="com.ariat.Tests.Account.Countries.NegativeCreateAccount.NegativeCreateAccountDETest" /> 
-
-              
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressDETest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUKTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressFRTest" />
-              <class name="com.ariat.Tests.Addresses.Countries.NegativeAddAddress.NegativeAddAddressUSTest" />
-
-                            
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardDETest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardFRTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUKTest" />
-               <class name="com.ariat.Tests.CreditCard.Countries.NegativeCreditCard.NegativeAddCreditCardUSTest" />
- 
-   
+				   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderDETest" />
+                   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderFRTest" />
+                   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUKTest" />
+                   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUSTest" />
                 
         </classes>
      </test>

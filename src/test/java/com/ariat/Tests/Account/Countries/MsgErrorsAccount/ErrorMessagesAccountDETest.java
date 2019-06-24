@@ -143,6 +143,5 @@ public class ErrorMessagesAccountDETest extends BaseTest {
 		homePageDE.quit();
 		signInPage.quit();
 		createAccountPage.quit();
-		myAccountPage.quit();
 	}
 }

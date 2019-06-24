@@ -30,7 +30,7 @@ public class CheckoutPage extends BasePage {
 	private By promoCode = By.xpath("(//input[@type='text'])[4]");
 	private By applyPromoCode = By
 			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
-	private By payPalCheckoutBtn = By.xpath("//iframe[@class='zoid-component-frame zoid-visible']//div[@id='paypal-animation-container']//div[@data-funding-source='paypal']");
+	private By payPalCheckoutBtn = By.xpath("//div[@id='paypal-animation-container']//div[@data-funding-source='paypal']");
 	private By checkoutCheckoutBtn = By.xpath("//a[contains(@href, '/checkout')]");
 
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
@@ -124,7 +124,9 @@ public class CheckoutPage extends BasePage {
 	}
 	
 	public CheckoutProcessPage returnCheckoutProcessPayPalPage() {
-		WebDriverUtils.scroll500Down(driver, payPalCheckoutBtn);
+		
+		WebDriverUtils.scroll500Down(driver, By.xpath("//iframe[@class='zoid-component-frame zoid-visible']"));
+		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='zoid-component-frame zoid-visible']")));
 		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(loginPayPalPageTitle));

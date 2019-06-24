@@ -2,7 +2,7 @@
 
 <suite name="createAccountUKTest" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="createAccountUKTest" >
+	<test name="createAccountUKTest">
        <classes>
                 <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest" />
                

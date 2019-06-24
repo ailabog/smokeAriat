@@ -2,7 +2,7 @@
 
 <suite name="myAccountMiddleNavAllCountriesTest" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="myAccountMiddleNavAllCountriesTest" >
+	<test name="myAccountMiddleNavAllCountriesTest">
        <classes>
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUKTest" />

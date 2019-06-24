@@ -23,7 +23,7 @@ public class AddACreditCardPage extends BasePage {
 	private By nameOnTheCardTextBox = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_owner");
 	private By typeCardSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_type");
 	private By cardNoTextBox = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_number");
-	private By cardNoTextBoxUS = By.id("c-cardnumber");
+	private By cardNoTextBoxUS = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_owner");
 	private By expirationMonthSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_expiration_month");
 	private By expirationYearSelect = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_expiration_year");
 	private By securityCodeText = By.id("dwfrm_paymentinstruments_creditcards_newcreditcard_cvn");

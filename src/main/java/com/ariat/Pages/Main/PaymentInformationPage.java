@@ -25,15 +25,14 @@ public class PaymentInformationPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(PaymentInformationPage.class);
 
 
-	private By addACreditCardButton = By.xpath("//a[@title='Add a Credit Card']");
-
-	private By addACreditCardButtonFR = By.xpath("//a[@title='Ajouter une carte de paiement']");
-	private By addACreditCardButtonDE = By.xpath("//a[@title='Eine Kreditkarte hinzufügen']");
+	private By addACreditCardButton = By.xpath("//a[text()='Add a Credit Card']");
+	private By addACreditCardButtonFR = By.xpath("//a[text()='Ajouter une carte de paiement']");
+	private By addACreditCardButtonDE = By.xpath("//a[text()='Eine Kreditkarte hinzufügen']");
 	private By addACreditCardText = By.xpath("//*[contains(text(), 'Add a credit card')]");
 
 	WebElement cardTable = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]"));
 	private By deleteCardLink = By.xpath("//a[text()='Delete card']");
-	private By makeDefaultCardLink =  By.xpath("//*[@id=\"paymentinfo\"]/div[2]/div[1]/div/div/div[2]/div[3]/div/a");
+	private By makeDefaultCardLink =  By.xpath("//a[text()='Make Default Card']");
 	private By deleteButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[2]");
 	private By cancelButtonDeleteCard = By.xpath("//*[@id=\"ext-gen44\"]/body/div[8]/div[3]/div/button[1]/span");
 	private By creditNickname = By.xpath("//div[@id='paymentinfo']/div[2]/div/div/div/div/div/div/h3/span");
@@ -52,6 +51,7 @@ public class PaymentInformationPage extends BasePage {
 	}
 
 	public AddACreditCardPage returnAddACreditCardPage() {
+		WebDriverUtils.scroll300(driver, addACreditCardButton);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
@@ -59,6 +59,7 @@ public class PaymentInformationPage extends BasePage {
 	}
 	
 	public AddACreditCardPage returnAddACreditCardPageFR() {
+		WebDriverUtils.scroll300(driver, addACreditCardButtonFR);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
@@ -66,6 +67,7 @@ public class PaymentInformationPage extends BasePage {
 	}
 	
 	public AddACreditCardPage returnAddACreditCardPageDE() {
+		WebDriverUtils.scroll300(driver, addACreditCardButtonDE);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));

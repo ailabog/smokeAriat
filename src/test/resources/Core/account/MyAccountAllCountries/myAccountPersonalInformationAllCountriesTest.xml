@@ -2,7 +2,7 @@
 
 <suite name="myAccountPersonalInformationAllCountriesTest" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="myAccountPersonalInformationAllCountriesTest" >
+	<test name="myAccountPersonalInformationAllCountriesTest">
        <classes>
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUKTest" />

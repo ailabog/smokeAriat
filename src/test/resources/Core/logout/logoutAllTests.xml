@@ -2,7 +2,7 @@
 
 <suite name="logoutAllTests" verbose="1">
 <parameter name="environment" value="DEVELOPMENT" />
-	<test name="logoutAllTests" >
+	<test name="logoutAllTests">
        <classes>
             
                  <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />

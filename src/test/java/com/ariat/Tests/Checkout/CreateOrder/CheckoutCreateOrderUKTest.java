@@ -61,6 +61,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private ListOfCreditCards typeCard;
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
+	private static final String PAYPAL_URL="https://www.sandbox.paypal.com/checkoutnow?locale.x=en_GB&fundingSource=paypal&sessionID=c58a3e1a50_mtg6ntu6nty&buttonSessionID=04ed06f251_mtg6ntu6ntg&env=sandbox&fundingOffered=paypal&logLevel=warn&sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9hcGkvY2hlY2tvdXQuanMifQ%3D%3D&uid=91536abcc4&version=4&token=EC-7FC97998ME054642E&xcomponent=1";
 
 	public static final String filePath = "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 
@@ -69,7 +70,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
-	/*@Test(priority = 0)
+	@Test(priority = 0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -111,7 +112,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
 	}
-*/
+
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
 		logger.info(
@@ -127,6 +128,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
+		checkoutProcessPage.load(PAYPAL_URL);
 		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
 		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
@@ -135,7 +137,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	}
 
-  /*  @Test(priority = 2)
+   @Test(priority = 2)
 	public void checkoutCreateNewOrderBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -164,7 +166,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		// checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}*/
+	}
 
 	@AfterTest
 	public void tearDown() {

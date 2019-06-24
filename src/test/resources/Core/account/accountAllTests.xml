@@ -2,7 +2,7 @@
 
 <suite name="accountAllTests" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="accountAllTests" >
+	<test name="accountAllTests">
        <classes>
                
             

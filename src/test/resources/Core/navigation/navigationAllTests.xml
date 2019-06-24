@@ -2,7 +2,7 @@
 
 <suite name="navigationAllTests" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="navigationAllTests" >
+	<test name="navigationAllTests">
        <classes>
                    
                        

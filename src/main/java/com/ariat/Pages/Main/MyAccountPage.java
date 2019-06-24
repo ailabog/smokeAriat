@@ -31,7 +31,7 @@ public class MyAccountPage extends BasePage {
 	private By emailPreferencesLink = By.xpath("//a[@title='Show or update your email preference']");
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
-	private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
+	private By paymentInformationLink = By.linkText("Payment information");
 	private By paymentInformationText = By.className("//*contains[text(),'Credit card information']");
 	private By myOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[6]/a");
 	private By noOrdersText = By.className("//*contains[text(), We have no order records for this account.']");
@@ -48,9 +48,9 @@ public class MyAccountPage extends BasePage {
 	private By editAddressesLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[1]/a");
 	private By addAddressLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
-	private By addCardLink = By.xpath("//a[contains(text(),'Add Card')]");
-	private By addCardLinkDE = By.xpath("//a[contains(text(),'Karte hinzufügen')]");
-	private By addCardLinkFR = By.xpath("//a[contains(text(),'Ajouter carte')]");
+	private By addCardLink = By.xpath("//a[text()='Add Card']");
+	private By addCardLinkDE = By.xpath("//a[text()='Karte hinzufügen']");
+	private By addCardLinkFR = By.xpath("//a[text()='Ajouter carte']");
 	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[58]");
 	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[58]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
@@ -63,15 +63,15 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//a[@title='Log out']");
+	private By logoutTopNav = By.linkText("Log out'");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenFootwearCasualShoesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");
 	private By footwearCasualShowsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By logoutTopNavFR = By.xpath("//a[@title='Se déconnecter']");
+	private By logoutTopNavFR = By.xpath("//a[text()='Se déconnecter']");
 	private By logoutMiddle = By.id("account-overview__logout-link");
-	private By logouttopNavFR = By.xpath("a[@title='Se déconnecter']");
-	private By logoutTopNavDE = By.xpath("//a[@title='Abmelden']");
+	private By logouttopNavFR = By.xpath("Se déconnecter");
+	private By logoutTopNavDE = By.xpath("Abmelden");
 	private By signInDE = By.xpath("//a[text()='Einloggen']");
 	private By signInFR = By.xpath("//a[text()='Connexion']");
 	private By personalInfoLinkDE = By.xpath("//a[text()= 'Persönliche Daten']");
@@ -86,7 +86,7 @@ public class MyAccountPage extends BasePage {
 	private By myAccountLinkFR = By.xpath("//a[text()='Mon compte']");
 	private By editPersonalInfoLinkUS = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div[2]/div[2]/div[1]/div[1]/a");
 	private By viewAllWishListLinkDE = By.xpath("(//a[contains(text(),'Alle ansehen')])[57]");
-	private By addDeleteCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
+	private By addDeleteCardLink = By.linkText("Add/Delete");
 	private By ordersTopNavLinkDE = By.xpath("//a[@title='Bestellungen']");
 	private By ordersTopNavLinkFR = By.xpath("//a[@title='Commandes']");
 	private By accountInfoTopNabLinkDE = By.xpath("//a[text()='Kontoinformationen']");
@@ -202,6 +202,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public AddACreditCardPage returnAddACreditCardMiddleNav() {
+		WebDriverUtils.scroll300(driver, addCardLink);
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
@@ -209,6 +210,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public AddACreditCardPage returnAddACreditCardMiddleNavFR() {
+		WebDriverUtils.scroll300(driver, addCardLinkFR);
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLinkFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
@@ -216,6 +218,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public AddACreditCardPage returnAddACreditCardMiddleNavDE() {
+		WebDriverUtils.scroll300(driver, addCardLinkDE);
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
@@ -309,7 +312,7 @@ public class MyAccountPage extends BasePage {
 
 	public PaymentInformationPage returnPaymentInformationPageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, paymentInformationLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(paymentInformationText));
 		return new PaymentInformationPage(driver);
 	}

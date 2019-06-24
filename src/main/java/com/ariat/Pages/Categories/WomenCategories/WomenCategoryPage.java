@@ -66,8 +66,8 @@ public class WomenCategoryPage extends BasePage {
 	private By bestSellersLink = By.linkText("Best Sellers");
 	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
 	
-	private By womenAccesoriesCategoryLefytNavDE= By.linkText(" Accessoires");
-	private By womenAccesoriesCategoryLefytNavFR= By.linkText(" Accessoires");
+	private By womenAccesoriesCategoryLefytNavDE= By.linkText("Accessoires");
+	private By womenAccesoriesCategoryLefytNavFR= By.linkText("Accessoires");
 	private By expandIconFootwear = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
 	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
 	private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");

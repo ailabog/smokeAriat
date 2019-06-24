@@ -2,7 +2,7 @@
 
 <suite name="myAccountAllTests" verbose="1">
 <parameter name="environment" value="${environment}" />
-	<test name="myAccountAllTests" >
+	<test name="myAccountAllTests">
        <classes>
             
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />
