@@ -163,6 +163,11 @@ public class WebDriverUtils {
 		jsExec.executeScript("javascript:window.scrollBy(0,150)");
 	}
 	
+	
+	public static void scrollUp150(WebDriver driver, By locator) {
+		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+		jsExec.executeScript("javascript:window.scrollBy(0,-150)");
+	}
 	public static void scroll500Down(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,500)");
