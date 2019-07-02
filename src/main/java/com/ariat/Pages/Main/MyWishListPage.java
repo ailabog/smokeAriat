@@ -37,7 +37,7 @@ public class MyWishListPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[5]/form/div[3]/div[1]/div/div/span[1]");
 	private By prioritySelect = By.id("dwfrm_wishlist_items_i0_priority");
 	private By updateItemWishList = By.name("dwfrm_wishlist_items_i0_updateItem");
-	private By removeItemWishList = By.xpath("//button[@class='ms-anchor ms-anchor--uppercase wishlist_remove-btn']");
+	private By removeItemWishList = By.xpath("//button[text()='Remove']");
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");

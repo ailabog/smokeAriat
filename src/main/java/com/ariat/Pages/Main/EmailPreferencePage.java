@@ -41,8 +41,6 @@ public class EmailPreferencePage extends BasePage {
 	private By monthSelect = By.id("dwfrm_profile_customer_customProfile_birthdayMonth");
 	private By daySelect = By.id("dwfrm_profile_customer_customProfile_birthdayDay");
 	
-	
-	
 	private By emailTxtBoxUS = By.id("ctl00_cphContent_txtEmail");
 	private By confirmEmailTxtBoxUS = By.id("ctl00_cphContent_txtConfirmEmail");
 	private By fNameTxtBoxUS = By.id("ctl00_cphContent_firstname");

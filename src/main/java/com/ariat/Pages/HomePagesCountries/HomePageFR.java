@@ -33,7 +33,7 @@ public class HomePageFR extends BasePage implements List<HomePage> {
 	private By returningCustomerText = By.xpath("//*text()='Returning customer']");
 	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
-	private By signIn = By.xpath("//a[@title='Se connecter ']");
+	private By signIn = By.xpath("//a[text()='Connexion']");
 	
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Rechercher des produits']");

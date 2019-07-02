@@ -64,7 +64,7 @@ public class EditAddressFRTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.editAddressCreatedFR("B1TGL");
-		addAddressPage = addressesPage.returnAddressesEditFR();
+		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("B1TGL1");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPageFR();

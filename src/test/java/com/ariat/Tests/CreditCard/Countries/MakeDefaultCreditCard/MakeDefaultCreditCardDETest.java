@@ -56,7 +56,7 @@ public class MakeDefaultCreditCardDETest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
+		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNavDE();
 		paymentInfoPage.makeDefaultCreditCard("aila", typeCard.VISA.getName(),
 		 "05/2016");
 		logger.info("Finishing make default credit card from Payment info Germany test");

@@ -88,7 +88,7 @@ public class AddCreditCardDETest extends BaseTest{
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
+		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNavDE();
 		addACreditCardPage = paymentInfoPage.returnAddACreditCardPageDE();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);

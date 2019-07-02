@@ -58,8 +58,8 @@ public class MakeDefaultAddressUKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.makeDefaultAddressCreated("35560");
-		addressesPage.assertMakeDefault("DEFAULT | 35560");
+		addressesPage.makeDefaultAddressCreated("5NOIP");
+		addressesPage.assertMakeDefault("DEFAULT | 5NOIP");
 		logger.info("Finishing make default address UK test");
 	}
 	

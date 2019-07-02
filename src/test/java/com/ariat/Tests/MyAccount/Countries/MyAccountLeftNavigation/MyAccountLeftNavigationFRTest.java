@@ -103,7 +103,7 @@ public class MyAccountLeftNavigationFRTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnPaymentInformationPageLeftNav();
+		myAccountPage.returnPaymentInformationPageLeftNavFR();
 		myAccountPage.myAccountClickFR();
 		myAccountPage.returnAddACreditCardMiddleNavFR();
 		myAccountPage.myAccountClickFR();

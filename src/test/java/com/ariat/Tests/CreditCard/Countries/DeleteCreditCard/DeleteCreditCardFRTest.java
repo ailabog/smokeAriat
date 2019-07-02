@@ -57,7 +57,7 @@ public class DeleteCreditCardFRTest extends BaseTest{
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
+		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNavFR();
 	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
 	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
 		logger.info("Finishing delete credit card from Payment info France test");

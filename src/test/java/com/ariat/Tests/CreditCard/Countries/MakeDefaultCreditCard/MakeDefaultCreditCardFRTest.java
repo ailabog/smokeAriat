@@ -56,7 +56,7 @@ public class MakeDefaultCreditCardFRTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Francais");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
+		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNavFR();
 		// paymentInfoPage.makeDefaultCreditCard("were", typeCard.VISA.getName(),
 		// "05/2016");
 		logger.info("Finishing make default credit card from Payment info France test");

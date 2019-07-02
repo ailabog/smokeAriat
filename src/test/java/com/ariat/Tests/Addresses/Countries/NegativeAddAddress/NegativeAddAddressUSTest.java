@@ -71,7 +71,7 @@ public class NegativeAddAddressUSTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNavUS();
 		addAddressPage.enterFName("444");
 		addAddressPage.enterLName("B4444");
 		addAddressPage.enterAddress1(ADDRESS);
@@ -95,7 +95,7 @@ public class NegativeAddAddressUSTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNavUS();
 		addAddressPage.enterFName("444");
 		addAddressPage.enterLName("B4444");
 		addAddressPage.enterAddress1(ADDRESSWILD);
@@ -119,7 +119,7 @@ public class NegativeAddAddressUSTest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "EnglishUS");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNavUS();
 		addAddressPage.enterAddress1(ADDRESS);
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectCountry("United States");

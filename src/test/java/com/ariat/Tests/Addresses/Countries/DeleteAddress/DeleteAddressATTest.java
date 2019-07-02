@@ -82,7 +82,7 @@ public class DeleteAddressATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEditDE();
+		addAddressPage = addressesPage.returnAddressesEdit();
 		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
 		addressesPage.checkAddressDE("ccc");
 		logger.info("Finishing deleting address from Edit address Austria test");

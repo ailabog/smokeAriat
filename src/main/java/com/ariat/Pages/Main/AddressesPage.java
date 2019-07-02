@@ -23,8 +23,7 @@ public class AddressesPage extends BasePage {
 	private By addressesText = By.xpath("//h1[text()='Addresses']");
 	private By addressTextDE = By.xpath("//h1[text()='Adressen']");
 	private By editLink = By.xpath("//a[@class='address-action address-action--edit']");
-	private By editLinkDE = By.xpath("//a[contains(text(), 'Bearbeiten')]");
-	private By editLinkFR = By.xpath("//a[contains(text(), 'Modifier')]");
+		
 	private By deleteLink = By.xpath("//a[@title='Delete']");
 	private By deleteLinkDE = By.xpath("//a[@title='Löschen']");
 
@@ -92,12 +91,12 @@ public class AddressesPage extends BasePage {
 
 	public boolean checkAddressFR(String addressValue) {
 
-		if (WebDriverUtils.findElement(driver, editLinkFR) != null
+		if (WebDriverUtils.findElement(driver, editLink) != null
 				&& WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
 			logger.info("Address {}" + addressValue
 					+ "was created with success and actions as Edit and Delete can de done");
 
-					if (WebDriverUtils.findElement(driver, editLinkFR) != null
+					if (WebDriverUtils.findElement(driver, editLink) != null
 							&& WebDriverUtils.findElement(driver, deleteLinkFR) != null) {
 						logger.info("Address {}" + addressValue
 								+ "was created with success and actions as Edit and Delete can de done");
@@ -108,12 +107,12 @@ public class AddressesPage extends BasePage {
 	
 	public boolean checkAddressDE(String addressValue) {
 
-		if (WebDriverUtils.findElement(driver, editLinkDE) != null
+		if (WebDriverUtils.findElement(driver, editLink) != null
 				&& WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
 			logger.info("Address {}" + addressValue
 					+ "was created with success and actions as Edit and Delete can de done");
 
-					if (WebDriverUtils.findElement(driver, editLinkDE) != null
+					if (WebDriverUtils.findElement(driver, editLink) != null
 							&& WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
 						logger.info("Address {}" + addressValue
 								+ "was created with success and actions as Edit and Delete can de done");
@@ -226,8 +225,8 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void editAddressCreatedDE(String addressValue) {
-		if (WebDriverUtils.findElement(driver, editLinkDE) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, editLinkDE);
+		if (WebDriverUtils.findElement(driver, editLink) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, editLink);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			logger.info("Edit address {}" + addressValue + "was done with success");
 
@@ -238,8 +237,8 @@ public class AddressesPage extends BasePage {
 	}
 
 	public void editAddressCreatedFR(String addressValue) {
-		if (WebDriverUtils.findElement(driver, editLinkFR) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, editLinkFR);
+		if (WebDriverUtils.findElement(driver, editLink) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, editLink);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			logger.info("Edit address {}" + addressValue + "was done with success");
 
@@ -338,9 +337,9 @@ public class AddressesPage extends BasePage {
 		do {
 			logger.info("Loading more addresses...");
 			WebDriverUtils.scrollMiddlePage(driver, loadMoreButtonFR);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_60_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButtonFR);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_60_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButtonFR) == null);
 		while (!WebDriverUtils.isElementDisplayed(driver, addressesText)) {
 			WebDriverUtils.scrollUp(driver, addressesText);
@@ -363,22 +362,9 @@ public class AddressesPage extends BasePage {
 
 	public AddAddressesPage returnAddressesEdit() {
 		WebDriverUtils.clickOnElementWithWait(driver, editLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddAddressesPage(driver);
 	}
-
-	public AddAddressesPage returnAddressesEditFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, editLinkFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
-		return new AddAddressesPage(driver);
-	}
-
-	public AddAddressesPage returnAddressesEditDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, editLinkDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
-		return new AddAddressesPage(driver);
-	}
+	
 }

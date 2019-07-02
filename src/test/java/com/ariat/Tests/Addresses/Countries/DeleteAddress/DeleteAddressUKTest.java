@@ -62,7 +62,7 @@ public class DeleteAddressUKTest extends BaseTest {
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.deleteAddressCreatedNo("nnn");
 		addressesPage.deleteAddressCreatedYes("nn");
-		addressesPage.checkAddress("nnn");
+		//addressesPage.checkAddress("nnn");
 		logger.info("Finishing deleting address UK test");
 	}
 

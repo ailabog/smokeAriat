@@ -64,7 +64,7 @@ public class EditAddressDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage= myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.editAddressCreatedDE("235432");
-		addAddressPage = addressesPage.returnAddressesEditDE();
+		addAddressPage = addressesPage.returnAddressesEdit();
 		addAddressPage.clearAddressId();
 		addAddressPage.enterAddressId("235432A");
 		addressesPage = addAddressPage.returnAddressesSaveFromEditPageDE();
