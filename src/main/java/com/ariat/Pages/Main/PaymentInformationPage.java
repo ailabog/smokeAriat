@@ -25,7 +25,7 @@ public class PaymentInformationPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(PaymentInformationPage.class);
 
 
-	private By addACreditCardButton = By.xpath("//a[text()='Add a Credit Card']");
+	private By addACreditCardButton = By.xpath("//a[title='Add a credit card']");
 	private By addACreditCardButtonFR = By.xpath("//a[text()='Ajouter une carte de paiement']");
 	private By addACreditCardButtonDE = By.xpath("//a[text()='Eine Kreditkarte hinzufügen']");
 	private By addACreditCardText = By.xpath("//*[contains(text(), 'Add a credit card')]");

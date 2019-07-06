@@ -9,11 +9,9 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenFootwearPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
-import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Pages.Products.HeritageProductPage;
 import com.ariat.Tests.Base.BaseTest;
@@ -36,9 +34,8 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
-	private com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage womenFootwearCasualShoesCategoryPage;
-	private WomenFootwearPage womenFootwearPage;
-	private CasualShoeProductPage casualProductShoePage;
+	
+
 	private HeritageProductPage productPage;
     public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
@@ -47,7 +44,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", filePath);
 	}
 
-	/*  @Test(priority=0)
+	 @Test(priority=0)
 	public void productPageWomenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -57,34 +54,29 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
-
-		ProductAttributes.selectAttributeSize("7");
-		myBagPage = ProductAttributes.returnMyBagPage();
-
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
-	}*/
+	}
 	
 	@Test(priority=1)
 	public void productPageWomenCategoryAddToCartNoFreeGiftTest() {
-		logger.info("Starting product page -> Women Category Casual Shoe prduct category add to cart test...");
+		logger.info("Starting roduct page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
-		womenFootwearCasualShoesCategoryPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
-		casualProductShoePage = womenFootwearCasualShoesCategoryPage.returnCasualShoeProductPage();
-		casualProductShoePage.selectAttributeSize("3");
-		myBagPage = casualProductShoePage.returnMyBagPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7");
+		myBagPage = glovesProductPage.returnMyBagPage();
 		//myBagPage.cancelFreeGift();
 		//myBagPage.checkMyBagNoFreeGift();
-		logger.info("Finishing product page -> Women Category Casual Shoe prduct category add to cart test.");
+		logger.info("Finishing product page -> Women Category Gloves sub-category product glove test.");
 	}
 	
-	/*@Test(priority=2)
+	@Test(priority=2)
 	public void productPageWomenCategoryAddToCartYesFreeGiftTest() {
 		logger.info("Starting product page -> Women Category Add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -102,7 +94,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		productPage.selectAttributeHeight("Medium");
 		myBagPage = productPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Add to cart  test.");
-	}*/
+	}
 	
 	@AfterTest
 	public void tearDown() {
@@ -113,8 +105,6 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
-		womenFootwearCasualShoesCategoryPage.quit();
-		casualProductShoePage.quit();
 		productPage.quit();
 	}
 }

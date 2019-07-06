@@ -11,8 +11,7 @@
                <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUKTest" />
                <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUKTest" />
                <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
-                    
-
-        </classes>
+              
+         </classes>
      </test>
 </suite>

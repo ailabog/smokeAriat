@@ -121,7 +121,7 @@
                 <version>2.8</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/Core/testSuites.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/Core/smokeTest.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -155,7 +155,7 @@
              <reuseForks>true</reuseForks>
               <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
            <suiteXmlFiles>
-              <suiteXmlFile>src/test/resources/Core/testSuites.xml</suiteXmlFile>
+              <suiteXmlFile>src/test/resources/Core/smokeTest.xml</suiteXmlFile>
            </suiteXmlFiles>
              <skipTests>false</skipTests>
           </configuration> 
