@@ -37,13 +37,14 @@ public class ProductNegativeAddToCartWomenCategoryDETest extends BaseTest {
 	private WomenFootwearRidingPage womenFootwearRidingPage;
 	private HeritageProductPage heritageProductPage;
 
-    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
+	
   @Test(priority=0)
 	public void negativeProductPageWomenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove negative add to cart test...");

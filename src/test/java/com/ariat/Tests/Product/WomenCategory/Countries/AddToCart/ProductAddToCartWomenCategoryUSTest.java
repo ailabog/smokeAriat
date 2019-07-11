@@ -40,13 +40,14 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
 	private RebarTopProductPage rebarTopProductPage;
 
-    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
+	
     @Test(priority=0)
 	public void productPageMennCategoryAddToCartTest() {
 		logger.info("Starting product page -> Men Category Bags add to cart test...");

@@ -15,6 +15,7 @@ import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.gargoylesoftware.htmlunit.javascript.host.file.File;
 
 
 /**
@@ -46,13 +47,15 @@ public class CreateAccountUKTest extends BaseTest {
 
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomNumber(8);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
-
+    
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
-	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+    
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
 	@Test(priority = 0)

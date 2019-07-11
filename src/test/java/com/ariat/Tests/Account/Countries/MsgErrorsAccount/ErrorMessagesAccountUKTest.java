@@ -54,11 +54,12 @@ public class ErrorMessagesAccountUKTest extends BaseTest {
 	public static final String OK_EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String WRONG_PASSWORD = "Password";
 	public static final String OK_PASSWORD = "Parola12345!";
-	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
 	@Test(priority = 0)

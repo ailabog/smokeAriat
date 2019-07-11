@@ -66,13 +66,13 @@ public class CheckoutCreateOrderDKTest extends BaseTest {
 	private static final String YEAR = "2023";
 	private static final String MONTH = "January";
 
-	public static final String filePath = "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
-
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
 	@Test(priority = 0)
 	public void checkoutCreateNewOrderNotBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");

@@ -33,7 +33,7 @@ public class MyBagPage extends BasePage {
 	private By bonusDialog = By.id("bonus-product-dialog");
 	//private By checkoutBtn = By.xpath("//a[contains(text(),'Checkout')]");
 	private By closeMinicart = By.xpath("//span[@class='icon-close close-minicart']");
-	private By checkoutBtn = By.xpath("//a[text()='Checkout']");
+	private By checkoutBtn = By.xpath("//a[@class='checkout minicart-button button large']");
 	private By checkoutBtnDE = By.xpath("//a[text()='Zur Kasse']");
 	
 	private By continueShoppingBtn = By.xpath("//a[text()='Continue shopping']");

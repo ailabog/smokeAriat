@@ -11,6 +11,13 @@
                <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUKTest" />
                <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUKTest" />
                <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
+               
+                  <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
+               <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUSTest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUSTest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUSTest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUSTest" />
+               <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
               
          </classes>
      </test>

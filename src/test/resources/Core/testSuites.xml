@@ -14,15 +14,14 @@
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDETest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUSTest" />
-
-          
+      
                  
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUKTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDETest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUSTest" />
             
-               
+            
                                
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUKTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressDETest" />
@@ -35,8 +34,7 @@
                  <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressFRTest" />
                  <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUSTest" />
          
-                
-                 
+                               
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressUKTest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDETest" />
                 <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressFRTest" />
@@ -59,7 +57,6 @@
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDETest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUSTest" />
-
                 
                 
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardUKTest" />
@@ -67,15 +64,13 @@
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.DeleteCreditCard.DeleteCreditCardUSTest" />
                   
-                
-                
+            
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUKTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDETest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardFRTest" />
                  <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUSTest" />
 
-               
-                  
+         
                  <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
                  <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" />
                  <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
@@ -87,34 +82,29 @@
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesFRTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDETest" />
  
-               
                  
                  <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationFRTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationDETest" />
-              
-              
+            
                  
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationFRTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDETest" />
-         
-               
-                 
+                          
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationFRTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDETest" />
            
-                        
+              
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUSTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUKTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationFRTest" />
                  <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDETest" />
 
-             
                  
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryUKTest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryDETest" />
