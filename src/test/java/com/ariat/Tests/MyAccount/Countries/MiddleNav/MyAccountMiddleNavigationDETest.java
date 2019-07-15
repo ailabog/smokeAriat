@@ -52,9 +52,9 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInfoPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnPersonalInfoPageChangePassMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing personal info Deutschland test...");
 	}
@@ -71,7 +71,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEmailPreferencePageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing email preferences Deutschland test...");
 	}
@@ -88,9 +88,9 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnAddAddressesPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing addresses Deutschland test...");
 	}
@@ -107,9 +107,9 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnAddACreditCardMiddleNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info Deutschland test...");
 	}
@@ -126,7 +126,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageViewAllMiddleNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing orders Deutschland test...");
 	}
@@ -143,7 +143,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyWishListPageViewAllMiddleNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing wish list Deutschland test...");
 	}

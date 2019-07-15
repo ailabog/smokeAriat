@@ -53,7 +53,7 @@ public class NegativeProductWriteReviewWomenCategoryDETest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		womenAccessoriesPage = homePageDE.returnAccessoriesCategoryPage();
+		womenAccessoriesPage = homePageDE.returnAccessoriesCategoryPageDE();
 		womenAccessoriesBagsPage = womenAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
 		bagsProductPage = womenAccessoriesBagsPage.returnBagsProductPage();
 		bagsProductPage.writeReviewClick();

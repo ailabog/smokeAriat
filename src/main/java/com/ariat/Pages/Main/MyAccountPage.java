@@ -43,7 +43,7 @@ public class MyAccountPage extends BasePage {
 	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-	private By myAccountLink = By.xpath("//a[text()='My account']");
+	private By myAccountLink = By.xpath("//a[@class='upper-link last ms_desktop-only user-account']");
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
 	private By changePasswordLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[3]/a");
 	private By editEmailPreferenceLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/a");
@@ -67,7 +67,7 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//a[@title='Log out']");
+	private By logoutTopNav = By.xpath("//a[@class='utility-user-link-item']");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenFootwearCasualShoesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");
@@ -151,16 +151,6 @@ public class MyAccountPage extends BasePage {
 	public void myAccountClick() {
 		logger.info("Going to My Account page...");
 		WebDriverUtils.clickOnElementWithWait(driver, myAccountLink);
-	}
-
-	public void myAccountClickDE() {
-		logger.info("Going to My Account page...");
-		WebDriverUtils.clickOnElementWithWait(driver, myAccountLinkDE);
-	}
-
-	public void myAccountClickFR() {
-		logger.info("Going to My Account page...");
-		WebDriverUtils.clickOnElementWithWait(driver, myAccountLinkFR);
 	}
 
 	// Links with pages from My account core
@@ -446,7 +436,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public PersonalnformationPage returnPersonalInformationPageTopNavFR() {
-		WebDriverUtils.moveToElement(driver, myAccountLinkDE);
+		WebDriverUtils.moveToElement(driver, myAccountLinkFR);
 		WebDriverUtils.clickOnElementWithWait(driver, accountInfoTopNabLinkFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
@@ -591,5 +581,4 @@ public class MyAccountPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
-
 }

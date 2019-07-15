@@ -5,18 +5,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
+import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
-import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
-import com.gargoylesoftware.htmlunit.javascript.host.file.File;
-
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
@@ -50,13 +49,20 @@ public class CreateAccountUKTest extends BaseTest {
     
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+    public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
     
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
+    
+/*	@BeforeTest
+	public void setUp() {
+	    // ChromeDriverManager.chromedriver().setup();
+	     WebDriverManager.chromedriver().clearPreferences();
+	     WebDriverManager.chromedriver().setup();
+	}*/
 
 	@Test(priority = 0)
 	public void createAccountTest() {

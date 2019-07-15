@@ -52,7 +52,7 @@ public class MyAccountTopRightNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInformationPageTopNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNavDE();
 		logger.info("Finishing personal info Deutschland test...");
 	}
@@ -69,7 +69,7 @@ public class MyAccountTopRightNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageTopNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNavDE();
 		logger.info("Finishing orders Deutschland test...");
 	}
@@ -86,7 +86,7 @@ public class MyAccountTopRightNavigationDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnWishListPageTopNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnLogoutFromMyAccountPageTopNavDE();
 		logger.info("Finishing wish list Deutschland test...");
 	}

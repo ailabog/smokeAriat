@@ -53,7 +53,7 @@ public class MyAccountLeftNavigationATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEditProfilePageLeftNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing personal info Austria test...");
 	}
@@ -70,7 +70,7 @@ public class MyAccountLeftNavigationATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEmailPreferencePageLeftNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing email preferences Austria test...");
 	}
@@ -87,7 +87,7 @@ public class MyAccountLeftNavigationATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageLeftNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing addresses Austria test...");
 	}
@@ -104,9 +104,9 @@ public class MyAccountLeftNavigationATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageLeftNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnAddACreditCardMiddleNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info Austria test...");
 	}
@@ -123,7 +123,7 @@ public class MyAccountLeftNavigationATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageLeftNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing orders Austria test...");
 	}
@@ -140,7 +140,7 @@ public class MyAccountLeftNavigationATTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyWishListPageLeftNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing wish list Austria test...");
 	} 

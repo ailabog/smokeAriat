@@ -52,9 +52,9 @@ public class MyAccountMiddleNavigationCHTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInfoPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnPersonalInfoPageChangePassMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing personal info Cehia test...");
 	}
@@ -71,7 +71,7 @@ public class MyAccountMiddleNavigationCHTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEmailPreferencePageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing email preferences Cehia test...");
 	}
@@ -88,9 +88,9 @@ public class MyAccountMiddleNavigationCHTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnAddAddressesPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing addresses Cehia test...");
 	}
@@ -107,9 +107,9 @@ public class MyAccountMiddleNavigationCHTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.returnAddACreditCardMiddleNav();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info Cehia test...");
 	}
@@ -126,7 +126,7 @@ public class MyAccountMiddleNavigationCHTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageViewAllMiddleNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing orders Cehia test...");
 	}
@@ -143,7 +143,7 @@ public class MyAccountMiddleNavigationCHTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyWishListPageViewAllMiddleNavDE();
-		myAccountPage.myAccountClickDE();
+		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing wish list Cehia test...");
 	}
