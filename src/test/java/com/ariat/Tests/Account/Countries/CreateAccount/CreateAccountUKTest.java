@@ -49,7 +49,8 @@ public class CreateAccountUKTest extends BaseTest {
     
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 	
-    public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver";
+    public static final String RELATIV_PATH = "/usr/local/bin/chromedriver";
+    
 
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
     

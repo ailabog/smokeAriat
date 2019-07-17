@@ -49,7 +49,7 @@ public class CreateAccountUSTest extends BaseTest {
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
 
 	public static final String ERROR_MESSAGE = "Sorry this order number, email or postal code does not match our records. Check your records and try again.";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver";
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
