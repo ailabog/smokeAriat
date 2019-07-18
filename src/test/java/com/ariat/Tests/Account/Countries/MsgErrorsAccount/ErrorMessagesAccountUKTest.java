@@ -10,7 +10,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
-import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -31,7 +30,7 @@ public class ErrorMessagesAccountUKTest extends BaseTest {
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
-	private MyAccountPage myAccountPage;
+
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomNumber(7);
@@ -137,6 +136,5 @@ public class ErrorMessagesAccountUKTest extends BaseTest {
 		homePageUK.quit();
 		signInPage.quit();
 		createAccountPage.quit();
-		myAccountPage.quit();
 	}
 }
