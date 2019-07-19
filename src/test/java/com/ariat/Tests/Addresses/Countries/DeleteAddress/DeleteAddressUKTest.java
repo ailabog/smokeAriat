@@ -42,14 +42,13 @@ public class DeleteAddressUKTest extends BaseTest {
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
 	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
-	public static final String RELATIV_PATH = "/usr/local/bin/chromedriver";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+			
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
 	@Test(priority = 0)
 	public void deleteAddressUKTest() {
 		logger.info("Starting deleting address UK test");

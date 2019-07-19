@@ -63,9 +63,9 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 	private static final String MONTH = "January";
 	private static final String PAYPAL_URL="https://www.sandbox.paypal.com/checkoutnow?locale.x=en_GB&fundingSource=paypal&sessionID=c58a3e1a50_mtg6ntu6nty&buttonSessionID=04ed06f251_mtg6ntu6ntg&env=sandbox&fundingOffered=paypal&logLevel=warn&sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9hcGkvY2hlY2tvdXQuanMifQ%3D%3D&uid=91536abcc4&version=4&token=EC-7FC97998ME054642E&xcomponent=1";
 
-	public static final String RELATIV_PATH = "/usr/local/bin/chromedriver";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+			
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);

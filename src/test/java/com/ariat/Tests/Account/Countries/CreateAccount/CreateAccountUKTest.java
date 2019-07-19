@@ -49,20 +49,13 @@ public class CreateAccountUKTest extends BaseTest {
     
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 
-	public static final String RELATIV_PATH = "/workspace/smoke_job/usr/local/bin/chromedrive";
-   
-    
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+			
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", RELATIV_PATH);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-    
-/*	@BeforeTest
-	public void setUp() {
-	    // ChromeDriverManager.chromedriver().setup();
-	     WebDriverManager.chromedriver().clearPreferences();
-	     WebDriverManager.chromedriver().setup();
-	}*/
 
 	@Test(priority = 0)
 	public void createAccountTest() {
