@@ -164,7 +164,7 @@ public class ProductAddToWishListWomenCategoryFITest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
+		createAccountPage.quit();
 		myWishListPage.quit();
-	   createAccountPage.quit();
 	}
 }

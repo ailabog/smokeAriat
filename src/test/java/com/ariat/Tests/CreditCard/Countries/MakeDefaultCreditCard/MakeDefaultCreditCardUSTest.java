@@ -38,9 +38,9 @@ public class MakeDefaultCreditCardUSTest extends BaseTest {
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 
-	public static final String RELATIV_PATH = "/usr/local/bin/chromedriver";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+			
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
