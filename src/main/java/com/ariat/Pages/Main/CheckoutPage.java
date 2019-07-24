@@ -31,8 +31,9 @@ public class CheckoutPage extends BasePage {
 	private By applyPromoCode = By
 			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
 	private By payPalCheckoutBtn = By.xpath("//div[@id='paypal-animation-container']//div[@data-funding-source='paypal']");
-	private By checkoutCheckoutBtn = By.xpath("//a[contains(@href, '/checkout')]");
-
+	private By checkoutCheckoutBtn1 = By.xpath("//a[contains(@href, '/checkout')]");
+	private By checkoutCheckoutBtn = By.xpath("//a[text()='Checkout']");
+	
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
 	private By returnPolicyBtn = By.xpath("//a[text()='Return Policies']");
 	private By continueShoppingCheckoutBtn = By.xpath("//a[text()='Continue Shopping']");
@@ -116,9 +117,9 @@ public class CheckoutPage extends BasePage {
 	}
 
 	public CheckoutProcessPage returnCheckoutProcessPage() {
-		WebDriverUtils.scroll500Down(driver, checkoutCheckoutBtn);
-		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.scroll500Down(driver, checkoutCheckoutBtn1);
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn1);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(shippingAddressText));
 		return new CheckoutProcessPage(driver);
 	}

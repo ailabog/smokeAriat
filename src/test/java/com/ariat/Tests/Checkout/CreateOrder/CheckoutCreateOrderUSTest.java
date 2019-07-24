@@ -88,9 +88,6 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		checkoutProcessPage.selectState();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail("aila.bogasieru@yahoo.com");
-		checkoutProcessPage.enterConfirmEmail("aila.bogasieru@yahoo.com");
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
 		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
@@ -128,9 +125,6 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		checkoutProcessPage.selectState();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail("aila.bogasieru@yahoo.com");
-		checkoutProcessPage.enterConfirmEmail("aila.bogasieru@yahoo.com");
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
 		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
@@ -156,8 +150,6 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
-		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.continueCheckout1();
 		checkoutProcessPage.enterCardName(CARD_NAME);
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());

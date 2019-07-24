@@ -84,22 +84,17 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		// checkoutPage.checkProductImage();
-		// checkoutPage.enterPromoCode("CSA25HNJ-X3DE684");
-		// checkoutPage.clickApply();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
 		checkoutProcessPage.enterAddress(ADDRESS);
 		checkoutProcessPage.enterAddress1(ADDRESS1);
+		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
-		checkoutProcessPage.enterConfirmEmail("aila.bogasieru@gmail.com");
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout();
+		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
 		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
@@ -114,7 +109,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged test.");
 	}
 
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
 		logger.info(
 				"Starting checkout -> create new order without being logged using paypal as payment method test...");
@@ -167,7 +162,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		// checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}
+	}*/
 
 	@AfterTest
 	public void tearDown() {

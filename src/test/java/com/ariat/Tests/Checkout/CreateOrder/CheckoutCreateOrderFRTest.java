@@ -99,9 +99,6 @@ public class CheckoutCreateOrderFRTest extends BaseTest {
 		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
-		checkoutProcessPage.enterConfirmEmail("aila.bogasieru@gmail.com");
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
 		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
@@ -159,8 +156,6 @@ public class CheckoutCreateOrderFRTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
-		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.continueCheckout1();
 		checkoutProcessPage.enterCardName(CARD_NAME);
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());

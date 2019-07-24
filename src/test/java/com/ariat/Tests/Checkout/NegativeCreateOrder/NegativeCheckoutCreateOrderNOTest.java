@@ -101,8 +101,7 @@ public class NegativeCheckoutCreateOrderNOTest extends BaseTest {
 		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.enterConfirmEmail(EMAIL);
-		checkoutProcessPage.continueCheckout();
+
 		logger.info("Finishing checkout -> create negative order invalid shipping address.");
 	}
 
@@ -129,9 +128,6 @@ public class NegativeCheckoutCreateOrderNOTest extends BaseTest {
 		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterMobile(MOBILE1);
 		checkoutProcessPage.enterEmail(EMAILEXISTENT);
-		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
 		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());

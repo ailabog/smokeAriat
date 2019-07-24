@@ -103,8 +103,7 @@ public class MyBagPage extends BasePage {
 	
 	public CheckoutPage returnCheckoutPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
-		//WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-		//		ExpectedConditions.invisibilityOfElementLocated(myBagCheckoutText));
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		return new CheckoutPage(driver);
 	}
 	
