@@ -72,9 +72,8 @@ public class CheckoutProcessPage extends BasePage {
 	private By loginPayPal=By.id("btnLogin");
 	private By continueBtnPayPal=By.xpath("//button[text()='Continue']");
 	private By confirmPayPal=By.id("confirmButtonTop");
-	private By nextPaymentButton = By.xpath("//span[text()='Next: Payment']");
-	
-	private By nameText =  By.xpath("//label[@for='name']//div[@class='el-form-item__content']//div[@class='checkout_input el-input']");
+	private By nextPaymentButton = By.xpath("//button[@class='el-button checkout__button el-button--primary']//span[text()='Next: Payment']");
+	private By nameText =  By.xpath("//div[@class='el-input__inner']");
 	
 
 	protected CheckoutProcessPage(WebDriver driver) {
@@ -84,12 +83,14 @@ public class CheckoutProcessPage extends BasePage {
 	public void clickEditBag() {
 		logger.info("Editing bag..");
 		WebDriverUtils.clickOnElementWithWait(driver, editBagLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	
 	public void clickCheckoutBtn() {
 		WebDriverUtils.scrollLittDown(driver, checkoutBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void enterEmailPayPal(String emailValue) {
@@ -100,34 +101,42 @@ public class CheckoutProcessPage extends BasePage {
 	public void enterPasswordPayPal(String passwordValue) {
 		logger.info("Entering password..");
 		WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	
 	public void clickLoginPayPal() {
 		logger.info("Loging into PayPal Account..");
 		WebDriverUtils.clickOnElementWithWait(driver, loginPayPal);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void clickContinuePayPal() {
 		logger.info("Continue into PayPal Account..");
 		WebDriverUtils.clickOnElementWithWait(driver, continueBtnPayPal);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void clickConfirmPayPal() {
 		logger.info("Confirm paypal payment into PayPal Account..");
 		WebDriverUtils.clickOnElementWithWait(driver, confirmPayPal);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void selectCountry() {
 		logger.info("Selecting country..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, selectOption);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void selectState() {
 		logger.info("Selecting state..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, selectState);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterFName(String nameValue) {
@@ -245,7 +254,7 @@ public class CheckoutProcessPage extends BasePage {
 	
 	public void enterCardNameNotlogged(String cardNameValue) {
 		logger.info("Entering card name..");
-		WebDriverUtils.scroll150(driver, nameText);
+		WebDriverUtils.scroll350Down(driver, nameText);
 		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -337,7 +346,7 @@ public class CheckoutProcessPage extends BasePage {
 	
 	public void clickNextPayment() {
 		logger.info("Going to the payment section..");
-		WebDriverUtils.scroll300(driver, nextPaymentButton);
+		WebDriverUtils.scroll500Down(driver, nextPaymentButton);
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaymentButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}

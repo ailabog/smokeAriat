@@ -18,7 +18,6 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenAccessoriesGlovesPage extends BasePage {
 
 	private By proGripGloveProduct = By.xpath("//img[contains(@title, 'Insulated Pro Grip')]");
-	//private By proGripGloveProduct = By.xpath("//img[@alt='Insulated Pro Grip']");
 	private By proGripText = By.xpath("//*contains[text()='Pro Grip']");
 
 	public WomenAccessoriesGlovesPage(WebDriver driver) {
