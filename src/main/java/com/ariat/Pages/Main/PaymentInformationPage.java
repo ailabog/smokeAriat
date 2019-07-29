@@ -25,7 +25,7 @@ public class PaymentInformationPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(PaymentInformationPage.class);
 
 
-	private By addACreditCardButton = By.xpath("//a[title='Add a credit card']");
+	private By addACreditCardButton = By.xpath("//a[@title='Add a credit card']");
 	private By addACreditCardButtonFR = By.xpath("//a[text()='Ajouter une carte de paiement']");
 	private By addACreditCardButtonDE = By.xpath("//a[text()='Eine Kreditkarte hinzufügen']");
 	private By addACreditCardText = By.xpath("//*[contains(text(), 'Add a credit card')]");
@@ -53,7 +53,7 @@ public class PaymentInformationPage extends BasePage {
 	public AddACreditCardPage returnAddACreditCardPage() {
 		WebDriverUtils.scroll300(driver, addACreditCardButton);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
@@ -61,7 +61,7 @@ public class PaymentInformationPage extends BasePage {
 	public AddACreditCardPage returnAddACreditCardPageFR() {
 		WebDriverUtils.scroll300(driver, addACreditCardButtonFR);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}
@@ -69,7 +69,7 @@ public class PaymentInformationPage extends BasePage {
 	public AddACreditCardPage returnAddACreditCardPageDE() {
 		WebDriverUtils.scroll300(driver, addACreditCardButtonDE);
 		WebDriverUtils.clickOnElementWithWait(driver, addACreditCardButtonDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addACreditCardText));
 		return new AddACreditCardPage(driver);
 	}

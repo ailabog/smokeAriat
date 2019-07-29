@@ -42,13 +42,14 @@ public class WebDriverUtils {
 	public final static long WAIT_2000_SECONDS = 2000;
 	public final static long WAIT_4000_SECONDS = 4000;
 	public final static long WAIT_6000_SECONDS = 6000;
+	public final static long WAIT_1_MINUTE = 60000;
 
 	public static void enterTextBox(WebDriver driver, By locator, String text) throws TimeoutException {
 		String s = "";
 		if (!s.equals(text)) {
 			logger.debug("Writing \" {}\" to element): {}", text, locator);
 		}
-		waitUntil(driver, WAIT_10_SECONDS, ExpectedConditions.elementToBeClickable(locator));
+		waitUntil(driver, WAIT_60_SECONDS, ExpectedConditions.elementToBeClickable(locator));
 		WebElement element = findElement(driver, locator);
 		element.clear();
 		element.sendKeys(text);
@@ -59,7 +60,7 @@ public class WebDriverUtils {
 		if (!s.equals(option)) {
 			logger.debug("Writing \" {}\" to element): {}", option, locator);
 		}
-		waitUntil(driver, WAIT_10_SECONDS, ExpectedConditions.elementToBeClickable(locator));
+		waitUntil(driver, WAIT_60_SECONDS, ExpectedConditions.elementToBeClickable(locator));
 		selectVisibleText(driver, locator, option);
 	}
 
@@ -100,7 +101,7 @@ public class WebDriverUtils {
 	}
 
 	public static void clickOnElementWithWait(WebDriver driver, By locator) throws TimeoutException {
-		waitUntil(driver, WAIT_10_SECONDS, ExpectedConditions.elementToBeClickable(locator));
+		waitUntil(driver, WAIT_60_SECONDS, ExpectedConditions.elementToBeClickable(locator));
 		clickOnElement(driver, locator);
 	}
 

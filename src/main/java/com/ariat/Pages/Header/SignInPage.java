@@ -146,6 +146,7 @@ public class SignInPage extends BasePage {
 	public void checkStatusClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkStatusButton);
 		logger.info("Checking the order status");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		}
 
 	public void assertErrorMessage(String messageExpectedLabel) {
@@ -178,7 +179,7 @@ public class SignInPage extends BasePage {
 	public CreateAccountPage returnCreateAccountPage() {
 		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));
 		return new CreateAccountPage(driver);
 	}

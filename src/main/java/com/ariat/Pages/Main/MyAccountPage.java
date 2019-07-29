@@ -118,17 +118,17 @@ public class MyAccountPage extends BasePage {
 		switch (language) {
 		case "English":
 			WebDriverUtils.clickOnElementWithWait(driver, logoutTopNav);
-
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			break;
 
 		case "Deutsch":
 			WebDriverUtils.clickOnElementWithWait(driver, logoutTopNavDE);
-
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);     
 			break;
 
 		case "Francais":
 			WebDriverUtils.clickOnElementWithWait(driver, logouttopNavFR);
-
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			break;
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
@@ -146,12 +146,14 @@ public class MyAccountPage extends BasePage {
 	public void logout() {
 		logger.info("Logging out from the application:");
 		WebDriverUtils.clickOnElementWithWait(driver, logout);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		
 	}
 
 	public void myAccountClick() {
 		logger.info("Going to My Account page...");
 		WebDriverUtils.clickOnElementWithWait(driver, myAccountLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	// Links with pages from My account core
@@ -172,7 +174,7 @@ public class MyAccountPage extends BasePage {
 
 	public EmailPreferencePage returnEmailPreferencePageMiddleNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, editEmailPreferenceLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myEmailPrefText));
 		return new EmailPreferencePage(driver);
 	}
@@ -208,7 +210,7 @@ public class MyAccountPage extends BasePage {
 	public AddACreditCardPage returnAddACreditCardMiddleNav() {
 		WebDriverUtils.scroll300(driver, addCardLink);
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
 		return new AddACreditCardPage(driver);
 	}
@@ -271,7 +273,7 @@ public class MyAccountPage extends BasePage {
 
 	public OrderDetailsPage returnOrderDetailsPagesMiddleNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, orderDetailsLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}

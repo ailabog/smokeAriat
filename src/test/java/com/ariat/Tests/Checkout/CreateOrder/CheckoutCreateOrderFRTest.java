@@ -96,7 +96,7 @@ public class CheckoutCreateOrderFRTest extends BaseTest {
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectCountry();
+		checkoutProcessPage.selectCountryFR();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);

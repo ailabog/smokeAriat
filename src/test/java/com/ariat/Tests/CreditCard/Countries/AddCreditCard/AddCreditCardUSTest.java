@@ -72,7 +72,7 @@ public class AddCreditCardUSTest extends BaseTest{
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
 		//addACreditCardPage.selectTypeCardUS(typeCard.VISA.getName());
 		addACreditCardPage.enterCardNoUS(typeCard.VISA.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
+		//addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
@@ -114,9 +114,9 @@ public class AddCreditCardUSTest extends BaseTest{
 		homePageUS.quit();
 		homePageUK.quit();
 		signInPage.quit();
-		addACreditCardPage.quit();
-		paymentInfoPage.quit();
 		myAccountPage.quit();
+		paymentInfoPage.quit();
+		addACreditCardPage.quit();
 		logoutPage.quit();
 	}
 }

@@ -107,7 +107,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}
+	} 
 
 	/*@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
@@ -131,7 +131,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.clickContinuePayPal();
 		checkoutProcessPage.clickConfirmPayPal();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
-	}
+	} 
 
    @Test(priority = 2)
 	public void checkoutCreateNewOrderBeingLogged() {
@@ -151,9 +151,7 @@ public class CheckoutCreateOrderUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterConfirmEmail(EMAILEXISTENT);
-		checkoutProcessPage.continueCheckout();
-		checkoutProcessPage.continueCheckout1();
+		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.enterCardName(CARD_NAME);
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();

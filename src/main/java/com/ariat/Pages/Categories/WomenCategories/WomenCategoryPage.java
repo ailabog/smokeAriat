@@ -58,7 +58,7 @@ public class WomenCategoryPage extends BasePage {
     private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[3]/ul/li[3]/a");
 	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
 	private By prevPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[7]/a");
-	private By heritageProductLink = By.xpath("//img[@title='Heritage II Ellipse Tall Riding Boot']");
+	private By heritageProductLink = By.xpath("//img[contains(@title, 'Heritage II Ellipse Tall Riding Boot']");
 	private By heritaheProductText = By.xpath("//*contains[text(),'Heritage II Ellipse Tall Riding Boot']");
 	private By recommendedLink = By.linkText("Recommended");
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");

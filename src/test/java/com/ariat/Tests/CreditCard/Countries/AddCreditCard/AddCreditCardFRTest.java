@@ -109,8 +109,8 @@ public class AddCreditCardFRTest extends BaseTest{
 		homePageUK.quit();
 		homePageFR.quit();
 		signInPage.quit();
-		addACreditCardPage.quit();
-		paymentInfoPage.quit();
 		myAccountPage.quit();
+		paymentInfoPage.quit();
+		addACreditCardPage.quit();
 	}
 }

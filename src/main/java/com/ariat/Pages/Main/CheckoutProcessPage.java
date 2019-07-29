@@ -21,6 +21,8 @@ public class CheckoutProcessPage extends BasePage {
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
     private By selectOption = By.xpath("//span[text()='Austria']");
+    private By selectOptionDE = By.xpath("//span[text()='Deutschland']");
+    private By selectOptionFR = By.xpath("//span[text()='Belgique']");
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");
@@ -72,8 +74,12 @@ public class CheckoutProcessPage extends BasePage {
 	private By loginPayPal=By.id("btnLogin");
 	private By continueBtnPayPal=By.xpath("//button[text()='Continue']");
 	private By confirmPayPal=By.id("confirmButtonTop");
-	private By nextPaymentButton = By.xpath("//button[@class='el-button checkout__button el-button--primary']//span[text()='Next: Payment']");
-	private By nameText =  By.xpath("//div[@class='el-input__inner']");
+	//private By nextPaymentButton = By.xpath("//button[@class='el-button checkout__button el-button--primary']//span[text()='Next: Payment']");
+	private By nextPaymentButton = By.xpath("//span[text()='Next: Payment']");
+	//private By nameText =  By.xpath("//input[@class='el-input__inner']");
+	
+	private By nameText =  By.xpath("//div[@class='el-form-item credit-card_wrapper ms-full-width is-error is-required']//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
+	
 	
 
 	protected CheckoutProcessPage(WebDriver driver) {
@@ -128,6 +134,22 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, selectOption);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectCountryDE() {
+		logger.info("Selecting country..");
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, selectOptionDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectCountryFR() {
+		logger.info("Selecting country..");
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, selectOptionFR);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	

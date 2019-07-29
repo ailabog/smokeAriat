@@ -7,7 +7,6 @@ import java.util.ListIterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -413,10 +412,10 @@ public class HomePage extends BasePage implements List<HomePage> {
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_1_MINUTE);
 				WebDriverUtils.scrollLittDown(driver, euCountry.USA.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.USA.getLocator());
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_1_MINUTE);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -429,10 +428,10 @@ public class HomePage extends BasePage implements List<HomePage> {
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_1_MINUTE);
 				WebDriverUtils.scrollDown(driver, euCountry.UK.getLocator());
 				WebDriverUtils.scrolltoElement(driver, euCountry.UK.getLocator());
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_1_MINUTE);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -453,8 +452,8 @@ public class HomePage extends BasePage implements List<HomePage> {
 			}
 			return new HomePageBE(driver);
 
-		case "(Österreich)":
-			logger.info("I choose Deutsch Österreich as location");
+		case "(Osterreich)":
+			logger.info("I choose Deutsch Osterreich as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
