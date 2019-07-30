@@ -410,6 +410,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 		case "(United States)":
 			logger.info("I choose United States as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_1_MINUTE);
@@ -426,6 +427,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			logger.info("I choose English United Kingdom as location");
 			logger.info("I choose United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_1_MINUTE);

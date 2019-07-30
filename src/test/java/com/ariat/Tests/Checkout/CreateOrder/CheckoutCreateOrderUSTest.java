@@ -67,7 +67,7 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderNotBeingLogged() {
+	public void checkoutCreateNewOrderNotBeingLoggedMasterCard() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -76,9 +76,6 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		// checkoutPage.checkProductImage();
-		// checkoutPage.enterPromoCode("CSA25HNJ-X3DE684");
-		// checkoutPage.clickApply();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
@@ -87,22 +84,60 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.selectState();
 		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail("aila.bogasieru@yahoo.com");
+		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
+		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		checkoutProcessPage.selectExpirationMonth(MONTH);
-		checkoutProcessPage.selectExpirationYear(YEAR);
+		checkoutProcessPage.selectTypeCardMasterCard();
+		checkoutProcessPage.selectExpirationMonth();
+		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.checkItem();
+		checkoutProcessCompletePage.placeOrder();
+		//checkoutProcessCompletePage.checkItem();
 		checkoutProcessCompletePage.enterPassword(PASSWORD);
 		checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}
-
+	} 
+	
+	
 	@Test(priority = 1)
+	public void checkoutCreateNewOrderNotBeingLoggedVisa() {
+		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		bagsProductPage = homePageUS.returnBagsProductPage();
+		myBagPage = bagsProductPage.returnMyBagPage();
+		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.enterFName(FIRST_NAME);
+		checkoutProcessPage.enterLName(LAST_NAME);
+		checkoutProcessPage.enterAddress(ADDRESS);
+		checkoutProcessPage.enterCity(CITY);
+		checkoutProcessPage.enterZipCode(ZIP_CODE);
+		checkoutProcessPage.selectState();
+		checkoutProcessPage.enterMobile(MOBILE);
+		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
+		checkoutProcessPage.clickNextPayment();
+		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
+		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
+		checkoutProcessPage.selectTypeCardVisa();
+		checkoutProcessPage.selectExpirationMonth();
+		checkoutProcessPage.selectExpirationYear();
+		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessCompletePage.placeOrder();
+		//checkoutProcessCompletePage.checkItem();
+		checkoutProcessCompletePage.enterPassword(PASSWORD);
+		checkoutProcessCompletePage.confirmPassword(PASSWORD);
+		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
+		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
+	} 
+
+	@Test(priority = 2)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
 		logger.info(
 				"Starting checkout -> create new order without being logged using paypal as payment method test...");
@@ -135,7 +170,7 @@ public class CheckoutCreateOrderUSTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	}
 
-    @Test(priority = 2)
+    @Test(priority = 3)
 	public void checkoutCreateNewOrderBeingLogged() {
 		logger.info("Starting checkout -> create new order without being logged test...");
 		homePage = new HomePage(new ChromeDriver());

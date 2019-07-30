@@ -48,13 +48,15 @@ public class CheckoutProcessPage extends BasePage {
 	private By cardName = By.xpath(
 			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[4]/div/div/div/div[1]/input");
 	
-	private By selectTypeCard = By.xpath("//div[@class='el-select checkout_input']");
-	
+	private By selectTypeCard = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[6]/div/div/div/div[1]/div/span/span/i");
+	private By optionCardMasterCard = By.xpath("//span[text()='MasterCard']");
 	private By expirationDateMonth = By.xpath(
-			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[7]/div[1]/div/div/div[1]/div/input");
+			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[1]/div/div/div[1]/div[1]/span/span/i");
+	private By monthExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='February']");
 	private By expirationDateYear = By.xpath(
-			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[7]/div[2]/div/div/div[1]/div/input");
-	private By securityCode = By.xpath("//label[@for='cvn']//div[@class='el-form-item__content']//div[@class='checkout_input ms-padding-right-10 el-input']");
+			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[2]/div/div/div[1]/div[1]/span/span/i");
+	private By yearExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='2025']");
+	private By securityCode = By.xpath("//div[@class='checkout_input ms-padding-right-10 el-input']//input[@class='el-input__inner']");
 	private By buyNowBtn = By.id("paymentbtncs");
 	
 	private By checkoutCompleteText = By.xpath("//h1[text()='Checkout Complete']");
@@ -66,7 +68,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By promoCodeTxtBox = By.xpath("//input[@placeholder='Promo code']");
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
-	private By cardNo = By.xpath("//label[@for='number']");
+
     private By selectState = By.xpath("//input[@placeholder='Alabama']");
 	private By checkoutBtn=By.xpath("//div[@data-funding-source='paypal']");
 	private By emailTxtBoxPayPal=By.id("email");
@@ -76,11 +78,12 @@ public class CheckoutProcessPage extends BasePage {
 	private By confirmPayPal=By.id("confirmButtonTop");
 	//private By nextPaymentButton = By.xpath("//button[@class='el-button checkout__button el-button--primary']//span[text()='Next: Payment']");
 	private By nextPaymentButton = By.xpath("//span[text()='Next: Payment']");
-	//private By nameText =  By.xpath("//input[@class='el-input__inner']");
-	
-	private By nameText =  By.xpath("//div[@class='el-form-item credit-card_wrapper ms-full-width is-error is-required']//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
-	
-	
+	private By nextPaymentButtonDE = By.xpath("//span[text()='Weiter: Zahlung']");
+	private By nextPaymentButtonFR = By.xpath("//span[text()='Suivant: Paiement']");
+	private By nameText =  By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[4]/div/div/div/div[1]/input");
+	//private By nameText = By.xpath("//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
+	//private By cardNo = By.xpath("//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
+	private By cardNo = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[5]/div/div/div/div[1]/input");
 
 	protected CheckoutProcessPage(WebDriver driver) {
 		super(driver);
@@ -91,7 +94,6 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, editBagLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-
 	
 	public void clickCheckoutBtn() {
 		WebDriverUtils.scrollLittDown(driver, checkoutBtn);
@@ -109,8 +111,7 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
-	
+
 	public void clickLoginPayPal() {
 		logger.info("Loging into PayPal Account..");
 		WebDriverUtils.clickOnElementWithWait(driver, loginPayPal);
@@ -250,7 +251,6 @@ public class CheckoutProcessPage extends BasePage {
 		logger.info("Checking express delivery..");
 		WebDriverUtils.clickOnElementWithWait(driver, expressCheck);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-
 	}
 
 	public void checkPayPal() {
@@ -287,21 +287,28 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void selectTypeCard(String option) {
+	public void selectTypeCardMasterCard() {
 		logger.info("Selecting type of credit card..");
-		WebDriverUtils.selectVisibleText(driver, selectTypeCard, option);
+		WebDriverUtils.clickOnElementWithWait(driver, selectTypeCard);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCardMasterCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void selectExpirationMonth(String option) {
+	public void selectExpirationMonth() {
 		logger.info("Selecting expiration month credit card..");
-		WebDriverUtils.selectVisibleText(driver, expirationDateMonth, option);
+		WebDriverUtils.scroll350Down(driver, expirationDateMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, monthExpiration);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void selectExpirationYear(String option) {
+	public void selectExpirationYear() {
 		logger.info("Selecting expiration year credit card..");
-		WebDriverUtils.selectVisibleText(driver, expirationDateYear, option);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateYear);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, yearExpiration);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -372,6 +379,20 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaymentButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void clickNextPaymentDE() {
+		logger.info("Going to the payment section..");
+		WebDriverUtils.scroll500Down(driver, nextPaymentButtonDE);
+		WebDriverUtils.clickOnElementWithWait(driver, nextPaymentButtonDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void clickNextPaymentFR() {
+		logger.info("Going to the payment section..");
+		WebDriverUtils.scroll500Down(driver, nextPaymentButtonFR);
+		WebDriverUtils.clickOnElementWithWait(driver, nextPaymentButtonFR);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
 
 	public CheckoutProcessCompletePage returnCheckoutProcessCompletePage() {
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
@@ -379,5 +400,4 @@ public class CheckoutProcessPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));
 		return new CheckoutProcessCompletePage(driver);
 	}
-
 }

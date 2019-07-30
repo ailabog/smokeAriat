@@ -29,6 +29,7 @@ public class CheckoutProcessCompletePage extends BasePage{
 	private By itemText = By.xpath("//a[@title='FEI WC Bodymap Softshell Jkt']");
 	private By myAccountText = By.xpath("//h1[text()='My account']");
 	private By errorMsgPlaceOrder = By.xpath("//div[@class='opc-error-msg el-col el-col-12']");
+	private By buyNowBtn = By.xpath("//*[@id=\"paymentbtncs\"]");
 
 	protected CheckoutProcessCompletePage(WebDriver driver) {
 		super(driver);
@@ -37,6 +38,12 @@ public class CheckoutProcessCompletePage extends BasePage{
 	public void subscribeNewsletter() {
 		logger.info("Subscribing to newsletter..");
 		WebDriverUtils.clickOnElementWithWait(driver, subscribeToNewsletterCheck);
+	}
+	
+	public void placeOrder() {
+		WebDriverUtils.scroll350Down(driver, buyNowBtn);
+		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void submitingSubscription() {
@@ -81,6 +88,4 @@ public class CheckoutProcessCompletePage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
 		return new MyAccountPage(driver);
 	}
-	
-	
 }

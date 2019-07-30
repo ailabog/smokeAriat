@@ -133,9 +133,9 @@ public class NegativeCheckoutCreateOrderDETest extends BaseTest {
 
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
-		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		checkoutProcessPage.selectExpirationMonth(MONTH);
-		checkoutProcessPage.selectExpirationYear(YEAR);
+		checkoutProcessPage.selectTypeCardMasterCard();
+		checkoutProcessPage.selectExpirationMonth();
+		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.assertErrMsgOrderNotPlaced(ERROR_ORDER_NOT_PLACED);

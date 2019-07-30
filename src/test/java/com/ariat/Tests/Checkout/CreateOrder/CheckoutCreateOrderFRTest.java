@@ -86,32 +86,32 @@ public class CheckoutCreateOrderFRTest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		// checkoutPage.checkProductImage();
-		// checkoutPage.enterPromoCode("CSA25HNJ-X3DE684");
-		// checkoutPage.clickApply();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
 		checkoutProcessPage.enterAddress(ADDRESS);
 		checkoutProcessPage.enterAddress1(ADDRESS1);
+		checkoutProcessPage.selectCountry();
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectCountryFR();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail("aila.bogasieru@gmail.com");
+		checkoutProcessPage.clickNextPaymentFR();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		checkoutProcessPage.selectExpirationMonth(MONTH);
-		checkoutProcessPage.selectExpirationYear(YEAR);
+		checkoutProcessPage.selectTypeCardMasterCard();
+		checkoutProcessPage.selectExpirationMonth();
+		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.checkItem();
+		checkoutProcessCompletePage.placeOrder();
+		//checkoutProcessCompletePage.checkItem();
 		checkoutProcessCompletePage.enterPassword(PASSWORD);
 		checkoutProcessCompletePage.confirmPassword(PASSWORD);
 		myAccountPage = checkoutProcessCompletePage.returnMyAccountPage();
 		logger.info("Finishing checkout -> create new order without being logged test.");
-	}
+	} 
+
 
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedPayPal() {
