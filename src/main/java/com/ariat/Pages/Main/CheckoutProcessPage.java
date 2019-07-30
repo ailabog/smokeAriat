@@ -50,6 +50,7 @@ public class CheckoutProcessPage extends BasePage {
 	
 	private By selectTypeCard = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[6]/div/div/div/div[1]/div/span/span/i");
 	private By optionCardMasterCard = By.xpath("//span[text()='MasterCard']");
+	private By optionCardVisa = By.xpath("//span[text()='Visa']");
 	private By expirationDateMonth = By.xpath(
 			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[1]/div/div/div[1]/div[1]/span/span/i");
 	private By monthExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='February']");
@@ -292,6 +293,14 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, selectTypeCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, optionCardMasterCard);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectTypeCardVisa() {
+		logger.info("Selecting type of credit card..");
+		WebDriverUtils.clickOnElementWithWait(driver, selectTypeCard);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCardVisa);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
