@@ -21,6 +21,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
     private By selectOption = By.xpath("//span[text()='Austria']");
+    private By selectOptionBE = By.xpath("//span[text()='Belgium']");
     private By selectOptionDE = By.xpath("//span[text()='Deutschland']");
     private By selectOptionFR = By.xpath("//span[text()='Belgique']");
 	private By firstName = By.name("firstName");
@@ -51,14 +52,28 @@ public class CheckoutProcessPage extends BasePage {
 	private By selectTypeCard = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[6]/div/div/div/div[1]/div/span/span/i");
 	private By optionCardMasterCard = By.xpath("//span[text()='MasterCard']");
 	private By optionCardVisa = By.xpath("//span[text()='Visa']");
+	private By optionCardAmericanExpress = By.xpath("//span[text()='American Express']");
 	private By expirationDateMonth = By.xpath(
 			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[1]/div/div/div[1]/div[1]/span/span/i");
+
+	private By expirationDateMonthUS = By.xpath(
+			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[4]/div/div/div[1]/span/span/i");
+	
+	private By monthExpirationUS = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[4]/div/div/div/input");
+	
 	private By monthExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='February']");
+	private By monthExpirationDE = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='Februar']");
+	
+	
 	private By expirationDateYear = By.xpath(
 			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[2]/div/div/div[1]/div[1]/span/span/i");
+	private By expirationDateYearUS = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[5]/div/div/div[1]/span/span/i");
 	private By yearExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='2025']");
-	private By securityCode = By.xpath("//div[@class='checkout_input ms-padding-right-10 el-input']//input[@class='el-input__inner']");
-	private By buyNowBtn = By.id("paymentbtncs");
+	private By yearExpirationUS = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[5]/div/div/div/input");
+	//private By securityCode = By.xpath("//div[@class='checkout_input ms-padding-right-10 el-input']//input[@class='el-input__inner']");
+	private By securityCode = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[8]/div/div/div/div[1]");
+
+	private By buyNowBtn = By.id("confirmpayment");
 	
 	private By checkoutCompleteText = By.xpath("//h1[text()='Checkout Complete']");
 	private By paypalBtn = By.id("paypal-animation-content");
@@ -70,23 +85,51 @@ public class CheckoutProcessPage extends BasePage {
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
 
-    private By selectState = By.xpath("//input[@placeholder='Alabama']");
+    private By selectState = By.xpath("//span[text()='Arizona']");
 	private By checkoutBtn=By.xpath("//div[@data-funding-source='paypal']");
 	private By emailTxtBoxPayPal=By.id("email");
-	private By passwordTxtBoxPaypal=By.id("password");
-	private By loginPayPal=By.id("btnLogin");
+	private By passwordTxtBoxPaypal=By.xpath("//div[@id='main']//input[@id='password']");
+	private By loginPayPal=By.id("//div[@id='main']//button[@id='btnLogin']");
 	private By continueBtnPayPal=By.xpath("//button[text()='Continue']");
 	private By confirmPayPal=By.id("confirmButtonTop");
 	//private By nextPaymentButton = By.xpath("//button[@class='el-button checkout__button el-button--primary']//span[text()='Next: Payment']");
 	private By nextPaymentButton = By.xpath("//span[text()='Next: Payment']");
 	private By nextPaymentButtonDE = By.xpath("//span[text()='Weiter: Zahlung']");
 	private By nextPaymentButtonFR = By.xpath("//span[text()='Suivant: Paiement']");
-	private By nameText =  By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[4]/div/div/div/div[1]/input");
+//private By nameText =  By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[4]/div/div/div/div[1]/input");
+    private By nameText = By.xpath("//iframe[@id='DW-SFToolkit']//div[@class='checkout_input el-input']//div[@class='el-input__inner']");
+
+   private By nameTextUS =  By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[2]/div/div[1]/input");
 	//private By nameText = By.xpath("//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
 	//private By cardNo = By.xpath("//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
 	private By cardNo = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[5]/div/div/div/div[1]/input");
+  //  private By useAddressAsItIsBtn = By.xpath("//button[@class='el-button checkout_button address-dialog_use-address-btn el-button--primary']//span[contains(text(), 'Use address as is*')]");
+    private By useAddressAsItIsBtn = By.xpath("//span[contains(text(), 'Use address as is*')]");
+  //*[@id="app"]/main/div/form/div[13]/div/div[2]/div[1]/div[2]/div/div[3]/button
+    private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
+    private By nextBtnPayPal = By.id("btnNext");
+    private By klarnaBtn = By.xpath("//span[text()='Klarna']");
+   // private By sofortBtn = By.xpath("//label[@class='el-radio is-checked payment-method-radio payment-method__SOFORT']");
+    private By sofortBtn = By.xpath("//span[text()='Sofort']");
+    private By giropayBtn = By.xpath("//span[text()='Giropay']");
+     private By payPalBtn = By.xpath("//span[text()='Paypal']");
+    private By creditCardBtn = By.xpath("//label[@class='el-radio is-checked payment-method-radio payment-method__SA_SILENTPOST']");
+    private By reviewOrderBtn = By.id("paymentbtncs");
+    private By BICFieldGiropay = By.xpath("//div[@class='el-col el-col-6']//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
 
-	protected CheckoutProcessPage(WebDriver driver) {
+    private By dateOfBirthFieldKlarna = By.xpath("//div[@id='purchase-approval__container']//input[@id='purchase-approval-date-of-birth__root']");
+	private By continueKlarnaBtn = By.xpath("//div[@id='purchase-approval__container']//span[@id='purchase-approval-continue__text']");
+    //span[text()='Credit Card']
+    
+    private By signInLink = By.xpath("//a[text()='Sign In']");
+    
+  //  private By typeCardLocator = By.id("c-ct");
+    private By typeCardLocator = By.xpath("//*[@id=\"c-ct\"]");
+    private By idealBtn = By.xpath("//span[text()='iDeal']");
+    //labe[@class='el-radio payment-method-radio payment-method__IDEAL']
+
+    
+	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -96,7 +139,11 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
-	public void clickCheckoutBtn() {
+	public void reviewOrder() {
+		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+		public void clickCheckoutBtn() {
 		WebDriverUtils.scrollLittDown(driver, checkoutBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -104,7 +151,11 @@ public class CheckoutProcessPage extends BasePage {
 	
 	public void enterEmailPayPal(String emailValue) {
 		logger.info("Entering email..");
+	    driver.switchTo().frame(driver.findElement(By.id("main")));
 		WebDriverUtils.enterTextBox(driver, emailTxtBoxPayPal, emailValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		driver.switchTo().defaultContent();
+		
 	}
 	
 	public void enterPasswordPayPal(String passwordValue) {
@@ -131,30 +182,39 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
-	public void selectCountry() {
+	public void selectArrow() {
 		logger.info("Selecting country..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, selectOption);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
-	public void selectCountryDE() {
-		logger.info("Selecting country..");
-		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, selectOptionDE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		
+	public void selectCountry(String optionCountry) {
+		switch (optionCountry) {
+		case "Belgium":
+			WebDriverUtils.clickOnElementWithWait(driver, selectOptionBE);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			break;
+	    case "Deutschland":
+			logger.info("Choosing Sofort..");
+			WebDriverUtils.clickOnElementWithWait(driver, selectOptionDE);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		    break;
+		case "France":
+			logger.info("Choosing Giropay..");
+			WebDriverUtils.scroll500Down(driver, selectOptionFR);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			break;
+			
+		case "UK":
+			logger.info("Choosing  Credit Card..");
+		  WebDriverUtils.clickOnElementWithWait(driver, selectOption);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+				break;
+			default:
+			throw new RuntimeException("Language" + optionCountry + "not supported");
+		}
 	}
-	
-	public void selectCountryFR() {
-		logger.info("Selecting country..");
-		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, selectOptionFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
+
 	public void selectState() {
 		logger.info("Selecting state..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
@@ -166,6 +226,16 @@ public class CheckoutProcessPage extends BasePage {
 	public void enterFName(String nameValue) {
 		logger.info("Entering first name..");
 		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void closeWindowAddress() {
+		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void useAddressAsItIs() {
+		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -185,7 +255,6 @@ public class CheckoutProcessPage extends BasePage {
 		logger.info("Entering address1 name..");
 		WebDriverUtils.enterTextBox(driver, address1, addressValue1);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-
 	}
 
 	public void enterCity(String cityValue) {
@@ -204,6 +273,51 @@ public class CheckoutProcessPage extends BasePage {
 		logger.info("Checking billing address the same..");
 		WebDriverUtils.clickOnElementWithWait(driver, checkCheckBoxBilling);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void pressPaymentMethods(String optionMethod) {
+		switch (optionMethod) {
+		case "Klarna":
+			logger.info("Choosing Klarna..");
+			WebDriverUtils.scroll500Down(driver, klarnaBtn);
+			WebDriverUtils.clickOnElementWithWait(driver, klarnaBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			break;
+	    case "Sofort":
+			logger.info("Choosing Sofort..");
+			WebDriverUtils.scroll500Down(driver, sofortBtn);
+			WebDriverUtils.clickOnElementWithWait(driver, sofortBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		    break;
+		case "Giropay":
+			logger.info("Choosing Giropay..");
+			WebDriverUtils.scroll500Down(driver, giropayBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			break;
+			
+		case "CreditCard":
+			logger.info("Choosing  Credit Card..");
+			WebDriverUtils.scroll500Down(driver, creditCardBtn);
+			WebDriverUtils.clickOnElementWithWait(driver, creditCardBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				break;
+				
+		case "Ideal":
+			logger.info("Choosing  Ideal..");
+			WebDriverUtils.scroll500Down(driver, idealBtn);
+			WebDriverUtils.clickOnElementWithWait(driver, idealBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				break;
+			
+		case "PayPal":
+			logger.info("Choosing PayPal..");
+			WebDriverUtils.scroll500Down(driver, payPalBtn);
+			WebDriverUtils.clickOnElementWithWait(driver, payPalBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				break;
+		default:
+			throw new RuntimeException("Language" + optionMethod + "not supported");
+		}
 	}
 
 	public void enterMobile(String mobileValue) {
@@ -282,6 +396,13 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
+	public void enterCardNameNotloggedUS(String cardNameValue) {
+		logger.info("Entering card name..");
+		WebDriverUtils.scroll350Down(driver, nameTextUS);
+		WebDriverUtils.enterTextBox(driver, nameTextUS, cardNameValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
 	public void enterCardNo(String cardNumberValue) {
 		logger.info("Entering card number..");
 		WebDriverUtils.enterTextBox(driver, cardNo, cardNumberValue);
@@ -303,6 +424,19 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, optionCardVisa);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void selectTypeCardAmericanExpress() {
+		logger.info("Selecting type of credit card..");
+		WebDriverUtils.clickOnElementWithWait(driver, selectTypeCard);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCardAmericanExpress);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectTypeCard(String optionTypeCardValue) {
+		WebDriverUtils.selectDropDown(driver, typeCardLocator, optionTypeCardValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
 
 	public void selectExpirationMonth() {
 		logger.info("Selecting expiration month credit card..");
@@ -310,6 +444,24 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, monthExpiration);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectExpirationMonthUS() {
+		logger.info("Selecting expiration month credit card..");
+		WebDriverUtils.scroll350Down(driver, expirationDateMonthUS);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, monthExpirationUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectExpirationMonthDE() {
+		logger.info("Selecting expiration month credit card..");
+		WebDriverUtils.scroll350Down(driver, expirationDateMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, monthExpirationDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -320,6 +472,14 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, yearExpiration);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void selectExpirationYearUS() {
+		logger.info("Selecting expiration year credit card..");
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateYearUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, yearExpirationUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
 
 	public void enterSecurityCode(String securityCardValue) {
 		logger.info("Entering security card..");
@@ -328,9 +488,14 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void clickBuyNo() {
+	public void clickBuyNow() {
 		logger.info("Buying now..");
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void nextBtnPayPal() {
+		WebDriverUtils.clickOnElementWithWait(driver, nextBtnPayPal);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -375,6 +540,11 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, giftCardTxtBox, giftCardValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void clickSignIn() {
+		WebDriverUtils.clickOnElementWithWait(driver, signInLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
 
 	public void enterPromoCode(String promoCodeValue) {
 		logger.info("Entering promo code..");
@@ -385,6 +555,7 @@ public class CheckoutProcessPage extends BasePage {
 	public void clickNextPayment() {
 		logger.info("Going to the payment section..");
 		WebDriverUtils.scroll500Down(driver, nextPaymentButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaymentButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -396,14 +567,41 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
+	//iframe id = DW-SFToolkit
+	//input[@type='email']
+	//input[@type='password']
+	//button[@class='el-button checkout__button login__dialog-submit el-button--primary']
+	//span[contains(text(), 'Sign In')]")
+	
 	public void clickNextPaymentFR() {
 		logger.info("Going to the payment section..");
 		WebDriverUtils.scroll500Down(driver, nextPaymentButtonFR);
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaymentButtonFR);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-
+	
+	public void enterBICGiropay(String BICValue) {
+		WebDriverUtils.enterTextBox(driver, BICFieldGiropay, BICValue);
+	}
+	
+	public void dateofBirthKlarna(String date) {
+		WebDriverUtils.enterTextBox(driver, dateOfBirthFieldKlarna, date);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	
+	public void scrollLitlleDown() {
+		WebDriverUtils.scroll300(driver, reviewOrderBtn);
+		
+	}
+	
+	public void continueKlarna() {
+		WebDriverUtils.clickOnElementWithWait(driver, continueKlarnaBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
 	public CheckoutProcessCompletePage returnCheckoutProcessCompletePage() {
+		WebDriverUtils.scroll350Down(driver, buyNowBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));

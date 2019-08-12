@@ -67,23 +67,27 @@ public class GlovesProductPage extends BasePage{
 
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		
 	}
 
 
 	public void selectAttributeCalf(String calf) {
 		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
 	}
 
 	public void selectAttributeHeight(String height) {
 		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
 	}
 
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
 			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		
 		}
 	}
@@ -91,12 +95,14 @@ public class GlovesProductPage extends BasePage{
 	public void setQtyDecrease(int n) {
 		for (int i = 0; i <= n; i++) {
 			WebDriverUtils.clickOnElementWithWait(driver, decreaseQty);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
 		}
 	}
 
 	public void writeReviewClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, writeReview);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
 	}
 
@@ -105,22 +111,27 @@ public class GlovesProductPage extends BasePage{
 			switch (star) {
 			case "Excellent":
 				WebDriverUtils.clickOnElementWithWait(driver, starReviewExcellent);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				break;
 
 			case "Good":
 				WebDriverUtils.clickOnElementWithWait(driver, starReviewGood);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				break;
 
 			case "Average":
 				WebDriverUtils.clickOnElementWithWait(driver, starReviewAverage);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				break;
 
 			case "Fair":
 				WebDriverUtils.clickOnElementWithWait(driver, starReviewFair);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				break;
 
 			case "Poor":
 				WebDriverUtils.clickOnElementWithWait(driver, starReviewPoor);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				break;
 
 			default:
@@ -131,47 +142,47 @@ public class GlovesProductPage extends BasePage{
 
 	public void writeReviewContent(String titleReviewText, String reviewText) {
 		WebDriverUtils.enterTextBox(driver, titleReview, titleReviewText);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, textReview, reviewText);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void addPhoto() {
 		WebDriverUtils.clickOnElementWithWait(driver, addPhotoReview);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		if (WebDriverUtils.findElement(driver, addPhotoModal) != null) {
 			WebDriverUtils.clickOnElementWithWait(driver, choosePhotoReview);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			// Upload the file
 		}
 	}
 
 	public void addVideo(String videoURL) {
 		WebDriverUtils.clickOnElementWithWait(driver, addVideoReview);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		if (WebDriverUtils.findElement(driver, videoModalReview) != null) {
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.enterTextBox(driver, insertVideoURLReview, videoURL);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, addVideoButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		}
 	}
 
 	public void recommendProductYes() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductYes);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void recommendProductNo() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductNo);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void userInfoReview(String nickname, String userLocationReview, String email) {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nicknameReview, nickname);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, userLocation, userLocationReview);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.enterTextBox(driver, emailReview, email);
@@ -180,21 +191,25 @@ public class GlovesProductPage extends BasePage{
 
 	public void selectAttributeLength(String lengthSize) {
 		WebDriverUtils.enterTextBox(driver, lengthLocator, lengthSize);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void postReview() {
 		WebDriverUtils.clickOnElementWithWait(driver, postReviewButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
 	}
 
 	public void addToCart() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
 	}
 
 	public void update() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 
 	}
 
@@ -208,21 +223,21 @@ public class GlovesProductPage extends BasePage{
 
 
 	public MyAccountWishListPage returnMyAccountWishListPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.scrollLittDown(driver, wishList);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishlistText));
 		return new MyAccountWishListPage(driver);
 	}
 
 	public MyWishListPage returnMyWishListPage() {
 		WebDriverUtils.scrollLittDown(driver, wishList);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishList);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}

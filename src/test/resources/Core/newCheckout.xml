@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="newCheckout" verbose="1">
+<parameter name="environment" value="${environment}" />
+	<test name="newCheckout">
+       <classes>
+                               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardDETest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUKTest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
+               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardDETest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUKTest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest" />
+               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsDETest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsBETest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsFRTest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsIETest"  />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsDETest" />
+              
+               <class name="com.ariat.Tests.Checkout.CreateOrder.PayPal.CheckoutCreateOrderPayPalDETest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.PayPal.CheckoutCreateOrderPayPalUKTest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.PayPal.CheckoutCreateOrderPayPalUSTest" />
+              
+         </classes>
+     </test>
+</suite>

@@ -98,7 +98,8 @@ public class NegativeCheckoutCreateOrderNLTest extends BaseTest {
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectCountry();
+		checkoutProcessPage.selectArrow();
+		checkoutProcessPage.selectCountry("UK");
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 
@@ -125,7 +126,8 @@ public class NegativeCheckoutCreateOrderNLTest extends BaseTest {
 		checkoutProcessPage.enterAddress(ADDRESS1);
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE1);
-		checkoutProcessPage.selectCountry();
+		checkoutProcessPage.selectArrow();
+		checkoutProcessPage.selectCountry("UK");
 		checkoutProcessPage.enterMobile(MOBILE1);
 		checkoutProcessPage.enterEmail(EMAILEXISTENT);
 

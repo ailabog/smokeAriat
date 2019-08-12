@@ -60,36 +60,43 @@ public class CheckoutPage extends BasePage {
 	public void increaseQtyProduct() {
 		logger.info("Increasing qty for the product..");
 		WebDriverUtils.clickOnElementWithWait(driver, increseQty);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void decreaseQtyProduct() {
 		logger.info("Decreasing qty for the product..");
 		WebDriverUtils.clickOnElementWithWait(driver, decreaseQty);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterPromoCode(String promoCodeValue) {
 		logger.info("Entering promo code for the product..");
 		WebDriverUtils.enterTextBox(driver, promoCode, promoCodeValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickApply() {
 		logger.info("Applying promo code..");
 		WebDriverUtils.clickOnElementWithWait(driver, applyPromoCode);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickPayPalCheckout() {
 		logger.info("Going to paypal checkout..");
 		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickCheckout() {
 		logger.info("Going to checkout..");
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickSecuredCheckout() {
 		logger.info("Secure checkout..");
 		WebDriverUtils.clickOnElementWithWait(driver, secureCheckoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickReturnPolicy() {
@@ -100,18 +107,19 @@ public class CheckoutPage extends BasePage {
 	public void goToContinueShopping() {
 		logger.info("Continuing shopping..");
 		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingCheckoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public HomePage returnHomePage() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(ariatLogo));
 		return new HomePage(driver);
 	}
 
 	public MyAccountWishListPage returnMyAccountWishListPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, addToWishListLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(emailAccount));
 		return new MyAccountWishListPage(driver);
 	}
@@ -129,7 +137,7 @@ public class CheckoutPage extends BasePage {
 		WebDriverUtils.scroll500Down(driver, By.xpath("//iframe[@class='zoid-component-frame zoid-visible']"));
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='zoid-component-frame zoid-visible']")));
 		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(loginPayPalPageTitle));
 		return new CheckoutProcessPage(driver);
 	}

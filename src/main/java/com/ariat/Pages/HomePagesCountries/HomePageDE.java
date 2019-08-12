@@ -421,7 +421,7 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 	
 	public CasualShoeProductPage returnCasualShoeProductPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCasualShoesCategory));
 		return new CasualShoeProductPage(driver);
 	}

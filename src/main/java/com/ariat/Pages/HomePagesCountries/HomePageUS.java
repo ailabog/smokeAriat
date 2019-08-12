@@ -32,6 +32,7 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By menCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/a");
+	private By bagsCategory = By.xpath("//a[text()='Bags']");
 	private By kidsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[3]/a");
 	private By clearanceCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[4]/a");
 	private By giftGuideMenu = By.xpath("//img[contains(@src, 'gift-guide-category-image.png')]");
@@ -460,7 +461,10 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 		return new WomenClothingTopsAndTshirtsPage(driver);
 	}
 
+	
 	public BagsProductPage returnBagsProductPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, bagsCategory);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, garmentBagProduct);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,

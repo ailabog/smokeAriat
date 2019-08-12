@@ -32,7 +32,7 @@ public class GenerateRandomDataUtils {
 		String allowedChars = "abcdefghijklmnopqrstuvwxyz" + "1234567890" + "_-.";
 		String email = "";
 		String temp = RandomStringUtils.random(length, allowedChars);
-		email = temp.substring(0, temp.length() - 9) + "@test.org";
+		email = temp.substring(0, temp.length() - 9) + "@test.com";
 		return email;
 	}
 }

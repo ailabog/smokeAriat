@@ -116,13 +116,22 @@
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryFRTest" />
                  <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
-                
+                 
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardDETest" />
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUKTest" />
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
                
-				   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderDETest" />
-                   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderFRTest" />
-                   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUKTest" />
-                   <class name="com.ariat.Tests.Checkout.CreateOrder.CheckoutCreateOrderUSTest" />
-                
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardDETest" />
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUKTest" />
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest" />
+               
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsDETest" />
+              
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.PayPal.CheckoutCreateOrderPayPalDETest" />
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.PayPal.CheckoutCreateOrderPayPalUKTest" />
+                  <class name="com.ariat.Tests.Checkout.CreateOrder.PayPal.CheckoutCreateOrderPayPalUSTest" />
+   
+				
         </classes>
      </test>
 </suite>
