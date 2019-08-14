@@ -101,10 +101,11 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutProcessCompletePage.checkBankAccount();
 		checkoutProcessCompletePage.scrollContinueSofort();
 		checkoutProcessCompletePage.continueSofort();
-		checkoutProcessCompletePage.enterTransactionId("12345");
+		checkoutProcessCompletePage.enterTransactionIdDE("12345");
 		checkoutProcessCompletePage.continueSofort();
 		logger.info("Finishing checkout -> create new order with payment method Sofort test.");
 	} 
+	
 	
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsGiropay() {

@@ -104,7 +104,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		checkoutProcessCompletePage.enterTransactionId("12345");
 		checkoutProcessCompletePage.continueSofortBE();
 		logger.info("Finishing checkout -> create new order with payment method Sofort test.");
-	} 
+	}
 	
 	
 	@Test(priority = 1)

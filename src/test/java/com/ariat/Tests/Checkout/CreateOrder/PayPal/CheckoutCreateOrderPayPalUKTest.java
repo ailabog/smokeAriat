@@ -54,6 +54,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String PAYPAL_URL ="https://www.sandbox.paypal.com/checkoutnow?locale.x=en_IE&fundingSource=paypal&sessionID=eeea9accbc_mtk6ntk6mjg&buttonSessionID=c58e4787c4_mja6mdi6nty&env=sandbox&fundingOffered=paypal&logLevel=warn&sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9hcGkvY2hlY2tvdXQuanMifQ%3D%3D&uid=af2159ad47&version=4&token=EC-4UJ89034B4241615F&xcomponent=1";
 	
 			
 	@BeforeTest
@@ -77,15 +78,16 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
+		//checkoutProcessPage.load(PAYPAL_URL);
 		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
+		checkoutProcessPage.nextBtnPayPal();
 		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
-		checkoutProcessPage.clickContinuePayPal();
 		checkoutProcessPage.clickConfirmPayPal();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	} 
 	
-	@Test(priority = 1)
+	/*@Test(priority = 1)
     public void checkoutCreateNewOrderPayPalFromShipping() {
 	   logger.info("Starting checkout -> create new order without being logged credit card PayPal test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -120,10 +122,10 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		checkoutProcessPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
-	}
+	}*/
 	//div[@[data-funding-source='paypal']
 	//div[@data-button class ='paypal-button paypal-button-number-0 paypal-button-layout-horizontal paypal-button-shape-rect paypal-button-branding-branded paypal-button-number-single paypal-button-env-sandbox paypal-should-focus paypal-button-label-checkout paypal-button-color-gold paypal-button-logo-color-blue']
-	
+	//paypal din payments xpath=//img[@alt='paypal']  css=.paypal-button-logo-paypal
 	
 
 	@AfterTest

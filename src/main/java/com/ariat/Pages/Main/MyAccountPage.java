@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearSubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Utils.WebDriverUtils;
 
@@ -103,6 +104,7 @@ public class MyAccountPage extends BasePage {
 	private By orderDetailsMyOrderLink = By.xpath("//*[@id=\"order-items\"]/div[1]/div[3]/a");
 	private By orderDetailsMyAccountLink = By
 			.xpath("//div[@id='main']/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div/div[4]/a[2]");
+	private By womenText = By.xpath("//*contains(text(),'Women']");
 
 	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
@@ -583,5 +585,12 @@ public class MyAccountPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
+	}
+	
+	public WomenCategoryPage returnWomenCategoryPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenText));
+		return new WomenCategoryPage(driver);
 	}
 }

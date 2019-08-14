@@ -51,7 +51,6 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String ADDRESS1 = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = "Frankfurt";
-	public static final String COUNTRY = "Deutschland";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String EMAIL = "aila.bogasieru@gmail.com";
@@ -95,13 +94,11 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectTypeCardMasterCard();
 		checkoutProcessPage.selectExpirationMonthDE();
 		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
 	} 
 	
@@ -133,14 +130,12 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		checkoutProcessPage.clickNextPaymentDE();
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-		checkoutProcessPage.selectTypeCardVisa();
 		checkoutProcessPage.selectExpirationMonthDE();
 		checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	} 
 	

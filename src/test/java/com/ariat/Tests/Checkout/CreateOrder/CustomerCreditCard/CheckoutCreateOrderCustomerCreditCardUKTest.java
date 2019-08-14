@@ -72,7 +72,7 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+		womenCategoryPage = myAccountPage.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();

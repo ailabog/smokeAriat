@@ -106,7 +106,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		logger.info("Finishing checkout -> create new order with payment method Sofort test.");
 	} 
 	
-	@Test(priority = 1)
+/*	@Test(priority = 1)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsGiropay() {
 		logger.info("Starting checkout -> create new order with payment method Giropay test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -172,7 +172,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		checkoutProcessPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
-	} 
+	} */
 	
 	@AfterTest
 	public void tearDown() {

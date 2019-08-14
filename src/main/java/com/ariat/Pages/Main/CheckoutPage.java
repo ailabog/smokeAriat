@@ -140,6 +140,10 @@ public class CheckoutPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(loginPayPalPageTitle));
 		return new CheckoutProcessPage(driver);
+		
+		//xpath=//img[@alt='paypal']
+//		/css=.paypal-button-logo-paypal
+		//xpath=//div[@id='paypal-animation-content']/div/div/img[2]
 	}
 
 }

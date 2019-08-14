@@ -73,7 +73,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 			signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
 			signInPage.returningPassword(PASSWORDEXISTENT);
 			myAccountPage = signInPage.returnMyAccountPage();
-			womenCategoryPage = homePageUK.returnWomenCategoryPage();
+			womenCategoryPage = homePageDE.returnWomenCategoryPage();
 			womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 			womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 			glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
@@ -102,7 +102,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	 		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
 	 		signInPage.returningPassword(PASSWORDEXISTENT);
 	 		myAccountPage = signInPage.returnMyAccountPage();
-	 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
+	 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 	 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 	 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 	 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();

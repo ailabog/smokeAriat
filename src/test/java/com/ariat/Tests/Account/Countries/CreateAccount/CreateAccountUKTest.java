@@ -1,7 +1,9 @@
 package com.ariat.Tests.Account.Countries.CreateAccount;
 
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -55,6 +57,10 @@ public class CreateAccountUKTest extends BaseTest {
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+		ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        options.addArguments("window-size=1200x600");
+        WebDriver driver = new ChromeDriver(options);
 	}
 
 	@Test(priority = 0)

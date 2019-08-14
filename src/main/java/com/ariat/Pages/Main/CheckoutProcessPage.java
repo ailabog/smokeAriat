@@ -2,6 +2,7 @@ package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,11 +34,9 @@ public class CheckoutProcessPage extends BasePage {
 	private By checkCheckBoxBilling = By.xpath("//input[@value='Use this address for Billing']");
 	private By mobile = By.name("phone");
 	private By email = By.name("email");
-	private By confirmEmail = By.name("emailconfirm");
 	private By addToAddressBoxCheck = By.xpath("//input[@vlaue='Add to Address Book']");
 	private By stayInTouchCheck = By
 			.xpath("//input[@value='Stay in touch. Learn about our new products and special offers first!']");
-	private By continueCheckout = By.xpath("//button[@class='el-button checkout_button el-button--primary']//span[text()='Continue']");
 	private By continueCheckoutDE = By.xpath("//button[@class='el-button checkout_button el-button--primary']//span[text()='Fortsetzen']");
 	private By continueCheckout1 = By.cssSelector(".el-button--primary:nth-child(1)");
 	private By standardCheck = By.xpath("//input[@value='X-1']");
@@ -46,15 +45,14 @@ public class CheckoutProcessPage extends BasePage {
 	private By creditCardCheck = By.xpath("//input[@value='SA_SILENTPOST']");
 	private By cardArrow = By.cssSelector(".el-row:nth-child(4) .el-select__caret");
 	private By selectCard = By.xpath("//span[text()='(MasterCard) ************4444 1.2033']");
-	private By cardName = By.xpath(
-			"//*[@id=\"el-collapse-content-7604\"]/div/div/form/div/form/div[2]/div/div[1]/form/div[4]/div/div/div/div[1]/input");
+	
 	
 	private By selectTypeCard = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[6]/div/div/div/div[1]/div/span/span/i");
 	private By optionCardMasterCard = By.xpath("//span[text()='MasterCard']");
 	private By optionCardVisa = By.xpath("//span[text()='Visa']");
 	private By optionCardAmericanExpress = By.xpath("//span[text()='American Express']");
-	private By expirationDateMonth = By.xpath(
-			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[1]/div/div/div[1]/div[1]/span/span/i");
+	private By expirationDateMonth = By.xpath("//span[text()='June']");
+	private By expirationDateMonthDE = By.xpath("//span[contains(text(),'Februar')]");
 
 	private By expirationDateMonthUS = By.xpath(
 			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[4]/div/div/div[1]/span/span/i");
@@ -62,16 +60,15 @@ public class CheckoutProcessPage extends BasePage {
 	private By monthExpirationUS = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[4]/div/div/div/input");
 	
 	private By monthExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='February']");
-	private By monthExpirationDE = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='Februar']");
 	
 	
-	private By expirationDateYear = By.xpath(
-			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[7]/div[2]/div/div/div[1]/div[1]/span/span/i");
+	
+	private By expirationDateYear = By.xpath("//span[text()='2024']");
 	private By expirationDateYearUS = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[5]/div/div/div[1]/span/span/i");
-	private By yearExpiration = By.xpath("//ul[@class='el-scrollbar__view el-select-dropdown__list']//span[text()='2025']");
+
 	private By yearExpirationUS = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[5]/div/div/div/input");
 	//private By securityCode = By.xpath("//div[@class='checkout_input ms-padding-right-10 el-input']//input[@class='el-input__inner']");
-	private By securityCode = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[8]/div/div/div/div[1]");
+	private By securityCode = By.cssSelector(".checkout__card-cvn .el-input__inner");
 
 	private By buyNowBtn = By.id("confirmpayment");
 	
@@ -89,7 +86,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By checkoutBtn=By.xpath("//div[@data-funding-source='paypal']");
 	private By emailTxtBoxPayPal=By.id("email");
 	private By passwordTxtBoxPaypal=By.xpath("//div[@id='main']//input[@id='password']");
-	private By loginPayPal=By.id("//div[@id='main']//button[@id='btnLogin']");
+	private By loginPayPal=By.id("btnLogin");
 	private By continueBtnPayPal=By.xpath("//button[text()='Continue']");
 	private By confirmPayPal=By.id("confirmButtonTop");
 	//private By nextPaymentButton = By.xpath("//button[@class='el-button checkout__button el-button--primary']//span[text()='Next: Payment']");
@@ -97,14 +94,25 @@ public class CheckoutProcessPage extends BasePage {
 	private By nextPaymentButtonDE = By.xpath("//span[text()='Weiter: Zahlung']");
 	private By nextPaymentButtonFR = By.xpath("//span[text()='Suivant: Paiement']");
 //private By nameText =  By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[4]/div/div/div/div[1]/input");
-    private By nameText = By.xpath("//iframe[@id='DW-SFToolkit']//div[@class='checkout_input el-input']//div[@class='el-input__inner']");
-
+//	xpath=(//input[@type='text'])[12]
+//xpath=//section[@id='app']/main/div/div/form[2]/div[2]/div/div/form/div/div/div/input
+//xpath=//div[2]/div/div/form/div/div/div/input
+	
+	private By nameText = By.cssSelector(".checkout__card-name .el-input__inner");
+//.checkout__card-name .el-input__inner
+    
    private By nameTextUS =  By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[1]/form/div[2]/div/div[1]/input");
 	//private By nameText = By.xpath("//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
 	//private By cardNo = By.xpath("//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
-	private By cardNo = By.xpath("//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[5]/div/div/div/div[1]/input");
-  //  private By useAddressAsItIsBtn = By.xpath("//button[@class='el-button checkout_button address-dialog_use-address-btn el-button--primary']//span[contains(text(), 'Use address as is*')]");
-    private By useAddressAsItIsBtn = By.xpath("//span[contains(text(), 'Use address as is*')]");
+	private By cardNo = By.cssSelector(".checkout__card-number .el-input__inner");
+  
+  //css=.checkout__card-number .el-input__inner
+	//xpath=(//input[@type='text'])[13]
+	//xpath=//section[@id='app']/main/div/div/form[2]/div[2]/div/div/form/div[2]/div/div/input
+	//xpath=//form/div[2]/div/div/input
+	
+	private By useAddressAsItIsBtn = By.xpath("//span[contains(text(), 'Use address as is*')]");
+//  private By useAddressAsItIsBtn = By.xpath("//button[@class='el-button checkout_button address-dialog_use-address-btn el-button--primary']//span[contains(text(), 'Use address as is*')]");
   //*[@id="app"]/main/div/form/div[13]/div/div[2]/div[1]/div[2]/div/div[3]/button
     private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
     private By nextBtnPayPal = By.id("btnNext");
@@ -115,10 +123,20 @@ public class CheckoutProcessPage extends BasePage {
      private By payPalBtn = By.xpath("//span[text()='Paypal']");
     private By creditCardBtn = By.xpath("//label[@class='el-radio is-checked payment-method-radio payment-method__SA_SILENTPOST']");
     private By reviewOrderBtn = By.id("paymentbtncs");
-    private By BICFieldGiropay = By.xpath("//div[@class='el-col el-col-6']//div[@class='el-form-item__content']//div[@class='checkout_input el-input']//input[@class='el-input__inner']");
-
-    private By dateOfBirthFieldKlarna = By.xpath("//div[@id='purchase-approval__container']//input[@id='purchase-approval-date-of-birth__root']");
-	private By continueKlarnaBtn = By.xpath("//div[@id='purchase-approval__container']//span[@id='purchase-approval-continue__text']");
+    private By BICFieldGiropay = By.xpath("//input[@type='text'])[12]");
+   // private By BICFieldGiropay = By.xpath("//*[@id=\"app\"]/main/div/div[1]/form[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/input");
+  // cssSelector .el-form-item__content:nth-child(2) > .checkout_input > .el-input__inner
+  //  xpath=(//input[@type='text'])[12]
+    
+    private By dateOfBirthFieldKlarna = By.id("purchase-approval-national-identification-number");
+	private By iframeKlarna = By.id("klarna-credit-fullscreen iframe");
+  //id klarna-payments-device-recognition iframe
+  		//id klarna-credit-fullscreen iframe
+  		//id purchase-approval-national-identification-number
+	//xpath=//section[@id='app']/main/div/div/form[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/input
+		//	xpath=//div/div/div/div/div/div/div/div/input
+			
+    private By continueKlarnaBtn = By.xpath("//div[@id='purchase-approval__container']//span[@id='purchase-approval-continue__text']");
     //span[text()='Credit Card']
     
     private By signInLink = By.xpath("//a[text()='Sign In']");
@@ -127,9 +145,34 @@ public class CheckoutProcessPage extends BasePage {
     private By typeCardLocator = By.xpath("//*[@id=\"c-ct\"]");
     private By idealBtn = By.xpath("//span[text()='iDeal']");
     //labe[@class='el-radio payment-method-radio payment-method__IDEAL']
-
     
-	public CheckoutProcessPage(WebDriver driver) {
+    //xpath=//span[contains(.,'MasterCard')]
+    //month and day expir card
+    //css=.el-form-item:nth-child(7) .el-select__caret
+//xpath=//section[@id='app']/main/div/div/form[2]/div[2]/div/div/form/div[4]/div/div/div/span/span/i
+    //month xpath=//li[contains(.,'June')]
+    
+    //sageata //css=.el-form-item:nth-child(8) .el-select__caret
+    //year xpath=//span[contains(.,'2021')]
+    //cvv css=.checkout__card-cvn .el-input__inner  xpath=(//input[@type='text'])[17]   xpath=//div[6]/div/div/input
+    
+	//xpath=//span[contains(.,'Paypal')]
+    //xpath=//span[contains(.,'Giropay')]
+    //xpath=//span[contains(.,'Klarna')]
+    //xpath=//span[contains(.,'Sofort')]
+    //xpath=//span[contains(.,'Kreditkarte')]
+    
+    private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
+    		//sageata month css=.el-form-item:nth-child(7) .el-select__caret 
+    		//xpath=//section[@id='app']/main/div/div/form[2]/div[2]/div/div/form/div[4]/div/div/div/span/span/i
+    		//xpath=//div[4]/div/div/div/span/span/i
+    
+    
+    private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
+  //sageata year css=.el-form-item:nth-child(8) .el-select__caret
+  		//xpath=//section[@id='app']/main/div/div/form[2]/div[2]/div/div/form/div[5]/div/div/div/span/span/i
+  		//xpath=//div[5]/div/div/div/span/span/i
+    public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -140,6 +183,7 @@ public class CheckoutProcessPage extends BasePage {
 	}
 	
 	public void reviewOrder() {
+		WebDriverUtils.scroll300(driver, reviewOrderBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -150,12 +194,12 @@ public class CheckoutProcessPage extends BasePage {
 	}
 	
 	public void enterEmailPayPal(String emailValue) {
-		logger.info("Entering email..");
-	    driver.switchTo().frame(driver.findElement(By.id("main")));
+    	logger.info("Entering email..");
+		//WebElement iframeSwitch =  driver.findElement(By.id("main"));
+		//driver.switchTo().frame(iframeSwitch);
 		WebDriverUtils.enterTextBox(driver, emailTxtBoxPayPal, emailValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		driver.switchTo().defaultContent();
-		
 	}
 	
 	public void enterPasswordPayPal(String passwordValue) {
@@ -283,15 +327,18 @@ public class CheckoutProcessPage extends BasePage {
 			WebDriverUtils.clickOnElementWithWait(driver, klarnaBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;
+			
 	    case "Sofort":
 			logger.info("Choosing Sofort..");
 			WebDriverUtils.scroll500Down(driver, sofortBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, sofortBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		    break;
+		    
 		case "Giropay":
 			logger.info("Choosing Giropay..");
 			WebDriverUtils.scroll500Down(driver, giropayBtn);
+			WebDriverUtils.clickOnElementWithWait(driver, giropayBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;
 			
@@ -440,10 +487,9 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void selectExpirationMonth() {
 		logger.info("Selecting expiration month credit card..");
-		WebDriverUtils.scroll350Down(driver, expirationDateMonth);
+		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
 		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, monthExpiration);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
@@ -458,19 +504,19 @@ public class CheckoutProcessPage extends BasePage {
 	
 	public void selectExpirationMonthDE() {
 		logger.info("Selecting expiration month credit card..");
-		WebDriverUtils.scroll350Down(driver, expirationDateMonth);
-		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, monthExpirationDE);
+		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void selectExpirationYear() {
 		logger.info("Selecting expiration year credit card..");
+	//	WebDriverUtils.scroll350Down(driver, arrowExpMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpYear);
 		WebDriverUtils.clickOnElementWithWait(driver, expirationDateYear);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, yearExpiration);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		
 	}
 	
 	public void selectExpirationYearUS() {
@@ -483,7 +529,9 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void enterSecurityCode(String securityCardValue) {
 		logger.info("Entering security card..");
-		WebDriverUtils.scroll500Down(driver, securityCode);
+		//WebDriverUtils.scroll500Down(driver, securityCode);
+		//css=.checkout__card-cvn .el-input__inner
+		//xpath=(//input[@type='text'])[17]
 		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -567,12 +615,6 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
-	//iframe id = DW-SFToolkit
-	//input[@type='email']
-	//input[@type='password']
-	//button[@class='el-button checkout__button login__dialog-submit el-button--primary']
-	//span[contains(text(), 'Sign In')]")
-	
 	public void clickNextPaymentFR() {
 		logger.info("Going to the payment section..");
 		WebDriverUtils.scroll500Down(driver, nextPaymentButtonFR);
@@ -582,17 +624,19 @@ public class CheckoutProcessPage extends BasePage {
 	
 	public void enterBICGiropay(String BICValue) {
 		WebDriverUtils.enterTextBox(driver, BICFieldGiropay, BICValue);
-	}
-	
-	public void dateofBirthKlarna(String date) {
-		WebDriverUtils.enterTextBox(driver, dateOfBirthFieldKlarna, date);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
+	public void dateofBirthKlarna(String date) {
+		WebElement iframeSwitch = driver.findElement(By.id("klarna-payments-device-recognition iframe"));
+		driver.switchTo().frame(iframeSwitch);
+		WebDriverUtils.enterTextBox(driver, dateOfBirthFieldKlarna, date);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		//driver.switchTo().defaultContent();
+	}
 	
 	public void scrollLitlleDown() {
 		WebDriverUtils.scroll300(driver, reviewOrderBtn);
-		
 	}
 	
 	public void continueKlarna() {

@@ -190,13 +190,6 @@ public class WomenCategoryPage extends BasePage {
 	}
 
 
-	public WomenCategoryPage returnWomenCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenText));
-		return new WomenCategoryPage(driver);
-	}
-
 	public WomenFootwearPage returnWomenFootwearPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
@@ -289,6 +282,13 @@ public class WomenCategoryPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(garmentText));
 		return new BagsProductPage(driver);
+	}
+
+	public WomenCategoryPage returnWomenCategoryPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenText));
+		return new WomenCategoryPage(driver);
 	}
 	
 }

@@ -42,9 +42,11 @@ public class CheckoutProcessCompletePage extends BasePage{
 	private By pinSofortField = By.id("BackendFormUSERPIN");
 	private By checkBankAccountSofort = By.name("data[MultipaysSession][sender_account_number_technical]");
 	private By transactionSofortField = By.id("BackendFormTAN");
+	private By transactionSofortFieldDE = By.id("BackendFormTan");
+	
 	private By bankNameGiropayFiled = By.id("tags");
 	private By continueSofortBE = By.xpath("//button[text()='Next']");
-	private By ingIcon = By.id("INGBNL2A-a");
+	private By ingIcon = By.xpath("//button[@class='grid-button-ideal-INGBNL2A']");
 	//button[@class='grid-button-ideal-INGBNL2A']
 	//button[value='ideal_INGBNL2A']
 	//name("issuer")
@@ -164,7 +166,13 @@ public class CheckoutProcessCompletePage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
+	public void enterTransactionIdDE(String transactionId) {
+		WebDriverUtils.enterTextBox(driver, transactionSofortFieldDE, transactionId);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+	}
+	
 	public void clickIngICon() {
+		WebDriverUtils.scroll300(driver, ingIcon);
 		WebDriverUtils.clickOnElementWithWait(driver, ingIcon);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}

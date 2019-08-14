@@ -94,10 +94,14 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsSETest extends BaseTest 
 		checkoutProcessPage.pressPaymentMethods("Klarna");
 		checkoutProcessPage.scrollLitlleDown();
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.dateofBirthKlarna("12012019");
+		checkoutProcessPage.dateofBirthKlarna("670919-9530");
 		checkoutProcessPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
+		//id klarna-payments-device-recognition iframe
+		//id klarna-credit-fullscreen iframe
+		//id purchase-approval-national-identification-number
+		//670919-9530
 	} 
 	
 	@AfterTest

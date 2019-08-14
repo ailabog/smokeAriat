@@ -20,9 +20,8 @@ import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
- * Checkout -> Create new order guest credit cards
+ * Checkout -> Create new order
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -50,16 +49,15 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String ADDRESS1 = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = "London";
-	public static final String COUNTRY = "United Kingdom";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String EMAIL = "aila.bogasieru@gmail.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
-	
+
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+	
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
@@ -84,7 +82,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress(ADDRESS);
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("UK");
+		checkoutProcessPage.selectCountry("Austria");
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
@@ -93,14 +91,12 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectTypeCardMasterCard();
 		checkoutProcessPage.selectExpirationMonth();
 		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
-		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
+		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
 	} 
 	
 	@Test(priority = 1)
@@ -122,27 +118,24 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress(ADDRESS);
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("UK");
+		checkoutProcessPage.selectCountry("Austria");
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-		checkoutProcessPage.selectTypeCardVisa();
 		checkoutProcessPage.selectExpirationMonth();
+		checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	} 
 	
 	
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
