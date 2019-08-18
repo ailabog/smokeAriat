@@ -68,7 +68,9 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//a[@title='Log out']");
+	private By logoutTopNav = By.xpath("//a[contains(text(),'Log out')]");
+	//logout top //css=.menu-utility-user:nth-child(4) .log-out-link > .utility-user-link-item; xpath=//a[contains(text(),'Log out')]
+	
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenFootwearCasualShoesCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[4]/a");

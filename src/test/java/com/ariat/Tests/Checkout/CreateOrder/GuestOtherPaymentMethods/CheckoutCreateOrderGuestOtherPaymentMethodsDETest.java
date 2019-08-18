@@ -43,7 +43,6 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
-	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -76,7 +75,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -118,7 +117,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -152,7 +151,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -189,6 +188,5 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutPage.quit();
 		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
-		myAccountPage.quit();
 	}
 }

@@ -74,7 +74,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
@@ -87,7 +87,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	} 
 	
-	/*@Test(priority = 1)
+	@Test(priority = 1)
     public void checkoutCreateNewOrderPayPalFromShipping() {
 	   logger.info("Starting checkout -> create new order without being logged credit card PayPal test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -97,7 +97,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -122,7 +122,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		checkoutProcessPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
-	}*/
+	}
 	//div[@[data-funding-source='paypal']
 	//div[@data-button class ='paypal-button paypal-button-number-0 paypal-button-layout-horizontal paypal-button-shape-rect paypal-button-branding-branded paypal-button-number-single paypal-button-env-sandbox paypal-should-focus paypal-button-label-checkout paypal-button-color-gold paypal-button-logo-color-blue']
 	//paypal din payments xpath=//img[@alt='paypal']  css=.paypal-button-logo-paypal

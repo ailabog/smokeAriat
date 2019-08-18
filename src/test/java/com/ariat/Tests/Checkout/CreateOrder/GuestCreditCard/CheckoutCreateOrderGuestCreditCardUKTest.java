@@ -13,7 +13,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CheckoutPage;
-import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
@@ -40,7 +39,6 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	private GlovesProductPage glovesProductPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
-	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -73,7 +71,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -82,7 +80,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress(ADDRESS);
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Austria");
+		checkoutProcessPage.selectCountry("UK");
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
@@ -95,7 +93,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
 	} 
 	
@@ -109,7 +107,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -118,7 +116,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.enterAddress(ADDRESS);
 		checkoutProcessPage.enterAddress1(ADDRESS1);
 		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Austria");
+		checkoutProcessPage.selectCountry("UK");
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
@@ -127,11 +125,10 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
 		checkoutProcessPage.selectExpirationMonth();
-		checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.selectExpirationYear();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	} 
 	
@@ -146,7 +143,6 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		myBagPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
-		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
 		myAccountPage.quit();
 	}

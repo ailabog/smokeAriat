@@ -15,7 +15,6 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.Main.CheckoutPage;
-import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
@@ -44,7 +43,6 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	private SignInPage signInPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
-	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -55,70 +53,66 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	private ListOfCreditCards typeCard;
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir") + RELATIV_PATH;
+
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	 @Test(priority = 0)
-		public void checkoutCreateNewOrderBeingLoggedMasterCard() {
-			logger.info("Starting checkout -> create new order being logged credit card Master Card test...");
-			homePage = new HomePage(new ChromeDriver());
-			homePage.load(environment.DEVELOPMENT.getURL());
-			homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-			homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-			signInPage = homePageDE.returnSignInPage();
-			signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
-			signInPage.returningPassword(PASSWORDEXISTENT);
-			myAccountPage = signInPage.returnMyAccountPage();
-			womenCategoryPage = homePageDE.returnWomenCategoryPage();
-			womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
-			womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
-			glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-			glovesProductPage.selectAttributeSize("7");
-			myBagPage = glovesProductPage.returnMyBagPage();
-			checkoutPage = myBagPage.returnCheckoutPage();
-			checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-			checkoutProcessPage.clickNextPaymentDE();
-			checkoutProcessPage.pressPaymentMethods("CreditCard");
-			checkoutProcessPage.enterCardName(CARD_NAME);
-			checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-			checkoutProcessPage.reviewOrder();
-			checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-			checkoutProcessCompletePage.checkItem();
-			logger.info("Finishing checkout -> create new order being logged credit card Master Card test.");
-		} 
-	  
-	  @Test(priority = 1)
-	 	public void checkoutCreateNewOrderBeingLoggedVisa() {
-	 		logger.info("Starting checkout -> create new order being logged credit card Visa test...");
-	 		homePage = new HomePage(new ChromeDriver());
-	 		homePage.load(environment.DEVELOPMENT.getURL());
-	 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-			homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-	 		signInPage = homePageDE.returnSignInPage();
-	 		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
-	 		signInPage.returningPassword(PASSWORDEXISTENT);
-	 		myAccountPage = signInPage.returnMyAccountPage();
-	 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-	 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
-	 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
-	 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-	 		glovesProductPage.selectAttributeSize("7");
-	 		myBagPage = glovesProductPage.returnMyBagPage();
-	 		checkoutPage = myBagPage.returnCheckoutPage();
-	 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-	 		checkoutProcessPage.clickNextPaymentDE();
-	 		checkoutProcessPage.pressPaymentMethods("CreditCard");
-	 		checkoutProcessPage.enterCardName(CARD_NAME);
-	 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
-	 		checkoutProcessPage.reviewOrder();
-	 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-	 		checkoutProcessCompletePage.checkItem();
-	  		logger.info("Finishing checkout -> create new order being logged credit card Visa test.");
-	 	} 
+	@Test(priority = 0)
+	public void checkoutCreateNewOrderBeingLoggedMasterCard() {
+		logger.info("Starting checkout -> create new order being logged credit card Master Card test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
+		signInPage.returningPassword(PASSWORDEXISTENT);
+		myAccountPage = signInPage.returnMyAccountPage();
+		womenCategoryPage = homePageDE.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("8");
+		myBagPage = glovesProductPage.returnMyBagPage();
+		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.clickNextPaymentDE();
+		checkoutProcessPage.scrollBottomSecurityCode();
+		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		checkoutProcessPage.reviewOrder();
+		checkoutProcessPage.reviewOrder();
+		logger.info("Finishing checkout -> create new order being logged credit card Master Card test.");
+	}
+
+	@Test(priority = 1)
+	public void checkoutCreateNewOrderBeingLoggedVisa() {
+		logger.info("Starting checkout -> create new order being logged credit card Visa test...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
+		signInPage.returningPassword(PASSWORDEXISTENT);
+		myAccountPage = signInPage.returnMyAccountPage();
+		womenCategoryPage = homePageDE.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("8");
+		myBagPage = glovesProductPage.returnMyBagPage();
+		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.clickNextPaymentDE();
+		checkoutProcessPage.scrollBottomSecurityCode();
+		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
+		checkoutProcessPage.reviewOrder();
+		checkoutProcessPage.reviewOrder();
+		logger.info("Finishing checkout -> create new order being logged credit card Visa test.");
+	}
 
 	@AfterTest
 	public void tearDown() {
@@ -131,8 +125,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		myBagPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
-		checkoutProcessCompletePage.quit();
-		glovesProductPage.quit();
+    	glovesProductPage.quit();
 		myAccountPage.quit();
 	}
 }

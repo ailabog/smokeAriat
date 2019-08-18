@@ -75,7 +75,7 @@ public class CheckoutCreateOrderPayPalDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
@@ -99,7 +99,7 @@ public class CheckoutCreateOrderPayPalDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -122,7 +122,6 @@ public class CheckoutCreateOrderPayPalDETest extends BaseTest {
 		checkoutProcessPage.nextBtnPayPal();
 		checkoutProcessPage.clickLoginPayPal();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
 	}
 

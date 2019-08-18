@@ -55,7 +55,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
@@ -70,7 +70,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		//myBagPage.cancelFreeGift();
 		//myBagPage.checkMyBagNoFreeGift();

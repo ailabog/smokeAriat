@@ -109,7 +109,6 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		checkoutProcessPage.nextBtnPayPal();
 		checkoutProcessPage.clickLoginPayPal();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
 	}
 

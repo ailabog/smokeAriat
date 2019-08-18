@@ -32,6 +32,8 @@ public class CheckoutPage extends BasePage {
 			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
 	private By payPalCheckoutBtn = By.xpath("//div[@id='paypal-animation-container']//div[@data-funding-source='paypal']");
 	private By checkoutCheckoutBtn1 = By.xpath("//a[contains(@href, '/checkout')]");
+
+
 	private By checkoutCheckoutBtn = By.xpath("//a[text()='Checkout']");
 	
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");

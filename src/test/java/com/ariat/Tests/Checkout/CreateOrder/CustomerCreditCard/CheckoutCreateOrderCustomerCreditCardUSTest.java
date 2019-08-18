@@ -12,7 +12,6 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.CheckoutPage;
-import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.BagsProductPage;
@@ -38,7 +37,6 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	private SignInPage signInPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
-	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -48,7 +46,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	public static final String ZIP_CODE = "85007";
 	public static final String MOBILE = "(602) 364-2722";
 
-	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
+	public static final String EMAILEXISTENT = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORDEXISTENT = "Parola12345!";
 	private ListOfCreditCards typeCard;
 
@@ -78,11 +76,11 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.enterCardName(CARD_NAME);
+		//checkoutProcessPage.useAddressAsItIs();
+		checkoutProcessPage.scrollBottomSecurityCode();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.checkItem();
+		checkoutProcessPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
 	}
     
@@ -102,12 +100,12 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.enterCardName(CARD_NAME);
+		//checkoutProcessPage.useAddressAsItIs();
+		checkoutProcessPage.scrollBottomSecurityCode();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.checkItem();
-   		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
+		checkoutProcessPage.reviewOrder();
+		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
    	}
     
     @Test(priority = 2)
@@ -126,12 +124,12 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.enterCardName(CARD_NAME);
+		//checkoutProcessPage.useAddressAsItIs();
+		checkoutProcessPage.scrollBottomSecurityCode();
 		checkoutProcessPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.checkItem();
-   		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
+		checkoutProcessPage.reviewOrder();
+		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
    	}
     
 	@AfterTest
@@ -142,7 +140,6 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		myBagPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
-		checkoutProcessCompletePage.quit();
 		bagsProductPage.quit();
 		myAccountPage.quit();
 	}

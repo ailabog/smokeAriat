@@ -43,8 +43,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
-	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
-
+	
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -76,7 +75,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -106,7 +105,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		logger.info("Finishing checkout -> create new order with payment method Sofort test.");
 	} 
 	
-/*	@Test(priority = 1)
+	@Test(priority = 1)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsGiropay() {
 		logger.info("Starting checkout -> create new order with payment method Giropay test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -117,7 +116,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -151,7 +150,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -172,7 +171,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		checkoutProcessPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
-	} */
+	} 
 	
 	@AfterTest
 	public void tearDown() {
@@ -187,6 +186,5 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsIETest extends BaseTest 
 		checkoutPage.quit();
 		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
-		myAccountPage.quit();
 	}
 }

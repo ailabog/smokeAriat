@@ -107,7 +107,10 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
 	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 
-	private By garmentBagProduct = By.xpath("//img[contains(@title, 'Ariat Team Garment Bag')]");
+	//private By garmentBagProduct = By.xpath("//img[contains(@title, 'Ariat Team Garment Bag')]");
+	private By garmentBagProduct = By.cssSelector("#ce3268bb64290376d227adfa41 .psd-4-full-width-video-module-1__image");
+	//css=#ce3268bb64290376d227adfa41 .psd-4-full-width-video-module-1__image 
+	//xpath=//img[@alt='Ariat Team Garment Bag']
 	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
 
 	public HomePageUS(WebDriver driver) {

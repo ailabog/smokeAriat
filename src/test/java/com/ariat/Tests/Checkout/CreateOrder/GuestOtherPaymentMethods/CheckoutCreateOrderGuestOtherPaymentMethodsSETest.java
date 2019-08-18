@@ -43,7 +43,6 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsSETest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
-	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -76,7 +75,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsSETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("8");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -98,10 +97,6 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsSETest extends BaseTest 
 		checkoutProcessPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
-		//id klarna-payments-device-recognition iframe
-		//id klarna-credit-fullscreen iframe
-		//id purchase-approval-national-identification-number
-		//670919-9530
 	} 
 	
 	@AfterTest
@@ -117,6 +112,5 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsSETest extends BaseTest 
 		checkoutPage.quit();
 		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
-		myAccountPage.quit();
 	}
 }

@@ -47,6 +47,8 @@ public class CheckoutProcessCompletePage extends BasePage{
 	private By bankNameGiropayFiled = By.id("tags");
 	private By continueSofortBE = By.xpath("//button[text()='Next']");
 	private By ingIcon = By.xpath("//button[@class='grid-button-ideal-INGBNL2A']");
+	private By openSelectionIdeal = By.xpath("//span[text()='Open']");
+	private By IdealfinishBtn = By.xpath("//button[contains(text(),'Ga verder')]");
 	//button[@class='grid-button-ideal-INGBNL2A']
 	//button[value='ideal_INGBNL2A']
 	//name("issuer")
@@ -172,9 +174,15 @@ public class CheckoutProcessCompletePage extends BasePage{
 	}
 	
 	public void clickIngICon() {
-		WebDriverUtils.scroll300(driver, ingIcon);
+		WebDriverUtils.scroll350Down(driver, ingIcon);
 		WebDriverUtils.clickOnElementWithWait(driver, ingIcon);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void chooseOpen() {
+		WebDriverUtils.clickOnElementWithWait(driver, openSelectionIdeal);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, IdealfinishBtn);
 	}
 	
 	public void enterbankGiropay(String bank) {

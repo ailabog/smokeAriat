@@ -59,7 +59,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
+/*	@Test(priority = 0)
 	public void checkoutCreateNewOrderNotBeingLoggedMasterCard() {
 		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -80,16 +80,16 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.useAddressAsItIs();
-		checkoutProcessPage.pressPaymentMethods("CreditCard");
+		//checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-		checkoutProcessPage.selectTypeCard("Master Card");
+		checkoutProcessPage.enterCardNoUS(typeCard.VISA.getNumber());
+		//checkoutProcessPage.selectTypeCard("Master Card");
 		checkoutProcessPage.selectExpirationMonthUS();
 		checkoutProcessPage.selectExpirationYearUS();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
+		checkoutProcessPage.reviewOrder();
+		//checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
 	} 
 	
@@ -115,18 +115,18 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.useAddressAsItIs();
-		checkoutProcessPage.pressPaymentMethods("CreditCard");
-		checkoutProcessPage.enterCardNameNotloggedUS(CARD_NAME);
+		//checkoutProcessPage.pressPaymentMethods("CreditCard");
+		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		//checkoutProcessPage.selectTypeCardVisa();
-		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-		checkoutProcessPage.selectExpirationMonth();
-		checkoutProcessPage.selectExpirationYear();
+		checkoutProcessPage.enterCardNoUS(typeCard.VISA.getNumber());
+		checkoutProcessPage.selectExpirationMonthUS();
+		checkoutProcessPage.selectExpirationYearUS();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
+		checkoutProcessPage.reviewOrder();
+		//checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
-	} 
+	} */
 	
 	@Test(priority = 2)
 	public void checkoutCreateNewOrderNotBeingLoggedAmericanExpress() {
@@ -149,16 +149,16 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.useAddressAsItIs();
-		checkoutProcessPage.pressPaymentMethods("CreditCard");
+		//checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.selectTypeCard("American Express");
-		checkoutProcessPage.enterCardNo(typeCard.AMERICAN_EXPRESS.getNumber());
-		checkoutProcessPage.selectExpirationMonth();
-		checkoutProcessPage.selectExpirationYear();
+		//checkoutProcessPage.selectTypeCard("American Express");
+		checkoutProcessPage.enterCardNoUS(typeCard.AMERICAN_EXPRESS.getNumber());
+		checkoutProcessPage.selectExpirationMonthUS();
+		checkoutProcessPage.selectExpirationYearUS();
 		checkoutProcessPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
-		checkoutProcessCompletePage.placeOrder();
+		checkoutProcessPage.reviewOrder();
+		//checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
 	} 
 
