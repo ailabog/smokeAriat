@@ -51,7 +51,7 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 	public static final String CITY = "Frankfurt";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
 
@@ -74,7 +74,7 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8");
+		glovesProductPage.selectAttributeSize("8.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -110,7 +110,7 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8");
+		glovesProductPage.selectAttributeSize("8.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();

@@ -53,7 +53,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 	public static final String COUNTRY = "Deutschland";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 		
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
@@ -75,7 +75,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8");
+		glovesProductPage.selectAttributeSize("8.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();

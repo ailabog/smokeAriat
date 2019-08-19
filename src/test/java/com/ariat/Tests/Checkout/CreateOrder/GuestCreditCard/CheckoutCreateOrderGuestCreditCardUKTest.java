@@ -39,7 +39,6 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	private GlovesProductPage glovesProductPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
-	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -49,7 +48,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	public static final String CITY = "London";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String EMAIL = "aila.bogasieru@gmail.com";
+	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
 
@@ -71,7 +70,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8");
+		glovesProductPage.selectAttributeSize("8.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -107,7 +106,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8");
+		glovesProductPage.selectAttributeSize("8.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -144,6 +143,5 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
 		glovesProductPage.quit();
-		myAccountPage.quit();
 	}
 }

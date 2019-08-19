@@ -79,8 +79,8 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		//checkoutProcessPage.useAddressAsItIs();
 		checkoutProcessPage.scrollBottomSecurityCode();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		checkoutProcessPage.reviewOrderUS();
+		checkoutProcessPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
 	}
     
@@ -103,8 +103,8 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		//checkoutProcessPage.useAddressAsItIs();
 		checkoutProcessPage.scrollBottomSecurityCode();
 		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		checkoutProcessPage.reviewOrderUS();
+		checkoutProcessPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
    	}
     
@@ -127,8 +127,8 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		//checkoutProcessPage.useAddressAsItIs();
 		checkoutProcessPage.scrollBottomSecurityCode();
 		checkoutProcessPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		checkoutProcessPage.reviewOrderUS();
+		checkoutProcessPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
    	}
     
