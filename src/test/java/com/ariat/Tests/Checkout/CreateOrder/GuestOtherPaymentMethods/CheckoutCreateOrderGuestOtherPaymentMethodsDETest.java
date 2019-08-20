@@ -138,7 +138,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterbankGiropay("DE11520513735120710131");
 		logger.info("Finishing checkout -> create new order with payment method Giropay test.");
-	} 
+	}
 	
 	@Test(priority = 2)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsKlarna() {

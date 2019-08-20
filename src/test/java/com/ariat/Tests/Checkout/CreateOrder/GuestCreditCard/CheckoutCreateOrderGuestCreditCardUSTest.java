@@ -11,7 +11,6 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.CheckoutPage;
-import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.BagsProductPage;
@@ -36,7 +35,6 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	private BagsProductPage bagsProductPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
-	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -80,16 +78,13 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.useAddressAsItIs();
-		//checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
 		checkoutProcessPage.enterCardNoUS(typeCard.VISA.getNumber());
-		//checkoutProcessPage.selectTypeCard("Master Card");
 		checkoutProcessPage.selectExpirationMonthUS();
 		checkoutProcessPage.selectExpirationYearUS();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrderUS();
 		checkoutProcessPage.placeOrderUS();
-		//checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
 	} 
 	
@@ -115,16 +110,13 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.useAddressAsItIs();
-		//checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		//checkoutProcessPage.selectTypeCardVisa();
-		checkoutProcessPage.enterCardNoUS(typeCard.VISA.getNumber());
+    	checkoutProcessPage.enterCardNoUS(typeCard.VISA.getNumber());
 		checkoutProcessPage.selectExpirationMonthUS();
 		checkoutProcessPage.selectExpirationYearUS();
 		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
 		checkoutProcessPage.reviewOrderUS();
 		checkoutProcessPage.placeOrderUS();
-		//checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	} 
 	
@@ -149,16 +141,13 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.useAddressAsItIs();
-		//checkoutProcessPage.pressPaymentMethods("CreditCard");
 		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		//checkoutProcessPage.selectTypeCard("American Express");
 		checkoutProcessPage.enterCardNoUS(typeCard.AMERICAN_EXPRESS.getNumber());
 		checkoutProcessPage.selectExpirationMonthUS();
 		checkoutProcessPage.selectExpirationYearUS();
 		checkoutProcessPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
 		checkoutProcessPage.reviewOrderUS();
 		checkoutProcessPage.placeOrderUS();
-		//checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
 	} 
 

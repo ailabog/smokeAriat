@@ -71,19 +71,19 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("8.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
-		//checkoutProcessPage.load(PAYPAL_URL);
 		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
 		checkoutProcessPage.nextBtnPayPal();
 		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
 		checkoutProcessPage.clickConfirmPayPal();
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	} 
 	
@@ -113,21 +113,14 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.pressPaymentMethods("PayPal");
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
-		checkoutProcessPage.nextBtnPayPal();
-		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
-		checkoutProcessPage.nextBtnPayPal();
+		checkoutProcessPage.clickPayPalDirect();
+		checkoutProcessPage.enterAccountDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
-		checkoutProcessPage.reviewOrder();
+		checkoutProcessPage.clickConfirmPayPal();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
 	}
-	//div[@[data-funding-source='paypal']
-	//div[@data-button class ='paypal-button paypal-button-number-0 paypal-button-layout-horizontal paypal-button-shape-rect paypal-button-branding-branded paypal-button-number-single paypal-button-env-sandbox paypal-should-focus paypal-button-label-checkout paypal-button-color-gold paypal-button-logo-color-blue']
-	//paypal din payments xpath=//img[@alt='paypal']  css=.paypal-button-logo-paypal
 	
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

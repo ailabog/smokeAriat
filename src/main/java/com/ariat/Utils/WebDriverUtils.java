@@ -133,67 +133,66 @@ public class WebDriverUtils {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(200,500)");
 	}
-	
+
 	public static void scrollUp(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,-250)");
 	}
-	
+
 	public static void scrollDown(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,2000)");
 	}
-	
+
 	public static void scrollBottomPage(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,4500)");
 	}
-	
+
 	public static void scrollLittDown(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,250)");
 	}
-	
+
 	public static void scroll300(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,300)");
 	}
-	
+
 	public static void scroll150(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,150)");
 	}
-	
-	
+
 	public static void scrollUp150(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,-150)");
 	}
+
 	public static void scroll500Down(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,500)");
 	}
-	
+
 	public static void scroll750Down(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,750)");
 	}
-	
+
 	public static void scroll350Down(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,350)");
 	}
-	
-	
+
 	public static void scrollMoreDown(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0, 5000)");
 	}
+
 	public static void scrollMiddlePage(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,1000)");
 	}
-
 
 	public static void moveToElement(WebDriver driver, By locator) {
 		logger.debug("Moves to element {}", locator);
@@ -208,18 +207,18 @@ public class WebDriverUtils {
 		logger.debug("Loads url {}", url);
 		driver.get(url);
 	}
-	
+
 	public static void findText(WebDriver driver, String text) {
 		logger.debug("Finding the text {}", text);
 		driver.getPageSource().contains("text");
 	}
-	
+
 	public static void clearElement(WebDriver driver, By locator) {
 		logger.debug("Clear the text from this text area:");
 		WebElement element = findElement(driver, locator);
 		element.clear();
 	}
-	
+
 	public static List<WebElement> findElements(WebDriver driver, By locator) {
 		try {
 			logger.debug("Finding element {}", locator);
@@ -230,24 +229,17 @@ public class WebDriverUtils {
 			throw new WebDriverException(e);
 		}
 	}
-	
+
 	public static boolean isElementPresent(WebDriver driver, By locator) {
 		logger.debug("Checking if element {} is present", locator);
-		return findElements(driver, locator)
-				.stream()
-				.findFirst()
-				.isPresent();
+		return findElements(driver, locator).stream().findFirst().isPresent();
 	}
-	
+
 	public static boolean isElementDisplayed(WebDriver driver, By locator) {
 		logger.debug("Checking if element {} is displayed", locator);
-		return findElements(driver, locator)
-				.stream()
-				.filter(WebElement::isDisplayed)
-				.findFirst()
-				.isPresent();
+		return findElements(driver, locator).stream().filter(WebElement::isDisplayed).findFirst().isPresent();
 	}
-	
+
 	public static void disableCookie() {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		ChromeOptions options = new ChromeOptions();

@@ -38,7 +38,6 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
-	private static final String PAYPAL_URL="https://www.sandbox.paypal.com/checkoutnow?locale.x=en_GB&fundingSource=paypal&sessionID=c58a3e1a50_mtg6ntu6nty&buttonSessionID=04ed06f251_mtg6ntu6ntg&env=sandbox&fundingOffered=paypal&logLevel=warn&sdkMeta=eyJ1cmwiOiJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9hcGkvY2hlY2tvdXQuanMifQ%3D%3D&uid=91536abcc4&version=4&token=EC-7FC97998ME054642E&xcomponent=1";
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
 	public static final String ADDRESS1 = GenerateRandomDataUtils.generateRandomString(5);
@@ -70,12 +69,12 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
-		checkoutProcessPage.load(PAYPAL_URL);
 		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
+		checkoutProcessPage.nextBtnPayPal();
 		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
-		checkoutProcessPage.clickContinuePayPal();
 		checkoutProcessPage.clickConfirmPayPal();
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged using paypal as payment method test.");
 	} 
 	
@@ -90,24 +89,21 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
 		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
 		checkoutProcessPage.enterCity(CITY);
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
+		checkoutProcessPage.selectState();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPayment();
 		checkoutProcessPage.pressPaymentMethods("PayPal");
-		checkoutProcessPage.clickBuyNow();
-		checkoutProcessPage.enterEmailPayPal("aila.bogasieru@gmail.com");
-		checkoutProcessPage.nextBtnPayPal();
-		checkoutProcessPage.enterPasswordPayPal("Ariat123!");
-		checkoutProcessPage.nextBtnPayPal();
+		checkoutProcessPage.clickPayPalDirect();
+		checkoutProcessPage.enterAccountDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
 		checkoutProcessPage.clickLoginPayPal();
+		checkoutProcessPage.clickConfirmPayPal();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
 	}
