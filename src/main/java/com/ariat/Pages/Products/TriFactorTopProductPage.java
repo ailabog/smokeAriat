@@ -16,7 +16,6 @@ import com.ariat.Utils.WebDriverUtils;
  *
  */
 
-
 public class TriFactorTopProductPage extends BasePage{
 	
 	private By addToBasket = By.cssSelector("#add-to-cart");

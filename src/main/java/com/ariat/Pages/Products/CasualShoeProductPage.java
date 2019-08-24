@@ -62,28 +62,23 @@ public class CasualShoeProductPage extends BasePage {
 
 	public CasualShoeProductPage(WebDriver driver) {
 		super(driver);
-
 	}
 
 	public void selectAttributeSize(String size) {
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
-
 	}
 
 	public void selectAttributeCalf(String calf) {
 		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
-
 	}
 
 	public void selectAttributeHeight(String height) {
 		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
-	
 	}
 
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
 			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
-	
 		}
 	}
 

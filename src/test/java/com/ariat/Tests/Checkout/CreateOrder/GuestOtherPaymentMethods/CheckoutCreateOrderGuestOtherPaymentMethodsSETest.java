@@ -22,7 +22,7 @@ import com.ariat.Utils.GenerateRandomDataUtils;
 
 
 /**
-* Checkout -> Create new order other payment methods: Klarna, Sofort, Giropay
+* Checkout -> Create new order other payment methods: Klarna
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -75,7 +75,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsSETest extends BaseTest 
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8.5");
+		glovesProductPage.selectAttributeSize("7.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();

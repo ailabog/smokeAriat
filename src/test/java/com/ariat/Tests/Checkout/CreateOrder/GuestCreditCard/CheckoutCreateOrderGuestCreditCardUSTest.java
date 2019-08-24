@@ -35,7 +35,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	private BagsProductPage bagsProductPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
-	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -160,6 +160,5 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
     	bagsProductPage.quit();
-		myAccountPage.quit();
 	}
 }

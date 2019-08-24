@@ -46,8 +46,6 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String CITY = "Frankfurt";
-	public static final String COUNTRY = "Deutschland";
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
 	public static final String PASSWORDEXISTENT = "Parola12345!";
 	private ListOfCreditCards typeCard;
@@ -75,7 +73,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8.5");
+		glovesProductPage.selectAttributeSize("7.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -102,7 +100,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("8.5");
+		glovesProductPage.selectAttributeSize("7.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();

@@ -89,7 +89,6 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
 		checkoutProcessPage.enterAddress(ADDRESS);

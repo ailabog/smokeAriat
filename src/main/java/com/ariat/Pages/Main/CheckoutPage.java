@@ -135,7 +135,6 @@ public class CheckoutPage extends BasePage {
 	}
 	
 	public CheckoutProcessPage returnCheckoutProcessPayPalPage() {
-		
 		WebDriverUtils.scroll500Down(driver, By.xpath("//iframe[@class='zoid-component-frame zoid-visible']"));
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='zoid-component-frame zoid-visible']")));
 		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);

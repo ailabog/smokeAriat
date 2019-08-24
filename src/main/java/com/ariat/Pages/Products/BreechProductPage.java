@@ -160,19 +160,16 @@ public class BreechProductPage extends BasePage{
 
 	public void recommendProductYes() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductYes);
-
 	}
 
 	public void recommendProductNo() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductNo);
-	
 	}
 
 	public void userInfoReview(String nickname, String userLocationReview, String email) {
 		WebDriverUtils.enterTextBox(driver, nicknameReview, nickname);
 		WebDriverUtils.enterTextBox(driver, userLocation, userLocationReview);
 		WebDriverUtils.enterTextBox(driver, emailReview, email);
-
 	}
 
 	public void selectAttributeLength(String lengthSize) {
@@ -181,7 +178,7 @@ public class BreechProductPage extends BasePage{
 
 	public void postReview() {
 		WebDriverUtils.clickOnElementWithWait(driver, postReviewButton);
-	
+
 	}
 
 	public void addToCart() {
@@ -191,7 +188,6 @@ public class BreechProductPage extends BasePage{
 
 	public void update() {
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
-
 	}
 
 	public MyBagPage returnMyBagPage() {

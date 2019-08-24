@@ -1,4 +1,4 @@
-package com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard;
+package com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -6,14 +6,15 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
+import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.Main.CheckoutPage;
+import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
@@ -21,13 +22,13 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
 /**
- * Checkout -> Create new order
+ * Checkout -> Create new order as customer credit card Germany
  * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
-public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
+public class CheckoutCreateOrderCustomerOtherPaymentMethodsDETest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
@@ -39,37 +40,35 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
+	private SignInPage signInPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
-	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String ADDRESS1 = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String CITY = "Frankfurt";
-	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
-	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
-	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
-	private ListOfCreditCards typeCard;
+	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
+	public static final String PASSWORDEXISTENT = "Parola12345!";
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir") + RELATIV_PATH;
+
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderNotBeingLoggedMasterCard() {
-		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
+	public void checkoutCreateNewOrderCustomerSofort() {
+		logger.info("Starting checkout -> create new order customer Sofort...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
+		signInPage.returningPassword(PASSWORDEXISTENT);
+		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
@@ -77,35 +76,33 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectExpirationMonthDE();
-		checkoutProcessPage.selectExpirationYear();
-		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		checkoutProcessPage.pressPaymentMethods("Sofort");
 		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
-		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
-	} 
-	
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessCompletePage.enterBankSofort("Demo");
+		checkoutProcessCompletePage.continueSofort();
+		checkoutProcessCompletePage.enterValuesId("88888888", "1234");
+		checkoutProcessCompletePage.continueSofort();
+		checkoutProcessCompletePage.checkBankAccount();
+		checkoutProcessCompletePage.scrollContinueSofort();
+		checkoutProcessCompletePage.continueSofort();
+		checkoutProcessCompletePage.enterTransactionIdDE("12345");
+		checkoutProcessCompletePage.continueSofort();
+		logger.info("Finishing checkout -> create new order customer Sofort.");
+	}
+
 	@Test(priority = 1)
-	public void checkoutCreateNewOrderNotBeingLoggedVisa() {
-		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
+	public void checkoutCreateNewOrderCustomerGiropay() {
+		logger.info("Starting checkout -> create new order customer Giropay...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
+		signInPage.returningPassword(PASSWORDEXISTENT);
+		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
@@ -113,29 +110,43 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
-		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
 		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-		checkoutProcessPage.selectExpirationMonthDE();
-		checkoutProcessPage.selectExpirationYear();
-		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
+		checkoutProcessPage.pressPaymentMethods("Giropay");
+		checkoutProcessPage.enterBICGiropay("12345");
 		checkoutProcessPage.reviewOrder();
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		checkoutProcessCompletePage.enterbankGiropay("DE11520513735120710131");
+		logger.info("Finishing checkout -> create new order customer Giropay.");
+	}
+
+	@Test(priority = 2)
+	public void checkoutCreateNewOrderCustomerKlarna() {
+		logger.info("Starting checkout -> create new order customer Klarna...");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
+		signInPage.returningPassword(PASSWORDEXISTENT);
+		myAccountPage = signInPage.returnMyAccountPage();
+		womenCategoryPage = homePageDE.returnWomenCategoryPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
+		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage.selectAttributeSize("7.5");
+		myBagPage = glovesProductPage.returnMyBagPage();
+		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutProcessPage.clickNextPaymentDE();
+		checkoutProcessPage.pressPaymentMethods("Klarna");
+		checkoutProcessPage.scrollLitlleDown();
 		checkoutProcessPage.reviewOrder();
-		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
-	} 
-	
-	
+		checkoutProcessPage.dateofBirthKlarna("12012019");
+		checkoutProcessPage.continueKlarna();
+		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
+		logger.info("Finishing checkout -> create new order customer Klarna.");
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -148,5 +159,6 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
 		glovesProductPage.quit();
+		myAccountPage.quit();
 	}
 }
