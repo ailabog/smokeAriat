@@ -16,13 +16,13 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
-* Checkout -> Create new order other payment methods: Klarna, Sofort, Giropay
+ * Checkout -> Create new order other payment methods: Klarna, Sofort, Giropay
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -43,6 +43,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -55,10 +56,10 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
-		
+
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir") + RELATIV_PATH;
+
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
@@ -89,9 +90,9 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.pressPaymentMethods("Sofort");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Ideal");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
 		checkoutProcessCompletePage.continueSofort();
@@ -103,9 +104,8 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutProcessCompletePage.enterTransactionIdDE("12345");
 		checkoutProcessCompletePage.continueSofort();
 		logger.info("Finishing checkout -> create new order with payment method Sofort test.");
-	} 
-	
-	
+	}
+
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsGiropay() {
 		logger.info("Starting checkout -> create new order with payment method Giropay test...");
@@ -131,15 +131,15 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.pressPaymentMethods("Giropay");
-		checkoutProcessPage.enterBICGiropay("12345");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Giropay");
+		paymentMethodsCheckoutPage.enterBICGiropay("12345");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterbankGiropay("DE11520513735120710131");
 		logger.info("Finishing checkout -> create new order with payment method Giropay test.");
 	}
-	
+
 	@Test(priority = 2)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsKlarna() {
 		logger.info("Starting checkout -> create new order with payment method Klarna test...");
@@ -165,16 +165,16 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.pressPaymentMethods("Klarna");
-		checkoutProcessPage.scrollLitlleDown();
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.dateofBirthKlarna("12012019");
-		checkoutProcessPage.continueKlarna();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Klarna");
+		paymentMethodsCheckoutPage.enterBICGiropay("12345");
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.dateofBirthKlarna("12012019");
+		paymentMethodsCheckoutPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
-	} 
-	
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -183,10 +183,11 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsDETest extends BaseTest 
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
-		myBagPage.quit();
-		checkoutProcessPage.quit();
-		checkoutPage.quit();
-		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
+		myBagPage.quit();
+		checkoutPage.quit();
+		checkoutProcessPage.quit();
+		checkoutProcessCompletePage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

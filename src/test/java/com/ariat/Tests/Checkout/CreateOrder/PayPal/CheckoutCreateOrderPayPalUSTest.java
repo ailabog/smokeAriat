@@ -13,6 +13,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -37,6 +38,7 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -97,12 +99,11 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		checkoutProcessPage.selectState();
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("PayPal");
-		checkoutProcessPage.clickPayPalDirect();
-		checkoutProcessPage.enterAccountDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
-		checkoutProcessPage.clickLoginPayPal();
-		checkoutProcessPage.clickConfirmPayPal();
+		paymentMethodsCheckoutPage.pressPaymentMethods("PayPal");
+		paymentMethodsCheckoutPage.clickPayPalDirect();
+		paymentMethodsCheckoutPage.enterAccountDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
+		paymentMethodsCheckoutPage.clickLoginPayPal();
+		paymentMethodsCheckoutPage.clickConfirmPayPal();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
 	}
@@ -118,5 +119,6 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 		checkoutProcessCompletePage.quit();
 		bagsProductPage.quit();
 		myAccountPage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

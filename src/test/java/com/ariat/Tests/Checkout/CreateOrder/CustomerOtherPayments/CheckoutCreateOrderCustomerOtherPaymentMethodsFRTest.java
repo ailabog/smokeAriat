@@ -17,6 +17,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -45,6 +46,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsFRTest extends BaseTe
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
@@ -77,9 +79,9 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsFRTest extends BaseTe
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPaymentFR();
-		checkoutProcessPage.pressPaymentMethods("Sofort");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
 		checkoutProcessCompletePage.continueSofort();
@@ -101,10 +103,12 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsFRTest extends BaseTe
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
+		myAccountPage.quit();
+		glovesProductPage.quit();
 		myBagPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
-    	glovesProductPage.quit();
-		myAccountPage.quit();
+   		paymentMethodsCheckoutPage.quit();
+		checkoutProcessCompletePage.quit();
 	}
 }

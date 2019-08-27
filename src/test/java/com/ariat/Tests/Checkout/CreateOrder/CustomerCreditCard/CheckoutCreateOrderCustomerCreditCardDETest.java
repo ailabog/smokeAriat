@@ -17,6 +17,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -44,6 +45,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
@@ -73,15 +75,15 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.scrollBottomSecurityCode();
-		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order being logged credit card Master Card test.");
 	}
 
@@ -100,15 +102,15 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.scrollBottomSecurityCode();
-		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order being logged credit card Visa test.");
 	}
 
@@ -121,9 +123,10 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		myBagPage.quit();
-		checkoutProcessPage.quit();
+		glovesProductPage.quit();
 		checkoutPage.quit();
-    	glovesProductPage.quit();
+    	checkoutProcessPage.quit();
+		paymentMethodsCheckoutPage.quit();
 		myAccountPage.quit();
 	}
 }

@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -43,6 +44,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -89,9 +91,9 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPaymentFR();
-		checkoutProcessPage.pressPaymentMethods("Sofort");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
 		checkoutProcessCompletePage.continueSofort();
@@ -113,9 +115,10 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
-		myBagPage.quit();
-		checkoutProcessPage.quit();
-		checkoutPage.quit();
 		glovesProductPage.quit();
+		myBagPage.quit();
+		checkoutPage.quit();
+		checkoutProcessPage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

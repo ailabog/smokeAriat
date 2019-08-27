@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -43,6 +44,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -90,9 +92,9 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Sofort");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
 		checkoutProcessCompletePage.continueSofortBE();
@@ -132,9 +134,9 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Ideal");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Ideal");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.clickIngICon();
 		checkoutProcessCompletePage.chooseOpen();
@@ -149,10 +151,11 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
+		glovesProductPage.quit();
 		myBagPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
 		checkoutProcessCompletePage.quit();
-		glovesProductPage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

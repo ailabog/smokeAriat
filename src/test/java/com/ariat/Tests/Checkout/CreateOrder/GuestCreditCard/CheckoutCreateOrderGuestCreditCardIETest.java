@@ -16,6 +16,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageIE;
 import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -41,6 +42,7 @@ public class CheckoutCreateOrderGuestCreditCardIETest extends BaseTest {
 	private GlovesProductPage glovesProductPage;
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -74,7 +76,7 @@ public class CheckoutCreateOrderGuestCreditCardIETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -88,14 +90,14 @@ public class CheckoutCreateOrderGuestCreditCardIETest extends BaseTest {
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		checkoutProcessPage.selectExpirationMonthDE();
-		checkoutProcessPage.selectExpirationYear();
-		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
+		paymentMethodsCheckoutPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		paymentMethodsCheckoutPage.selectExpirationMonth();
+		paymentMethodsCheckoutPage.selectExpirationYear();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
 	} 
 	
@@ -110,7 +112,7 @@ public class CheckoutCreateOrderGuestCreditCardIETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -124,14 +126,14 @@ public class CheckoutCreateOrderGuestCreditCardIETest extends BaseTest {
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-		checkoutProcessPage.selectExpirationMonthDE();
-		checkoutProcessPage.selectExpirationYear();
-		checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
+		paymentMethodsCheckoutPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
+		paymentMethodsCheckoutPage.selectExpirationMonth();
+		paymentMethodsCheckoutPage.selectExpirationYear();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	} 
 	
@@ -145,6 +147,7 @@ public class CheckoutCreateOrderGuestCreditCardIETest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		myBagPage.quit();
+		paymentMethodsCheckoutPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
 		glovesProductPage.quit();

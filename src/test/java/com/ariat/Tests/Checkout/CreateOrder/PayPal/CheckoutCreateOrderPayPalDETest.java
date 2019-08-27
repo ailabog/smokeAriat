@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -43,6 +44,7 @@ public class CheckoutCreateOrderPayPalDETest extends BaseTest {
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 	    
     public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -112,12 +114,12 @@ public class CheckoutCreateOrderPayPalDETest extends BaseTest {
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPaymentDE();
-		checkoutProcessPage.pressPaymentMethods("PayPal");
-		checkoutProcessPage.clickPayPalDirect();
-		checkoutProcessPage.enterAccountDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
-		checkoutProcessPage.clickLoginPayPal();
-		checkoutProcessPage.clickConfirmPayPal();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("PayPal");
+		paymentMethodsCheckoutPage.clickPayPalDirect();
+		paymentMethodsCheckoutPage.enterAccountDetailsPayPal("aila.bogasieru@gmail.com", "Ariat123!");
+		paymentMethodsCheckoutPage.clickLoginPayPal();
+		paymentMethodsCheckoutPage.clickConfirmPayPal();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order without being logged PayPal test.");
 	}

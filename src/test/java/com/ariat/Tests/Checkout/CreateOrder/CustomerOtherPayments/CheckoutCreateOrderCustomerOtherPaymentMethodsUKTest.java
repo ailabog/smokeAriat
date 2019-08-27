@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -43,6 +44,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsUKTest extends BaseTe
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = "London";
@@ -76,12 +78,11 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsUKTest extends BaseTe
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Klarna");
-	//	checkoutProcessPage.scrollLitlleDown();
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.dateofBirthKlarna("12012019");
-		checkoutProcessPage.continueKlarna();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Klarna");
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.dateofBirthKlarna("12012019");
+		paymentMethodsCheckoutPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test..");
 	}
@@ -93,10 +94,11 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsUKTest extends BaseTe
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
+		glovesProductPage.quit();
+		myAccountPage.quit();
 		myBagPage.quit();
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
-		glovesProductPage.quit();
-		myAccountPage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

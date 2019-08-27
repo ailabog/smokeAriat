@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -42,6 +43,7 @@ public class NegativeCheckoutCreateOrderUKTest extends BaseTest {
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomNumber(5);
@@ -125,13 +127,13 @@ public class NegativeCheckoutCreateOrderUKTest extends BaseTest {
 		checkoutProcessPage.selectCountry("UK");
 		checkoutProcessPage.enterMobile(MOBILE1);
 		checkoutProcessPage.enterEmail(EMAILEXISTENT);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("CreditCard");
-		checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-		checkoutProcessPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
-		checkoutProcessPage.selectExpirationMonth();
-		checkoutProcessPage.selectExpirationYear();
-		checkoutProcessPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
+		paymentMethodsCheckoutPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
+		paymentMethodsCheckoutPage.selectTypeCardMasterCard();
+		paymentMethodsCheckoutPage.selectExpirationMonth();
+		paymentMethodsCheckoutPage.selectExpirationYear();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.assertErrMsgOrderNotPlaced(ERROR_ORDER_NOT_PLACED);
 		logger.info("Finishing checkout -> create negative order invalid payment details.");

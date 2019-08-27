@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
@@ -18,6 +17,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -46,6 +46,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsSETest extends BaseTe
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
@@ -78,13 +79,11 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsSETest extends BaseTe
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Klarna");
-		checkoutProcessPage.scrollLitlleDown();
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.dateofBirthKlarna("670919-9530");
-		checkoutProcessPage.continueKlarna();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Klarna");
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.dateofBirthKlarna("12012019");
+		paymentMethodsCheckoutPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
 	}
@@ -97,10 +96,11 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsSETest extends BaseTe
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
+		glovesProductPage.quit();
 		myBagPage.quit();
-		checkoutProcessPage.quit();
-		checkoutPage.quit();
-    	glovesProductPage.quit();
 		myAccountPage.quit();
+		checkoutPage.quit();
+		checkoutProcessPage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

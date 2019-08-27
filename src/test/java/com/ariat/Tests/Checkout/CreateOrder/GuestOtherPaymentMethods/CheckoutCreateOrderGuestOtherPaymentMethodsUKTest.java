@@ -15,13 +15,13 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
-
 /**
-* Checkout -> Create new order other payment methods: Klarna
+ * Checkout -> Create new order other payment methods: Klarna
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -41,6 +41,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsUKTest extends BaseTest 
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
@@ -52,10 +53,10 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsUKTest extends BaseTest 
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
-		
+
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir") + RELATIV_PATH;
+
 	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
@@ -85,16 +86,15 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsUKTest extends BaseTest 
 		checkoutProcessPage.enterZipCode(ZIP_CODE);
 		checkoutProcessPage.enterMobile(MOBILE);
 		checkoutProcessPage.enterEmail(EMAIL);
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Klarna");
-		checkoutProcessPage.scrollLitlleDown();
-		checkoutProcessPage.reviewOrder();
-		checkoutProcessPage.dateofBirthKlarna("12012019");
-		checkoutProcessPage.continueKlarna();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Klarna");
+		paymentMethodsCheckoutPage.reviewOrder();
+		paymentMethodsCheckoutPage.dateofBirthKlarna("670919-9530");
+		paymentMethodsCheckoutPage.continueKlarna();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		logger.info("Finishing checkout -> create new order with payment method Klarna test.");
-	} 
-	
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -102,10 +102,11 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsUKTest extends BaseTest 
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
-		myBagPage.quit();
-		checkoutProcessPage.quit();
-		checkoutPage.quit();
-		checkoutProcessCompletePage.quit();
 		glovesProductPage.quit();
+		myBagPage.quit();
+		checkoutPage.quit();
+		checkoutProcessPage.quit();
+		checkoutProcessCompletePage.quit();
+		paymentMethodsCheckoutPage.quit();
 	}
 }

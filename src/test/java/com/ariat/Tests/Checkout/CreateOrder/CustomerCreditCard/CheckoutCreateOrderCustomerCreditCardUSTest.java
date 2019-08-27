@@ -14,6 +14,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -38,6 +39,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	private CheckoutPage checkoutPage;
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String ADDRESS = "W. Adams St.";
@@ -75,12 +77,12 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
 		//checkoutProcessPage.useAddressAsItIs();
-		checkoutProcessPage.scrollBottomSecurityCode();
-		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessPage.reviewOrderUS();
-		checkoutProcessPage.placeOrderUS();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.reviewOrderUS();
+		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
 	}
     
@@ -99,12 +101,12 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		myBagPage = bagsProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
 		//checkoutProcessPage.useAddressAsItIs();
-		checkoutProcessPage.scrollBottomSecurityCode();
-		checkoutProcessPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		checkoutProcessPage.reviewOrderUS();
-		checkoutProcessPage.placeOrderUS();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
+		paymentMethodsCheckoutPage.reviewOrderUS();
+		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
    	}
     
@@ -123,12 +125,12 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		myBagPage = bagsProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
 		//checkoutProcessPage.useAddressAsItIs();
-		checkoutProcessPage.scrollBottomSecurityCode();
-		checkoutProcessPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
-		checkoutProcessPage.reviewOrderUS();
-		checkoutProcessPage.placeOrderUS();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
+		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
+		paymentMethodsCheckoutPage.reviewOrderUS();
+		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
    	}
     
@@ -139,6 +141,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		homePageUS.quit();
 		myBagPage.quit();
 		checkoutProcessPage.quit();
+		paymentMethodsCheckoutPage.quit();
 		checkoutPage.quit();
 		bagsProductPage.quit();
 		myAccountPage.quit();

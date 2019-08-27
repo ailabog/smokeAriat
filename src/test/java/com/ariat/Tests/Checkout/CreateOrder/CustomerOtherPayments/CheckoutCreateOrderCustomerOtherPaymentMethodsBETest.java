@@ -17,6 +17,7 @@ import com.ariat.Pages.Main.CheckoutPage;
 import com.ariat.Pages.Main.CheckoutProcessCompletePage;
 import com.ariat.Pages.Main.CheckoutProcessPage;
 import com.ariat.Pages.Main.MyBagPage;
+import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -45,6 +46,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 	private CheckoutProcessPage checkoutProcessPage;
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private CheckoutProcessCompletePage checkoutProcessCompletePage;
+	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
@@ -73,13 +75,13 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Sofort");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Sofort");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.enterBankSofort("Demo");
 		checkoutProcessCompletePage.continueSofortBE();
@@ -93,7 +95,7 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		logger.info("Finishing checkout -> Create new order customer Sofort test.");
 	}
 
-	/*@Test(priority = 1)
+	@Test(priority = 1)
 	public void checkoutCreateNewOrderCustomerIdeal() {
 		logger.info("Starting checkout -> Create new order customer Ideal test....");
 		homePage = new HomePage(new ChromeDriver());
@@ -108,18 +110,18 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.clickNextPayment();
-		checkoutProcessPage.pressPaymentMethods("Ideal");
-		checkoutProcessPage.reviewOrder();
+		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.pressPaymentMethods("Ideal");
+		paymentMethodsCheckoutPage.reviewOrder();
 		checkoutProcessCompletePage = checkoutProcessPage.returnCheckoutProcessCompletePage();
 		checkoutProcessCompletePage.clickIngICon();
 		checkoutProcessCompletePage.chooseOpen();
 		logger.info("Finishing checkout -> Create new order customer Ideal test.");
-	}*/
+	}
 
 	@AfterTest
 	public void tearDown() {
@@ -129,10 +131,12 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
-		myBagPage.quit();
-		checkoutProcessPage.quit();
-		checkoutPage.quit();
-    	glovesProductPage.quit();
+		glovesProductPage.quit();
 		myAccountPage.quit();
+		myBagPage.quit();
+		checkoutPage.quit();
+		checkoutProcessPage.quit();
+    	paymentMethodsCheckoutPage.quit();
+		checkoutProcessCompletePage.quit();
 	}
 }
