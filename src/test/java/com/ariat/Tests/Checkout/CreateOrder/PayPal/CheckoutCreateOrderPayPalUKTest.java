@@ -75,7 +75,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPayPalPage();
@@ -98,7 +98,7 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();

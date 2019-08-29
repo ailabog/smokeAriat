@@ -9,14 +9,27 @@
                <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUKTest" />
                <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUKTest" />
                <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUKTest" />
-                <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
+               <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUKTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUKTest" />
                
+               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
+               <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDETest" />
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDETest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryDETest" />
+               <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardDETest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardDETest" />
+              
+         
                <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
                <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUSTest" />
                <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUSTest" />
                <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUSTest" />
                <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
-              
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest" />
+         
          </classes>
      </test>
 </suite>

@@ -8,14 +8,12 @@ import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.BagsProductPage;
-import com.ariat.Pages.Products.RebarTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
 
 /**
@@ -37,8 +35,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 	private WomenAccessoriesPage menAccessoriesPage;
 	private WomenAccessoriesBagsPage menAccessoriesBagsPage;
 	private BagsProductPage bagsProductPage;
-	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
-	private RebarTopProductPage rebarTopProductPage;
+
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -64,22 +61,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		logger.info("Finishing product page -> Men Category Bags add to cart test.");
 	}
     
-    @Test(priority = 1)
-	public void productPageMenCategoryAddToWishListShareToAFriendTest() {
-		logger.info("Starting product page -> Men Category Add to Wishlist & share it to a friend test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		menCategoryPage = homePageUS.returnWomenCategoryPage();
-		menCategoryPage.womenCategory();
-		womenClothingTopsAndTshirtsPage = homePageUS.returnWomenClothingTopsAndTshirtsPage();
-		rebarTopProductPage = womenClothingTopsAndTshirtsPage.returnRebarToptPage();
-		rebarTopProductPage.selectAttributeSize("Small");
-		rebarTopProductPage.addToCart();
-		logger.info("Finishing product page -> Men Category Add to WishList & share it to a friend test.");
-	}
-	
+  
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

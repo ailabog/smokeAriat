@@ -41,7 +41,11 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By cardNoUS = By.xpath("//input[@id='c-cardnumber']");
 	private By klarnaBtn = By.xpath(
 			"//label[@class='el-radio is-checked payment-method-radio payment-method__KLARNA']//span[text()='Klarna']");
-	private By sofortBtn = By.xpath("//span[text()='Sofort']");
+	//private By sofortBtn = By.xpath("//label//span[text()='Sofort']");
+	//xpath=//section[@id='app']/main/div/div/form[2]/div/div[2]/div[3]/label/span[2]
+	//xpath=//span[contains(.,'Sofort')]
+	//private By sofortBtn = By.cssSelector(".payment-method__SOFORT > .el-radio__label");
+	private By sofortBtn = By.xpath("//span[contains(text(),'Sofort')]");
 	private By giropayBtn = By.cssSelector(".payment-method__GIROPAY > .el-radio__label");
 	private By payPalBtn = By.xpath("//span[text()='Paypal']");
 	private By creditCardBtn = By
@@ -53,7 +57,8 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By dateOfBirthFieldKlarna = By.id("purchase-approval-date-of-birth");
 	private By continueKlarnaBtn = By.cssSelector("#purchase-approval-continue div:nth-child(2)");
 	private By typeCardLocator = By.xpath("//*[@id=\"c-ct\"]");
-	private By idealBtn = By.xpath("//span[text()='iDeal']");
+	private By idealBtn = By.xpath("//span[contains(text(), 'iDeal')]");
+	//css=.payment-method__IDEAL > .el-radio__label
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");

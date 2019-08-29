@@ -133,6 +133,11 @@ public class WebDriverUtils {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(200,500)");
 	}
+	//Jenkins version
+	/* public static void scrollLittDown(WebDriver driver, By locator) {
+		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+		jsExec.executeScript("javascript:window.scrollBy(0,300)");
+	} */
 
 	public static void scrollUp(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
@@ -149,9 +154,15 @@ public class WebDriverUtils {
 		jsExec.executeScript("javascript:window.scrollBy(0,4500)");
 	}
 
+	/*
+	 * public static void scrollLittDown(WebDriver driver, By locator) {
+	 * JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+	 * jsExec.executeScript("javascript:window.scrollBy(0,250)"); }
+	 */
+
 	public static void scrollLittDown(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
-		jsExec.executeScript("javascript:window.scrollBy(0,250)");
+		jsExec.executeScript("javascript:window.scrollBy(0,300)");
 	}
 
 	public static void scroll300(WebDriver driver, By locator) {
@@ -183,7 +194,7 @@ public class WebDriverUtils {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,350)");
 	}
-	
+
 	public static void scroll1500Down(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,1500)");

@@ -132,6 +132,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 
 	private By aboutUsHeader = By.linkText("About Us");
 	private By closeButton = By.xpath("//div[text()='closeButton']");
+	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
 
 	public void checkElementsHeader() {
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
@@ -433,6 +434,12 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenText));
+		return new WomenCategoryPage(driver);
+	}
+	
+	public WomenCategoryPage returnWomenCategoryPageRiding() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, ridingCategory);
 		return new WomenCategoryPage(driver);
 	}
 
