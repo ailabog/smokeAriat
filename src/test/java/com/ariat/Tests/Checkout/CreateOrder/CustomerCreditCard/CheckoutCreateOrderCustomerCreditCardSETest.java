@@ -103,9 +103,10 @@ public class CheckoutCreateOrderCustomerCreditCardSETest extends BaseTest {
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
-		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();

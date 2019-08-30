@@ -123,7 +123,6 @@ public class CheckoutCreateOrderCustomerCreditCardFRTest extends BaseTest {
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		myBagPage.quit();
-		checkoutProcessPage.quit();
 		paymentMethodsCheckoutPage.quit();
 		checkoutPage.quit();
     	glovesProductPage.quit();

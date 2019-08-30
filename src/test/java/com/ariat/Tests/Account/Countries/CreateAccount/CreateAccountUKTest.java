@@ -12,7 +12,6 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
-import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
@@ -33,7 +32,6 @@ public class CreateAccountUKTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private OrderDetailsPage orderDetailsPage;
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
@@ -89,47 +87,6 @@ public class CreateAccountUKTest extends BaseTest {
 		logger.info("Finishing returning customer test...");
 	}
 
-	@Test(priority = 2)
-	public void checkInvalidOrderTest() {
-		logger.info("Starting checking invalid order test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
-		signInPage.checkStatusClick();
-		signInPage.assertErrorMessageInexistingOrderNo(ERROR_MESSAGE);
-		logger.info("Finishing checking invalid order test...");
-	}
-	
-	@Test(priority = 3)
-	public void checkValidOrderTest() {
-		logger.info("Starting checking valid order test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
-		orderDetailsPage = signInPage.returnOrderDetailsPage();
-		logger.info("Finishing checking valid order test...");
-	}
-	
-	
-	@Test(priority = 4)
-	public void forgotPasswordTest() {
-		logger.info("Starting forgot password test...");
-		homePage = new HomePage(new ChromeDriver());
-	    homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.forgotPasswordClick();
-		signInPage.forgotPasswordEmail(EMAIL);
-		signInPage.ForgotPasswordSend();
-		signInPage.closeForgotPassword();
-		logger.info("Finishing forgot password test...");
-	}
-
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -137,6 +94,5 @@ public class CreateAccountUKTest extends BaseTest {
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();
-		orderDetailsPage.quit();
 	}
 }

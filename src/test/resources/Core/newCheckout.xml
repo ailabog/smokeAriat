@@ -27,7 +27,6 @@
  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsBETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsDETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsFRTest" />
- <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsIETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsSETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods.CheckoutCreateOrderGuestOtherPaymentMethodsUKTest" />
                
@@ -35,7 +34,6 @@
  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsBETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsDETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsFRTest" />
- <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsIETest" />
  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsSETest"  />
  <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsUKTest" />
                
