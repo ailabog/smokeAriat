@@ -57,7 +57,6 @@ public class CheckoutCreateOrderPayPalUSTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
 	
 	@Test(priority = 0)
 	public void checkoutCreateNewOrderPayPal() {

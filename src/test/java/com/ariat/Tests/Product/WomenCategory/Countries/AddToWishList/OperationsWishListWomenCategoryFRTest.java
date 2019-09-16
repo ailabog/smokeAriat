@@ -72,7 +72,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriendFR("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
@@ -93,7 +93,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Bas");
 		myWishListPage.increaseQtyWishList(3);
@@ -119,7 +119,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
@@ -142,7 +142,7 @@ public class OperationsWishListWomenCategoryFRTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");

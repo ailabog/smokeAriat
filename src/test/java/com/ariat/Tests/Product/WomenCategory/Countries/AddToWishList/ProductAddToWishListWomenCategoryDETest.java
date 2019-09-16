@@ -84,7 +84,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 
@@ -100,7 +100,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.returningCustomer(EMAIL, "Deutsch");
 		myAccountWishListPage.returningPassword(PASSWORD);
@@ -119,7 +119,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
@@ -145,7 +145,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);

@@ -74,30 +74,7 @@ public class AddCreditCardUKTest extends BaseTest{
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add a credit card UK test");
   } 
-	
-	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUKTest() {
-		logger.info("Starting add credit card from Payment Info UK test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
-		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
-		addACreditCardPage.applyCardCreation();
-		logger.info("Finishing add credit card from Payment info UK test");
-		
-  }
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
