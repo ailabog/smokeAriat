@@ -70,7 +70,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
+		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUS");
 		signInPage.returningPassword(PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		bagsProductPage = homePageUS.returnBagsProductPage();
@@ -94,7 +94,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
    		signInPage = homePageUS.returnSignInPage();
-   		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
+   		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUS");
    		signInPage.returningPassword(PASSWORDEXISTENT);
    		myAccountPage = signInPage.returnMyAccountPage();
    		bagsProductPage = homePageUS.returnBagsProductPage();
@@ -118,7 +118,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
    		signInPage = homePageUS.returnSignInPage();
-   		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUK");
+   		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUS");
    		signInPage.returningPassword(PASSWORDEXISTENT);
    		myAccountPage = signInPage.returnMyAccountPage();
    		bagsProductPage = homePageUS.returnBagsProductPage();

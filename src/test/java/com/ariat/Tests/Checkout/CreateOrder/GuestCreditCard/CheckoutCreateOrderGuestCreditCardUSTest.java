@@ -81,7 +81,8 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.selectTypeCardMasterCard();
+		//paymentMethodsCheckoutPage.selectTypeCardMasterCard();
+		paymentMethodsCheckoutPage.selectTypeCard("Master Card");
 		paymentMethodsCheckoutPage.enterCardNoUS(typeCard.MASTER_CARD.getNumber());
 		paymentMethodsCheckoutPage.selectExpirationMonthUS();
 		paymentMethodsCheckoutPage.selectExpirationYearUS();
@@ -145,7 +146,8 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.selectTypeCardAmericanExpress();
+		//paymentMethodsCheckoutPage.selectTypeCardAmericanExpress();
+		paymentMethodsCheckoutPage.selectTypeCard("American Express");
 		paymentMethodsCheckoutPage.enterCardNoUS(typeCard.AMERICAN_EXPRESS.getNumber());
 		paymentMethodsCheckoutPage.selectExpirationMonthUS();
 		paymentMethodsCheckoutPage.selectExpirationYearUS();

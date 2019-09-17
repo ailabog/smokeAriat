@@ -27,7 +27,7 @@ public class SignInPage extends BasePage {
 
 	public static final Logger logger = LoggerFactory.getLogger(SignInPage.class);
 
-	private By addressEmailTextBoxUS = By.xpath("//input[@placeholder='Email address']");
+	private By addressEmailTextBoxUS = By.xpath("//input[@placeholder='Email Address (Required)']");
 	private By addressEmailTextBoxUK = By.xpath("//input[@placeholder='Email address']");
 	private By emailAddressTextBoxDE = By.xpath("//input[@placeholder='E-Mail-Adresse (Erforderlich)']");
 	private By emailAddressTextBoxFR = By.xpath("//input[@placeholder='Adresse courriel (Requis)']");

@@ -51,7 +51,6 @@ public class AddCreditCardUKTest extends BaseTest{
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
 	public void addCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card UK test");
