@@ -133,11 +133,12 @@ public class WebDriverUtils {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(200,500)");
 	}
-	//Jenkins version
-	 public static void scrollLittDown(WebDriver driver, By locator) {
+
+	// Jenkins version
+	public static void scrollLittDown(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0,300)");
-	} 
+	}
 
 	public static void scrollUp(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;

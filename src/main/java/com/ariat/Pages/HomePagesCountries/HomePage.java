@@ -423,7 +423,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			}
 			return new HomePageUS(driver);
 
-      /* //local version
+     /*  //local version
 		case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
@@ -440,7 +440,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			}
 			return new HomePageUK(driver);*/
 			
-		 //Jenkins version 
+		//Jenkins version 
 			case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);

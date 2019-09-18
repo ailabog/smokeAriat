@@ -76,11 +76,11 @@ public class AddCreditCardUKTest extends BaseTest{
 
 	@AfterTest
 	public void tearDown() {
-		homePage.quit();
-		homePageUK.quit();
 		signInPage.quit();
 		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
+		homePage.quit();
+		homePageUK.quit();
 	}
 }

@@ -20,7 +20,9 @@ public class CheckoutProcessPage extends BasePage {
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
-	private By selectOption = By.xpath("//li//span[text()='Austria']");
+	//private By selectOption = By.xpath("//li//span[text()='Austria']");
+	
+	private By selectOption = By.xpath("//li//span[contains(text(),'Austria')]");
 	private By selectOptionBE = By.xpath("//li//span[text()='Belgium']");
 	private By selectOptionDE = By.xpath("//li//span[text()='Deutschland']");
 	private By selectOptionFR = By.xpath("//li//span[text()='Belgique']");

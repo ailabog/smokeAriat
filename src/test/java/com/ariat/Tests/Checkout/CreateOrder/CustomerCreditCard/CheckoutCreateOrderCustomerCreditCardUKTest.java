@@ -112,39 +112,6 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order being logged credit card Visa test.");
 	}
 
-	/*
-	 * @Test(priority = 2) public void checkoutCreateNewOrderLoggedFromContactInfo()
-	 * { logger.
-	 * info("Starting checkout -> create new order logged from contact info test..."
-	 * ); homePage = new HomePage(new ChromeDriver());
-	 * homePage.load(environment.DEVELOPMENT.getURL()); homePageUK = (HomePageUK)
-	 * homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-	 * womenCategoryPage = homePageUK.returnWomenCategoryPage();
-	 * womenAccessoriesPage =
-	 * womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-	 * womenAccessoriesGlovesPage =
-	 * womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-	 * glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-	 * glovesProductPage.selectAttributeSize("8"); myBagPage =
-	 * glovesProductPage.returnMyBagPage(); checkoutPage =
-	 * myBagPage.returnCheckoutPage(); checkoutProcessPage =
-	 * checkoutPage.returnCheckoutProcessPage(); checkoutProcessPage.clickSignIn();
-	 * 
-	 * 
-	 * checkoutProcessPage.clickNextPayment();
-	 * checkoutProcessPage.enterCardNameNotlogged(CARD_NAME);
-	 * checkoutProcessPage.enterCardNo(typeCard.VISA.getNumber());
-	 * checkoutProcessPage.selectTypeCardVisa();
-	 * checkoutProcessPage.selectExpirationMonth();
-	 * checkoutProcessPage.selectExpirationYear();
-	 * checkoutProcessPage.enterSecurityCode(typeCard.VISA.getCvs());
-	 * checkoutProcessPage.reviewOrder(); checkoutProcessCompletePage =
-	 * checkoutProcessPage.returnCheckoutProcessCompletePage();
-	 * checkoutProcessCompletePage.placeOrder(); logger.
-	 * info("Finishing checkout -> create new order logged from contact info test."
-	 * ); }
-	 */
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
