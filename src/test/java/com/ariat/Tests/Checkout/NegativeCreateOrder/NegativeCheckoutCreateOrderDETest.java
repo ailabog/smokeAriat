@@ -91,7 +91,7 @@ public class NegativeCheckoutCreateOrderDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -120,7 +120,7 @@ public class NegativeCheckoutCreateOrderDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
+		glovesProductPage.selectAttributeSize("6.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -136,6 +136,8 @@ public class NegativeCheckoutCreateOrderDETest extends BaseTest {
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
 		paymentMethodsCheckoutPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
+	
+		
 		paymentMethodsCheckoutPage.selectTypeCardMasterCard();
 		paymentMethodsCheckoutPage.selectExpirationMonth();
 		paymentMethodsCheckoutPage.selectExpirationYear();
