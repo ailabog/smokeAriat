@@ -105,15 +105,15 @@
               <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingFRTest" /> 
               
               <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavUKTest" />
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavUDETest" />
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavDETest" />
               <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.LeftNav.MenFootwearSubcategoriesLeftNavFRTest" />
 
-              <class name="com.ariat.Tests.Categories.Countries.WomenCategory.Sorting.WomenCategoryPaginationSortingUKTest" />
-              <class name="com.ariat.Tests.Categories.Countries.WomenCategory.Sorting.WomenCategoryPaginationSortingDETest" /> 
-              <class name="com.ariat.Tests.Categories.Countries.WomenCategory.Sorting.WomenCategoryPaginationSortingFRTest" />         
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingUKTest" />
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingDETest" /> 
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingFRTest" />         
                   
               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUKTest" />
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUDETest" />
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDETest" />
               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavFRTest" />
               
               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUKTest" />
