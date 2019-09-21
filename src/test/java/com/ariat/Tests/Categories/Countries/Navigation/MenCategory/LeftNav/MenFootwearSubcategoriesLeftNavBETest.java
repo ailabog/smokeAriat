@@ -72,6 +72,7 @@ public class MenFootwearSubcategoriesLeftNavBETest extends BaseTest {
 	private MenFootwearWorkPage menFootwearWorkPage;
 	private MenFootwearWorkLaceUpPage menFootwearWorkLaceUpPage;
 	private MenFootwearWorkPullOnPage menFootwearWorkPullOnPage;
+	private MenFashionSneakersPage menFootwearSneakersPage;
 
 	private MenFootwearCasualShoesPage menFootwearCasualShoesPage;
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
@@ -194,5 +195,5 @@ public class MenFootwearSubcategoriesLeftNavBETest extends BaseTest {
 		menFootwearWorkPullOnPage.quit();
 		menFootwearCasualShoesPage.quit();
 		menFootwearSneakersPage.quit();
-	}
+		}
 }
