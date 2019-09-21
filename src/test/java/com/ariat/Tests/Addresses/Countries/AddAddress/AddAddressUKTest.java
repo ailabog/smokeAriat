@@ -1,7 +1,6 @@
 package com.ariat.Tests.Addresses.Countries.AddAddress;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 

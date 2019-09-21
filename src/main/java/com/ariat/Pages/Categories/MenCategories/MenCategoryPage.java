@@ -24,14 +24,19 @@ public class MenCategoryPage extends BasePage{
 	
 	private By menFootwearCategory = By.linkText("Footwear");
     private By menFootwearCategoryDE = By.linkText("Schuhe");
-    private By menFootwearCategoryFR = By.linkText("Bottes et boots");
+    private By menFootwearCategoryFR = By.xpath("//a[contains(text(),'Bottes et boots')])[2]");
 	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing']");
+	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing')]");
+	private By menClothingCategoryFR = By.xpath("//a[contains(text(),'Vêtements')])[3]");
 	private By menClothingCategoryDE = By.xpath("(//a[contains(text(),'Bekleidung')])[2]");
 	private By menClothingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");
+    private By menAccesoriesCategoryFR = By.xpath(" //a[contains(text(),'Accessoires')])[3]");
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
+    private By menFeaturedCategoryFR = By.xpath("//a[contains(text(),'Featured')])[2]");
+    
+  
     private By menFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
   
     private By menCategory = By.xpath("//a[contains(text(),'Men')]");
@@ -53,8 +58,11 @@ public class MenCategoryPage extends BasePage{
     private By fashionTextLeftNav = By.xpath("//*[contains(text(),'Fashion']");
     private By workTextLeftNav = By.xpath("//*[contains(text(),'Work']");
     
-    private By sortDropWomenCategoryUp = By
-			.xpath("//div[@id='main']/div/div[2]/div[3]/div[2]/div/div[2]/h3/p/span");
+    private By sortDropWomenCategoryUp = By.xpath("//div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span");
+    
+    //.ui-state-hover .icon-arrow-right
+    ////div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span
+    ////div[2]/div/div/h3/p/span
 	private By show36ItemLink = By.linkText("36 Items");
 	private By show72ItemLink = By.linkText("72 Items");
 	
@@ -66,12 +74,11 @@ public class MenCategoryPage extends BasePage{
 	private By show72ItemLinkFR = By.linkText("72 Articles");
 	private By show108ItemLinkFR = By.xpath("108 Articles");
 	
-	private By show72ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[2]/a");
+	
 	private By show108ItemLink = By.linkText("108 Items");
 	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
-	private By nextPaginationButtonUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[3]/a");
-	private By prevPaginationButtonUp = By
-			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[5]/ul/li[1]/a/span");
+	private By nextPaginationButtonUp = By.xpath("//a[contains(text(),'Next')]");
+	private By prevPaginationButtonUp = By.cssSelector(".search-result-options:nth-child(1) > .pagination span");
 	private By backToTopButton = By.xpath("//*[@id=\"main\"]/div/div[1]/div[1]/a");
 	private By sortDropWomenCategoryDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[1]/h3/p[1]/span");
 	private By nextPaginationButtonDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[4]/div[4]/ul/li[5]/a");
@@ -203,13 +210,13 @@ public class MenCategoryPage extends BasePage{
 	}
 
 	public void show72ItemsDown() {
-		WebDriverUtils.scrolltoElement(driver, show72ItemLink);
+		WebDriverUtils.scrollDown(driver, show72ItemLink);
 		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
 	public void show108ItemLinkDown() {
-		WebDriverUtils.scrolltoElement(driver, show108ItemLink);
+		WebDriverUtils.scrollBottomPage(driver, show108ItemLinkDown);
 		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
@@ -262,6 +269,13 @@ public class MenCategoryPage extends BasePage{
 		return new MenClothingPage(driver);
 	}
 	
+	public MenClothingPage returnMenClothingCategoryPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategoryFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(menClothingText));
+		return new MenClothingPage(driver);
+	}
+	
 	public MenClothingPage returnMenClothingCategoryPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
@@ -276,8 +290,22 @@ public class MenCategoryPage extends BasePage{
 		return new MenAccessoriesPage(driver);
 	}
 	
+	public MenAccessoriesPage returnMenAccessoriesCategoryPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, menAccesoriesCategoryFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesText));
+		return new MenAccessoriesPage(driver);
+	}
+	
 	public MenFeaturedPage returnMenFeaturedCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(menFeaturedText));
+		return new MenFeaturedPage(driver);
+	}
+	
+	public MenFeaturedPage returnMenFeaturedCategoryPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedCategoryFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menFeaturedText));
 		return new MenFeaturedPage(driver);

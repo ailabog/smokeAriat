@@ -20,7 +20,7 @@ public class MenFootwearWorkPage extends BasePage{
 	private By laceUpFootwearWorkText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By laceUpFootwearWorkCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
 	private By pullOnFootwearWorkText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By pullOnFootwearWorkCategoryLeftNav = By.linkText("Pull On");
+	private By pullOnFootwearWorkCategoryLeftNav = By.xpath("//a[contains(text(),'Pull On')])[3]");
 
 	public MenFootwearWorkPage(WebDriver driver) {
 		super(driver);

@@ -26,6 +26,8 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenFootwearPage extends BasePage{
 	
 	private By womenFootwearRidingCategory = By.linkText("Riding");
+	private By womenFootwearRidingCategoryFR = By.linkText("Équitation");
+	
 	private By womenFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearCountryCategory = By.linkText("Country");
 	private By womenFootwearCountryCategoryFR = By.linkText("Campagne");
@@ -33,7 +35,7 @@ public class WomenFootwearPage extends BasePage{
 	private By womenFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearWesternCategory = By.linkText("Western");
     private By womenFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
+    private By womenFootwearCasualShoesCategory = By.xpath("//a[contains(text(),'Casual Shoes')])[2]");
     private By womenFootwearCasualShoesCategoryFR = By.linkText("Chaussures de loisir");
     private By womenFootwearCasualShoesCategoryDE = By.linkText("Freizeitschuhe");
     private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
@@ -51,7 +53,14 @@ public class WomenFootwearPage extends BasePage{
 	
 	
 	public WomenFootwearRidingPage returnWomenFootwearRidingCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearRidingCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearRidingCategoryFR);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenFootwearRidingText));
+		return new WomenFootwearRidingPage(driver);
+	}
+	
+	public WomenFootwearRidingPage returnWomenFootwearRidingCategoryPageFR() {
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearRidingCategoryFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearRidingText));
 		return new WomenFootwearRidingPage(driver);

@@ -78,7 +78,7 @@ public class MenCategoriesAndSubcategoriesTopNavFRTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void topnNavMenFootwearCategories() {
+	public void topNavMenFootwearCategories() {
 		logger.info("Starting navigate Men Footwear sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -109,7 +109,7 @@ public class MenCategoriesAndSubcategoriesTopNavFRTest extends BaseTest {
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
 		menCategoryPage.menCategory();
-		menClothingPage = menCategoryPage.returnMenClothingCategoryPage();
+		menClothingPage = menCategoryPage.returnMenClothingCategoryPageFR();
 		menCategoryPage.menCategory();
 		menClothingOuterwearPage = menClothingPage.returnMenClothingOuterwearCategoryPage();
 		menCategoryPage.menCategory();
@@ -130,7 +130,7 @@ public class MenCategoriesAndSubcategoriesTopNavFRTest extends BaseTest {
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
 		menCategoryPage.menCategory();
-		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPage();
+		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPageFR();
 		menCategoryPage.menCategory();
 		menAccessoriesBagsPage = menAccessoriesPage.returnMenAccessoriesBagsCategoryPage();
 		menCategoryPage.menCategory();
@@ -151,7 +151,7 @@ public class MenCategoriesAndSubcategoriesTopNavFRTest extends BaseTest {
 		homePageFR = (HomePageFR) homePage.chooseEULocation(euCountry.FR, euCountry.FR.getCurrencyISO());
 		menCategoryPage = homePageFR.returnMenCategoryPage();
 		menCategoryPage.menCategory();
-		menFeaturedPage = menCategoryPage.returnMenFeaturedCategoryPage();
+		menFeaturedPage = menCategoryPage.returnMenFeaturedCategoryPageFR();
 		menCategoryPage.menCategory();
 		menFeaturedTeamCollectionPage = menFeaturedPage.returMenFeaturedTeamCollectionCategoryPage();
 		menCategoryPage.menCategory();

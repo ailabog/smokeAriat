@@ -55,10 +55,6 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 		menCategoryPage.show36ItemsUp();
 		menCategoryPage.nextPaginationUp();
 		menCategoryPage.prevPaginationButtonUp();
-		menCategoryPage.show72ItemsDown();
-		menCategoryPage.show108ItemLinkDown();
-		menCategoryPage.nextPaginationDown();
-		menCategoryPage.backToTopClick();
 		logger.info("Finishing  sort and navigate pagination test.");
 	}
 		

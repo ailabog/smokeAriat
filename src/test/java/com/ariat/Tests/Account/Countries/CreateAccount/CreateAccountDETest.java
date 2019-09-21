@@ -109,7 +109,7 @@ public class CreateAccountDETest extends BaseTest {
 		logger.info("Finishing checking invalid order test...");
 	}
 	
-		@Test(priority = 3)
+	@Test(priority = 3)
 	public void checkValidOrderTest() {
 		logger.info("Starting checking valid order test...");
 		homePage = new HomePage(new ChromeDriver());
