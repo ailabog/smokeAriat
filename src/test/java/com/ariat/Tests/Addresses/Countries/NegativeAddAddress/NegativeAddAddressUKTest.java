@@ -49,7 +49,6 @@ public class NegativeAddAddressUKTest extends BaseTest {
 	public static final String POST_CODEWILD = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String PHONEWILD = GenerateRandomDataUtils.generateRandomString(7);
 	public static final String ADDRESS_IDWILD = GenerateRandomDataUtils.generateRandomNumber(5);
-	public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
 	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	

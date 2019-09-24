@@ -76,9 +76,9 @@ public class MenFootwearSubcategoriesLeftNavBETest extends BaseTest {
 
 	private MenFootwearCasualShoesPage menFootwearCasualShoesPage;
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
+	
+	@BeforeTest
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
