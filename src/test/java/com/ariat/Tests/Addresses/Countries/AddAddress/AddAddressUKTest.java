@@ -1,6 +1,7 @@
 package com.ariat.Tests.Addresses.Countries.AddAddress;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -71,5 +72,15 @@ public class AddAddressUKTest extends BaseTest {
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address UK test");
+	}
+	
+	@AfterTest
+	public void tearDown() {
+		homePage.quit();
+		homePageUK.quit();
+		signInPage.quit();
+		myAccountPage.quit();
+		addAddressPage.quit();
+		addressesPage.quit();
 	}
 }

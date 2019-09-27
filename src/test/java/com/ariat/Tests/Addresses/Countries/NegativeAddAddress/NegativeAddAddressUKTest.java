@@ -91,8 +91,8 @@ public class NegativeAddAddressUKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("444");
-		addAddressPage.enterLName("B4444");
+		addAddressPage.enterFName("!@#$%^&*");
+		addAddressPage.enterLName("@#$%^&*");
 		addAddressPage.enterAddress1(ADDRESSWILD);
 		addAddressPage.enterCity(CITYWILD);
 		addAddressPage.selectCountry("United Kingdom");

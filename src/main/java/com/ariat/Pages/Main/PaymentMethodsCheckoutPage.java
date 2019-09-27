@@ -54,12 +54,12 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By creditCardBtn = By
 			.xpath("//label[@class='el-radio is-checked payment-method-radio payment-method__SA_SILENTPOST']");
 	private By reviewOrderBtn = By.id("paymentbtncs");
-	private By reviewOrderBtnUS = By.id("paymentbtn");
+	private By reviewOrderBtnUS = By.cssSelector(".checkout_place-order-btn");
 	private By BICFieldGiropay = By
 			.cssSelector(".el-form-item__content:nth-child(2) > .checkout_input > .el-input__inner");
 	private By dateOfBirthFieldKlarna = By.id("purchase-approval-date-of-birth");
 	private By continueKlarnaBtn = By.cssSelector("#purchase-approval-continue div:nth-child(2)");
-	private By typeCardLocator = By.xpath("//*[@id=\"c-ct\"]");
+	private By typeCardLocator = By.id("c-ct");
 	private By idealBtn = By.xpath("//span[contains(text(), 'iDeal')]");
 	//css=.payment-method__IDEAL > .el-radio__label
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
@@ -189,7 +189,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	}
 
 	public void selectTypeCard(String optionTypeCardValue) {
-		WebDriverUtils.selectDropDown(driver, typeCardLocator, optionTypeCardValue);
+		WebDriverUtils.selectVisibleText(driver, typeCardLocator, optionTypeCardValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
