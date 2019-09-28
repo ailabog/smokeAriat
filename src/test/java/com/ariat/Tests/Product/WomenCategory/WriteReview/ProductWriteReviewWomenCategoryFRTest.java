@@ -45,13 +45,13 @@ public class ProductWriteReviewWomenCategoryFRTest extends BaseTest {
     private static final String USER = GenerateRandomDataUtils.generateRandomString(5);
     private static final String EMAIL = "aila.bogasieru@gmail.com";
     private static final String CITY = "Paris";
-    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+    public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
 	@Test
 	public void productPageWomenCategoryWriteReviewYesRecommendTest() {
 		logger.info("Starting product page -> Women Category write review recommend product for Glove product test...");

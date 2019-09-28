@@ -73,7 +73,7 @@ public class AddAddressFRTest extends BaseTest {
 		addAddressPage.enterPhone(PHONE);
 		addAddressPage.enterAddressId(ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
-		//addressesPage.checkAddress(ADDRESS_ID);
+		addressesPage.checkAddressFR(ADDRESS_ID);
 		logger.info("Finishing add address France test");
 	}
 	

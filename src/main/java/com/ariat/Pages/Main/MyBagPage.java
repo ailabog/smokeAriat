@@ -24,20 +24,16 @@ public class MyBagPage extends BasePage {
 	private By cancelFreeGift = By.xpath("(//button[@type='button'])[12]");
 	private By confirmFreeGift = By.xpath("//button[@value='Select']");
 	private By miniCart = By.xpath("//div[@id='header-main-content']/div/div[5]/div/div[2]/a/span");
-	//private By miniCart = css=span.icon-cart-2.mini-cart-icon
 	private By myBagText = By.xpath("//section[@id='app']/main/div/div/div/div/div/div/div/p");
-	private By productAdded = By.xpath("//img[@title='Heritage II Ellipse Tall Riding Boot']");
 	private By freeGiftSocks = By.xpath("//img[@title='AriatTEK Performance Socks']");
 	private By checkoutButton = By.xpath("//a[text()='Checkout']");
 	private By continueShoppingButton = By.xpath("//a[contains(text(),'Continue shopping')]");
 	private By bonusDialog = By.id("bonus-product-dialog");
-	//private By checkoutBtn = By.xpath("//a[contains(text(),'Checkout')]");
 	private By closeMinicart = By.xpath("//span[@class='icon-close close-minicart']");
 	private By checkoutBtn = By.xpath("//a[@class='checkout minicart-button button large']");
 	private By checkoutBtnDE = By.xpath("//a[text()='Zur Kasse']");
-	
+
 	private By continueShoppingBtn = By.xpath("//a[text()='Continue shopping']");
-	private By myBagCheckoutText = By.cssSelector("p.cart_my-bag-heading");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 
 	public MyBagPage(WebDriver driver) {
@@ -45,19 +41,19 @@ public class MyBagPage extends BasePage {
 	}
 
 	public void cancelFreeGift() {
-		if(WebDriverUtils.findElement(driver, bonusDialog) !=null){
-		WebDriverUtils.clickOnElementWithWait(driver, cancelFreeGift);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-		}else {
+		if (WebDriverUtils.findElement(driver, bonusDialog) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, cancelFreeGift);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		} else {
 			logger.info("Dialog not able to be displayed");
 		}
 	}
 
 	public void confirmFreeGift() {
-		if(WebDriverUtils.findElement(driver, bonusDialog) !=null){
-		WebDriverUtils.clickOnElementWithWait(driver, confirmFreeGift);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	 }else {
+		if (WebDriverUtils.findElement(driver, bonusDialog) != null) {
+			WebDriverUtils.clickOnElementWithWait(driver, confirmFreeGift);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		} else {
 			logger.info("Dialog not able to be displayed");
 		}
 	}
@@ -65,9 +61,9 @@ public class MyBagPage extends BasePage {
 	public void checkMyBagFreeGift() {
 		WebDriverUtils.moveToElement(driver, miniCart);
 		if (WebDriverUtils.findElement(driver, myBagText) != null
-			&& WebDriverUtils.findElement(driver, checkoutBtn) !=null
-			&& WebDriverUtils.findElement(driver, freeGiftSocks) != null
-			&& WebDriverUtils.findElement(driver, continueShoppingButton) != null) {
+				&& WebDriverUtils.findElement(driver, checkoutBtn) != null
+				&& WebDriverUtils.findElement(driver, freeGiftSocks) != null
+				&& WebDriverUtils.findElement(driver, continueShoppingButton) != null) {
 			logger.info("My bag contains the right elements");
 		} else {
 			logger.info("My bag does not contain the right elements");
@@ -77,43 +73,40 @@ public class MyBagPage extends BasePage {
 	public void checkMyBagNoFreeGift() {
 		WebDriverUtils.moveToElement(driver, miniCart);
 		if (WebDriverUtils.findElement(driver, myBagText) != null
-		 && WebDriverUtils.findElement(driver, checkoutButton) != null
-		 && WebDriverUtils.findElement(driver, continueShoppingButton) != null) {
+				&& WebDriverUtils.findElement(driver, checkoutButton) != null
+				&& WebDriverUtils.findElement(driver, continueShoppingButton) != null) {
 			logger.info("My bag contains the right elements");
 		} else {
 			logger.info("My bag does not contain the right elements");
 		}
 	}
-	
+
 	public void closeMiniCart() {
 		logger.info("Closing minicart..");
 		WebDriverUtils.clickOnElementWithWait(driver, closeMinicart);
-		}
-	
+	}
+
 	public void clickCheckout() {
 		logger.info("Going to checkout process..");
 		WebDriverUtils.scrollBottomPage(driver, checkoutBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
 	}
-	
+
 	public void clickContinueShopping() {
 		logger.info("Continue shopping..");
 		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingBtn);
 	}
-	
+
 	public CheckoutPage returnCheckoutPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		return new CheckoutPage(driver);
 	}
-	
+
 	public CheckoutPage returnCheckoutPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtnDE);
-		//WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-		//		ExpectedConditions.invisibilityOfElementLocated(myBagCheckoutText));
 		return new CheckoutPage(driver);
 	}
-	
 
 	public HomePage returnHomePage() {
 		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingBtn);

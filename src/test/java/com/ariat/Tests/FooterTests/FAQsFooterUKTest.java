@@ -33,12 +33,12 @@ public class FAQsFooterUKTest extends BaseTest {
 	private static final String MSG4 = "BOOT CARE";
 	private static final String MSG5 = "RETAIL PARTNERSHIP";
 	private static final String MSG6 = "MISCELLANEOUS";
-	
-    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
 	@Test(priority = 0)

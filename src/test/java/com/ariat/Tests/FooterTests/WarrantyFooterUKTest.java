@@ -31,11 +31,12 @@ public class WarrantyFooterUKTest extends BaseTest {
 	private static final String MESSAGE3 = "Contact Customer Care by calling +44 (0)1367 242818 or email customer.care@ariat.com Mon-Fri 8am-5pm (UK Time)";
 	private static final String MESSAGE4 = "If you have a warranty issue with a product purchased through one of our retailers, contact the Ariat retailer where the product was purchased. Make sure to have your original receipt with you. Upon inspection from your Ariat authorised retailer, consumers may be offered a credit, replacement or repair depending on the defect.";
 	
-    public static final String filePath= "\\Users\\Aila\\eclipse-workspace\\ariat-regression\\src\\test\\resources\\chromedriver\\chromedriver.exe";
+	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
+	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", filePath);
+		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
 	@Test(priority = 0)

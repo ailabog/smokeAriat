@@ -119,7 +119,7 @@ public class CreateAccountATTest extends BaseTest {
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		logger.info("Finishing checking valid order test...");
 	}
-	
+
 	
 	@Test(priority = 4)
 	public void forgotPasswordTest() {
