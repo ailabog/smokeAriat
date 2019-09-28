@@ -37,7 +37,6 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
-	private TriFactorTopProductPage triFactorTopProductPage;
 	private MyWishListPage myWishListPage;
 	private EUCountries euCountry;
 
@@ -158,6 +157,5 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		myAccountPage.quit();
 		womenClothingTopsAndTshirtsPage.quit();
 		myWishListPage.quit();
-		triFactorTopProductPage.quit();
 	}
 }

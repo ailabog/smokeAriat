@@ -80,7 +80,7 @@ public class ProductWriteReviewWomenCategoryDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenClothingPage = womenCategoryPage.returnWomenClothingCategoryLeftNavPage();
-		breechProductPage = womenClothingPage.returnBreechProductPage();
+		breechProductPage = womenClothingPage.returnBreechProductPageDE();
 		gloveProductPage.writeReviewClick();
 		gloveProductPage.writeReviewContent(TITLE_REVIEW, CONTENT_REVIEW);
 		gloveProductPage.writeReviewStar("Poor");

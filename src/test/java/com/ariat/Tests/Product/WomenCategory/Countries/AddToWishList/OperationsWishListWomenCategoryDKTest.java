@@ -9,7 +9,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.GlovesProductPage;
-import com.ariat.Pages.Products.TriFactorTopProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -37,7 +36,6 @@ public class OperationsWishListWomenCategoryDKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private WomenClothingTopsAndTshirtsPage womenClothingTopsAndTshirtsPage;
-	private TriFactorTopProductPage triFactorTopProductPage;
 	private MyWishListPage myWishListPage;
 	private EUCountries euCountry;
 
@@ -158,6 +156,5 @@ public class OperationsWishListWomenCategoryDKTest extends BaseTest {
 		myAccountPage.quit();
 		womenClothingTopsAndTshirtsPage.quit();
 		myWishListPage.quit();
-		triFactorTopProductPage.quit();
-	}
+		}
 }

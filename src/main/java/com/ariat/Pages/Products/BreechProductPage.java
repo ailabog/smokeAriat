@@ -61,6 +61,7 @@ public class BreechProductPage extends BasePage{
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
 	private By updateButton = By.id("add-to-cart");
 	private By lengthLocator = By.id("va-length");
+	private By writeReviewBtn = By.cssSelector(".bv-write-review");
 	
 	public BreechProductPage(WebDriver driver) {
 		super(driver);
@@ -97,7 +98,7 @@ public class BreechProductPage extends BasePage{
 
 	public void writeReviewClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, writeReview);
-	
+		WebDriverUtils.clickOnElementWithWait(driver, writeReviewBtn);
 	}
 
 	public void writeReviewStar(String star) {
