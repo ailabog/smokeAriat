@@ -80,8 +80,8 @@ public class AddAddressUSTest extends BaseTest {
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
-		homePageUS.quit();
 		homePageUK.quit();
+		homePageUS.quit();
 		signInPage.quit();
 		myAccountPage.quit();
 		addAddressPage.quit();
