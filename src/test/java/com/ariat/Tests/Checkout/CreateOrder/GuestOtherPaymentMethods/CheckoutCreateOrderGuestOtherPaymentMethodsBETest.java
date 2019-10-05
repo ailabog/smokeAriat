@@ -1,7 +1,7 @@
 package com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
@@ -109,7 +109,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 	}
 	
 	
-	@Test(priority = 1)
+@Test(priority = 1)
 	public void checkoutCreateNewOrderGuestOtherPaymentMethodsIdeal() {
 		logger.info("Starting checkout -> create new order with payment method Ideal test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -143,7 +143,7 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		logger.info("Finishing checkout -> create new order with payment method Ideal test.");
 	} 
 	
-	@AfterTest
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
@@ -153,9 +153,10 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsBETest extends BaseTest 
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
 		myBagPage.quit();
-		checkoutProcessPage.quit();
 		checkoutPage.quit();
-		checkoutProcessCompletePage.quit();
+		checkoutProcessPage.quit();
 		paymentMethodsCheckoutPage.quit();
+		checkoutProcessCompletePage.quit();
 	}
 }
+

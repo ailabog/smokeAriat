@@ -38,4 +38,10 @@ public class BasePage {
 			WebDriverUtils.quit(driver);
 		}
 	}
+		
+		public void close() {
+			if(this != null) {
+				WebDriverUtils.quit(driver);
+			}
+	}
 }

@@ -87,35 +87,35 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 		case "Sofort":
 			logger.info("Choosing Sofort..");
-			WebDriverUtils.scroll500Down(driver, sofortBtn);
+			WebDriverUtils.scroll350Down(driver, sofortBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, sofortBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;
 
 		case "Giropay":
 			logger.info("Choosing Giropay..");
-			WebDriverUtils.scroll500Down(driver, giropayBtn);
+			WebDriverUtils.scroll350Down(driver, giropayBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, giropayBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;
 
 		case "CreditCard":
 			logger.info("Choosing  Credit Card..");
-			WebDriverUtils.scroll500Down(driver, creditCardBtn);
+			WebDriverUtils.scroll350Down(driver, creditCardBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, creditCardBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;
 
 		case "Ideal":
 			logger.info("Choosing  Ideal..");
-			WebDriverUtils.scroll500Down(driver, idealBtn);
+			WebDriverUtils.scroll350Down(driver, idealBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, idealBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;
 
 		case "PayPal":
 			logger.info("Choosing PayPal..");
-			WebDriverUtils.scroll500Down(driver, payPalBtn);
+			WebDriverUtils.scroll350Down(driver, payPalBtn);
 			WebDriverUtils.clickOnElementWithWait(driver, payPalBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			break;

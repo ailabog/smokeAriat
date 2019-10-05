@@ -128,15 +128,16 @@ public class CheckoutCreateOrderCustomerOtherPaymentMethodsBETest extends BaseTe
 		homePage.quit();
 		homePageUK.quit();
 		homePageBE.quit();
+		signInPage.quit();
+		myAccountPage.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
-		myAccountPage.quit();
 		myBagPage.quit();
 		checkoutPage.quit();
 		checkoutProcessPage.quit();
-    	paymentMethodsCheckoutPage.quit();
+		paymentMethodsCheckoutPage.quit();
 		checkoutProcessCompletePage.quit();
 	}
 }

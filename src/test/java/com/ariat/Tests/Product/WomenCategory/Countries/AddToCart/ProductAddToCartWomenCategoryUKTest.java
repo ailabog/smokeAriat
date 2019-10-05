@@ -64,10 +64,9 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
-		myBagPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
-	
+		myBagPage.quit();
 	}
 }

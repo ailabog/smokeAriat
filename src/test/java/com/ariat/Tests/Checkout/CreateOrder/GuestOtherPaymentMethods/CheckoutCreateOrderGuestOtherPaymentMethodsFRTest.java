@@ -120,5 +120,6 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsFRTest extends BaseTest 
 		checkoutPage.quit();
 		checkoutProcessPage.quit();
 		paymentMethodsCheckoutPage.quit();
+		checkoutProcessCompletePage.quit();
 	}
 }

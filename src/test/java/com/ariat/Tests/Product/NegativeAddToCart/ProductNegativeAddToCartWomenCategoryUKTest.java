@@ -63,7 +63,7 @@ public class ProductNegativeAddToCartWomenCategoryUKTest extends BaseTest {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
-		myBagPage.quit();
+		womenFootwearPage.quit();
 		womenFootwearRidingPage.quit();
 		heritageProductPage.quit();
 		myBagPage.quit();
