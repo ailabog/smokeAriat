@@ -77,7 +77,8 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 
 	private By orderStatusFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[1]/li[1]/a");
-	private By returnsFooter = By.xpath("(//a[contains(text(),'Returns')])[2]");
+	private By returnsFooter = By.cssSelector("(.col-xs-12:nth-child(1) li:nth-child(2) > a");
+
 	private By returnsFooterText = By.xpath("//h1[text()='Returns']");
 	private By trackYourOrderFooterLink = By.xpath("(//a[contains(text(),'Track Your Order')])[2]");
 	private By trackYourOrderFooterText = By.xpath("//h1[text()='TRACK YOUR ORDER']");

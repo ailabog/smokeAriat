@@ -26,7 +26,7 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenFootwearPage extends BasePage{
 	
 	private By womenFootwearRidingCategory = By.linkText("Riding");
-	private By womenFootwearRidingCategoryFR = By.linkText("Équitation");
+	private By womenFootwearRidingCategoryFR = By.linkText("Equitation");
 	
 	private By womenFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearCountryCategory = By.linkText("Country");

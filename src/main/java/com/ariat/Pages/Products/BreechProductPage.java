@@ -36,8 +36,9 @@ public class BreechProductPage extends BasePage{
 	// increase qty //css=.quantity-increase
 
 	private By decreaseQty = By.xpath("//span[text()='-']");
-	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
-//	.bv-write-review
+	private By addReview = By.xpath("//a[contains(text(),'Add your review')]");
+	private By writeReview = By.cssSelector(".bv-write-review");
+
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
 	private By starReviewExcellent = By.xpath("//a[@id='bv-radio-rating-5']/span");
 	private By starReviewGood = By.xpath("//a[@id='bv-radio-rating-4']/span");
@@ -97,7 +98,7 @@ public class BreechProductPage extends BasePage{
 	}
 
 	public void writeReviewClick() {
-		WebDriverUtils.clickOnElementWithWait(driver, writeReview);
+		WebDriverUtils.clickOnElementWithWait(driver, addReview);
 		WebDriverUtils.clickOnElementWithWait(driver, writeReviewBtn);
 	}
 

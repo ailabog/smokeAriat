@@ -11,7 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageDK;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
-import com.ariat.Tests.BaseTest;
+import com.ariat.Tests.Base.BaseTest;
 
 
 /**

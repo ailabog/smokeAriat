@@ -56,7 +56,7 @@ public class MyAccountPage extends BasePage {
 	private By addCardLink = By.xpath("//a[text()='Add Card']");
 	private By addCardLinkDE = By.xpath("//a[text()='Karte hinzufügen']");
 	private By addCardLinkFR = By.xpath("//a[text()='Ajouter carte']");
-	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[58]");
+	private By viewAllOrdersLink = By.cssSelector("(.myaccount-container__my-orders .myaccount-container__box-link");
 	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[58]");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
 	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");
@@ -68,8 +68,8 @@ public class MyAccountPage extends BasePage {
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
-	private By logoutTopNav = By.xpath("//a[contains(text(),'Log out')]");
-	//logout top //css=.menu-utility-user:nth-child(4) .log-out-link > .utility-user-link-item; xpath=//a[contains(text(),'Log out')]
+	//private By logoutTopNav = By.cssSelector(".menu-utility-user:nth-child(4) .log-out-link > .utility-user-link-item");
+	private By logoutTopNav = By.xpath("//a[@title='Log out']");
 	
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenFootwearCasualShoesCategory = By

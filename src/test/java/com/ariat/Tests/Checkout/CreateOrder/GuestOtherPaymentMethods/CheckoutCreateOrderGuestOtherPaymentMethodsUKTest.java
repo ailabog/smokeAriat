@@ -106,7 +106,6 @@ public class CheckoutCreateOrderGuestOtherPaymentMethodsUKTest extends BaseTest 
 		myBagPage.quit();
 		checkoutPage.quit();
 		checkoutProcessPage.quit();
-		checkoutProcessCompletePage.quit();
 		paymentMethodsCheckoutPage.quit();
 	}
 }

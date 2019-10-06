@@ -22,7 +22,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenCategoryPage extends BasePage{
 	
-	private By menFootwearCategory = By.linkText("Footwear");
+	private By menFootwearCategory = By.xpath("(//a[contains(text(),'Footwear')])[2]");
     private By menFootwearCategoryDE = By.linkText("Schuhe");
     private By menFootwearCategoryFR = By.xpath("//a[contains(text(),'Bottes et boots')])[2]");
 	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");

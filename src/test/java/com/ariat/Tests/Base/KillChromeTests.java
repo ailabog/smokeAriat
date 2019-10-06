@@ -1,7 +1,9 @@
-package com.ariat.Tests.Checkout.CreateOrder.GuestOtherPaymentMethods;
-import org.testng.annotations.Test;
+package com.ariat.Tests.Base;
 
+
+import org.testng.annotations.Test;
 import com.ariat.Utils.KillBill;
+
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls

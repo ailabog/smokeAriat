@@ -130,7 +130,6 @@ public class NegativeCheckoutCreateOrderUKTest extends BaseTest {
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
 		paymentMethodsCheckoutPage.enterCardNo(typeCard.INVALID_CARD.getNumber());
-		paymentMethodsCheckoutPage.selectTypeCardMasterCard();
 		paymentMethodsCheckoutPage.selectExpirationMonth();
 		paymentMethodsCheckoutPage.selectExpirationYear();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.INVALID_CARD.getCvs());

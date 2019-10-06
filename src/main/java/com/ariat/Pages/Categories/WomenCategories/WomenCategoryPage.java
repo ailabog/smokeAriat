@@ -37,14 +37,12 @@ public class WomenCategoryPage extends BasePage {
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFeaturedCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/a");
 	private By womenFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-
+    private By womenFootwearCategoryLeftNav = By.linkText("Footwear");
 	
 	private By leftnavClothing = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
-	//private By womenCategory = By.xpath("//a[contains(text(),'Women')]");
 	private By womenText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By sortDropWomenCategoryUp = By
-			.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[1]/div[2]/h3/p[1]/span");
+	private By sortDropWomenCategoryUp = By.cssSelector("=.ui-state-hover .icon-arrow-right");
 	private By show36ItemLinkUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/ul/li[1]/a");
 	private By show72ItemLinkUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/ul/li[2]/a");
 	private By show108ItemLinkUp = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/ul/li[3]/a");
@@ -191,7 +189,7 @@ public class WomenCategoryPage extends BasePage {
 
 
 	public WomenFootwearPage returnWomenFootwearPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCategoryLeftNav);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearText));
 		return new WomenFootwearPage(driver);
