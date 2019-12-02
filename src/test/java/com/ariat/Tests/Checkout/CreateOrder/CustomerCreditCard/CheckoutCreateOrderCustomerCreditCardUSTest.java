@@ -20,7 +20,7 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 
 /**
- * Checkout -> Create new order as customer with credit cards: Master Card, Visa & American Express
+ * Checkout -> Create new order customer credit cards US
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -77,7 +77,9 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
@@ -100,7 +102,9 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		myBagPage = bagsProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
@@ -123,16 +127,18 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		myBagPage = bagsProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
    	}
-    
+	
 	@AfterTest
-	public void tearDown() {
+	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();

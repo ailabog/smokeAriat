@@ -156,9 +156,9 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
 	} 
-
+	
 	@AfterTest
-	public void tearDown() {
+	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();

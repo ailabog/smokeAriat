@@ -65,7 +65,7 @@ public class CheckoutCreateOrderGuestCreditCardFRTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderNotBeingLoggedMasterCard() {
+	public void checkoutCreateNewOrderNotBeingLoggedMasterCardFR() {
 		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -75,7 +75,7 @@ public class CheckoutCreateOrderGuestCreditCardFRTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -101,7 +101,7 @@ public class CheckoutCreateOrderGuestCreditCardFRTest extends BaseTest {
 	} 
 	
 	@Test(priority = 1)
-	public void checkoutCreateNewOrderNotBeingLoggedVisa() {
+	public void checkoutCreateNewOrderNotBeingLoggedVisaFR() {
 		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -111,7 +111,7 @@ public class CheckoutCreateOrderGuestCreditCardFRTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageFR();
 		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageFR();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
@@ -136,9 +136,8 @@ public class CheckoutCreateOrderGuestCreditCardFRTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	} 
 	
-	
 	@AfterTest
-	public void tearDown() {
+	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageFR.quit();
@@ -150,5 +149,5 @@ public class CheckoutCreateOrderGuestCreditCardFRTest extends BaseTest {
 		glovesProductPage.quit();
 		checkoutProcessPage.quit();
 		paymentMethodsCheckoutPage.quit();
-	}
+	 }
 }
