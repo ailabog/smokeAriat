@@ -18,7 +18,6 @@ public class ProductRegistrationPage extends BasePage {
 	
 	private By emailTxtBox = By.id("dwfrm_productregistration_email");
 	private By hereLink = By.xpath("//form[@id='product-registration-form']/div[3]/div[2]/div/div/div[3]/fieldset/p[2]/span[2]");
-	private By code = By.xpath("dwfrm_productregistration_registrationcode");
 	private By continue1Btn = By.xpath("//*[@id=\"product-registration-form\"]/div[1]/div/div[4]/button");
 	private By continue2Btn = By.xpath("//form[@id='product-registration-form']/div[2]/div[2]/div/div/div[3]/button");
 	private By continue3Btn = By.xpath("//*[@id='product-registration-form']/div[3]/div[2]/div/div/div[3]/button");
@@ -34,7 +33,6 @@ public class ProductRegistrationPage extends BasePage {
 	private By stateSelect = By.id("dwfrm_productregistration_shippingaddress_states_state");
 	private By zipCodeTxtBox = By.id("dwfrm_productregistration_shippingaddress_zip");
 	private By phoneTxtBox = By.id("dwfrm_productregistration_shippingaddress_phone");
-	
 	private By saveYourInfoBtn = By.xpath("//*[@id=\"product-registration-form\"]/div[6]/div/div[4]/button");
 	private By passwdBtn = By.xpath("dwfrm_productregistration_password");
 	private By passwdCnfBtn = By.xpath("dwfrm_productregistration_passwordconfirm");

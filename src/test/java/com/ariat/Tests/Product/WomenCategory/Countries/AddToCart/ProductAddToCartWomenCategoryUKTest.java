@@ -14,6 +14,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category -> Add to cart test
@@ -55,6 +56,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("6.5");
 		myBagPage = glovesProductPage.returnMyBagPage();
+		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 
@@ -68,5 +70,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
 		myBagPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

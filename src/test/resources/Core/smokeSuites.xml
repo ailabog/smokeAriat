@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="smokeTest" verbose="1" parallel="tests" thread-count="10">
+<parameter name="environment" value="${environment}" />
+	<test name="smokeTest" parallel="none" preserve-order="true">
+       <classes>
+               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUKTest"  />
+               <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUKTest"  />
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUKTest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUKTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUKTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUKTest"  />
+               <class name ="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
+               <class name ="com.ariat.Tests.Search.Countries.SearchUKTest" />
+               <class name ="com.ariat.Tests.Base.KillChromeTest" />
+               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest"  />
+               <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUSTest"  />
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUSTest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUSTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
+               <class name ="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest"  />
+               <class name ="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
+               <class name ="com.ariat.Tests.Search.Countries.SearchUSTest" />
+               <class name ="com.ariat.Tests.Base.KillChromeTest" />
+         
+         </classes>
+     </test>
+</suite>

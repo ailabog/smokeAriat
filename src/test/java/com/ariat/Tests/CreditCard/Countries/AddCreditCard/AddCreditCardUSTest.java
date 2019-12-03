@@ -4,7 +4,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
@@ -16,6 +15,7 @@ import com.ariat.Pages.Main.LogoutPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 
@@ -70,44 +70,12 @@ public class AddCreditCardUSTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		//addACreditCardPage.selectTypeCardUS(typeCard.VISA.getName());
 		addACreditCardPage.enterCardNoUS(typeCard.VISA.getNumber());
-		//addACreditCardPage.enterSecurityCode(typeCard.VISA.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
+		addACreditCardPage.selectExpirationMonthYearUS("June", "2021");
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
 		logger.info("Finishing add a credit card US test");
   } 
 	
-	@Test(priority = 1)
-	public void addCreditCardFromPaymentInfoUSTest() {
-		logger.info("Starting add credit card from Payment Info US test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		paymentInfoPage = myAccountPage.returnPaymentInformationPageLeftNav();
-		addACreditCardPage = paymentInfoPage.returnAddACreditCardPage();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCardUS(typeCard.MASTER_CARD.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
-		addACreditCardPage.applyCardCreation();
-		logoutPage = myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logoutPage.logout();
-		logger.info("Finishing add credit card from Payment info US test");
-		
-  }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -115,8 +83,8 @@ public class AddCreditCardUSTest extends BaseTest{
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		paymentInfoPage.quit();
 		addACreditCardPage.quit();
-		logoutPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

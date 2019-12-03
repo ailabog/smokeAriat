@@ -132,7 +132,6 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By myAccountText = By.xpath("//h2[text()='Returning customer']");
 
 	private By aboutUsHeader = By.linkText("About Us");
-	private By closeButton = By.xpath("//div[text()='closeButton']");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
 
 	public void checkElementsHeader() {

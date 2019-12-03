@@ -30,19 +30,17 @@ public class CheckoutPage extends BasePage {
 	private By promoCode = By.xpath("(//input[@type='text'])[4]");
 	private By applyPromoCode = By
 			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
-	private By payPalCheckoutBtn = By.xpath("//div[@id='paypal-animation-container']//div[@data-funding-source='paypal']");
-	//private By checkoutCheckoutBtn1 = By.xpath("//a[contains(@href, '/checkout')]");
-    private By checkoutCheckoutBtn1 = By.cssSelector(".cart_button--black");
-
 	private By checkoutCheckoutBtn = By.xpath("//a[text()='Checkout']");
-	
+	private By checkoutCheckoutBtn1 = By.cssSelector(".cart_button--black");
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
 	private By returnPolicyBtn = By.xpath("//a[text()='Return Policies']");
 	private By continueShoppingCheckoutBtn = By.xpath("//a[text()='Continue Shopping']");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By emailAccount = By.xpath("//input[@placeholder='Email address']");
 	private By shippingAddressText = By.id("el-collapse-head-3303");
-	private By loginPayPalPageTitle = By.xpath("//section[@page-title='Log in to your PayPal account']");
+	
+
+	
 
 	protected CheckoutPage(WebDriver driver) {
 		super(driver);
@@ -83,12 +81,7 @@ public class CheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void clickPayPalCheckout() {
-		logger.info("Going to paypal checkout..");
-		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
+	
 	public void clickCheckout() {
 		logger.info("Going to checkout..");
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn);
@@ -125,26 +118,12 @@ public class CheckoutPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(emailAccount));
 		return new MyAccountWishListPage(driver);
 	}
-
 	public CheckoutProcessPage returnCheckoutProcessPage() {
 		WebDriverUtils.scroll500Down(driver, checkoutCheckoutBtn1);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutCheckoutBtn1);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(shippingAddressText));
 		return new CheckoutProcessPage(driver);
-	}
-	
-	public CheckoutProcessPage returnCheckoutProcessPayPalPage() {
-		WebDriverUtils.scroll500Down(driver, By.xpath("//iframe[@class='zoid-component-frame zoid-visible']"));
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='zoid-component-frame zoid-visible']")));
-		WebDriverUtils.clickOnElementWithWait(driver, payPalCheckoutBtn);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(loginPayPalPageTitle));
-		return new CheckoutProcessPage(driver);
-		
-		//xpath=//img[@alt='paypal']
-//		/css=.paypal-button-logo-paypal
-		//xpath=//div[@id='paypal-animation-content']/div/div/img[2]
 	}
 
 }

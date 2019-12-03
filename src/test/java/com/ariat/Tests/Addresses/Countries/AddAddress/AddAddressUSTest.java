@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -73,6 +74,7 @@ public class AddAddressUSTest extends BaseTest {
 		addAddressPage.enterPhone(phoneUS.phone1.getNumber());
 		addAddressPage.enterAddressId(ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
+		addressesPage.useAddressOriginal();
 		addressesPage.checkAddress(ADDRESS_ID);
 		logger.info("Finishing add address US test");
 	}
@@ -86,5 +88,7 @@ public class AddAddressUSTest extends BaseTest {
 		myAccountPage.quit();
 		addAddressPage.quit();
 		addressesPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

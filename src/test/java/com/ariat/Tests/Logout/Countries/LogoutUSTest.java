@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -59,22 +60,6 @@ public class LogoutUSTest extends BaseTest {
 	}
 	
 
-	@Test
-	public void logoutFromMyAccountTopUSTest() {
-		logger.info("Starting the logout US test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnLogoutFromMyAccountPageTopNav();
-		logger.info("I was succesfully logged out from the application!");
-	}
-
-
 	@AfterMethod
 	public void tearDown() {
 		homePageUS.quit();
@@ -82,5 +67,7 @@ public class LogoutUSTest extends BaseTest {
 		homePage.quit();
 		signInPage.quit();
 		myAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }

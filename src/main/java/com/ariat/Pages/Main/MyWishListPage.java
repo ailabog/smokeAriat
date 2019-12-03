@@ -21,7 +21,6 @@ public class MyWishListPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(MyWishListPage.class);
 
 	private By sendToAFriendButton = By.xpath("//a[@title='Send to a Friend']");
-	//private By sendToAFriendButtonDE = By.xpath("//a[@title='An einen Freund schicken']");
 	private By sendToAFriendButtonDE = By.xpath("//a[@title='Meine Wunschliste teilen']");
 	private By sendToAFriendButtonFR = By.xpath("//a[@title='Envoyer à un ami']");
 	private By nameTxtBox = By.id("dwfrm_sendtofriend_friendsname");
@@ -43,7 +42,7 @@ public class MyWishListPage extends BasePage {
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
     
     private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
-    private By ItemsTable = By.id("id-b74204a4db5dec790e1f5d43c0");
+    
 	 
     private boolean noItemWishList;
     

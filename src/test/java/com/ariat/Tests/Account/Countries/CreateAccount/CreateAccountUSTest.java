@@ -15,6 +15,7 @@ import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -90,48 +91,6 @@ public class CreateAccountUSTest extends BaseTest {
 		logger.info("Finishing returning customer test...");
 	}
 
-	@Test(priority = 2)
-	public void checkInvalidOrderTest() {
-		logger.info("Starting checking invalid order test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
-		signInPage.checkStatusClick();
-		signInPage.assertErrorMessageInexistingOrderNo(ERROR_MESSAGE);
-		logger.info("Finishing checking invalid order test...");
-	}
-
-	@Test(priority = 3)
-	public void checkValidOrderTest() {
-		logger.info("Starting checking valid order test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
-		orderDetailsPage = signInPage.returnOrderDetailsPage();
-		logger.info("Finishing checking valid order test...");
-	}
-
-	@Test(priority = 4)
-	public void forgotPasswordTest() {
-		logger.info("Starting forgot password test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.forgotPasswordClick();
-		signInPage.forgotPasswordEmail(EMAIL);
-		signInPage.ForgotPasswordSend();
-		signInPage.closeForgotPassword();
-		logger.info("Finishing forgot password test...");
-	}
-
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
@@ -139,6 +98,7 @@ public class CreateAccountUSTest extends BaseTest {
 		homePageUS.quit();
 		signInPage.quit();
 		createAccountPage.quit();
-		orderDetailsPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 	}
 }
