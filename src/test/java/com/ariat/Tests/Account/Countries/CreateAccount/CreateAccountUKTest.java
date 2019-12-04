@@ -90,33 +90,6 @@ public class CreateAccountUKTest extends BaseTest {
 		logger.info("Finishing returning customer test...");
 	}
 	
-	@Test(priority = 3)
-	public void checkValidOrderTest() {
-		logger.info("Starting checking valid order test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
-		orderDetailsPage = signInPage.returnOrderDetailsPage();
-		logger.info("Finishing checking valid order test...");
-	}
-	
-	
-	@Test(priority = 4)
-	public void forgotPasswordTest() {
-		logger.info("Starting forgot password test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.forgotPasswordClick();
-		signInPage.forgotPasswordEmail(EMAIL);
-		signInPage.ForgotPasswordSend();
-		signInPage.closeForgotPassword();
-		logger.info("Finishing forgot password test...");
-	}
-	
 
 	@AfterTest
 	public void tearDown() {
@@ -124,8 +97,6 @@ public class CreateAccountUKTest extends BaseTest {
 		homePageUK.quit();
 		signInPage.quit();
 		createAccountPage.quit();
-		myAccountPage.quit();
-		orderDetailsPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
 	}

@@ -177,7 +177,7 @@ public class SignInPage extends BasePage {
 	}
 
 	public CreateAccountPage returnCreateAccountPage() {
-		WebDriverUtils.scrollElementToPosition(driver, createAccountButton);
+		WebDriverUtils.scroll150(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(createAccountTitle));

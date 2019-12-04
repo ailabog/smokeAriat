@@ -54,20 +54,7 @@ public class LogoutUKTest extends BaseTest {
 		logger.info("I was succesfully logged out from the application!");
 	}
 	
-	@Test
-	public void logoutFromMyAccountTopUKTest() {
-		logger.info("Starting the logout UK test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop("English");
-		logger.info("I was succesfully logged out from the application!");
-	}
-
+	
 	@AfterMethod
 	public void tearDown() {
 		homePage.quit();
