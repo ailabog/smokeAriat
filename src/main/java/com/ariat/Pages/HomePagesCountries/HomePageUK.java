@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -75,10 +74,8 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-
 	private By orderStatusFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[1]/li[1]/a");
 	private By returnsFooter = By.cssSelector("(.col-xs-12:nth-child(1) li:nth-child(2) > a");
-
 	private By returnsFooterText = By.xpath("//h1[text()='Returns']");
 	private By trackYourOrderFooterLink = By.xpath("(//a[contains(text(),'Track Your Order')])[2]");
 	private By trackYourOrderFooterText = By.xpath("//h1[text()='TRACK YOUR ORDER']");
@@ -109,28 +106,21 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By wishListText = By.xpath("//h1[text()='My account']");
 	private By wishListText1 = By.xpath("//h2[text()='Wishlist']");
 	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
-
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
-
 	private By womenFootwearCasualShoesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[5]/a]");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-
 	private By accessoriesCategory = By.xpath("//a[contains(text(),'Accessories']");
-
 	private By minicartDialog = By.id("mini-cart-products-ariat");
 	private boolean showMinicart;
-
 	private By topsAndTshirtsCategory = By.xpath("//a[text()='Tops & T-Shirts']");
 	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By emailText = By.xpath("//input[@placeholder='Email address']");
-
 	private By myAccountFooter = By.xpath("//a[contains(text(),'My Accounts')]");
 	private By myAccountText = By.xpath("//h2[text()='Returning customer']");
-
 	private By aboutUsHeader = By.linkText("About Us");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
 

@@ -43,14 +43,13 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By reviewOrderBtnUS = By.cssSelector(".checkout_place-order-btn");
 	private By BICFieldGiropay = By
 			.cssSelector(".el-form-item__content:nth-child(2) > .checkout_input > .el-input__inner");
-	private By continueKlarnaBtn = By.cssSelector("#purchase-approval-continue div:nth-child(2)");
 	private By typeCardLocator = By.id("c-ct");
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(5) .el-select:nth-child(2) .el-select__caret");
 	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
-	private By placeOrderBtnUS = By.cssSelector("span:nth-child(1) > span");
-	private By payPalDirectBtn = By.xpath("//img[@alt='pp']");
+	//private By placeOrderBtnUS = By.cssSelector("span:nth-child(1) > span");
+	private By placeOrderBtnUS = By.id("confirmpayment");
 	private By paypalBtn = By.id("paypal-animation-content");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
@@ -268,20 +267,11 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.scroll1500Down(driver, securityCode);
 	}
 
-	public void continueKlarna() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueKlarnaBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
 
 	public void placeOrderUS() {
 		logger.info("Placing my order..");
 		WebDriverUtils.scroll750Down(driver, placeOrderBtnUS);
 		WebDriverUtils.clickOnElementWithWait(driver, placeOrderBtnUS);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void clickPayPalDirect() {
-		WebDriverUtils.clickOnElementWithWait(driver, payPalDirectBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 

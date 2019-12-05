@@ -48,7 +48,6 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	public static final String STATE = "Arizona";
 	public static final String ZIP_CODE = "85007";
 	public static final String MOBILE = "(602) 364-2722";
-
 	public static final String EMAILEXISTENT = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORDEXISTENT = "Parola12345!";
 	private ListOfCreditCards typeCard;
