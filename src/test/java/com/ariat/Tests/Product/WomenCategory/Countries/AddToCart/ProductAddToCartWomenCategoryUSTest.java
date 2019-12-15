@@ -37,7 +37,6 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 	private WomenAccessoriesBagsPage menAccessoriesBagsPage;
 	private BagsProductPage bagsProductPage;
 
-
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 			
@@ -47,7 +46,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 	}
 	
     @Test(priority=0)
-	public void productPageMennCategoryAddToCartTest() {
+	public void productPageMenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Men Category Bags add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -62,8 +61,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Men Category Bags add to cart test.");
 	}
-    
-  
+   
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
