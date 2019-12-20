@@ -218,14 +218,15 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void reviewOrder() {
 		 WebDriverUtils.scroll350Down(driver, reviewOrderBtn);
+		 WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void reviewOrderUS() {
 		WebDriverUtils.scroll350Down(driver, reviewOrderBtn);
-		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtnUS);
+
 	}
 
 	public void expandPromoCode() {
@@ -271,6 +272,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	public void placeOrderUS() {
 		logger.info("Placing my order..");
 		WebDriverUtils.scroll750Down(driver, placeOrderBtnUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, placeOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
