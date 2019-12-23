@@ -53,10 +53,31 @@ public class CreateAccountPage extends BasePage {
 	private By emailMsgTxtDE = By.xpath("//span[text()='Die E-Mail-Adresse ist ungültig.']");
 	private By emailMsgTxtFR = By.xpath("//span[text()='L'adresse courriel n'est pas valide.']");
 	
-	
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	
+	public void createAccount(String firstName, String lastName, String month, String day, String email, String cnfEmail, String password, String cnfPassword) {
+		logger.info("Start collecting information to create a new account: First Name, Last name, Birth month, Birth day, Email, Password");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthMonth, month);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthDay, day);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll350Down(driver, confirmEmailTextBox);
+		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);	
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
 	}
 	
 	public void asserCreateAccountMissingValues(String missingValue) {
