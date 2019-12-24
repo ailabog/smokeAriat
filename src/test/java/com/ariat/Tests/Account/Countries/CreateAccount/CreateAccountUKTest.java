@@ -58,7 +58,7 @@ public class CreateAccountUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void createAccountTest() {
+	public void createAccountUSTest() {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
 	    homePage.load(environment.DEVELOPMENT.getURL());
@@ -71,7 +71,7 @@ public class CreateAccountUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void returningCustomerTest() {
+	public void returningCustomerUSTest() {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -81,7 +81,6 @@ public class CreateAccountUKTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		logger.info("Finishing returning customer test...");
 	}
-	
 
 	@AfterTest
 	public void tearDown() {

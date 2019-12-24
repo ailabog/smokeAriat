@@ -61,17 +61,7 @@ public class AddAddressUKTest extends BaseTest {
 		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("A");
-		addAddressPage.enterLName("B");
-		addAddressPage.enterAddress1("Oxford Street");
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("United Kingdom");
-		addAddressPage.enterPostCode(POST_CODE);
-		addAddressPage.enterPhone(PHONE);
-		addAddressPage.enterAddressId(ADDRESS_ID);
-		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
-		addressesPage.checkAddress(ADDRESS_ID);
-		logger.info("Finishing add address UK test");
+		addAddressPage.setDetailsAddress("A", "B", "Basarabia Blvd, No 62", CITY, "Belgium", POST_CODE, PHONE, ADDRESS_ID);
 	}
 	
 	@AfterTest
