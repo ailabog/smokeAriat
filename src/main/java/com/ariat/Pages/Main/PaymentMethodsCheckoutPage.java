@@ -114,6 +114,47 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, selectCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	public void setPaymentDetailsSecureCheckout(String cardNameValue, String cardNumberValue, String securityCardValue) {
+		WebDriverUtils.scroll350Down(driver, nameText);
+		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, cardNo, cardNumberValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpYear);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateYear);
+		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	
+	public void setPaymentDetailsSecureCheckoutUS(String cardNameValue, String cardNumberValue, String securityCardValue) {
+		WebDriverUtils.scroll350Down(driver, nameText);
+		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebElement iframeSwitch = driver.findElement(By.id("dieCommFrame"));
+		driver.switchTo().frame(iframeSwitch);
+		WebDriverUtils.scroll350Down(driver, cardNoUS);
+		WebDriverUtils.enterTextBox(driver, cardNoUS, cardNumberValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		driver.switchTo().defaultContent();
+		WebDriverUtils.scroll350Down(driver, expirationDateMonthUS);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, monthExpirationUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpYearUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, yearExpirationUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
+	}
 
 	public void enterCardNameNotlogged(String cardNameValue) {
 		logger.info("Entering card name..");
@@ -271,7 +312,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void placeOrderUS() {
 		logger.info("Placing my order..");
-		WebDriverUtils.scroll750Down(driver, placeOrderBtnUS);
+		WebDriverUtils.scroll500Down(driver, placeOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, placeOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);

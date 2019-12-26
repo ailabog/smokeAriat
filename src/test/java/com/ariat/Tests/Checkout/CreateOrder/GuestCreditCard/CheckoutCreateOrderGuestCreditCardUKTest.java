@@ -79,11 +79,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		paymentMethodsCheckoutPage.selectExpirationMonth();
-		paymentMethodsCheckoutPage.selectExpirationYear();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
@@ -105,11 +101,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		paymentMethodsCheckoutPage.selectExpirationMonth();
-		paymentMethodsCheckoutPage.selectExpirationYear();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
