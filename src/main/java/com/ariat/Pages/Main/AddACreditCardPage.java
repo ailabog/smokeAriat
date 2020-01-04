@@ -63,25 +63,22 @@ public class AddACreditCardPage extends BasePage {
 }
 	
 	
-	public void setDetailsCreditCardUS(String cardId, String cardOwner, String number, String cvs, String month, String year) {
+	public void setDetailsCreditCardUS(String cardId, String cardOwner, String number, String month, String year) {
+		logger.info("Entering card id...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, cardNickNameTextBox, cardId);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nameOnTheCardTextBox, cardOwner);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebElement iframeSwitch = driver.findElement(By.id("dieCommFrame"));
 		driver.switchTo().frame(iframeSwitch);
 		WebDriverUtils.scroll350Down(driver, cardNoUS);
 		WebDriverUtils.enterTextBox(driver, cardNoUS, number);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		driver.switchTo().defaultContent();
-		WebDriverUtils.scroll350Down(driver, securityCodeText);
-		WebDriverUtils.enterTextBox(driver, securityCodeText, cvs);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, expirationMonthSelect, month);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, expirationYearSelect, year);
-}
+		WebDriverUtils.scroll350Down(driver, expirationDateMonthUS);
+		WebDriverUtils.selectVisibleText(driver, expirationDateMonthUS, month);
+		WebDriverUtils.selectVisibleText(driver, arrowExpYearUS, year);
+	}
 
 	public void applyCardCreation() {
 		logger.info("Creating new credit card");

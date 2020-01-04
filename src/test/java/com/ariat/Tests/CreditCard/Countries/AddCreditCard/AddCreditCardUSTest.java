@@ -68,7 +68,7 @@ public class AddCreditCardUSTest extends BaseTest{
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.setDetailsCreditCardUS(CARD_ID, CARD_OWNER, typeCard.VISA.getNumber(), typeCard.VISA.getCvs(), MONTH, YEAR);
+		addACreditCardPage.setDetailsCreditCardUS(CARD_ID, CARD_OWNER, typeCard.VISA.getNumber(), MONTH, YEAR);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		logger.info("Finishing add a credit card US test");
   } 
