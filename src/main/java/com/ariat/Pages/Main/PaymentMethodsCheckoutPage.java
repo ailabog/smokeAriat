@@ -312,10 +312,10 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void placeOrderUS() {
 		logger.info("Placing my order..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.scroll500Down(driver, placeOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, placeOrderBtnUS);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickBuyNow() {
