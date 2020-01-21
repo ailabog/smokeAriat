@@ -15,19 +15,20 @@ import com.ariat.Pages.Main.LogoutPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Header.SignInPage;
-
 
 /**
  * Tests for Add Credit card United States
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
+public class AddCreditCardUSTest extends BaseTest {
 
-public class AddCreditCardUSTest extends BaseTest{
-	
 	private HomePage homePage;
 	private HomePageUS homePageUS;
 	private HomePageUK homePageUK;
@@ -39,21 +40,17 @@ public class AddCreditCardUSTest extends BaseTest{
 	private Environments environment;
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
-	
-	private static final String EMAIL = "aila.bogasieru@yahoo.com";
-	private static final String PASSWORD = "Parola12345!";
+
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2021";
 	private static final String MONTH = "January";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
-	}
 
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
+	}
 
 	@Test(priority = 0)
 	public void addCreditCardUSTest() {
@@ -64,15 +61,15 @@ public class AddCreditCardUSTest extends BaseTest{
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUS", CredentialsUtils.getProperty("password"));
+		signInPage.returningPassword(CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.setDetailsCreditCardUS(CARD_ID, CARD_OWNER, typeCard.VISA.getNumber(), MONTH, YEAR);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		logger.info("Finishing add a credit card US test");
-  } 
-	
+	}
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

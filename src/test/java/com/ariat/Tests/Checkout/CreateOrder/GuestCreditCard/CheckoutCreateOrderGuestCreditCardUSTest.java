@@ -16,8 +16,10 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Checkout -> Create new order
@@ -48,16 +50,14 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	public static final String STATE = "Arizona";
 	public static final String ZIP_CODE = "85007";
 	public static final String MOBILE = "(602) 364-2722";
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -71,7 +71,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs());
@@ -92,7 +92,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.VISA.getNumber(), typeCard.VISA.getCvs());
@@ -112,14 +112,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.selectState();
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.AMERICAN_EXPRESS.getNumber(), typeCard.AMERICAN_EXPRESS.getCvs());
@@ -128,7 +121,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
 	} 
 	
-	@AfterTest
+@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
