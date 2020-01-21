@@ -1,6 +1,5 @@
 package com.ariat.Tests.Account.Countries.CreateAccount;
 
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,10 +15,12 @@ import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
- * all the methods such as: create account, login, check order status for United Kingdom
+ * all the methods such as: create account, login, check order status for United
+ * Kingdom
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -46,28 +47,27 @@ public class CreateAccountUKTest extends BaseTest {
 
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomNumber(8);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
-    
+
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
 	public void createAccountUSTest() {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
-	    homePage.load(environment.DEVELOPMENT.getURL());
+		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
 		createAccountPage = signInPage.returnCreateAccountPage();
-		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD, PASSWORD);
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD,
+				PASSWORD);
 		createAccountPage.createAccountClickWithoutScroll();
-	    logger.info("Finishing create new account test...");
+		logger.info("Finishing create new account test...");
 	}
 
 	@Test(priority = 1)

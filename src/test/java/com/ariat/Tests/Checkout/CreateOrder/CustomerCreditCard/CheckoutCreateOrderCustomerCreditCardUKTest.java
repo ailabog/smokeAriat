@@ -20,8 +20,10 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Checkout -> Create new order customer credit cards UK
@@ -50,16 +52,12 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = "London";
 	public static final String COUNTRY = "United Kingdom";
-	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
-	public static final String PASSWORDEXISTENT = "Parola12345!";
 	private ListOfCreditCards typeCard;
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir") + RELATIV_PATH;
-
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -69,7 +67,8 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUK", PASSWORDEXISTENT);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK",
+				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = myAccountPage.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -80,7 +79,7 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.selectAddress();
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
@@ -95,7 +94,8 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUK", PASSWORDEXISTENT);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK",
+				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -106,7 +106,7 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.selectAddress();
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();

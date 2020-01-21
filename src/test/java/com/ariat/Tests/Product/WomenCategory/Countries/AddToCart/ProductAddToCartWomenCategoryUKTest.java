@@ -15,6 +15,7 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Women Category -> Add to cart test
@@ -34,17 +35,14 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
-	
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
-    @Test(priority=0)
+	@Test(priority = 0)
 	public void productPageWomenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -52,7 +50,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
@@ -60,7 +58,6 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
 
-	
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
