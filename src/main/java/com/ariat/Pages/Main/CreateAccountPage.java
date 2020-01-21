@@ -53,10 +53,31 @@ public class CreateAccountPage extends BasePage {
 	private By emailMsgTxtDE = By.xpath("//span[text()='Die E-Mail-Adresse ist ungültig.']");
 	private By emailMsgTxtFR = By.xpath("//span[text()='L'adresse courriel n'est pas valide.']");
 	
-	
 
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	
+	public void createAccount(String firstName, String lastName, String month, String day, String email, String cnfEmail, String password, String cnfPassword) {
+		logger.info("Start collecting information to create a new account: First Name, Last name, Birth month, Birth day, Email, Password");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthMonth, month);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.selectDropDown(driver, birthDay, day);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll350Down(driver, confirmEmailTextBox);
+		WebDriverUtils.enterTextBox(driver, confirmEmailTextBox, email);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);	
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
 	}
 	
 	public void asserCreateAccountMissingValues(String missingValue) {
@@ -64,45 +85,14 @@ public class CreateAccountPage extends BasePage {
 		assertEquals(missing, missingValue, "This field is required.");
 	}
 
-	public void firstName(String firstName) {
-		logger.info("Start collecting information to create a new account: First Name");
-		WebDriverUtils.enterTextBox(driver, firstNameTextBox, firstName);
-		
-	}
-
 	public void clearFirstName() {
 		logger.info("Clearing text box First Name:");
 		WebDriverUtils.clearElement(driver, firstNameTextBox);
-		
-	}
-
-	public void lastNameInfo(String lastName) {
-		logger.info("Start collecting information to create a new account: Last Name");
-		WebDriverUtils.enterTextBox(driver, lastNameTextBox, lastName);
-		
 	}
 
 	public void clearLastName() {
 		logger.info("Clearing text box Last Name:");
 		WebDriverUtils.clearElement(driver, lastNameTextBox);
-	}
-
-	public void selectBirthMonth(String month) {
-		logger.info("Start collecting information to create a new account: Month of birth");
-		WebDriverUtils.selectDropDown(driver, birthMonth, month);
-	
-	}
-
-	public void selectBirthDay(String day) {
-		logger.info("Start collecting information to create a new account: Day of birth");
-		WebDriverUtils.selectDropDown(driver, birthDay, day);
-		
-	}
-
-	public void enterEmail(String email) {
-		logger.info("Start collecting information to create a new account: enter email");
-		WebDriverUtils.enterTextBox(driver, emailTextBox, email);
-		
 	}
 
 	public void clearEmail() {
@@ -135,8 +125,7 @@ public class CreateAccountPage extends BasePage {
 		String nameMessage = WebDriverUtils.getElementText(driver, emailMsgTxtDE);
 		assertEquals(nameMessage, emailMsgTxtValue, "Invalid name message is displayed");
 	}
-	
-	
+		
 	
 	public void assertWrongEmailCreateAccountDE(String emailMsgExpected) {
 		String emailMessage = WebDriverUtils.getElementText(driver, emailMsgDE);
@@ -160,75 +149,6 @@ public class CreateAccountPage extends BasePage {
 		logger.info("Start collecting information to create a new account: enter passsword");
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
 		
-	}
-
-	public void confirmPassword(String password) {
-		logger.info("Start collecting information to create a new account: confirm email");
-		WebDriverUtils.enterTextBox(driver, confirmPasswordTextBox, password);
-		logger.info("Finalize collecting information to create a new account");
-
-	}
-
-	public void GenderFemale() {
-		logger.info("Choosing Female option:");
-		WebDriverUtils.clickOnElementWithWait(driver, FemaleRadio);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	}
-
-	public void GenderMale() {
-		logger.info("Choosing Male option:");
-		WebDriverUtils.clickOnElementWithWait(driver, MaleRadio);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	
-	}
-
-	public void rideYes() {
-		logger.info("Choose I ride");
-		WebDriverUtils.clickOnElementWithWait(driver, rideYes);
-		
-	}
-
-	public void rideNo() {
-		logger.info("Choose I don't ride");
-		WebDriverUtils.clickOnElementWithWait(driver, rideNo);
-		
-	}
-
-	public void productsWesternCheck() {
-		logger.info("Check Western products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkWestern);
-	
-	}
-
-	public void productsFashionCheck() {
-		logger.info("Check Fashion products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkFashion);
-
-	}
-
-	public void productsWorkCheck() {
-		logger.info("Check Work products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkWork);
-
-	}
-
-	public void productsEnglishCheck() {
-		logger.info("Check English products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkEnglish);
-	
-	}
-
-	public void productsOutdoorCheck() {
-		logger.info("Check Outdoor products");
-		WebDriverUtils.clickOnElementWithWait(driver, checkOutdoor);
-	
-	}
-
-	public void addMeToAriatEmail() {
-		logger.info("Add me to Ariat email list");
-		WebDriverUtils.clickOnElementWithWait(driver, checkAddToEmailList);
-		
-
 	}
 
 	public void createAccountClick() {

@@ -58,19 +58,19 @@ public class SignInPage extends BasePage {
 		super(driver);
 	}
 
-	public void returningCustomer(String email, String language) {
+	public void setLoginDetails(String email, String language, String password) {
 		switch (language) {
 		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			break;
-			
+
 		case "EnglishUS":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		    break;
+			break;
 		case "Deutsch":
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
@@ -79,10 +79,13 @@ public class SignInPage extends BasePage {
 			logger.info("Entering information for an existing customer: email address", email);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-				break;
+			break;
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
-		}
+	    	}
+		logger.info("Entering information for an existing customer: password", password);
+		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void returningPassword(String password) {

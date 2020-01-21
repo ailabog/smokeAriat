@@ -44,7 +44,7 @@ public class AddCreditCardUSTest extends BaseTest{
 	private static final String PASSWORD = "Parola12345!";
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
-	private static final String YEAR = "2023";
+	private static final String YEAR = "2021";
 	private static final String MONTH = "January";
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -64,14 +64,11 @@ public class AddCreditCardUSTest extends BaseTest{
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
+		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.enterCardNoUS(typeCard.VISA.getNumber());
-		addACreditCardPage.selectExpirationMonthYearUS("June", "2021");
+		addACreditCardPage.setDetailsCreditCardUS(CARD_ID, CARD_OWNER, typeCard.VISA.getNumber(), MONTH, YEAR);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		logger.info("Finishing add a credit card US test");
   } 
