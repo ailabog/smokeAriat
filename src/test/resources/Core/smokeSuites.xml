@@ -12,7 +12,7 @@
                <class name ="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
                <class name ="com.ariat.Tests.Search.Countries.SearchUKTest" />
                <class name ="com.ariat.Tests.Base.KillChromeTest" />
-             
+  
         
          </classes>
      </test>
