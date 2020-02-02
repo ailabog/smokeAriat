@@ -27,17 +27,12 @@ public class HomePage extends BasePage implements List<HomePage> {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomePage.class);
 
-	public static final String URL = "https://development.ariat.com";
-
 	private By closeLocationx = By.xpath("//*[@id=\"ext-gen44\"]/body/div[6]/div[1]/a/span");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
-	//private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By listCountries = By.xpath("//div[@id='contextChooser']/ul");
-	//div[@id='contextChooser']/ul
 	private By countrySelectorWindow = By.xpath("//span[@class='icon icon-full-arrow-down ms_desktop-only']");
-	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -87,7 +82,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, country.UK.getLocator());
 			}
 			return new HomePageUK(driver);
-		
+
 		// TO DO ADD THE REST OF THE COUNTRIES FROM THE ENUM
 		default:
 			throw new RuntimeException("Country" + country + "not supported");
@@ -113,26 +108,26 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			}
 			return new HomePageUS(driver);
-			
-			//Jenkins version 
+
+		// Jenkins version
 		case "(United Kingdom)":
-		logger.info("I choose English United Kingdom as location");
-		WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, listCountries);
+			logger.info("I choose English United Kingdom as location");
+			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			WebDriverUtils.scrollLittDown(driver, euCountry.UK.getLocator());
-			WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			logger.info("Saving location...");
-			WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
-			WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-		}
-	return new HomePageUK(driver);
-			
+			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
+				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.scrollLittDown(driver, euCountry.UK.getLocator());
+				WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				logger.info("Saving location...");
+				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
+				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+			}
+			return new HomePageUK(driver);
+
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}
