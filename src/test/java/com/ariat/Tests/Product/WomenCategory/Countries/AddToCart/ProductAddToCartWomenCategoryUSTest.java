@@ -16,6 +16,7 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Men Category -> Add to cart test
@@ -39,13 +40,15 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
-	
-    @Test(priority=0)
+
+
+	@Test(priority = 0)
 	public void productPageMenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Men Category Bags add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -61,7 +64,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Men Category Bags add to cart test.");
 	}
-   
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

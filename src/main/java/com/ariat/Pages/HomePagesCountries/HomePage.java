@@ -109,8 +109,9 @@ public class HomePage extends BasePage implements List<HomePage> {
 			}
 			return new HomePageUS(driver);
 
-		// Jenkins version
-		case "(United Kingdom)":
+		
+		//Jenkins version 
+			case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -127,7 +128,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}

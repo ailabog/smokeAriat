@@ -1,0 +1,15 @@
+********************************************* Checkout create order guest credit card UK ***************************************************
+
+Checkout create order guest credit card UK test steps
+1. Go to development.ariat.com
+2. Choose UK
+3. Go to Women category
+4. Go to Accessories/Gloves
+5. Choose a product, select size
+6. Press "add to basket" button
+7. Press 2x Checkout  
+8. Enter email address, First name, Last name, Address1, City, Country, post code
+9. Press "next payment"
+10. Enter payment methods details (card name, credit card no, type, expiration month, expiration year, security code
+11. Press review order
+12. Place order

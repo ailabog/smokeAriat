@@ -78,8 +78,8 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
 				CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
-				typeCard.MASTER_CARD.getCvs());
+	    paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
+		typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
@@ -102,7 +102,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
 				CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
 				typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();

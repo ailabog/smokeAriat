@@ -8,5 +8,6 @@ public class SetSelenium {
     	
     	System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
     }
-
 }
+
+

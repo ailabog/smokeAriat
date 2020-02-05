@@ -180,7 +180,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public AddACreditCardPage returnAddACreditCardMiddleNav() {
-		WebDriverUtils.scroll300(driver, addCardLink);
+ 		WebDriverUtils.scroll300(driver, addCardLink);
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));

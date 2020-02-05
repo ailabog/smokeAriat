@@ -1,9 +1,9 @@
-**********************Add address UK test steps***********************************************************************
+**********************Add address US test steps***********************************************************************
 
 Add address test
 1. Go to development.ariat.com
 2. Close subscription
-3. Choose UK as location
+3. Choose US as location
 4. Go to Sign in page
 5. Enter username & password
 6. Press "login" button
