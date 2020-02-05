@@ -11,6 +11,7 @@
                <class name ="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest"  />
                <class name ="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
                <class name ="com.ariat.Tests.Search.Countries.SearchUSTest" />
+               <class name ="com.ariat.Tests.Base.KillChromeTest" />
 
          </classes>
      </test>
