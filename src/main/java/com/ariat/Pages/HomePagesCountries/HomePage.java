@@ -27,15 +27,12 @@ public class HomePage extends BasePage implements List<HomePage> {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomePage.class);
 
-	public static final String URL = "https://development.ariat.com";
-
 	private By closeLocationx = By.xpath("//*[@id=\"ext-gen44\"]/body/div[6]/div[1]/a/span");
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By listCountries = By.xpath("//div[@id='contextChooser']/ul");
 	private By countrySelectorWindow = By.xpath("//span[@class='icon icon-full-arrow-down ms_desktop-only']");
-	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -85,7 +82,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, country.UK.getLocator());
 			}
 			return new HomePageUK(driver);
-		
+
 		// TO DO ADD THE REST OF THE COUNTRIES FROM THE ENUM
 		default:
 			throw new RuntimeException("Country" + country + "not supported");
@@ -130,7 +127,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-		
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}

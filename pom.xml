@@ -126,7 +126,7 @@
                 <configuration>
                  <forkCount>0</forkCount>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/Core/smoke_US_Suites.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/Core/smokeSuites.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -160,7 +160,7 @@
              <reuseForks>true</reuseForks>
              
            <suiteXmlFiles>
-              <suiteXmlFile>src/test/resources/Core/smoke_US_Suites.xml</suiteXmlFile>
+              <suiteXmlFile>src/test/resources/Core/smokeSuites.xml</suiteXmlFile>
            </suiteXmlFiles>
              <skipTests>false</skipTests>
           </configuration> 

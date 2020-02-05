@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 *************************** Create account US test ******************************************
 
 Create account test1: create Account
 1. Access environment ariat development
 2. Choose US
+=======
+*************************** Create account UK test ******************************************
+
+Create account test1: create Account
+1. Access environment ariat development
+2. Choose UK
+>>>>>>> smokeBranch
 3. Go to Sign In page
 4. Go to Create account
 5. Enter first name, last name, birth month, birth day, check gender, fill email, confirmation email, passwd and conf passwd (valid info)
@@ -12,7 +20,11 @@ Create account test1: create Account
 
 Create account test3: returning Customer
 1. Access environment ariat development
+<<<<<<< HEAD
 2. Choose US
+=======
+2. Choose UK
+>>>>>>> smokeBranch
 3. Go to Sign In page
 4. Enter an existing email & password in Returning customer section
 5. Press Login button (My account page is displayed)
@@ -21,7 +33,11 @@ Create account test3: returning Customer
 
 Create account test4: check Order (an inexistent Order)
 1. Access environment ariat development
+<<<<<<< HEAD
 2. Choose US
+=======
+2. Choose UK
+>>>>>>> smokeBranch
 3. Go to Sign In page
 4. Enter order no, email, billing zip code (not valid) in Check order status section
 5. Press Check status button
@@ -30,7 +46,11 @@ Create account test4: check Order (an inexistent Order)
 
 Create account test5: check Order (an existent Order)
 1. Access environment ariat development
+<<<<<<< HEAD
 2. Choose US
+=======
+2. Choose UK
+>>>>>>> smokeBranch
 3. Go to Sign In page
 4. Enter order no, email, billing zip code (valid) in Check order status section
 5. Press Check status button
@@ -39,7 +59,11 @@ Create account test5: check Order (an existent Order)
 
 Create account test6: forgot password
 1. Access environment ariat development
+<<<<<<< HEAD
 2. Choose US
+=======
+2. Choose UK
+>>>>>>> smokeBranch
 3. Go to Sign In page
 4. Click on forgot password link
 5. Enter email address
