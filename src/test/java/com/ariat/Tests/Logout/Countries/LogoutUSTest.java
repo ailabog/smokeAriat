@@ -48,7 +48,7 @@ public class LogoutUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUS",
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS",
 				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.logoutMiddle();

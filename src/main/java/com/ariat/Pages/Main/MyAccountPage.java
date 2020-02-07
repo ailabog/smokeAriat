@@ -78,6 +78,7 @@ public class MyAccountPage extends BasePage {
 
 	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, logoutMiddle);
 	}
 

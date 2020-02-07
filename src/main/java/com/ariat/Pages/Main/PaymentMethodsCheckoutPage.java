@@ -41,7 +41,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By typeCardLocator = By.id("c-ct");
 	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(5) .el-select:nth-child(2) .el-select__caret");
 	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
-	private By placeOrderBtnUS = By.id("confirmpayment");
+	private By placeOrderBtnUS = By.cssSelector("#confirmpayment > span > span");
 	private By paypalBtn = By.id("paypal-animation-content");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
@@ -117,7 +117,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	public void setPaymentDetailsSecureCheckoutUS(String cardNameValue, String cardNumberValue, String securityCardValue) {
 		WebDriverUtils.scroll350Down(driver, nameText);
 		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		WebElement iframeSwitch = driver.findElement(By.id("dieCommFrame"));
 		driver.switchTo().frame(iframeSwitch);
 		WebDriverUtils.scroll350Down(driver, cardNoUS);
