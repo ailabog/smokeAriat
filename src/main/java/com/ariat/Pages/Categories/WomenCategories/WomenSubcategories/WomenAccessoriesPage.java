@@ -30,7 +30,7 @@ public class WomenAccessoriesPage extends BasePage{
 	private By womenAccessoriesScarfAndPonchosText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesSocksCategory = By.linkText("Socks");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesGlovesLeftNav = By.linkText("Gloves");
+	private By womenAccessoriesGlovesLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
     private By womenAccessoriesGlovesLeftNavFR = By.linkText("Gants");
     private By womenAccessoriesGlovesLeftNavDE = By.linkText("Handschuhe");
     
