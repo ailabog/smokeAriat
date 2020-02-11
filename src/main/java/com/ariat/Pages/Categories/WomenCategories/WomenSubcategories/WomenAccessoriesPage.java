@@ -30,9 +30,8 @@ public class WomenAccessoriesPage extends BasePage{
 	private By womenAccessoriesScarfAndPonchosText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesSocksCategory = By.linkText("Socks");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesGlovesLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
-    private By womenAccessoriesGlovesLeftNavFR = By.linkText("Gants");
-    private By womenAccessoriesGlovesLeftNavDE = By.linkText("Handschuhe");
+	private By womenAccessoriesGlovesLeftNav = By.xpath("//a[@class='aside-nav__category  collapsible ' and @href='/gb/en/Women-Accessories-Gloves']");
+
     
    		public WomenAccessoriesPage(WebDriver driver) {
 		super(driver);
@@ -60,19 +59,6 @@ public class WomenAccessoriesPage extends BasePage{
 		return new WomenAccessoriesGlovesPage(driver);
 	}
 	
-	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryleftNavPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesLeftNavFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
-		return new WomenAccessoriesGlovesPage(driver);
-	}
-	
-	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryleftNavPageDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesLeftNavDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
-		return new WomenAccessoriesGlovesPage(driver);
-	}
 	
 	public WomenAccessoriesBagsPage returnWomenAccessoriesBagsCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesBagsCategory);
