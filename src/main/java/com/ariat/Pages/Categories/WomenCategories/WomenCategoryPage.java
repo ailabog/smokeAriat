@@ -60,7 +60,7 @@ public class WomenCategoryPage extends BasePage {
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
-	private By womenAccesoriesCategoryLefytNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
+	private By womenAccesoriesCategoryLefytNav = By.xpath("//a[@class='aside-nav__category  collapsible ' and @href='/gb/en/Women-Accessories']");
 	private By expandIconFootwear = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
 	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
 	private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
