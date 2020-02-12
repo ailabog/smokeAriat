@@ -215,6 +215,7 @@ public class GlovesProductPage extends BasePage{
 
 	public MyBagPage returnMyBagPage() {
 		WebDriverUtils.scrollLittDown(driver, addToBasket);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToBasket);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(bonusDialog));

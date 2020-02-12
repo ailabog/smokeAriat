@@ -41,7 +41,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By typeCardLocator = By.id("c-ct");
 	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(5) .el-select:nth-child(2) .el-select__caret");
 	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
-	private By placeOrderBtnUS = By.xpath("//button[@id='confirmpayment']");
+	private By placeOrderBtnUS = By.xpath("//button[@class='el-button checkout_button checkout_place-order-btn __next-payment el-button--default']");
 	private By paypalBtn = By.id("paypal-animation-content");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");

@@ -88,6 +88,7 @@ public class CheckoutProcessPage extends BasePage {
 	WebDriverUtils.enterTextBox(driver, city, cityValue);
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	WebDriverUtils.clickOnElementWithWait(driver, selectOption);
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);

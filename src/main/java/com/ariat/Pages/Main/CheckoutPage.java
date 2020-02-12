@@ -31,7 +31,7 @@ public class CheckoutPage extends BasePage {
 	private By applyPromoCode = By
 			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
 	private By checkoutCheckoutBtn = By.xpath("//a[text()='Checkout']");
-	private By checkoutCheckoutBtn1 = By.cssSelector(".cart_button--black");
+	private By checkoutCheckoutBtn1 = By.xpath("//button[@class='el-button cart_button cart_button--black cart_checkout--button el-button--primary']");
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
 	private By returnPolicyBtn = By.xpath("//a[text()='Return Policies']");
 	private By continueShoppingCheckoutBtn = By.xpath("//a[text()='Continue Shopping']");
