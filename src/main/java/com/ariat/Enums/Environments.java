@@ -8,9 +8,9 @@ package com.ariat.Enums;
 
 public enum Environments {
      STAGING("http://staging.ariat.com", "https://staging-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
-	 DEVELOPMENT("http://development.ariat.com","https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
-	 DEV03("http://dev03.ariat.com","https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
-	 DEV01("http://dev01.ariat.com",	"https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site");
+	 DEVELOPMENT("http://development.ariat.com", "https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
+	 DEV03("http://dev03.ariat.com", "https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site"),
+	 DEV01("http://dev01.ariat.com", "https://development-ai001-ariat.demandware.net/on/demandware.store/Sites-Site");
 
 	private String URL;
 	private String businessMngmtURL;
