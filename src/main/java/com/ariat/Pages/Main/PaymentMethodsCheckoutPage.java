@@ -123,7 +123,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.scroll350Down(driver, nameText);
 		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		WebElement iframeSwitch = driver.findElement(By.id("dieCommFrame"));
+		WebElement iframeSwitch = driver.findElement(By.xpath("//iframe[@id='dieCommFrame']"));
 		driver.switchTo().frame(iframeSwitch);
 		WebDriverUtils.scroll350Down(driver, cardNoUS);
 		WebDriverUtils.enterTextBox(driver, cardNoUS, cardNumberValue);

@@ -70,10 +70,7 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK",
 				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = myAccountPage.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage = homePageUK.returnGlovesProductPage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
