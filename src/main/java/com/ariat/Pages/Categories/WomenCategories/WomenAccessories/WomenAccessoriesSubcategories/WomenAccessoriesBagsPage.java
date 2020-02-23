@@ -18,7 +18,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenAccessoriesBagsPage extends BasePage{
 	
-	private By garmentBagProduct = By.xpath("//img[@title='Tote Bag']");
+	private By garmentBagProduct = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded' and @title='Ring Backpack']");
 	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
 	
 	public WomenAccessoriesBagsPage(WebDriver driver) {

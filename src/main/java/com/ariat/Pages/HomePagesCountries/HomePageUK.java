@@ -125,7 +125,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By aboutUsHeader = By.linkText("About Us");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
 
-	private By tekGrip = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded and @title='Insulated Tek Grip']");
+	private By tekGrip = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded' and @title='Insulated Tek Grip']");
 	private By tekGripText = By.xpath("//*contains[text()='Tek Grip']");
 	private By glovesCategory = By.xpath("//a[text()='Gloves']");
 	

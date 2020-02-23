@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 
 import com.ariat.Utils.WebDriverUtils;
 
@@ -50,6 +51,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By expirationDateYear = By.xpath("//span[text()='2021']");
+	private By checkoutLocator = By.xpath("//*contains[text()='Checkout Complete']");
 
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);
@@ -107,6 +109,13 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		default:
 			throw new RuntimeException("Language" + optionMethod + "not supported");
 		}
+	}
+	
+	
+	public void CheckOrderWasCreated(String expectedText) {
+		 String checkoutText = WebDriverUtils.getElementText(driver, checkoutLocator);
+		 
+		 Assert.assertEquals(checkoutText, expectedText, "Congratulaions! Order was created");
 	}
 
 	public void enterCardName(String cardNameValue) {

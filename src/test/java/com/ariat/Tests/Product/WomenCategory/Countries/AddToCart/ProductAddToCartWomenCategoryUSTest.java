@@ -49,7 +49,7 @@ public class ProductAddToCartWomenCategoryUSTest extends BaseTest {
 
 
 	@Test(priority = 0)
-	public void productPageMenCategoryAddToCartTest() {
+	public void productPageMenCategoryAddToCartTestUS() {
 		logger.info("Starting product page -> Men Category Bags add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

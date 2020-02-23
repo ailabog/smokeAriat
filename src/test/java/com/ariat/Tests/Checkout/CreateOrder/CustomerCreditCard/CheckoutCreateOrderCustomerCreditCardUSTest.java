@@ -62,7 +62,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 
 
     @Test(priority = 0)
-	public void checkoutCreateNewOrderBeingLoggedMasterCard() {
+	public void checkoutCreateNewOrderBeingLoggedMasterCardUS() {
 		logger.info("Starting checkout -> create new order being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -85,7 +85,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	}
     
     @Test(priority = 1)
-   	public void checkoutCreateNewOrderBeingLoggedVisa() {
+   	public void checkoutCreateNewOrderBeingLoggedVisaUS() {
    		logger.info("Starting checkout -> create new order being logged credit card Visa test...");
    		homePage = new HomePage(new ChromeDriver());
    		homePage.load(environment.DEVELOPMENT.getURL());
@@ -108,7 +108,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    	}
     
     @Test(priority = 2)
-   	public void checkoutCreateNewOrderBeingLoggedAmericanExpress() {
+   	public void checkoutCreateNewOrderBeingLoggedAmericanExpressUS() {
    		logger.info("Starting checkout -> create new order being logged credit card American Express test...");
    		homePage = new HomePage(new ChromeDriver());
    		homePage.load(environment.DEVELOPMENT.getURL());

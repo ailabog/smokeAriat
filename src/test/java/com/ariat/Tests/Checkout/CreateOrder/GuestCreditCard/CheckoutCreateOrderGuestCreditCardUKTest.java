@@ -62,7 +62,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderNotBeingLoggedMasterCard() {
+	public void checkoutCreateNewOrderNotBeingLoggedMasterCardUK() {
 		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -86,7 +86,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void checkoutCreateNewOrderNotBeingLoggedVisa() {
+	public void checkoutCreateNewOrderNotBeingLoggedVisaUK() {
 		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
